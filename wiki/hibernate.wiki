@@ -1,13 +1,5 @@
-#ok
+Hibernate em pequenas doses (tutorial)
 
-= Introduction =
+= Introdução =
 
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Hibernate é uma das ferramentas mais conhecidas e empregadas para auxiliar a reduzir os custos de implementação do mapeamento entre o modelo orientado a objetos e o modelo relacional. Aqui você encontrará uma seqüência de exemplos que irão introduzir, paulatinamente, conceitos e conhecimentos necessários para o domínio desta poderosa ferramenta. Ao percorrer todos estes exemplo você terá mais que simplesmente uma visão abrangente, mas um domínio relativamente sólido desta ferramenta.

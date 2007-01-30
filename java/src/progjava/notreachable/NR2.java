@@ -4,7 +4,8 @@ public class NR2 {
 	try {
 	    int x = 2;
 	    return;
-	    System.out.println(x);
+	    // Line below does not compile (unreachable code)
+	    // System.out.println(x);
 	} catch (RuntimeException re) {}
     }
 }

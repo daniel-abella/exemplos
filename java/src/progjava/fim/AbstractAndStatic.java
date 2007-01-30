@@ -1,3 +1,5 @@
+package progjava.fim;
+
 import java.io.*;
 
 class AbstractAndStatic {    

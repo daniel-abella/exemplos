@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!-- Não altere o cabeçalho acima -->
+
+<beans>
+	<bean id="gui" class="properties.GUIConfiguracao">
+		<property name="props">
+			<props>
+				<prop key="tela.x">10</prop>
+				<prop key="tela.y">30</prop>				
+				<prop key="user">fulano</prop>
+				<prop key="password">beltrano</prop>								
+			</props>
+		</property>
+	</bean>
+</beans>

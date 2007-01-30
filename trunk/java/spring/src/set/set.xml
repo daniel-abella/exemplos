@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!-- Não altere o cabeçalho acima -->
+
+<beans>
+	<bean id="livro1" class="set.Referencia" singleton="false">
+		<property name="nome">
+			<value>Título A</value>
+		</property>
+	</bean>
+
+	<bean id="livro2" class="set.Referencia">
+		<property name="nome">
+			<value>Título B</value>
+		</property>
+	</bean>
+
+	<bean id="prg" class="set.ProgramaDisciplina">
+		<property name="bibliografia">
+			<set>
+				<ref bean="livro1"/>
+				<ref bean="livro2"/>				
+				<ref bean="livro1"/>
+			</set>
+		</property>
+	</bean>	
+</beans>

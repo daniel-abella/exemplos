@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Introdu&ccedil;&atilde;o &agrave; Ci&ecirc;ncia da Computa&ccedil;&atilde;o (UFG)</TITLE>
+<META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1170" name=GENERATOR></HEAD>
+<BODY>
+<TABLE width=600 border=1 cellPadding=0 cellSpacing=0 bordercolor="#003366">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+              <TD><A href="http://www.inf.ufg.br"><IMG height=70 
+            alt="Introdu" 
+            src="images/icone-icc2.gif" 
+            width=600 border=0></A></TD>
+            </TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+              <TBODY>
+              <TR>
+                        <TD><p><b><font size="3" face="Verdana,Arial,helvetica,sans-serif"><br>
+                            </font></b><FONT
+                  face=Verdana,Arial,helvetica,sans-serif
+                  size=3><b>Legibilidade</b></FONT><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><BR>
+                            <BR>
+                            Sempre, vou repetir, SEMPRE, procure fazer com que 
+                            o seu c&oacute;digo seja leg&iacute;vel. Outros programadores 
+                            ter&atilde;o que modificar o c&oacute;digo que hoje 
+                            n&oacute;s escrevemos. Por exemplo, a classe abaixo, 
+                            quando executada, exibe os quatro primeiros bytes 
+                            do arquivo fornecido como argumento na linha de comandos. 
+                            Trata-se de um exemplo que N&Atilde;O DEVEMOS SEGUIR.</font></p>
+                          <p><font size="2" face="Courier New, Courier, mono">import 
+                            java.io.*;</font></p>
+                          <pre><p>public class FirstBytes {
+    public static void main(String[] args) throws Exception {
+        byte[] b = new byte[4];<br>        new FileInputStream(new File(args[0])).read(b,0,4);
+        for (int i = 0; i &lt; b.length; i++)<br>            System.out.print(Integer.toHexString(0xFF &amp; b[i]));<br>}</p></pre>
+		<p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Observe 
+                            que em apenas 9 linhas de c&oacute;digo uma arquivo 
+                            &eacute; aberto e os seus quatro primeiros bytes s&atilde;o 
+                            exibidos na nota&ccedil;&atilde;o hexadecimal. Muitos 
+                            podem considerar este c&oacute;digo adequado, contudo, 
+                            h&aacute; v&aacute;rias armadilhas. A principal delas 
+                            &eacute; falta de clareza. Antes de reescrever este 
+                            c&oacute;digo de forma leg&iacute;vel, uma curiosidade. 
+                            <strong>Os quatro primeiros bytes de todo arquivo 
+                            .class s&atilde;o 0xCAFEBABE.</strong> N&atilde;o 
+                            me pergunte o porqu&ecirc;, talvez pelo que sugere, 
+                            talvez por uma mera conven&ccedil;&atilde;o. Contudo, 
+                            assim como a MVJ faz toda vez que pedimos para ela 
+                            executar alguma classe voc&ecirc; tamb&eacute;m pode 
+                            realizar esta verifica&ccedil;&atilde;o. Esta &eacute; 
+                            apenas uma das verifica&ccedil;&otilde;es feitas pela 
+                            MVJ para certificar de que o c&oacute;digo &eacute;, 
+                            digamos, &quot;digno de confian&ccedil;a&quot;. Vamos 
+                            &agrave; nova vers&atilde;o ...</font>
+                          <pre><p>/*<br> * PrefixoArquivoClass.java vers&atilde;o 1.0 30/09/2003<br> * Copyright (c) 2003 F&aacute;bio Lucena<br> */</p>package verification;
+
+import java.io.FileInputStream;<br>import java.io.File;
+import java.io.IOException;
+
+public class PrefixoArquivoClass {
+    public static void main(String[] args) {<br>        if (args.length != 1) {<br>            System.out.println(&quot;USO: java PrefixoArquivoClass &lt;class file&gt;&quot;);<br>            return;<br>        }
+
+    // Tenta abrir arquivo fornecido como argumento<br>    File f = new File(args[0]);<br>    if (!(f.isFile() &amp;&amp; f.exists() &amp;&amp; f.canRead())) {<br>        System.out.println(&quot;Nao ha como processar &quot; + args[0]);<br>        System.out.println(&quot;Nao existe, nao pode ser lido ou aberto&quot;);<br>        return;<br>    }
+
+    byte[] b = new byte[4];<br>    try {<br>        FileInputStream fis = new FileInputStream(f);<br>        fis.read(b, 0, 4);<br>    } catch (IOException fnfe) {<br>        System.out.println(&quot;Erro na leitura de arquivo&quot;);<br>    }
+
+    // Exibe 4 primeiros bytes em hexadecimal
+    System.out.print(Integer.toHexString(0xFF &amp; b[0]));
+    System.out.print(Integer.toHexString(0xFF &amp; b[1]));<br>    System.out.print(Integer.toHexString(0xFF &amp; b[2]));<br>    System.out.print(Integer.toHexString(0xFF &amp; b[3]));<br>}<br></pre>
+                          <p></pre><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Os 
+                            coment&aacute;rios j&aacute; facilitam a compreens&atilde;o 
+                            deste c&oacute;digo bem mais extenso que a vers&atilde;o 
+                            anterior. Contudo, da perspectiva do desenvolvimento 
+                            de software, bem mais f&aacute;cil de ser alterado 
+                            que o anterior e, por conseguinte, prefer&iacute;vel 
+                            e melhor. Voc&ecirc; deveria estudar cuidadosamente 
+                            estas instru&ccedil;&otilde;es e observar as diferen&ccedil;as, 
+                            desde o novo nome da classe, at&eacute; o menor dos 
+                            detalhes em rela&ccedil;&atilde;o &agrave; classe 
+                            anterior. </font>
+                          <HR SIZE=1>
+                  <BR><FONT face=Verdana,Arial,helvetica,sans-serif
+                  size=3><B>Contato</B></FONT><BR><BR>
+                          <FONT
+                  face=Verdana,Arial,helvetica,sans-serif size=2>Seus coment&aacute;rios 
+                          s&atilde;o bem-vindos, assim como sua contribui&ccedil;&atilde;o.<br>
+                           Queremos saber como
+                  ajudar.<BR><BR>e-mail:<BR><A
+                  href="mailto:fabio@inf.ufg.br">fabio@inf.ufg.br</A></FONT>
+
+                  <HR SIZE=1>
+                  <BR></TD></TR></TBODY></TABLE></CENTER></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+      <TD bgColor=#000066><IMG height=25 width=1 
+  border=0></TD>
+    </TR></TBODY></TABLE> 
+<BR>
+<FONT face="Verdana, Arial, Helvetica, sans-serif"
+size=-2>Assinantes podem interromper o recebimento destes informes atrav&eacute;s 
+da altera&ccedil;&atilde;o de suas <A
+href="https://www.inf.ufg.br">prefer&ecirc;ncias.<br>
+</A>Se voc&ecirc; recebe gratuitamente tais informa&ccedil;&otilde;es, ent&atilde;o 
+realize o <A
+href="http://www.inf.ufg.br">descadastramento</A>.<br>
+Para requisitar o recebimento, fa&ccedil;a o <A
+href="http://www.inf.ufg.br">cadastramento</A>. Outras quest&otilde;es, envie 
+e-mail para <A
+href="mailto:icc@inf.ufg.br">icc@inf.ufg.br</A>.<BR>
+<BR></FONT>
+</BODY> </HTML>

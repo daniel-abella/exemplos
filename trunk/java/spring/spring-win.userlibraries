@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries version="1">
+<library name="spring-win" systemlibrary="false">
+<archive javadoc="file:/C:/tools/spring/docs/api/" path="C:/tools/spring/dist/spring.jar" source="C:/tools/spring/src"/>
+<archive javadoc="file:/C:/tools/junit3.8.1/javadoc/" path="C:/tools/spring/lib/junit/junit.jar" source="C:/tools/junit3.8.1/src.jar"/>
+<archive path="C:/tools/spring/lib/jakarta-commons/commons-logging.jar"/>
+</library>
+</eclipse-userlibraries>

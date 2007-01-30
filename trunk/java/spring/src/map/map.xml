@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!-- Não altere o cabeçalho acima -->
+
+<beans>
+
+	<bean id="disciplinas" class="map.DisciplinaRepository">
+		<property name="disciplinas">
+			<map>
+				<entry key="poo">
+					<ref bean="d1"/>
+				</entry>
+				<entry key="jboss">
+					<ref bean="d2"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="d1" class="map.Disciplina">
+		<property name="codigo">
+			<value>poo</value>
+		</property>
+		<property name="nome">
+			<value>POO</value>
+		</property>
+	</bean>
+
+	<bean id="d2" class="map.Disciplina">
+		<property name="codigo">
+			<value>jboss</value>
+		</property>
+		<property name="nome">
+			<value>JBoss</value>
+		</property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!-- Não altere o cabeçalho acima -->
+
+
+<beans>
+
+	<!-- O identificador deve iniciar por letra -->
+	<!-- Para cada property deve existir o método set correspondente -->
+	<bean id="D01" class="list.Docente">
+		<property name="nome">
+			<value>Afonso</value>
+		</property>
+	</bean>
+
+	<bean id="D02" class="list.Docente">
+		<property name="nome">
+			<value>Beltrano</value>
+		</property>
+	</bean>
+
+	<bean id="departamento" class="list.Departamento">
+		<!-- 'docentes' é um List em vez de <value> ou <ref>
+		     deve ser utilizado <list>, conforme abaixo -->
+		<property name="docentes">
+			<list>
+				<ref bean="D01"/>
+				<ref bean="D02"/>	
+				<ref bean="D01"/> <!-- List admite duplicatas! -->		
+			</list>
+		</property>
+	</bean>
+	
+</beans>

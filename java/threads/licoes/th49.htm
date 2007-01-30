@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<TITLE>Linguagem de Programação Java (Threads)</TITLE>
+<META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<META></HEAD>
+<BODY>
+<TABLE width=600 border=1 cellPadding=0 cellSpacing=0 bordercolor="#000066">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+              <TD><A href="http://www.inf.ufg.br"><img src="images/icone-icc3.gif" width="600" height="70"></A></TD>
+            </TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+              <TBODY>
+              <TR>
+                        <TD><p><b><font size="3" face="Verdana,Arial,helvetica,sans-serif"><br>
+                            </font></b><FONT
+                  face=Verdana,Arial,helvetica,sans-serif
+                  size=3><b>M&eacute;todos wait, notify e notifyAll</b></FONT></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Assim 
+                            como todo objeto possui um <em>lock</em>, tamb&eacute;m 
+                            possui um conjunto de <em>threads </em>que aguardam 
+                            por uma notifica&ccedil;&atilde;o deste objeto. <em>Threads 
+                            </em>ficam bloqueados neste conjunto para um dado 
+                            objeto quando enviam a mensagem <font face="Courier New, Courier, mono">wait()</font> 
+                            para este objeto. Neste momento, dado que esta chamada 
+                            &eacute; executada em c&oacute;digo sincronizado, 
+                            o <em>lock </em>do objeto em quest&atilde;o &eacute; 
+                            liberado. </font></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Para 
+                            que um <em>thread </em>aguardando na fila de um objeto 
+                            possa retomar a execu&ccedil;&atilde;o &eacute; necess&aacute;rio 
+                            que a mensagem <font face="Courier New, Courier, mono">notify</font> 
+                            ou <font face="Courier New, Courier, mono">notifyAll</font> 
+                            seja enviada ao objeto em quest&atilde;o. Esta mensagem 
+                            &quot;acorda&quot; um ou todos os objetos que aguardam. 
+                            Quando acordado, um <em>thread </em>vai para o estado 
+                            <strong>execut&aacute;vel</strong> e permanece l&aacute; 
+                            at&eacute; que o escalonador o escolha para execu&ccedil;&atilde;o. 
+                            Infelizmente isto ainda n&atilde;o &eacute; suficiente, 
+                            afinal, a mensagem <font face="Courier New, Courier, mono">wait</font> 
+                            s&oacute; foi executada porque o <em>thread </em>se 
+                            encontrava executando c&oacute;digo sincronizado e, 
+                            portanto, retinha o <em>lock </em>que dever&aacute; 
+                            ser readquirido para que possa prosseguir a execu&ccedil;&atilde;o. 
+                            </font></p>
+                          <HR SIZE=1>
+                          <script language="JavaScript" src="rodape.js" type="text/JavaScript"></script>
+                          <b><font size="3" face="Verdana,Arial,helvetica,sans-serif"><br>
+                          </font></b> 
+                          <HR SIZE=1>
+                  <BR></TD></TR></TBODY></TABLE></CENTER></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+      <TD bgColor=#000066><IMG height=25 width=1 
+  border=0></TD>
+    </TR></TBODY></TABLE> 
+<BR>
+<FONT face="Verdana, Arial, Helvetica, sans-serif"
+size=-2>Assinantes podem interromper o recebimento destes informes atrav&eacute;s 
+da altera&ccedil;&atilde;o de suas <A
+href="https://www.inf.ufg.br">prefer&ecirc;ncias.<br>
+</A>Se voc&ecirc; recebe gratuitamente tais informa&ccedil;&otilde;es, ent&atilde;o 
+realize o <A
+href="http://www.inf.ufg.br">descadastramento</A>.<br>
+Para requisitar o recebimento, fa&ccedil;a o <A
+href="http://www.inf.ufg.br">cadastramento</A>. Outras quest&otilde;es, envie 
+e-mail para <A
+href="mailto:icc@inf.ufg.br">icc@inf.ufg.br</A>.<BR>
+<BR></FONT>
+</BODY> </HTML>

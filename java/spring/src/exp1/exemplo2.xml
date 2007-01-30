@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!-- 
+     O cabeçalho acima deve estar presente.
+     Observe ainda que aquelas deverão ser as primeiras
+     linhas do seu arquivo de configuração. 
+-->
+
+<!-- Elemento raiz: beans -->
+<beans>
+
+<!-- Aqui seguem um ou mais elementos 'bean' -->
+<!-- Todo bean possui os atributos 'id' e 'class' -->
+<!-- Não é necessário properties -->
+<bean id="listaCompartilhada" class="java.util.ArrayList" />
+
+<!-- Versão substancialmente diferente da anterior -->
+<bean id="lista" class="java.util.ArrayList" singleton="false" />
+
+<bean id="retanguloPadrao" class="exp1.Retangulo">
+    <constructor-arg index="0">
+        <value>4</value>
+    </constructor-arg>
+    <constructor-arg index="1">
+        <ref bean="superiorDireito"/>
+    </constructor-arg>
+</bean>
+
+<!-- Fecha elemento raiz: beans -->
+</beans>

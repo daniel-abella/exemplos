@@ -1,0 +1,43 @@
+1. Criar factory que faz uso de BeanFactory do Spring.
+   Dessa forma não é necessário XmlBeanFactory ... e outros detalhes.
+   Possivelmente através de herança.
+ 
+2. Obter configuração de um arquivo, não de um XML disponível no classpath.
+   PontoGetFromFile (test/exp1)
+     
+3. Obter arquivo de configuração de um resource, que pode ser url.
+   PontoGetFromURL (test/exp1)
+   
+4. Por default obtém-se um singleton.
+   SingletonSpringTest (test/exp1)
+   Item posterior comenta prototype
+   
+5. FileSystemXmlApplicationContext herda de BeanFactory
+   - Shift-F2 (help de código em edição)
+   - Mostrar como configurar para o Spring
+   - Fazer o mesmo para junit
+   
+6. Acrescentar tratamento de exceções para método getBean
+   - Consulte help para detalhes (Shift-F2).
+   
+6. Comentar PontoApplicationContextTest (test/exp1)
+
+7. Criar versão similar à anterior para ClassPathXmlApplicationContext
+   - Ressaltar vantagem de CLASSPATH (diretório não hardwired)
+   
+8. Comentar exemplo2.xml (src/exp1)
+
+9. Comentar exp3.Prototype (singleton="false")
+   - Remova construtor default e observe resultados.
+   
+10. Comentar exp3.SingletonPrototypeTest
+    - init and destroy methods
+    
+11. Comentar package list
+
+12. Comentar package set
+    - Retirar singleton="false" elimina duplicatas, por quê?
+    
+13. Comentar package map
+
+14. Comentar package properties    

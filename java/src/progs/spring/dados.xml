@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+	
+<beans>
+
+<bean id="ex1" class="ex1.TiposBasicos">
+	<property name="valor"><value>1</value></property>
+	<property name="nome"><value>Primeiro</value></property>
+</bean>
+
+<bean id="ex2" class="ex2.TiposBasicos">
+	<property name="valor"><value>2</value></property>
+	<property name="nome"><value>Segundo</value></property>
+</bean>
+
+<bean id="IA" class="ex3.AImpl" />
+<bean id="IB1" class="ex3.B1Impl" />
+<bean id="IB2" class="ex3.B2Impl" />
+<bean id="IC" class="ex3.CImpl" />
+
+</beans>

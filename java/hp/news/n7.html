@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Introdu&ccedil;&atilde;o &agrave; Ci&ecirc;ncia da Computa&ccedil;&atilde;o (UFG)</TITLE>
+<META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1170" name=GENERATOR></HEAD>
+<BODY>
+<TABLE width=600 border=1 cellPadding=0 cellSpacing=0 bordercolor="#003366">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+              <TD><A href="http://www.inf.ufg.br"><IMG height=70 
+            alt="Introdu" 
+            src="images/icone-icc2.gif" 
+            width=600 border=0></A></TD>
+            </TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+              <TBODY>
+              <TR>
+                        <TD><p><b><font size="3" face="Verdana,Arial,helvetica,sans-serif"><br>
+                            </font></b><font size="3" face="Courier New, Courier, mono"><strong>Exception 
+                            in thread &quot;main&quot; java.lang.NoClassDefFoundError</strong></font><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><BR>
+                            <BR>
+                            Quem nunca experimentou a exce&ccedil;&atilde;o acima 
+                            nunca programou em Java. O exemplo abaixo deve fazer 
+                            com que esta exce&ccedil;&atilde;o raramente volte 
+                            a ocorrer. </font></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">A 
+                            classe <font face="Courier New, Courier, mono">ClasseA</font>, 
+                            que n&atilde;o possui nenhum membro, &eacute; declarada 
+                            abaixo.<br>
+                            <br>
+                            </font><font size="2" face="Courier New, Courier, mono">public 
+                            class ClasseA {}</font></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Uma 
+                            classe que faz uso da classe acima &eacute; fornecida 
+                            abaixo. Observe que uma inst&acirc;ncia da classe 
+                            acima &eacute; criada. </font></p>
+                          <pre><font size="2" face="Courier New, Courier, mono">public class Teste {<br>    public static void main(String[] args) {
+        ClasseA ca = new ClasseA();
+    }
+}</font></pre>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Quando 
+                            a MVJ recebe para execu&ccedil;&atilde;o a classe 
+                            <font face="Courier New, Courier, mono">Teste</font> 
+                            </font><font size="2" face="Verdana, Arial, Helvetica, sans-serif">(classe 
+                            acima), esta m&aacute;quina precisa conhecer onde 
+                            encontrar as classes necess&aacute;rias para execu&ccedil;&atilde;o 
+                            da classe fornecida. Neste caso, &eacute; preciso 
+                            que a MVJ tenha acesso ao arquivo <font face="Courier New, Courier, mono">ClasseA.class</font>, 
+                            que cont&eacute;m os bytecodes correspondentes ao 
+                            conte&uacute;do do arquivo <font face="Courier New, Courier, mono">ClasseA.java</font>.</font> 
+                          </p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">O 
+                            local onde classes devem ser procuradas &eacute; fornecida 
+                            atrav&eacute;s da vari&aacute;vel CLASSPATH. Tanto 
+                            a MVJ (programa <strong>java</strong>) quanto o compilador 
+                            <strong>javac</strong> fazem uso desta vari&aacute;vel 
+                            de ambiente. O valor desta vari&aacute;vel tamb&eacute;m 
+                            pode ser fornecido atrav&eacute;s de argumento na 
+                            linha de comandos.</font></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">O 
+                            compilador precisa conhecer a declara&ccedil;&atilde;o 
+                            de classes empregadas pelo c&oacute;digo que est&aacute; 
+                            sendo compilado. Afinal, se o compilador n&atilde;o 
+                            conhece a declara&ccedil;&atilde;o de uma classe <font face="Courier New, Courier, mono">X</font>, 
+                            como saber se esta classe <font face="Courier New, Courier, mono">X</font> 
+                            possui o m&eacute;todo <font face="Courier New, Courier, mono">M</font>? 
+                            Se o compilador n&atilde;o puder encontrar a declara&ccedil;&atilde;o 
+                            de <font face="Courier New, Courier, mono">X</font>, 
+                            ent&atilde;o algo como &quot;<font face="Courier New, Courier, mono">cannot 
+                            resolve symbol</font>&quot; ser&aacute; a mensagem 
+                            gerada pelo compilador.</font></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">A 
+                            MVJ precisa da implementa&ccedil;&atilde;o (bytecodes) 
+                            de uma classe empregada para que esta possa ser executada. 
+                            Afinal, se os bytecodes correspondentes a uma classe 
+                            <font face="Courier New, Courier, mono">X</font> n&atilde;o 
+                            estiverem acess&iacute;veis, como execut&aacute;-los? 
+                            Se a MVJ n&atilde;o encontrar os bytecodes correspondentes 
+                            &agrave; classe <font face="Courier New, Courier, mono">ClasseA</font>, 
+                            ent&atilde;o ao executar a classe <font face="Courier New, Courier, mono">Teste</font> 
+                            ir&aacute; gerar a seguinte exce&ccedil;&atilde;o. 
+                            </font> </p>
+                          <pre><font size="2" face="Courier New, Courier, mono">Exception in thread &quot;main&quot; java.lang.NoClassDefFoundError: ClasseA
+        at Teste.main(Teste.java:3)</font></pre>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+                            Se voc&ecirc; se deparar com a exce&ccedil;&atilde;o 
+                            acima, j&aacute; sabe que a MVJ n&atilde;o encontra 
+                            a classe indicada. Ou seja, n&atilde;o encontra o 
+                            arquivo <font face="Courier New, Courier, mono">ClasseA.class</font>, 
+                            que implementa a classe <font face="Courier New, Courier, mono">ClasseA</font>. 
+                            Observe que o arquivo pode existir, pode estar inclusive 
+                            no diret&oacute;rio corrente, contudo, &eacute; preciso 
+                            fazer com que a MVJ tamb&eacute;m saiba, o que &eacute; 
+                            realizado, novamente, atrav&eacute;s da vari&aacute;vel 
+                            CLASSPATH. Se os bytecodes (arquivo <font face="Courier New, Courier, mono">.class</font>) 
+                            existem e est&atilde;o no diret&oacute;rio <font face="Courier New, Courier, mono">c:\myclasses, 
+                            </font>execute a MVJ da seguinte forma:</font></p>
+                          <p><font size="2" face="Courier New, Courier, mono">java 
+                            -classpath c:\myclasses Teste</font></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">A 
+                            senten&ccedil;a acima executa a MVJ para a classe 
+                            Teste e, adicionalmente, diz o seguinte para esta 
+                            MVJ: &quot;olha, se voc&ecirc; n&atilde;o encontrar 
+                            alguma classe necess&aacute;ria para a execu&ccedil;&atilde;o 
+                            da classe Teste, inclusive a pr&oacute;pria, por favor, 
+                            verifique se o que voc&ecirc; precisa encontra-se 
+                            no diret&oacute;rio c:\myclasses, pois &eacute; l&aacute; 
+                            que deposito os arquivos .class&quot;. Voc&ecirc; 
+                            ir&aacute; perceber que a MVJ, quando bem tratada, 
+                            esfor&ccedil;a-se ao m&aacute;ximo para nos servir!</font></p>
+                          <HR SIZE=1>
+                  <BR><FONT face=Verdana,Arial,helvetica,sans-serif
+                  size=3><B>Contato</B></FONT><BR><BR>
+                          <FONT
+                  face=Verdana,Arial,helvetica,sans-serif size=2>Seus coment&aacute;rios 
+                          s&atilde;o bem-vindos, assim como sua contribui&ccedil;&atilde;o.<br>
+                           Queremos saber como
+                  ajudar.<BR><BR>e-mail:<BR><A
+                  href="mailto:fabio@inf.ufg.br">fabio@inf.ufg.br</A></FONT>
+
+                  <HR SIZE=1>
+                  <BR></TD></TR></TBODY></TABLE></CENTER></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+      <TD bgColor=#000066><IMG height=25 width=1 
+  border=0></TD>
+    </TR></TBODY></TABLE> 
+<BR>
+<FONT face="Verdana, Arial, Helvetica, sans-serif"
+size=-2>Assinantes podem interromper o recebimento destes informes atrav&eacute;s 
+da altera&ccedil;&atilde;o de suas <A
+href="https://www.inf.ufg.br">prefer&ecirc;ncias.<br>
+</A>Se voc&ecirc; recebe gratuitamente tais informa&ccedil;&otilde;es, ent&atilde;o 
+realize o <A
+href="http://www.inf.ufg.br">descadastramento</A>.<br>
+Para requisitar o recebimento, fa&ccedil;a o <A
+href="http://www.inf.ufg.br">cadastramento</A>. Outras quest&otilde;es, envie 
+e-mail para <A
+href="mailto:icc@inf.ufg.br">icc@inf.ufg.br</A>.<BR>
+<BR></FONT>
+</BODY> </HTML>

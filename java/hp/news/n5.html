@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Introdu&ccedil;&atilde;o &agrave; Ci&ecirc;ncia da Computa&ccedil;&atilde;o (UFG)</TITLE>
+<META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1170" name=GENERATOR></HEAD>
+<BODY>
+<TABLE width=600 border=1 cellPadding=0 cellSpacing=0 bordercolor="#003366">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+              <TD><A href="http://www.inf.ufg.br"><IMG height=70 
+            alt="Introdu" 
+            src="images/icone-icc2.gif" 
+            width=600 border=0></A></TD>
+            </TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+              <TBODY>
+              <TR>
+                        <TD><p><b><font size="3" face="Verdana,Arial,helvetica,sans-serif"><br>
+                            </font></b><FONT
+                  face=Verdana,Arial,helvetica,sans-serif
+                  size=3><b>Operador condicional</b></FONT><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><BR>
+                            <BR>
+                            O operador condicional &eacute; tern&aacute;rio. O 
+                            primeiro dos tr&ecirc;s operandos &eacute; uma express&atilde;o 
+                            do tipo <font face="Courier New, Courier, mono">boolean</font>. 
+                            As outras duas express&otilde;es ser&atilde;o avaliadas 
+                            exclusivamente, conforme a avalia&ccedil;&atilde;o 
+                            da primeira express&atilde;o. Os s&iacute;mbolos <font face="Courier New, Courier, mono">?</font> 
+                            e <font face="Courier New, Courier, mono">:</font> 
+                            s&atilde;o empregados na sintaxe deste operador conforme 
+                            o exemplo abaixo.</font> </p>
+                          <pre><font size="2" face="Courier New, Courier, mono">public class OperadorCondicional {</font><br>    public static void main(String[] args) {<br>        String s = (args.length != 0) ? &quot;SIM&quot; : &quot;NAO&quot;;<br>        System.out.println(&quot;ALGUM ARGUMENTO FOI FORNECIDO: &quot; + s);<br>    }<br>}</pre>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Nesta 
+                            classe &eacute; declarada uma vari&aacute;vel <font face="Courier New, Courier, mono">s</font> 
+                            do tipo <font face="Courier New, Courier, mono">String</font>. 
+                            O valor inicial desta vari&aacute;vel depende da execu&ccedil;&atilde;o 
+                            do operador condicional. Neste caso, se a condi&ccedil;&atilde;o 
+                            <font face="Courier New, Courier, mono">args.length 
+                            != 0</font> for verdadeira, ent&atilde;o a literal 
+                            <font face="Courier New, Courier, mono">&quot;SIM&quot;</font> 
+                            ser&aacute; referenciada por <font face="Courier New, Courier, mono">s</font>, 
+                            sen&atilde;o, a literal <font face="Courier New, Courier, mono">&quot;NAO&quot;</font> 
+                            ser&aacute; empregada. </font></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Em 
+                            geral, o operador condicional permite compactar express&otilde;es 
+                            sem que a legibilidade seja prejudicada, conforme 
+                            o exemplo abaixo. As vers&otilde;es apresentadas s&atilde;o 
+                            equivalentes do ponto de vista funcional, embora aquela 
+                            empregando o operador condicional seja menor. Muitos 
+                            provavelmente tamb&eacute;m consideram a vers&atilde;o 
+                            empregando o operador condicional mais simples e menos 
+                            propensa a erros.</font></p>
+                          <table width="75%" border="1" cellspacing="1" cellpadding="1">
+                            <tr>
+                              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Vers&atilde;o 
+                                <font face="Courier New, Courier, mono">if</font></font></td>
+                              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Vers&atilde;o 
+                                <font face="Courier New, Courier, mono">? :</font> 
+                                (operador condicional)</font></td>
+                            </tr>
+                            <tr>
+                              <td><pre><font size="2" face="Courier New, Courier, mono">public int abs(int v) {<br>    if (v &lt; 0) {<br>        return -v;<br>    } else {<br>        return v;<br>    }<br>}</font></pre></td>
+                              <td><pre><font size="2" face="Courier New, Courier, mono">public int abs(int v) {<br>    return (v &lt; 0) ? -v : v;<br>}</font></pre></td>
+                            </tr>
+                          </table>
+                          <HR SIZE=1>
+                  <BR><FONT face=Verdana,Arial,helvetica,sans-serif
+                  size=3><B>Contato</B></FONT><BR><BR>
+                          <FONT
+                  face=Verdana,Arial,helvetica,sans-serif size=2>Seus coment&aacute;rios 
+                          s&atilde;o bem-vindos, assim como sua contribui&ccedil;&atilde;o.<br>
+                           Queremos saber como
+                  ajudar.<BR><BR>e-mail:<BR><A
+                  href="mailto:fabio@inf.ufg.br">fabio@inf.ufg.br</A></FONT>
+
+                  <HR SIZE=1>
+                  <BR></TD></TR></TBODY></TABLE></CENTER></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+      <TD bgColor=#000066><IMG height=25 width=1 
+  border=0></TD>
+    </TR></TBODY></TABLE> 
+<BR>
+<FONT face="Verdana, Arial, Helvetica, sans-serif"
+size=-2>Assinantes podem interromper o recebimento destes informes atrav&eacute;s 
+da altera&ccedil;&atilde;o de suas <A
+href="https://www.inf.ufg.br">prefer&ecirc;ncias.<br>
+</A>Se voc&ecirc; recebe gratuitamente tais informa&ccedil;&otilde;es, ent&atilde;o 
+realize o <A
+href="http://www.inf.ufg.br">descadastramento</A>.<br>
+Para requisitar o recebimento, fa&ccedil;a o <A
+href="http://www.inf.ufg.br">cadastramento</A>. Outras quest&otilde;es, envie 
+e-mail para <A
+href="mailto:icc@inf.ufg.br">icc@inf.ufg.br</A>.<BR>
+<BR></FONT>
+</BODY> </HTML>

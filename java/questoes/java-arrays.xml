@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="questoes.xslt"?>
+<Avaliacao xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="questoes.xsd">
+	<identificacao>
+		<titulo>Linguagem de Programação Java</titulo>
+		<copyright>Fábio Nogueira de Lucena</copyright>
+		<versao>1.0</versao>
+	</identificacao>
+	<historico>
+		<evento data="2003-10-07">
+			<comentario>Atingido o total de 2071 questões!</comentario>
+		</evento>
+	</historico>
+
+
+<questao id="0" objetivo="1.1">
+	<introducao>O código abaixo compila satisfatoriamente.<java><![CDATA[public class Array13 {
+    public static void mostraArray(int[] array) {
+        if (array == null) {
+            return;
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        mostraArray(new int[] { 1, 2, new byte[] { 1 }[0], 4 });
+    }
+}]]></java></introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+<questao id="0" objetivo="1.1">
+	<introducao>
+	</introducao>
+	<resposta valor="v">
+	</resposta>
+</questao>
+
+</Avaliacao>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Introdu&ccedil;&atilde;o &agrave; Ci&ecirc;ncia da Computa&ccedil;&atilde;o (UFG)</TITLE>
+<META http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1170" name=GENERATOR></HEAD>
+<BODY>
+<TABLE width=600 border=1 cellPadding=0 cellSpacing=0 bordercolor="#000066">
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+              <TD><A href="http://www.inf.ufg.br"><img src="images/icone-icc3.gif" width="600" height="70"></A></TD>
+            </TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+              <TBODY>
+              <TR>
+                        <TD><p><b><font size="3" face="Verdana,Arial,helvetica,sans-serif"><br>
+                            </font></b><FONT
+                  face=Verdana,Arial,helvetica,sans-serif
+                  size=3><b>Estados de um thread</b></FONT></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Um 
+                            <em>thread </em>passa por v&aacute;rios estados. N&atilde;o 
+                            estamos interessados em filosofar sobre Java e, portanto, 
+                            o que se passa antes da cria&ccedil;&atilde;o de um 
+                            <em>thread </em>e o que se passa depois que este &eacute; 
+                            destru&iacute;do n&atilde;o &eacute; assunto tratado 
+                            neste texto. O que interessa s&atilde;o os estados 
+                            entre estes dois extremos. E eles s&atilde;o cinco: 
+                            (1) novo; (2) execut&aacute;vel; (3) executando; (4) 
+                            esperando ou bloqueado e (5) morto. </font></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">O 
+                            estado <strong>novo</strong> &eacute; obtido logo 
+                            ap&oacute;s uma inst&acirc;ncia de Thread ser criada, 
+                            mas antes que o m&eacute;todo <font face="Courier New, Courier, mono">start()</font> 
+                            seja chamado. Noutras palavras, trata-se apenas de 
+                            um objeto Thread e n&atilde;o um <em>thread </em>em 
+                            execu&ccedil;&atilde;o. </font></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">O 
+                            estado <strong>execut&aacute;vel</strong> &eacute; 
+                            aquele atingido pelo <em>thread </em>quando este encontra-se 
+                            pronto para execu&ccedil;&atilde;o. Um &uacute;nico 
+                            processador pode executar v&aacute;rios <em>threads 
+                            </em>concorrentemente. Em conseq&uuml;&ecirc;ncia, 
+                            em determinado instante de tempo, v&aacute;rios <em>threads 
+                            </em>podem estar &quot;prontos&quot; para execu&ccedil;&atilde;o, 
+                            mas apenas um pode estar em execu&ccedil;&atilde;o. 
+                            Aqueles que est&atilde;o prontos aguardam pela oportunidade 
+                            de serem executados, momento em que sai do estado 
+                            execut&aacute;vel para <strong>executando</strong>. 
+                            </font></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Um 
+                            <em>thread </em>que se encontra em execu&ccedil;&atilde;o 
+                            pode ter sua execu&ccedil;&atilde;o interrompida por 
+                            v&aacute;rios motivos. Por exemplo, o tempo dedicado 
+                            a execu&ccedil;&atilde;o do <em>thread </em>j&aacute; 
+                            foi todo consumido. Neste caso, o <em>thread </em>em 
+                            quest&atilde;o retorna para o conjunto de <em>threads 
+                            </em>execut&aacute;veis, que ficam aguardando para 
+                            serem executados. Em outros casos, o <em>thread </em>pode 
+                            executar uma opera&ccedil;&atilde;o de espera como 
+                            <font face="Courier New, Courier, mono">sleep()</font> 
+                            ou mesmo aguardar pelo t&eacute;rmino de outra opera&ccedil;&atilde;o. 
+                            Nestes casos, o <em>thread </em>em quest&atilde;o 
+                            sai do estado executando para o estado <strong>bloqueado</strong>. 
+                            </font></p>
+                          <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Um 
+                            <em>thread </em>fica no estado bloqueado at&eacute; 
+                            que a condi&ccedil;&atilde;o que o conduziu a este 
+                            estado tenha sido eliminada. Quando isto ocorre, o 
+                            <em>thread </em>n&atilde;o &eacute; conduzido novamente 
+                            para execu&ccedil;&atilde;o, mas para o estado execut&aacute;vel, 
+                            juntamente com os demais que aguardam por uma oportunidade 
+                            de usar o processador.</font></p>
+                          <HR SIZE=1>
+                          <script language="JavaScript" src="rodape.js" type="text/JavaScript"></script>
+                          <br>
+                          <HR SIZE=1>
+                  <BR></TD></TR></TBODY></TABLE></CENTER></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+      <TD bgColor=#000066><IMG height=25 width=1 
+  border=0></TD>
+    </TR></TBODY></TABLE> 
+<BR>
+<FONT face="Verdana, Arial, Helvetica, sans-serif"
+size=-2>Assinantes podem interromper o recebimento destes informes atrav&eacute;s 
+da altera&ccedil;&atilde;o de suas <A
+href="https://www.inf.ufg.br">prefer&ecirc;ncias.<br>
+</A>Se voc&ecirc; recebe gratuitamente tais informa&ccedil;&otilde;es, ent&atilde;o 
+realize o <A
+href="http://www.inf.ufg.br">descadastramento</A>.<br>
+Para requisitar o recebimento, fa&ccedil;a o <A
+href="http://www.inf.ufg.br">cadastramento</A>. Outras quest&otilde;es, envie 
+e-mail para <A
+href="mailto:icc@inf.ufg.br">icc@inf.ufg.br</A>.<BR>
+<BR></FONT>
+</BODY> </HTML>

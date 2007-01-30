@@ -1,4 +1,5 @@
-import pacote.ClasseStatic;
+package progjava.fim;
+
 public class Nested1 {
     static { new Nested1().new Inner3(); class Teste{}}
     static int x;

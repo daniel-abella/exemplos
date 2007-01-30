@@ -5,6 +5,7 @@ public class NR4 {
 	    return 1;
 	else 
 	    return 3;
-	return 2;
+	// Line below does not compile (unreachable code)
+	// return 2;
     }
 }

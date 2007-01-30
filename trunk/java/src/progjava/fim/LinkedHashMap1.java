@@ -1,3 +1,5 @@
+package progjava.fim;
+
 import java.util.*;
 
 public class LinkedHashMap1 {

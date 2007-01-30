@@ -1,3 +1,5 @@
+package progjava.misc;
+
 //package progjava.misc;
 
 // Import Enum as static member of class (1/2)

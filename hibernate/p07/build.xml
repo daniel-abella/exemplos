@@ -65,7 +65,7 @@
 		</java>
 	</target>
 
-	<target name="db-show" depends="compile">
+	<target name="db-show" depends="compile" description="exibe esquema">
 		<java classname="org.hibernate.tool.hbm2ddl.SchemaExport">
 			<arg line="--output=${build.dir}/sql.ddl --text --format --config=hibernate.cfg.xml" />
 			<classpath refid="projeto.classpath" />

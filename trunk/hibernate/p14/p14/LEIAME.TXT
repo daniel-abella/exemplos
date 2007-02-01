@@ -1,0 +1,3 @@
+Explora o acesso a informações de um objeto por meio de "propriedades" ou "compos". 
+O acesso via propriedades faz uso de métodos get/set. O acesso direto a um campo, por
+outro lado, não faz uso dos métodos get/set.

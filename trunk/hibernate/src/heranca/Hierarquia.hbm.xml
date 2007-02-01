@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="heranca">
+
+  <class name="Base" discriminator-value="DD" table="HIERARQUIA">
+  
+  	<id name="id" unsaved-value="null">
+  		<generator class="native" />
+  	</id>
+  	
+  	<discriminator column="CLASSE" type="string" />
+  	
+  	<property name="base" />
+  	
+  	<subclass name="D1" discriminator-value="D1">
+  		<property name="d1"/>
+  	</subclass>
+  	
+  	<subclass name="D2" discriminator-value="D2">
+  		<property name="d2"/>
+  	</subclass>
+  
+  </class>
+  
+</hibernate-mapping>

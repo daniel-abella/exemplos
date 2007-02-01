@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="p14" default-access="field">
+	<!-- default-acess="property" acima é desnecessário. -->
+	<!-- Este é o comportamento padrão                   -->
+	
+	<class name="Propriedade" table="p14_PROPRIEDADE">
+
+		<id name="id" type="long" unsaved-value="null">
+			<generator class="native"></generator>
+		</id>
+		
+		<!-- O atributo access é obrigatório abaixo, pois o padrão -->
+		<!-- da classe foi alterado acima para field.              -->
+		<property name="x" access="property" />
+
+	</class>
+
+</hibernate-mapping>

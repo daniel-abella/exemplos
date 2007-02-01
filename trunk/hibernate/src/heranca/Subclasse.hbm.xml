@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="heranca">
+
+  <class name="Base" table="BASE">
+  
+  	<id name="id" unsaved-value="null">
+  		<generator class="native" />
+  	</id>
+  	
+  	<property name="base" />
+  	
+  	<joined-subclass name="D1" table="TD1">
+  		<key column="d1_id"/>
+  		<property name="d1" />
+  	</joined-subclass>
+  	
+  	<joined-subclass name="D2" table="TD2">
+  		<key column="d2_id" />
+  		<property name="d2" />
+  	</joined-subclass>
+  	
+  </class>
+  
+</hibernate-mapping>

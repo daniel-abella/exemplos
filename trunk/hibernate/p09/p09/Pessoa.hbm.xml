@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="p09">
+
+	<class name="Pessoa" table="p09_PESSOA">			
+		<id name="id" type="long" unsaved-value="null">
+			<generator class="native"></generator>
+		</id>
+		
+		<!-- OBSERVAÇÕES SOBRE PROPRIEDADE ENDERECOS -->
+		<!-- cascade="save-update" assegura persistência transitiva   -->
+		
+		<!-- delete-orphan necessário caso a remoção de um endereço   -->
+		<!-- de uma pessoa represente a remoção do objeto persistente -->
+		<!-- Caso delete-orphan seja removido, então ao se remover um -->
+		<!-- endereço do conjunto de endereços de uma pessoa, este não -->
+		<!-- será automaticamente removido da base de dados.           -->
+		
+		<!-- inverse="true" diz ao Hibernate que a coleção é um espelho -->
+		<!-- de uma associação muitos-para-um do lado de Endereco. Sem  -->
+		<!-- atributo inverse, o Hibernate fará uso de 2 consultas e irá -->
+		<!-- atualizar com o mesmo valor a chave estrangeira em Endereco -->
+		<set name="enderecos" cascade="all,save-update,delete-orphan" inverse="true">
+			<key column="pessoa_id" not-null="true"/>
+			<one-to-many class="Endereco"/>
+		</set>
+
+	</class>
+
+</hibernate-mapping>

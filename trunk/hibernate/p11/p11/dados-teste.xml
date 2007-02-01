@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+
+	<table name='P11_ATLETA'>
+		<column>id</column>
+		<column>nome</column>
+		<row>
+			<value>1</value>
+			<value>fábio</value>
+		</row>
+		<row>
+			<value>2</value>
+			<value>antônio</value>
+		</row>
+	</table>
+	
+	<table name='P11_RECORDE'>
+		<column>id</column>
+		<column>data</column>
+		<column>descricao</column>
+		<column>anterior_id</column>
+		<column>atleta_id</column>
+		<row>
+			<value>30</value>
+			<value>2006-10-12</value>
+			<value>futebol</value>
+			<value>30</value>
+			<value>1</value>
+		</row>
+		<row>
+			<value>1</value>
+			<value>2006-10-13</value>
+			<value>vôlei (mais recente)</value>
+			<value>30</value>
+			<value>1</value>
+		</row>
+	</table>	
+
+	<table name='P11_RECORDE'>
+		<column>id</column>
+		<column>data</column>
+		<column>descricao</column>
+		<column>atleta_id</column>
+		<row>
+			<value>300</value>
+			<value>2006-10-12</value>
+			<value>futebol</value>
+			<value>1</value>
+		</row>
+	</table>	
+
+</dataset>

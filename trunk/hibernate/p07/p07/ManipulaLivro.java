@@ -13,14 +13,7 @@ import org.hibernate.cfg.Configuration;
 
 public class ManipulaLivro {
 	public static void main(String[] args) {
-		Livro livro = new Livro();
-		livro.setTitulo("A pergunta");
-		List<String> autores = new ArrayList<String>();
-		autores.add("Pedro");
-		autores.add("Antonio");
-		autores.add("Benevides");
-		Collections.sort(autores);
-		livro.setAutores(autores);
+		Livro livro = newLivro();
 		
 		BasicConfigurator.configure();
 		Configuration cfg = new Configuration().configure();
@@ -39,5 +32,17 @@ public class ManipulaLivro {
 			System.out.println("Removido: " + l);
 		}
 		tx.commit();		
+	}
+
+	private static Livro newLivro() {
+		Livro livro = new Livro();
+		livro.setTitulo("A pergunta");
+		List<String> autores = new ArrayList<String>();
+		autores.add("Pedro");
+		autores.add("Antonio");
+		autores.add("Benevides");
+		Collections.sort(autores);
+		livro.setAutores(autores);
+		return livro;
 	}
 }

@@ -13,10 +13,7 @@ import org.hibernate.cfg.Configuration;
 
 public class ManipulaConfiguracao {
 	public static void main(String[] args) {		
-		Locale local = new Locale("pt", "BR");
-		Configuracao c = new Configuracao();
-		c.setLocal(local);
-		c.setMoeda(Currency.getInstance(local));
+		Configuracao c = newConfiguracao();
 		
 		BasicConfigurator.configure();                       // Log4j
 		Configuration cfg = new Configuration().configure(); // hibernate.cfg.xml
@@ -39,5 +36,13 @@ public class ManipulaConfiguracao {
 		tx.commit();
 		
 		System.out.println(s.createQuery("from Configuracao").list().size());
+	}
+
+	private static Configuracao newConfiguracao() {
+		Locale local = new Locale("pt", "BR");
+		Configuracao c = new Configuracao();
+		c.setLocal(local);
+		c.setMoeda(Currency.getInstance(local));
+		return c;
 	}
 }

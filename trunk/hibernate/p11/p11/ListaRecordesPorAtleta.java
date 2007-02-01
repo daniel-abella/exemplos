@@ -4,7 +4,6 @@ import org.apache.log4j.BasicConfigurator;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class ListaRecordesPorAtleta {
@@ -18,8 +17,7 @@ public class ListaRecordesPorAtleta {
 		for (Object atleta : query.list()) {
 			System.out.println((Atleta) atleta);
 			for (Object recorde : ((Atleta) atleta).getRecordes()) {
-				System.out.print("  ");
-				System.out.println(recorde);
+				System.out.println("  " + recorde);
 			}
 		}
 		session.close();

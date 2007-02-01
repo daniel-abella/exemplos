@@ -30,6 +30,12 @@
 		<nature>org.springframework.ide.eclipse.core.springnature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
-		<nature>com.stateofflow.eclipse.metrics.MetricsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>target</name>
+			<type>2</type>
+			<location>C:/tmp/hibernate</location>
+		</link>
+	</linkedResources>
 </projectDescription>

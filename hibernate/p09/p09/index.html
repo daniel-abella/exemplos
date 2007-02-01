@@ -1,0 +1,22 @@
+<html>
+<h1>1:N (bidirecional)</h1>
+<body>
+Uma instância de <a href="Pessoa.java">Pessoa</a> está associada a zero ou mais instâncias de
+<tt>Endereco</tt>. Uma instância de <a href="Endereco.java">Endereco</a>, 
+caso exista, deve estar associada a exatamente uma instância de Pessoa. 
+A partir de uma Pessoa podemos recuperar todos os endereços correspondentes. 
+No sentido inverso, a partir de um endereço, pode-se obter diretamente 
+a quem este está associado.
+<br>
+<br>
+
+<b>Importante:</b> a classe
+Pessoa fará uso de <tt>java.util.Set</tt>
+para manter as relações com as instâncias de
+Endereco. Em conseqüência, a classe Endereco
+terá que implementar os métodos
+<tt>hashCode()</tt> e <tt>equals()</tt>.<br><br>
+<img src="modelo.png" />
+
+</body>
+</html>

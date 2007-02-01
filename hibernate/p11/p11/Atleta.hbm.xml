@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="p11">
+
+  <class name="Atleta" table="p11_ATLETA">
+  
+  	<id name="id" type="long" unsaved-value="null">
+  		<generator class="native"></generator>
+  	</id>
+  	
+  	<property name="nome" type="string"/>
+  	
+  	<set name="recordes" cascade="all">
+  		<key column="atleta_id" />
+  		<one-to-many class="Recorde" />
+  	</set>
+  	
+  </class>
+  
+  <!-- RemoveRecordes ilustra o emprego de consultas nomeadas -->
+  <query name="HQL-RecordeNãoQuebrado">
+  	<![CDATA[select r1 FROM p11.Recorde as r1 left join r1.anterior where r1.id != null]]>
+  </query>
+  
+  <sql-query name="SQL-RecordeNãoQuebrado">
+    <![CDATA[SELECT l.* FROM p11_recorde l left join p11_recorde r on l.id = r.anterior_id]]>
+    <return alias="l" class="Recorde"/>
+  </sql-query>
+  
+</hibernate-mapping>

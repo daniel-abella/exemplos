@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="p07.MegaSena" table="p07_MEGASENA">		
+		<id name="id" type="long" unsaved-value="null">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="jogo" />
+		
+		<primitive-array name="dezenas" table="p07_DEZENAS">
+			<key column="megasena_id" />
+			<index column="indice" />
+			<element type="byte" column="dezena" />
+		</primitive-array>
+
+	</class>
+
+</hibernate-mapping>

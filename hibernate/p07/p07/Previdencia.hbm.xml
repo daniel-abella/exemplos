@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="p07.Previdencia" table="p07_PREVIDENCIA">		
+        <id name="id" type="long" unsaved-value="null">
+	    <generator class="native"></generator>
+	</id>
+		
+	<property name="nome" />
+		
+	<map name="beneficiarios" table="p07_BENEFICIARIOS" lazy="true">
+	    <key column="previdencia_id" />
+	    <index column="cpf" type="string" />
+	    <element type="string" column="beneficiario" not-null="true" />
+	</map>
+		
+    </class>
+
+</hibernate-mapping>

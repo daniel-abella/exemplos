@@ -13,13 +13,7 @@ import org.hibernate.cfg.Configuration;
 
 public class ManipulaEmpresa {
 	public static void main(String[] args) {
-		Empresa emp = new Empresa();
-		emp.setNome("Kyriosdata");
-		Set<String> emails = new HashSet<String>();
-		emails.add("teste@kyriosdata.com");
-		emails.add("outro@kyriosdata.com");
-		emails.add("contato@kyriosdata.com");
-		emp.setEmails(emails);
+		Empresa emp = newEmpresa();
 		
 		BasicConfigurator.configure();                       // Log4j
 		Configuration cfg = new Configuration().configure(); // hibernate.cfg.xml
@@ -38,5 +32,16 @@ public class ManipulaEmpresa {
 			System.out.println("Removido: " + e);
 		}
 		tx.commit();	
+	}
+
+	private static Empresa newEmpresa() {
+		Empresa emp = new Empresa();
+		emp.setNome("Kyriosdata");
+		Set<String> emails = new HashSet<String>();
+		emails.add("teste@kyriosdata.com");
+		emails.add("outro@kyriosdata.com");
+		emails.add("contato@kyriosdata.com");
+		emp.setEmails(emails);
+		return emp;
 	}
 }

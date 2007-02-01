@@ -18,6 +18,6 @@ public class ClasseDaoImpl extends HibernateDaoSupport implements ClasseDao {
 	}
 	
 	public List<Classe> objetos() {
-		return (List<Classe>) getHibernateTemplate().find("from Classe");
+		return getHibernateTemplate().find("from Classe");
 	}
 }

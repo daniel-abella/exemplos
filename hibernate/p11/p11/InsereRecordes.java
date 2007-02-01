@@ -9,24 +9,13 @@ import org.hibernate.cfg.Configuration;
 public class InsereRecordes {
 	public static void main(String[] args) {		
 		// Cria primeiro recorde
-		Recorde r1 = new Recorde();
-		Calendar c = Calendar.getInstance();
-		r1.setData(c);
-		r1.setDescricao("futebol");
+		Recorde r1 = newRecorde("futebol");
 		
 		// Segundo recorde 1 hora depois
-		Recorde r2 = new Recorde();
-		c = Calendar.getInstance();
-		c.add(Calendar.HOUR, 1);     
-		r2.setData(c);
-		r2.setDescricao("basquete");
+		Recorde r2 = newRecorde("basquete");
 		
 		// Terceiro recorde 1 hora após o segundo
-		Recorde r3 = new Recorde();
-		c = Calendar.getInstance();
-		c.add(Calendar.HOUR, 2);     
-		r3.setData(c);
-		r3.setDescricao("nado");
+		Recorde r3 = newRecorde("nado");
 		
 		// Recorde r2 sucede o recorde r1
 		r2.setAnterior(r1);
@@ -37,5 +26,13 @@ public class InsereRecordes {
 		Transaction tr = s.beginTransaction();
 		s.save(r3);
 		tr.commit();
+	}
+
+	private static Recorde newRecorde(String descricao) {
+		Recorde r1 = new Recorde();
+		Calendar c = Calendar.getInstance();
+		r1.setData(c);
+		r1.setDescricao(descricao);
+		return r1;
 	}
 }

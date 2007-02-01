@@ -17,23 +17,11 @@ public class InsereAtletas {
 		SessionFactory sf = null;
 		sf = new Configuration().configure().buildSessionFactory();	
 		
-		Atleta a1 = new Atleta();
-		a1.setNome("João do Pulo");
-		
-		Atleta a2 = new Atleta();
-		a2.setNome("Ronaldinho Gaúcho");
-		
-		Recorde r1 = new Recorde();
-		Calendar c = Calendar.getInstance();
-		c.setTime(new Date());
-		r1.setData(c);
-		r1.setDescricao("futebol");
-		
-		Recorde r2 = new Recorde();
-		c = Calendar.getInstance();
-		c.setTimeInMillis(new Date().getTime() + 1000);
-		r2.setData(c);
-		r2.setDescricao("futebol");
+		Atleta a1 = newAtleta("João do Pulo");		
+		Atleta a2 = newAtleta("Ronaldinho Gaúcho");
+
+		Recorde r1 = newRecorde("futebol");
+		Recorde r2 = newRecorde("futebol");
 		r2.setAnterior(r1);
 		
 		Set<Recorde> set = new HashSet<Recorde>();
@@ -48,5 +36,20 @@ public class InsereAtletas {
 		session.save(a2);
 		tran.commit();
 		session.close();		
+	}
+
+	private static Atleta newAtleta(String atleta) {
+		Atleta a1 = new Atleta();
+		a1.setNome(atleta);
+		return a1;
+	}
+
+	private static Recorde newRecorde(String descricao) {
+		Recorde r1 = new Recorde();
+		Calendar c = Calendar.getInstance();
+		c.setTime(new Date());
+		r1.setData(c);
+		r1.setDescricao(descricao);
+		return r1;
 	}
 }

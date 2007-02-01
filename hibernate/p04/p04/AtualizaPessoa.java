@@ -6,17 +6,13 @@ public class AtualizaPessoa {
 		p.setNome("Pedro Cabral");
 		p.setCasado(true);  
 		
-		// Até aqui: p é transiente
-		// Persistida, mas desconectada em seguida
-		HibernateUtils.persiste(p);
-		
-		// Exibe conteúdo da instância persistida
-		System.out.println(p);
+		// Até aqui: p é transiente (persistida e desconectada em seguida)
+		HibernateUtils.persiste(p);		
+		System.out.println(p);	
 		
 		// p encontra-se desconectada (detached)
 		// Nenhuma ligação entre a base e p
-		p.setCasado(false);
-		
+		p.setCasado(false);		
 		HibernateUtils.startTransaction();
 		// update (ou lock) torna instância persistente
 		// Qualquer alteração em p é agendada pelo comando abaixo

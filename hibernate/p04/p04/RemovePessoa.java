@@ -28,17 +28,21 @@ public class RemovePessoa {
 		session = sf.openSession();
 		tx = session.beginTransaction();
 		Query consulta = session.createQuery("from Pessoa");
+		
+		listaPessoas(consulta);
+
+		tx.commit();
+		session.close();
+		sf.close();
+	}
+
+	private static void listaPessoas(Query consulta) {
 		List<Pessoa> resultados = consulta.list();
 		if (resultados.size() == 0) {
 			System.out.println("Nenhuma pessoa encontrada no repositório");
 		}
 		
-		for (Pessoa pes : resultados) {
+		for (Pessoa pes : resultados)
 		    System.out.println(pes);
-		}
-
-		tx.commit();
-		session.close();
-		sf.close();
 	}
 }

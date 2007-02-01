@@ -14,7 +14,7 @@
 		
 	<map name="beneficiarios" table="p07_BENEFICIARIOS" lazy="true">
 	    <key column="previdencia_id" />
-	    <index column="cpf" type="string" />
+	    <map-key column="cpf" type="string" />
 	    <element type="string" column="beneficiario" not-null="true" />
 	</map>
 		

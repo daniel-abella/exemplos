@@ -15,7 +15,8 @@
 		<set name="emails" lazy="true" table="p07_EMAILS">
 			<key column="empresa_id" />
 			<element type="string" column="email" not-null="true" />
-		</set>		
+		</set>
+				
 	</class>
 
 </hibernate-mapping>

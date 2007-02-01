@@ -30,8 +30,9 @@
 
 	<!-- Executa classe conforme comando no formato fornecido abaixo: -->
 	<!-- ant -Dclasse=<nome-da-classe> execute                        -->
-	<target name="execute" depends="compile" description="executa classe (-Dclasse=nomeClasse)">
+	<target name="execute" depends="compile" description="java X 0 1 (-Dclasse=X -Dargs='0 1')">
 		<java classname="${classe}">
+			<arg line="${args}" />
 			<classpath refid="projeto.classpath" />
 		</java>
 	</target>
@@ -79,7 +80,7 @@
 		</java>
 	</target>
 
-	<target name="db-drop" depends="compile">
+	<target name="db-drop" depends="compile" description="remove esquama do HSQLDB">
 		<java classname="org.hibernate.tool.hbm2ddl.SchemaExport">
 			<arg line="--output=${build.dir}/sql.ddl --drop --config=hibernate.cfg.xml" />
 			<classpath refid="projeto.classpath" />

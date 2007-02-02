@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="p12">
+  <class name="Candidato">
+  
+  	<id name="id" type="long">
+  		<generator class="native"></generator>
+  	</id>
+  	
+  	<many-to-one name="ps" column="PS_ID" not-null="true">
+  	</many-to-one>
+  	
+  </class>
+</hibernate-mapping>

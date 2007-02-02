@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="p02" basedir="." default="execute">
+<project name="p08" basedir="." default="execute">
 
 	<!-- ================================================================= -->
 	<!-- Define 'kad.libs' (repositório de bibliotecas do Kad)                    -->

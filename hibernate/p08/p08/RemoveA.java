@@ -19,7 +19,11 @@ public class RemoveA {
 		// Para todo B necessariamente existe um A e, portanto, 
 		// não se remove A sem remover o B correspondente
 		// Só será possível remover A para o qual não existe B
+		// AÇÃO: remova de todos os As, aqueles para os quais não existe B
 		for (B b : lb) la.remove(b.getA());		
+		
+		// Os As em la não são referenciados por nenhum B e,
+		// portanto, podem ser removidos.
 		for (A a : la) session.delete(a);
 		tr.commit();
 	}

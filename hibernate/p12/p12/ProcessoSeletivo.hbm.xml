@@ -10,7 +10,7 @@
   		<generator class="native"></generator>
   	</id>
   	
-  	<set name="candidatos" inverse="true">
+  	<set name="candidatos" inverse="true" cascade="save-update">
   		<key column="PS_ID"></key>
   		<one-to-many class="Candidato"/>
   	</set>

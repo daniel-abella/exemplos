@@ -17,7 +17,7 @@
          org.hibernate.dialect.HSQLDialect
      </property>
      
-     <property name="hibernate.generate_statistics">false</property>
+     <property name="hibernate.show_sql">false</property>
      
      <!-- Implementação de cache fornecida pelo Hibernate -->
 	 <property name="hibernate.cache.provider_class">

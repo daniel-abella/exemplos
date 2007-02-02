@@ -12,7 +12,8 @@
      <mapping resource="Empresa.hbm.xml" /> 
      <mapping resource="Livro.hbm.xml" /> 
      <mapping resource="Previdencia.hbm.xml" /> 
-     <mapping resource="MegaSena.hbm.xml" />               
+     <mapping resource="MegaSena.hbm.xml" />  
+     <mapping resource="ClasseDeElementos.hbm.xml" />             
      
   </session-factory>
 

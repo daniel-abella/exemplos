@@ -1,11 +1,12 @@
 package p12;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 public class ProcessoSeletivo {
 	private Long id;
-	private Set<Candidato> candidatos;
+	private Set<Candidato> candidatos = new HashSet<Candidato>();
 	private Date data;
 	
 	public void adicionaCandidato(Candidato c) {

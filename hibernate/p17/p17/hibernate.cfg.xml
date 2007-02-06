@@ -5,11 +5,11 @@
 
 <hibernate-configuration>
 
-   <session-factory>
- 
-      <mapping resource="Pai.hbm.xml" />
-      <mapping resource="Filho.hbm.xml" />      
+	<session-factory>
 
-  </session-factory>
+		<mapping resource="Pai.hbm.xml" />
+		<mapping resource="Filho.hbm.xml" />
+
+	</session-factory>
 
 </hibernate-configuration>

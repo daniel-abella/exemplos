@@ -2,21 +2,17 @@
 <!DOCTYPE hibernate-mapping PUBLIC
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="p17">
 
-<hibernate-mapping>
-
-	<class name="p07.Empresa" table="p07_EMPRESA">			
+	<class name="Filho">
 		<id name="id" type="long" unsaved-value="null">
 			<generator class="native"></generator>
 		</id>
 		
-		<property name="nome" />
+		<property name="nome"/>
 		
-		<set name="emails" lazy="true" table="p07_EMAILS" sort="natural">
-			<key column="empresa_id" />
-			<element type="string" column="email" not-null="true" />
-		</set>
-				
+		<many-to-one name="pai" column="PAI_ID" class="Pai"/>
+		
 	</class>
-
+	
 </hibernate-mapping>

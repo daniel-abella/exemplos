@@ -12,7 +12,7 @@ public class A {
     	nome = n;
     }
     
-	private String getNome() {
+	public String getNome() {
 		return nome;
 	}
 

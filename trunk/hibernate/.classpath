@@ -18,6 +18,7 @@
 	<classpathentry kind="src" path="p16"/>
 	<classpathentry kind="src" path="p01"/>
 	<classpathentry kind="src" path="p12"/>
+	<classpathentry kind="src" path="p17"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/kad-libs-1.0.0"/>
 	<classpathentry kind="output" path="target"/>
 </classpath>

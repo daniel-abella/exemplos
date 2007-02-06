@@ -1,8 +1,8 @@
 package p07;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.apache.log4j.BasicConfigurator;
 import org.hibernate.Criteria;
@@ -37,10 +37,12 @@ public class ManipulaEmpresa {
 	private static Empresa newEmpresa() {
 		Empresa emp = new Empresa();
 		emp.setNome("Kyriosdata");
-		Set<String> emails = new HashSet<String>();
+		Set<String> emails = new TreeSet<String>();
 		emails.add("teste@kyriosdata.com");
 		emails.add("outro@kyriosdata.com");
 		emails.add("contato@kyriosdata.com");
+		emails.add("a@kyriosdata.com");
+		emails.add("B@kyriosdata.com");
 		emp.setEmails(emails);
 		return emp;
 	}

@@ -2,7 +2,7 @@
 <project name="p18" basedir="." default="execute">
 
 	<!-- ================================================================= -->
-	<!-- Define 'kad.libs' (repositório de bibliotecas do Kad)                    -->
+	<!-- Define 'kad.libs' (repositório de bibliotecas do Kad)             -->
 	<!-- ================================================================= -->
 	<property environment="env" />
 	<property name="kad.libs" value="${env.KAD_LIBS}" />

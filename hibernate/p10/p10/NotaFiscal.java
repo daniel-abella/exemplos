@@ -25,4 +25,14 @@ public class NotaFiscal {
 	public void setItens(List<ItemNotaFiscal> itens) {
 		this.itens = itens;
 	}	
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		
+		for (ItemNotaFiscal inf : itens) {
+			sb.append(inf.toString());
+			sb.append(' ');
+		}
+		return String.format("%d (%s)", id, sb.toString());
+	}
 }

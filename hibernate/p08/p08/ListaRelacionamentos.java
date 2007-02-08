@@ -13,7 +13,7 @@ public class ListaRelacionamentos {
 		Session s = sf.openSession();		
 		List<B> lb = s.createCriteria(B.class).list();
 		for (B b : lb)
-			System.out.println(b);
+			System.out.println(b); 
 		s.close();
 	}
 }

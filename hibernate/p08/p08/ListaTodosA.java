@@ -12,8 +12,9 @@ public class ListaTodosA {
 		SessionFactory sf = cfg.buildSessionFactory();
 		Session s = sf.openSession();		
 		List<A> la = s.createCriteria(A.class).list();
-		for (A a : la)
-			System.out.println(a);
 		s.close();
+		
+		for (A a : la)
+			System.out.println(a);		
 	}
 }

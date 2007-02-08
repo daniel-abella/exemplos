@@ -6,25 +6,9 @@
 <hibernate-configuration>
 
    <session-factory>
-     <property name="hibernate.connection.driver_class">
-       org.hsqldb.jdbcDriver
-     </property>
-     <property name="hibernate.connection.url">
-       jdbc:hsqldb:hsql://localhost/kyrios-teste
-     </property>
-     <property name="hibernate.connection.username">sa</property>
-     <property name="hibernate.dialect">
-         org.hibernate.dialect.HSQLDialect
-     </property>
      
-     <property name="hibernate.generate_statistics">false</property>
-     
-     <!-- Implementação de cache fornecida pelo Hibernate -->
-	 <property name="hibernate.cache.provider_class">
-	     org.hibernate.cache.HashtableCacheProvider
-	 </property>
-     
-     <mapping resource="Classe.hbm.xml" />
+     <mapping resource="NotaFiscal.hbm.xml" />
+     <mapping resource="ItemNotaFiscal.hbm.xml" />     
      
   </session-factory>
 

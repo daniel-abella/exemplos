@@ -14,7 +14,6 @@ public class RemoveASemCuidado {
 		Session session = sf.openSession();
 		Transaction tr = session.beginTransaction();
 		List<A> la = session.createCriteria(A.class).list();
-
 		for (A a : la) session.delete(a);
 		tr.commit();
 	}

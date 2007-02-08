@@ -11,7 +11,7 @@ em aplicações de maior porte.
 INCLUI
 Projeto Eclipse e pequenos programas. Não é necessário o 
 emprego do Eclipse. Cada programa pode ser compilado e 
-executado por meio de seu próprio build file (ANT).
+executado por meio de script (build.xml) da ferramenta ANT.
 
 PRÉ-REQUISITOS
 

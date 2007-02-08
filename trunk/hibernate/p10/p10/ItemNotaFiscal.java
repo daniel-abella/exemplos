@@ -11,4 +11,8 @@ public class ItemNotaFiscal {
 		this.id = id;
 	}
 	
+	public String toString() {
+		return id.toString();
+	}
+	
 }

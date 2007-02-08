@@ -5,16 +5,17 @@
 
 <hibernate-mapping>
 
-	<class name="Classe" table="p10_CLASSE">
+	<class name="p10.NotaFiscal" table="p10_NotaFiscal">
 
-		<id name="id" type="integer" unsaved-value="null">
+		<id name="id" type="long" unsaved-value="null">
 			<generator class="native"></generator>
 		</id>
 		
-		<set name="objs">
-			<key column="nomedaclasse_id"/>
-			<one-to-many class="Classe" />
-		</set>
+	<list name="itens" cascade="save-update">
+		<key column="NOTAFISCAL_ID"></key>
+		<index column="indice"></index>
+		<one-to-many class="p10.ItemNotaFiscal"/>
+	</list>	
 
 	</class>
 

@@ -13,15 +13,13 @@ import org.hibernate.cfg.Configuration;
 
 public class ManipulaEmpresa {
 	public static void main(String[] args) {
-		Empresa emp = newEmpresa();
-		
 		BasicConfigurator.configure();                       // Log4j
 		Configuration cfg = new Configuration().configure(); // hibernate.cfg.xml
 		SessionFactory sf = cfg.buildSessionFactory();	     // fábrica de sessões
 		Session s = sf.openSession();                        // única sessão
 		
 		Transaction tx = s.beginTransaction(); // Alteração exige transação
-		s.save(emp);                           // persiste 'emp'
+		s.save(newEmpresa());                  // persiste 'emp'
 		tx.commit();
 		
 		tx = s.beginTransaction();

@@ -3,12 +3,10 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="p10">
-	<class name="ItemNotaFiscal" table="p10_ITEMNOTAFISCAL">
+	<class name="Produto" table="p10_PRODUTO">
 		<id name="id" type="long" unsaved-value="null">
 			<generator class="native"></generator>
 		</id>
-		
-		<property name="quantidade"/>		
-		<many-to-one name="produto" column="PRODUTO_ID" class="Produto"/>
+		<property name="nome" unique="true"/>
 	</class>
 </hibernate-mapping>

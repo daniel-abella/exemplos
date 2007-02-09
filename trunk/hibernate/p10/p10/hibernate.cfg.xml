@@ -8,7 +8,8 @@
    <session-factory>
      
      <mapping resource="NotaFiscal.hbm.xml" />
-     <mapping resource="ItemNotaFiscal.hbm.xml" />     
+     <mapping resource="ItemNotaFiscal.hbm.xml" /> 
+     <mapping resource="Produto.hbm.xml"/>    
      
   </session-factory>
 

@@ -13,6 +13,14 @@ public class No {
 	@ManyToOne(cascade=CascadeType.ALL)
 	private No proximo;
 	
+	private String info;
+	
+	public String getInfo() {
+		return info;
+	}
+	public void setInfo(String info) {
+		this.info = info;
+	}
 	public Long getId() {
 		return id;
 	}

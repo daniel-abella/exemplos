@@ -95,7 +95,7 @@
 	<!-- ================================================================= -->
 	<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="projeto.classpath" />
 
-	<target name="schemashow" depends="compile" description="experimental">
+	<target name="show" depends="compile" description="experimental">
 		<hibernatetool destdir="${build.dir}">
 			<classpath refid="projeto.classpath"/>
 			
@@ -105,6 +105,32 @@
 					 create="false"
 					 export="false"
 					 format="true"/>
+		</hibernatetool>
+	</target>
+
+	<target name="export" depends="compile" description="experimental">
+		<hibernatetool destdir="${build.dir}">
+			<classpath refid="projeto.classpath"/>
+			
+			<annotationconfiguration configurationfile="jpa1/hibernate.cfg.xml"/>
+			
+			<hbm2ddl drop="true"
+					 create="true"
+					 export="false"
+					 format="true"/>
+		</hibernatetool>
+	</target>
+
+	<target name="drop" depends="compile" description="experimental">
+		<hibernatetool destdir="${build.dir}">
+			<classpath refid="projeto.classpath"/>
+			
+			<annotationconfiguration configurationfile="jpa1/hibernate.cfg.xml"/>
+			
+			<hbm2ddl drop="true"
+					 create="false"
+					 export="false"
+					 format="false"/>
 		</hibernatetool>
 	</target>
 

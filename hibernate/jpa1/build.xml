@@ -25,6 +25,8 @@
 		<pathelement location="${ejb3.persistence.jar}" />
 		<pathelement location="${h.tools1.jar}" />
 		<pathelement location="${h.tools2.jar}" />
+		<pathelement location="${h.entity1.jar}" />
+		<pathelement location="${h.entity2.jar}" />		
 		<fileset dir="${hibernate.dir}/lib" includes="*.jar" />
 		<path location="${build.dir}" />
 
@@ -99,7 +101,7 @@
 		<hibernatetool destdir="${build.dir}">
 			<classpath refid="projeto.classpath"/>
 			
-			<annotationconfiguration configurationfile="jpa1/hibernate.cfg.xml"/>
+			<jpaconfiguration persistenceunit="jpa1" />
 			
 			<hbm2ddl drop="false"
 					 create="false"
@@ -112,11 +114,11 @@
 		<hibernatetool destdir="${build.dir}">
 			<classpath refid="projeto.classpath"/>
 			
-			<annotationconfiguration configurationfile="jpa1/hibernate.cfg.xml"/>
+			<jpaconfiguration persistenceunit="jpa1" />
 			
 			<hbm2ddl drop="true"
 					 create="true"
-					 export="false"
+					 export="true"
 					 format="true"/>
 		</hibernatetool>
 	</target>
@@ -125,12 +127,12 @@
 		<hibernatetool destdir="${build.dir}">
 			<classpath refid="projeto.classpath"/>
 			
-			<annotationconfiguration configurationfile="jpa1/hibernate.cfg.xml"/>
+			<jpaconfiguration persistenceunit="jpa1" />
 			
 			<hbm2ddl drop="true"
 					 create="false"
-					 export="false"
-					 format="false"/>
+					 export="true"
+					 format="true"/>
 		</hibernatetool>
 	</target>
 

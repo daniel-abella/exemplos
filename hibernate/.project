@@ -35,7 +35,7 @@
 		<link>
 			<name>target</name>
 			<type>2</type>
-			<location>C:/tmp/hibernate</location>
+			<location>/home/fabio/sourceforge/C::/tmp/hibernate</location>
 		</link>
 	</linkedResources>
 </projectDescription>

@@ -22,5 +22,5 @@
 	<classpathentry kind="src" path="p18"/>
 	<classpathentry kind="src" path="jpa1"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/kad-libs-1.0.0"/>
-	<classpathentry kind="output" path="target"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>

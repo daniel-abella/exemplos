@@ -110,7 +110,7 @@
 		</hibernatetool>
 	</target>
 
-	<target name="schema" depends="compile" description="experimental">
+	<target name="schema" depends="compile" description="export schema">
 		<hibernatetool destdir="${build.dir}">
 			<classpath refid="projeto.classpath"/>
 			
@@ -123,7 +123,7 @@
 		</hibernatetool>
 	</target>
 
-	<target name="drop" depends="compile" description="experimental">
+	<target name="drop" depends="compile" description="drop schema">
 		<hibernatetool destdir="${build.dir}">
 			<classpath refid="projeto.classpath"/>
 			

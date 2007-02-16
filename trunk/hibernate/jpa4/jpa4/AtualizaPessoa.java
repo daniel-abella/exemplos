@@ -12,7 +12,7 @@ public class AtualizaPessoa {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-		Pessoa p = (Pessoa) em.createQuery("from Pessoa").getSingleResult();
+		Pessoa p = (Pessoa) em.createQuery("from Pessoa").getResultList().get(0);
 		System.out.println(p);
 		tx.commit();
 		em.close();

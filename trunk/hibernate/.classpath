@@ -23,6 +23,7 @@
 	<classpathentry kind="src" path="jpa1"/>
 	<classpathentry kind="src" path="jpa3"/>
 	<classpathentry kind="src" path="jpa4"/>
+	<classpathentry kind="src" path="jpa7"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/kad-libs-1.0.0"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

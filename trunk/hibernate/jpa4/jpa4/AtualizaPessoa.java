@@ -10,11 +10,21 @@ public class AtualizaPessoa {
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("jpa4");
 		EntityManager em = emf.createEntityManager();
-		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-		Pessoa p = (Pessoa) em.createQuery("from Pessoa").getResultList().get(0);
-		System.out.println(p);
-		tx.commit();
+		Pessoa p1 = (Pessoa) em.createQuery("from Pessoa").getResultList().get(0);
+		System.out.println(p1);
 		em.close();
+		
+		p1.setCasado(!p1.isCasado()); // Altera estado civil
+		
+		EntityManager em2 = emf.createEntityManager();
+		EntityTransaction tx2 = em2.getTransaction();
+		tx2.begin();
+		Pessoa p2 = em2.merge(p1);
+		tx2.commit();
+		em2.close();
+		
+		EntityManager em3 = emf.createEntityManager();
+		System.out.println(em3.find(Pessoa.class, p2.getId()));
+		em3.close();
 	}
 }

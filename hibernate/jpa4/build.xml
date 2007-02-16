@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="jpa4" basedir="." default="execute">
-	
+
 	<!-- ================================================================= -->
-	<!-- Projeto Dados                                                     -->	
+	<!-- Projeto Dados                                                     -->
 	<!-- Copyright (c) 2007 Kyriosdata (r)                                 -->
 	<!--                                                                   -->
 	<!-- Pré-requisitos:                                                   -->
 	<!-- 1. Ambiente kad-libs instalado                                    -->
-	<!-- 2. Variável de ambiente KAD_LIBS devidamente definida             -->	
+	<!-- 2. Variável de ambiente KAD_LIBS devidamente definida             -->
 	<!-- ================================================================= -->
 
 	<property environment="env" />
@@ -19,7 +19,7 @@
 	<property file="${kad.libs}/kad-libs.properties" />
 
 	<property name="src.dir" location="." />
-	<property name="build.dir" location="/tmp/build"/>
+	<property name="build.dir" location="/tmp/build" />
 
 	<!-- ================================================================= -->
 	<!-- Hibernate (classpath)                                             -->
@@ -36,14 +36,25 @@
 	</path>
 
 	<!-- ================================================================= -->
-	<!-- CLASSPATH (projeto)                                               -->
+	<!-- PERSISTENCIA (classpath)                                          -->
 	<!-- ================================================================= -->
-	<path id="projeto.classpath">
+	<path id="persistencia.classpath">
 		<!-- Hibernate -->
 		<path refid="hibernate.classpath" />
 
 		<!-- Driver JDBC -->
 		<pathelement location="${hsqldb.jar}" />
+
+		<!-- DbUnit -->
+		<pathelement location="${dbunit.jar}" />
+	</path>
+	
+	<!-- ================================================================= -->
+	<!-- CLASSPATH (projeto)                                               -->
+	<!-- ================================================================= -->
+	<path id="projeto.classpath">
+		<!-- persistencia -->
+		<path refid="persistencia.classpath" />
 
 		<!-- Inclui arquivos de configuração -->
 		<path location="${ant.project.name}" />
@@ -76,7 +87,7 @@
 		</java>
 	</target>
 
-	<!-- SGBD                                                              -->	
+	<!-- SGBD                                                              -->
 	<!-- ================================================================= -->
 	<!-- db-start  : inicia SGBD de desenvolvimento                        -->
 	<!-- db-stop   : interrompe SGBD                                       -->
@@ -103,15 +114,15 @@
 
 	<target name="db-client" description="Cliente HSQLDB">
 		<java classname="org.hsqldb.util.DatabaseManagerSwing" spawn="yes" fork="yes">
-			<arg line="-url jdbc:hsqldb:hsql://localhost/kyrios-teste" />
+			<arg line="-url ${database.url}" />
 			<classpath>
 				<pathelement path="${hsqldb.jar}" />
 			</classpath>
 		</java>
 	</target>
 
-	
-	<!-- HIBERNATE                                                         -->	
+
+	<!-- HIBERNATE                                                         -->
 	<!-- ================================================================= -->
 	<!-- show   : exibe esquema da unidade de persistência                 -->
 	<!-- schema : exporta esquema da unidade de persistência para o SGBD   -->
@@ -152,17 +163,11 @@
 	<!-- ================================================================= -->
 	<!-- Alvos para o DBUnit                                               -->
 	<!-- ================================================================= -->
+	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="persistencia.classpath"/>
+
 	<target name="db-load" description="Carrega dados para teste em SGBD">
-		<!-- Se o SGBD é o SQL Server, então operation recebe MSSQL_CLEAN_INSERT -->
-		<!-- Apenas CLEAN_INSERT é usado para os demais SGBDS                    -->
-		<condition property="operation" value="MSSQL_CLEAN_INSERT" else="CLEAN_INSERT">
-			<equals arg1="${database.type}" arg2="sqlserver" />
-		</condition>
-
-		<property name="file" value="test/data/sample-data.xml" />
-
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<operation type="${operation}" src="${file}" format="xml" />
+			<operation type="INSERT" src="${data}" format="xml" />
 		</dbunit>
 	</target>
 

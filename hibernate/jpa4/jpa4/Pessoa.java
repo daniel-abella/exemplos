@@ -81,4 +81,14 @@ public class Pessoa {
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
+	
+	public static Pessoa getInstance() {
+		Pessoa p = new Pessoa();
+		p.setNome(Integer.toString((int)(Math.random() * 100)));
+		p.setCasado(false);
+		p.setNascimento(Calendar.getInstance());
+		p.setPeso(10.0f);
+		p.setSexo(Math.random() > .5 ? 'm' : 'f');
+		return p;
+	}
 }

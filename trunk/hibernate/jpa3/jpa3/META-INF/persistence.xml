@@ -4,23 +4,9 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
 		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 
-<persistence-unit name="jpa1">
-	<description>Primeiro Exemplo Usando JPA</description>
-
-	<provider>org.hibernate.ejb.HibernatePersistence</provider>
-	
-	<class>jpa1.No</class>
-	
-	<properties>
-		<property name="hibernate.archive.autodetection" value="class"/>
-		<property name="hibernate.show_sql" value="true"/>
-
-		
-		<property name="hibernate.dialect" 
-			      value="org.hibernate.dialect.HSQLDialect"/>
-			      
-	</properties>	
-	
-</persistence-unit>
+	<persistence-unit name="jpa1">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>jpa3.Pessoa</class>
+	</persistence-unit>
 
 </persistence>

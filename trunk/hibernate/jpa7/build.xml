@@ -62,8 +62,7 @@
 		<path refid="persistencia.classpath" />
 
 		<!-- Inclui arquivos de configuração -->
-		<path location="${ant.project.name}" />
-		<path location="${ant.project.name}/META-INF" />
+		<path location="${ant.project.name}/etc" />
 
 		<!-- Classes do projeto -->
 		<path location="${build.dir}" />

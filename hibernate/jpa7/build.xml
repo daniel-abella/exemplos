@@ -4,10 +4,15 @@
 	<!-- ================================================================= -->
 	<!-- Projeto Dados                                                     -->
 	<!-- Copyright (c) 2007 Kyriosdata (r)                                 -->
+	<!-- Fábio Nogueira de Lucena (fabio@kyriosdata.com.br)                -->
 	<!--                                                                   -->
 	<!-- Pré-requisitos:                                                   -->
-	<!-- 1. Ambiente kad-libs instalado                                    -->
+	<!-- 1. Ambiente kad-libs instalado (veja kyrios.sourceforge.net)      -->
 	<!-- 2. Variável de ambiente KAD_LIBS devidamente definida             -->
+	<!-- 3. Definição da variável ECLIPSE 'KAD_LIBS'                       -->
+	<!-- 4. Projeto kad-libs-1.0.0 (acompanha kad-libs)                    -->
+	<!--                                                                   -->
+	<!-- NÃO É PRECISO ALTERAR NADA A PARTIR DESTA LINHA                   -->
 	<!-- ================================================================= -->
 
 	<property environment="env" />

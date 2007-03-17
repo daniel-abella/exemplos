@@ -59,7 +59,8 @@ public abstract class EJB3IntegrationTest {
         // Deploy all EJBs found on classpath (fast, scans only build directory)
         // This is a relative location, matching the substring end of one of java.class.path locations!
         // Print out System.getProperty("java.class.path") to understand this...
-        EJB3StandaloneBootstrap.scanClasspath(scanClasspath.replace("/", File.separator));
+        // EJB3StandaloneBootstrap.scanClasspath(scanClasspath.replace("/", File.separator));
+        // Comentada linha acima (método scanClasspath foi removido)
 
         // Create InitialContext from jndi.properties
         jndi = new InitialContext();

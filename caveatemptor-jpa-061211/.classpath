@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src/java"/>
-	<classpathentry kind="lib" path="lib/dbunit-2.2-20060719.153040-1.jar"/>
-	<classpathentry kind="lib" path="lib/ejb3-persistence.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-annotations.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-entitymanager.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-tools.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate3.jar"/>
-	<classpathentry kind="lib" path="lib/jboss-ejb3-all.jar"/>
 	<classpathentry kind="lib" path="lib/testng-5.4-jdk15.jar"/>
-	<classpathentry kind="lib" path="lib/thirdparty-all.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/kad-libs-1.0.0"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

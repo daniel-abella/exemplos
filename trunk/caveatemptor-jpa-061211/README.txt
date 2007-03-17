@@ -1,3 +1,9 @@
+1. Usar JUnit para os testes
+2. Atualizar build para build.xml (jpa7)
+3. Separar domínio (model e exception) em projeto próprio
+4. Criar projeto para a persistência com os testes de persistência
+5. Criar projeto para testes de integração
+
 CaveatEmptor JPA (20061211)
 ###########################################################################
 

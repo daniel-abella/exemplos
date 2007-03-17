@@ -6,7 +6,7 @@
     <property name="version"        value="20061110"/>
 
     <!-- Global properties for this build -->
-    <property name="database.dir"           location="database"/>
+    <property name="database.dir"           location="/tmp/database"/>
     <property name="src.java.dir"           location="src/java"/>
     <property name="src.etc.dir"            location="src/etc"/>
     <property name="src.conf.dir"           location="src/etc/conf"/>

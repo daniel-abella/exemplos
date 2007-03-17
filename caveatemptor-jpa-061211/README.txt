@@ -3,6 +3,7 @@
 3. Separar domínio (model e exception) em projeto próprio
 4. Criar projeto para a persistência com os testes de persistência
 5. Criar projeto para testes de integração
+6. Fazer uso do padrão Repository. 
 
 CaveatEmptor JPA (20061211)
 ###########################################################################

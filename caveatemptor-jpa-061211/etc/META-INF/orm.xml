@@ -3,5 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_1_0.xsd"
 	version="1.0">
+	
+	<package>auction.model</package>
+
+	<entity class="Address"/>
 
 </entity-mappings>

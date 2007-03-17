@@ -143,9 +143,7 @@
 
 	<target name="show" depends="compile" description="show schema">
 		<hibernatetool destdir="${build.dir}">
-			<classpath>
-				<pathelement path="etc" />
-			</classpath>
+			<classpath refid="projeto.classpath" />
 
 			<jpaconfiguration persistenceunit="${ant.project.name}" />
 

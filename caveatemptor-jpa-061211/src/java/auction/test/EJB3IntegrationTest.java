@@ -48,7 +48,7 @@ public abstract class EJB3IntegrationTest {
 
         // Boot the JBoss Microcontainer with EJB3 settings, automatically
         // loads ejb3-interceptors-aop.xml and embedded-jboss-beans.xml
-        EJB3StandaloneBootstrap.boot(null);
+        EJB3StandaloneBootstrap.boot("");
 
         // Deploy custom stateless beans (datasource, mostly)
         EJB3StandaloneBootstrap.deployXmlResource(deployBeansXml);
@@ -59,8 +59,8 @@ public abstract class EJB3IntegrationTest {
         // Deploy all EJBs found on classpath (fast, scans only build directory)
         // This is a relative location, matching the substring end of one of java.class.path locations!
         // Print out System.getProperty("java.class.path") to understand this...
-        // EJB3StandaloneBootstrap.scanClasspath(scanClasspath.replace("/", File.separator));
-        // Comentada linha acima (método scanClasspath foi removido)
+        EJB3StandaloneBootstrap.scanClasspath(scanClasspath.replace("/", File.separator));
+        // Há versão do JBoss que não possui o método acima!!!
 
         // Create InitialContext from jndi.properties
         jndi = new InitialContext();

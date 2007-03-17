@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src/java"/>
 	<classpathentry kind="lib" path="lib/testng-5.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-ejb3-all.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/kad-libs-1.0.0"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -23,8 +23,8 @@
 	<!-- ================================================================= -->
 	<property file="${kad.libs}/kad-libs.properties" />
 
-	<property name="src.dir" location="." />
-	<property name="build.dir" location="/tmp/build" />
+	<property name="src.dir" location="src/java" />
+	<property name="build.dir" location="/tmp/xp" />
 
 	<!-- ================================================================= -->
 	<!-- Hibernate (classpath)                                             -->
@@ -53,7 +53,7 @@
 		<!-- DbUnit -->
 		<pathelement location="${dbunit.jar}" />
 	</path>
-	
+
 	<!-- ================================================================= -->
 	<!-- CLASSPATH (projeto)                                               -->
 	<!-- ================================================================= -->
@@ -66,13 +66,13 @@
 
 		<!-- Classes do projeto -->
 		<path location="${build.dir}" />
-		
+
 		<!-- EJB -->
-		<pathelement location="lib/jboss-ejb3-all.jar"/>
-		<pathelement location="lib/testng-5.4-jdk15.jar"/>
-		
+		<pathelement location="lib/jboss-ejb3-all.jar" />
+		<pathelement location="lib/testng-5.4-jdk15.jar" />
+
 		<!-- JUnit -->
-	    <pathelement location="${junit.jar}"/>
+		<pathelement location="${junit.jar}" />
 	</path>
 
 	<!-- ================================================================= -->
@@ -143,7 +143,9 @@
 
 	<target name="show" depends="compile" description="show schema">
 		<hibernatetool destdir="${build.dir}">
-			<classpath refid="projeto.classpath" />
+			<classpath>
+				<pathelement path="etc" />
+			</classpath>
 
 			<jpaconfiguration persistenceunit="${ant.project.name}" />
 
@@ -174,7 +176,7 @@
 	<!-- ================================================================= -->
 	<!-- Alvos para o DBUnit                                               -->
 	<!-- ================================================================= -->
-	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="persistencia.classpath"/>
+	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="persistencia.classpath" />
 
 	<target name="db-load" description="Carrega dados para teste em SGBD">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">

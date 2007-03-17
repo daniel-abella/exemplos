@@ -6,14 +6,13 @@
 
 	<persistence-unit name="caveat">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>auction.model.Address</class>
-
-	<!-- 
-		<properties>
-			<property name="hibernate.archive.autodetection" value="class"/>
-		</properties>
-	 -->				
-				
+		<class>auction.model.Category</class>
+		<class>auction.model.User</class>
+		<class>auction.model.BillingDetails</class>	
+		<class>auction.model.Item</class>
+		<class>auction.model.Bid</class>
+		<class>auction.model.CategorizedItem</class>
+		<class>auction.persistence</class>
 	</persistence-unit>
 
 </persistence>

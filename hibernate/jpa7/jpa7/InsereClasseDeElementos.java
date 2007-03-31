@@ -9,13 +9,15 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class InsereClasseDeElementos {
+	
 	public static void main(String[] args) {
+		ClasseDeElementos newClasseDeElementos = newClasseDeElementos();
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("jpa7");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-		em.persist(newClasseDeElementos());
+		tx.begin();		
+		em.persist(newClasseDeElementos);
 		tx.commit();
 		em.close();
 	}

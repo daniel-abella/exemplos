@@ -9,5 +9,11 @@
 		<class>jpa7.Elemento</class>
 		<class>jpa7.ClasseDeElementos</class>		
 	</persistence-unit>
+	
+	<persistence-unit name="jpa7-teste">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>jpa7.Elemento</class>
+		<class>jpa7.ClasseDeElementos</class>		
+	</persistence-unit>
 
 </persistence>

@@ -68,6 +68,7 @@
 		<path location="${build.dir}" />
 	</path>
 
+	<!-- ALVOS DE PROPÓSITO GERAL                                          -->
 	<!-- ================================================================= -->
 	<!-- clean   : apaga arquivos gerados                                  -->
 	<!-- compile : compila fontes                                          -->

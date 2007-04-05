@@ -3,7 +3,15 @@ package dominio;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Test;
+
 public class ConteinerRepositoryDefaultTest {
+	
+	@Test
+	public void criaPersisteConteiner() {
+		ConteinerRepository cr = new ConteinerRepositoryDefault();
+		cr.persiste(newConteiner());
+	}
 	
 	public static void main(String[] args) {
 		ConteinerRepository cr = new ConteinerRepositoryDefault();

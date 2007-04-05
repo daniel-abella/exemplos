@@ -1,6 +1,7 @@
-package jpa7;
+package jpa8;
 
 import java.util.List;
+
 
 public class ClasseDeElementos {
 	private Long id;

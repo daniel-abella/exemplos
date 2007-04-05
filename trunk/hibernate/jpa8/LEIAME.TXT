@@ -10,7 +10,8 @@ e (b) criando e testando a persistência da classe.
 PREPARAÇÃO DO AMBIENTE
 1. No diretório do projeto devem existir os subdiretórios abaixo:
    'etc' e 'etc/META-INF'
-2. Crie os arquivos 'persistence.xml' e 'orm.xml' em 'etc/META-INF'
+2. Crie os arquivos 'persistence.xml' (define uma unidade de persistência)
+   e 'orm.xml'. Ambos em 'etc/META-INF'
 3. O arquivo 'hibernate.properties' em 'etc' deve fornecer detalhes
    de conexão da aplicação com o sgbd.
    

@@ -12,19 +12,23 @@
 	<!-- 3. Definição da variável ECLIPSE 'KAD_LIBS'                       -->
 	<!-- 4. Projeto kad-libs-1.0.0 (acompanha kad-libs)                    -->
 	<!--                                                                   -->
-	<!-- NÃO É PRECISO ALTERAR NADA A PARTIR DESTA LINHA                   -->
 	<!-- ================================================================= -->
 
 	<property environment="env" />
 	<property name="kad.libs" value="${env.KAD_LIBS}" />
-
-	<!-- ================================================================= -->
-	<!-- Propriedades de bibliotecas do Kad                                -->
-	<!-- ================================================================= -->
 	<property file="${kad.libs}/kad-libs.properties" />
+	
+	<!-- ================================================================= -->
+	<!-- PROPRIEDADES                                                      -->
+	<!-- ================================================================= -->
 
+	<!-- Organização do código -->
 	<property name="src.dir" location="." />
 	<property name="build.dir" location="/tmp/build" />
+	
+	<!-- Unidade de persistência (persistence unit) -->
+	<property name="persistence.unit.name" value="${ant.project.name}" />
+	<property name="persistence.unit.root" value="${ant.project.name}" />
 
 	<!-- ================================================================= -->
 	<!-- Hibernate (classpath)                                             -->
@@ -62,7 +66,7 @@
 		<path refid="persistencia.classpath" />
 
 		<!-- Inclui arquivos de configuração -->
-		<path location="${ant.project.name}/etc" />
+		<path location="${persistence.unit.root}/etc" />
 
 		<!-- Classes do projeto -->
 		<path location="${build.dir}" />
@@ -129,6 +133,8 @@
 
 	<!-- HIBERNATE                                                         -->
 	<!-- ================================================================= -->
+	<!-- Usa    : persistence.unit.name                                    -->
+	<!--                                                                   -->
 	<!-- show   : exibe esquema da unidade de persistência                 -->
 	<!-- schema : exporta esquema da unidade de persistência para o SGBD   -->
 	<!-- drop   : remove do SGBD esquema da unidade de persistência        -->
@@ -139,7 +145,7 @@
 		<hibernatetool destdir="${build.dir}">
 			<classpath refid="projeto.classpath" />
 
-			<jpaconfiguration persistenceunit="${ant.project.name}" />
+			<jpaconfiguration persistenceunit="${persistence.unit.name}" />
 
 			<hbm2ddl drop="false" create="false" export="false" format="true" />
 		</hibernatetool>
@@ -149,7 +155,7 @@
 		<hibernatetool destdir="${build.dir}">
 			<classpath refid="projeto.classpath" />
 
-			<jpaconfiguration persistenceunit="${ant.project.name}" />
+			<jpaconfiguration persistenceunit="${persistence.unit.name}" />
 
 			<hbm2ddl drop="true" create="true" export="true" format="true" />
 		</hibernatetool>
@@ -159,7 +165,7 @@
 		<hibernatetool destdir="${build.dir}">
 			<classpath refid="projeto.classpath" />
 
-			<jpaconfiguration persistenceunit="${ant.project.name}" />
+			<jpaconfiguration persistenceunit="${persistence.unit.name}" />
 
 			<hbm2ddl drop="true" create="false" export="true" format="true" />
 		</hibernatetool>

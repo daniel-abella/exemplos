@@ -28,7 +28,7 @@
 	
 	<!-- Unidade de persistência (persistence unit) -->
 	<property name="persistence.unit.name" value="${ant.project.name}" />
-	<property name="persistence.unit.root" value="${ant.project.name}/etc" />
+	<property name="persistence.unit.root" value="etc" />
 
 	<!-- ================================================================= -->
 	<!-- Hibernate (classpath)                                             -->

@@ -17,7 +17,7 @@ public class ConteinerRepositoryDefault implements ConteinerRepository {
 
 	public void persiste(Conteiner conteiner) {
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("jpa7");
+				.createEntityManagerFactory("jpa8");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();		

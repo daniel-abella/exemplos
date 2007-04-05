@@ -23,8 +23,8 @@
 	<!-- ================================================================= -->
 
 	<!-- Organização do código -->
-	<property name="src.dir" location="." />
-	<property name="build.dir" location="/tmp/build" />
+	<property name="src.dir"   location="src:data:test" />
+	<property name="build.dir" location="/tmp/${ant.project.name}" />
 	
 	<!-- Unidade de persistência (persistence unit) -->
 	<property name="persistence.unit.name" value="${ant.project.name}" />

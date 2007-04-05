@@ -9,21 +9,24 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 
-public class InsereClasseDeElementos {
+public class ConteinerRepositoryDefault implements ConteinerRepository {
 	
 	public static void main(String[] args) {
-		ClasseDeElementos newClasseDeElementos = newClasseDeElementos();
+		new ConteinerRepositoryDefault().persiste(newConteiner());
+	}
+
+	public void persiste(Conteiner conteiner) {
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("jpa7");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();		
-		em.persist(newClasseDeElementos);
+		em.persist(conteiner);
 		tx.commit();
 		em.close();
 	}
 
-	private static ClasseDeElementos newClasseDeElementos() {
+	private static Conteiner newConteiner() {
 		List<Elemento> le = new ArrayList<Elemento>();
 		Elemento e = new Elemento();
 		e.setNome("a");
@@ -31,7 +34,7 @@ public class InsereClasseDeElementos {
 		e = new Elemento();
 		e.setNome("b");
 		le.add(e);
-		ClasseDeElementos ce = new ClasseDeElementos();
+		Conteiner ce = new Conteiner();
 		ce.setLista(le);		
 		return ce;
 	}

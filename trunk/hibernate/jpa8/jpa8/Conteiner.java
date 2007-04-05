@@ -3,7 +3,7 @@ package jpa8;
 import java.util.List;
 
 
-public class ClasseDeElementos {
+public class Conteiner {
 	private Long id;
 	private List<Elemento> lista;
 	

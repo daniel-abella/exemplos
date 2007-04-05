@@ -1,4 +1,4 @@
-package jpa7;
+package jpa8;
 
 public class Elemento {
 	private Long id;

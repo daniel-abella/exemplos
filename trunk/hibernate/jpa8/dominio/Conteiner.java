@@ -1,4 +1,4 @@
-package jpa8;
+package dominio;
 
 import java.util.List;
 

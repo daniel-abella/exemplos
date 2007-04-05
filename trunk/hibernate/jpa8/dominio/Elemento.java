@@ -1,4 +1,4 @@
-package jpa8;
+package dominio;
 
 public class Elemento {
 	private Long id;

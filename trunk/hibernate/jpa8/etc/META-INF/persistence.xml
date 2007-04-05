@@ -10,11 +10,5 @@
 		   Esta unidade tem efeito similar àquele abaixo.
 		</description>
 	</persistence-unit>
-	
-	<persistence-unit name="jpa8-teste">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>jpa7.Elemento</class>
-		<class>jpa7.ClasseDeElementos</class>		
-	</persistence-unit>
 
 </persistence>

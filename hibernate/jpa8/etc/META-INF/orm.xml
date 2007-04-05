@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_1_0.xsd"
 	version="1.0">
 
-	<package>jpa8</package>
+	<package>dominio</package>
 
 	<entity class="Elemento">
 		<attributes>

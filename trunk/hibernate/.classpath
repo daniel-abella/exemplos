@@ -1,33 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="src" path="jpa8/data"/>
 	<classpathentry kind="src" path="jpa8/test"/>
 	<classpathentry kind="src" path="jpa8/etc"/>
 	<classpathentry kind="src" path="jpa8/src"/>
-	<classpathentry kind="src" path="p02"/>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="p03"/>
-	<classpathentry kind="src" path="p04"/>
-	<classpathentry kind="src" path="p05"/>
-	<classpathentry kind="src" path="p06"/>
-	<classpathentry kind="src" path="p07"/>
-	<classpathentry kind="src" path="p08"/>
-	<classpathentry kind="src" path="p09"/>
-	<classpathentry kind="src" path="p10"/>
-	<classpathentry kind="src" path="p11"/>
-	<classpathentry kind="src" path="p13"/>
-	<classpathentry kind="src" path="p14"/>
-	<classpathentry kind="src" path="p15"/>
-	<classpathentry kind="src" path="p16"/>
-	<classpathentry kind="src" path="p01"/>
-	<classpathentry kind="src" path="p12"/>
-	<classpathentry kind="src" path="p17"/>
-	<classpathentry kind="src" path="p18"/>
-	<classpathentry kind="src" path="jpa1"/>
-	<classpathentry kind="src" path="jpa3"/>
-	<classpathentry kind="src" path="jpa4"/>
-	<classpathentry kind="src" path="jpa7"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/kad-libs-0.9"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

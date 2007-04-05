@@ -7,6 +7,12 @@ usando a Persistence API. Esta tarefa está dividida em dois passos
 principais: (a) preparação do ambiente (que pode já estar disponível)
 e (b) criando e testando a persistência da classe.
 
+ORGANIZAÇÃO GERAL
+- Código do domínio é fornecido no diretório 'src'
+- Código de teste no diretório 'test'
+- Código que implementa persistência em 'data'
+- A mesma estrutura de packages deve ser empregada nos dirs acima
+
 PREPARAÇÃO DO AMBIENTE
 1. No diretório do projeto devem existir os subdiretórios abaixo:
    'etc' e 'etc/META-INF'

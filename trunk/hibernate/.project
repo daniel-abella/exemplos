@@ -35,7 +35,7 @@
 		<link>
 			<name>bin</name>
 			<type>2</type>
-			<location>/tmp/xp2</location>
+			<location>C:/tmp/xp2</location>
 		</link>
 	</linkedResources>
 </projectDescription>

@@ -1,28 +1,34 @@
 Copyright (c) 2007 Kyriosdata(r)
 -----------------------------------
-PersistÃªncia de objetos em Java
+Persistência de objetos em Java
 
 Seja Classe uma classe Java cujos objetos devem ser persistidos
-usando a Persistence API. Esta tarefa estÃ¡ dividida em dois passos
-principais: (a) preparaÃ§Ã£o do ambiente (que pode jÃ¡ estar disponÃ­vel)
-e (b) criando e testando a persistÃªncia da classe.
+usando a Persistence API. Esta tarefa está dividida em dois passos
+principais: (a) preparação do ambiente (que pode já estar disponível)
+e (b) criando e testando a persistência da classe.
 
-ORGANIZAÃ‡ÃƒO GERAL
-- CÃ³digo do domÃ­nio Ã© fornecido no diretÃ³rio 'src'
-- CÃ³digo de teste no diretÃ³rio 'test'
-- CÃ³digo que implementa persistÃªncia em 'data'
+ORGANIZAÇÃO GERAL
+- Código do domínio é fornecido no diretório 'src'
+- Código de teste no diretório 'test'
+- Código que implementa persistência em 'data'
 - A mesma estrutura de packages deve ser empregada nos dirs acima
 
-PREPARAÃ‡ÃƒO DO AMBIENTE
-1. No diretÃ³rio do projeto devem existir os subdiretÃ³rios abaixo:
+OBSERVAÇõES ACERCA DA CLASSA A SER PERSISTIDA
+- Deve possuir construtor default (pelo menos com visibilidade de package)
+- Acrescentar atributo id (private Long id) para armazenar identidade do objeto
+- Eventualmente o campo version (private int version) para optimistic lock
+- Em algumas circunstâncias deve-se implementar equals() e hashCode().
+
+PREPARAÇÃO DO AMBIENTE
+1. No diretório do projeto devem existir os subdiretórios abaixo:
    'etc' e 'etc/META-INF'
-2. Crie os arquivos 'persistence.xml' (define uma unidade de persistÃªncia)
+2. Crie os arquivos 'persistence.xml' (define uma unidade de persistência)
    e 'orm.xml'. Ambos em 'etc/META-INF'
 3. O arquivo 'hibernate.properties' em 'etc' deve fornecer detalhes
-   de conexÃ£o da aplicaÃ§Ã£o com o sgbd.
+   de conexão da aplicação com o sgbd.
    
-CRIANDO E TESTANDO CÃ“DIGO DE ACESSO AOS DADOS
+CRIANDO E TESTANDO CÓDIGO DE ACESSO AOS DADOS
 1. Crie a interface 'ClasseRepository'.
-2. Acrescente os mÃ©todos necessÃ¡rios para atender requisitos da aplicaÃ§Ã£o.
+2. Acrescente os métodos necessários para atender requisitos da aplicação.
 3. Crie 'ClasseRepositoryDefault' que implementa 'ClasseRepository'.
 

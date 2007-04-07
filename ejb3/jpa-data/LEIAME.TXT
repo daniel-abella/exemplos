@@ -1,0 +1,25 @@
+Copyright (c) 2007 Kyriosdata(r)
+-----------------------------------
+Camada de persistência (exemplo)
+
+OBSERVAÇÕES:
+- Código de persistência é fornecido no diretório 'src'
+- Código de teste no diretório 'test'
+- A mesma estrutura de packages deve ser empregada nos dirs acima.
+- Em 'etc' são colocados arquivos de configuração
+- Implementa persistência da camada de negócio em outro projeto (<projeto>)
+- O nome deste projeto deve ser <projeto>-data.
+- Depende do projeto <projeto> (que implementa a camada de negócio)
+
+PREPARAÇÃO DO AMBIENTE
+1. Configuração de JPA segue no diretório 'etc/META-INF'
+2. Crie os arquivos 'persistence.xml' (define uma unidade de persistência)
+   e 'orm.xml'. Ambos em 'etc/META-INF'
+3. O arquivo 'hibernate.properties' em 'etc' deve fornecer detalhes
+   de conexão da aplicação com o sgbd.
+   
+CRIANDO E TESTANDO CÓDIGO DE ACESSO AOS DADOS
+1. Crie a interface 'ClasseRepository'.
+2. Acrescente os métodos necessários para atender requisitos da aplicação.
+3. Crie 'ClasseRepositoryDefault' que implementa 'ClasseRepository'.
+

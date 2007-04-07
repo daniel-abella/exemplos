@@ -5,8 +5,12 @@ Código de teste para camada de negócio
 OBSERVAÇÕES:
 
 - Código de teste é fornecido no diretório 'test'
+- Se a.b.X é a classe testada, então a.b.XTest é a classe de teste
+- a.b.XTest está no diretório 'test'
+- a.b.X está no diretório 'src' no projeto testado
 - Nome deste projeto deve ser <projeto>-teste, onde
   <projeto> é o identificador do projeto que contém o
   código testado por este projeto. 
 - <projeto> e <projeto>-teste podem evoluir independentemente.
+
 

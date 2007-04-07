@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="jpa8" basedir="." default="execute">
+<project name="jpa-data" basedir="." default="execute">
 
 	<!-- ================================================================= -->
 	<!-- Projeto Dados                                                     -->
 	<!-- Copyright (c) 2007 Kyriosdata (r)                                 -->
 	<!-- Fábio Nogueira de Lucena (fabio@kyriosdata.com.br)                -->
 	<!--                                                                   -->
-	<!-- Pré-requisitos:                                                   -->
-	<!-- 1. Ambiente kad-libs instalado (veja kyrios.sourceforge.net)      -->
-	<!-- 2. Variável de ambiente KAD_LIBS devidamente definida             -->
-	<!-- 3. Definição da variável ECLIPSE 'KAD_LIBS'                       -->
-	<!-- 4. Projeto kad-libs-1.0.0 (acompanha kad-libs)                    -->
-	<!--                                                                   -->
+	<!-- PRÉ-REQUISITOS:                                                   -->
+	<!-- 1. Ambiente kad-libs-0.9 instalado (veja kyrios.sourceforge.net)  -->
+	<!-- 2. Definição da variável ECLIPSE 'KAD_LIBS'                       -->
+	<!-- 3. Projeto kad-libs-0.9 (acompanha kad-libs)                      -->
+	<!-- 4. Definição do domínio (bytecodes) em 'dominio.classpath'        -->
 	<!-- ================================================================= -->
 
 	<property environment="env" />
 	<property name="kad.libs" value="${env.KAD_LIBS}" />
 	<property file="${kad.libs}/kad-libs.properties" />
-	
+
 	<!-- ================================================================= -->
 	<!-- PROPRIEDADES                                                      -->
 	<!-- ================================================================= -->
 
 	<!-- Organização do código -->
-	<property name="src.dir"   location="src:data:test" />
+	<property name="src.dir" location="src:test" />
 	<property name="build.dir" location="/tmp/${ant.project.name}" />
-	
+
 	<!-- Unidade de persistência (persistence unit) -->
 	<property name="persistence.unit.name" value="${ant.project.name}" />
 	<property name="persistence.unit.root" value="etc" />
+
+	<!-- ================================================================= -->
+	<!-- DOMÍNIO (entidades e repositórios)                                -->
+	<!-- ================================================================= -->
+	<path id="dominio.classpath">
+		<pathelement path="/tmp/jpa" />
+	</path>
 
 	<!-- ================================================================= -->
 	<!-- Hibernate (classpath)                                             -->
@@ -57,7 +63,7 @@
 		<!-- DbUnit -->
 		<pathelement location="${dbunit.jar}" />
 	</path>
-	
+
 	<!-- ================================================================= -->
 	<!-- CLASSPATH (projeto)                                               -->
 	<!-- ================================================================= -->
@@ -68,8 +74,15 @@
 		<!-- Inclui arquivos de configuração -->
 		<path location="${persistence.unit.root}" />
 
-		<!-- Classes do projeto -->
+		<!-- Classes de persistência -->
 		<path location="${build.dir}" />
+		
+		<!-- Classes de negócio (definição das entidades e repositórios -->
+		<path refid="dominio.classpath" />
+		
+		<!-- JUnit -->
+		<path location="${junit.jar}" />
+
 	</path>
 
 	<!-- ALVOS DE PROPÓSITO GERAL                                          -->
@@ -174,7 +187,7 @@
 	<!-- ================================================================= -->
 	<!-- Alvos para o DBUnit                                               -->
 	<!-- ================================================================= -->
-	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="persistencia.classpath"/>
+	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="persistencia.classpath" />
 
 	<target name="db-load" description="Carrega dados para teste em SGBD">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">

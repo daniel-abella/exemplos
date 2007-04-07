@@ -9,7 +9,7 @@ public class ConteinerRepositoryDefault implements ConteinerRepository {
 
 	public void persiste(Conteiner conteiner) {
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("jpa8");
+				.createEntityManagerFactory("jpa-data");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();		

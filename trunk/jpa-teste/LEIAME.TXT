@@ -1,0 +1,12 @@
+Copyright (c) 2007 Kyriosdata(r)
+-----------------------------------
+Código de teste para camada de negócio
+
+OBSERVAÇÕES:
+
+- Código de teste é fornecido no diretório 'test'
+- Nome deste projeto deve ser <projeto>-teste, onde
+  <projeto> é o identificador do projeto que contém o
+  código testado por este projeto. 
+- <projeto> e <projeto>-teste podem evoluir independentemente.
+

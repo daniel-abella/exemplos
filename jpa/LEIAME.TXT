@@ -1,5 +1,14 @@
 Copyright (c) 2007 Kyriosdata(r)
 -----------------------------------
-Persistência de objetos em Java
-(projeto da camada de negócio)
+Camada de negócio (exemplo)
 
+OBSERVAÇÕES:
+- Código fonte é fornecido no diretório 'src'
+- Não inclui código de teste.
+- Código de teste é fornecido em projeto isolado.
+
+PARA CADA CLASSE A SER PERSISTIDA VERIFIQUE SE POSSUI:
+- construtor default (pelo menos com visibilidade de package)
+- atributo id (private Long id) para armazenar identidade do objeto
+- o campo version (private int version) para optimistic lock
+- implementação (overriding) dos métodos equals() e hashCode() (em alguns casos).

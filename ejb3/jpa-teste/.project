@@ -18,7 +18,7 @@
 		<link>
 			<name>target</name>
 			<type>2</type>
-			<location>C:/tmp/jpa-teste</location>
+			<location>/tmp/jpa-teste</location>
 		</link>
 	</linkedResources>
 </projectDescription>

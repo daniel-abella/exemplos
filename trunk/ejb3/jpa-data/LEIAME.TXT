@@ -7,7 +7,7 @@ OBSERVAÇÕES:
 - Código de teste no diretório 'test'
 - A mesma estrutura de packages deve ser empregada nos dirs acima.
 - Em 'etc' são colocados arquivos de configuração
-- Implementa persistência da camada de negócio em outro projeto (<projeto>)
+- Implementa persistência do negócio fornecido em outro projeto (<projeto>)
 - O nome deste projeto deve ser <projeto>-data.
 - Depende do projeto <projeto> (que implementa a camada de negócio)
 
@@ -19,7 +19,10 @@ PREPARAÇÃO DO AMBIENTE
    de conexão da aplicação com o sgbd.
    
 CRIANDO E TESTANDO CÓDIGO DE ACESSO AOS DADOS
-1. Crie a interface 'ClasseRepository'.
+1. Para a interface 'ClasseRepository' crie a 
+   implementação 'ClasseRepositoryDefault'. A implementação 'Default' faz
+   uso de JPA (NECESSARIAMENTE!). Uma implementação que faz uso de recursos
+   exclusivos do Hibernate deve ser chamada 'ClasseRepositoryHibernate'.
 2. Acrescente os métodos necessários para atender requisitos da aplicação.
-3. Crie 'ClasseRepositoryDefault' que implementa 'ClasseRepository'.
+
 

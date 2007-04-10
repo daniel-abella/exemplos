@@ -18,4 +18,9 @@ public class ConteinerRepositoryDefault implements ConteinerRepository {
 		em.close();
 	}
 
+	public Conteiner obtem(String nome) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

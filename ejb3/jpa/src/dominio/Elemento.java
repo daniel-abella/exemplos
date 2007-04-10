@@ -4,6 +4,11 @@ public class Elemento {
 	private Long id;
 	private String nome;
 	
+	public Elemento() {}
+	
+	public Elemento(String nome) {
+		this.nome = nome;
+	}
 	public Long getId() {
 		return id;
 	}

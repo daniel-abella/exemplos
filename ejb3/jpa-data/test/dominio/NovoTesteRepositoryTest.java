@@ -3,6 +3,12 @@ package dominio;
 import org.springframework.test.jpa.AbstractJpaTests;
 
 public class NovoTesteRepositoryTest extends AbstractJpaTests {
+	
+	@Override
+	protected String[] getConfigLocations() {
+		return new String[] { "classpath:applicationContext.xml" };
+	}
+
 	private ConteinerRepository cr;
 	
 	public ConteinerRepository getCr() {

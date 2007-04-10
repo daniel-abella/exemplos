@@ -2,7 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/kad-libs-0.9"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jpa"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/servicos"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/kad-libs-0.9"/>
 	<classpathentry kind="output" path="target"/>
 </classpath>

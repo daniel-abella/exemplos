@@ -2,11 +2,16 @@ package dominio;
 
 import java.util.List;
 
-
 public class Conteiner {
 	private Long id;
 	private List<Elemento> lista;
 	private String nome;
+	
+	public Conteiner() {}
+	
+	public Conteiner(String nome) {
+		setNome(nome);
+	}
 	
 	public String getNome() {
 		return nome;

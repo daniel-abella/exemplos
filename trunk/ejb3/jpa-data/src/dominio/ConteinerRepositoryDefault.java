@@ -1,26 +1,32 @@
 package dominio;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 public class ConteinerRepositoryDefault implements ConteinerRepository {
+	
+	@PersistenceContext
+    private EntityManager em;
 
 	public void persiste(Conteiner conteiner) {
-		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("jpa-data");
-		EntityManager em = emf.createEntityManager();
-		EntityTransaction tx = em.getTransaction();
-		tx.begin();		
 		em.persist(conteiner);
-		tx.commit();
-		em.close();
 	}
 
 	public Conteiner obtem(String nome) {
-		// TODO Auto-generated method stub
-		return null;
+		Query q = em.createNamedQuery("encontrePorNome");
+		q.setParameter("nome", nome);
+		List<Conteiner> lc = q.getResultList();
+		return lc.size() != 0 ? lc.get(0) : null;
 	}
-
+	
+	public void remove(Conteiner obj) {
+		em.remove(obj);
+	}
+	
+	public void atualiza(Conteiner obj) {
+		em.merge(obj);
+	}
 }

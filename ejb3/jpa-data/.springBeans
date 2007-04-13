@@ -4,6 +4,7 @@
 		<configExtension>xml</configExtension>
 	</configExtensions>
 	<configs>
+		<config>etc/db-beans-teste.xml</config>
 	</configs>
 	<configSets>
 	</configSets>

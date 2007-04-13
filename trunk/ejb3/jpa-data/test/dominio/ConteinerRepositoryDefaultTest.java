@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.test.annotation.Repeat;
 import org.springframework.test.jpa.AbstractJpaTests;
 
-public class NovoTesteRepositoryTest extends AbstractJpaTests {
+public class ConteinerRepositoryDefaultTest extends AbstractJpaTests {
 	
 	@Override
 	protected String[] getConfigLocations() {
@@ -19,7 +19,7 @@ public class NovoTesteRepositoryTest extends AbstractJpaTests {
 		this.cr = cr;
 	}
 
-	public NovoTesteRepositoryTest() {
+	public ConteinerRepositoryDefaultTest() {
 		setDefaultRollback(false);
 	}
 	

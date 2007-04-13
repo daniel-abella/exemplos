@@ -2,6 +2,14 @@ Copyright (c) 2007 Kyriosdata(r)
 -----------------------------------
 Camada de negócio (exemplo)
 
+DESCRIÇÃO: Conteiner é uma entidade que possui um nome e uma lista de 
+           instâncias de Elemento. Cada Elemento possui um nome. 
+           ConteinerService implementa um serviço que, dado o nome de 
+           um Conteiner, o objeto correspondente é localizado no 
+           repositório (ConteinerRespository) e todos os nomes das 
+           instâncias de Elemento são convertidos para letras
+           maiúsculas.
+
 OBSERVAÇÕES:
 - Código fonte é fornecido no diretório 'src'
 - Não inclui código de teste.

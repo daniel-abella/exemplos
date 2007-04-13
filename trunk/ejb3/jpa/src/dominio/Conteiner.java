@@ -22,6 +22,8 @@ public class Conteiner {
 	public Long getId() {
 		return id;
 	}
+	
+	@SuppressWarnings("unused")
 	private void setId(Long id) {
 		this.id = id;
 	}

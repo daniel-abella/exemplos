@@ -15,6 +15,7 @@ public class ConteinerRepositoryDefault implements ConteinerRepository {
 		em.persist(conteiner);
 	}
 
+	@SuppressWarnings("unchecked")
 	public Conteiner obtem(String nome) {
 		Query q = em.createNamedQuery("encontrePorNome");
 		q.setParameter("nome", nome);

@@ -3,7 +3,6 @@ package dominio;
 import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.test.annotation.Repeat;
 import org.springframework.test.jpa.AbstractJpaTests;
 
@@ -11,7 +10,7 @@ public class NovoTesteRepositoryTest extends AbstractJpaTests {
 	
 	@Override
 	protected String[] getConfigLocations() {
-		return new String[] { "classpath:applicationContext.xml" };
+		return new String[] { "classpath:db-beans-teste.xml" };
 	}
 
 	private ConteinerRepository cr;
@@ -48,7 +47,7 @@ public class NovoTesteRepositoryTest extends AbstractJpaTests {
 	}
 
 	@Repeat(5)
-	public void testInsere5Conteineres() {
+	public void testInsere10Conteineres() {
 		Conteiner c = newConteiner();
 		cr.persiste(c);
 		assertTrue(true);

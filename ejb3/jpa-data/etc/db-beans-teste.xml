@@ -10,12 +10,8 @@
 	<bean
 		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 
-	<!-- Configura fonte de dados (dataSource)           -->
-	<!-- Faz uso de propertyConfigurer para propriedades -->
-	<!-- obtidas de arquivo 'db.properties'              -->
-	
-
-
+	<!-- Configura fonte de dados (dataSource) -->
+	<!-- Exigência de AbstractJpaTests         -->
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close"/>

@@ -3,6 +3,7 @@ package dominio;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.test.annotation.Repeat;
 import org.springframework.test.jpa.AbstractJpaTests;
 
@@ -46,8 +47,8 @@ public class NovoTesteRepositoryTest extends AbstractJpaTests {
 		assertNotNull(cr.obtem("55"));
 	}
 
-	@Repeat(10)
-	public void testInsere10Conteineres() {
+	@Repeat(5)
+	public void testInsere5Conteineres() {
 		Conteiner c = newConteiner();
 		cr.persiste(c);
 		assertTrue(true);

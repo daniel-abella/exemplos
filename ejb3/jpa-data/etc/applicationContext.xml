@@ -4,27 +4,28 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
-	<bean id="cr" class="dominio.ConteinerRepositoryDefault"/>
-	
-	<!-- JPA annotations bean post processor -->
-  <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+	<bean id="cr" class="dominio.ConteinerRepositoryDefault" />
 
-	<!-- Configura fonte de dados via DBCP (Apache DBCP) -->
+	<!-- JPA annotations bean post processor -->
+	<bean
+		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+	<!-- Configura fonte de dados (dataSource)           -->
+	<!-- Faz uso de propertyConfigurer para propriedades -->
+	<!-- obtidas de arquivo 'db.properties'              -->
+	
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="db.properties" />
+	</bean>
+
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
-		<property name="driverClassName">
-			<value>org.hsqldb.jdbcDriver</value>
-		</property>
-		<property name="url">
-			<value>jdbc:hsqldb:hsql://localhost/kyrios-teste</value>
-		</property>
-		<property name="username">
-			<value>sa</value>
-		</property>
-		<property name="password">
-			<value></value>
-		</property>
+		<property name="driverClassName" value="${driverClassName}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
 	</bean>
 
 	<bean id="entityManagerFactory"

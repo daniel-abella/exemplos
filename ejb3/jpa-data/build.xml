@@ -30,7 +30,7 @@
 	<property name="persistence.unit.root" value="etc" />
 
 	<!-- ================================================================= -->
-	<!-- DOMÍNIO (entidades e repositórios)                                -->
+	<!-- DOMÍNIO (entidades e interfaces dos repositórios)                 -->
 	<!-- ================================================================= -->
 	<path id="dominio.classpath">
 		<pathelement path="/tmp/jpa" />

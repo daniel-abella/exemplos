@@ -6,7 +6,9 @@ OBSERVAÇÕES:
 - Código de persistência é fornecido no diretório 'src'
 - Código de teste no diretório 'test'
 - A mesma estrutura de packages deve ser empregada nos dirs acima.
-- Em 'etc' são colocados arquivos de configuração
+- Em 'etc' são colocados arquivos de configuração (log4j, spring e raiz da unidade
+  de persistência, ou seja, contém o diretório META-INF onde se encontra
+  persistence.xml)
 - Implementa persistência do negócio fornecido em outro projeto (<projeto>)
 - O nome deste projeto deve ser <projeto>-data.
 - Depende do projeto <projeto> (que implementa a camada de negócio)
@@ -24,5 +26,10 @@ CRIANDO E TESTANDO CÓDIGO DE ACESSO AOS DADOS
    uso de JPA (NECESSARIAMENTE!). Uma implementação que faz uso de recursos
    exclusivos do Hibernate deve ser chamada 'ClasseRepositoryHibernate'.
 2. Acrescente os métodos necessários para atender requisitos da aplicação.
+
+PARA EXECUÇÃO DOS TESTES
+1. ant db-start
+2. ant schema
+3. Execute os testes de unidade.
 
 

@@ -110,12 +110,29 @@
 	</target>
 
 	<!-- SGBD                                                              -->
+	<!-- Assume que 'kyrios-teste' é o nome da base de dados               -->
 	<!-- ================================================================= -->
+	<!-- db-clean  : Limpa HSQLDB (kyrios-teste)                           -->
+	<!-- db-client : inicia cliente para interação com SGBD                -->	
 	<!-- db-start  : inicia SGBD de desenvolvimento                        -->
 	<!-- db-stop   : interrompe SGBD                                       -->
-	<!-- db-client : inicia cliente para interação com SGBD                -->
 	<!-- ================================================================= -->
 
+	<target name="db-clean" description="Limpa HSQLDB (kyrios-teste)" depends="db-stop">
+		<delete>
+			<fileset dir="/tmp" includes="kyrios-teste.*"/>
+		</delete>
+	</target>
+		
+	<target name="db-client" description="Cliente HSQLDB">
+		<java classname="org.hsqldb.util.DatabaseManagerSwing" spawn="yes" fork="yes">
+			<arg line="-url ${database.url}" />
+			<classpath>
+				<pathelement path="${hsqldb.jar}" />
+			</classpath>
+		</java>
+	</target>
+		
 	<target name="db-start" description="inicia HSQLDB (kyrios-teste)">
 		<java classname="org.hsqldb.Server" spawn="yes" fork="yes">
 			<jvmarg value="-Duser.dir=${kad.libs}" />
@@ -130,15 +147,6 @@
 			<classpath>
 				<pathelement path="${kad.libs}/bin/kyTools.jar" />
 				<path refid="projeto.classpath" />
-			</classpath>
-		</java>
-	</target>
-
-	<target name="db-client" description="Cliente HSQLDB">
-		<java classname="org.hsqldb.util.DatabaseManagerSwing" spawn="yes" fork="yes">
-			<arg line="-url ${database.url}" />
-			<classpath>
-				<pathelement path="${hsqldb.jar}" />
 			</classpath>
 		</java>
 	</target>

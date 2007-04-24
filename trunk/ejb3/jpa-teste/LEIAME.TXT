@@ -4,6 +4,9 @@ Código de teste para camada de negócio
 
 OBSERVAÇÕES:
 
+- Exige emprego de JMock para testar código que faz uso de 
+  repositories. Lembrete: a implementação de repositórios faz
+  parte da persistência e não da camada de domínio.
 - Projeto de teste (<projeto>-teste)
 - Projeto testado (<projeto>)
 - Código de teste é fornecido no diretório 'test'

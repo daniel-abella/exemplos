@@ -1,0 +1,26 @@
+Processo para criação de teste 
+--------------------------------
+
+1. Crie uma ou mais classes contendo testes
+   1.1 A classe deve estender 'j2meunit.framework.TestCase'
+   1.2 Crie explicitamente o construtor default
+   1.3 Crie construtor Classe(String str, TestMethod tm).
+       Este construtor executa chamada a 'super(str,tm)'
+   1.4 Crie métodos que executam os testes.
+       Estes métodos devem conter sentenças 'assert*'
+   1.5 Crie o método 'Test suite()'
+       'suite()' deve incluir os métodos de teste (item 1.4)
+       As classes 'Teste1' e 'Teste2' fornecem exemplos.
+   
+2. Crie classe que executa os testes de unidade (MIDLet)
+   2.1 A classe deve estender 'j2meunit.framework.TestRunner'
+   2.2 Crie o método 'startApp()' conforme ilustrado em 'MidletTeste'
+   
+3. Crie classe que executa os testes de unidade (CONSOLE)
+   3.1 Esta classe também é um 'TestCase'
+   3.2 Crie o construtor default
+   3.3 Crie o construtor Classe(String str, TestMethod tm)
+       Este construtor faz apenas a chamada a 'super(str,tm)'
+   3.4 Crie o método 'Test suite()'
+       Conforme ilustrado na classe 'ConsoleTestes'
+   3.2 Execute 'TestRunner.main(new String[] { "exemplo.ConsoleTestes" })'

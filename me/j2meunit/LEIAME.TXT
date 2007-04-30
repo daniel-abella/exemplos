@@ -1,5 +1,6 @@
-Processo para criação de teste 
---------------------------------
+Copyright (c) 2007 Kyriosdata(r)
+-----------------------------------
+Testes de unidade para PDAs
 
 1. Crie uma ou mais classes contendo testes
    1.1 A classe deve estender 'j2meunit.framework.TestCase'

@@ -16,6 +16,10 @@ Testes de unidade para PDAs
 2. Crie classe que executa os testes de unidade (MIDLet)
    2.1 A classe deve estender 'j2meunit.framework.TestRunner'
    2.2 Crie o método 'startApp()' conforme ilustrado em 'MidletTeste'
+   2.3 Implantar (deployment)
+       - Clique com o botão direito no projeto
+       - Selecione J2ME e, em seguida, 'Create package'. 
+       - O jar file desejado será criado no diretório 'deployed'.
    
 3. Crie classe que executa os testes de unidade (CONSOLE)
    3.1 Esta classe também é um 'TestCase'
@@ -25,3 +29,4 @@ Testes de unidade para PDAs
    3.4 Crie o método 'Test suite()'
        Conforme ilustrado na classe 'ConsoleTestes'
    3.2 Execute 'TestRunner.main(new String[] { "exemplo.ConsoleTestes" })'
+   

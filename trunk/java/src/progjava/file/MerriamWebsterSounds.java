@@ -28,20 +28,13 @@ import java.util.regex.Pattern;
  * 
  */
 public class MerriamWebsterSounds {
+	private static int totalWords = 0;
+	
 	public static List<String> getWords(String base, String file) {
-		System.out.print(file + "...");
+		System.out.print(base + file + "...");
 		List<String> list = new ArrayList<String>();
 		try {
-			URL url = new URL(base + file);
-			InputStreamReader isr = new InputStreamReader(url.openStream());
-			BufferedReader br = new BufferedReader(isr);
-			StringBuilder sb = new StringBuilder();
-			String linha = null;
-			while ((linha = br.readLine()) != null) {
-				sb.append(linha);
-			}
-			br.close();
-			String data = sb.toString();
+			String data = getUrlAsString(base, file);
 			Pattern p = Pattern.compile("<li>.*?</li>");
 			Matcher m = p.matcher(data);
 			while (m.find()) {
@@ -52,34 +45,56 @@ public class MerriamWebsterSounds {
 		} catch (Exception e) {
 			return null;
 		}
-		System.out.printf("(%d)\n", list.size());
+		
+		totalWords += list.size();
+		System.out.printf(" (%d)\n", list.size());
 		return list;
 	}
 
-	public static void main(String[] args) {
-		// FASE 1
+	public static String getUrlAsString(String base, String file) throws MalformedURLException, IOException {
+		URL url = new URL(base + file);
+		InputStreamReader isr = new InputStreamReader(url.openStream());
+		BufferedReader br = new BufferedReader(isr);
+		StringBuilder sb = new StringBuilder();
+		String linha = null;
+		while ((linha = br.readLine()) != null) {
+			sb.append(linha);
+		}
+		br.close();
+		String data = sb.toString();
+		return data;
+	}
+
+	public static void getMostFrequentUsedWords() {
 		// Obter lista de palavras (persistir em arquivo local)
 		// -- Obter primeira parte (listar de arraylist)
-		// String base = "http://www.paulnoll.com/Books/Clear-English/";
-		// String formato = "words-%02d-%02d-hundred.html";
-		// List<String> allWords = new ArrayList<String>();
-		// for (int i = 1; i < 30; i += 2) {
-		// allWords.addAll(getWords(base, String.format(formato, i, i+1)));
-		// }
-		// saveList(allWords);
+		String base = "http://www.paulnoll.com/Books/Clear-English/";
+		String formato = "words-%02d-%02d-hundred.html";
+		List<String> allWords = new ArrayList<String>();
+		for (int i = 1; i < 30; i += 2) {
+			allWords.addAll(getWords(base, String.format(formato, i, i + 1)));
+		}
+		saveList(allWords);
+	}
+
+	public static void main(String[] args) {
+		getMostFrequentUsedWords();
+		System.out.println(totalWords);
+		
+		// FASE 1
 
 		// FASE 2
 		// Para cada palavra da lista
 		// -- Obter arquivo de som
 		// -- persistir indicacao de que a palavra foi recuperada
 
-		List<String> words = loadList("/tmp/english-words.txt");
-		for (String word : words) {
-			System.out.print("\n" + word);
-			if (new File("/tmp/sounds/" + word + ".wav").exists())
-				continue;
-			getSoundFile(word, "/tmp/sounds");			
-		}
+		// List<String> words = loadList("/tmp/english-words.txt");
+		// for (String word : words) {
+		// System.out.print("\n" + word);
+		// if (new File("/tmp/sounds/" + word + ".wav").exists())
+		// continue;
+		// getSoundFile(word, "/tmp/sounds");
+		// }
 	}
 
 	static String getUrlOfSoundPage(String word) {
@@ -103,7 +118,7 @@ public class MerriamWebsterSounds {
 		} catch (Exception e) {
 			return null;
 		}
-		
+
 		try {
 			urlSound = matcher.group();
 		} catch (RuntimeException e) {

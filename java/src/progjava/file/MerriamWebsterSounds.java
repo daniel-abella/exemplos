@@ -65,20 +65,20 @@ public class MerriamWebsterSounds {
 		return data;
 	}
 
-	public static void getMostFrequentUsedWords() {
-		// Obter lista de palavras (persistir em arquivo local)
-		// -- Obter primeira parte (listar de arraylist)
+	public static List<String> getMostFrequentlyUsedWords() {
 		String base = "http://www.paulnoll.com/Books/Clear-English/";
 		String formato = "words-%02d-%02d-hundred.html";
 		List<String> allWords = new ArrayList<String>();
 		for (int i = 1; i < 30; i += 2) {
 			allWords.addAll(getWords(base, String.format(formato, i, i + 1)));
 		}
-		saveList(allWords);
+		return allWords;
 	}
 
 	public static void main(String[] args) {
-		getMostFrequentUsedWords();
+		List<String> allWords = getMostFrequentlyUsedWords();
+		saveList(allWords);
+		System.out.println(allWords.size());
 		System.out.println(totalWords);
 		
 		// FASE 1

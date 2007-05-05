@@ -1,7 +1,0 @@
-MIDlet-Name: midlet1 MIDlet Suite
-MIDlet-Version: 1.0.0
-MIDlet-Vendor: eclipse.org
-MIDlet-Jar-Size:
-MIDlet-Jar-URL: midlet1.jar
-MicroEdition-Profile: MIDP-2.0
-MicroEdition-Configuration: CLDC-1.1

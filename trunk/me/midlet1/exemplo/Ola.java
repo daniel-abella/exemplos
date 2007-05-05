@@ -1,7 +1,5 @@
 package exemplo;
 
-import java.util.Calendar;
-
 import javax.microedition.lcdui.Display;
 import javax.microedition.lcdui.Form;
 import javax.microedition.midlet.MIDlet;
@@ -26,7 +24,6 @@ public class Ola extends MIDlet {
 		form = new Form("Kyriosdata");
 		form.append("Kyrios Software\n");
 
-		Calendar c = Calendar.getInstance();
 		for (int i = 0; i < 20; i++)
 			form.append("teste " + i + "\n");
 		Display.getDisplay(this).setCurrent(form);

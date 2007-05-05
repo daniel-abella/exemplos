@@ -20,8 +20,6 @@ public class Ola extends MIDlet {
 	}
 
 	protected void pauseApp() {
-		// TODO Auto-generated method stub
-
 	}
 
 	protected void startApp() throws MIDletStateChangeException {

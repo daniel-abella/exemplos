@@ -33,5 +33,4 @@ public class Ola extends MIDlet {
 			form.append("teste " + i + "\n");
 		Display.getDisplay(this).setCurrent(form);
 	}
-
 }

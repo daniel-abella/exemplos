@@ -11,8 +11,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Enumeration;
+import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,10 +29,10 @@ import java.util.regex.Pattern;
  */
 public class MerriamWebsterSounds {
 	private static int totalWords = 0;
-	
-	public static List<String> getWords(String base, String file) {
+
+	public static Vector getWords(String base, String file) {
 		System.out.print(base + file + "...");
-		List<String> list = new ArrayList<String>();
+		Vector list = new Vector();
 		try {
 			String data = getUrlAsString(base, file);
 			Pattern p = Pattern.compile("<li>.*?</li>");
@@ -45,42 +45,66 @@ public class MerriamWebsterSounds {
 		} catch (Exception e) {
 			return null;
 		}
-		
+
 		totalWords += list.size();
 		System.out.printf(" (%d)\n", list.size());
 		return list;
 	}
 
-	public static String getUrlAsString(String base, String file) throws MalformedURLException, IOException {
+	public static String getUrlAsString(String base, String file)
+			throws MalformedURLException, IOException {
+		StringBuffer sb = new StringBuffer();
 		URL url = new URL(base + file);
-		InputStreamReader isr = new InputStreamReader(url.openStream());
+		InputStream is = url.openStream();
+		InputStreamReader isr = new InputStreamReader(is, "iso-8859-1");
 		BufferedReader br = new BufferedReader(isr);
-		StringBuilder sb = new StringBuilder();
 		String linha = null;
 		while ((linha = br.readLine()) != null) {
 			sb.append(linha);
 		}
 		br.close();
-		String data = sb.toString();
-		return data;
+		return sb.toString();
 	}
 
-	public static List<String> getMostFrequentlyUsedWords() {
+	public static String getUrlAsStringMe(String base, String file)
+			throws MalformedURLException, IOException {
+		StringBuffer sb = new StringBuffer();
+		URL url = new URL(base + file);
+		InputStream is = url.openStream();
+		InputStreamReader isr = new InputStreamReader(is, "iso-8859-1");
+		int character = -1;
+		while ((character = isr.read()) != -1) {
+			if (((char) character) != '\n')
+				sb.append((char) character);
+		}
+		isr.close();
+		return sb.toString();
+	}
+
+	public static Vector getMostFrequentlyUsedWords() {
 		String base = "http://www.paulnoll.com/Books/Clear-English/";
-		String formato = "words-%02d-%02d-hundred.html";
-		List<String> allWords = new ArrayList<String>();
+		String formato = "words-";
+		Vector allWords = new Vector();
 		for (int i = 1; i < 30; i += 2) {
-			allWords.addAll(getWords(base, String.format(formato, i, i + 1)));
+			formato += ((i < 10) ? "0" + i : i) + "-";
+			formato += (i + 1) < 10 ? "0" + (i + 1) : (i + 1);
+			formato += "-hundred.html";
+			Vector words = getWords(base, formato);
+			formato = "words-";
+			Enumeration vector_words = words.elements();
+			while (vector_words.hasMoreElements()) {
+				allWords.addElement(vector_words.nextElement());
+			}
 		}
 		return allWords;
 	}
 
 	public static void main(String[] args) {
-		List<String> allWords = getMostFrequentlyUsedWords();
-		saveList(allWords);
+		Vector allWords = getMostFrequentlyUsedWords();
+		saveList(allWords, "/tmp/english-words.txt");
 		System.out.println(allWords.size());
 		System.out.println(totalWords);
-		
+
 		// FASE 1
 
 		// FASE 2
@@ -187,11 +211,12 @@ public class MerriamWebsterSounds {
 		return matcher.group();
 	}
 
-	public static void saveList(List<?> lista) {
+	public static void saveList(Vector lista, String arquivo) {
 		try {
-			PrintWriter pw = new PrintWriter("/tmp/english-words.txt");
-			for (Object obj : lista) {
-				pw.println(obj.toString());
+			PrintWriter pw = new PrintWriter(arquivo);
+			Enumeration elemento = lista.elements();
+			while (elemento.hasMoreElements()) {
+				pw.println(elemento.nextElement());
 			}
 			pw.close();
 		} catch (FileNotFoundException e) {
@@ -200,17 +225,16 @@ public class MerriamWebsterSounds {
 		}
 	}
 
-	public static List<String> loadList(String fileName) {
-		List<String> list = new ArrayList<String>();
+	public static Vector loadList(String fileName) {
+		Vector list = new Vector();
 		try {
 			FileReader fr = new FileReader(fileName);
 			BufferedReader br = new BufferedReader(fr);
 			String linha = null;
 			while ((linha = br.readLine()) != null)
-				list.add(linha);
+				list.addElement(linha);
 			br.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return list;

@@ -15,7 +15,6 @@ import javax.microedition.lcdui.Form;
 import javax.microedition.lcdui.StringItem;
 import javax.microedition.lcdui.TextBox;
 import javax.microedition.midlet.MIDlet;
-import javax.microedition.midlet.MIDletStateChangeException;
 
 /**
  * This class get the sound files of the most frequent words of the english

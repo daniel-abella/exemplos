@@ -81,7 +81,6 @@ public class MW extends MIDlet implements CommandListener, Runnable {
 		Vector list = new Vector();
 		 try {
 			String data = getUrlAsString(base, file);
-			mProgressString.setText("" + data.length());
 			int indice = 0;
 			int start = -1;
 			int end = -1;
@@ -116,14 +115,14 @@ public class MW extends MIDlet implements CommandListener, Runnable {
 
 	public Vector getMostFrequentlyUsedWords() {
 		String base = "http://www.paulnoll.com/Books/Clear-English/";
-		String formato = "words-";
+		
 		Vector allWords = new Vector();
-		for (int i = 1; i < 2; i += 2) {
+		for (int i = 1; i < 30; i += 2) {
+			String formato = "words-";
 			formato += ((i < 10) ? "0" + i : "" + i) + "-";
 			formato += (i + 1) < 10 ? "0" + (i + 1) : "" + (i + 1);
 			formato += "-hundred.html";
 			Vector words = getWords(base, formato);
-			formato = "words-";
 			Enumeration vector_words = words.elements();
 			while (vector_words.hasMoreElements()) {
 				allWords.addElement(vector_words.nextElement());
@@ -134,7 +133,7 @@ public class MW extends MIDlet implements CommandListener, Runnable {
 
 	public void run() {
 		Vector allWords = getMostFrequentlyUsedWords();
-		mProgressString.setText("" + allWords.size());
+		mProgressString.setText("TOTAL: " + allWords.size());
 		try { Thread.sleep(2000); } catch (Exception e) {}
 //		saveList(allWords, "/tmp/english-words.txt");
 //		mProgressString.setText("" + allWords.size());

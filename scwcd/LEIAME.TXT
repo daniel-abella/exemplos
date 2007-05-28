@@ -1,0 +1,19 @@
+ INSTALLATION
+ 
+ It is a one or two step process.
+ 
+ FIRST. You have to create a server. Go to Navigator and then New->Server. 
+ Then select Apache and specifically Tomcat 5.5 (that´s the version 
+ I am using). My Tomcat installation makes use of connector 8443, 
+ so you need the second step below. Otherwise, the environment is ready.
+ 
+ SECOND. Select Servers, Tomcat v5.5 and the file 'server.xml' on 
+ Project Explorer. Search for connector on port 8443. You must change 
+ the property 'keystoreFile' to a valid keystore file. There is one, just
+ for development, in Tomcat root dir with the name 'keystore'. 
+ 
+ THIRD. Possibly you will need to go to Window->Preferences->Server and
+ select Installed Runtimes. At this moment you can define the path of the
+ server (Tomcat). 
+ 
+

@@ -1,32 +1,33 @@
 Copyright (c) 2007 Kyriosdata(r)
------------------------------------
-Testes de unidade para PDAs
+-----------------------------------------
+Testes de unidade para aplicações Java ME
 
-1. Crie uma ou mais classes contendo testes
-   1.1 A classe deve estender 'j2meunit.framework.TestCase'
-   1.2 Crie explicitamente o construtor default
-   1.3 Crie construtor Classe(String str, TestMethod tm).
-       Este construtor executa chamada a 'super(str,tm)'
-   1.4 Crie métodos que executam os testes.
-       Estes métodos devem conter sentenças 'assert*'
-   1.5 Crie o método 'Test suite()'
-       'suite()' deve incluir os métodos de teste (item 1.4)
-       As classes 'Teste1' e 'Teste2' fornecem exemplos.
+Este projeto compreende quatro classes. Duas 
+classes que contêm os métodos de teste, 
+exemplo.Teste1 e exemplo.Teste2. Outras duas
+executam os testes via console, exemplo.Console,
+e a outra como um midlet, exemplo.Midlet.
+
+A classe exemplo.Console é executada como uma
+aplicação Java convencional. A classe exemplo.Midlet
+deve ser executada como um MIDlet. 
+
+OBSERVAÇÕES PARA AS CLASSES DE TESTE:
+1. A classe de teste deve estender 'j2meunit.framework.TestCase'
+2. Crie o construtor default
+3. Crie o construtor com dois argumentos: String e TestMethod.
+   A única operação é chamar super(s,tm).
+4. Crie os métodos de teste (contendo assertions).
+5. Crie o método 'Test suite()'. Veja exemplos em 
+   exemplo.Teste1 e exemplo.Teste2.
    
-2. Crie classe que executa os testes de unidade (MIDLet)
-   2.1 A classe deve estender 'j2meunit.framework.TestRunner'
-   2.2 Crie o método 'startApp()' conforme ilustrado em 'MidletTeste'
-   2.3 Implantar (deployment)
-       - Clique com o botão direito no projeto
-       - Selecione J2ME e, em seguida, 'Create package'. 
-       - O jar file desejado será criado no diretório 'deployed'.
-   
-3. Crie classe que executa os testes de unidade (CONSOLE)
-   3.1 Esta classe também é um 'TestCase'
-   3.2 Crie o construtor default
-   3.3 Crie o construtor Classe(String str, TestMethod tm)
-       Este construtor faz apenas a chamada a 'super(str,tm)'
-   3.4 Crie o método 'Test suite()'
-       Conforme ilustrado na classe 'ConsoleTestes'
-   3.2 Execute 'TestRunner.main(new String[] { "exemplo.ConsoleTestes" })'
-   
+OBSERVAÇÕES PARA EXECUÇÃO VIA MIDLET:
+1. Crie classe que estende 'j2meunit.midletui.TestRunner'
+2. Crie o método 'startApp()' conforme ilustrado em 'exemplo.Midlet'
+
+OBSERVAÇÕES PARA EXECUÇÃO VIA CONSOLE: 
+1. Crie uma classe que estende 'j2meunit.framework.TestCase'  
+2. Crie o método 'Test suit()' conforme ilustrado em 'exemplo.Console'.
+3. Crie o método 'main' no qual TestRunner.main(String[]) é
+   executado. O argumento contém nome da classe cujo método suite
+   será executado.

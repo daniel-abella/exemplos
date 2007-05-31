@@ -1,9 +1,8 @@
-MIDlet-3: ShowDescendentsOfRoots,,filemanager.ShowDescendentsOfRoots
-MIDlet-2: ShowRoots,,filemanager.ShowRoots
-
+MIDlet-Version: 1.0.0
+MIDlet-Vendor: Midlet Suite Vendor
 MIDlet-Jar-URL: filemanager.jar
 MicroEdition-Configuration: CLDC-1.1
-MIDlet-Version: 1.0.0
-MIDlet-Name: filemanager Midlet Suite
-MIDlet-Vendor: Midlet Suite Vendor
+MIDlet-2: Exibe drivers,,filemanager.ShowRoots
 MicroEdition-Profile: MIDP-2.1
+MIDlet-1: Descendentes de drivers,,filemanager.ShowDescendentsOfRoots
+MIDlet-Name: filemanager Midlet Suite

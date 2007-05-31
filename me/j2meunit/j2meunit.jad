@@ -2,6 +2,6 @@ MIDlet-Version: 1.0.0
 MIDlet-Vendor: Midlet Suite Vendor
 MIDlet-Jar-URL: j2meunit.jar
 MicroEdition-Configuration: CLDC-1.1
-MIDlet-1: ExecutaTeste,,exemplo.MidletTeste
+MIDlet-1: ExecutaTeste,,exemplo.Midlet
 MicroEdition-Profile: MIDP-2.1
 MIDlet-Name: j2meunit Midlet Suite

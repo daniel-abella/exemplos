@@ -1,0 +1,9 @@
+MIDlet-3: ShowDescendentsOfRoots,,filemanager.ShowDescendentsOfRoots
+MIDlet-2: ShowRoots,,filemanager.ShowRoots
+
+MIDlet-Jar-URL: filemanager.jar
+MicroEdition-Configuration: CLDC-1.1
+MIDlet-Version: 1.0.0
+MIDlet-Name: filemanager Midlet Suite
+MIDlet-Vendor: Midlet Suite Vendor
+MicroEdition-Profile: MIDP-2.1

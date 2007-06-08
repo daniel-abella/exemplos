@@ -21,6 +21,7 @@ public class RuntimeDetection extends MIDlet implements CommandListener {
 		// MIDP 2.1: yes/no
 		verifique("MIDP 2.0", "javax.microedition.media.Manager"); 
 		verifique("CLDC 1.1", "java.lang.ref.WeakReference");
+		verifique("CDC 1.1.2", "java.lang.reflect.Method");
 		verifique("WMA 2.0", "javax.wireless.messaging.Message");
 		verifique("MMAPI", "javax.microedition.media.protocol.DataSource");
 		verifique("JSR-75 (file)", "javax.microedition.io.file.FileConnection");
@@ -30,7 +31,7 @@ public class RuntimeDetection extends MIDlet implements CommandListener {
 		verifique("j2me-xmlrpc", "java.rmi.Remote");
 		verifique("JSR-82", "javax.bluetooth.DeviceClass");
 		verifique("JSR-82 (obex)", "javax.obex.HeaderSet");
-		verifique("JSR-179 (location)", "javax.microedition.location.Criteria");
+		verifique("JSR-179 (location)", "javax.microedition.location.Landmark");
 		verifique("satsa-apdu", "javax.microedition.apdu.APDUConnection");
 		verifique("satsa-jcrmi", "javax.microedition.jcrmi.RemoteRef");
 		verifique("satsa-jcpki", "javax.microedition.pki.UserCredentialManager");

@@ -7,6 +7,7 @@ import javax.microedition.lcdui.Display;
 import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Form;
 import javax.microedition.lcdui.Graphics;
+import javax.microedition.media.Manager;
 import javax.microedition.midlet.MIDlet;
 
 /**
@@ -142,6 +143,10 @@ public class Resources extends MIDlet implements CommandListener {
 		addLine(frmDetails, "JSR-205 messaging v2.0: "
 				+ (isClass("javax.wireless.messaging.MessagePart") ? "yes"
 						: "no"));
+		
+		String[] soundTypes = Manager.getSupportedContentTypes("http");
+		for (int i = 0; i < soundTypes.length; i++)
+			addLine(frmDetails,"Sound (http): " + soundTypes[i]);	
 	}
 
 	/**

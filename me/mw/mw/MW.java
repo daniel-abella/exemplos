@@ -3,6 +3,7 @@ package mw;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Enumeration;
 import java.util.Vector;
 
@@ -14,14 +15,17 @@ import javax.microedition.lcdui.Display;
 import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Form;
 import javax.microedition.lcdui.StringItem;
+import javax.microedition.media.Manager;
+import javax.microedition.media.MediaException;
+import javax.microedition.media.Player;
 import javax.microedition.midlet.MIDlet;
 
 /**
  * This class get the sound files of the most frequent words of the english
  * language. In fact, only the most 3000 used words as described in
  * http://www.paulnoll.com/Books/Clear-English/English-3000-common-words.html.
- * The corresponding sound files are read, one by one, from Merriam-Webster site.
- * The device plays the sound read and discard the data downloaded. 
+ * The corresponding sound files are read, one by one, from Merriam-Webster
+ * site. The device plays the sound read and discard the data downloaded.
  * 
  * <p>
  * The sound files are obtained through the Merriam-Webster portal.
@@ -30,18 +34,23 @@ import javax.microedition.midlet.MIDlet;
  * 
  */
 public class MW extends MIDlet implements CommandListener, Runnable {
-	
-	private static final String MWURL = "http://www.m-w.com/";
+
+	private static final String MWDURL = "http://www.m-w.com/dictionary/";
+
 	private Display mDisplay;
-	private Command mExitCommand, mRunCommand;
+
+	private Command mExitCommand, mRunCommand, mInterromperCommand;
+
 	private Form mProgressForm;
+
 	private static StringItem mProgressString;
 
 	public MW() {
 		mExitCommand = new Command("Sair", Command.EXIT, 0);
 		mRunCommand = new Command("Executar", Command.SCREEN, 0);
+		mInterromperCommand = new Command("Interromper", Command.SCREEN, 0);
 		mProgressString = new StringItem(null, null);
-		
+
 		mProgressForm = new Form("Kyriosdata Words");
 		mProgressForm.addCommand(mExitCommand);
 		mProgressForm.addCommand(mRunCommand);
@@ -50,7 +59,7 @@ public class MW extends MIDlet implements CommandListener, Runnable {
 	}
 
 	public void commandAction(Command c, Displayable s) {
-		if (c == mExitCommand) {
+		if ((c == mExitCommand) || (c == mInterromperCommand)) {
 			destroyApp(false);
 			notifyDestroyed();
 		} else if (c == mRunCommand) {
@@ -72,15 +81,15 @@ public class MW extends MIDlet implements CommandListener, Runnable {
 
 	public Vector getWords(String base, String file) {
 		Vector list = new Vector();
-		 try {
+		try {
 			String data = getUrlAsString(base, file);
 			int indice = 0;
 			int start = -1;
 			int end = -1;
 			while ((indice = data.indexOf("<li>", indice + 3)) != -1) {
 				start = indice + 4;
-				end = data.indexOf("</li>",start);
-				list.addElement(data.substring(start,end));
+				end = data.indexOf("</li>", start);
+				list.addElement(data.substring(start, end));
 			}
 		} catch (Exception e) {
 			return null;
@@ -108,13 +117,13 @@ public class MW extends MIDlet implements CommandListener, Runnable {
 			fileBody = new String(buffer, "iso-8859-1");
 		} catch (IOException e) {
 			return null;
-		}		
+		}
 		return fileBody;
 	}
 
 	public Vector getMostFrequently3000UsedWords() {
 		String base = "http://www.paulnoll.com/Books/Clear-English/";
-		
+
 		Vector allWords = new Vector();
 		for (int i = 1; i < 30; i += 2) {
 			String formato = "words-";
@@ -131,44 +140,142 @@ public class MW extends MIDlet implements CommandListener, Runnable {
 	}
 
 	public void run() {
-		// First: get all the words
-		// Vector allWords = getMostFrequently3000UsedWords();
-		// mProgressString.setText("TOTAL: " + allWords.size());
-		
-//		try {
-//			Player p = Manager.createPlayer("http://cougar.eb.com/soundc11/h/house001.wav");
-//			p.start();
-//		} catch (IOException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		} catch (MediaException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-//		try { Thread.sleep(2000); } catch (Exception e) {}
-		
-		getUrlOfSoundPage("house");
-		
 		mProgressForm.removeCommand(mRunCommand);
+		mProgressForm.removeCommand(mExitCommand);
+		mProgressForm.addCommand(mInterromperCommand);
+
+		// First: get all the 2126 most frequently used words
+		mProgressString.setText("Obtendo palavras freqüentes...");
+		Vector allWords = getMostFrequently3000UsedWords();
+
+		// Second: for each word
+		// - save the corresponding wave file
+		// - plays the wave file downloaded
+
+		int size = allWords.size();
+		for (int i = 0; i < size; i++) {
+			String word = allWords.elementAt(i).toString().trim();
+			long inicio = System.currentTimeMillis();
+			processaPalavra(word);
+			double tempo = (System.currentTimeMillis() - inicio) * (2125 - i) / 60000.0;
+			mProgressString.setText(word + "\nMinutos restantes: " + tempo);			
+		}
+		mProgressForm.addCommand(mExitCommand);
+	}
+
+	private void processaPalavra(String word) {
+		if (palavraComEspaco(word)) { // "New York", ...
+			return;
+		}
+		ObtemURLIntermediaria puw = new ObtemURLIntermediaria();
+		processaURLLinhaPorLinha(puw, MWDURL + word);
+		String url = puw.getURLWav();
+
+		// Not all words have sound file available (are, found, did,
+		// ...)
+		if (url != null) {
+			ObtemURLWavFile wfURL = new ObtemURLWavFile();
+			processaURLLinhaPorLinha(wfURL, url);
+			System.out.println(wfURL.getURLWavFile());
+		}
+	}
+
+	static boolean palavraComEspaco(String string) {
+		for (int i = 0; i < string.length(); i++) {
+			if (string.charAt(i) == ' ') {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	static void playURLWavFile(String url) {
+		try {
+			Player p = Manager.createPlayer(url);
+			p.start();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (MediaException e) {
+			e.printStackTrace();
+		}
+	}
+
+	static int total = 0;
+
+	static int nLinhas = 0;
+
+	static String linha = "";
+
+	static void processBuffer(ProcessaLinha pl, byte[] buffer, int size) {
+		total += size;
+		int inicio = 0;
+		for (int i = 0; i < size; i++) {
+			if (buffer[i] == '\n') {
+				nLinhas++;
+				// Concatenar linha com buffer[0,i] e a processa
+				linha = linha + montaLinha(buffer, inicio, i - inicio);
+				inicio = i + 1;
+				pl.processa(linha);
+				linha = "";
+			}
+		}
+		linha = montaLinha(buffer, inicio, size - inicio);
+	}
+
+	static String montaLinha(byte[] buffer, int offset, int len) {
+		try {
+			return new String(buffer, offset, len, "iso-8859-1");
+		} catch (UnsupportedEncodingException ex) {
+			return null;
+		}
+	}
+
+	/**
+	 * Dada uma determinada URL, este método lê linha por linha desta URL e
+	 * repassa a linha correspondente para instância de ProcessaLinha.
+	 * 
+	 * @param pl
+	 * @param url
+	 */
+	static void processaURLLinhaPorLinha(ProcessaLinha pl, String url) {
+		InputStream is = null;
+		byte[] buffer = new byte[512];
+		int size = 0;
+		try {
+			is = Connector.openInputStream(url);
+			while ((size = is.read(buffer)) != -1) {
+				processBuffer(pl, buffer, size);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		if (is != null) {
+			try {
+				is.close();
+			} catch (IOException e) {
+			}
+		}
+		buffer = null;
 	}
 
 	static String getUrlOfSoundPage(String word) {
-		String word_url = MWURL + "dictionary/" + word;
+		String word_url = MWDURL + word;
 		DataInputStream dis = null;
+		byte[] buffer = new byte[512];
+		int size = -1;
 		try {
-			dis = Connector.openDataInputStream(MWURL + word);
-			
+			dis = Connector.openDataInputStream(word_url);
+			size = dis.read(buffer);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(word_url);
-//		int start = 0;
-//		do {
-//			start = word_page.indexOf("popWin", start + 5);
-//			mProgressString.setText("" + start);
-//		} while (start != -1);
-//		
+		// int start = 0;
+		// do {
+		// start = word_page.indexOf("popWin", start + 5);
+		// mProgressString.setText("" + start);
+		// } while (start != -1);
+		//		
 		// Pattern pattern = Pattern.compile("\\(\'.*?\'\\)");
 		// Matcher matcher = null;
 		// String base = "http://www.m-w.com/";

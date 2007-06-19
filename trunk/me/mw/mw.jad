@@ -4,4 +4,5 @@ MIDlet-Jar-URL: mw.jar
 MicroEdition-Configuration: CLDC-1.1
 MicroEdition-Profile: MIDP-2.1
 MIDlet-1: house,,mw.MW
+MIDlet-Permissions: javax.microedition.io.Connector.http
 MIDlet-Name: mw Midlet Suite

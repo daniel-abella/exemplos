@@ -33,6 +33,8 @@ disponíveis. Outras implementações open source incluem Apache Felix
 (http://cwiki.apache.org/FELIX/index.html) e Knoplerfish
 (http://www.knopflerfish.org/) são duas delas.
 
+Um aspecto relevante é que _qualquer bundle pode ser executado em qualquer implementação de OSGi_. Ou seja, um bundle desenvolvido e testado na implementação Felix pode ser executado na implementação Equinox sem problemas. 
+
 ==Instalação==
 A versão mais recente do Equinox pode ser obtida em
 http://download.eclipse.org/eclipse/equinox/. A implementação do

@@ -39,7 +39,7 @@ http://download.eclipse.org/eclipse/equinox/. A implementação do
 Equinox é fornecida em um único arquivo .jar, algo como
 *org.eclipse.osgi_3.3.0.v20070530.jar*. Naturalmente, o nome deste
 arquivo irá variar conforme a versão obtida. Por simplicidade, você pode
-simplesmente renomear o arquivo obtido para *osgi.jar*. Pelo menos para este tutorial, não teremos nenhum prejuízo. 
+simplesmente renomear o arquivo obtido para *osgi.jar*. Não há nenhum prejuízo de funcionalidade e foi exatamente o que foi feito para efeito dos exemplos abaixo. 
 
 Toda instalação do Eclipse também contém uma implementação do OSGi. Este arquivo está no diretório plugins onde for instalado o Eclipse.
 
@@ -77,9 +77,9 @@ das opções acima.
 
 Bundle é o elemento de composição de OSGi para o qual são oferecidos
 serviços. O acesso a eles é obtido por meio de uma instância de
-BundleContext. Uma simples classe pode obter esta referência ao
+!BundleContext. Uma simples classe pode obter esta referência ao
 implementar a interface BundleActivator. Esta interface oferece dois
-métodos: start(BundleContext contexto) e stop(BundleContext contexto).
+métodos: start(!BundleContext contexto) e stop(!BundleContext contexto).
 
 Abaixo segue um bundle que não faz muito, exceto indicar que foi
 iniciado (quando iniciado) e que foi interrompido (quando
@@ -122,13 +122,13 @@ Import-Package: org.osgi.framework;version="1.3.0"
 
 Duas das linhas acima são particularmente importantes. Aquela que
 descreve qual a classe empregada para a ativação do bundle
-(Bundle-Activator), ou seja, a classe introducao.MeuPrimeiroBundle
+(Bundle-Activator), ou seja, a classe !introducao.MeuPrimeiroBundle
 (fornecida acima) e as dependências do bundle para pacotes externos
 (Import-Package).
 
 ===Terceiro passo: compilar e empacotar o bundle===
 
-A compilação da classe MeuPrimeiroBundle exige o arquivo jar contendo
+A compilação da classe !MeuPrimeiroBundle exige o arquivo jar contendo
 a implementação de OSGi. 
 
 `javac -d \tmp -cp osgi.jar MeuPrimeiroBundle.java`
@@ -149,7 +149,7 @@ Bundle id is 3
 
 Observe o retorno indicando o id do bundle recém instalado. Este id é
 uma forma de identificar o bundle recém-instalado. Outro comando útil
-é fornecido abaixo.
+é ilustrado abaixo.
 
 {{{
 osgi> ss
@@ -203,3 +203,6 @@ em execução agora não mais gerencia o bundle recém-criado.
 osgi> ss
 0     ACTIVE     org.eclipse.osgi_3.3.0.v20070530
 }}}
+
+==Considerações finais==
+OSGi oferece uma extensa lista de serviços. Alguns deles foram ilustrados de forma bem simplificada acima. Neste texto empregou-se a implementação conhecida por Equinox, a mesma empregada pelo Eclipse (http://eclipse.org). Siga os links no início do texto para detalhes.

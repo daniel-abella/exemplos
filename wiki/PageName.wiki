@@ -60,11 +60,11 @@ oferecidos. No restante do texto teremos oportunidade para
 experimentar parte deles. Alguns, contudo, são amplamente empregados
 e são reproduzidos abaixo:
 
-  *`install <url>` instala um bundle obtido do url fornecido
-  *`start <bundle id ou nome>` inicia o bundle indicado
-  *`stop <bundle id ou nome>` interrompe a execução do bundle indicado
-  *`ss`  lista o status dos bundles instalados
-  *`dig <bundle id ou nome>` relata qualquer problema com o bundle indicado
+  * `install <url>` instala um bundle obtido do url fornecido
+  * `start <bundle id ou nome>` inicia o bundle indicado
+  * `stop <bundle id ou nome>` interrompe a execução do bundle indicado
+  * `ss`  lista o status dos bundles instalados
+  * `dig <bundle id ou nome>` relata qualquer problema com o bundle indicado
 
 Observe que as opções, boa parte delas, atuam sobre um bundle
 específico. De fato, todo o trabalho oferecido por OSGi é para uso dos

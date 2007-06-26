@@ -43,7 +43,7 @@ simplesmente renomear o arquivo obtido para *osgi.jar*. Pelo menos para este tut
 
 Toda instalação do Eclipse também contém uma implementação do OSGi. Este arquivo está no diretório plugins onde for instalado o Eclipse.
 
-==Primeiros passos==
+==Executando o Equinox==
 Para iniciar o Equinox, simplesmente execute o comando abaixo:
 
 `java -jar osgi.jar -console`
@@ -129,22 +129,23 @@ descreve qual a classe empregada para a ativação do bundle
 ===Terceiro passo: compilar e empacotar o bundle===
 
 A compilação da classe MeuPrimeiroBundle exige o arquivo jar contendo
-a implementação de OSGi. O empacotamento de um bundle mínimo exige apenas a
-classe compilada e o arquivo mf. Os comandos abaixo compilam e montam
-o pacote pronto para uso da implementação de OSGi.
+a implementação de OSGi. 
 
 `javac -d \tmp -cp osgi.jar MeuPrimeiroBundle.java`
+
+O empacotamento de um bundle mínimo exige apenas a
+classe compilada e o arquivo mf.
 
 `jar cfm mpb.jar manifes.mf -C \tmp introducao`
 
 ==Executando o bundle criado==
 
-Já vimos como executar o OSGi. Após obter o prompt, execute o comando
-abaixo. Este comando assume que o arquivo mpb.jar está no mesmo
-diretório em que o OSGi é executado.
+Já vimos como executar o Equinox. O comando abaixo instala o bundle contido no arquivo *mpb.jar*. É assumido que a execução do Equinox é iniciada do mesmo diretório onde este arquivo jar está disponível.
 
-`osgi> install file:mpb.jar`
-`Bundle id is 3`
+{{{
+osgi> install file:mpb.jar
+Bundle id is 3
+}}}
 
 Observe o retorno indicando o id do bundle recém instalado. Este id é
 uma forma de identificar o bundle recém-instalado. Outro comando útil
@@ -168,29 +169,37 @@ Iniciado
 }}}
 
 O retorno fornecido é a mensagem exibida como conseqüência da execução
-do método start (veja código da classe MeuPrimeiroBundle). Observe que agora
+do método start (veja código da classe !MeuPrimeiroBundle). Observe que agora
 o status foi alterado.
 
+{{{
 osgi> ss
 id    State      Bundle
 0     ACTIVE     org.eclipse.osgi_3.3.0.v20070530
 3     ACTIVE     introducao_1.0.0
+}}}
 
 Agora, o bundle introducao_1.0.0 também está ativo. Podemos agora
 interromper a execução e observar o resultado.
 
+{{{
 osgi> stop 6
 Interrompido
+}}}
 
 Nenhuma surpresa, ao iterromper a execução o método stop foi
 executado. Por fim, podemos desinstalar o bundle produzido com o
 comando abaixo.
 
+{{{
 osgi> uninstall 6
+}}}
 
 Nenhum retorno é fornecido. Contudo, podemos consultar o status,
 conforme visto acima e verificar que, de fato, a implementação de OSGi
 em execução agora não mais gerencia o bundle recém-criado.
 
+{{{
 osgi> ss
 0     ACTIVE     org.eclipse.osgi_3.3.0.v20070530
+}}}

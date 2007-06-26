@@ -37,7 +37,7 @@ disponíveis. Outras implementações open source incluem Apache Felix
 A versão mais recente do Equinox pode ser obtida em
 http://download.eclipse.org/eclipse/equinox/. A implementação do
 Equinox é fornecida em um único arquivo .jar, algo como
-org.eclipse.osgi_3.3.0.v20070530.jar. Naturalmente, o nome deste
+*org.eclipse.osgi_3.3.0.v20070530.jar*. Naturalmente, o nome deste
 arquivo irá variar conforme a versão obtida. Por simplicidade, você pode
 simplesmente renomear o arquivo obtido para *osgi.jar*. Pelo menos para este tutorial, não teremos nenhum prejuízo. 
 
@@ -50,30 +50,30 @@ Para iniciar o Equinox, simplesmente execute o comando abaixo:
 
 A execução deste comando irá oferecer ao usuário a seguinte resposta:
 
-osgi>
+`osgi>`
 
 Isto significa que a implementação de OSGi empregada está em
 execução. Ou seja, está pronta para oferecer serviços. Para obter uma
-lista das opções disponíveis digite o ponto de interrogação ? seguido
-de enter. Como resposta terá uma lista completa dos serviços
+lista das opções disponíveis digite o ponto de interrogação ? pressione
+a Enter. Como resposta terá uma lista completa dos serviços
 oferecidos. No restante do texto teremos oportunidade para
 experimentar parte deles. Alguns, contudo, são amplamente empregados
 e são reproduzidos abaixo:
 
-install <url> instala um bundle obtido do url fornecido
-start <bundle id ou nome> inicia o bundle indicado
-stop <bundle id ou nome> interrompe a execução do bundle indicado
-ss  lista o status dos bundles instalados
-dig <bundle id ou nome> relata qualquer problema com o bundle indicado
+`install <url>` instala um bundle obtido do url fornecido
+`start <bundle id ou nome>` inicia o bundle indicado
+`stop <bundle id ou nome>` interrompe a execução do bundle indicado
+`ss`  lista o status dos bundles instalados
+`dig <bundle id ou nome>` relata qualquer problema com o bundle indicado
 
 Observe que as opções, boa parte delas, atuam sobre um bundle
 específico. De fato, todo o trabalho oferecido por OSGi é para uso dos
 bundles. Ou seja, primeiro é preciso construí-los antes de usufruir
 das opções acima.
 
-MEU PRIMEIRO BUNDLE (em três passos)
+==Primeiro bundle==
 
-Primeiro passo: criar um bundle
+===Primeiro passo: criar um bundle===
 
 Bundle é o elemento de composição de OSGi para o qual são oferecidos
 serviços. O acesso a eles é obtido por meio de uma instância de
@@ -85,7 +85,7 @@ Abaixo segue um bundle que não faz muito, exceto indicar que foi
 iniciado (quando iniciado) e que foi interrompido (quando
 interrompido). 
 
-package introducao;
+`package introducao;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -99,7 +99,7 @@ public class MeuPrimeiroBundle implements BundleActivator {
 	public void stop(BundleContext context) throws Exception {
 		System.out.println("Interrompido");
 	}	
-}
+}`
 
 Segundo passo: criar arquivo com meta-informações (mf)
 
@@ -185,5 +185,4 @@ em execução agora não mais gerencia o bundle recém-criado.
 
 osgi> ss
 0     ACTIVE     org.eclipse.osgi_3.3.0.v20070530
-
 

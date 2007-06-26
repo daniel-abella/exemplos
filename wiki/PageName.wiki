@@ -1,7 +1,3 @@
-#xxx
-
-Introdução ao Equinox
-
 = Introdução ao Equinox =
 
 _Copyright (c) 2007 Fábio Nogueira de Lucena_

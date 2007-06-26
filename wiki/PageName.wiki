@@ -134,6 +134,7 @@ classe compilada e o arquivo mf. Os comandos abaixo compilam e montam
 o pacote pronto para uso da implementação de OSGi.
 
 `javac -d \tmp -cp osgi.jar MeuPrimeiroBundle.java`
+
 `jar cfm mpb.jar manifes.mf -C \tmp introducao`
 
 ==Executando o bundle criado==

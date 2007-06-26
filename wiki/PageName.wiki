@@ -85,7 +85,7 @@ Abaixo segue um bundle que não faz muito, exceto indicar que foi
 iniciado (quando iniciado) e que foi interrompido (quando
 interrompido). 
 
-`package introducao;
+{{{package introducao;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -99,7 +99,7 @@ public class MeuPrimeiroBundle implements BundleActivator {
 	public void stop(BundleContext context) throws Exception {
 		System.out.println("Interrompido");
 	}	
-}`
+}}}}
 
 Segundo passo: criar arquivo com meta-informações (mf)
 
@@ -185,4 +185,3 @@ em execução agora não mais gerencia o bundle recém-criado.
 
 osgi> ss
 0     ACTIVE     org.eclipse.osgi_3.3.0.v20070530
-

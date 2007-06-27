@@ -13,30 +13,31 @@ OSGi é uma tecnologia que oferece para Java um padrão para montagem
 dinâmica de sistemas baseados em módulos. Dito de outra forma, permite
 a definição de módulos, gerencia a visibilidade de APIs oferecidas
 pelos módulos, gerencia dependências entre os módulos e as versões
-destes. Módulos ou bundles são componentes menores e
-reutilizáveis. 
+destes. Módulos são componentes menores e
+reutilizáveis. Tais módulos são denominados pela OSGi como bundles. Doravante empregaremos o termo bundle em vez de módulo. 
 
 Bundles podem ser instalados, iniciados, interrompidos e desinstalados
 e atualizados em tempo de execução. Bundles publicam serviços
 dinamicamente e podem descobrir e requisitar serviços disponibilizados
 por outros bundles. Em conseqüência, serviços podem aparecer e
-desaparecer em tempo de execução. Ao longo deste texto serão
-demonstrados vários destes serviços.
+desaparecer em tempo de execução. 
 
 OSGi é uma especificação, ou seja, documenta e atribui funções
 precisas a tais serviços, mas não os implementa. Equinox, por outro
-lado, é uma implementação desta especificação, dentre várias
-disponíveis. Outras implementações open source incluem Apache Felix
-(http://cwiki.apache.org/FELIX/index.html) e Knoplerfish
-(http://www.knopflerfish.org/) são duas delas.
+lado, é uma implementação desta especificação. 
 
-Um aspecto relevante é que _qualquer bundle pode ser executado em qualquer implementação de OSGi_. Ou seja, um bundle desenvolvido e testado na implementação Felix pode ser executado na implementação Equinox sem problemas. 
+Existem várias outras implementações de OSGi além de Equinox.
+Algumas delas incluem Apache Felix
+(http://cwiki.apache.org/FELIX/index.html) e Knoplerfish
+(http://www.knopflerfish.org/).
+
+Um aspecto relevante é que _qualquer bundle pode ser executado em qualquer implementação de OSGi_. Ou seja, um bundle desenvolvido e testado na implementação Felix pode ser executado na implementação Equinox e vice-versa.
 
 ==Instalação==
 A versão mais recente do Equinox pode ser obtida em
 http://download.eclipse.org/eclipse/equinox/. A implementação do
 Equinox é fornecida em um único arquivo .jar, algo como
-*org.eclipse.osgi_3.3.0.v20070530.jar*. Naturalmente, o nome deste
+*org.eclipse.osgi_3.2.2.R32x_v20070118.jar*. Naturalmente, o nome deste
 arquivo irá variar conforme a versão obtida. Por simplicidade, você pode
 simplesmente renomear o arquivo obtido para *osgi.jar*. Não há nenhum prejuízo de funcionalidade e foi exatamente o que foi feito para efeito dos exemplos abaixo. 
 
@@ -153,7 +154,7 @@ uma forma de identificar o bundle recém-instalado. Outro comando útil
 {{{
 osgi> ss
 id    State      Bundle
-0     ACTIVE     org.eclipse.osgi_3.3.0.v20070530
+0     ACTIVE     org.eclipse.osgi_3.2.2.R32x_v20070118
 3     INSTALLED  introducao_1.0.0
 }}}
 
@@ -174,7 +175,7 @@ o status foi alterado.
 {{{
 osgi> ss
 id    State      Bundle
-0     ACTIVE     org.eclipse.osgi_3.3.0.v20070530
+0     ACTIVE     org.eclipse.osgi_3.2.2.R32x_v20070118
 3     ACTIVE     introducao_1.0.0
 }}}
 
@@ -200,7 +201,7 @@ em execução agora não mais gerencia o bundle recém-criado.
 
 {{{
 osgi> ss
-0     ACTIVE     org.eclipse.osgi_3.3.0.v20070530
+0     ACTIVE     org.eclipse.osgi_3.2.2.R32x_v20070118
 }}}
 
 ==Considerações finais==

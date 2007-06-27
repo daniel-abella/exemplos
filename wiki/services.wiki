@@ -4,7 +4,7 @@
 _Copyright (c) 2007 Fábio Nogueira de Lucena_
 
 == Resumo ==
-Uma visão introdutória do Equinox foi apresentada em [equinox Uma Introdução ao Equinox]. Neste texto são criados dois bundles. Um deles é um serviço. O outro simplesmente monitora eventos associados a serviços. 
+Uma visão introdutória do Equinox foi apresentada em [equinox Uma Introdução ao Equinox]. Neste texto são criados dois bundles. Um deles é um serviço. O outro requisita a execução do serviço oferecido pelo primeiro.
 
 == Bundle que oferece um serviço trivial==
 Um bundle que converte letras minúsculas em maiúsculas não oferece um grande serviço, mas útil didaticamente. A interface correspondente a este serviço é fornecida abaixo.

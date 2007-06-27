@@ -1,4 +1,4 @@
-#Criando e executando serviços no Equinox
+#summary Criando e executando serviços no Equinox
 
 = Criando e Usufruindo de um Serviço no Equinox =
 _Copyright (c) 2007 Fábio Nogueira de Lucena_

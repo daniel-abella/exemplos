@@ -4,7 +4,7 @@
 
 _Copyright (c) 2007 Fábio Nogueira de Lucena_
 
-== Equinox ==
+== Equinox é uma implementação de OSGi==
 
 Equinox é uma implementação da especificação OSGi R4. Extensa
 informação sobre esta implementação pode ser obtida em

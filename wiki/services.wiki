@@ -1,0 +1,81 @@
+#Criando e executando serviços no Equinox
+
+= Criando e Usufruindo de um Serviço no Equinox =
+_Copyright (c) 2007 Fábio Nogueira de Lucena_
+
+== Resumo ==
+Uma visão introdutória do Equinox foi apresentada em [equinox Uma Introdução ao Equinox]. Neste texto são criados dois bundles. Um deles é um serviço. O outro simplesmente monitora eventos associados a serviços. 
+
+== Bundle que oferece um serviço trivial==
+Um bundle que converte letras minúsculas em maiúsculas não oferece um grande serviço, mas útil didaticamente. A interface correspondente a este serviço é fornecida abaixo.
+
+{{{
+package maiusculas;
+
+public interface ConverteParaMaiusculas {
+	String paraMaiusculas(String str);
+}
+}}}
+
+A implementação desta interface é trivial. 
+
+{{{
+package maiusculas;
+
+public class ConverteParaMaiusculasImpl implements ConverteParaMaiusculas {
+
+	public String paraMaiusculas(String str) {
+		return str != null ? str.toUpperCase() : null;
+	}
+}
+}}}
+
+O bundle que oferece o serviço exposto pela interface acima, por meio da implementação também fornecida acima segue abaixo. 
+
+{{{
+package maiusculas;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+public class Activator implements BundleActivator {
+
+	public void start(BundleContext context) throws Exception {
+		String nomeServico = ConverteParaMaiusculas.class.getName();
+		Object obj = new ConverteParaMaiusculasImpl();
+		context.registerService(nomeServico, obj, null);
+		System.out.println("Conversao para maiusculas ativado...");
+	}
+
+	public void stop(BundleContext context) throws Exception {
+		System.out.println("Conversao para maiusculas desativado...");
+	}
+}
+}}}
+
+O método stop não pode ser mais simples. O método start, por outro lado, merece alguns comentários. A primeira linha simplesmente obtém o nome da interface. A identificação de um serviço via OSGi exige a definição do nome deste serviço. Este identificador (nome) será empregado para se ter acesso ao serviço. Uma prática comum é fazer uso do nome da interface que define o serviço. A segunda linha cria um objeto que implementa a interface e, portanto, o objeto que irá oferecer o serviço. Até então apenas informações foram colhidas para que, na terceira linha, o serviço seja registrado. O último argumento é uma referência para propriedades (`java.util.Dictionary`) que, neste caso, é nulo.
+
+Ainda falta o arquivo de meta-informações associado a este bundle. 
+
+{{{
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Maiusculas Plug-in
+Bundle-SymbolicName: maiusculas
+Bundle-Version: 1.0.0
+Bundle-Activator: maiusculas.Activator
+Bundle-Localization: plugin
+Import-Package: org.osgi.framework;version="1.3.0"
+}}}
+
+Neste ponto, todas as informações necessárias para a criação do bundle que oferece o serviço de conversão de uma String para outra equivalente empregando apenas letras maiúsculas estão disponíveis. Conforme visto anteriormente, o processo de criar o bundle não é complexo. Neste caso, compile a classe correspondente ao bundle, a classe que implementa a interface e a interface propriamente dita. Todos estes arquivos devem ser empacotados em um arquivo jar. A diferença de um arquivo jar qualquer e um bundle é a presença do arquivo de meta-informações contendo propriedades específicas. Apenas para relembrar...
+
+{{{
+jar cfm meuBundle.jar manifest.mf -C classes maiusculas
+}}}
+
+O comando acima cria o bundle desejado no mesmo diretório em que se encontra o arquivo *manifest.mf*. Neste diretório deverá conter o diretório *classes*, onde foram depositados os _bytecodes_ correspondentes à compilação da interface e das duas classes descritas acima. Observe que tanto a interface quanto as duas classes são fornecidas no pacote `maiusculas`.
+
+Podemos agora iniciar o OSGi, instalar o bundle criado e verificar se a operação foi executada satisfatoriamente. Nada especial irá acontecer até, claro, que um cliente requisite o serviço oferecido por este bundle. Agora, portanto, teremos que criar um cliente para o serviço.
+
+==Bundle que usufrui de um serviço trivial==

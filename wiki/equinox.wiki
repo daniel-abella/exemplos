@@ -6,8 +6,8 @@ _Copyright (c) 2007 Fábio Nogueira de Lucena_
 
 == Equinox é uma implementação de OSGi==
 
-Equinox é uma implementação da especificação OSGi R4. Detalhes de OSGi podem ser
-obtidos em http://osgi.org. A versão mais recente da implementação Equinox pode ser obtida em http://www.eclipse.org/equinox/. 
+Equinox é uma implementação da especificação OSGi. Detalhes de OSGi podem ser
+obtidos em http://osgi.org. A versão mais recente da implementação Equinox pode ser obtida em http://www.eclipse.org/equinox/.
 
 OSGi é uma tecnologia que oferece para Java um padrão para montagem
 dinâmica de sistemas baseados em módulos. Dito de outra forma, permite
@@ -20,7 +20,7 @@ Bundles podem ser instalados, iniciados, interrompidos e desinstalados
 e atualizados em tempo de execução. Bundles publicam serviços
 dinamicamente e podem descobrir e requisitar serviços disponibilizados
 por outros bundles. Em conseqüência, serviços podem aparecer e
-desaparecer em tempo de execução. 
+desaparecer em tempo de execução. O programador Java poderá consultar a documentação em http://www2.osgi.org/javadoc/r4/ para detalhes da versão 4 da especificação.
 
 OSGi é uma especificação, ou seja, documenta e atribui funções
 precisas a tais serviços, mas não os implementa. Equinox, por outro

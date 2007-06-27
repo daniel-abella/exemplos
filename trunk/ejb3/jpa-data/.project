@@ -24,7 +24,7 @@
 		<link>
 			<name>target</name>
 			<type>2</type>
-			<location>C:/tmp/jpa-data</location>
+			<location>/home/lucena/integrate/tese/full/C::/tmp/jpa-data</location>
 		</link>
 	</linkedResources>
 </projectDescription>

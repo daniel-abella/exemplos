@@ -14,7 +14,7 @@ dinâmica de sistemas baseados em módulos. Dito de outra forma, permite
 a definição de módulos, gerencia a visibilidade de APIs oferecidas
 pelos módulos, gerencia dependências entre os módulos e as versões
 destes. Módulos são componentes menores e
-reutilizáveis. Tais módulos são denominados pela OSGi como bundles. Doravante empregaremos o termo bundle em vez de módulo. 
+reutilizáveis. Tais módulos são denominados pela OSGi como bundles. Doravante empregaremos o termo bundle que é a unidade de modularização em OSGi. 
 
 Bundles podem ser instalados, iniciados, interrompidos e desinstalados
 e atualizados em tempo de execução. Bundles publicam serviços

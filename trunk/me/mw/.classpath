@@ -2,5 +2,6 @@
 <classpath>
 	<classpathentry excluding="deployed/|verified/|.processed/" kind="src" path=""/>
 	<classpathentry kind="con" path="J2MELIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/filemanager"/>
 	<classpathentry kind="output" path="target"/>
 </classpath>

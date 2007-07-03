@@ -22,7 +22,7 @@ import javax.microedition.media.MediaException;
 import javax.microedition.media.Player;
 import javax.microedition.midlet.MIDlet;
 
-public class MW extends MIDlet implements CommandListener, Runnable {
+public class ObtemPalavras extends MIDlet implements CommandListener, Runnable {
 
 	private static final String MWDURL = "http://www.m-w.com/dictionary/";
 
@@ -34,7 +34,7 @@ public class MW extends MIDlet implements CommandListener, Runnable {
 
 	private static StringItem mProgressString;
 
-	public MW() {
+	public ObtemPalavras() {
 		mExitCommand = new Command("Sair", Command.EXIT, 0);
 		mRunCommand = new Command("Executar", Command.SCREEN, 0);
 		mInterromperCommand = new Command("Interromper", Command.SCREEN, 0);

@@ -1,10 +1,10 @@
-MIDlet-1: Gauge1,,ui.Gauge1
-MIDlet-2: Form1,,ui.Form1
+MIDlet-4: DataField1,,ui.DataField1
 MIDlet-3: TextBox,,ui.TextBoxExample
-MIDlet-4: DataField1,,DataField1
+MIDlet-2: Form1,,ui.Form1
+MIDlet-1: Gauge1,,ui.Gauge1
 MIDlet-Jar-URL: lcdui.jar
-MIDlet-Name: lcdui Midlet Suite
-MIDlet-Vendor: Midlet Suite Vendor
-MIDlet-Version: 1.0.0
 MicroEdition-Configuration: CLDC-1.1
+MIDlet-Version: 1.0.0
+MIDlet-Vendor: Midlet Suite Vendor
+MIDlet-Name: lcdui Midlet Suite
 MicroEdition-Profile: MIDP-2.1

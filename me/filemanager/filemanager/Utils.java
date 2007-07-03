@@ -1,5 +1,8 @@
 package filemanager;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Enumeration;
 import java.util.Vector;
 
@@ -28,6 +31,26 @@ public class Utils {
 		} catch (Exception ioe) {
 		}
 		return fc;
+	}
+	
+	public static InputStream getInputStream(String fileName) {
+		InputStream is = null;
+		try {
+			is = getFC(fileName).openInputStream();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return is;
+	}
+	
+	public static OutputStream getOutputStream(String fileName) {
+		OutputStream os = null;		
+		try {
+			os = getFC(fileName).openOutputStream();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return os;
 	}
 
 	public static boolean exists(String fileName) {

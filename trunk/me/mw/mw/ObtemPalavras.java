@@ -141,6 +141,7 @@ public class ObtemPalavras extends MIDlet implements CommandListener, Runnable {
 			try {
 				String palavra = (String) vetor.nextElement();
 				osw.write(palavra + "\n");
+				mProgressString.setText(palavra);
 			} catch (IOException e) {
 				e.printStackTrace();
 				return false;
@@ -163,7 +164,7 @@ public class ObtemPalavras extends MIDlet implements CommandListener, Runnable {
 		// Second: save those words in a file for later use
 		
 		mProgressString.setText("Salvando " + allWords.size() + " palavras em arquivo...");
-		if (saveStringVectorInFile(allWords, "/palavras.txt")) {
+		if (saveStringVectorInFile(allWords, "////Storage Card/palavras.txt")) {
 			mProgressString.setText("Todas as palavras foram salvas...");			
 		} else {
 			mProgressString.setText("Ocorreu uma exceção!");

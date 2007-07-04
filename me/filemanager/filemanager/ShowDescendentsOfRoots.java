@@ -30,11 +30,12 @@ public class ShowDescendentsOfRoots extends MIDlet implements CommandListener, R
 		while (item.hasMoreElements()) {
 			String root = (String) item.nextElement();
 			mMainBox.append(root + (Utils.exists(root) ? " [ok]" : " ERRO"), null);
+			String prefixo = Utils.getFC(root).getURL();
 			Vector conteudo = Utils.getContent(Utils.getFC(root));
 			if (conteudo != null) {
 				Enumeration subitens = conteudo.elements();
 				while (subitens.hasMoreElements())
-					mMainBox.append(root + ": " + ((String) subitens.nextElement()), null);
+					mMainBox.append(root + ": " + prefixo + ((String) subitens.nextElement()), null);
 			} else {
 				mMainBox.append("nenhum conteúdo", null);
 			}

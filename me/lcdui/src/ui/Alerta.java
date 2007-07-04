@@ -1,22 +1,26 @@
 package ui;
 
+import javax.microedition.lcdui.Alert;
+import javax.microedition.lcdui.AlertType;
 import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.CommandListener;
 import javax.microedition.lcdui.Display;
 import javax.microedition.lcdui.Displayable;
-import javax.microedition.lcdui.TextBox;
+import javax.microedition.lcdui.Form;
 import javax.microedition.midlet.MIDlet;
 import javax.microedition.midlet.MIDletStateChangeException;
 
-public class TextBoxExample extends MIDlet implements CommandListener {
+public class Alerta extends MIDlet implements CommandListener {
 
-	private TextBox tb = null;
-	private Command sair = new Command("Sair", Command.EXIT, 0);
+	private Form form = new Form("Formulário");
+	private Command sair = new Command("Sair", Command.EXIT,0);
+	private Command alerta = new Command("Alerta", Command.SCREEN, 0);
+	private Alert msg = new Alert("Título alerta", "Aviso", null, AlertType.INFO);
 	
-	public TextBoxExample() {
-		tb = new TextBox("TextBox Title","Exemplo", 200,0);
-		tb.addCommand(sair);
-		tb.setCommandListener(this);
+	public Alerta() {
+		form.addCommand(sair);
+		form.addCommand(alerta);
+		form.setCommandListener(this);
 	}
 	
 	public void commandAction(Command c, Displayable d) {
@@ -28,6 +32,9 @@ public class TextBoxExample extends MIDlet implements CommandListener {
 				e.printStackTrace();
 			}
 			notifyDestroyed();
+		} else {
+			msg.setTimeout(Alert.FOREVER);
+			Display.getDisplay(this).setCurrent(msg, form);
 		}
 	}
 
@@ -42,7 +49,8 @@ public class TextBoxExample extends MIDlet implements CommandListener {
 	}
 
 	protected void startApp() throws MIDletStateChangeException {
-		Display.getDisplay(this).setCurrent(tb);
+		Display.getDisplay(this).setCurrent(form);
+
 	}
 
 }

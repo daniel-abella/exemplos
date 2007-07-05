@@ -82,7 +82,9 @@
 		
 		<!-- JUnit -->
 		<path location="${junit.jar}" />
-
+		
+		<!-- Hibernate Tools for Ant -->
+		<path location="${kad.libs}" />
 	</path>
 
 	<!-- ALVOS DE PROPÓSITO GERAL                                          -->

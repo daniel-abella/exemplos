@@ -2,7 +2,9 @@ Copyright (c) 2007 Kyriosdata(r)
 Fábio Nogueira de Lucena
 
 -----------------------------------
+PROJETO QUE IMPLEMENTA
 Camada de persistência (exemplo)
+Identificador: dominio-jpa
 -----------------------------------
 
 OBSERVAÇÕES:

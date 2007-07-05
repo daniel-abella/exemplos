@@ -6,15 +6,15 @@ Camada de persistência (exemplo)
 -----------------------------------
 
 OBSERVAÇÕES:
-- Código de persistência é fornecido no diretório 'src'
-- Código de teste no diretório 'test'
-- A mesma estrutura de packages deve ser empregada nos dirs acima.
-- Em 'etc' são colocados arquivos de configuração (log4j, spring e raiz da unidade
-  de persistência, ou seja, contém o diretório META-INF onde se encontra
-  persistence.xml)
-- Implementa persistência do negócio fornecido em outro projeto (<projeto>)
-- O nome deste projeto deve ser <projeto>-data.
-- Depende do projeto <projeto> (que implementa a camada de negócio)
+- O nome deste projeto deve ser <projeto>-data. Este projeto implementa
+  a persistência do projeto <projeto>. 
+- Este projeto, portanto, depende do projeto <projeto>
+- Código que implementa a persistência no diretório 'src'
+- Código que testa a persistência é fornecido em 'test'
+- Se a.X é classe de persistência, então a.XTest testa X.
+- Em 'etc' são colocados arquivos de configuração 
+  (log4j, spring e raiz da unidade de persistência em META-INF)
+- Em META-INF encontra-se o arquivo persistence.xml
 
 PREPARAÇÃO DO AMBIENTE
 1. Configuração de JPA segue no diretório 'etc/META-INF'

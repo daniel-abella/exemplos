@@ -6,6 +6,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+/**
+ * Implementa repositório para Conteiner. 
+ * 
+ * <br>Não há demarcação explícita de transação.
+ * <br><i>EntityManager</i> é injetado via anotação <i>PersistenceContext</i>.
+ * @author Fábio Nogueira de Lucena
+ *
+ */
 public class ConteinerRepositoryDefault implements ConteinerRepository {
 	
 	@PersistenceContext

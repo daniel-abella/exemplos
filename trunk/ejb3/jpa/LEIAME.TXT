@@ -2,7 +2,9 @@ Copyright (c) 2007 Kyriosdata(r)
 Fábio Nogueira de Lucena
 
 -----------------------------------
+PROJETO QUE IMPLEMENTA
 Camada de domínio (exemplo)
+Identificador: dominio
 -----------------------------------
 
 CLASSES:
@@ -20,6 +22,8 @@ lista de um contêiner cujo nome é fornecido.
 OBSERVAÇÕES:
 - Código fonte é fornecido no diretório 'src'
 - Não inclui código de teste, que é fornecido em projeto próprio.
+- Nome deste projeto: dominio
+- Nome do projeto de teste: dominio-teste
 
 PARA CADA CLASSE A SER PERSISTIDA VERIFIQUE SE POSSUI:
 - construtor default (pelo menos com visibilidade de package)

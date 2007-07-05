@@ -3,7 +3,7 @@ package dominio;
 public class ConteinerService {
 	private ConteinerRepository cr = null;
 	
-	public Conteiner tornaNomesMaiusculasPorConteiner(String nome) {
+	public Conteiner toUpperCase(String nome) {
 		Conteiner c = cr.obtem(nome);
 		for (Elemento e : c.getLista())
 			e.setNome(e.getNome().toUpperCase());

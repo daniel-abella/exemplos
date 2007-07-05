@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>target</name>
-			<type>2</type>
-			<location>/home/lucena/integrate/tese/full/C::/tmp/jpa</location>
-		</link>
-	</linkedResources>
 </projectDescription>

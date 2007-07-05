@@ -5,6 +5,10 @@
 		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 
 	<persistence-unit name="jpa-data">
+		<description>
+			Unidade de persistência para o projeto 'dominio'. 
+		</description>
+		
 		<properties>
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.HSQLDialect" />

@@ -6,6 +6,18 @@ import java.util.List;
 import org.springframework.test.annotation.Repeat;
 import org.springframework.test.jpa.AbstractJpaTests;
 
+/**
+ * Ilustra implementação de teste para camada de persistência implementada
+ * usando JPA.
+ * 
+ * <br>Usado para teste apenas. Observe que não há demarcação explícita de
+ * transação. Neste caso, usa-se demarcação padrão implícita e adequada
+ * para casos de teste. 
+ * 
+ * @author Fábio Nogueira de Lucena
+ *
+ */
+
 public class ConteinerRepositoryDefaultTest extends AbstractJpaTests {
 	
 	@Override

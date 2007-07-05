@@ -1,6 +1,9 @@
 Copyright (c) 2007 Kyriosdata(r)
+Fábio Nogueira de Lucena
+
 -----------------------------------
 Camada de persistência (exemplo)
+-----------------------------------
 
 OBSERVAÇÕES:
 - Código de persistência é fornecido no diretório 'src'

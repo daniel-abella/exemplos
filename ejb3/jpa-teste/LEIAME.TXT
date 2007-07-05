@@ -1,6 +1,9 @@
 Copyright (c) 2007 Kyriosdata(r)
+Fábio Nogueira de Lucena
+
 -----------------------------------
 Código de teste para camada de negócio
+-----------------------------------
 
 OBSERVAÇÕES:
 

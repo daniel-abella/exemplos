@@ -29,7 +29,7 @@ public class ConteinerServiceTest {
 			}
 		});
 
-		Conteiner cnt = cs.tornaNomesMaiusculasPorConteiner("teste");
+		Conteiner cnt = cs.toUpperCase("teste");
 		assertNotNull(cnt);
 		assertTrue(cnt.getLista().get(0).getNome().equals("CASA"));
 	}

@@ -60,33 +60,31 @@ Neste exemplo, uma instância de {{{Valor}}} é criada, o valor {{{1}}} atributo
 Até agora simplemente criamos os testes, mas não foi mostrado como testá-los. O que é feito a seguir.
 
 = Como executar os testes? =
-Será necessário compilar a classe {{{Valor}}} e a classe {{{ValorTest}}}. Notou o sufixo {{{Test}}}? Não é necessário, mas uma convenção simples que pode facilitar a localização de classes de teste. Assumindo que os arquivos {{{Valor.java}}} e {{{ValorTest.java}}} estão disponíveis no diretório corrente, então o comando abaixo é suficiente para compilar tais classes.
+Será necessário compilar a classe {{{Valor}}} e a classe {{{ValorTest}}}. Notou o sufixo {{{Test}}}? Não é necessário, mas uma convenção geralmente empregada. Situação similar ocorre com o método de teste com o prefixo {{{test}}}. Assumindo que os arquivos {{{Valor.java}}} e {{{ValorTest.java}}} estão disponíveis no diretório corrente, e que o arquivo *junit-4.4.jar* encontra-se no diretório *dir*, então o comando abaixo é suficiente para compilar tais classes (ambiente Windows).
 
 {{{
-javac *.java
+javac -cp dir\junit-4.4.jar;. *.java
 }}}
 
-Para executar os testes é necessário executar o comando seguinte
+Em Linux,
 
-{{{
-java org.junit.runner.JUnitCore basico.ValorTest
-}}}
-
-O comando acima requisita que a máquina virtual Java execute a classe {{{org.junit.runner.JUnitCore}}} com o argumento {{{basico.ValorTest}}}. Este argumento é o nome da classe que contém um ou mais testes de unidade. 
-
-*OBSERVAÇÃO:* tanto a execução do compilador quanto da máquina virtual Java, conforme os comandos acima, só irá funcionar caso a variável *CLASSPATH* inclua o arquivo *junit-4.4.jar*. Se este não for o caso, também é possível fornecer o arquivo como argumento da opção *-cp*, conforme abaixo, assumindo que *junit-4.4.jar* está disponível no diretório *dir*.
-
-Para compilar:
 {{{
 javac -cp dir/junit-4.4.jar:. *.java
 }}}
 
-Para executar:
+Para executar os testes é necessário executar o comando seguinte (ambiente Windows)
+
 {{{
-java -cp dir/junit-4.4.jar:.. org.junit.runner.JUnitCore basico.ValorTest
+java -cp dir\junit-4.4.jar;. org.junit.runner.JUnitCore ValorTest
 }}}
 
-Nos comandos acima, tanto o compilador irá tratar o arquivo *junit-4.4.jar* como parte do _classpath_, juntamente com o diretório corrente. 
+Em ambiente Linux
+
+{{{
+java -cp dir/junit-4.4.jar:. org.junit.runner.JUnitCore ValorTest
+}}}
+
+A execução dos testes de unidade é realizada pela classe {{{org.junit.runner.JUnitCore}}}. O que deve ser executado deve ser fornecido como argumento, ou seja, o nome da classe contendo os testes, neste caso, {{{ValorTest}}}. 
 
 = Considerações finais =
-Este breve texto introduziu elementos básicos do desenvolvimento e execução de testes de unidade empregando a ferramenta JUnit. Vários outros recursos estão disponíveis, além daqueles apresentados acima. Consulte a documentação disponíveis tão logo esteja dominando  o conteúdo apresentado neste texto. 
+Este breve texto introduziu elementos básicos do desenvolvimento e execução de testes de unidade empregando a ferramenta JUnit. Vários outros recursos estão disponíveis, além daqueles apresentados acima. Consulte a documentação disponível tão logo esteja ambientado com o conteúdo aqui apresentado. O livro fornecido na Introdução deste texto também é uma referência sugerida para consulta posterior.

@@ -51,7 +51,7 @@ public class ValorTest {
 }
 }}}
 
-O método {{{assertEquals(int,int)}}} empregado apenas verifica se o valor esperado {{{3}}} é aquele retornado pela operação {{{v1.getValor()}}}. Há significativa sobrecarga deste método (veja detalhes [http://http://junit.sourceforge.net/javadoc_40/org/junit/Assert.html aqui]).
+O método {{{assertEquals(int,int)}}} empregado apenas verifica se o valor esperado {{{3}}} é aquele retornado pela operação {{{v1.getValor()}}}. Há significativa sobrecarga deste método (veja detalhes [http://junit.sourceforge.net/javadoc_40/org/junit/Assert.html aqui]).
 
 Conforme comentado acima, {{{@Test}}} indica que o método que segue é um teste de unidade, qualquer que seja o nome do método. Contudo, deve ser público, retornar {{{void}}} e não deve receber nenhum valor como argumento. É o conteúdo deste método que exercita o código a ser testado e, adicionalmente, verifica se o resultado obtido é o esperado. 
 

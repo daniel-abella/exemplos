@@ -82,14 +82,44 @@ O trecho acima inicia-se com {{{@Test}}}. Isto indica que o método que segue é
 
 {{{
 @Test
-public void testAdiciona() {
+public void testAdicionaNulo() {
     Valor v = new Valor();
     assertEquals(0, v.adiciona(0));
 }
 }}}
 
-Embora ainda muito simples, o teste acima verifica se a adição de zero a uma instância de {{{Valor}}}, recém-criada, produz como resultado o valor {{{0}}}. 
+Embora ainda muito simples, o teste acima verifica se a adição de zero a uma instância de {{{Valor}}}, recém-criada, produz como resultado o valor {{{0}}}.
 
 Até agora simplemente criamos os testes, mas não foi mostrado como testá-los. O que é feito a seguir.
 
 = Como executar os testes? =
+Será necessário compilar a classe {{{Valor}}} e a classe {{{ValorTest}}}. Notou o sufixo {{{Test}}}? Não é necessário, mas uma convenção simples que pode facilitar a localização de classes de teste. Assumindo que os arquivos {{{Valor.java}}} e {{{ValorTest.java}}} estão disponíveis no diretório corrente, então o comando abaixo é suficiente para compilar tais classes.
+
+{{{
+javac *.java
+}}}
+
+Para executar os testes é necessário executar o comando seguinte
+
+{{{
+java org.junit.runner.JUnitCore basico.ValorTest
+}}}
+
+O comando acima requisita que a máquina virtual Java execute a classe {{{org.junit.runner.JUnitCore}}} com o argumento {{{basico.ValorTest}}}. Este argumento é o nome da classe que contém um ou mais testes de unidade. 
+
+*OBSERVAÇÃO:* tanto a execução do compilador quanto da máquina virtual Java, conforme os comandos acima, só irá funcionar caso a variável *CLASSPATH* inclua o arquivo *junit-4.4.jar*. Se este não for o caso, também é possível fornecer o arquivo como argumento da opção *-cp*, conforme abaixo, assumindo que *junit-4.4.jar* está disponível no diretório *dir*.
+
+Para compilar:
+{{{
+javac -cp dir/junit-4.4.jar:. *.java
+}}}
+
+Para executar:
+{{{
+java -cp dir/junit-4.4.jar:. org.junit.runner.JUnitCore basico.ValorTest
+}}}
+
+Nos comandos acima, tanto o compilador irá tratar o arquivo *junit-4.4.jar* como parte do _classpath_, juntamente com o diretório corrente. 
+
+= Considerações finais =
+Este breve texto introduziu elementos básicos do desenvolvimento e execução de testes de unidade empregando a ferramenta JUnit. Vários outros recursos estão disponíveis, além daqueles apresentados acima.

@@ -1,13 +1,14 @@
-#summary One-sentence summary of this page.
+#Introdução ao JUnit 4
 
-= Introduction =
+= Introdução =
 
-Add your content here.
+Em _Pragmatica Unit Testing: In Java with JUnit_, Andrew Hunt e David Thomas definem teste de unidade como "código escrito por um desenvolvedor que exercita um trecho de código pequeno e de uma área específica da funcionalidade do código que está sendo testado". Eles ainda acrescentam que testes de unidade são desenvolvidos para provar que um trecho de código faz o que o desenvolvedor imagina que deveria fazer.
 
+Nesta breve introdução são fornecidos os passos básicos para uso do JUnit para a confecção de testes de unidade (em Java). 
 
-= Details =
+= Processo =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+ * Escreva um ou mais testes de unidade correspondentes à função a ser desenvolvida
+ * Execute os testes de unidade (eles irão falhar, afinal, a funcionalidade ainda não foi implementada)
+ * Escreva código que implementa a função ou parte desta e execute os testes de unidade. Um ou mais deverão "passar". Repita o passo anterior e o corrente até que todos os testes sejam executados satisfatoriamente. 
+

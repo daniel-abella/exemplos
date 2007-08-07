@@ -13,11 +13,9 @@ Em http://www.junit.org você poderá obter a versão mais recente, assim como t
 Obtenha o arquivo *junit4.4.zip* ou versão mais recente no endereço fornecido acima. Descomprima este arquivo. Será criado o diretório *junit4.4*. Neste diretório criado encontra-se o arquivo *junit-4.4.jar*. Este arquivo *.jar* é empregado tanto para compilar quanto para executar testes de unidade usando o JUnit.  
 
 = Primeiro exemplo =
-Abaixo segue uma classe contendo uma única propriedade e três (3) métodos públicos. Para este exemplo didático, apenas o método {{{adiciona(int valor)}}} será testado. Conforme a implementação, após a chamada a este método o valor corrente da instância de {{{Valor}}} deve ser acrescido do valor fornecido como argumento.
+Abaixo segue uma classe trivial contendo uma única propriedade e três (3) métodos públicos. O método {{{adiciona(int valor)}}} deve acrescentar ao valor da instância aquele fornecido como argumento.
 
 {{{
-package basico;
-
 public class Valor {
     private int valor;
 
@@ -35,11 +33,9 @@ public class Valor {
 }
 }}}
 
-O teste que verifica se o método {{{adiciona(int valor)}}} faz o que deveria estar fazendo é fornecido abaixo usando o JUnit. O código é simples, mas cada uma das linhas é comentada em seguida.
+O teste que verifica se o método {{{adiciona(int valor)}}} faz o que deveria estar fazendo é fornecido abaixo. Neste código há duas sentenças {{{import}}}. A primeira permite o uso da chamada {{{assertEquals}}} no corpo do método de teste ({{{testAdiciona()}}}. A outra sentença importa declara a anotação {{{Test}}}. É o emprego desta anotação que identifica, na classe {{{ValorTest}}}, os métodos que executam os testes de unidade. Neste caso apenas o método {{{testAdiciona()}}}.
 
 {{{
-package basico;
-
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -49,14 +45,12 @@ public class ValorTest {
     public void testAdiciona() {
         Valor v1 = new Valor();
 	v1.setValor(1);
-	Valor v2 = new Valor();
-	v2.setValor(2);
-	assertEquals(3,v1.getValor() + v2.getValor());
+	assertEquals(3,v1.adiciona(2).getValor());
     }
 }
 }}}
 
-Há duas sentenças {{{import}}}. A primeira permite o uso da chamada {{{assertEquals}}}. Há várias sobrecargas deste método estático. Neste caso, a variante contendo dois argumentos do tipo {{{int}}} é empregada. A outra sentença importa declara a anotação {{{Test}}}. É o emprego desta anotação que identifica, na classe {{{ValorTest}}}, os métodos que executam os testes de unidade. Neste caso apenas o método {{{testAdiciona()}}}. Todos os métodos de teste devem possuir esta assinatura, ou seja, devem ser públicos, retornar {{{void}}} e não recebem nenhum valor como argumento. Naturalmente, a classe {{{ValorTest}}} pode possuir muitos outros métodos sem estas restrições.
+O método {{{assertEquals(int,int)}}} empregado apenas verifica se o valor esperado {{{3}}} é aquele retornado pela operação {{{v1.adiciona(2).getValor()}}}. Todos os métodos de teste devem possuir esta assinatura, ou seja, devem ser públicos, retornar {{{void}}} e não recebem nenhum valor como argumento. Naturalmente, a classe {{{ValorTest}}} pode possuir muitos outros métodos sem estas restrições.
 
 Abaixo segue apenas um trecho do código fornecido acima. Isto é feito para permitir que alguns itens sejam discutidos em detalhes.
 

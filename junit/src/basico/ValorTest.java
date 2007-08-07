@@ -12,6 +12,6 @@ public class ValorTest {
 		v1.setValor(1);
 		Valor v2 = new Valor();
 		v2.setValor(2);
-		assertEquals(3,v1.getValor() + v2.getValor());
+		assertEquals(3, v1.getValor() + v2.getValor());
 	}
 }

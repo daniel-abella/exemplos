@@ -80,7 +80,7 @@ public void testAdiciona() {
 
 O trecho acima inicia-se com {{{@Test}}}. Isto indica que o método que segue é um teste de unidade, qualquer que seja o nome do método. Contudo, deve ser público, retorna {{{void}}} e não recebe nenhum valor como argumento. É o conteúdo deste método que exercita o código a ser testado e, adicionalmente, verifica se o resultado obtido é o esperado. No exemplo acima, duas instâncias de {{{Valor}}} são criadas, respectivamente com o valor {{{1}}} e {{{2}}}. Em conseqüência, é esperado que a soma destes dois valores resulte em {{{3}}}, conforme o método {{{assertEquals}}}. Não faz muito sentido a execução do teste acima. Contudo, o teste do método {{{adiciona(int valor}}} já é representativa de casos típicos.
 
-{{{{
+{{{
 @Test
 public void testAdiciona() {
     Valor v = new Valor();

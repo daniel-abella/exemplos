@@ -18,3 +18,49 @@ Em http://www.junit.org você poderá obter a versão mais recente, assim como t
 
 = Instalar o JUnit =
 Obtenha o arquivo contendo o JUnit em http://www.junit.org. No momento, a versão disponível é fornecida no arquivo *junit4.4.zip*. Simplesmente descomprima este arquivo, o que cria o diretório *junit4.4*. Neste diretório criado encontra-se o arquivo *junit-4.4.jar*. Acrescente este arquivo ao _classpath_. Isto pode ser feito de várias formas, por exemplo, pela definição da variável *CLASSPATH* ou toda vez que código contendo referência ao JUnit for compilado ou executado. Neste último caso, tanto o compilador Java (*javac*) quanto a máquina virtual Java (*java*) deverão ser executados com a opção *-cp* incluindo o arquivo *junit-4.4.jar*. 
+
+= Primeiro exemplo =
+Abaixo segue uma classe contendo uma única propriedade e três (3) métodos públicos. Para este exemplo didático, apenas o método *adiciona(int valor)* será testado. Conforme a implementação, após a chamada a este método o valor corrente da instância de *Valor* deve ser acrescido do valor fornecido como argumento.
+
+{{{
+package basico;
+
+public class Valor {
+	private int valor;
+
+	public int getValor() {
+		return valor;
+	}
+
+	public void setValor(int valor) {
+		this.valor = valor;
+	}
+	
+	public void adiciona(int valor) {
+		this.valor += valor;
+	}
+}
+}}}
+
+O teste que verifica se o método *adiciona(int valor)* faz o que deveria estar fazendo é fornecido abaixo usando o JUnit. O código é simples, mas cada uma das linhas é comentada em seguida.
+
+{{{
+package basico;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class ValorTest {
+
+	@Test
+	public void testAdiciona() {
+		Valor v1 = new Valor();
+		v1.setValor(1);
+		Valor v2 = new Valor();
+		v2.setValor(2);
+		assertEquals(3,v1.getValor() + v2.getValor());
+	}
+}
+}}}
+
+Há duas sentenças {{{import}}}.

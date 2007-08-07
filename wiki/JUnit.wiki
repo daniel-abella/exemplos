@@ -45,25 +45,13 @@ public class ValorTest {
     public void testAdiciona() {
         Valor v1 = new Valor();
 	v1.setValor(1);
-	assertEquals(3,v1.adiciona(2).getValor());
+	assertEquals(3, v1.adiciona(2).getValor());
     }
 }
 }}}
 
-O método {{{assertEquals(int,int)}}} empregado apenas verifica se o valor esperado {{{3}}} é aquele retornado pela operação {{{v1.adiciona(2).getValor()}}}. Todos os métodos de teste devem possuir esta assinatura, ou seja, devem ser públicos, retornar {{{void}}} e não recebem nenhum valor como argumento. Naturalmente, a classe {{{ValorTest}}} pode possuir muitos outros métodos sem estas restrições.
+O método {{{assertEquals(int,int)}}} empregado apenas verifica se o valor esperado {{{3}}} é aquele retornado pela operação {{{v1.adiciona(2).getValor()}}}. Há significativa sobrecarga deste método (veja detalhes [http://http://junit.sourceforge.net/javadoc_40/org/junit/Assert.html aqui]). Todos os métodos de teste devem possuir esta assinatura, ou seja, devem ser públicos, retornar {{{void}}} e não recebem nenhum valor como argumento. Naturalmente, a classe {{{ValorTest}}} pode possuir muitos outros métodos sem estas restrições.
 
-Abaixo segue apenas um trecho do código fornecido acima. Isto é feito para permitir que alguns itens sejam discutidos em detalhes.
-
-{{{
-@Test
-public void testAdiciona() {
-    Valor v1 = new Valor();
-    v1.setValor(1);
-    Valor v2 = new Valor();
-    v2.setValor(2);
-    assertEquals(3,v1.getValor() + v2.getValor());
-}
-}}}
 
 O trecho acima inicia-se com {{{@Test}}}. Isto indica que o método que segue é um teste de unidade, qualquer que seja o nome do método. Contudo, deve ser público, retorna {{{void}}} e não recebe nenhum valor como argumento. É o conteúdo deste método que exercita o código a ser testado e, adicionalmente, verifica se o resultado obtido é o esperado. No exemplo acima, duas instâncias de {{{Valor}}} são criadas, respectivamente com o valor {{{1}}} e {{{2}}}. Em conseqüência, é esperado que a soma destes dois valores resulte em {{{3}}}, conforme o método {{{assertEquals}}}. Não faz muito sentido a execução do teste acima. Contudo, o teste do método {{{adiciona(int valor}}} já é representativa de casos típicos.
 

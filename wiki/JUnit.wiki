@@ -6,13 +6,6 @@ Em _Pragmatica Unit Testing: In Java with JUnit_, Andrew Hunt e David Thomas def
 
 Nesta breve introdução são fornecidos os passos básicos para uso do JUnit para a confecção de testes de unidade (em Java). 
 
-= Processo =
-Não é necessário seguir os passos abaixo. Esta é a abordagem geralmente conhecida por "desenvolvimento baseado em testes". 
-
- * Escreva um ou mais testes de unidade correspondentes à função a ser desenvolvida
- * Execute os testes de unidade (eles irão falhar, afinal, a funcionalidade ainda não foi implementada)
- * Escreva código que implementa a função e repita o passo anterior até que todos os testes sejam executados satisfatoriamente. 
-
 = Onde obter o JUnit e outras informações =
 Em http://www.junit.org você poderá obter a versão mais recente, assim como tutoriais acerca do emprego do JUnit. No momento em que este texto é escrito, a versão mais recente é a versão 4.4.
 

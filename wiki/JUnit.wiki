@@ -116,10 +116,10 @@ javac -cp dir/junit-4.4.jar:. *.java
 
 Para executar:
 {{{
-java -cp dir/junit-4.4.jar:. org.junit.runner.JUnitCore basico.ValorTest
+java -cp dir/junit-4.4.jar:.. org.junit.runner.JUnitCore basico.ValorTest
 }}}
 
 Nos comandos acima, tanto o compilador irá tratar o arquivo *junit-4.4.jar* como parte do _classpath_, juntamente com o diretório corrente. 
 
 = Considerações finais =
-Este breve texto introduziu elementos básicos do desenvolvimento e execução de testes de unidade empregando a ferramenta JUnit. Vários outros recursos estão disponíveis, além daqueles apresentados acima.
+Este breve texto introduziu elementos básicos do desenvolvimento e execução de testes de unidade empregando a ferramenta JUnit. Vários outros recursos estão disponíveis, além daqueles apresentados acima. Consulte a documentação disponíveis tão logo esteja dominando  o conteúdo apresentado neste texto. 

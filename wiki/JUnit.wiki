@@ -13,6 +13,8 @@ Não é necessário seguir os passos abaixo. Esta é a abordagem geralmente conh
  * Execute os testes de unidade (eles irão falhar, afinal, a funcionalidade ainda não foi implementada)
  * Escreva código que implementa a função e repita o passo anterior até que todos os testes sejam executados satisfatoriamente. 
 
-= Onde obter o JUnit =
-Em http://junit.org você poderá obter a versão mais recente, assim como tutoriais acerca do emprego do JUnit. No momento em que este texto é escrito, a versão mais recente é a versão 4.4.
+= Onde obter o JUnit e outras informações =
+Em http://www.junit.org você poderá obter a versão mais recente, assim como tutoriais acerca do emprego do JUnit. No momento em que este texto é escrito, a versão mais recente é a versão 4.4.
 
+= Instalar o JUnit =
+Obtenha o arquivo contendo o JUnit em http://www.junit.org. No momento, a versão disponível é fornecida no arquivo *junit4.4.zip*. Simplesmente descomprima este arquivo, o que cria o diretório *junit4.4*. Neste diretório criado encontra-se o arquivo *junit-4.4.jar*. Acrescente este arquivo ao _classpath_. Isto pode ser feito de várias formas, por exemplo, pela definição da variável *CLASSPATH* ou toda vez que código contendo referência ao JUnit for compilado ou executado. Neste último caso, tanto o compilador Java (*javac*) quanto a máquina virtual Java (*java*) deverão ser executados com a opção *-cp* incluindo o arquivo *junit-4.4.jar*. 

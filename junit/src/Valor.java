@@ -1,5 +1,3 @@
-package basico;
-
 public class Valor {
 	private int valor;
 

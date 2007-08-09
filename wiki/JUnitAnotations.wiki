@@ -6,9 +6,9 @@ Testes de unidade escritos com o apoio do JUnit fazem uso de algumas anotações
 
  * *@Test*. Principal anotação. Indica que o método anotado contém testes.
  * *@After*. Identifica método para ser executado após cada método de teste, indicado pela anotação *@Test*. Efeito simétrico à anotação *@Before*.
- * *@AfterClass*. Identifica método para ser executado após a execução de todos os métodos de teste da classe em questão. Ou seja, é executado uma única vez para cada instância da classe de teste, após a execução de todos os métodos de teste.
+ * *!@AfterClass*. Identifica método para ser executado após a execução de todos os métodos de teste da classe em questão. Ou seja, é executado uma única vez para cada instância da classe de teste, após a execução de todos os métodos de teste.
  * *@Before*. Identifica método a ser executado antes da execução de todo método de teste. Ou seja, será executado quantas vezes forem o número de métodos de teste (uma vez antes de cada teste). Efeito simétrico à anotação *@After*.
- * *@BeforeClass*. Identifica método que será executado uma única vez por instância da classe que contém os testes e antes da execução de qualquer método de teste. Efeito simétrico ao da anotação *@AfterClass*.
+ * *!@BeforeClass*. Identifica método que será executado uma única vez por instância da classe que contém os testes e antes da execução de qualquer método de teste. Efeito simétrico ao da anotação *@AfterClass*.
 
 
 = Exemplo =

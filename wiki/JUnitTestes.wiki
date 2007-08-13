@@ -1,0 +1,15 @@
+O que testar?
+
+= Introdução =
+A experiência em programação facilitará, com o tempo, a identificação do que deve ser testado. O livro _Pragmatic Unit Testing: In Java with JUnit_, Andrew Hunt e David Thomas, da editora The Pragmatic Programmers, 2003, inclui uma valiosa orientação neste sentido.
+O que segue nesta página é o que o livro indicado acima sugere. Detalhes podem ser encontrados no livro.
+
+= O que deve ser testado? =
+Novamente, o  livro _Pragmatic Unit Testing: In Java with JUnit_, Andrew Hunt e David Thomas, da editora The Pragmatic Programmers, 2003 estabelece a seguinte estratégia para facilitar a identificação do que deverá ser testado. Conforme apresentado abaixo, isto é fornecido por meio de perguntas:
+
+  * Os resultados estão corretos?
+  * As condições de fronteira estão corretas?
+  * O inverso de relacionamentos podem ser verificados?
+  * Resultados podem ser verificados por mais de um método?
+  * Situações de erro podem ser provocadas?
+  * As características de execução estão dentro dos limites?

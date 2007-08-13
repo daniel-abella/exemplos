@@ -1,0 +1,44 @@
+Organização típica de código de testes usando o JUnit
+
+= Introdução =
+
+Código de teste, em geral, está organizado da seguinte forma:
+
+ * Criação do "contexto" para execução do teste
+ * Experimentação do código a ser testado
+ * Verificar se a experimentação produz os resultados esperados
+ * Remoção do "contexto" criado para teste
+
+= Detalhes =
+
+A criação do contexto do teste pode ser feito por método ou para todos os testes de uma classe. No primeiro caso, basta anotar o método que estabelece o contexto com a anotação *@Before*. Caso contrário, a criação do contexto pode ser anotada por método com a anotação *@BeforeClass*. Observe que, caso nenhuma destas anotações seja empregada, então será necessário criar o contexto antes da execução de cada teste. 
+
+Para ilustrar, imagine que o teste de determinada classe faz uso de extensa seqüência de caracteres devidamente elaborada e armazenada em um arquivo. Para testar tal código, o método que lê a seqüência de caracteres do arquivo e a guarda em memória pode ser anotado por *@BeforeClass*. Antes que cada método faça alterações destrutivas na seqüência lida do arquivo, o que obrigaria uma nova leitura antes de cada teste, um método anotado por *@Before* pode copiar a seqüência lida para a seqüência que será de fato manipulada pelo teste. O esboço abaixo ilustra este exemplo. 
+
+{{{
+public class CaracteresManipulacaoTest {
+    private String sequenciaOriginal;
+    private StringBuffer sequencia; // Modificada a cada teste
+
+    @BeforeClass
+    public void leSequenciaExtensaDeArquivo() {
+        // Lê seqüência e deposita em 'sequenciaOriginal'
+    }
+
+    @Before
+    public void copiaSequenciaOriginal() {
+        // Copia seqüência original para 'sequencia'
+    }
+
+    @Test
+    public void testPropriamenteDito() {
+        // Teste que usa 'sequencia' original e altera seu conteúdo
+    }
+
+    @Test 
+    public void testOutroTeste() {
+        // Usa 'sequencia' com o conteúdo original e não aquele
+        // disponível após a execução de outros testes
+    }
+}
+}}}

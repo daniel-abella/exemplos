@@ -14,12 +14,16 @@ O livro _Pragmatic Unit Testing: In Java with JUnit_, Andrew Hunt e David Thomas
   * Situações de erro podem ser provocadas?
   * As características de execução estão dentro dos limites?
 
-Abaixo, cada uma destas perguntas é apresentada por meio de um exemplo. 
+Abaixo, cada uma destas perguntas é apresentada por meio de um exemplo. Se você ainda não possui ampla prática com testes de unidade, estas perguntas podem ser úteis e funcionar como uma lista de verificação, com o propósito de assegurar que o que é relevante foi testado.
 
-= Os resultados estão corretos? =
+== Os resultados estão corretos? ==
+Naturalmente, o que mais se espera é que o resultado esperado de um processamento forneça o que foi especificado para ser produzido. Por exemplo, se a média em uma disciplina significa um valor entre zero e dez com duas casas decimais, resultante do cálculo da média aritmética simples, então as notas 2 e 8 devem produzir a nota 5. 
 
-= As condições de fronteira estão corretas? = 
+== As condições de fronteira estão corretas? ==
+No caso do cálculo da média em uma disciplina, qual a média para uma nota negativa? Ou melhor, o que é esperado caso um valor negativo seja fornecido? As condições de fronteira incluem: (a) as duas casas decimais estão sendo fornecidas corretamente? (b) os valores estão ordenados ou não ordenados como esperado? (c) os resultados estão dentro dos valores mínimo e máximo? (d) há referência para elemento externo que não está sob controle direto do código testado? (e) o valor esperado existe e está disponível, por exemplo, está presente em uma lista, não é nulo? (f) há valores suficientes conforme esperado, ou seja, a cardinalidade está correta? (g) as ações estão ocorrendo na ordem correta? No momento correto? No instante esperado?
+ 
 = O inverso de relacionamentos podem ser verificados? =
+
 = Resultados podem ser verificados por mais de um método? =
 = Situações de erro podem ser provocadas? =
 = As características de execução estão dentro dos limites? =

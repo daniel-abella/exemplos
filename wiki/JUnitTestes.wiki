@@ -9,7 +9,7 @@ O livro _Pragmatic Unit Testing: In Java with JUnit_, Andrew Hunt e David Thomas
 
   * Os resultados estão corretos?
   * As condições de fronteira estão corretas?
-  * O inverso de relacionamentos podem ser verificados?
+  * O inverso pode ser verificado?
   * Resultados podem ser verificados por mais de um método?
   * Situações de erro podem ser provocadas?
   * As características de execução estão dentro dos limites?
@@ -22,8 +22,13 @@ Naturalmente, o que mais se espera é que o resultado esperado de um processamen
 == As condições de fronteira estão corretas? ==
 No caso do cálculo da média em uma disciplina, qual a média para uma nota negativa? Ou melhor, o que é esperado caso um valor negativo seja fornecido? As condições de fronteira incluem: (a) as duas casas decimais estão sendo fornecidas corretamente? (b) os valores estão ordenados ou não ordenados como esperado? (c) os resultados estão dentro dos valores mínimo e máximo? (d) há referência para elemento externo que não está sob controle direto do código testado? (e) o valor esperado existe e está disponível, por exemplo, está presente em uma lista, não é nulo? (f) há valores suficientes conforme esperado, ou seja, a cardinalidade está correta? (g) as ações estão ocorrendo na ordem correta? No momento correto? No instante esperado?
  
-= O inverso de relacionamentos podem ser verificados? =
+= O inverso pode ser verificado? =
+Ao se calcular a média aritmética de uma disciplina e de posse de uma das notas, pode-se obter a outra nota e, dessa forma, verificar o cálculo da média. Ao se calcular a raiz quadrada pode-se verificar o resultado multiplicando-o por ele próprio. Se uma operação deve acrescentar um elemento em determinada lista e em determinada posição, então pode-se, após a operação, verificar se um novo elemento foi acrescentado na posição apropriada. 
 
-= Resultados podem ser verificados por mais de um método? =
-= Situações de erro podem ser provocadas? =
+== Resultados podem ser verificados por mais de um método? ==
+Uma operação que visa produzir a raiz quadrada de um número pode ser testada conforme sugerido no exemplo acima ou, opcionalmente, entre outras, comparando-se este resultado com aquele produzido por *Math.sqrt()*. 
+
+== Situações de erro podem ser provocadas? ==
+Alguns contextos onde código deve ser testado são elaborados para serem produzidos. Tais contextos incluem situações como: falta de memória, falta de espaço em disco, questões com tempo (relógio da máquina), disponibilidade de conexão com rede, carga do sistema e outras. Em geral, tais contextos são criados por meio de mock objects. Veja jMock (http://jmock.org) para detalhes.
+
 = As características de execução estão dentro dos limites? =

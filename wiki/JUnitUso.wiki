@@ -1,4 +1,4 @@
-Organização típica de código de testes usando o JUnit
+#summary Organização típica de código de testes usando o JUnit (Fábio Nogueira de Lucena)
 
 = Introdução =
 

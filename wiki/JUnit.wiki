@@ -84,7 +84,15 @@ Em ambiente Linux
 java -cp dir/junit-4.4.jar:. org.junit.runner.JUnitCore ValorTest
 }}}
 
-A execução dos testes de unidade é realizada pela classe {{{org.junit.runner.JUnitCore}}}. O que deve ser executado deve ser fornecido como argumento, ou seja, o nome da classe contendo os testes, neste caso, {{{ValorTest}}}. 
+A execução dos testes de unidade é realizada pela classe {{{org.junit.runner.JUnitCore}}}. O que deve ser executado deve ser fornecido como argumento, ou seja, o nome da classe contendo os testes, neste caso, {{{ValorTest}}}. A saída produzida é fornecida abaixo:
+
+{{{
+JUnit version 4.3.1
+.
+OK (1 test)
+}}}
+
+Neste caso, informa que um único teste foi realizado de forma satisfatória. Naturalmente, para verificar o que o JUnit informa em caso de erro, basta fazer uso de um método assert que falha, por exemplo, {{{assertEquals(2,3)}}}. Enquanto esta sentença sempre falha, em cenário real, são os resultados do código testado que possivelmente irão falhar. 
 
 = Considerações finais =
 Este breve texto introduziu elementos básicos do desenvolvimento e execução de testes de unidade empregando a ferramenta JUnit. Vários outros recursos estão disponíveis, além daqueles apresentados acima. Consulte a documentação disponível tão logo esteja ambientado com o conteúdo aqui apresentado. O livro fornecido na Introdução deste texto também é uma referência sugerida para consulta posterior.

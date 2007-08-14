@@ -1,4 +1,4 @@
-Anotações úteis aos testes com JUnit
+#summary Anotações úteis aos testes com JUnit (Fábio Nogueira de Lucena)
 
 = Introdução =
 

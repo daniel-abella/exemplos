@@ -1,8 +1,6 @@
-#summary Introdução ao Equinox
+#summary Introdução ao Equinox (Fábio Nogueira de Lucena)
 
 = Introdução ao Equinox =
-
-_Copyright (c) 2007 Fábio Nogueira de Lucena_
 
 == Equinox é uma implementação de OSGi==
 

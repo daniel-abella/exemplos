@@ -1,4 +1,4 @@
-O que testar?
+#summary O que testar? (Fábio Nogueira de Lucena)
 
 = Introdução =
 A experiência em programação facilitará, com o tempo, a identificação do que deve ser testado. O livro _Pragmatic Unit Testing: In Java with JUnit_, Andrew Hunt e David Thomas, da editora The Pragmatic Programmers, 2003, inclui uma valiosa orientação neste sentido.

@@ -1,0 +1,13 @@
+Quais são as propriedades desejáveis em testes?
+
+= Introduction =
+
+O livro _Pragmatic Unit Testing: In Java with JUnit_, Andrew Hunt e David Thomas, da editora The Pragmatic Programmers, 2003
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages

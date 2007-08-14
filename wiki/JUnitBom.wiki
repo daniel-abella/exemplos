@@ -1,4 +1,4 @@
-Quais são as propriedades desejáveis em testes?
+#summary Quais são as propriedades desejáveis em testes? (Fábio Nogueira de Lucena)
 
 = Introduction =
 

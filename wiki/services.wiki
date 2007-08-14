@@ -1,7 +1,6 @@
-#summary Criando e executando serviços no Equinox
+#summary Criando e executando serviços no Equinox (Fábio Nogueira de Lucena)
 
 = Criando e Usufruindo de um Serviço no Equinox =
-_Copyright (c) 2007 Fábio Nogueira de Lucena_
 
 == Resumo ==
 Uma visão introdutória do Equinox foi apresentada em [equinox Uma Introdução ao Equinox]. Neste texto são criados dois bundles. Um deles é um serviço. O outro requisita a execução do serviço oferecido pelo primeiro.

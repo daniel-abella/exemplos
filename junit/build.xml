@@ -23,7 +23,7 @@
 	<!-- Organização do código -->
 	<property name="src.dir" location="src:test" />
 	<property name="build.dir" location="/tmp/${ant.project.name}" />
-	<property name="test.out.dir" location="${build.dir}/out" />
+	<property name="test.out.dir" location="${build.dir}/tout" />
 
 	<!-- ================================================================= -->
 	<!-- DOMÍNIO (entidades e interfaces dos repositórios)                 -->
@@ -82,14 +82,6 @@
 		</java>
 	</target>
 	
-	<!-- TESTES DE UNIDADE (JUnit)                                         -->
-	<!-- ================================================================= -->
-	<!-- db-clean  : Limpa HSQLDB (kyrios-teste)                           -->
-	<!-- db-client : inicia cliente para interação com SGBD                -->	
-	<!-- db-start  : inicia SGBD de desenvolvimento                        -->
-	<!-- db-stop   : interrompe SGBD                                       -->
-	<!-- ================================================================= -->
-
 	<!-- ================================================================= -->
 	<!-- Alvos para o DBUnit                                               -->
 	<!-- ================================================================= -->
@@ -107,15 +99,26 @@
 		</dbunit>
 	</target>
 	
-	<target name="test" depends="compile">
+	<!-- TESTES DE UNIDADE (JUnit)                                         -->
+	<!-- ================================================================= -->
+	<!-- test        : executa testes de unidade                           -->
+	<!-- test-report : gera relatórios (interrompe Ant em caso de falha    -->	
+	<!-- ================================================================= -->
+
+	<target name="test" depends="compile" description="Executa testes (*Test.class) ou classe (-Dclasse=X)">
 		<mkdir dir="${test.out.dir}" />
 		<property name="classe" value="*Test" />
-		<junit printsummary="yes" haltonerror="yes" haltonfailure="yes" fork="yes">
+		<junit printsummary="false" fork="yes"
+			errorproperty="test.failed"
+			failureproperty="test.failed">
+			<assertions>
+				<enable/>
+			</assertions>
 			<formatter type="plain" usefile="false" />
 			<formatter type="xml" />
 			<batchtest todir="${test.out.dir}">
-				<fileset dir="test">
-					<include name="**/${classe}.java" />
+				<fileset dir="${build.dir}">
+					<include name="**/${classe}.class" />
 					<exclude name="**/Test**All.java" />
 				</fileset>
 			</batchtest>
@@ -125,14 +128,19 @@
 		</junit>
 	</target>
 	
-	<target name="test-report" depends="test">              
+	<target name="test-report" depends="test" description="Gera relatórios de teste (para Ant em caso de erro)"> 		
 		<mkdir dir="${test.out.dir}/html"/>         
-		<junitreport todir="${test.out.dir}">       
+		<junitreport todir="${test.out.dir}">
 			<fileset dir="${test.out.dir}">                    
 				<include name="TEST-*.xml"/>       
 			</fileset>                                              
 			<report todir="${test.out.dir}/html"/>
 	    </junitreport>
+		
+		<!-- Após gerar relatório, interrompe Ant se houve falha -->
+		<fail if="test.failed">
+			Pelo menos um teste falhou. Veja resultado em ${test.out.dir}/html.
+		</fail>		
 	</target>
 
 </project>

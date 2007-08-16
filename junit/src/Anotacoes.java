@@ -8,12 +8,12 @@ public class Anotacoes {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		System.out.println("Uma única vez antes de qualquer teste");
+		System.out.println("Uma Ãºnica vez antes de qualquer teste");
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		System.out.println("Uma única vez após todos os testes");
+		System.out.println("Uma Ãºnica vez apÃ³s todos os testes");
 	}
 
 	@Before
@@ -23,7 +23,7 @@ public class Anotacoes {
 
 	@After
 	public void tearDown() throws Exception {
-		System.out.println("Após todo teste");
+		System.out.println("ApÃ³s todo teste");
 	}
 	
 	@Test

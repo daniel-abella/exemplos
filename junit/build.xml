@@ -31,28 +31,12 @@
 	<path id="dominio.classpath">
 		<pathelement path="/tmp/jpa" />
 	</path>
-
-	<!-- ================================================================= -->
-	<!-- Hibernate (classpath)                                             -->
-	<!-- ================================================================= -->
-	<path id="hibernate.classpath">
-		<pathelement location="${hibernate.jar}" />
-		<pathelement location="${h.annotations.jar}" />
-		<pathelement location="${ejb3.persistence.jar}" />
-		<pathelement location="${h.tools1.jar}" />
-		<pathelement location="${h.tools2.jar}" />
-		<pathelement location="${h.entity1.jar}" />
-		<pathelement location="${h.entity2.jar}" />
-		<fileset dir="${hibernate.dir}/lib" includes="*.jar" />
-	</path>
-
+	
 	<!-- ================================================================= -->
 	<!-- PERSISTENCIA (classpath)                                          -->
 	<!-- ================================================================= -->
 	<path id="persistencia.classpath">
-		<!-- Hibernate -->
-		<path refid="hibernate.classpath" />
-
+		
 		<!-- Driver JDBC -->
 		<pathelement location="${hsqldb.jar}" />
 

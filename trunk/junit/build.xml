@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="junit" basedir="." default="execute">
+
+	<!-- ================================================================= -->
+	<!-- Projeto Testes                                                     -->
+	<!-- Copyright (c) 2007 Kyriosdata (r)                                 -->
+	<!-- Fábio Nogueira de Lucena (fabio@kyriosdata.com.br)                -->
+	<!--                                                                   -->
+	<!-- PRÉ-REQUISITOS:                                                   -->
+	<!-- 1. Ambiente kad-libs-0.9 instalado (veja kyrios.sourceforge.net)  -->
+	<!-- 2. Definição da variável ECLIPSE 'KAD_LIBS'                       -->
+	<!-- 3. Projeto kad-libs-0.9 (acompanha kad-libs)                      -->
+	<!-- ================================================================= -->
+
+	<property environment="env" />
+	<property name="kad.libs" value="${env.KAD_LIBS}" />
+	<property file="${kad.libs}/kad-libs.properties" />
+
+	<!-- ================================================================= -->
+	<!-- PROPRIEDADES                                                      -->
+	<!-- ================================================================= -->
+
+	<!-- Organização do código -->
+	<property name="src.dir" location="src:test" />
+	<property name="build.dir" location="/tmp/${ant.project.name}" />
+	<property name="test.out.dir" location="${build.dir}/out" />
+
+	<!-- ================================================================= -->
+	<!-- DOMÍNIO (entidades e interfaces dos repositórios)                 -->
+	<!-- ================================================================= -->
+	<path id="dominio.classpath">
+		<pathelement path="/tmp/jpa" />
+	</path>
+
+	<!-- ================================================================= -->
+	<!-- Hibernate (classpath)                                             -->
+	<!-- ================================================================= -->
+	<path id="hibernate.classpath">
+		<pathelement location="${hibernate.jar}" />
+		<pathelement location="${h.annotations.jar}" />
+		<pathelement location="${ejb3.persistence.jar}" />
+		<pathelement location="${h.tools1.jar}" />
+		<pathelement location="${h.tools2.jar}" />
+		<pathelement location="${h.entity1.jar}" />
+		<pathelement location="${h.entity2.jar}" />
+		<fileset dir="${hibernate.dir}/lib" includes="*.jar" />
+	</path>
+
+	<!-- ================================================================= -->
+	<!-- PERSISTENCIA (classpath)                                          -->
+	<!-- ================================================================= -->
+	<path id="persistencia.classpath">
+		<!-- Hibernate -->
+		<path refid="hibernate.classpath" />
+
+		<!-- Driver JDBC -->
+		<pathelement location="${hsqldb.jar}" />
+
+		<!-- DbUnit -->
+		<pathelement location="${dbunit.jar}" />
+	</path>
+
+	<!-- ================================================================= -->
+	<!-- CLASSPATH (projeto)                                               -->
+	<!-- ================================================================= -->
+	<path id="projeto.classpath">
+		<!-- Testes de unidade -->
+		<path location="${build.dir}" />
+		
+		<!-- Código testado -->
+		<path refid="dominio.classpath" />
+		
+		<!-- JUnit -->
+		<path location="${junit.jar}" />
+	</path>
+
+	<!-- ALVOS DE PROPÓSITO GERAL                                          -->
+	<!-- ================================================================= -->
+	<!-- clean   : apaga arquivos gerados                                  -->
+	<!-- compile : compila fontes                                          -->
+	<!-- execute : executa classe (argumento -Dclasse=<nomeClasse>)        -->
+	<!-- ================================================================= -->
+
+	<target name="clean" description="Apaga arquivos gerados">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="compile" description="compila arquivos .java">
+		<mkdir dir="${build.dir}" />
+		<javac srcdir="${src.dir}" destdir="${build.dir}">
+			<classpath refid="projeto.classpath" />
+		</javac>
+	</target>
+
+	<target name="execute" depends="compile" description="executa classe (-Dclasse=nomeClasse)">
+		<java classname="${classe}">
+			<classpath refid="projeto.classpath" />
+		</java>
+	</target>
+	
+	<!-- TESTES DE UNIDADE (JUnit)                                         -->
+	<!-- ================================================================= -->
+	<!-- db-clean  : Limpa HSQLDB (kyrios-teste)                           -->
+	<!-- db-client : inicia cliente para interação com SGBD                -->	
+	<!-- db-start  : inicia SGBD de desenvolvimento                        -->
+	<!-- db-stop   : interrompe SGBD                                       -->
+	<!-- ================================================================= -->
+
+	<!-- SGBD                                                              -->
+	<!-- Assume que 'kyrios-teste' é o nome da base de dados               -->
+	<!-- ================================================================= -->
+	<!-- db-clean  : Limpa HSQLDB (kyrios-teste)                           -->
+	<!-- db-client : inicia cliente para interação com SGBD                -->	
+	<!-- db-start  : inicia SGBD de desenvolvimento                        -->
+	<!-- db-stop   : interrompe SGBD                                       -->
+	<!-- ================================================================= -->
+
+	<target name="db-clean" description="Limpa HSQLDB (kyrios-teste)" depends="db-stop">
+		<delete>
+			<fileset dir="/tmp" includes="kyrios-teste.*"/>
+		</delete>
+	</target>
+		
+	<target name="db-client" description="Cliente HSQLDB">
+		<java classname="org.hsqldb.util.DatabaseManagerSwing" spawn="yes" fork="yes">
+			<arg line="-url ${database.url}" />
+			<classpath>
+				<pathelement path="${hsqldb.jar}" />
+			</classpath>
+		</java>
+	</target>
+		
+	<target name="db-start" description="inicia HSQLDB (kyrios-teste)">
+		<java classname="org.hsqldb.Server" spawn="yes" fork="yes">
+			<jvmarg value="-Duser.dir=${kad.libs}" />
+			<classpath>
+				<pathelement path="${hsqldb.jar}" />
+			</classpath>
+		</java>
+	</target>
+
+	<target name="db-stop" description="finaliza HSQLDB (kyrios-teste)">
+		<java classname="br.com.kyriosdata.kyshell.kystophsqldb">
+			<classpath>
+				<pathelement path="${kad.libs}/bin/kyTools.jar" />
+				<path refid="projeto.classpath" />
+			</classpath>
+		</java>
+	</target>
+
+
+	<!-- ================================================================= -->
+	<!-- Alvos para o DBUnit                                               -->
+	<!-- ================================================================= -->
+	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="persistencia.classpath" />
+
+	<target name="db-load" description="Carrega dados para teste em SGBD">
+		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
+			<operation type="INSERT" src="${data}" format="xml" />
+		</dbunit>
+	</target>
+
+	<target name="db-export" description="Exports the current data in the database">
+		<dbunit driver="${database.driver_class}" url="${database.url}" userid="${database.username}" password="${database.password}">
+			<export dest="db-export.xml" format="xml" />
+		</dbunit>
+	</target>
+	
+	<target name="test" depends="compile">
+		<mkdir dir="${test.out.dir}" />
+		<property name="classe" value="*Test" />
+		<junit printsummary="yes" haltonerror="yes" haltonfailure="yes" fork="yes">
+			<formatter type="plain" usefile="false" />
+			<formatter type="xml" />
+			<batchtest todir="${test.out.dir}">
+				<fileset dir="test">
+					<include name="**/${classe}.java" />
+					<exclude name="**/Test**All.java" />
+				</fileset>
+			</batchtest>
+			<classpath>
+				<path refid="projeto.classpath" />
+			</classpath>
+		</junit>
+	</target>
+	
+	<target name="test-report" depends="test">              
+		<mkdir dir="${test.out.dir}/html"/>         
+		<junitreport todir="${test.out.dir}">       
+			<fileset dir="${test.out.dir}">                    
+				<include name="TEST-*.xml"/>       
+			</fileset>                                              
+			<report todir="${test.out.dir}/html"/>
+	    </junitreport>
+	</target>
+
+</project>

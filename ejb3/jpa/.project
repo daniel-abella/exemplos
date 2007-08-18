@@ -18,7 +18,7 @@
 		<link>
 			<name>target</name>
 			<type>2</type>
-			<location>/home/lucena/exemplos/ejb3/jpa/target</location>
+			<location>C:/home/lucena/exemplos/ejb3/jpa/target</location>
 		</link>
 	</linkedResources>
 </projectDescription>

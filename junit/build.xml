@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="junit" basedir="." default="execute">
+<project name="junit" basedir="." default="test">
 
 	<!-- ================================================================= -->
 	<!-- Projeto Testes                                                     -->
@@ -22,7 +22,7 @@
 
 	<!-- Organização do código -->
 	<property name="src.dir" location="src:test" />
-	<property name="build.dir" location="/tmp/${ant.project.name}" />
+	<property name="build.dir" location="target" />
 	<property name="test.out.dir" location="${build.dir}/tout" />
 
 	<!-- ================================================================= -->

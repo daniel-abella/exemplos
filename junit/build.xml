@@ -2,7 +2,7 @@
 <project name="junit" basedir="." default="test">
 
 	<!-- ================================================================= -->
-	<!-- Projeto Testes                                                     -->
+	<!-- Projeto Testes                                                    -->
 	<!-- Copyright (c) 2007 Kyriosdata (r)                                 -->
 	<!-- Fábio Nogueira de Lucena (fabio@kyriosdata.com.br)                -->
 	<!--                                                                   -->
@@ -26,33 +26,11 @@
 	<property name="test.out.dir" location="${build.dir}/tout" />
 
 	<!-- ================================================================= -->
-	<!-- DOMÍNIO (entidades e interfaces dos repositórios)                 -->
-	<!-- ================================================================= -->
-	<path id="dominio.classpath">
-		<pathelement path="/tmp/jpa" />
-	</path>
-	
-	<!-- ================================================================= -->
-	<!-- PERSISTENCIA (classpath)                                          -->
-	<!-- ================================================================= -->
-	<path id="persistencia.classpath">
-		
-		<!-- Driver JDBC -->
-		<pathelement location="${hsqldb.jar}" />
-
-		<!-- DbUnit -->
-		<pathelement location="${dbunit.jar}" />
-	</path>
-
-	<!-- ================================================================= -->
 	<!-- CLASSPATH (projeto)                                               -->
 	<!-- ================================================================= -->
 	<path id="projeto.classpath">
 		<!-- Testes de unidade -->
 		<path location="${build.dir}" />
-		
-		<!-- Código testado -->
-		<path refid="dominio.classpath" />
 		
 		<!-- JUnit -->
 		<path location="${junit.jar}" />
@@ -80,23 +58,6 @@
 		<java classname="${classe}">
 			<classpath refid="projeto.classpath" />
 		</java>
-	</target>
-	
-	<!-- ================================================================= -->
-	<!-- Alvos para o DBUnit                                               -->
-	<!-- ================================================================= -->
-	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="persistencia.classpath" />
-
-	<target name="db-load" description="Carrega dados para teste em SGBD">
-		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<operation type="INSERT" src="${data}" format="xml" />
-		</dbunit>
-	</target>
-
-	<target name="db-export" description="Exports the current data in the database">
-		<dbunit driver="${database.driver_class}" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<export dest="db-export.xml" format="xml" />
-		</dbunit>
 	</target>
 	
 	<!-- TESTES DE UNIDADE (JUnit)                                         -->

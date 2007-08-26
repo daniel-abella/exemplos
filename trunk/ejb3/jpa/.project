@@ -15,10 +15,5 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 	<linkedResources>
-		<link>
-			<name>target</name>
-			<type>2</type>
-			<location>C:/home/lucena/exemplos/ejb3/jpa/target</location>
-		</link>
 	</linkedResources>
 </projectDescription>

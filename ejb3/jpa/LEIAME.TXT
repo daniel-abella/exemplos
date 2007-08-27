@@ -8,22 +8,10 @@ Identificador: dominio
 -----------------------------------
 
 CLASSES:
-- Conteiner
-- Elemento
-- ConteinerService
-- ConteinerRepository
-
-DESCRIÇÃO:
-Conteiner é uma entidade que possui um nome e uma lista de instâncias 
-de Elemento. Cada Elemento possui um nome. ConteinerService oferece um 
-único serviço: converte para maiúsculas o nome de cada Elemento de uma
-lista de um contêiner cujo nome é fornecido.
-
-OBSERVAÇÕES:
-- Código fonte é fornecido no diretório 'src'
-- Não inclui código de teste, que é fornecido em projeto próprio.
-- Nome deste projeto: dominio
-- Nome do projeto de teste: dominio-teste
+- Conteiner (possui um nome e uma lista de Elemento)
+- Elemento (possui apenas um nome)
+- ConteinerService (operação não adequada em nenhuma das entidades)
+- ConteinerRepository (fornece ilusão de manter todos os objetos Conteiner em memória)
 
 PARA CADA CLASSE A SER PERSISTIDA VERIFIQUE SE POSSUI:
 - construtor default (pelo menos com visibilidade de package)

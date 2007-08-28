@@ -24,6 +24,7 @@
 	<!-- Organização do código -->
 	<property name="src.dir" location="src:test" />
 	<property name="build.dir" location="target" />
+	<property name="etc.dir" location="etc" />
 
 	<!-- Unidade de persistência (persistence unit) -->
 	<property name="persistence.unit.name" value="${ant.project.name}" />
@@ -87,6 +88,10 @@
 		
 		<!-- Hibernate Tools for Ant -->
 		<path location="${kad.libs}" />
+		
+		<!-- Arquivos de dados e outros -->
+		<path location="${etc.dir}" />
+		
 	</path>
 
 	<!-- ALVOS DE PROPÓSITO GERAL                                          -->
@@ -199,19 +204,35 @@
 
 	<!-- ================================================================= -->
 	<!-- Alvos para o DBUnit                                               -->
+	<!-- db-delete : remove da base dados em arquivo XML                   -->
+	<!-- db-export : exporta conteúdo da base para arquivo XML             -->
+	<!-- db-insert : insere na base de dados conteúdo de arquivo XML       -->
+	<!-- db-update : atualiza a base conforme dados em arquivo XML         -->
 	<!-- ================================================================= -->
 	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="persistencia.classpath" />
 
-	<target name="db-load" description="Carrega dados para teste em SGBD">
+	<target name="db-delete" description="Remove da base dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<operation type="INSERT" src="${data}" format="xml" />
+			<operation type="DELETE" src="etc/data-teste.xml" />
 		</dbunit>
 	</target>
-
-	<target name="db-export" description="Exports the current data in the database">
+	
+	<target name="db-export" description="Exporta base para dados em XML">
 		<dbunit driver="${database.driver_class}" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<export dest="db-export.xml" format="xml" />
+			<export dest="${build.dir}/dbunit-export.xml" />
+		</dbunit>
+	</target>
+				
+	<target name="db-insert" description="Insere na base dados em XML">
+		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
+			<operation type="INSERT" src="etc/data-teste.xml" />
 		</dbunit>
 	</target>
 
+	<target name="db-update" description="Atualiza base conforme dados em XML">
+		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
+			<operation type="UPDATE" src="etc/data-teste.xml" />
+		</dbunit>
+	</target>
+	
 </project>

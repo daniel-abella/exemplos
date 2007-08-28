@@ -47,6 +47,7 @@
 		<pathelement location="${h.tools2.jar}" />
 		<pathelement location="${h.entity1.jar}" />
 		<pathelement location="${h.entity2.jar}" />
+		<pathelement location="${h.entity.dir}/lib/hibernate-commons-annotations.jar"/>
 		<fileset dir="${hibernate.dir}/lib" includes="*.jar" />
 	</path>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="jpa-data" basedir="." default="execute">
+<project name="dominio-jpa" basedir="." default="execute">
 
 	<!-- ================================================================= -->
 	<!-- Projeto Dados                                                     -->
@@ -33,7 +33,7 @@
 	<!-- DOMÍNIO (entidades e interfaces dos repositórios)                 -->
 	<!-- ================================================================= -->
 	<path id="dominio.classpath">
-		<pathelement path="/tmp/jpa" />
+		<pathelement path="../dominio/target/classes" />
 	</path>
 
 	<!-- ================================================================= -->

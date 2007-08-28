@@ -4,16 +4,13 @@ Fábio Nogueira de Lucena
 -----------------------------------
 PROJETO QUE IMPLEMENTA
 Camada de persistência (exemplo)
-Identificador: dominio-jpa
+Identificador: jpa-data
 -----------------------------------
 
 OBSERVAÇÕES:
 - O nome deste projeto deve ser <projeto>-data. Este projeto implementa
   a persistência do projeto <projeto>. 
 - Este projeto, portanto, depende do projeto <projeto>
-- Código que implementa a persistência no diretório 'src'
-- Código que testa a persistência é fornecido em 'test'
-- Se a.X é classe de persistência, então a.XTest testa X.
 - Em 'etc' são colocados arquivos de configuração 
   (log4j, spring e raiz da unidade de persistência em META-INF)
 - Em META-INF encontra-se o arquivo persistence.xml
@@ -32,9 +29,13 @@ CRIANDO E TESTANDO CÓDIGO DE ACESSO AOS DADOS
    exclusivos do Hibernate deve ser chamada 'ClasseRepositoryHibernate'.
 2. Acrescente os métodos necessários para atender requisitos da aplicação.
 
-PARA EXECUÇÃO DOS TESTES
+PARA EXECUÇÃO DOS TESTES (via Ant)
 1. ant db-start
 2. ant schema
 3. Execute os testes de unidade.
+
+PARA EXECUÇÃO DOS TESTES (via Eclipse)
+1. Acrescente o diretório etc ao CLASSPATH
+2. Selecione um teste e execute Alt+Shift+X seguido de T
 
 

@@ -204,13 +204,20 @@
 
 	<!-- ================================================================= -->
 	<!-- Alvos para o DBUnit                                               -->
-	<!-- db-delete : remove da base dados em arquivo XML                   -->
-	<!-- db-export : exporta conteúdo da base para arquivo XML             -->
-	<!-- db-insert : insere na base de dados conteúdo de arquivo XML       -->
-	<!-- db-update : atualiza a base conforme dados em arquivo XML         -->
+	<!-- db-compare : compara conteúdo da base com aquele de arquivo XML   -->
+	<!-- db-delete  : remove da base dados em arquivo XML                  -->
+	<!-- db-export  : exporta conteúdo da base para arquivo XML            -->
+	<!-- db-insert  : insere na base de dados conteúdo de arquivo XML      -->
+	<!-- db-update  : atualiza a base conforme dados em arquivo XML        -->
 	<!-- ================================================================= -->
 	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="persistencia.classpath" />
 
+	<target name="db-compare" description="Compara base com dados em XML">
+		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
+			<compare src="etc/data-teste.xml" />
+		</dbunit>
+	</target>
+	
 	<target name="db-delete" description="Remove da base dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
 			<operation type="DELETE" src="etc/data-teste.xml" />

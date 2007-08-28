@@ -1,5 +1,6 @@
-#Mon May 28 15:04:59 BRT 2007
+#Mon Aug 27 20:59:10 BRT 2007
 eclipse.preferences.version=1
+instance/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.6
 org.eclipse.jdt.core.compiler.compliance=1.6
 org.eclipse.jdt.core.compiler.problem.assertIdentifier=error

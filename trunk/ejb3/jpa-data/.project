@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>dominio-jpa</name>
+	<name>jpa-data</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -20,6 +20,4 @@
 		<nature>org.springframework.ide.eclipse.core.springnature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-	</linkedResources>
 </projectDescription>

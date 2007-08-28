@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="dominio-jpa" basedir="." default="execute">
+<project name="jpa-data" basedir="." default="execute">
 
 	<!-- ================================================================= -->
 	<!-- Projeto Dados                                                     -->
@@ -23,7 +23,7 @@
 
 	<!-- Organização do código -->
 	<property name="src.dir" location="src:test" />
-	<property name="build.dir" location="/tmp/${ant.project.name}" />
+	<property name="build.dir" location="target" />
 
 	<!-- Unidade de persistência (persistence unit) -->
 	<property name="persistence.unit.name" value="${ant.project.name}" />
@@ -33,7 +33,7 @@
 	<!-- DOMÍNIO (entidades e interfaces dos repositórios)                 -->
 	<!-- ================================================================= -->
 	<path id="dominio.classpath">
-		<pathelement path="../dominio/target/classes" />
+		<pathelement path="../jpa/target/classes" />
 	</path>
 
 	<!-- ================================================================= -->
@@ -80,8 +80,9 @@
 		<!-- Classes de negócio (definição das entidades e repositórios -->
 		<path refid="dominio.classpath" />
 		
-		<!-- JUnit -->
+		<!-- Testes -->
 		<path location="${junit.jar}" />
+		<path location="${spring.dir}/dist/spring-mock.jar" />
 		
 		<!-- Hibernate Tools for Ant -->
 		<path location="${kad.libs}" />

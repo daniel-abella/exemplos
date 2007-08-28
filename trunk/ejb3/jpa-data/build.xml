@@ -126,6 +126,7 @@
 		<delete>
 			<fileset dir="/tmp" includes="kyrios-teste.*"/>
 		</delete>
+		<echo message="Base de dados do HSQLDB removida" />
 	</target>
 		
 	<target name="db-client" description="Cliente HSQLDB">

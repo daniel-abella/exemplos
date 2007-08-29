@@ -26,5 +26,6 @@
 		<td></td>
 	</tr>
 </table>
+</form>
 </body>
 </html>

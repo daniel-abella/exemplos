@@ -17,10 +17,10 @@ public class UsuarioRepositoryDefault implements UsuarioRepository {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public Usuario getFromUserId(String userid) {
 		EntityManager em = emf.createEntityManager();
-		Query q = em.createQuery("SELECT u FROM Usuario u WHERE u.userid = :userid");
+		//Query q = em.createQuery("SELECT u FROM Usuario u WHERE u.userid = :userid");
+		Query q = em.createNamedQuery("userid");
 		q.setParameter("userid", userid);
 		List<Usuario> lc = q.getResultList();
 		

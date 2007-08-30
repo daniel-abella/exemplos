@@ -9,12 +9,12 @@ import javax.persistence.Query;
 public class UsuarioRepositoryDefault implements UsuarioRepository {
 
 	@PersistenceContext
-    private EntityManager em;
+    private EntityManager em;	
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public Usuario getFromUserId(String userid) {
-		Query q = em.createNamedQuery("encontrePorNome");
+		Query q = em.createNamedQuery("userid");
 		q.setParameter("userid", userid);
 		List<Usuario> lc = q.getResultList();
 		return lc.size() != 0 ? lc.get(0) : null;

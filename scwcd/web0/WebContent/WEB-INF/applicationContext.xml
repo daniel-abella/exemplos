@@ -4,8 +4,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
-	<bean id="cr" class="dominio.ConteinerRepositoryDefault" />
-
 	<!-- JPA annotations bean post processor -->
 	<bean
 		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />

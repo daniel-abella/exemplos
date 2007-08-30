@@ -3,7 +3,7 @@
 	<package>com.googlecode.exemplos</package>
 	
 	<named-query name="userid">
-		<query>FROM Usuario u WHERE u.userid LIKE :userid</query>
+		<query>SELECT usr FROM Usuario usr WHERE usr.userid LIKE :userid</query>
 	</named-query>
 	
 	<entity class="Usuario">

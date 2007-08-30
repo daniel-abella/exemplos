@@ -58,7 +58,8 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 		super.init(config);
 		ServletContext servletContext = config.getServletContext();
 		ApplicationContext resource = WebApplicationContextUtils.getWebApplicationContext(servletContext);
+		System.out.println(resource.getBeanDefinitionCount());
 		BeanFactory factory = (BeanFactory) resource;		
-		ur = (UsuarioRepository) factory.getBean("usuarioRepository");
+		ur = (UsuarioRepository) factory.getBean("xx");
 	}  	
 }

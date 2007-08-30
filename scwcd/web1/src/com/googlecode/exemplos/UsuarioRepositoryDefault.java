@@ -3,20 +3,30 @@ package com.googlecode.exemplos;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
 
 public class UsuarioRepositoryDefault implements UsuarioRepository {
 
-	@PersistenceContext
-    private EntityManager em;	
+    private EntityManagerFactory emf;	
+
+    @PersistenceUnit
+	public void setEntityManagerFactory(EntityManagerFactory emf) {
+		this.emf = emf;
+	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public Usuario getFromUserId(String userid) {
-		Query q = em.createNamedQuery("userid");
+		EntityManager em = emf.createEntityManager();
+		Query q = em.createQuery("SELECT u FROM Usuario u WHERE u.userid = :userid");
 		q.setParameter("userid", userid);
 		List<Usuario> lc = q.getResultList();
-		return lc.size() != 0 ? lc.get(0) : null;
+		
+		if (lc != null && lc.size() > 0)
+			return (Usuario) lc.get(0);
+		else 
+			return null;
 	}
 }

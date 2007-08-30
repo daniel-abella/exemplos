@@ -9,8 +9,8 @@
 <body>
 <h1>Hello, world</h1>
 <% 
-	String user = request.getParameter("user");
-	user = (user == null) ? "?" : user;
+	String user = request.getAttribute("fullName").toString();
+	user = (user == null) ? "fullName retornou null" : user;
 %>
 
 Seja bem-vindo, <b><%= user %></b>!

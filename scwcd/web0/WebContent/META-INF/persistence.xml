@@ -9,6 +9,8 @@
 			Unidade de persistência para o projeto 'dominio'. 
 		</description>
 		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
 		<properties>
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.HSQLDialect" />

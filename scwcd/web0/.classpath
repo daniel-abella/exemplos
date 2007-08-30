@@ -9,11 +9,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="var" path="KAD_LIBS/hibernate-entitymanager-3.3.1.GA/lib/ejb3-persistence.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="var" path="KAD_LIBS/hibernate-3.2/lib/commons-logging-1.0.4.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -60,11 +55,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="var" path="KAD_LIBS/hibernate-3.2/lib/javassist.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="var" path="KAD_LIBS/hibernate-annotations-3.3.0.GA/hibernate-annotations.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
@@ -283,5 +273,10 @@
 	</classpathentry>
 	<classpathentry kind="var" path="KAD_LIBS/jcommon-1.0.10/jcommon-1.0.10.jar"/>
 	<classpathentry kind="var" path="KAD_LIBS/spring-framework-2.0.6/dist/spring-mock.jar" sourcepath="/KAD_LIBS/spring-framework-2.0.6/tiger/mock"/>
+	<classpathentry kind="var" path="KAD_LIBS/hibernate-annotations-3.3.0.GA/hibernate-annotations.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

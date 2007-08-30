@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Uma aplicação simples (web0)</title>
 </head>
 <body>
 <h1>Hello, world.</h1>
 <%
 	String user = request.getParameter("user");
-	String person = user != null ? user : "?";
+	String person = user != null ? (String) request.getAttribute("fullName") : "?";
 %>
-Welcome to WTP, <b><%= user %></b>!
+Welcome to WTP, <b><%= person %></b>!
 </body>
 </html>

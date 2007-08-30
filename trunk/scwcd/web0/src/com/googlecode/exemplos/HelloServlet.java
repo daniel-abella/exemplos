@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 /**
  * Servlet implementation class for Servlet: HelloServlet
@@ -56,8 +56,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
-		ApplicationContext resource = new ClassPathXmlApplicationContext("classpath*:applicationContext.xml");
-		BeanFactory factory = (BeanFactory) resource;
-		ur = (UsuarioRepository) factory.getBean("cr");
+		ServletContext servletContext = config.getServletContext();
+		ApplicationContext resource = WebApplicationContextUtils.getWebApplicationContext(servletContext);
+		BeanFactory factory = (BeanFactory) resource;		
+		ur = (UsuarioRepository) factory.getBean("usuarioRepository");
 	}  	
 }

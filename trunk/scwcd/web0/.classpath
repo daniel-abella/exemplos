@@ -9,7 +9,11 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="var" path="KAD_LIBS/hibernate-entitymanager-3.3.1.GA/lib/ejb3-persistence.jar"/>
+	<classpathentry exported="true" kind="var" path="KAD_LIBS/hibernate-entitymanager-3.3.1.GA/lib/ejb3-persistence.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry exported="true" kind="var" path="KAD_LIBS/hibernate-3.2/lib/commons-logging-1.0.4.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -29,7 +33,11 @@
 	<classpathentry exported="true" kind="var" path="KAD_LIBS/hibernate-entitymanager-3.3.1.GA/lib/hibernate-commons-annotations.jar"/>
 	<classpathentry exported="true" kind="var" path="KAD_LIBS/hibernate-entitymanager-3.3.1.GA/hibernate-entitymanager.jar" sourcepath="/KAD_LIBS/hibernate-entitymanager-3.2.1.GA/src"/>
 	<classpathentry exported="true" kind="var" path="KAD_LIBS/hsqldb-1.8.0.7/lib/hsqldb.jar"/>
-	<classpathentry exported="true" kind="var" path="KAD_LIBS/spring-framework-2.0.6/lib/jakarta-commons/commons-dbcp.jar"/>
+	<classpathentry exported="true" kind="var" path="KAD_LIBS/spring-framework-2.0.6/lib/jakarta-commons/commons-dbcp.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry exported="true" kind="var" path="KAD_LIBS/spring-framework-2.0.6/lib/caucho/hessian-3.0.20.jar"/>
 	<classpathentry exported="true" kind="var" path="KAD_LIBS/spring-framework-2.0.6/lib/jakarta-commons/commons-pool.jar"/>
 	<classpathentry exported="true" kind="var" path="KAD_LIBS/spring-framework-2.0.6/lib/jakarta-commons/commons-lang.jar"/>

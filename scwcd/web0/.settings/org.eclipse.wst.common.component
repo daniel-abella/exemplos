@@ -3,21 +3,6 @@
     <wb-module deploy-name="web0">
         <wb-resource deploy-path="/" source-path="/WebContent"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/var/KAD_LIBS/spring-framework-2.0.6/dist/spring.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/var/KAD_LIBS/hibernate-3.2/hibernate3.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/var/KAD_LIBS/hibernate-entitymanager-3.3.1.GA/hibernate-entitymanager.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/var/KAD_LIBS/hibernate-annotations-3.3.0.GA/hibernate-annotations.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/var/KAD_LIBS/hibernate-entitymanager-3.3.1.GA/lib/ejb3-persistence.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="web0"/>
         <property name="java-output-path" value="build/classes"/>
     </wb-module>

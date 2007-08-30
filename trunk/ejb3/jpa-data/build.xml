@@ -214,13 +214,13 @@
 
 	<target name="db-compare" description="Compara base com dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<compare src="etc/data-teste.xml" />
+			<compare src="${etc.dir}/data-teste.xml" />
 		</dbunit>
 	</target>
 	
 	<target name="db-delete" description="Remove da base dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<operation type="DELETE" src="etc/data-teste.xml" />
+			<operation type="DELETE" src="${etc.dir}/data-teste.xml" />
 		</dbunit>
 	</target>
 	
@@ -232,13 +232,13 @@
 				
 	<target name="db-insert" description="Insere na base dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<operation type="INSERT" src="etc/data-teste.xml" />
+			<operation type="INSERT" src="${etc.dir}/data-teste.xml" />
 		</dbunit>
 	</target>
 
 	<target name="db-update" description="Atualiza base conforme dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<operation type="UPDATE" src="etc/data-teste.xml" />
+			<operation type="UPDATE" src="${etc.dir}/data-teste.xml" />
 		</dbunit>
 	</target>
 	

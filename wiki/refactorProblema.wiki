@@ -24,4 +24,7 @@ conjunto de vídeos alugados, cada um deles por determinado período. O cálculo
 também leva em consideração o tipo do vídeo e determina a quantidade de pontos
 que o cliente recebe, o que depende do filme ser uma novidade ou não.
 
+Abaixo segue o diagrama que ilustra este modelo. *Tanto os modelos quanto o 
+código seguem as versões originais fornecidas no livro supracitado.* 
+
 http://exemplos.googlecode.com/svn/wiki/refactoring/images/v0.png

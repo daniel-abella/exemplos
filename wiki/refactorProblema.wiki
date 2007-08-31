@@ -7,7 +7,7 @@ sobre o conteúdo do capítulo 1 do livro _Refactoring: Improving the Design of
 Existing Code_, Martin Fowler, Addion-Wesley, 1999. Isto significa que os
 créditos do exemplo são do livro citado e ilustram a habilidade do
 correspondente autor, Martin Fowler. *Tanto os modelos quanto o 
-código seguem as versões originais fornecidas no livro supracitado.* 
+código, exceto quando dito o contrário, seguem as versões originais fornecidas no livro supracitado.* Há, contudo, várias diferenças.
 
 Esta e demais páginas têm propósito similar ao do capítulo referenciado, ou
 seja, introduzir o assunto _refactoring_ por meio de exemplos. Aqui é

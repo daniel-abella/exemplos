@@ -4,6 +4,11 @@
 A presente página e outros correspondentes foram elaboradas sobre o conteúdo do capítulo 1 do livro _Refactoring: Improving the Design of Existing Code_, Martin Fowler, Addion-Wesley, 1999. Isto significa que os créditos do exemplo são do livro citado e ilustram a habilidade do correspondente autor, Martin Fowler. Esta e demais páginas têm propósito similar ao do capítulo referenciado, ou seja, introduzir o assunto _refactoring_ por meio de exemplos. Aqui é empregado o termo _reorganização_ com a acepção de _refactoring_. A alternativa ao texto aqui criada não tem o propósito de substituir a anterior. Experiências com o ensino, contudo, revelam que algumas explanações adicionais, aqui fornecidas, são relevantes para o entendimento, o que motiva este texto e o torna único. 
 
 = O problema =
-Software para calcular a "situação" de um cliente de uma vídeo locadora. Por situação entenda quanto deve ser pago pelo cliente da vídeo locadora para um conjunto de vídeos alugados, cada um deles por determinado período. O cálculo também leva em consideração o tipo do vídeo e determina a quantidade de pontos que o cliente recebe, o que depende do filme ser uma novidade ou não. 
 
-http://exemplos.googlecode.com/svn/wiki/images/kyrios.gif
+Software para calcular a "situação" de um cliente de uma vídeo locadora. Por
+situação entenda quanto deve ser pago pelo cliente da vídeo locadora para um
+conjunto de vídeos alugados, cada um deles por determinado período. O cálculo
+também leva em consideração o tipo do vídeo e determina a quantidade de pontos
+que o cliente recebe, o que depende do filme ser uma novidade ou não.
+
+http://exemplos.googlecode.com/svn/wiki/refactoring/images/kyrios.gif

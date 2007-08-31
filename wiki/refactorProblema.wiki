@@ -11,4 +11,4 @@ conjunto de vídeos alugados, cada um deles por determinado período. O cálculo
 também leva em consideração o tipo do vídeo e determina a quantidade de pontos
 que o cliente recebe, o que depende do filme ser uma novidade ou não.
 
-http://exemplos.googlecode.com/svn/wiki/refactoring/images/kyrios.gif
+http://exemplos.googlecode.com/svn/wiki/refactoring/images/v0.png

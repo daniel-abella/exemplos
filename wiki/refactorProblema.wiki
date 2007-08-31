@@ -6,7 +6,8 @@ A presente página e outras correspondentes foram elaboradas
 sobre o conteúdo do capítulo 1 do livro _Refactoring: Improving the Design of
 Existing Code_, Martin Fowler, Addion-Wesley, 1999. Isto significa que os
 créditos do exemplo são do livro citado e ilustram a habilidade do
-correspondente autor, Martin Fowler. 
+correspondente autor, Martin Fowler. *Tanto os modelos quanto o 
+código seguem as versões originais fornecidas no livro supracitado.* 
 
 Esta e demais páginas têm propósito similar ao do capítulo referenciado, ou
 seja, introduzir o assunto _refactoring_ por meio de exemplos. Aqui é
@@ -24,7 +25,6 @@ conjunto de vídeos alugados, cada um deles por determinado período. O cálculo
 também leva em consideração o tipo do vídeo e determina a quantidade de pontos
 que o cliente recebe, o que depende do filme ser uma novidade ou não.
 
-Abaixo segue o diagrama que ilustra este modelo. *Tanto os modelos quanto o 
-código seguem as versões originais fornecidas no livro supracitado.* 
+Abaixo segue o diagrama que ilustra este modelo. 
 
 http://exemplos.googlecode.com/svn/wiki/refactoring/images/v0.png

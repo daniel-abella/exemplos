@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class for Servlet: ServletSeguro
+ * Servlet implementation class for Servlet: ServletInseguro
  *
  */
- public class ServletSeguro extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {
+ public class ServletInseguro extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {
    static final long serialVersionUID = 1L;
    
     /* (non-Java-doc)
 	 * @see javax.servlet.http.HttpServlet#HttpServlet()
 	 */
-	public ServletSeguro() {
+	public ServletInseguro() {
 		super();
 	}   	
 	
@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter pw = response.getWriter();
-		pw.write("Acesso a este servlet exige autenticação!");
+		pw.print("Acesso via servlet sem autenticação");
 		pw.close();
 	}  	
 	
@@ -34,6 +34,6 @@ import javax.servlet.http.HttpServletResponse;
 	 * @see javax.servlet.http.HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request,response);
+		// TODO Auto-generated method stub
 	}   	  	    
 }

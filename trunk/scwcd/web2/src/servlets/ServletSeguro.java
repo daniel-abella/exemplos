@@ -26,7 +26,10 @@ import javax.servlet.http.HttpServletResponse;
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter pw = response.getWriter();
-		pw.write("Acesso a este servlet exige autenticação!");
+		if ("POST".equals(request.getMethod()))
+			pw.write("POST não está configurado para exigir autenticação");
+		else 
+			pw.write("GET exigiu autenticação realizada com sucesso!");
 		pw.close();
 	}  	
 	

@@ -9,21 +9,27 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
     <description></description>
     <display-name>ServletSeguro</display-name>
     <servlet-name>ServletSeguro</servlet-name>
     <servlet-class>servlets.ServletSeguro</servlet-class>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>ServletSeguro</servlet-name>
     <url-pattern>/seguro</url-pattern>
   </servlet-mapping>
+  
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>Teste de segurança declarativa</web-resource-name>
       <url-pattern>/seguro</url-pattern>
+      
+      <!-- Autenticação exigida apenas para o método GET -->
       <http-method>GET</http-method>
+      
     </web-resource-collection>
     <auth-constraint>
       <role-name>supervisor</role-name>
@@ -32,6 +38,7 @@
       <transport-guarantee>NONE</transport-guarantee>
     </user-data-constraint>
   </security-constraint>
+  
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>

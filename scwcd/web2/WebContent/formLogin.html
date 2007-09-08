@@ -6,10 +6,21 @@
 </head>
 <body>
 <h4>Login</h4>
-	<form method="GET" action="j_security_check">
-		<input type="text" name="j_username">
-		<input type="text" name="j_password">
-		<input type="submit" name="OK">
+	<form method="POST" action="j_security_check">
+		<table>
+			<tr>
+				<td>Usuário:</td>
+				<td><input type="text" name="j_username">
+			</tr>
+			<tr>
+				<td>Senha:</td>
+				<td><input type="password" name="j_password"></td>		
+			</tr>
+			<tr>
+				<td/>
+				<td><input type="submit" name="OK"></td>
+			</tr>
+		</table>
 	</form>
 </body>
 </html>

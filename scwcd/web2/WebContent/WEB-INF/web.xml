@@ -9,7 +9,6 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <description></description>
     <display-name>ServletSeguro</display-name>
@@ -20,35 +19,37 @@
     <servlet-name>ServletSeguro</servlet-name>
     <url-pattern>/seguro</url-pattern>
   </servlet-mapping>
-  
   <security-constraint>
-  	<web-resource-collection>
-  		<web-resource-name>Teste de segurança declarativa</web-resource-name>
-  		<url-pattern>/seguro</url-pattern>
-  		<!-- Apenas o método GET exige proteção! -->
-  		<http-method>GET</http-method>
-  	</web-resource-collection>
-  	
-  	<auth-constraint>
-  		<role-name>supervisor</role-name>
-  	</auth-constraint>
-  	
-  	<user-data-constraint>
-  		<transport-guarantee>NONE</transport-guarantee>
-  	</user-data-constraint>
-  	
+    <web-resource-collection>
+      <web-resource-name>Teste de segurança declarativa</web-resource-name>
+      <url-pattern>/seguro</url-pattern>
+      <http-method>GET</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>supervisor</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
   </security-constraint>
-  
   <login-config>
-  	<auth-method>FORM</auth-method>
-  	
-  	<form-login-config>
-  		<form-login-page>/formLogin.html</form-login-page>
-  		<form-error-page>/formError.html</form-error-page>
-  	</form-login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/formLogin.html</form-login-page>
+      <form-error-page>/formError.html</form-error-page>
+    </form-login-config>
   </login-config>
-  
   <security-role>
-  	<role-name>supervisor</role-name>
+    <role-name>supervisor</role-name>
   </security-role>
+  <servlet>
+    <description></description>
+    <display-name>ServletInseguro</display-name>
+    <servlet-name>ServletInseguro</servlet-name>
+    <servlet-class>servlets.ServletInseguro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletInseguro</servlet-name>
+    <url-pattern>/inseguro</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -5,10 +5,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-Ilustra mecanismo de segurança via método FORM.
+Ilustra mecanismo de segurança via método FORM. Observe que o descritor 
+da aplicação exige autenticação apenas para o método GET. Ou seja, o mesmo
+recurso que exige autenticação pelo método GET será acessado sem necessidade
+de autenticação pelo método POST. O acesso a recurso "inseguro" significa
+que não será exigida autenticação.
 
 <ul>
-	<li><a href="seguro">Seguro</a>. Exige autenticação.</li>
+	<li><a href="seguro">Seguro (GET)</a>. Exige autenticação.</li>
+	<li>POST não está configurado para exigir autenticação<form action="/web2/seguro" method="POST">
+			<input type="submit" title="POST" name="POST">
+		</form>
 	<li><a href="inseguro">Inseguro</a>. Não exige autenticação.</li>
 </ul>
 </body>

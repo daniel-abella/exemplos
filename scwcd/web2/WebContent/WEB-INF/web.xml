@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>web2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <description></description>
+    <display-name>ServletSeguro</display-name>
+    <servlet-name>ServletSeguro</servlet-name>
+    <servlet-class>servlets.ServletSeguro</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSeguro</servlet-name>
+    <url-pattern>/seguro</url-pattern>
+  </servlet-mapping>
+  
+  <security-constraint>
+  	<web-resource-collection>
+  		<web-resource-name>Teste de segurança declarativa</web-resource-name>
+  		<url-pattern>/seguro</url-pattern>
+  		<!-- Apenas o método GET exige proteção! -->
+  		<http-method>GET</http-method>
+  	</web-resource-collection>
+  	
+  	<auth-constraint>
+  		<role-name>supervisor</role-name>
+  	</auth-constraint>
+  	
+  	<user-data-constraint>
+  		<transport-guarantee>NONE</transport-guarantee>
+  	</user-data-constraint>
+  	
+  </security-constraint>
+  
+  <login-config>
+  	<auth-method>FORM</auth-method>
+  	
+  	<form-login-config>
+  		<form-login-page>/formLogin.html</form-login-page>
+  		<form-error-page>/formError.html</form-error-page>
+  	</form-login-config>
+  </login-config>
+  
+  <security-role>
+  	<role-name>supervisor</role-name>
+  </security-role>
+</web-app>

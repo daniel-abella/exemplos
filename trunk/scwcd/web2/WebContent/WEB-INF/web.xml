@@ -40,7 +40,9 @@
   </security-constraint>
   
   <login-config>
-    <auth-method>BASIC</auth-method>
+  	<!-- Browser fornece tela para login: BASIC -->
+  	<!-- Um formulário é fornecido login: FORM -->
+    <auth-method>FORM</auth-method>
     <form-login-config>
       <form-login-page>/formLogin.html</form-login-page>
       <form-error-page>/formError.html</form-error-page>

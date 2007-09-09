@@ -40,7 +40,7 @@
   </security-constraint>
   
   <login-config>
-    <auth-method>FORM</auth-method>
+    <auth-method>BASIC</auth-method>
     <form-login-config>
       <form-login-page>/formLogin.html</form-login-page>
       <form-error-page>/formError.html</form-error-page>

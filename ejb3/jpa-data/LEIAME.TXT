@@ -30,6 +30,8 @@ CRIANDO E TESTANDO CÓDIGO DE ACESSO AOS DADOS
 2. Acrescente os métodos necessários para atender requisitos da aplicação.
 
 PARA EXECUÇÃO DOS TESTES (via Ant)
+0. Gere o domínio cuja persistência é implementada 
+   (veja path id "dominio.classpath" em build.xml)
 1. ant db-start
 2. ant schema
 3. Execute os testes de unidade.

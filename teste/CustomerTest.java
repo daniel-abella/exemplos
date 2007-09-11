@@ -1,4 +1,4 @@
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -20,6 +20,7 @@ public class CustomerTest {
 		m3 = new Movie("Os três porquinhos", Movie.CHILDRENS);
 		
 		r1 = new Rental(m1, 1);
+		r2 = new Rental(m1, 3);
 		
 		c1 = new Customer("Fulano");
 		c2 = new Customer("Ciclano");
@@ -31,5 +32,13 @@ public class CustomerTest {
 		String saida = HEADER + MOVIE + FOOTER;
 		saida = String.format(saida, "Fulano", "Homem Nordestino", "2.0", "2.0", "1");
 		assertTrue(saida.equals(c1.statement()));
+	}
+	
+	@Test
+	public void testEmprestimoSimples() {
+		c1.addRental(r2);
+		String saida = HEADER + MOVIE + FOOTER;
+		saida = String.format(saida, "Fulano", "Homem Nordestino", "3.5", "3.5", "1");
+		assertEquals(saida, c1.statement());
 	}
 }

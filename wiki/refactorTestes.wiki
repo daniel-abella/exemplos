@@ -3,8 +3,7 @@
 = Testes de unidade =
 
 Devem estar disponíveis antes das operações de _refactoring_.
-São eles:
-  * MovieTest.java
-  * CustomerTest.java
-  * RentalTest.java
+Inicialmente, apenas a classe {{{Customer}}}, por meio do método {{{statement()}}} possui código relevante para testes.
+
+  * [http://exemplos.googlecode.com/svn/tags/refactoring-v0/teste/CustomerTest.java CustomerTest.java]
 

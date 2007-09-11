@@ -49,7 +49,7 @@ public class Customer {
 	}
 
 	private double amountFor(Rental each) {
-		int thisAmount = 0;
+		double thisAmount = 0;
 		// determine amounts for each line
 		switch  (each.getMovie().getPriceCode()) {
 		case Movie.REGULAR:

@@ -27,4 +27,7 @@ que o cliente recebe, o que depende do filme ser uma novidade ou não.
 
 Abaixo segue o diagrama que ilustra este modelo. 
 
-http://exemplos.googlecode.com/svn/wiki/refactoring/images/v0.png
+http://exemplos.googlecode.com/svn/tags/refactoring-v0/images/v0.png
+
+A implementação destas classes também se encontra disponível: [http://exemplos.googlecode.com/svn/tags/refactoring-v0/src/Movie.java Movie.java].
+

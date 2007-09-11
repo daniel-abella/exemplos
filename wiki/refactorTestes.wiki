@@ -1,0 +1,10 @@
+#summary One-sentence summary of this page.
+
+= Testes de unidade =
+
+Devem estar disponíveis antes das operações de _refactoring_.
+São eles:
+  * MovieTest.java
+  * CustomerTest.java
+  * RentalTest.java
+

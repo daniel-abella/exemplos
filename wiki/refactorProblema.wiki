@@ -29,5 +29,4 @@ Abaixo segue o diagrama que ilustra este modelo.
 
 http://exemplos.googlecode.com/svn/tags/refactoring-v0/images/v0.png
 
-A implementação destas classes também se encontra disponível: [http://exemplos.googlecode.com/svn/tags/refactoring-v0/src/Movie.java Movie.java].
-
+A implementação inicial de cada uma destas classes também se encontra disponível: [http://exemplos.googlecode.com/svn/tags/refactoring-v0/src/Movie.java Movie.java], [http://exemplos.googlecode.com/svn/tags/refactoring-v0/src/Customer.java Customer.java] e [http://exemplos.googlecode.com/svn/tags/refactoring-v0/src/Rental.java Rental.java].

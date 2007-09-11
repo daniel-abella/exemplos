@@ -45,3 +45,8 @@ A página de [refactorTestes testes] introduz os testes de unidade.
 O método {{{statement()}}} é muito longo, conseqüência das várias atividades que desempenha. Dividi-lo, portanto, não é um começo ruim. Não é difícil perceber que o {{{switch}}} é um candidato forte e será este o principal corpo do método a ser criado {{{amountFor()}}}. Veja o resultado desta alteração em [http://exemplos.googlecode.com/svn/tags/refactoring-v1/src/Customer.java Customer.java].
 
 Após a alteração a primeira orientação é para a execução dos testes de unidade que, neste caso, ressaltam uma falha. A falha pode ser identificada sem muita dificuldade. O método {{{amountFor()}}} define a variável {{{thisAmount}}} com o tipo {{{int}}}, enquanto o correto é o tipo {{{double}}}. Ao fazer esta alteração temos código que, após a modificação, passa nos testes criados. Veja a versão resultante da classe {{{Customer}}} após as mudanças em [http://exemplos.googlecode.com/svn/tags/refactoring-v2/src/Customer.java Customer.java].
+
+= Segunda mudança =
+Alguns nomes do método {{{amountFor()}}} podem ser mais claros. Por exemplo, {{{each}}} é menos preciso que {{{aRental}}}, assim como {{{thisAmount}}} não é tão esclarecedor quanto {{{result}}}. Estas alterações conduzem à nova versão disponível em [http://exemplos.googlecode.com/svn/tags/refactoring-v3/src/Customer.java Customer.java].
+
+= Terceira mudança =

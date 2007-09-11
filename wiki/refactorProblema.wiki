@@ -39,4 +39,4 @@ Uma outra mudança (*mudança 2*) é alterar a forma de classificação dos film
 
 Estas duas mudanças irão repercutir no método {{{statement()}}}. Antes das mudanças, contudo, é preciso dispor de testes de unidade, para assegurar que mudanças não introduziram erros. 
 
-A página de [wiki:refactorTestes testes] introduz os testes de unidade.
+A página de [refactorTestes testes] introduz os testes de unidade.

@@ -30,3 +30,11 @@ Abaixo segue o diagrama que ilustra este modelo.
 http://exemplos.googlecode.com/svn/tags/refactoring-v0/images/v0.png
 
 A implementação inicial de cada uma destas classes também se encontra disponível: [http://exemplos.googlecode.com/svn/tags/refactoring-v0/src/Movie.java Movie.java], [http://exemplos.googlecode.com/svn/tags/refactoring-v0/src/Customer.java Customer.java] e [http://exemplos.googlecode.com/svn/tags/refactoring-v0/src/Rental.java Rental.java].
+
+Conforme Martin Fowler descreve, o código fornecido por estas classes certamente não é orientado a objeto e, convém ressaltar, não há nenhum problema com ele dado que se trata de um _software_ de aplicação muito restrita. Contudo, se esta é uma parte representativa de um sistema, então existem problemas reais com este código. 
+
+Uma dificuldade com este código fica clara com o contexto onde os clientes desejam, por exemplo, que a situação de um cliente também seja fornecida em HTML (*mudança 1*). Percebe-se que, conforme está, haverá significativa duplicação de código para simplesmente transformar a sentença corrente em uma versão HTML correspondente. Neste caso, observe que, quando uma mudança ocorrer na estratégia de comercialização, teremos que efetuar mudanças correspondentes em mais de um único local. 
+
+Uma outra mudança (*mudança 2*) é alterar a forma de classificação dos filmes. Clientes ainda não possuem claramente o que deverá ser alterado, mas já se sabe que teremos alteração na forma em que os filmes serão classificados.
+
+Estas duas mudanças irão repercutir no método {{{statement()}}}. Antes das mudanças, contudo, é preciso dispor de testes de unidade, para assegurar que mudanças não introduziram erros. 

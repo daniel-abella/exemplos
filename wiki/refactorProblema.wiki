@@ -40,3 +40,6 @@ Uma outra mudança (*mudança 2*) é alterar a forma de classificação dos film
 Estas duas mudanças irão repercutir no método {{{statement()}}}. Antes das mudanças, contudo, é preciso dispor de testes de unidade, para assegurar que mudanças não introduziram erros. 
 
 A página de [refactorTestes testes] introduz os testes de unidade.
+
+= Primeira mudança =
+O método {{{statement()}}} é muito longo, conseqüência das várias atividades que desempenha. Dividi-lo, portanto, não é um começo ruim. Não é difícil perceber que o {{{switch}}} é um candidato forte e será este o principal corpo do método a ser criado {{{amountFor()}}}. Veja o resultado desta alteração em [http://exemplos.googlecode.com/svn/tags/refactoring-v1/src/Customer.java Customer.java].

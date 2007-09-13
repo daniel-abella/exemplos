@@ -97,3 +97,7 @@ Observe que {{{Movie}}} passa a ter uma referência {{{price}}} para um objeto q
 Procurar por todos os acessos ao tipo de um filme e assegurar que os métodos get/set são empregados para esta finalidade. A única mudança decorrente é no construtor de {{{Movie}}}, que antes fazia acesso direto à variável {{{_priceCode}}} e agora passa a fazer uso de {{{setPriceCode(int priceCode)}}}.
 
 == Segundo passo ==
+Adicionar as classes incluídas no modelo da figura acima. Ou seja, as classes {{{Price}}}, {{{NewReleasePrice}}}, {{{RegularPrice}}} e {{{ChildrensPrice}}}.
+
+== Terceiro passo ==
+Fazer com que a classe {{{Movie}}} agora faça uso dos métodos get/set para o atributo {{{_priceCode}}} compatíveis com a referência para um objeto que implementa {{{Price}}}.

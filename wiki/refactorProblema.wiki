@@ -113,3 +113,10 @@ O resultado é que cada implementação de {{{Price}}} agora possui o método {{
 
 == Quinto passo ==
 Finalmente, após o passo anterior, podemos remover o {{{switch}}} que nos incomodava inicialmente. Em verdade, substitua o método {{{getCharge(int daysRented)}}} por uma declaração abstrata deste método. Dessa forma, toda vez que uma referência para {{{Price}}} receber a mensagem {{{getCharge(int daysRented)}}} esta será executada pelo método correspondente ao tipo em questão. 
+
+O resultado final da oitava mudança, após a execução dos passos acima, encontra-se em:
+[http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/Rental.java Rental.java], [http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/Movie.java Movie.java],
+[http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/Price.java Price.java],
+[http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/NewReleasePrice.java NewReleasePrice.java],
+[http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/ChildrensPrice.java ChildrensPrice.java] e 
+[http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/RegularPrice.java Price.java]. Observe que a classe {{{Customer}}} não foi alterada em todo este conjunto de passos ([http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/Customer.java Customer.java]), assim como também não foram alterados os testes ([http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/CustomerTest.java CustomerTest.java])

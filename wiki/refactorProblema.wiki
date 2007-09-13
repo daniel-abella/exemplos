@@ -55,4 +55,4 @@ Conforme Martin Fowler ressalta na página 15, "Qualquer tolo pode escrever cód
 = Terceira mudança =
 Quando se observa o método {{{amountFor()}}} em [http://exemplos.googlecode.com/svn/tags/refactoring-v3/src/Customer.java Customer.java], nota-se que nenhuma informação pertinente a cliente é empregada por este método. Esta é uma sugestão de que talvez o método esteja em classe errada. Todas as informações empregadas por este método encontram-se na classe {{{Rental}}} e, portanto, é para lá que este método será movido. 
 
-Para mover este método, primeiro faça a cópia do mesmo para o local de destino. Aproveite para renomeá-lo para {{{getCharge()}}}.
+Para mover este método, primeiro faça a cópia do mesmo para o local de destino. Aproveite para renomeá-lo para {{{getCharge()}}}. Conforme ilustrado, o argumento também foi removido.

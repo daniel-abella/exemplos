@@ -79,3 +79,6 @@ Tais mudanças, quando aplicadas, resultam na nova versão em [http://exemplos.g
 
 = Sexta mudança =
 Esta alteração trata-se de acrescentar o método {{{htmlStatement()}}}, ou seja, a versão que produz saída em HTML correspondente ao método {{{statement()}}}. Ao se acrescentar este método, testes correspondentes também devem ser acrescentados. As classes alteradas são [http://exemplos.googlecode.com/svn/tags/refactoring-v7/src/Customer.java Customer.java] e [http://exemplos.googlecode.com/svn/tags/refactoring-v7/teste/CustomerTest.java CustomerTest.java]. 
+
+= Sétima mudança = 
+Não é uma boa idéia fazer um {{{switch}}} baseado em dados de outro objeto. Este é exatamente o cenário na classe {{{Rental}}}. O método em questão, {{{getCharge()}}}, portanto, deve ser transferido para a classe {{{Movie}}}. 

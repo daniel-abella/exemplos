@@ -61,4 +61,8 @@ Se os testes foram executados satisfatoriamente, então é o momento de substitu
 
 http://exemplos.googlecode.com/svn/tags/refactoring-v4/images/v4.png
 
-Novamente os testes deverão ser executados. Caso os testes sejam executados satisfatoriamente, o método {{{amountFor()}}} poderá ser removido. Caso seja um método empregado por outros componentes, talvez ela deve permanecer como _depracated_, mesmo com o corpo que é uma mera delegação para o novo método criado.
+Novamente os testes deverão ser executados. Caso os testes sejam executados satisfatoriamente, o método {{{amountFor()}}} poderá ser removido. Caso seja um método empregado por outros componentes, talvez ela deve permanecer como _deprecated_, mesmo com o corpo que é uma mera delegação para o novo método criado. Em Java, pode-se informar que há uma alternativa melhor para um método, ou que um determinado método não mais deverá ser empregado por meio da anotação *@Deprecated*. 
+
+Após esta mudança ficará fácil perceber que a variável {{{thisAmount}}} é iniciada e só depois o valor nela depositado é obtido de {{{getCharge()}}}. Naturalmente, estas duas operações podem ser feitas em uma única linha sem prejuízo de legibilidade. Portanto, a variável pode ser definida e iniciada em uma única linha com o valor obtido de {{{getCharge()}}}.
+
+Após a mudança acima, uma possível mudança é remover a variável local {{{thisAmount}}}. Ela é empregada em apenas dois únicos pontos do método. Estes pontos podem ser substituídos pela chamada à {{{getCharge()}}}. Com esta mudança, a variável {{{thisAmount}}} não mais será útil e pode ser removida. Naturalmente há um preço que, neste caso, é a execução duplicada deste método. Variáveis locais, por outro lado, tendem a obscurecer o código. Por fim, desempenho não é a questão observada no momento. 

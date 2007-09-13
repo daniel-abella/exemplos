@@ -13,6 +13,10 @@ public class CustomerTest {
 	private final String MOVIE = "\t%s\t%s\n";
 	private final String FOOTER = "Amount owed is %s\nYou earned %s frequent renter points";
 	
+	private final String HHEADER = "<h1>Rentals for <em>%s</em></h1><p>\n";
+	private final String HMOVIE = "%s: %s<br>\n";
+	private final String HFOOTER = "<p>You owe <em>%s</em><p>\nOn this rental you earned <em>%s</em> frequent renter points<p>";
+	
 	@Before
 	public void setUp() {
 		m1 = new Movie("Homem Nordestino", Movie.REGULAR);
@@ -32,6 +36,10 @@ public class CustomerTest {
 		String saida = HEADER + MOVIE + FOOTER;
 		saida = String.format(saida, "Fulano", "Homem Nordestino", "2.0", "2.0", "1");
 		assertTrue(saida.equals(c1.statement()));
+		
+		String hSaida = HHEADER + HMOVIE + HFOOTER;
+		hSaida = String.format(hSaida, "Fulano", "Homem Nordestino", "2.0", "2.0", "1");
+		assertEquals(hSaida, c1.htmlStatement());
 	}
 	
 	@Test
@@ -40,5 +48,9 @@ public class CustomerTest {
 		String saida = HEADER + MOVIE + FOOTER;
 		saida = String.format(saida, "Fulano", "Homem Nordestino", "3.5", "3.5", "1");
 		assertEquals(saida, c1.statement());
+		
+		String hSaida = HHEADER + HMOVIE + HFOOTER;
+		hSaida = String.format(hSaida, "Fulano", "Homem Nordestino", "3.5", "3.5", "1");
+		assertEquals(hSaida, c1.htmlStatement());
 	}
 }

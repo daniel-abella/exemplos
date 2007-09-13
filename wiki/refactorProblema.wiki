@@ -49,4 +49,7 @@ Após a alteração a primeira orientação é para a execução dos testes de u
 = Segunda mudança =
 Alguns identificadores empregados no método {{{amountFor()}}} podem ser mais claros. Por exemplo, {{{each}}} é menos preciso que {{{aRental}}}, assim como {{{thisAmount}}} não é tão esclarecedor quanto {{{result}}}. Estas alterações conduzem à nova versão disponível em [http://exemplos.googlecode.com/svn/tags/refactoring-v3/src/Customer.java Customer.java].
 
+Conforme Martin Fowler ressalta na página 15, "Qualquer tolo pode escrever código que um computador pode compreender. Bons programadores escrevem código que seres humanos podem compreender".
+
+
 = Terceira mudança =

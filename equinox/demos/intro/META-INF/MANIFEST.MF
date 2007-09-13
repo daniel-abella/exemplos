@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Introdução ao Equinox
-Bundle-SymbolicName: introducao
-Bundle-Version: 1.0.0
-Bundle-Activator: introducao.MeuPrimeiroBundle
-Import-Package: org.osgi.framework;version="1.3.0"

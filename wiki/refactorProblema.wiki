@@ -75,4 +75,7 @@ Ao se observar o método {{{statement()}}}, nota-se que a obtenção do total de
 = Quinta mudança =
 Variáveis temporárias estimulam a criação de métodos longos. Se seguirmos esta observação veremos que o método {{{statement()}}} possui duas variáveis locais, {{{totalAmount}}} e {{{frequentRentalPoints}}} que podem ser eliminadas conforme feito anteriormente. Ou seja, o objetivo é obter cada um destes valores por método próprio. Ainda convém ressaltar que isto será útil tanto para a sentença fornecida em texto simples quanto a versão obtida em HTML. Para a variável {{{totalAmount}}} crie o método {{{getTotalCharge()}}} e para a variável {{{frequentRentalPoints}}} crie o método {{{getTotalFrequentRenterPoints()}}}.
 
-Tais mudanças, quando aplicadas, resultam na nova versão em [http://exemplos.googlecode.com/svn/tags/refactoring-v6/src/Customer.java Customer.java]. 
+Tais mudanças, quando aplicadas, resultam na nova versão em [http://exemplos.googlecode.com/svn/tags/refactoring-v6/src/Customer.java Customer.java].
+
+= Sexta mudança =
+Esta alteração trata-se de acrescentar o método {{{htmlStatement()}}}, ou seja, a versão que produz saída em HTML correspondente ao método {{{statement()}}}. Ao se acrescentar este método, testes correspondentes também devem ser acrescentados. As classes alteradas são [http://exemplos.googlecode.com/svn/tags/refactoring-v7/src/Customer.java Customer.java] e [http://exemplos.googlecode.com/svn/tags/refactoring-v7/teste/CustomerTest.java CustomerTest.java]. 

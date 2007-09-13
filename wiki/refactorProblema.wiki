@@ -84,3 +84,16 @@ Esta alteração trata-se de acrescentar o método {{{htmlStatement()}}}, ou sej
 Não é uma boa idéia fazer um {{{switch}}} baseado em dados de outro objeto. Este é exatamente o cenário na classe {{{Rental}}}. O método em questão, {{{getCharge()}}}, portanto, deve ser transferido para a classe {{{Movie}}}. Uma situação análoga ocorre com o método {{{getFrequentRenterPoints()}}} que, portanto, também deve ser transferido para a classe {{{Movie}}}. Pode-se argumentar que, na nova versão sugerida, métodos da classe {{{Movie}}} precisam de informação da classe {{{Rental}}}, enquanto no caso anterior, a dependência era em outro sentido, de {{{Rental}}} para {{{Movie}}}, ou seja, qual a diferença? Neste caso, mudanças no tipo em um filme, situação que provavelmente irá ocorrer, não causará um efeito colateral em outra classe, mas ficarão contidas na classe {{{Movie}}}. Observe que, no caso anterior, teríamos que alterar duas classes.
 
 As novas versões: [http://exemplos.googlecode.com/svn/tags/refactoring-v8/src/Rental.java Rental.java] e [http://exemplos.googlecode.com/svn/tags/refactoring-v8/src/Movie.java Movie.java].
+
+= Oitava mudança =
+Esta é a mudança mais significativa quando comparada com aquelas acima. Apresentada de forma simples, trata-se de substituir o {{{switch}}} pelo uso de polimorfismo. O processo desta mudança e os benefícios decorrentes, contudo, não são tão simples quanto a definição. Para ilustrar esta mudança segue o diagrama abaixo. 
+
+
+http://exemplos.googlecode.com/svn/tags/refactoring-v9/images/v9.png
+
+Observe que {{{Movie}}} passa a ter uma referência {{{price}}} para um objeto que implementa a classe abstrata {{{Price}}}. O objetivo é fazer com que esta referência esteja indicando um objeto do tipo {{{RegularPrice}}}, {{{ChildrensPrice}}} ou {{{NewReleasePrice}}}, conforme o tipo do filme em questão. Desta forma, cada uma destas subclasses concretas implementa a política de custo correspondente ao tipo em questão. Dado que cada filme é de apenas um tipo, definido pelo objeto referenciado por {{{price}}}, é suficiente que cada subclasse implemente adequadamente a política de custo para o tipo em questão. Isto tornará desnecessária a sentença {{{switch}}}. Conforme anteriormente alertada, este não é um processo tão simples de ser compreendido e, portanto, será feito em vários passos. 
+
+== Primeiro passo ==
+Procurar por todos os acessos ao tipo de um filme e assegurar que os métodos get/set são empregados para esta finalidade. A única mudança decorrente é no construtor de {{{Movie}}}, que antes fazia acesso direto à variável {{{_priceCode}}} e agora passa a fazer uso de {{{setPriceCode(int priceCode)}}}.
+
+== Segundo passo ==

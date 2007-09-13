@@ -56,3 +56,9 @@ Conforme Martin Fowler ressalta na página 15, "Qualquer tolo pode escrever cód
 Quando se observa o método {{{amountFor()}}} em [http://exemplos.googlecode.com/svn/tags/refactoring-v3/src/Customer.java Customer.java], nota-se que nenhuma informação pertinente a cliente é empregada por este método. Esta é uma sugestão de que talvez o método esteja em classe errada. Todas as informações empregadas por este método encontram-se na classe {{{Rental}}} e, portanto, é para lá que este método será movido. 
 
 Para mover este método, primeiro faça a cópia do mesmo para o local de destino. Aproveite para renomeá-lo para {{{getCharge()}}}. Conforme ilustrado, o argumento também foi removido. Após estas alterações, verifique se o novo método criado funciona. Ou seja, substitua o corpo do método {{{amountFor(Rental aRental)}}} por {{{return aRental.getCharge()}}}. Em seguida, teste para certificar-se de que nenhum engano foi cometido nestas mudanças.
+
+Se os testes foram executados satisfatoriamente, então é o momento de substituir todas as referências à {{{amountFor()}}} por aquelas correspondentes ao novo método {{{getCharge()}}}. Após esta mudança, o modelo correspondente é fornecido abaixo.
+
+http://exemplos.googlecode.com/svn/tags/refactoring-v4/images/v4.png
+
+Novamente os testes deverão ser executados. Caso os testes sejam executados satisfatoriamente, o método {{{amountFor()}}} poderá ser removido. Caso seja um método empregado por outros componentes, talvez ela deve permanecer como _depracated_, mesmo com o corpo que é uma mera delegação para o novo método criado.

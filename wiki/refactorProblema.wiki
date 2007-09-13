@@ -101,3 +101,12 @@ Adicionar as classes incluídas no modelo da figura acima. Ou seja, as classes {
 
 == Terceiro passo ==
 Fazer com que a classe {{{Movie}}} agora faça uso dos métodos get/set para o atributo {{{_priceCode}}} compatíveis com a referência para um objeto que implementa {{{Price}}}.
+
+== Quarto passo ==
+O método {{{getCharge()}}} da classe {{{Movie}}} agora pode ir para a classe {{{Price}}}. 
+O resultado pode ser notado na classe {{{Movie}}}, que agora não possui mais código correspondente à estratégia de preço conforme o tipo do filme.
+
+== Quinto passo ==
+A transferência do método {{{getCharge()}}} para {{{Price}}} não faz desaparecer a sentença {{{switch}}}. Para tal, primeiro será necessário criar o método {{{getCharge(int daysRented)}}} em cada classe concreta que implementa {{{Price}}}. A implementação deste método será, naturalmente, correspondente ao tipo de filme em questão. Em verdade, trata-se de copiar o trecho de código de cada {{{case}}} para a classe correspondente no método citado acima. 
+
+O resultado é que cada implementação de {{{Price}}} agora possui o método {{{getCharge(int daysRented)}}} que implementa a política de preço para o tipo em questão. 

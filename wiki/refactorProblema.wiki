@@ -110,3 +110,6 @@ O resultado pode ser notado na classe {{{Movie}}}, que agora não possui mais c�
 A transferência do método {{{getCharge()}}} para {{{Price}}} não faz desaparecer a sentença {{{switch}}}. Para tal, primeiro será necessário criar o método {{{getCharge(int daysRented)}}} em cada classe concreta que implementa {{{Price}}}. A implementação deste método será, naturalmente, correspondente ao tipo de filme em questão. Em verdade, trata-se de copiar o trecho de código de cada {{{case}}} para a classe correspondente no método citado acima. 
 
 O resultado é que cada implementação de {{{Price}}} agora possui o método {{{getCharge(int daysRented)}}} que implementa a política de preço para o tipo em questão. 
+
+== Quinto passo ==
+Finalmente, após o passo anterior, podemos remover o {{{switch}}} que nos incomodava inicialmente. Em verdade, substitua o método {{{getCharge(int daysRented)}}} por uma declaração abstrata deste método. Dessa forma, toda vez que uma referência para {{{Price}}} receber a mensagem {{{getCharge(int daysRented)}}} esta será executada pelo método correspondente ao tipo em questão. 

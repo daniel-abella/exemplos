@@ -1,8 +1,0 @@
-MIDlet-Version: 1.0.0
-MIDlet-Vendor: Midlet Suite Vendor
-MIDlet-Jar-URL: midlet1.jar
-MIDlet-Delete-Confirm: Mensagem fornecida para 'Midlet-Delete-Confirm' no arquivo .jad.
-MicroEdition-Configuration: CLDC-1.1
-MIDlet-1: Ola,,exemplo.Ola
-MicroEdition-Profile: MIDP-2.1
-MIDlet-Name: midlet1 Midlet Suite

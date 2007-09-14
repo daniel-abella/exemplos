@@ -120,3 +120,22 @@ O resultado final da oitava mudança, após a execução dos passos acima, encon
 [http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/NewReleasePrice.java NewReleasePrice.java],
 [http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/ChildrensPrice.java ChildrensPrice.java] e 
 [http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/RegularPrice.java Price.java]. Observe que a classe {{{Customer}}} não foi alterada em todo este conjunto de passos ([http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/Customer.java Customer.java]), assim como também não foram alterados os testes ([http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/CustomerTest.java CustomerTest.java])
+
+= Nona mudança =
+Esta mudança é análoga à anterior, exceto que agora o alvo é o método {{{getFrequentRenterPoints()}}}. O modelo final é exibido no diagrama abaixo.
+
+http://exemplos.googlecode.com/svn/tags/refactoring-v10/images/v10.png
+
+O código final, após esta mudança, que deve seguir passos análogos àqueles da oitava mudança, fornecida acima, é formado por:
+[http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/Rental.java Rental.java], [http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/Movie.java Movie.java],
+[http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/Price.java Price.java],
+[http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/NewReleasePrice.java NewReleasePrice.java],
+[http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/ChildrensPrice.java ChildrensPrice.java] e 
+[http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/RegularPrice.java Price.java]. Observe que a classe {{{Customer}}} não foi alterada em todo este conjunto de passos ([http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/Customer.java Customer.java]), assim como também não foram alterados os testes ([http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/CustomerTest.java CustomerTest.java])
+
+= Décima e última mudança = 
+
+= Considerações finais = 
+As mudanças efetuadas acima e o código correspondente, bem como a idéia e seqüência apresentados são de autoria de Martin Fowler, no livro _Refactoring: Improving the Design of Existing Code_, Addison-Wesley, 1999. Convém deixar claro e atribuir os méritos devidos ao autor e à referência citados. Apenas a décima e última mudança não se encontram na referência citada. 
+
+Todas elas têm o propósito de introduzir a noção de _refactoring_ e fornecer uma visão geral do que se trata este assunto. No livro supracitado são fornecidos dezenas de padrões de _refactoring_, ou seja, abordagens que já se mostraram satisfatórias para problemas recorrentes. São ferramentas de grande utilidade para desenvolvedores de software. A consulta a esta seminal referência é aconselhada para detalhes. 

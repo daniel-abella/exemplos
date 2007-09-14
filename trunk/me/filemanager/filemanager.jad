@@ -1,3 +1,4 @@
+MIDlet-3: Analisa arquivo ou diretório,,filemanager.AnalisaFile
 MIDlet-2: Exibe drivers,,filemanager.ShowRoots
 MIDlet-1: Descendentes de drivers,,filemanager.ShowDescendentsOfRoots
 MIDlet-Jar-URL: filemanager.jar

@@ -1,7 +1,9 @@
 package filemanager;
+import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Vector;
 
+import javax.microedition.io.file.FileConnection;
 import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.CommandListener;
 import javax.microedition.lcdui.Display;
@@ -16,28 +18,46 @@ public class ShowDescendentsOfRoots extends MIDlet implements CommandListener, R
 	private List mMainBox;
 	private Vector roots = null;
 	
-	public void run() {
-		int nroots = roots.size();
+	private void showRoots() {
+		mMainBox.append("Total de raízes (drives): " + roots.size(), null);
+		
 		Enumeration item = roots.elements();
-		StringBuffer raizes = new StringBuffer();
 		while (item.hasMoreElements())
-			raizes.append(" " + ((String) item.nextElement()));
-		mMainBox.append(nroots + " roots: " + raizes.toString(), null);
+			mMainBox.append(((String) item.nextElement()), null);
+	}
+	
+	public void run() {
+		showRoots();
 		
 		mMainBox.append(" ", null);
 		mMainBox.append("Descendentes", null);
-		item = roots.elements();
+		
+		// Percorrer raiz por raiz e seus subdiretórios
+		
+		showDescendents(roots);
+	}
+	
+	private void showDescendents(Vector roots) {
+		if (roots == null) return;
+		Enumeration item = roots.elements();
+		FileConnection fc = null;
 		while (item.hasMoreElements()) {
 			String root = (String) item.nextElement();
-			mMainBox.append(root + (Utils.exists(root) ? " [ok]" : " ERRO"), null);
-			String prefixo = Utils.getFC(root).getURL();
-			Vector conteudo = Utils.getContent(Utils.getFC(root));
-			if (conteudo != null) {
-				Enumeration subitens = conteudo.elements();
-				while (subitens.hasMoreElements())
-					mMainBox.append(root + ": " + prefixo + ((String) subitens.nextElement()), null);
-			} else {
-				mMainBox.append("nenhum conteúdo", null);
+			fc = Utils.getFC(root);
+			String file = fc.getURL();
+			try {
+				fc.close();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			System.out.println(root + " : " + file);
+			mMainBox.append(file + (Utils.exists(file) ? " [ok]" : " ERRO"), null);
+			fc = Utils.getFC(file);
+			showDescendents(Utils.getContent(fc));
+			try {
+				fc.close();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
 		}
 	}

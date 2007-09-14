@@ -16,7 +16,7 @@ public class Utils {
 		try {
 			Enumeration e = FileSystemRegistry.listRoots();
 			while (e.hasMoreElements())
-				retorno.addElement(e.nextElement());
+				retorno.addElement("file:///" + e.nextElement());
 		} catch (Exception e) {
 			return null;
 		}
@@ -24,10 +24,12 @@ public class Utils {
 	}
 
 	public static FileConnection getFC(String fileName) {
+		System.out.println("Utils.getFC(" + fileName + ")");
 		FileConnection fc = null;
 		try {
-			fc = (FileConnection) Connector.open("file:///" + fileName);
+			fc = (FileConnection) Connector.open(fileName);
 		} catch (Exception ioe) {
+			ioe.printStackTrace();
 		}
 		return fc;
 	}
@@ -69,12 +71,16 @@ public class Utils {
 	}
 	
 	public static Vector getContent(FileConnection fc) {
+		if (!fc.isDirectory())
+			return null;
+		
 		Vector itens = new Vector();
 		try {
 			Enumeration filelist = fc.list();
 			while (filelist.hasMoreElements())
-				itens.addElement(filelist.nextElement());
+				itens.addElement(fc.getURL() + filelist.nextElement());
 		} catch (Exception ioe) {
+			ioe.printStackTrace();
 			return null;
 		}
 		return itens;

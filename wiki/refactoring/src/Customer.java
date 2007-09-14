@@ -1,16 +1,16 @@
-import java.util.Enumeration;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Customer {
 	private String _name;
-	private Vector _rentals = new Vector();
+	private List<Rental> _rentals = new ArrayList<Rental>();
 	
 	public Customer(String _name) {
 		this._name = _name;
 	}
 	
 	public void addRental(Rental arg) {
-		_rentals.addElement(arg);
+		_rentals.add(arg);
 	}
 	
 	public String getName() {
@@ -18,10 +18,8 @@ public class Customer {
 	}
 	
 	public String statement() {
-		Enumeration rentals = _rentals.elements();
 		String result = "Rental Record for " + getName() + "\n";
-		while (rentals.hasMoreElements()) {
-			Rental each = (Rental) rentals.nextElement();
+		for (Rental each : _rentals) {
 			
 			// show figures for this rental
 			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
@@ -36,9 +34,7 @@ public class Customer {
 	
 	public int getTotalFrequentRentalPoints() {
 		int result = 0;
-		Enumeration rentals = _rentals.elements();
-		while (rentals.hasMoreElements()) {
-			Rental each = (Rental) rentals.nextElement();			
+		for (Rental each : _rentals) {			
 			result += each.getFrequentRenterPoints();
 		}
 		return result;
@@ -46,27 +42,15 @@ public class Customer {
 	
 	public double getTotalCharge() {
 		double result = 0d;
-		Enumeration rentals = _rentals.elements();
-		while (rentals.hasMoreElements()) {
-			Rental each = (Rental) rentals.nextElement();
+		for (Rental each : _rentals) {
 			result += each.getCharge();
 		}
 		return result;
 	}
-
-	private int getFrequentRenterPoints(Rental each) {	
-		return each.getFrequentRenterPoints();
-	}
-
-	private double amountFor(Rental aRental) {
-		return aRental.getCharge();
-	}
 	
 	public String htmlStatement() {
-		Enumeration rentals = _rentals.elements();
 		String result = "<h1>Rentals for <em>" + getName() + "</em></h1><p>\n";
-		while (rentals.hasMoreElements()) {
-			Rental each = (Rental) rentals.nextElement();
+		for (Rental each : _rentals) {
 			result += each.getMovie().getTitle() + ": " + String.valueOf(each.getCharge()) + "<br>\n";
 		}
 		

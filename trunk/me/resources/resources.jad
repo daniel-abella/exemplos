@@ -1,8 +1,9 @@
-MIDlet-Version: 1.0.0
-MIDlet-Vendor: Kyriosdata
+MIDlet-3: Memória,,Memory
+MIDlet-2: Detecta APIs disponíveis,,exemplos.RuntimeDetection
+MIDlet-1: Avalia recursos 1,,exemplos.Resources
 MIDlet-Jar-URL: resources.jar
 MicroEdition-Configuration: CLDC-1.1
-MIDlet-2: Avalia recursos 2,,exemplos.RuntimeDetection
-MIDlet-1: Avalia recursos 1,,exemplos.Resources
-MicroEdition-Profile: MIDP-2.0
+MIDlet-Version: 1.0.0
 MIDlet-Name: Detecta recursos
+MIDlet-Vendor: Kyriosdata
+MicroEdition-Profile: MIDP-2.0

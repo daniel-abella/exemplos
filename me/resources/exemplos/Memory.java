@@ -23,7 +23,16 @@ public class Memory extends MIDlet implements CommandListener {
 		formulario.addCommand(comExit);
 		formulario.setCommandListener(this);
 		
-		formulario.append(getFreeMemory());
+		formulario.append("Memória livre: " + getFreeMemory());
+		System.gc();
+		formulario.append("Memória após GC: " + getFreeMemory());
+		byte[] buffer = new byte[(1024 + 512) * 1024];
+		for (int i = 0; i < buffer.length; i++) {
+			buffer[i] = -1;
+		}
+		formulario.append("Após ocupar 1 MB: " + getFreeMemory());
+		System.gc();
+		formulario.append("Memória após GC: " + getFreeMemory());		
 	}
 	
 	private String getFreeMemory() {

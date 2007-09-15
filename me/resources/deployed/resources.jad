@@ -1,7 +1,7 @@
 MIDlet-1: Avalia recursos 1,,exemplos.Resources
 MIDlet-2: Detecta APIs disponíveis,,exemplos.RuntimeDetection
 MIDlet-3: Memória,,exemplos.Memory
-MIDlet-Jar-Size: 8541
+MIDlet-Jar-Size: 8771
 MIDlet-Jar-URL: resources.jar
 MIDlet-Name: Detecta recursos
 MIDlet-Vendor: Kyriosdata

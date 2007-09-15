@@ -1,4 +1,4 @@
-MIDlet-3: Memória,,Memory
+MIDlet-3: Memória,,exemplos.Memory
 MIDlet-2: Detecta APIs disponíveis,,exemplos.RuntimeDetection
 MIDlet-1: Avalia recursos 1,,exemplos.Resources
 MIDlet-Jar-URL: resources.jar

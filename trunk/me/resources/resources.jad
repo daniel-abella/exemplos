@@ -2,7 +2,7 @@ MIDlet-Version: 1.0.0
 MIDlet-Vendor: Kyriosdata
 MIDlet-Jar-URL: resources.jar
 MicroEdition-Configuration: CLDC-1.1
-MIDlet-2: Runtime Detection,,exemplos.RuntimeDetection
-MIDlet-1: Resources,,exemplos.Resources
+MIDlet-2: Avalia recursos 2,,exemplos.RuntimeDetection
+MIDlet-1: Avalia recursos 1,,exemplos.Resources
 MicroEdition-Profile: MIDP-2.0
-MIDlet-Name: Resources (verificação)
+MIDlet-Name: Detecta recursos

@@ -41,18 +41,18 @@ Estas duas mudanças irão repercutir no método {{{statement()}}}. Antes das mu
 
 A página de [refactorTestes testes] introduz os testes de unidade.
 
-= Primeira mudança =
+= Primeira mudança ([http://exemplos.googlecode.com/svn/tags/refactoring-v1/ v1]) =
 O método {{{statement()}}} é muito longo, conseqüência das várias atividades que desempenha. Dividi-lo, portanto, não é um começo ruim. Não é difícil perceber que o {{{switch}}} é um candidato forte e será este o principal corpo do método a ser criado {{{amountFor()}}}. Veja o resultado desta alteração em [http://exemplos.googlecode.com/svn/tags/refactoring-v1/src/Customer.java Customer.java].
 
 Após a alteração a primeira orientação é para a execução dos testes de unidade que, neste caso, ressaltam uma falha. A falha pode ser identificada sem muita dificuldade. O método {{{amountFor()}}} define a variável {{{thisAmount}}} com o tipo {{{int}}}, enquanto o correto é o tipo {{{double}}}. Ao fazer esta alteração temos código que, após a modificação, passa nos testes criados. Veja a versão resultante da classe {{{Customer}}} após as mudanças em [http://exemplos.googlecode.com/svn/tags/refactoring-v2/src/Customer.java Customer.java].
 
-= Segunda mudança =
+= Segunda mudança ([http://exemplos.googlecode.com/svn/tags/refactoring-v2/ v2])=
 Alguns identificadores empregados no método {{{amountFor()}}} podem ser mais claros. Por exemplo, {{{each}}} é menos preciso que {{{aRental}}}, assim como {{{thisAmount}}} não é tão esclarecedor quanto {{{result}}}. Estas alterações conduzem à nova versão disponível em [http://exemplos.googlecode.com/svn/tags/refactoring-v3/src/Customer.java Customer.java].
 
 Conforme Martin Fowler ressalta na página 15, "Qualquer tolo pode escrever código que um computador pode compreender. Bons programadores escrevem código que seres humanos podem compreender".
 
 
-= Terceira mudança =
+= Terceira mudança ([http://exemplos.googlecode.com/svn/tags/refactoring-v3/ v3])=
 Quando se observa o método {{{amountFor()}}} em [http://exemplos.googlecode.com/svn/tags/refactoring-v3/src/Customer.java Customer.java], nota-se que nenhuma informação pertinente a cliente é empregada por este método. Esta é uma sugestão de que talvez o método esteja em classe errada. Todas as informações empregadas por este método encontram-se na classe {{{Rental}}} e, portanto, é para lá que este método será movido. 
 
 Para mover este método, primeiro faça a cópia do mesmo para o local de destino. Aproveite para renomeá-lo para {{{getCharge()}}}. Conforme ilustrado, o argumento também foi removido. Após estas alterações, verifique se o novo método criado funciona. Ou seja, substitua o corpo do método {{{amountFor(Rental aRental)}}} por {{{return aRental.getCharge()}}}. Em seguida, teste para certificar-se de que nenhum engano foi cometido nestas mudanças.
@@ -69,23 +69,23 @@ Após a mudança acima, uma possível mudança é remover a variável local {{{t
 
 Após tais mudanças as versões finais de cada uma das classes é [http://exemplos.googlecode.com/svn/tags/refactoring-v4/src/Customer.java Customer.java] e [http://exemplos.googlecode.com/svn/tags/refactoring-v4/src/Rental.java Rental.java].
 
-= Quarta mudança =
+= Quarta mudança ([http://exemplos.googlecode.com/svn/tags/refactoring-v4/ v4])=
 Ao se observar o método {{{statement()}}}, nota-se que a obtenção do total de pontos por aluguéis freqüentes (_frequent renter points_) também é trecho de código que diz respeito à classe {{{Rental}}}. Em conseqüência, método correspondente a tal trecho de código, {{{getFrequentRenterPoints}}}, deve ser criado na classe {{{Rental}}}. Para estes passos, a sugestão é criar inicialmente este método na classe {{{Customer}}} e posteriormente transferi-lo para a classe {{{Rental}}}. Após a criação do método, lembre-se de executar os testes. Após copiar o método criado para a classe {{{Rental}}}, altere o método da classe {{{Customer}}} de tal forma que o corpo deste simplesmente delegue a requisição para o método copiado para a classe {{{Rental}}}. Novamente execute os testes. O resultado final encontra-se em: [http://exemplos.googlecode.com/svn/tags/refactoring-v5/src/Customer.java Customer.java] e [http://exemplos.googlecode.com/svn/tags/refactoring-v5/src/Rental.java Rental.java].
 
-= Quinta mudança =
+= Quinta mudança ([http://exemplos.googlecode.com/svn/tags/refactoring-v5/ v5])=
 Variáveis temporárias estimulam a criação de métodos longos. Se seguirmos esta observação veremos que o método {{{statement()}}} possui duas variáveis locais, {{{totalAmount}}} e {{{frequentRentalPoints}}} que podem ser eliminadas conforme feito anteriormente. Ou seja, o objetivo é obter cada um destes valores por método próprio. Ainda convém ressaltar que isto será útil tanto para a sentença fornecida em texto simples quanto a versão obtida em HTML. Para a variável {{{totalAmount}}} crie o método {{{getTotalCharge()}}} e para a variável {{{frequentRentalPoints}}} crie o método {{{getTotalFrequentRenterPoints()}}}.
 
 Tais mudanças, quando aplicadas, resultam na nova versão em [http://exemplos.googlecode.com/svn/tags/refactoring-v6/src/Customer.java Customer.java].
 
-= Sexta mudança =
+= Sexta mudança ([http://exemplos.googlecode.com/svn/tags/refactoring-v6/ v6])=
 Esta alteração trata-se de acrescentar o método {{{htmlStatement()}}}, ou seja, a versão que produz saída em HTML correspondente ao método {{{statement()}}}. Ao se acrescentar este método, testes correspondentes também devem ser acrescentados. As classes alteradas são [http://exemplos.googlecode.com/svn/tags/refactoring-v7/src/Customer.java Customer.java] e [http://exemplos.googlecode.com/svn/tags/refactoring-v7/teste/CustomerTest.java CustomerTest.java]. 
 
-= Sétima mudança = 
+= Sétima mudança ([http://exemplos.googlecode.com/svn/tags/refactoring-v7/ v7])= 
 Não é uma boa idéia fazer um {{{switch}}} baseado em dados de outro objeto. Este é exatamente o cenário na classe {{{Rental}}}. O método em questão, {{{getCharge()}}}, portanto, deve ser transferido para a classe {{{Movie}}}. Uma situação análoga ocorre com o método {{{getFrequentRenterPoints()}}} que, portanto, também deve ser transferido para a classe {{{Movie}}}. Pode-se argumentar que, na nova versão sugerida, métodos da classe {{{Movie}}} precisam de informação da classe {{{Rental}}}, enquanto no caso anterior, a dependência era em outro sentido, de {{{Rental}}} para {{{Movie}}}, ou seja, qual a diferença? Neste caso, mudanças no tipo em um filme, situação que provavelmente irá ocorrer, não causará um efeito colateral em outra classe, mas ficarão contidas na classe {{{Movie}}}. Observe que, no caso anterior, teríamos que alterar duas classes.
 
 As novas versões: [http://exemplos.googlecode.com/svn/tags/refactoring-v8/src/Rental.java Rental.java] e [http://exemplos.googlecode.com/svn/tags/refactoring-v8/src/Movie.java Movie.java].
 
-= Oitava mudança =
+= Oitava mudança ([http://exemplos.googlecode.com/svn/tags/refactoring-v8/ v8])=
 Esta é a mudança mais significativa quando comparada com aquelas acima. Apresentada de forma simples, trata-se de substituir o {{{switch}}} pelo uso de polimorfismo. O processo desta mudança e os benefícios decorrentes, contudo, não são tão simples quanto a definição. Para ilustrar esta mudança segue o diagrama abaixo. 
 
 
@@ -121,7 +121,7 @@ O resultado final da oitava mudança, após a execução dos passos acima, encon
 [http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/ChildrensPrice.java ChildrensPrice.java] e 
 [http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/RegularPrice.java Price.java]. Observe que a classe {{{Customer}}} não foi alterada em todo este conjunto de passos ([http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/Customer.java Customer.java]), assim como também não foram alterados os testes ([http://exemplos.googlecode.com/svn/tags/refactoring-v9/src/CustomerTest.java CustomerTest.java])
 
-= Nona mudança =
+= Nona mudança ([http://exemplos.googlecode.com/svn/tags/refactoring-v9/ v9])=
 Esta mudança é análoga à anterior, exceto que agora o alvo é o método {{{getFrequentRenterPoints()}}}. O modelo final é exibido no diagrama abaixo.
 
 http://exemplos.googlecode.com/svn/tags/refactoring-v10/images/v10.png
@@ -133,12 +133,13 @@ O código final, após esta mudança, que deve seguir passos análogos àqueles 
 [http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/ChildrensPrice.java ChildrensPrice.java] e 
 [http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/RegularPrice.java Price.java]. Observe que a classe {{{Customer}}} não foi alterada em todo este conjunto de passos ([http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/Customer.java Customer.java]), assim como também não foram alterados os testes ([http://exemplos.googlecode.com/svn/tags/refactoring-v10/src/CustomerTest.java CustomerTest.java])
 
-= Décima e última mudança = 
+= Décima e última mudança ([http://exemplos.googlecode.com/svn/tags/refactoring-v10/ v10])= 
 Os métodos não empregados foram eliminados. A coleção que fazia uso de _Vector_ passou a empregar _generics_, recurso da versão 5.0 de Java por meio da interface {{{List}}}. Isto, combinado ao uso do recurso _for_ estendido trouxe um resultado mais simples e menor em termos de código. Todas estas mudanças ocorreram na classe {{{Customer}}} ([http://exemplos.googlecode.com/svn/tags/refactoring-v11/src/Customer.java Customer.java]).
 
 = Considerações finais = 
 As mudanças efetuadas acima e o código correspondente, bem como a idéia e seqüência apresentados são de autoria de Martin Fowler, no livro _Refactoring: Improving the Design of Existing Code_, Addison-Wesley, 1999. Convém deixar claro e atribuir os méritos devidos ao autor e à referência citados. Apenas a décima e última mudança não se encontram na referência citada. Por outro lado, é possível que diferenças sejam encontradas em relação ao texto original. Cabe ao leitor a observância desta fonte com aquela e verificar as possíveis repercussões destas diferenças. 
 
 Todas as mudanças apresentadas têm o propósito de introduzir a noção de _refactoring_ e fornecer uma visão geral do que se trata este assunto. No livro supracitado são fornecidos dezenas de padrões de _refactoring_, ou seja, abordagens que já se mostraram satisfatórias para problemas recorrentes. São ferramentas de grande utilidade para desenvolvedores de software. A consulta a esta seminal referência é aconselhada para detalhes. 
+ 
  
  

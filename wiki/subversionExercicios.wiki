@@ -4,8 +4,8 @@
 
 Em [http://code.google.com/p/exemplos/wiki/refactorProblema Refatoração] foi apresentada uma seqüência de alterações em pequeno programa em Java. Todas as mudanças foram registradas, passo a passo, no diretório [http://exemplos.googlecode.com/svn/tags/ tags]. A seqüência abaixo assume que você deve consultar o texto fornecido no link acima e fazer uso do diretório também indicado, juntamente com o Subversion, para executar as tarefas abaixo.
 
-  * Quando foi criado o diretório refactoring-v0?
-  * O arquivo Movie.java foi modificado de refactoring-v0 para refactoring-v1?
+  # Quando foi criado o diretório refactoring-v0?
+  # O arquivo Movie.java foi modificado de refactoring-v0 para refactoring-v1?
   * Armazene todas as diferenças entre refactoring-v0 e refactoring-v1 no arquivo v0-v1.diff.
   * Faça checkout de refactoring-v0.
   * Aplique as mudanças contidas em v0-v1.diff na cópia de trabalho criada no passo anterior.
@@ -17,6 +17,7 @@ Em [http://code.google.com/p/exemplos/wiki/refactorProblema Refatoração] foi a
   * Faça um update, na cópia de trabalho criada no passo anterior, para a revisão 3.
   * Quais as diferenças resultantes na cópia de trabalho, após o passo anterior, quando comparada com a revisão 3?
 
+ 
  
  
  

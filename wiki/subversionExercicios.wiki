@@ -1,8 +1,8 @@
 #summary Fábio Nogueira de Lucena
 
-= Introduction =
+= Subversion: Uma Seqüência Prática de Exercícios =
 
-Add your content here.
+Em [http://code.google.com/p/exemplos/wiki/refactorProblema Refatoração] foi apresentada uma seqüência de alterações em pequeno programa em Java. Todas as mudanças foram registradas, passo a passo, no diretório [http://exemplos.googlecode.com/svn/tags/ tags]. A seqüência abaixo assume que você deve consultar o texto fornecido no link acima e fazer uso do diretório também indicado, juntamente com o Subversion, para executar as tarefas abaixo.
 
 
 = Details =
@@ -12,4 +12,5 @@ Add your content here.  Format your content with:
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
 
+ 
  

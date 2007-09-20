@@ -17,7 +17,7 @@ anterior. Experiências com o ensino, contudo, revelam que algumas explanações
 adicionais, aqui fornecidas, são relevantes para o entendimento, o que motiva
 este texto e o torna único.
 
-= O problema =
+= O problema ([http://exemplos.googlecode.com/svn/tags/refactoring-v0/]) =
 
 Software para calcular a "situação" de um cliente de uma vídeo locadora. Por
 situação entenda quanto deve ser pago pelo cliente da vídeo locadora para um
@@ -140,3 +140,4 @@ Os métodos não empregados foram eliminados. A coleção que fazia uso de _Vect
 As mudanças efetuadas acima e o código correspondente, bem como a idéia e seqüência apresentados são de autoria de Martin Fowler, no livro _Refactoring: Improving the Design of Existing Code_, Addison-Wesley, 1999. Convém deixar claro e atribuir os méritos devidos ao autor e à referência citados. Apenas a décima e última mudança não se encontram na referência citada. Por outro lado, é possível que diferenças sejam encontradas em relação ao texto original. Cabe ao leitor a observância desta fonte com aquela e verificar as possíveis repercussões destas diferenças. 
 
 Todas as mudanças apresentadas têm o propósito de introduzir a noção de _refactoring_ e fornecer uma visão geral do que se trata este assunto. No livro supracitado são fornecidos dezenas de padrões de _refactoring_, ou seja, abordagens que já se mostraram satisfatórias para problemas recorrentes. São ferramentas de grande utilidade para desenvolvedores de software. A consulta a esta seminal referência é aconselhada para detalhes. 
+ 

@@ -2,7 +2,7 @@
 
 = Exercício =
 
-Observe o código abaixo.
+Observe o código abaixo. O método {{{diaSemana(int dia, int mes, int ano)}}} implementa o algoritmo proposto por Kim S. Larsen, em _Computing the Day of the Week_, Dr. Dobb's Journal, april, 1995. O método {{{main(String[] args)}}}, contudo, não é aqui acompanhado de nenhuma explanação. Exercício: descubra o que o método {{{main(String[] args)}}} faz e empregue o JUnit para realizar o mesmo, mas de forma "mais apropriada". 
 
 {{{
 import java.util.Calendar;
@@ -56,5 +56,6 @@ Add your content here.  Format your content with:
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
 
+ 
  
  

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="9" default="tamanho">
+
+  <target name="tamanho">
+    <input message="Qual arquivo?" addproperty="arquivo"/>
+    <length file="${arquivo}" property="tamanhoArquivo"/>
+    <echo message="Tamanho de ${arquivo}: ${tamanhoArquivo}"/>
+  </target>
+
+</project>

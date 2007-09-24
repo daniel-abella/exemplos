@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="8">
+
+  <property name="tmp.dir" value="target"/>
+
+  <target name="inicia">
+    <mkdir dir="${tmp.dir}"/>
+  </target>
+
+  <target name="dados">
+    <input message="Qual o URL do arquivo?" addproperty="url"/>
+    <input message="Qual o nome do arquivo a ser salvo?" addproperty="file"/>
+  </target>
+
+  <target name="obtem" depends="inicia,dados">
+    <get src="${url}" dest="${tmp.dir}/${file}"/>
+  </target>
+
+  <target name="limpa">
+    <delete dir="${tmp.dir}"/>
+  </target>
+
+</project>

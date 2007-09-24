@@ -51,8 +51,7 @@ public class ShowDescendentsOfRoots extends MIDlet implements CommandListener, R
 				e1.printStackTrace();
 			}
 			System.out.println(root + " : " + file);
-			mMainBox.append(file + (Utils.exists(file) ? " [ok]" : " ERRO"), null);
-			fc = Utils.getFC(file);
+			mMainBox.append(file, null);
 			showDescendents(Utils.getContent(fc));
 			try {
 				fc.close();

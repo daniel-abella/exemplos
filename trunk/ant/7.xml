@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="7">
+
+  <property name="tmp.dir" value="target"/>
+
+  <target name="inicia">
+    <mkdir dir="${tmp.dir}"/>
+  </target>
+
+  <target name="obtem" depends="inicia">
+    <get src="http://www.inf.ufg.br" dest="${tmp.dir}/index.html"/>
+  </target>
+
+  <target name="limpa">
+    <delete dir="${tmp.dir}"/>
+  </target>
+
+</project>

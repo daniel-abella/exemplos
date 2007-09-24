@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="2">
+
+  <property name="build.dir" value="target"/>
+
+  <target name="cria">
+    <mkdir dir="${build.dir}"/>
+  </target>
+
+  <target name="limpa">
+    <echo>Remove diretório</echo>
+    <delete dir="${build.dir}" />
+  </target>
+
+</project>

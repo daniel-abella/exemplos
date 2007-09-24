@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="Tutorial">
+
+  <description>
+  Este arquivo é um simples tutorial. 
+  </description>
+
+  <target name="alvo1">
+    <echo message="Olá mundo!" />
+  </target>
+
+  <target name="alvo2">
+    <echo>Esta é uma mensagem extensa, como pode ser facilmente comprovado.
+    </echo>
+  </target>
+
+</project>

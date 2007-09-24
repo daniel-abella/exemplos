@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="5">
+
+  <target name="f1">
+    <fail/>
+  </target>
+
+  <target name="f2">
+    <fail message="Algo errado ocorreu!"/>
+  </target>
+
+  <target name="f3">
+    <echo message="Este build falha, propriedade 'teste' não definida!"/>
+    <fail unless="teste"/>
+  </target>
+
+  <target name="f4">
+    <echo message="Este build não falha, propriedade 'teste' é definida!"/>
+    <property name="teste" value=""/>
+    <fail unless="teste"/>
+  </target>
+
+</project>

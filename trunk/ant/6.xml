@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="6">
+
+  <property name="tmp.dir" value="target"/>
+
+  <target name="obtem">
+    <mkdir dir="${tmp.dir}"/>
+    <get src="http://www.inf.ufg.br" dest="${tmp.dir}/index.html"/>
+  </target>
+
+  <target name="limpa">
+    <delete dir="${tmp.dir}"/>
+  </target>
+
+</project>

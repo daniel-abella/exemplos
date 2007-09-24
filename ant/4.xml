@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="4">
+
+  <target name="pwd">
+    <dirname property="corrente" file="4.xml"/>
+    <echo message="${corrente}"/>
+  </target>
+
+  <target name="alternativa">
+    <dirname property="corrente" file="${ant.file}"/>
+    <echo message="O arquivo ${ant.file} encontra-se em ${corrente}"/>
+  </target>
+
+
+</project>

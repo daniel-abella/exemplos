@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<project name="9" default="email">
+<project name="11" default="cat">
 
-  <target name="email">
-    <input message="Qual o destino?" addproperty="destino"/>
+  <path id="svn.classpath">
+    <path location="/kad-libs-0.9/svnant-1.0.0/lib/svnClientAdapter.jar"/>
+    <path location="/kad-libs-0.9/svnant-1.0.0/lib/svnant.jar"/>
+  </path>
+
+  <taskdef resource="svntask.properties" classpathref="svn.classpath"/>
+
+  <target name="cat">
+    <input message="URL" addproperty="url"/>
     <input message="Usuario:" addproperty="user"/>
     <input message="Senha:" addproperty="password"/>
 
-    <mail mailhost="smtp.gmail.com" mailport="465" 
-          subject="teste" ssl="true" encoding="mime"
-	  user="${user}" password="${password}">
-      <from address="anonimo@especializacao.info"/>
-      <replyto address="anonimo@especializacao.info"/>
-      <to address="${destino}"/>
-      <message>Enviado pelo ant (${ant.file})</message>
-    </mail>
+    <svn javahl="false" username="${user}" password="${password}">
+      <cat url="${url}"/>
+    </svn>
 
   </target>
 

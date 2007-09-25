@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="9" default="email">
+
+  <target name="email">
+    <input message="Qual o destino?" addproperty="destino"/>
+    <input message="Usuario:" addproperty="user"/>
+    <input message="Senha:" addproperty="password"/>
+
+    <mail mailhost="smtp.gmail.com" mailport="465" 
+          subject="teste" ssl="true" encoding="mime"
+	  user="${user}" password="${password}">
+      <from address="anonimo@especializacao.info"/>
+      <replyto address="anonimo@especializacao.info"/>
+      <to address="${destino}"/>
+      <message>Enviado pelo ant (${ant.file})</message>
+    </mail>
+
+  </target>
+
+</project>

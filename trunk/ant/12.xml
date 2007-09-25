@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="12" default="compila">
+
+  <property name="src.dir" value="src"/>
+  <property name="teste.dir" value="teste"/>
+  <property name="build.dir" value="target"/>
+
+  <target name="prepara">
+    <mkdir dir="${build.dir}"/>
+  </target>
+
+  <target name="limpa">
+    <delete dir="${build.dir}"/>
+  </target>
+
+  <target name="compila" depends="prepara">
+    <javac srcdir="${src.dir}" destdir="${build.dir}"/>
+  </target>
+
+</project>

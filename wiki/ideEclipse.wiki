@@ -29,3 +29,4 @@ Este repositório também inclui o projeto Eclipse correspondente. Ou seja, voc�
 = Tarefas a serem realizadas = 
   # Crie o método *inscritoEm(String curso)* onde é fornecido o nome de um curso e o valor _true_ é retornado se e somente se o aluno em questão está inscrito no curso. Observe que deve estar vigente a inscrição, ou seja, um curso que já terminou deverá retornar _false_.
   # Crie código que testa o método criado acima.
+  # O Eclipse está organizado em várias visões. Uma delas é *Tasks*. Para abri-la, selecione no menu *Window*, a opção *Show View* e, em seguida, a opção *Tasks*. Observe que, para o projeto fornecido pela URL indicada acima, há uma tarefa para ser realizada. Execute-a conforme as instruções. 

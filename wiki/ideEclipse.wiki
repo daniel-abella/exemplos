@@ -1,13 +1,18 @@
 #summary Eclipse: Principais Recursos (Fábio Nogueira de Lucena)
 
-= Cenário típico de desenvolvimento Java =
+= Introdução ao problema =
 Você recebe uma atribuição, usuários desejam uma _declaração de inscrição em curso_. Sem mais considerações, apenas para manter o foco no Eclipse. Você define o modelo abaixo.
 
 Voltando ao requisito do usuário, a impressão de uma declaração de inscrição em um dado curso exige que se conheça os cursos nos quais um dado aluno encontra-se inscrito. A operação *cursosEmAndamento* é definida para retornar todos os cursos nos quais um dado aluno encontra-se inscrito. Afinal, para qualquer um destes uma declaração poderá ser emitida. Esta não é, naturalmente, a única forma de interpretar e resolver este problema. Na ausência de um contexto mais detalhado, trata-se de uma alternativa possível.
 
-= Details =
+= Implementação usando o Eclipse =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  # Execute o Eclipse. Isto é tão simples quando executar o arquivo *eclipse.exe* (Windows) ou apenas *eclipse* (Linux). 
+  # Abrir a perspectiva Java, caso não seja esta aquela já aberta. No canto superior direito ou por meio do menu Window->Open perspective, esta operação poderá ser realizada. 
+  # Crie um novo projeto (projeto Java). 
+  # Crie os diretórios *src* e *test* para guardar os fontes e os testes correspondentes.
+  # Crie o pacote *escola* tanto em *src* quanto em *test*
+  # Crie a classe de teste *InscricaoTeste*. Testes de unidade nesta classe deverão assegurar que, dado uma instância de Aluno, todos os nomes de cursos nos quais este aluno está inscrito são obtidos. 
+  # No pacote *escola* em *test* crie e implemente as classes Aluno, Curso e Inscricao, conforme o modelo acima. 
+  # Execute os testes de unidade e verifique que a implementação realizada passa nos testes. 
+  

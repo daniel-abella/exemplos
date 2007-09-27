@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <project name="13" default="compila">
 
-  <path id="teste.classpath">
-    <path location="/kad-libs-0.9/junit4.4/junit-4.4.jar"/>
-  </path>
-
   <property name="src.dir" value="src"/>
   <property name="teste.dir" value="teste"/>
   <property name="build.dir" value="target"/>
+
+  <path id="teste.classpath">
+    <path location="/kad-libs-0.9/junit4.4/junit-4.4.jar"/>
+    <path location="${build.dir}"/>
+  </path>
 
   <target name="prepara">
     <mkdir dir="${build.dir}"/>
@@ -24,11 +25,11 @@
   </target>
 
   <target name="teste" depends="compila">
-    <junit>
+    <junit printsummary="yes">
 
       <classpath refid="teste.classpath"/>
 
-      <batchtest fork="yes">
+      <batchtest fork="yes" todir="${build.dir}">
          <fileset dir="${teste.dir}">
 	    <include name="**/*Test.java"/>
 	 </fileset>

@@ -1,0 +1,16 @@
+# base-testes.txt
+# Linhas que se iniciam por # são comentários (ignore-as)
+# Demais linhas, cada uma, possui três campos, separados por ;
+# Os campos não possuem tamanho fixo
+# O primeiro indica o nome de um curso
+# O segundo a data de início do curso
+# O terceiro a data de término
+# A seqüência "hoje" denota o dia corrente
+# A seqüência "amanhã" denota o dia de amanhã
+# Seqüência no formato -d significa d dias antes do dia corrente. 
+# Seqüência no formato +d significa d dias após o dia corrente.
+# Assuma que todo arquivo como este é bem formado, ou seja, os campos
+# estão sempre presentes e no formato descrito acima.
+Ajax em Ação;hoje;amanhã
+Compiladores;-1;+3
+Sistemas operacionais;-5;+30

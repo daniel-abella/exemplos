@@ -3,6 +3,8 @@
 = Introdução ao problema =
 Você recebe uma atribuição, usuários desejam uma _declaração de inscrição em curso_. Sem mais considerações, apenas para manter o foco no Eclipse. Você define o modelo abaixo.
 
+http://exemplos.googlecode.com/svn/trunk/eclipse/tipico/docs/images/modelo.png
+
 Voltando ao requisito do usuário, a impressão de uma declaração de inscrição em um dado curso exige que se conheça os cursos nos quais um dado aluno encontra-se inscrito. A operação *cursosEmAndamento* é definida para retornar todos os cursos nos quais um dado aluno encontra-se inscrito. Afinal, para qualquer um destes uma declaração poderá ser emitida. Esta não é, naturalmente, a única forma de interpretar e resolver este problema. Na ausência de um contexto mais detalhado, trata-se de uma alternativa possível.
 
 = Implementação usando o Eclipse =

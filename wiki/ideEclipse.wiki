@@ -27,4 +27,4 @@ svn co http://exemplos.googlecode.com/svn/trunk/eclipse/tipico/ tipico
 Este repositório também inclui o projeto Eclipse correspondente. Ou seja, você poderá "importar" o projeto que será depositado no diretório criado (*tipico*).
 
 = Tarefas a serem realizadas = 
-  # Crie o método *inscritoEm(String curso)* onde é fornecido o nome de um curso e o valor <code>true</code> é retornado se e somente se o aluno em questão está inscrito no curso. Observe que deve estar vigente a inscrição, ou seja, um curso que já terminou deverá retornar <code>false</code>.
+  # Crie o método *inscritoEm(String curso)* onde é fornecido o nome de um curso e o valor _true_ é retornado se e somente se o aluno em questão está inscrito no curso. Observe que deve estar vigente a inscrição, ou seja, um curso que já terminou deverá retornar _false_.

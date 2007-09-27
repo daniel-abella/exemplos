@@ -2,6 +2,7 @@ package escola;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
 
 public class Aluno {
@@ -28,5 +29,9 @@ public class Aluno {
 				retorno.add(inscricao.getCurso().getNome());
 		}
 		return retorno.toArray(new String[0]);
+	}
+	
+	public Iterator<Inscricao> inscricoes() {
+		return cursos.iterator();
 	}
 }

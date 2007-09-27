@@ -2,7 +2,7 @@
 <project name="13" default="compila">
 
   <path id="teste.classpath">
-    <path location="<path-para-junit>/junit-4.4.jar"/>
+    <path location="/kad-libs-0.9/junit4.4/junit-4.4.jar"/>
   </path>
 
   <property name="src.dir" value="src"/>
@@ -21,6 +21,20 @@
     <javac srcdir="${src.dir}:${teste.dir}" 
            destdir="${build.dir}"
 	   classpathref="teste.classpath"/>
+  </target>
+
+  <target name="teste" depends="compila">
+    <junit>
+
+      <classpath refid="teste.classpath"/>
+
+      <batchtest fork="yes">
+         <fileset dir="${teste.dir}">
+	    <include name="**/*Test.java"/>
+	 </fileset>
+      </batchtest>
+
+    </junit>
   </target>
 
 </project>

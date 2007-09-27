@@ -17,6 +17,9 @@ Voltando ao requisito do usuário, a impressão de uma declaração de inscriç�
   # Crie a classe de teste *!InscricaoTeste*. Testes de unidade nesta classe deverão assegurar que, dado uma instância de Aluno, todos os nomes de cursos nos quais este aluno está inscrito são obtidos. 
   # Você provavelmente terá que acrescentar a biblioteca do JUnit para a criação desta classe. Para isto, selecione o projeto na visão *Package Explorer* (lado esquerdo da janela do Eclipse). Clique o botão direito do mouse e selecione a última opção do menu, ou seja, a opção *Properties*. Na caixa de diálogo que irá se abrir selecione *Java Build Path* e, em seguida, a aba *Libraries*. No lado direito há uma seqüência de botões, clique no botão *Add Library...*. Uma das opções disponíveis na caixa de diálogo que se abre é *JUnit*. Selecione-a e clique em *Next*. Em seguida selecione a versão do JUnit a ser empregada. Sugiro *JUnit 4*. Finalmente clique em *Finish* e depois em *OK*. 
   # No pacote *escola* em *test* crie e implemente as classes Aluno, Curso e Inscricao, conforme o modelo acima. 
-  # Execute os testes de unidade e verifique que a implementação realizada passa nos testes. 
+  # Execute os testes de unidade e verifique que a implementação realizada passa nos testes. Selecione a classe de teste em *Package Explorer* e, clique o botão direito do mouse sobre a classe de teste. Então selecione a opção *Run As* e, finalmente, *JUnit Test*. 
   
 Você poderá fazer obter a implementação resultante dos passos acima pela URL do repositório Subversion correspondente em _http://exemplos.googlecode.com/svn/trunk/eclipse/tipico/_, inclusive o projeto Eclipse correspondente.
+
+= Tarefas a serem realizadas = 
+  # Crie o método *inscritoEm(String curso)* onde é fornecido o nome de um curso e o valor <code>true</code> é retornado se e somente se o aluno em questão está inscrito no curso. Observe que deve estar vigente a inscrição, ou seja, um curso que já terminou deverá retornar <code>false</code>.

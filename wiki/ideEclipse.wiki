@@ -1,8 +1,7 @@
 #summary Eclipse: Principais Recursos (Fábio Nogueira de Lucena)
 
-= Introdução =
-
-Add your content here.
+= Cenário típico de desenvolvimento Java =
+Você recebe uma atribuição, usuários desejam uma _declaração de inscrição em curso_. Sem mais considerações, apenas para manter o foco no Eclipse. Você define o modelo abaixo.
 
 
 = Details =

@@ -1,6 +1,6 @@
 #summary Eclipse: Principais Recursos (Fábio Nogueira de Lucena)
 
-= Introdução ao problema =
+= Um problema simples =
 Você recebe uma atribuição, usuários desejam uma _declaração de inscrição em curso_. Sem mais considerações, apenas para manter o foco no Eclipse. Você define o modelo abaixo.
 
 http://exemplos.googlecode.com/svn/trunk/eclipse/tipico/docs/images/modelo.png
@@ -19,3 +19,4 @@ Voltando ao requisito do usuário, a impressão de uma declaração de inscriç�
   # No pacote *escola* em *test* crie e implemente as classes Aluno, Curso e Inscricao, conforme o modelo acima. 
   # Execute os testes de unidade e verifique que a implementação realizada passa nos testes. 
   
+Você poderá fazer obter a implementação resultante dos passos acima pela URL do repositório Subversion correspondente em _http://exemplos.googlecode.com/svn/trunk/eclipse/tipico/_, inclusive o projeto Eclipse correspondente.

@@ -12,7 +12,7 @@ Voltando ao requisito do usuário, a impressão de uma declaração de inscriç�
   # Crie um novo projeto (projeto Java). 
   # Crie os diretórios *src* e *test* para guardar os fontes e os testes correspondentes.
   # Crie o pacote *escola* tanto em *src* quanto em *test*
-  # Crie a classe de teste *InscricaoTeste*. Testes de unidade nesta classe deverão assegurar que, dado uma instância de Aluno, todos os nomes de cursos nos quais este aluno está inscrito são obtidos. 
+  # Crie a classe de teste *!InscricaoTeste*. Testes de unidade nesta classe deverão assegurar que, dado uma instância de Aluno, todos os nomes de cursos nos quais este aluno está inscrito são obtidos. 
   # No pacote *escola* em *test* crie e implemente as classes Aluno, Curso e Inscricao, conforme o modelo acima. 
   # Execute os testes de unidade e verifique que a implementação realizada passa nos testes. 
   

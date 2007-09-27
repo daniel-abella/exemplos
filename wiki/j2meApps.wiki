@@ -2,7 +2,7 @@
 
 
 = Utilitários =
-  * Detecta recursos: ([http://exemplos.googlecode.com/svn/trunk/me/resources/deployed/resources.jar .jad]) ([http://exemplos.googlecode.com/svn/trunk/me/resources/deployed/resources.jar .jar])
+  * Detecta recursos: ([http://exemplos.googlecode.com/svn/trunk/me/resources/deployed/resources.jad .jad]) ([http://exemplos.googlecode.com/svn/trunk/me/resources/deployed/resources.jar .jar])
 
 
  

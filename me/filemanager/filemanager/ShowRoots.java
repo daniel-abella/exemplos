@@ -11,23 +11,19 @@ import javax.microedition.lcdui.List;
 import javax.microedition.midlet.MIDlet;
 import javax.microedition.midlet.MIDletStateChangeException;
 
-public class ShowRoots extends MIDlet implements CommandListener, Runnable {
-	private Command mExitCommand = null;
-	private Command mListaCommand = null;
-	private List mMainBox;
-	private Vector itens = null;
+public class ShowRoots extends MIDlet implements CommandListener {
+	private Command mExitCommand = new Command("Sair", Command.EXIT, 0);
+	private List mMainBox = new List("Kyriosdata (raízes)", List.IMPLICIT);;
 
 	public void commandAction(Command c, Displayable s) {
 		if (c == mExitCommand) {
 			destroyApp(false);
 			notifyDestroyed();
-		} else if (c == mListaCommand) {
-			mMainBox.deleteAll();
-			new Thread(this).start();
 		}
 	}
 
-	public void run() {
+	public void exibeRaizes() {
+		Vector itens = Utils.listRoots();
 		Enumeration item = itens.elements();
 		while (item.hasMoreElements()) {
 			String fileName = (String) item.nextElement();
@@ -37,11 +33,7 @@ public class ShowRoots extends MIDlet implements CommandListener, Runnable {
 	}
 
 	public ShowRoots() {
-		mExitCommand = new Command("Sair", Command.EXIT, 0);
-		mListaCommand = new Command("Lista", Command.SCREEN, 0);
-		mMainBox = new List("ShowRoots", List.IMPLICIT);
 		mMainBox.addCommand(mExitCommand);
-		mMainBox.addCommand(mListaCommand);
 		mMainBox.setCommandListener(this);
 	}
 
@@ -52,7 +44,7 @@ public class ShowRoots extends MIDlet implements CommandListener, Runnable {
 	}
 
 	protected void startApp() throws MIDletStateChangeException {
-		itens = Utils.listRoots();
+		exibeRaizes();
 		Display.getDisplay(this).setCurrent(mMainBox);
 	}
 }

@@ -1,10 +1,10 @@
 MIDlet-3: Analisa arquivo ou diretório,,filemanager.AnalisaFile
 MIDlet-2: Exibe drivers,,filemanager.ShowRoots
 MIDlet-1: Descendentes de drivers,,filemanager.ShowDescendentsOfRoots
-MIDlet-Jar-URL: filemanager.jar
-MicroEdition-Configuration: CLDC-1.1
+MIDlet-Jar-URL: http://kyriosdata.net:8080/server/filemanager.jar
+MicroEdition-Configuration: CLDC-1.0
 MIDlet-Version: 1.0.1
 MIDlet-Name: filemanager Midlet Suite
 MIDlet-Vendor: Kyriosdata (r)
-MicroEdition-Profile: MIDP-2.1
+MicroEdition-Profile: MIDP-2.0
 MIDlet-Permissions: javax.microedition.io.Connector.file.write, javax.microedition.io.Connector.file.read

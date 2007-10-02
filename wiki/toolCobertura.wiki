@@ -43,3 +43,6 @@ Abaixo segue parte de um arquivo build.xml (Ant) contendo alvos relevantes para 
 	    <cobertura-report datafile="${build.dir}/cobertura.ser" srcdir="${src.dir}" destdir="${build.dir}/cobertura"/>
 	</target>
 }}}
+
+= Exercício = 
+Implemente o algoritmo de busca binária (veja descrição [http://en.wikipedia.org/wiki/Binary_search aqui]) para a ordenação de valores em um dado _array_ contendo ou inteiros (*int*) ou seqüência de caracteres (*String*). Crie testes de unidade para validar a implementação e faça uso da ferramenta Cobertura para gerar relatórios de cobertura para o código gerado. 

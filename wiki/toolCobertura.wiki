@@ -2,7 +2,9 @@
 
 = Introdução =
 
-Testes de unidade são amplamente empregados atualmente. Não basta, contudo, simplesmente fazê-los. Um dos instrumentos também geralmente empregados com os testes de unidade é a verificação da cobertura do código testado pelos testes de unidade. O que significa isto? Verificar quanto do código testado é exercitado pelos testes de unidade. Por exemplo, podem ser feitos muitos testes de unidade mas que se concentram em parte específica do código, enquanto outras partes podem permanecer sem serem testadas. Ferramentas como Cobertura permitem que, após a execução dos testes de unidade, relatórios sejam gerados ressaltando o que foi exercitado ou não do código testado.
+Testes de unidade empregando o [http://junit.org JUnit] são amplamente empregados atualmente. Não basta, contudo, simplesmente fazê-los. Um dos instrumentos também geralmente empregados com os testes de unidade é a verificação da cobertura do código testado pelos testes de unidade. O que significa isto? Verificar quanto do código testado é exercitado pelos testes de unidade. Por exemplo, podem ser feitos muitos testes de unidade mas que se concentram em parte específica do código, enquanto outras partes podem permanecer sem serem testadas. 
+
+Ferramentas como [http://cobertura.sourceforge.net Cobertura] permitem que, após a execução dos testes de unidade sobre o código testado devidamente instrumentado, relatórios sejam gerados ressaltando o que foi exercitado ou não do código testado.
 
 = Cobertura e Ant =
 

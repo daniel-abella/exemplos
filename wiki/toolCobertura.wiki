@@ -6,9 +6,13 @@ Testes de unidade são amplamente empregados atualmente. Não basta, contudo, si
 
 = Cobertura e Ant =
 
-Abaixo segue alvos 
+Abaixo segue parte de um arquivo build.xml (Ant) contendo alvos relevantes para o emprego da ferramenta Cobertura.
 
 {{{
+	<path id="cobertura.classpath">
+		<path location="${cobertura.jar}" />
+		<fileset dir="${cobertura.dir}/lib" includes="*.jar" />
+	</path>
 	<taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
 	
 	<target name="cobertura-instrument" depends="compile" description="instrumenta código para cobertura">

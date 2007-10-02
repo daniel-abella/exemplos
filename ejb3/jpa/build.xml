@@ -72,8 +72,7 @@
 		<path location="${junit.jar}" />
 		
 		<!-- JMock -->
-		<path location="${jmock.jar}" />
-		<path location="${jmock-junit.jar}" />
+		<fileset dir="${jmock.dir}" includes="*.jar" />
 		
 		<!-- Cobertura (execução de código instrumentado pelo JUnit) -->
 		<path refid="cobertura.classpath" />

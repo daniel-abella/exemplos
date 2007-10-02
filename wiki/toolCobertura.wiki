@@ -9,10 +9,18 @@ Testes de unidade são amplamente empregados atualmente. Não basta, contudo, si
 Abaixo segue parte de um arquivo build.xml (Ant) contendo alvos relevantes para o emprego da ferramenta Cobertura.
 
 {{{
+	<target name="compile" description="compila fontes">
+		<mkdir dir="${build.dir}/classes" />
+		<javac encoding="ISO-8859-1" srcdir="${src.dir}" destdir="${build.dir}/classes" debug="${compile.debug}">
+			<classpath refid="projeto.classpath" />
+		</javac>
+	</target>
+
 	<path id="cobertura.classpath">
 		<path location="${cobertura.jar}" />
 		<fileset dir="${cobertura.dir}/lib" includes="*.jar" />
 	</path>
+
 	<taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
 	
 	<target name="cobertura-instrument" depends="compile" description="instrumenta código para cobertura">

@@ -2,12 +2,32 @@
 
 = Introdução =
 
-Testes de unidade são amplamente empregados atualmente. Não basta, contudo, simplesmente fazê-los. Um dos instrumentos também geralmente empregados com os testes de unidade é a verificação da cobertura do código testado pelos testes de unidade. O que significa isto? Verificar quanto do código testado é exercitado pelos testes de unidade. Por exemplo, 
+Testes de unidade são amplamente empregados atualmente. Não basta, contudo, simplesmente fazê-los. Um dos instrumentos também geralmente empregados com os testes de unidade é a verificação da cobertura do código testado pelos testes de unidade. O que significa isto? Verificar quanto do código testado é exercitado pelos testes de unidade. Por exemplo, podem ser feitos muitos testes de unidade mas que se concentram em parte específica do código, enquanto outras partes podem permanecer sem serem testadas.
 
+= Cobertura e Ant =
 
-= Details =
+Abaixo segue alvos 
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+{{{
+	<taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
+	
+	<target name="cobertura-instrument" depends="compile" description="instrumenta código para cobertura">
+		<cobertura-instrument todir="${build.dir}/instrumented-classes" datafile="${build.dir}/cobertura.ser">
+		    <fileset dir="${build.dir}/classes">
+		        <include name="**/*.class"/>
+		    </fileset>
+		</cobertura-instrument>
+	</target>
+	
+	<target name="set-debug-true">
+		<property name="compile.debug" value="true"/>
+	</target>
+	
+	<target name="set-debug-false">
+		<property name="compile.debug" value="false"/>
+	</target>		
+	
+	<target name="cobertura" depends="clean, set-debug-true, cobertura-instrument, test" description="gera relatório de cobertura">
+	    <cobertura-report datafile="${build.dir}/cobertura.ser" srcdir="${src.dir}" destdir="${build.dir}/cobertura"/>
+	</target>
+}}}

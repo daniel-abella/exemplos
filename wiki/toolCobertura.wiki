@@ -47,4 +47,4 @@ Abaixo segue parte de um arquivo build.xml (Ant) contendo alvos relevantes para 
 }}}
 
 = Exercício = 
-Implemente o algoritmo de busca binária (veja descrição [http://en.wikipedia.org/wiki/Binary_search aqui]) para dado m dado _array_ contendo ou inteiros (*int*) ou seqüência de caracteres (*String*) retorne a posição no _array_ correspondente à posição do elemento fornecido, caso este esteja presente ou o valor -1, em caso contrário. Crie testes de unidade para validar a implementação e faça uso da ferramenta Cobertura para gerar relatórios de cobertura para o código gerado. 
+Implemente o algoritmo de busca binária (veja descrição [http://en.wikipedia.org/wiki/Binary_search aqui]) de tal forma que, dado um _array_ contendo ou inteiros (*int*) ou seqüências de caracteres (*String*) e um valor (inteiro ou seqüência de caracteres), a implementação retorne a posição no _array_ correspondente ao  elemento fornecido caso este esteja presente no _array_, ou o valor -1, em caso contrário. Crie testes de unidade para validar a implementação e faça uso da ferramenta Cobertura para gerar relatórios de cobertura para o código gerado. 

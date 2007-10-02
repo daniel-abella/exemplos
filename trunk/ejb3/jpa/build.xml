@@ -73,6 +73,7 @@
 		
 		<!-- JMock -->
 		<path location="${jmock.jar}" />
+		<path location="${jmock-junit.jar}" />
 		
 		<!-- Cobertura (execução de código instrumentado pelo JUnit) -->
 		<path refid="cobertura.classpath" />
@@ -220,8 +221,7 @@
 	
 	<!-- PROGUARD (comprimindo e protegendo o código gerado)               -->
 	<!-- ================================================================= -->
-	<!-- test        : executa testes de unidade                           -->
-	<!-- test-report : gera relatórios (interrompe Ant em caso de falha    -->	
+	<!-- proguard    : gera distribuição com código protegido e comprimido -->
 	<!-- ================================================================= -->
 	<taskdef resource="proguard/ant/task.properties"
 	         classpath="${proguard.jar}" />

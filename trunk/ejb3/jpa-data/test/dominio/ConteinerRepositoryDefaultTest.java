@@ -8,7 +8,8 @@ import org.springframework.test.jpa.AbstractJpaTests;
 
 /**
  * Ilustra implementação de teste para camada de persistência implementada
- * usando JPA.
+ * usando JPA. Faz uso do JUnit 3.8.1. Incompatível com versão do JUnit 4 
+ * ou posterior.
  * 
  * <br>Usado para teste apenas. Observe que não há demarcação explícita de
  * transação. Neste caso, usa-se demarcação padrão implícita e adequada

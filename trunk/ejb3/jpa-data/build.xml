@@ -25,6 +25,8 @@
 	<property name="src.dir" location="src:test" />
 	<property name="build.dir" location="target" />
 	<property name="etc.dir" location="etc" />
+	<property name="test.dir" location="test" />
+	<property name="test.out.dir" location="${build.dir}/tout" />
 
 	<!-- Unidade de persistência (persistence unit) -->
 	<property name="persistence.unit.name" value="${ant.project.name}" />
@@ -34,7 +36,7 @@
 	<!-- DOMÍNIO (entidades e interfaces dos repositórios)                 -->
 	<!-- ================================================================= -->
 	<path id="dominio.classpath">
-		<pathelement path="../jpa/target/classes" />
+		<pathelement location="../jpa/target/dist/jpa-0.1.jar" />
 	</path>
 
 	<!-- ================================================================= -->
@@ -48,9 +50,19 @@
 		<pathelement location="${h.tools2.jar}" />
 		<pathelement location="${h.entity1.jar}" />
 		<pathelement location="${h.entity2.jar}" />
-		<pathelement location="${h.entity.dir}/lib/hibernate-commons-annotations.jar"/>
-		<fileset dir="${hibernate.dir}/lib" includes="*.jar" />
+		<pathelement location="${h.entity.dir}/lib/hibernate-commons-annotations.jar" />
+		<fileset dir="${hibernate.dir}/lib/jakarta-commons" includes="*.jar" />
 	</path>
+
+	<!-- ================================================================= -->
+	<!-- Spring (classpath)                                             -->
+	<!-- ================================================================= -->
+	<path id="spring.classpath">
+		<path location="${spring.jar}" />
+		<path location="${spring.dir}/dist/spring-mock.jar" />
+		<fileset dir="${spring.dir}/lib" includes="*.jar" />
+	</path>
+
 
 	<!-- ================================================================= -->
 	<!-- PERSISTENCIA (classpath)                                          -->
@@ -58,13 +70,14 @@
 	<path id="persistencia.classpath">
 		<!-- Hibernate -->
 		<path refid="hibernate.classpath" />
-
+		
 		<!-- Driver JDBC -->
 		<pathelement location="${hsqldb.jar}" />
 
 		<!-- DbUnit -->
 		<pathelement location="${dbunit.jar}" />
 	</path>
+
 
 	<!-- ================================================================= -->
 	<!-- CLASSPATH (projeto)                                               -->
@@ -73,25 +86,27 @@
 		<!-- persistencia -->
 		<path refid="persistencia.classpath" />
 
+		<!-- Spring -->
+		<path refid="spring.classpath" />
+
 		<!-- Inclui arquivos de configuração -->
 		<path location="${persistence.unit.root}" />
 
 		<!-- Classes de persistência -->
 		<path location="${build.dir}" />
-		
+
 		<!-- Classes de negócio (definição das entidades e repositórios -->
 		<path refid="dominio.classpath" />
-		
+
 		<!-- Testes -->
 		<path location="${junit.jar}" />
-		<path location="${spring.dir}/dist/spring-mock.jar" />
-		
+
 		<!-- Hibernate Tools for Ant -->
 		<path location="${kad.libs}" />
-		
+
 		<!-- Arquivos de dados e outros -->
 		<path location="${etc.dir}" />
-		
+
 	</path>
 
 	<!-- ALVOS DE PROPÓSITO GERAL                                          -->
@@ -107,7 +122,14 @@
 
 	<target name="compile" description="compila arquivos .java">
 		<mkdir dir="${build.dir}" />
-		<javac srcdir="${src.dir}" destdir="${build.dir}">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" encoding="iso-8859-1">
+			<classpath refid="projeto.classpath" />
+		</javac>
+	</target>
+
+	<target name="compile-tests" depends="compile" description="compila testes">
+		<mkdir dir="${build.dir}/tests" />
+		<javac encoding="ISO-8859-1" srcdir="${test.dir}" destdir="${build.dir}/tests">
 			<classpath refid="projeto.classpath" />
 		</javac>
 	</target>
@@ -122,18 +144,18 @@
 	<!-- Assume que 'kyrios-teste' é o nome da base de dados               -->
 	<!-- ================================================================= -->
 	<!-- db-clean  : Limpa HSQLDB (kyrios-teste)                           -->
-	<!-- db-client : inicia cliente para interação com SGBD                -->	
+	<!-- db-client : inicia cliente para interação com SGBD                -->
 	<!-- db-start  : inicia SGBD de desenvolvimento                        -->
 	<!-- db-stop   : interrompe SGBD                                       -->
 	<!-- ================================================================= -->
 
 	<target name="db-clean" description="Limpa HSQLDB (kyrios-teste)" depends="db-stop">
 		<delete>
-			<fileset dir="/tmp" includes="kyrios-teste.*"/>
+			<fileset dir="/tmp" includes="kyrios-teste.*" />
 		</delete>
 		<echo message="Base de dados do HSQLDB removida" />
 	</target>
-		
+
 	<target name="db-client" description="Cliente HSQLDB">
 		<java classname="org.hsqldb.util.DatabaseManagerSwing" spawn="yes" fork="yes">
 			<arg line="-url ${database.url}" />
@@ -142,7 +164,7 @@
 			</classpath>
 		</java>
 	</target>
-		
+
 	<target name="db-start" description="inicia HSQLDB (kyrios-teste)">
 		<java classname="org.hsqldb.Server" spawn="yes" fork="yes">
 			<jvmarg value="-Duser.dir=${kad.libs}" />
@@ -217,19 +239,19 @@
 			<compare src="${etc.dir}/data-teste.xml" />
 		</dbunit>
 	</target>
-	
+
 	<target name="db-delete" description="Remove da base dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
 			<operation type="DELETE" src="${etc.dir}/data-teste.xml" />
 		</dbunit>
 	</target>
-	
+
 	<target name="db-export" description="Exporta base para dados em XML">
 		<dbunit driver="${database.driver_class}" url="${database.url}" userid="${database.username}" password="${database.password}">
 			<export dest="${build.dir}/dbunit-export.xml" />
 		</dbunit>
 	</target>
-				
+
 	<target name="db-insert" description="Insere na base dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
 			<operation type="INSERT" src="${etc.dir}/data-teste.xml" />
@@ -241,5 +263,48 @@
 			<operation type="UPDATE" src="${etc.dir}/data-teste.xml" />
 		</dbunit>
 	</target>
-	
+
+	<!-- TESTES DE UNIDADE (JUnit)                                         -->
+	<!-- ================================================================= -->
+	<!-- test        : executa testes de unidade                           -->
+	<!-- test-report : gera relatórios (interrompe Ant em caso de falha    -->
+	<!-- ================================================================= -->
+
+	<target name="test" depends="compile-tests" description="Executa testes (*Test.class) ou classe (-Dclasse=X)">
+		<mkdir dir="${test.out.dir}" />
+		<property name="classe" value="*Test" />
+		<junit printsummary="false" fork="yes" errorproperty="test.failed" failureproperty="test.failed">
+			<sysproperty key="net.sourceforge.cobertura.datafile" file="${build.dir}/cobertura.ser" />
+			<assertions>
+				<enable />
+			</assertions>
+			<formatter type="plain" usefile="false" />
+			<formatter type="xml" />
+			<batchtest todir="${test.out.dir}">
+				<fileset dir="${build.dir}/tests">
+					<include name="**/${classe}.class" />
+					<exclude name="**/Test**All.java" />
+				</fileset>
+			</batchtest>
+			<classpath>
+				<path refid="projeto.classpath" />
+			</classpath>
+		</junit>
+	</target>
+
+	<target name="test-report" depends="test" description="Gera relatórios de teste (para Ant em caso de erro)">
+		<mkdir dir="${test.out.dir}/html" />
+		<junitreport todir="${test.out.dir}">
+			<fileset dir="${test.out.dir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report todir="${test.out.dir}/html" />
+		</junitreport>
+
+		<!-- Após gerar relatório, interrompe Ant se houve falha -->
+		<fail if="test.failed">
+			Pelo menos um teste falhou. Veja resultado em ${test.out.dir}/html.
+		</fail>
+	</target>
+
 </project>

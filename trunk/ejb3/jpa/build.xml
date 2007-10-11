@@ -22,7 +22,6 @@
 
 	<!-- Organização do código -->
 	<property name="src.dir" location="src" />
-	<property name="etc.dir" location="etc" />
 	<property name="build.dir" location="target" />
 	<property name="test.dir" location="test" />
 	<property name="test.out.dir" location="${build.dir}/tout" />
@@ -52,8 +51,6 @@
 	<!-- CLASSPATH (projeto)                                               -->
 	<!-- ================================================================= -->
 	<path id="projeto.classpath">
-		<!-- ETC (dados e outros elementos do CLASSPATH) -->
-		<path location="${etc.dir}" />
 				
 		<!-- Código fonte instrumentado (usado pelo Cobertura) -->
 		<!-- ESTA ORDEM ASSEGURA, SE EXISTIR, DO CÓDIGO INSTRUMENTADO -->
@@ -130,8 +127,6 @@
 	</target>
 	
 	<target name="dist" depends="clean,set-debug-false,compile" description="Cria jar file">
-
-
 		<!-- Cria diretório de distribuição -->
 		<mkdir dir="${build.dir}/dist" />
 		
@@ -140,7 +135,6 @@
 				<attribute name="Class-Path" value="${ant.project.name}-${version}.jar" />
 			</manifest>
 			<fileset dir="${build.dir}/classes" />
-			<fileset dir="${etc.dir}" includes="**/*.*" />
 		</jar>
 	</target>
 	

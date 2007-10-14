@@ -33,17 +33,17 @@ public class Portas extends MIDlet implements Runnable, CommandListener {
 
 	}
 
-	public InputStream getIsDePorta(String porta) {
+	public InputStream getIsDePorta(String porta, String msg) {
 		InputStream is = null;
 		try {
 			CommConnection cc = (CommConnection) Connector
 					.open("comm:COM6;baudrate=19200");
 			OutputStream os = cc.openOutputStream();
-			os.write("funcionou".getBytes());
+			os.write("ok".getBytes());
 			os.close();
 			cc.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			formulario.append(e.getMessage());
 		}
 		return is;
 	}
@@ -57,7 +57,11 @@ public class Portas extends MIDlet implements Runnable, CommandListener {
 
 	protected void startApp() throws MIDletStateChangeException {
 		Display.getDisplay(this).setCurrent(formulario);
-		if (getIsDePorta("6") == null)
+		StringBuffer msg = new StringBuffer("! 0 200 200 210 1");
+		msg.append("TEXT 4 0 30 40 Ola mundo");
+		msg.append("FORM");
+		msg.append("PRINT");
+		if (getIsDePorta("6", msg.toString()) == null)
 			formulario.append("não funcionou");
 		else
 			formulario.append("FUNCIONOU");

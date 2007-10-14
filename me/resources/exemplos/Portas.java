@@ -1,6 +1,5 @@
 package exemplos;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -33,19 +32,22 @@ public class Portas extends MIDlet implements Runnable, CommandListener {
 
 	}
 
-	public InputStream getIsDePorta(String porta, String msg) {
-		InputStream is = null;
+	public OutputStream getOsDePorta(String porta, String msg) {
+		OutputStream os = null;
 		try {
 			CommConnection cc = (CommConnection) Connector
 					.open("comm:COM6;baudrate=19200");
-			OutputStream os = cc.openOutputStream();
-			os.write("ok".getBytes());
-			os.close();
-			cc.close();
+			os = cc.openOutputStream();
+			os.write("alguma coisa dá certo".getBytes());
+//			os.write("! 0 200 200 210 1".getBytes());
+//			os.write("TEXT 4 0 30 40 Ola mundo".getBytes());
+//			os.write("FORM".getBytes());
+//			os.write("PRINT".getBytes());
+//			os.write("\r\n".getBytes());
 		} catch (Exception e) {
 			formulario.append(e.getMessage());
 		}
-		return is;
+		return os;
 	}
 
 	protected void destroyApp(boolean arg0) {
@@ -57,11 +59,7 @@ public class Portas extends MIDlet implements Runnable, CommandListener {
 
 	protected void startApp() throws MIDletStateChangeException {
 		Display.getDisplay(this).setCurrent(formulario);
-		StringBuffer msg = new StringBuffer("! 0 200 200 210 1");
-		msg.append("TEXT 4 0 30 40 Ola mundo");
-		msg.append("FORM");
-		msg.append("PRINT");
-		if (getIsDePorta("6", msg.toString()) == null)
+		if (getOsDePorta("6", "") == null)
 			formulario.append("não funcionou");
 		else
 			formulario.append("FUNCIONOU");

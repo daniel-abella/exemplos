@@ -43,6 +43,12 @@ public class RuntimeDetection extends MIDlet implements CommandListener {
 		verifique("JSR-234","javax.microedition.amms.EffectModule");
 		verifique("JSR-226","javax.microedition.m2g.SVGAnimator");
 		verifique("JSR-239","java.nio.Buffer");
+		property("microedition.commports");
+		
+	}
+	
+	public void property(String prop) {
+		form.append("PORTAS: " + System.getProperty(prop));
 	}
 	
 	public void verifique(String api, String classe) {

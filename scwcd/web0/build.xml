@@ -53,6 +53,15 @@
 	</path>
 
 	<!-- ================================================================= -->
+	<!-- Spring (classpath)                                             -->
+	<!-- ================================================================= -->
+	<path id="spring.classpath">
+		<path location="${spring.jar}" />
+		<path location="${spring.dir}/dist/spring-mock.jar" />
+		<fileset dir="${spring.dir}/lib/jakarta-commons" includes="*.jar" />
+	</path>
+	
+	<!-- ================================================================= -->
 	<!-- PERSISTENCIA (classpath)                                          -->
 	<!-- ================================================================= -->
 	<path id="persistencia.classpath">
@@ -72,12 +81,16 @@
 	<path id="web.classpath">
 		<!-- Servlet -->
 		<pathelement location="${servletapi.jar}" />
+		<pathelement path="WebContent"/>
 	</path>
 	
 	<!-- ================================================================= -->
 	<!-- CLASSPATH (projeto)                                               -->
 	<!-- ================================================================= -->
 	<path id="projeto.classpath">
+		<!-- spring -->
+		<path refid="spring.classpath" />
+
 		<!-- persistencia -->
 		<path refid="persistencia.classpath" />
 

@@ -5,13 +5,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 public class UsuarioRepositoryDefault implements UsuarioRepository {
-
-	@PersistenceContext
-    private EntityManager em;
 	
 	private EntityManagerFactory emf;
 	

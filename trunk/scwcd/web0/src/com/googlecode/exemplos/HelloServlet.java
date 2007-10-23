@@ -32,10 +32,10 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 	 * @see javax.servlet.http.HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "/hello-world.jsp";
+		String url = "/resposta.jsp";
 		String user = request.getParameter("user");
 		if (user == null || user.length() == 0) {
-			url = "/login-user.jsp";
+			url = "/index.jsp";
 			request.setAttribute("error", "User name must not be empty!");
 		} else {
 			Usuario usuario = ur.getFromUserId(user);

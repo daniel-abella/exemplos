@@ -1,0 +1,8 @@
+Como experimentar:
+
+1. ant db-start
+2. ant db-insert
+3. Execute login-user.jsp no servidor (dentro do Eclipse)
+4. Ao fornecer 'dai', por exemplo, será recuperado o nome completo, conforme
+   dados inseridos no banco.
+   

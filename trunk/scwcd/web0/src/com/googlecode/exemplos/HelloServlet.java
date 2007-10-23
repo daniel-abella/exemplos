@@ -38,7 +38,9 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 			url = "/login-user.jsp";
 			request.setAttribute("error", "User name must not be empty!");
 		} else {
-			request.setAttribute("fullName", ur.getFromUserId(user));
+			Usuario usuario = ur.getFromUserId(user);
+			String fullName = usuario == null ? "Não cadastrado" : usuario.getFullName();
+			request.setAttribute("fullName", fullName);
 		}
 		
 		ServletContext context = getServletContext();
@@ -58,7 +60,6 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 		super.init(config);
 		ServletContext servletContext = config.getServletContext();
 		ApplicationContext resource = WebApplicationContextUtils.getWebApplicationContext(servletContext);
-		System.out.println(resource.getBeanDefinitionCount());
 		BeanFactory factory = (BeanFactory) resource;		
 		ur = (UsuarioRepository) factory.getBean("usuarioRepository");
 	}  	

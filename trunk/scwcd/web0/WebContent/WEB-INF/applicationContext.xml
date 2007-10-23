@@ -26,6 +26,9 @@
 	</bean>
 
 	<bean id="usuarioRepository"
-		class="com.googlecode.exemplos.UsuarioRepositoryDefault" />
+		class="com.googlecode.exemplos.UsuarioRepositoryDefault">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
 
 </beans>

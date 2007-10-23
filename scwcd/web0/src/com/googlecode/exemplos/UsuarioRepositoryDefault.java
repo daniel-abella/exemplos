@@ -5,12 +5,28 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
 
 public class UsuarioRepositoryDefault implements UsuarioRepository {
 	
+	/*
+	 * EntityManager em não está sendo empregado. É injetado pelo Spring.
+	 * Contudo, uma exceção informa que a transação não pode ser obtida por
+	 * meio de EntityManager shared. Ou seja, é indicado o emprego de 
+	 * transações pelo Spring. Enquanto isto, usa-se a injeção de 
+	 * EntityManagerFactory que cria um EntityManager não compartilhado.
+	 */
+	private EntityManager em;
 	private EntityManagerFactory emf;
 	
+	@PersistenceContext
+	public void setEntityManager(EntityManager em) {
+		this.em = em;
+	}
+	
+	@PersistenceUnit
 	public void setEntityManagerFactory(EntityManagerFactory emf) {
 		this.emf = emf;
 	}

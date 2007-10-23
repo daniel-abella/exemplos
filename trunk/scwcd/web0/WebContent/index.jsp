@@ -4,25 +4,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Aplicação trivial</title>
 </head>
 <body>
 <%
 	String error_message = "";
 	Object error = request.getAttribute("error");
-	if (error != null) error_message = error.toString();
+	if (error != null)
+		error_message = error.toString();
 %>
-<h1>Login page</h1>
+<h1>Aplicação trivial</h1>
+Quando clicar em 'Verifique', o nome fornecido será utilizado para
+localizar o nome completo do usuário em questão na base de dados kyrios-teste.
 <form action="HelloServlet">
 <table cellspacing="4">
 	<tr>
-		<td>Enter your user name:</td>
+		<td>Forneça o seu nome de usuário:</td>
 		<td><input name="user" type="text" size="20"></td>
-		<td style="color: red"><%= error_message %></td>
+		<td style="color: red"><%=error_message%></td>
 	</tr>
 	<tr>
-		<td/>
-		<td><input type="submit" value="Login"></td>
+		<td />
+		<td><input type="submit" value="Verifique"></td>
 		<td></td>
 	</tr>
 </table>

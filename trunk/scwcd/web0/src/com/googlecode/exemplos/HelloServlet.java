@@ -13,24 +13,10 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-/**
- * Servlet implementation class for Servlet: HelloServlet
- *
- */
  public class HelloServlet extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {
    static final long serialVersionUID = 1L;
-   private static UsuarioRepository ur = null;
-   
-    /* (non-Java-doc)
-	 * @see javax.servlet.http.HttpServlet#HttpServlet()
-	 */
-	public HelloServlet() {
-		super();
-	}   	
-	
-	/* (non-Java-doc)
-	 * @see javax.servlet.http.HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+   private static UsuarioRepository ur = null; 	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/resposta.jsp";
 		String user = request.getParameter("user");
@@ -47,20 +33,11 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 		RequestDispatcher dispatcher = context.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}  	
-	
-	/* (non-Java-doc)
-	 * @see javax.servlet.http.HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
 
-	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 		ServletContext servletContext = config.getServletContext();
 		ApplicationContext resource = WebApplicationContextUtils.getWebApplicationContext(servletContext);
-		BeanFactory factory = (BeanFactory) resource;		
-		ur = (UsuarioRepository) factory.getBean("usuarioRepository");
+		ur = (UsuarioRepository) ((BeanFactory) resource).getBean("usuarioRepository");
 	}  	
 }

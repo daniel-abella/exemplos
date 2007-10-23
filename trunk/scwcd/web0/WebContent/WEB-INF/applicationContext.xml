@@ -27,8 +27,11 @@
 
 	<bean id="usuarioRepository"
 		class="com.googlecode.exemplos.UsuarioRepositoryDefault">
+		<!-- As linhas abaixo devem ser inseridas se não for
+		     empregada a anotação @PersistenceUnit em UsuarioRepositoryDefault.
 		<property name="entityManagerFactory"
 			ref="entityManagerFactory" />
+		 -->
 	</bean>
 
 </beans>

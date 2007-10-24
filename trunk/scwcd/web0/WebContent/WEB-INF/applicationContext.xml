@@ -39,5 +39,7 @@
 			ref="entityManagerFactory" />
 		 -->
 	</bean>
+	
+	<tx:annotation-driven transaction-manager="myTxManager"/>
 
 </beans>

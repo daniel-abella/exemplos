@@ -7,11 +7,21 @@
 <title>Uma aplicação simples (web0)</title>
 </head>
 <body>
-<h1>Hello, world.</h1>
+<h1>Seja bem-vinda(o)!</h1>
 <%
-	String user = request.getParameter("user");
-	String person = user != null ? (String) request.getAttribute("fullName") : "?";
+	String user = request.getParameter("usuario");
+	String person = user != null ? (String) request.getAttribute("fullName") : null;
+	if (person == null) {
 %>
-Welcome to WTP, <b><%= person %></b>!
+Usuário '<%= user %>' não encontrado. Tente novamente.
+<% 
+	} else {
+%>
+Usuário: <%= user %><br>
+Nome completo: <b><%= person %></b>
+<%
+	}
+%>
+<br>Deseja experimentar outro usuário? Clique <a href="index.jsp">aqui</a>.
 </body>
 </html>

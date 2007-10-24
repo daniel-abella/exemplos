@@ -15,15 +15,15 @@
 	</welcome-file-list>
 	<servlet>
 		<description></description>
-		<display-name>HelloServlet</display-name>
-		<servlet-name>HelloServlet</servlet-name>
+		<display-name>web0</display-name>
+		<servlet-name>web0</servlet-name>
 		<servlet-class>
 			com.googlecode.exemplos.HelloServlet
 		</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>HelloServlet</servlet-name>
-		<url-pattern>/HelloServlet</url-pattern>
+		<servlet-name>web0</servlet-name>
+		<url-pattern>/requisicao</url-pattern>
 	</servlet-mapping>
 	
 	<context-param>

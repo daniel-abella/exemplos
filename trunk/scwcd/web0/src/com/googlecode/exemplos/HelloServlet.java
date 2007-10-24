@@ -19,13 +19,13 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/resposta.jsp";
-		String user = request.getParameter("user");
-		if (user == null || user.length() == 0) {
+		String userName = request.getParameter("usuario");
+		if (userName == null || userName.length() == 0) {
 			url = "/index.jsp";
-			request.setAttribute("error", "User name must not be empty!");
+			request.setAttribute("erro", "Usuário não pode ser nulo!");
 		} else {
-			Usuario usuario = ur.getFromUserId(user);
-			String fullName = usuario == null ? "Não cadastrado" : usuario.getFullName();
+			Usuario usuario = ur.getFromUserId(userName);
+			String fullName = usuario == null ? null : usuario.getFullName();
 			request.setAttribute("fullName", fullName);
 		}
 		

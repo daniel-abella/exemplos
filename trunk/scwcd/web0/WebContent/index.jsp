@@ -9,18 +9,21 @@
 <body>
 <%
 	String error_message = "";
-	Object error = request.getAttribute("error");
+	Object error = request.getAttribute("erro");
 	if (error != null)
 		error_message = error.toString();
 %>
 <h1>Aplicação trivial</h1>
 Quando clicar em 'Verifique', o nome fornecido será utilizado para
-localizar o nome completo do usuário em questão na base de dados kyrios-teste.
-<form action="HelloServlet">
+localizar o nome completo do usuário em questão na base de dados
+kyrios-teste. Nomes disponíveis incluem: jdm, jose e januario.
+
+<!--  requisicao é o url-pattern (web.xml) do servlet que irá tratar o GET -->
+<form action="requisicao" method="get">
 <table cellspacing="4">
 	<tr>
 		<td>Forneça o seu nome de usuário:</td>
-		<td><input name="user" type="text" size="20"></td>
+		<td><input name="usuario" type="text" size="20"></td>
 		<td style="color: red"><%=error_message%></td>
 	</tr>
 	<tr>

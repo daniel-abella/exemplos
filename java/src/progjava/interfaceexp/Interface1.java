@@ -5,7 +5,7 @@ public interface Interface1 {
    void x();
 }
 
-abstract class AbsX {
+abstract class AbsX implements Interface1 {
     // synchronized are not allowed in abstract methods
     // protected abstract synchronized void x();
 
@@ -18,4 +18,7 @@ abstract class AbsX {
 class OkAbsX extends AbsX {
     synchronized void f() {}
     synchronized native void h();
+    public void x() {}
 }
+
+abstract class outra extends AbsX implements Interface1{}

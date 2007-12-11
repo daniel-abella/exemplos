@@ -21,7 +21,7 @@ As ferramentas abaixo não foram selecionadas por meio de análise criteriosa. P
  * Criação de executáveis, execução de testes, ... ([http://ant.apache.org Ant])
  * Compilador e máquina virtual Java ([http://java.sun.com/products/jdk JDK 6 update 3])
  * Testes de unidade ([http://junit.org JUnit 3.8.1])
- * Carga de dados em SGBD e outras operações de teste ([http://dbunit.org DBUnit])
+ * Carga de dados em SGBD e outras operações de teste ([http://dbunit.sourceforge.net DBUnit])
  * Injeção de dependência e testes ([http://springframework.org Spring])
 
 = Seqüência didática de exemplos = 

@@ -2,12 +2,28 @@
 
 = Introdução =
 
-Add your content here.
+Nesta página você encontrará uma seqüência de exemplos que empregam a JPA (Java Persistence API) voltados para o aprendizado desta significativa parte de EJB3. 
+
+Na ordem, primeiro segue onde informações adicionais podem ser obtidas. Isto permitirá que inúmeros detalhes, aqui não fornecidos, possam ser localizados em outras fontes. Ferramentas necessárias para a execução satisfatória dos exemplos comentados são fornecidos em seguida. 
 
 
-= Details =
+= Informações adicionais =
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
+
+= Ferramentas necessárias =
+Quais são as ferramentas?
+
+= Seqüência didática de exemplos = 
+Abaixo segue uma seqüência de pequenos exemplos, comentados, que permitem, paulatinamente, agregar informações relevantes sobre a persistência de objetos em Java usando entidades EJB.  Antes dos exemplos "relevantes" é fornecida uma pequena aplicação em que objetos criados não são persistidos. Serve como referência para ilustrar que objetos em memória não são implicitamente registrados em meio estável, senão por meio de significativo esforço de desenvolvimento.
+
+ * Exemplo sem persistência (ProgramaPessoa)
+ * pessoa (sem endereço)
+ * pessoa (com endereço por meio de atributos)
+ * pessoa (com endereço embutido por meio de classe própria)
+ * pessoa (com referência para um endereço)
+ * pessoa (com referência para vários endereços)
+ * pessoa física e jurídica estendem pessoa

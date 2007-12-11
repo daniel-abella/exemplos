@@ -19,6 +19,7 @@ As ferramentas abaixo não foram selecionadas por meio de análise criteriosa. P
 
  * SGBD ([http://hsqldb.sf.net HSQLDB])
  * Criação de executáveis, execução de testes, ... ([http://ant.apache.org Ant])
+ * Compilador e máquina virtual Java ([http://java.sun.com/products/jdk JDK 6 update 3])
 
 = Seqüência didática de exemplos = 
 Abaixo segue uma seqüência de pequenos exemplos, comentados, que permitem, paulatinamente, agregar informações relevantes sobre a persistência de objetos em Java usando entidades EJB.  Antes dos exemplos "relevantes" é fornecida uma pequena aplicação em que objetos criados não são persistidos. Serve como referência para ilustrar que objetos em memória não são implicitamente registrados em meio estável, senão por meio de significativo esforço de desenvolvimento.

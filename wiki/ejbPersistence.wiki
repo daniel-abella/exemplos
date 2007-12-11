@@ -23,6 +23,7 @@ As ferramentas abaixo não foram selecionadas por meio de análise criteriosa. P
  * Testes de unidade ([http://junit.org JUnit 3.8.1])
  * Carga de dados em SGBD e outras operações de teste ([http://dbunit.sourceforge.net DBUnit])
  * Injeção de dependência e testes ([http://springframework.org Spring])
+ * Persistence Provider ([http://hibernate.org Hibernate])
 
 = Seqüência didática de exemplos = 
 Abaixo segue uma seqüência de pequenos exemplos, comentados, que permitem, paulatinamente, agregar informações relevantes sobre a persistência de objetos em Java usando entidades EJB.  Antes dos exemplos "relevantes" é fornecida uma pequena aplicação em que objetos criados não são persistidos. Serve como referência para ilustrar que objetos em memória não são implicitamente registrados em meio estável, senão por meio de significativo esforço de desenvolvimento.

@@ -1,6 +1,5 @@
-#Sat Mar 18 10:11:08 BRT 2006
+#Tue Dec 11 11:23:51 BRST 2007
 eclipse.preferences.version=1
-internal.default.compliance=default
 org.eclipse.jdt.ui.exception.name=e
 org.eclipse.jdt.ui.gettersetter.use.is=true
 org.eclipse.jdt.ui.overrideannotation=true

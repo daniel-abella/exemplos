@@ -1,9 +1,14 @@
 package progjava.literal;
 
+/**
+ * @author Fábio Nogueira de Lucena
+ *
+ */
 public class Literal4 {
     public static void main(String[] args) {
-        System.out.println("string".length());
-        System.out.println("".length());
+        System.out.println("string".length());       // prints 6
+        System.out.println("".length());             // prints 0
+        System.out.println("\u0041\u0042".length()); // prints 2
     }
 }
 

@@ -2,14 +2,16 @@ package progjava.enumeration;
 
 public class Enum2 {
 	static void faz(Metrica m) {
+		Metrica mr = null;
 		switch (m) {
 		case AutomatedReadability: {
 			int x = 2;
-			System.out.println(m); break;
+			mr = m; break;
 		}
 		case ColemanLiau:
-			System.out.println(m); break;			
+			mr = m; break;			
 		}
+		System.out.println(mr);
 	}
 	public static void main(String[] args) {
 		faz(Metrica.AutomatedReadability);		

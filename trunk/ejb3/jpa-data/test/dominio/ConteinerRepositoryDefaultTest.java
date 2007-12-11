@@ -60,7 +60,7 @@ public class ConteinerRepositoryDefaultTest extends AbstractJpaTests {
 	}
 
 	@Repeat(5)
-	public void testInsere10Conteineres() {
+	public void testInsereCincoConteineres() {
 		Conteiner c = newConteiner();
 		cr.persiste(c);
 		assertTrue(true);

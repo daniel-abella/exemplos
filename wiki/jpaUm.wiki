@@ -62,6 +62,8 @@ Várias são as diferenças. *@Entity* é empregada para indicar que a classe em
 
 Para este simples exemplo, as poucas modificações comentadas acima são suficientes. 
 
+Convém ressaltar que várias bibliotecas são necessárias para a compilação do código acima.  Várias bibliotecas também serão necessárias durante a execução. Para cada *import* fornecido acima, localize a biblioteca correspondente fornecida pelo Hibernate (_persistence provider_ empregado nestes exemplos). Naturalmente, se outro _persistence provider_ é fornecido, outra biblioteca será esperada em diretório distinto. 
+
 === Iniciar o SGBD ===
 É preciso ter um SGBD disponível para persistir objetos. Neste caso é empregado o HSQLDB. Para iniciá-lo, na linha de comandos, execute 
 
@@ -71,6 +73,8 @@ ant db-start
 
 Este comando deve ser executado do diretório onde se encontra o arquivo *build.xml*. Este arquivo é fornecido juntamente com todos os demais necessários para a execução deste exemplo no link fornecido no início desta página.
 
+Não há nenhum passo de mágica. Embora o HSQLDB seja simples, várias operações estão encapsuladas no comando acima. Caso empregue outro SGBD, lembre-se de que, além de simplesmente iniciar o SGBD, uma base de dados terá que ser criada, um usuário com a devida permissão e eventualmente outras operações. Administração de um SGBD, contudo, está bem além do escopo deste exemplo. 
+
 === Criar o esquema no SGBD ===
 Novamente será empregada a ferramenta Ant e a configuração fornecida no arquivo *build.xml*. O comando a ser executado é
 
@@ -78,10 +82,24 @@ Novamente será empregada a ferramenta Ant e a configuração fornecida no arqui
 ant schema
 }}}
 
-Isto criará o esquema obtido do mapeamento anteriormente realizado. Após esta operação, o esquema encontra-se disponível no SGBD. Você poderá verificar se esta operação foi realizada satisfatoriamente por meio de um cliente do SGBD. Para tal, neste exemplo, basta executar o comando abaixo
+Isto criará o esquema obtido do mapeamento anteriormente realizado. Após esta operação, o esquema encontra-se disponível no SGBD (na base também criada no passo anterior). O comando acima, portanto, encapsula duas operações principais: a definição do esquema a partir do mapeamento realizado e, posteriormente, a criação deste esquema na base de dados criada no SGBD. Novamente, há muitos detalhes omitidos, mas que não comprometem o entendimento do processo. 
+
+Você poderá verificar se esta operação foi realizada satisfatoriamente por meio de um cliente do SGBD. Para tal, neste exemplo, basta executar o comando abaixo
 
 {{{
 ant db-client
 }}}
 
-Este comando iniciará o cliente padrão do HSQLDB. 
+Este comando iniciará o cliente padrão do HSQLDB já para a base também criada. Em um outro SGBD, após iniciar o cliente, será necessário localizar a base de interesse e efetuar a conexão correspondente, onde provavelmente será requisitado um usuário devidamente autorizado. Novamente, todas estas ações foram realizadas pelo comando acima, embora afastadas da visão do usuário. 
+
+=== Criar e executar um programa que requisita a persistência de instância da classe mapeada ===
+
+O programa abaixo faz uso da JPA API. É por meio desta API que aplicações em Java se comunicam com o _persistence provider_ para requisitar, explicitamente, a criação, recuperação, remoção e outros serviços. 
+
+{{{
+}}}
+
+No exemplo acima é fornecido o mínimo para requisitar o acesso a um gerenciador de entidades e a criação de uma transação no interior da qual uma instância de Pessoa é persistida. 
+
+= Considerações finais = 
+O exemplo acima é simples. O objetivo é fornecer uma visão geral do processo envolvido no emprego de JPA. 

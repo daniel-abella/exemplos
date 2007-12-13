@@ -9,7 +9,12 @@
 			Exemplo simples de persistência usando JPA. 
 		</description>
 		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>um.Pessoa</class>
+		
 		<properties>
+			<property name="hibernate.archive.autodetetion"	value="class"/>
+			
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.HSQLDialect" />
 			<property name="hibernate.connection.driver_class"

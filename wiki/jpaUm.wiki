@@ -1,7 +1,7 @@
 #summary Persistindo uma instância com JPA (Fábio Nogueira de Lucena)
 
 === Onde obter ===
-
+[http://exemplos.googlecode.com/svn/trunk/ejb3/jpaUm/]
 
 = Introdução =
 

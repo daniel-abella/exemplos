@@ -1,0 +1,30 @@
+#summary Persistindo uma instância com JPA (Fábio Nogueira de Lucena)
+
+=== Onde obter ===
+
+
+= Introdução =
+
+O que é preciso para persistir instâncias de uma classe como aquela abaixo?
+
+{{{
+public class Pessoa {
+    private String nome;
+	
+    public Pessoa(String nome) {
+	this.nome = nome;
+    }
+	
+    public String toString() {
+	return nome;
+    }
+}
+}}}
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages

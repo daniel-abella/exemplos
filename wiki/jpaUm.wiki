@@ -22,9 +22,13 @@ public class Pessoa {
 }}}
 
 
-= Details =
+= Resumo de atividades para persistir instâncias de uma classe =
+ * Mapear a classe em questão
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+
+=== Mapeamento da classe Pessoa ===
+A classe anterior, após modificada para conter o mapeamento necessário, é exibida abaixo.
+
+{{{
+
+}}}

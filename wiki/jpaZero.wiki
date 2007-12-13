@@ -1,4 +1,4 @@
-#summary Aplicação sem persistência
+#summary Aplicação sem persistência (Fábio Nogueira de Lucena)
 
 = Introdução =
 
@@ -8,14 +8,14 @@ Em Java, quando se cria uma instância de uma classe, conforme aquela fornecida 
 package zero;
 
 public class Pessoa {
-	private String nome;
+    private String nome;
 	
-	public Pessoa(String nome) {
-		this.nome = nome;
-	}
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
 	
-	public String toString() {
-		return nome;
-	}
+    public String toString() {
+	return nome;
+    }
 }
 }}}

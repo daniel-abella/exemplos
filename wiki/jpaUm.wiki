@@ -23,7 +23,7 @@ public class Pessoa {
 
 
 = Resumo de atividades para persistir instâncias de uma classe =
- * Mapear a classe em questão
+ * Mapear a classe em questão. Isto significa informar ao _persistence provider_ como cada classe deve ser persistida em uma tabela. Em boa parte, valores automaticamente fornecidos são suficientes. 
 
 
 === Mapeamento da classe Pessoa ===

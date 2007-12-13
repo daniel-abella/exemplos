@@ -1,5 +1,8 @@
 #summary Aplicação sem persistência (Fábio Nogueira de Lucena)
 
+=== Onde obter ===
+[http://exemplos.googlecode.com/svn/trunk/ejb3/jpaZero/]
+
 = Introdução =
 
 Em Java, quando se cria uma instância de uma classe, conforme aquela fornecida abaixo, o objeto correspondente passa a existir na memória da máquina virtual Java onde foi criado.

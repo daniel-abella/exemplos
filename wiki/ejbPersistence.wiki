@@ -25,13 +25,13 @@ As ferramentas abaixo não foram selecionadas por meio de análise criteriosa. P
  * Injeção de dependência e testes ([http://springframework.org Spring])
  * Persistence Provider ([http://hibernate.org Hibernate])
 
-= Seqüência didática de exemplos = 
+= Seqüência inicial de exemplos (primeiros contatos) = 
 Abaixo segue uma seqüência de pequenos exemplos, comentados, que permitem, paulatinamente, agregar informações relevantes sobre a persistência de objetos em Java usando entidades EJB.  Antes dos exemplos "relevantes" é fornecida uma pequena aplicação em que objetos criados não são persistidos. Serve como referência para ilustrar que objetos em memória não são implicitamente registrados em meio estável, senão por meio de significativo esforço de desenvolvimento.
 
- * Exemplo da classe Pessoa ([jpaZero sem persistência])
- * Instância de Pessoa é persistida ([jpaUm sem endereço])
- * Instância de Pessoa é persistida com endereço ([jpaDois por atributos])
- * Pessoa e Endereco ([jpaTres por classe embutida])
- * Pessoa  e Endereco ([jpaQuatro associação simples])
- * Pessoa e várias instâncias de Endereco ([jpaCinco associação para lista])
- * PessoaFisica e PessoaJuridica estendem Pessoa ([jpaSeis herança])
+ 1 Exemplo da classe Pessoa ([jpaZero sem persistência])
+ 1 Instância de Pessoa é persistida ([jpaUm sem endereço])
+ 1 Instância de Pessoa é persistida com endereço ([jpaDois por atributos])
+ 1 Pessoa e Endereco ([jpaTres por classe embutida])
+ 1 Pessoa  e Endereco ([jpaQuatro associação simples])
+ 1 Pessoa e várias instâncias de Endereco ([jpaCinco associação para lista])
+ 1 PessoaFisica e PessoaJuridica estendem Pessoa ([jpaSeis herança])

@@ -5,7 +5,7 @@
 
 = Introdução =
 
-O que é preciso para persistir instâncias de uma classe como aquela abaixo?
+O que é preciso para persistir instâncias de uma classe (como aquela abaixo)?
 
 {{{
 public class Pessoa {
@@ -29,9 +29,31 @@ public class Pessoa {
  * _Criar e executar um programa que requisita a persistência de instância da classe mapeada_.
 
 
-=== Mapeamento da classe Pessoa ===
+=== Mapear a classe em questão ===
 A classe anterior, após modificada para conter o mapeamento necessário, é exibida abaixo.
 
 {{{
+package um;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Pessoa {
+    @Id @GeneratedValue
+    private Long id;
+	
+    private String nome;
+	
+    public Pessoa() {}
+	
+    public Pessoa(String nome) {
+	this.nome = nome;
+    }
+	
+    public String toString() {
+	return nome;
+    }
+}
 }}}

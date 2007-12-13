@@ -23,7 +23,10 @@ public class Pessoa {
 
 
 = Resumo de atividades para persistir instâncias de uma classe =
- * Mapear a classe em questão. Isto significa informar ao _persistence provider_ como cada classe deve ser persistida em uma tabela. Em boa parte, valores automaticamente fornecidos são suficientes. 
+ * _Mapear a classe em questão_. Isto significa informar ao _persistence provider_ como cada classe deve ser persistida em uma tabela. Em boa parte, valores automaticamente fornecidos são suficientes. 
+ * _Iniciar o SGBD_. Um SGBD deve estar disponível para uso. 
+ * _Criar o esquema no SGBD disponível_. O mapeamento anteriormente realizado define o esquema a ser empregado pelo _persistence provider_ para persistir um objeto da classe mapeada no SGBD empregado. 
+ * _Criar e executar um programa que requisita a persistência de instância da classe mapeada_.
 
 
 === Mapeamento da classe Pessoa ===

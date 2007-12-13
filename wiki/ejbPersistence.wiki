@@ -28,10 +28,10 @@ As ferramentas abaixo não foram selecionadas por meio de análise criteriosa. P
 = Seqüência didática de exemplos = 
 Abaixo segue uma seqüência de pequenos exemplos, comentados, que permitem, paulatinamente, agregar informações relevantes sobre a persistência de objetos em Java usando entidades EJB.  Antes dos exemplos "relevantes" é fornecida uma pequena aplicação em que objetos criados não são persistidos. Serve como referência para ilustrar que objetos em memória não são implicitamente registrados em meio estável, senão por meio de significativo esforço de desenvolvimento.
 
- * Exemplo ([jpaZero sem persistência])
- * pessoa (sem endereço)
- * pessoa (com endereço por meio de atributos)
- * pessoa (com endereço embutido por meio de classe própria)
- * pessoa (com referência para um endereço)
- * pessoa (com referência para vários endereços)
- * pessoa física e jurídica estendem pessoa
+ * Exemplo da classe Pessoa ([jpaZero sem persistência])
+ * Instância de Pessoa é persistida ([jpaUm sem endereço])
+ * Instância de Pessoa é persistida com endereço ([jpaDois por atributos])
+ * Pessoa e Endereco ([jpaTres por classe embutida])
+ * Pessoa  e Endereco ([jpaQuatro associação simples])
+ * Pessoa e várias instâncias de Endereco ([jpaCinco associação para lista])
+ * PessoaFisica e PessoaJuridica estendem Pessoa ([jpaSeis herança])

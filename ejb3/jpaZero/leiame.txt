@@ -1,0 +1,3 @@
+jpaZero
+Ilustra aplicação que cria instância de objeto mas não o persiste em meio estável.
+Ou seja, objeto existe apenas durante a execução da aplicação.

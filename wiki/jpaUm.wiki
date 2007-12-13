@@ -97,9 +97,35 @@ Este comando iniciará o cliente padrão do HSQLDB já para a base também criad
 O programa abaixo faz uso da JPA API. É por meio desta API que aplicações em Java se comunicam com o _persistence provider_ para requisitar, explicitamente, a criação, recuperação, remoção e outros serviços. 
 
 {{{
+package um;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+public class PessoaAplicacaoJpa {
+    public static void main(String[] args) {
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaUm");
+	EntityManager em = emf.createEntityManager();
+	EntityTransaction tx = em.getTransaction();
+	tx.begin();
+		
+	Pessoa p = new Pessoa("Pedro Silva Souza da Silva");
+		
+	em.persist(p);
+	tx.commit();
+	em.close();
+    }
+}
+
 }}}
 
 No exemplo acima é fornecido o mínimo para requisitar o acesso a um gerenciador de entidades e a criação de uma transação no interior da qual uma instância de Pessoa é persistida. 
+
+Após executar o programa acima, verifique no SGBD (por meio de um cliente), a existência de um registro correspondente à instância persistida. 
+
+Caso execute o programa acima de um ambiente como o Eclipse, certifique-se de acrescentar ao classpath do comando de execução o diretório *etc*. É neste diretório que a unidade de persistência *jpaUm* está definida. Lembre-se que esta configuração é fornecida pelo arquivo *persistence.xml*, fornecido no diretório *META-INF*. É o diretório *META-INF* que deve estar no classpath para a execução satisfatória. Neste caso, o classpath deverá conter o diretório *etc*. 
 
 = Considerações finais = 
 O exemplo acima é simples. O objetivo é fornecer uma visão geral do processo envolvido no emprego de JPA. 

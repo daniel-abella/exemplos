@@ -22,3 +22,17 @@ public class Pessoa {
     }
 }
 }}}
+
+Se a aplicação em questão não persistir o objeto criado explicitamente, então quando esta aplicação for encerrada, o objeto correspondente também deixa de existir. De fato, antes mesmo da aplicação ser encerrada, o _garbage collector_ pode remover o referido objeto, caso não seja possível ter acesso ao mesmo. O programa abaixo ilustra esta situação.
+
+{{{
+package zero;
+
+public class PessoaApplicacao {
+    public static void main(String... args) {
+	Pessoa p = new Pessoa("Pedro Silva Souza da Silva");
+	System.out.println(p);
+	p = null;		
+    }
+}
+}}}

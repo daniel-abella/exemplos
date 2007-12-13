@@ -1,0 +1,21 @@
+#summary Aplicação sem persistência
+
+= Introdução =
+
+Em Java, quando se cria uma instância de uma classe, conforme aquela fornecida abaixo, o objeto correspondente passa a existir na memória da máquina virtual Java onde foi criado.
+
+{{{
+package zero;
+
+public class Pessoa {
+	private String nome;
+	
+	public Pessoa(String nome) {
+		this.nome = nome;
+	}
+	
+	public String toString() {
+		return nome;
+	}
+}
+}}}

@@ -12,7 +12,7 @@ Na ordem, primeiro segue onde informações adicionais podem ser obtidas. Isto p
  * Panda et al., _[http://www.amazon.com/EJB-3-Action-Debu-Panda/dp/1933988347/ref=pd_bbs_sr_1?ie=UTF8&s=books&qid=1197657357&sr=8-1 EJB 3 In Action]_, Manning, 2007. 
 
 = Ferramentas necessárias =
-As ferramentas abaixo não foram selecionadas por meio de análise criteriosa. Portanto, não as interprete como sugestão para software em produção. Ao contrário, as interprete como de conhecimento e domínio do autor destes exemplos, apenas isto.
+Não interprete as ferramentas sugeridas abaixo para emprego em produção, tampouco as desconsidere por causa desta observação. Para o autor, fornecem um conjunto útil para emprego didático.
 
  * SGBD ([http://hsqldb.sf.net HSQLDB])
  * Criação de executáveis, execução de testes, ... ([http://ant.apache.org Ant])

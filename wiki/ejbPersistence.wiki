@@ -22,9 +22,9 @@ Não interprete as ferramentas sugeridas abaixo para emprego em produção, tamp
  * Injeção de dependência e testes ([http://springframework.org Spring])
  * Persistence Provider ([http://hibernate.org Hibernate]). Serão necessários os componentes conhecidos por:
    * [http://www.hibernate.org/344.html Hibernate Core]
-   * Hibernate Annotations
-   * Hibernate !EntityManager e
-   * Hibernate Tools.
+   * [http://www.hibernate.org/397.html Hibernate Annotations]
+   * [http://www.hibernate.org/397.html Hibernate !EntityManager] e
+   * [http://www.hibernate.org/255.html Hibernate Tools].
 
 = Seqüência inicial de exemplos (primeiros contatos) = 
 Abaixo segue uma seqüência de pequenos exemplos, comentados, que permitem, paulatinamente, agregar informações relevantes sobre a persistência de objetos em Java usando entidades EJB. Esta primeira lista visa 

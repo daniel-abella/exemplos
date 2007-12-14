@@ -21,9 +21,9 @@ Não interprete as ferramentas sugeridas abaixo para emprego em produção, tamp
  * Carga de dados em SGBD e outras operações de teste ([http://dbunit.sourceforge.net DBUnit])
  * Injeção de dependência e testes ([http://springframework.org Spring])
  * Persistence Provider ([http://hibernate.org Hibernate]). Serão necessários os componentes conhecidos por:
-   * Hibernate Core
+   * [http://www.hibernate.org/344.html Hibernate Core]
    * Hibernate Annotations
-   * Hibernate EntityManager e
+   * Hibernate !EntityManager e
    * Hibernate Tools.
 
 = Seqüência inicial de exemplos (primeiros contatos) = 

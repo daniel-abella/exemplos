@@ -23,7 +23,7 @@ Não interprete as ferramentas sugeridas abaixo para emprego em produção, tamp
  * Persistence Provider ([http://hibernate.org Hibernate]). Serão necessários os componentes conhecidos por:
    * [http://www.hibernate.org/344.html Hibernate Core]
    * [http://www.hibernate.org/397.html Hibernate Annotations]
-   * [http://www.hibernate.org/397.html Hibernate !EntityManager] e
+   * [http://www.hibernate.org/397.html Hibernate EntityManager] e
    * [http://www.hibernate.org/255.html Hibernate Tools].
 
 = Seqüência inicial de exemplos (primeiros contatos) = 

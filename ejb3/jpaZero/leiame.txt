@@ -1,3 +1,6 @@
 jpaZero
 Ilustra aplicação que cria instância de objeto mas não o persiste em meio estável.
 Ou seja, objeto existe apenas durante a execução da aplicação.
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaZero/

@@ -26,6 +26,8 @@ Não interprete as ferramentas sugeridas abaixo para emprego em produção, tamp
    * [http://www.hibernate.org/397.html Hibernate EntityManager] e
    * [http://www.hibernate.org/255.html Hibernate Tools].
 
+*Instalação e uso*: reserve tempo para a instalação e ambientação com estas ferramentas. Embora sejam empregadas, doravante é suposto que estejam devidamente instaladas. Por simplicidade, assuma que a variável de ambiente *JPALIBS* está definida para o diretório contendo todos os arquivos .jar necessários. 
+
 = Seqüência inicial de exemplos (primeiros contatos) = 
 Abaixo segue uma seqüência de pequenos exemplos, comentados, que permitem, paulatinamente, agregar informações relevantes sobre a persistência de objetos em Java usando entidades EJB. Esta primeira lista visa 
  * ambientação com o processo necessário para persistir objetos Java usando entidades EJB (Java Persistence API)

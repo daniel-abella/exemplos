@@ -63,7 +63,7 @@ Várias são as diferenças. *@Entity* é empregada para indicar que a classe em
 
 Para este simples exemplo, as poucas modificações comentadas acima são suficientes. 
 
-Convém ressaltar que várias bibliotecas são necessárias para a compilação do código acima.  Várias bibliotecas também serão necessárias durante a execução. Para cada *import* fornecido acima, localize a biblioteca correspondente fornecida pelo Hibernate (_persistence provider_ empregado nestes exemplos). Naturalmente, se outro _persistence provider_ é fornecido, outra biblioteca será esperada em diretório distinto. 
+*Bibliotecas*: convém ressaltar que várias bibliotecas são necessárias para a compilação do código acima. Por exemplo, a anotação _javax.persistence.Entity_ é fornecida no arquivo *ejb3-persistence.jar*. Este arquivo jar é fornecido pelo Hibernate (_persistence provider_ empregado nestes exemplos). Em particular, o que é conhecido por Hibernate Annotations inclui este arquivo jar. 
 
 === Iniciar o SGBD ===
 É preciso ter um SGBD disponível para persistir objetos. Neste caso é empregado o HSQLDB. Para iniciá-lo, na linha de comandos, execute 

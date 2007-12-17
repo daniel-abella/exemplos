@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="jpaUm" basedir="." default="execute">
+<project name="jpaUm" basedir="." default="clean">
 
 	<!-- ================================================================= -->
 	<!-- Projeto Dados                                                     -->
@@ -58,6 +58,7 @@
 		<pathelement location="${hibernate.dir}/lib/javassist.jar" />
 		<pathelement location="${hibernate.dir}/lib/asm.jar" />
 		<pathelement location="${hibernate.dir}/lib/antlr-2.7.6.jar" />
+		<pathelement location="${hibernate.dir}/lib/xerces-2.6.2.jar" />
 	</path>
 
 	<!-- ================================================================= -->
@@ -147,7 +148,7 @@
 		</javac>
 	</target>
 
-	<target name="execute" depends="compile" description="executa classe (-Dclasse=nomeClasse)">
+	<target name="run" depends="compile" description="executa classe (-Dclasse=nomeClasse)">
 		<java classname="${classe}">
 			<classpath refid="projeto.classpath" />
 		</java>

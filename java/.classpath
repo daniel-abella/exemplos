@@ -5,6 +5,6 @@
 	<classpathentry excluding="**/.svn|.svn|progs/spring/" kind="src" path="src"/>
 	<classpathentry kind="src" path="src/progs/spring"/>
 	<classpathentry kind="src" path="threads"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/kad-libs-0.9"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>

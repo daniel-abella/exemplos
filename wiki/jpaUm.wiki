@@ -104,7 +104,7 @@ ant db-client
 
 Este comando iniciará o cliente padrão do HSQLDB já para a base também criada. Em um outro SGBD, após iniciar o cliente, será necessário localizar a base de interesse e efetuar a conexão correspondente, onde provavelmente será requisitado um usuário devidamente autorizado. Novamente, todas estas ações foram realizadas pelo comando acima, embora afastadas da visão do usuário. 
 
-=== Criar um programa que requisita a persistência de instância da classe mapeada ===
+=== Criar um programa que requisita serviços oferecidos pela JPA API ===
 
 O programa abaixo faz uso da JPA API. É por meio desta API que aplicações em Java se comunicam com o _persistence provider_ para requisitar, explicitamente, a criação, recuperação, remoção e outros serviços de persistência. 
 

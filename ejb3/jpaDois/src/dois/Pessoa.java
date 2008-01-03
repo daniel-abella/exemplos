@@ -1,4 +1,4 @@
-package um;
+package dois;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +8,9 @@ import javax.persistence.Id;
 public class Pessoa {
 	@Id @GeneratedValue
 	private Long id;
+	
+	private String rua;
+	private int numero;
 	
 	private String nome;
 	
@@ -19,5 +22,21 @@ public class Pessoa {
 	
 	public String toString() {
 		return nome;
+	}
+
+	public String getRua() {
+		return rua;
+	}
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
 	}
 }

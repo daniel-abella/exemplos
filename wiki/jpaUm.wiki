@@ -24,6 +24,7 @@ public class Pessoa {
 
 = Resumo de atividades para persistir instâncias de uma classe =
  * _Mapear a classe em questão_. Isto significa informar ao _persistence provider_ como cada classe deve ser persistida em uma tabela. 
+ * _Compilar a classe mapeada_.
  * _Iniciar o SGBD_. Um SGBD deve estar disponível para uso. 
  * _Criar o esquema no SGBD_. O mapeamento anteriormente realizado define o esquema a ser empregado pelo _persistence provider_ para persistir um objeto da classe mapeada no SGBD empregado. 
  * _Criar e executar um programa que requisita a persistência de instância da classe mapeada_.
@@ -65,7 +66,8 @@ A anotação *@Entity* é empregada para indicar que a classe em questão é uma
 
 Para este simples exemplo, as poucas modificações comentadas acima são suficientes. 
 
-*Bibliotecas*: convém ressaltar que várias bibliotecas são necessárias para a compilação do código acima. Por exemplo, a anotação _javax.persistence.Entity_ é fornecida no arquivo *ejb3-persistence.jar*. Este arquivo jar é fornecido pelo Hibernate (_persistence provider_ empregado nestes exemplos). Em particular, o que é conhecido por Hibernate Annotations inclui este arquivo jar. 
+=== Compilar a classe mapeada ===
+Convém ressaltar que várias bibliotecas são necessárias para a compilação do código acima. Por exemplo, a anotação _javax.persistence.Entity_ é fornecida no arquivo *ejb3-persistence.jar*. Este arquivo jar é fornecido pelo Hibernate (_persistence provider_ empregado nestes exemplos). Em particular, o que é conhecido por Hibernate Annotations inclui este arquivo jar. Execute o alvo *ant compile* na linha de comandos. Se o arquivo *build.xml* estiver devidamente configurado para as bibliotecas necessárias, a compilação será executada sem problemas.
 
 === Iniciar o SGBD ===
 É preciso ter um SGBD disponível para persistir objetos. Neste caso é empregado o HSQLDB. Para iniciá-lo, na linha de comandos, execute 

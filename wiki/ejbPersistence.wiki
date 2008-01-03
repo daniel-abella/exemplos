@@ -18,7 +18,7 @@ Não interprete as ferramentas sugeridas abaixo para emprego em produção, tamp
  * SGBD ([http://hsqldb.sf.net HSQLDB])
  * Criação de executáveis, execução de testes, ... ([http://ant.apache.org Ant])
  * Compilador e máquina virtual Java ([http://java.sun.com/products/jdk JDK 6 update 3])
- * Testes de unidade ([http://junit.org JUnit 3.8.1])
+ * Testes de unidade ([http://junit.org JUnit])
  * Carga de dados em SGBD e outras operações de teste ([http://dbunit.sourceforge.net DBUnit])
  * Injeção de dependência e testes ([http://springframework.org Spring])
  * Persistence Provider ([http://hibernate.org Hibernate]). Serão necessários os componentes conhecidos por:

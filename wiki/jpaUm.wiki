@@ -139,4 +139,4 @@ Após executar o programa acima, verifique no SGBD (por meio de um cliente), a e
 Caso execute o programa acima de um ambiente como o Eclipse, certifique-se de acrescentar ao classpath do comando de execução o diretório *etc*. É neste diretório que a unidade de persistência *jpaUm* está definida. Lembre-se que esta configuração é fornecida pelo arquivo *persistence.xml*, fornecido no diretório *META-INF*. É o diretório *META-INF* que deve estar no classpath para a execução satisfatória. Neste caso, o classpath deverá conter o diretório *etc*. 
 
 = Considerações finais = 
-O exemplo acima é simples. O objetivo é fornecer uma visão geral do processo envolvido no emprego de JPA. 
+O exemplo acima é simples. Os objetivos incluem: (a) fornecer uma visão geral do processo envolvido no emprego de JPA; (b) verificar a instalação/configuração de ferramentas necessárias para o emprego da JPA usando o Hibernate e (c) ambientação inicial com tais ferramentas. 

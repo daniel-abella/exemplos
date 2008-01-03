@@ -190,5 +190,16 @@ Após a execução deste comando, uma instância adicional deve estar disponíve
 
 *Execução a partir do ambiente Eclipse*. Caso execute o programa acima de um ambiente como o Eclipse, certifique-se de acrescentar ao classpath do comando de execução o diretório *etc*. É neste diretório que a unidade de persistência *jpaUm* está definida. Lembre-se que esta configuração é fornecida pelo arquivo *persistence.xml*, fornecido no diretório *META-INF*. É o diretório *META-INF* que deve estar no classpath para a execução satisfatória. Neste caso, o classpath deverá conter o diretório *etc*. 
 
+= Visão geral de todos os artefatos empregados =
+Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaUm/]. Incluem:
+
+ * _persistence.xml_. Arquivo de configuração do fornecedor de persistência. Neste exemplo foi empregado o Hibernate.
+ * _build.xml_. Arquivo empregado pela ferramenta Ant para a execução de várias atividades repetitivas, por exemplo, iniciar SGBD, iniciar cliente do SGBD, compilar e outras.
+ * _leiame.txt_. Breve descrição do exemplo.
+ * _etc_. Diretório contendo o diretório _META-INF_ e configuração de log para uso do Log4j. O diretório _META-INF_ é empregado para conter arquivos próprios para a configuração de soluções que fazem uso de JPA.
+ * _sr_. Diretório contendo fontes do exemplo.
+ * _test_. Diretório contendo fontes de testes para o exemplo. Neste caso, não há testes e, portanto, este diretório encontra-se vazio.
+ * _Arquivos de configuração de projeto Eclipse_. São fornecidos vários arquivos correspondentes a um projeto do Eclipse.
+
 = Considerações finais = 
 O exemplo acima é simples. Os objetivos incluem: (a) fornecer uma visão geral do processo envolvido no emprego de JPA; (b) verificar a instalação/configuração de ferramentas necessárias para o emprego da JPA usando o Hibernate e (c) ambientação inicial com tais ferramentas. 

@@ -5,6 +5,8 @@
 
 = Introdução =
 
+Em exemplo [http://code.google.com/p/exemplos/wiki/jpaZero anterior] instância da classe Pessoa foi criada e, ao fim da execução de um programa, simplesmente "abandonada" e "perdida" para sempre. Neste exemplo veremos como persistir uma instância usando JPA. O exemplo [http://code.google.com/p/exemplos/wiki/jpaDois posterior] estende o presente exemplo com novos recursos.
+
 O que é preciso para persistir instâncias de uma classe (como aquela abaixo) usando a JPA?
 
 {{{

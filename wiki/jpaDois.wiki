@@ -46,7 +46,7 @@ Cada um destes passos é comentado em seção própria abaixo.
 A classe acima, após modificada para conter o mapeamento necessário, é exibida abaixo.
 
 {{{
-package um;
+package dois;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -112,7 +112,7 @@ ant db-client
 O programa abaixo mantém a mesma simplicidade do exemplo anterior. Contudo, duas linhas foram acrescentadas para fornecer detalhes pertinentes às propriedades *rua* e *numero*.
 
 {{{
-package um;
+package dois;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -183,7 +183,7 @@ ant compile
 O comando para a execução da classe que usufrui da API também é a mesma:
 
 {{{
-ant run -Dclasse=um.PessoaAplicacaoJpa
+ant run -Dclasse=dois.PessoaAplicacaoJpa
 }}}
 
 Após a execução deste comando, uma instância adicional deve estar disponível no SGBD. A execução da consulta _select * from pessoa_ por meio de um cliente do SGBD poderá indicar que, de fato, uma instância adicional foi inserida no SGBD.

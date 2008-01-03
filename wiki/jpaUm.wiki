@@ -196,10 +196,10 @@ Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.go
  * _persistence.xml_. Arquivo de configuração do fornecedor de persistência. Neste exemplo foi empregado o Hibernate.
  * _build.xml_. Arquivo empregado pela ferramenta Ant para a execução de várias atividades repetitivas, por exemplo, iniciar SGBD, iniciar cliente do SGBD, compilar e outras.
  * _leiame.txt_. Breve descrição do exemplo.
- * _etc_. Diretório contendo o diretório _META-INF_ e configuração de log para uso do Log4j. O diretório _META-INF_ é empregado para conter arquivos próprios para a configuração de soluções que fazem uso de JPA.
+ * _etc_. Diretório contendo o diretório _META-INF_ e configuração de log para uso do Log4j. O diretório _META-INF_ é empregado para conter arquivos próprios para a configuração de soluções que fazem uso de JPA. O arquivo _persistence.xml_ é fornecido no diretório _META-INF_.
  * _sr_. Diretório contendo fontes do exemplo.
  * _test_. Diretório contendo fontes de testes para o exemplo. Neste caso, não há testes e, portanto, este diretório encontra-se vazio.
- * _Arquivos de configuração de projeto Eclipse_. São fornecidos vários arquivos correspondentes a um projeto do Eclipse.
+ * _Configuração de projeto Eclipse_ (.project e .classpath). Projeto Eclipse correspondente ao exemplo.
 
 = Considerações finais = 
 O exemplo acima é simples. Os objetivos incluem: (a) fornecer uma visão geral do processo envolvido no emprego de JPA; (b) verificar a instalação/configuração de ferramentas necessárias para o emprego da JPA usando o Hibernate e (c) ambientação inicial com tais ferramentas. 

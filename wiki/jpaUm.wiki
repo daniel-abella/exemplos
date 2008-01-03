@@ -5,7 +5,7 @@
 
 = Introdução =
 
-O que é preciso para persistir instâncias de uma classe (como aquela abaixo)?
+O que é preciso para persistir instâncias de uma classe (como aquela abaixo) usando a JPA?
 
 {{{
 public class Pessoa {

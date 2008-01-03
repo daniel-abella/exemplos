@@ -28,6 +28,7 @@ public class Pessoa {
  * _Iniciar o SGBD_. Um SGBD deve estar disponível para uso. 
  * _Criar o esquema no SGBD_. O mapeamento anteriormente realizado define o esquema a ser empregado pelo _persistence provider_ para persistir um objeto da classe mapeada no SGBD empregado. 
  * _Criar um programa que requisita serviços oferecidos pela JPA API_.
+ * _Configurar o persistence provider_.
  * _Compilar e executar o programa criado no passo anterior_.
 
 Cada um destes passos é comentado em seção própria abaixo.
@@ -133,11 +134,12 @@ public class PessoaAplicacaoJpa {
 
 }}}
 
-No exemplo acima é fornecido o mínimo para requisitar o acesso a um gerenciador de entidades (_persistence provider_) e a criação de uma transação no interior da qual uma instância da classe Pessoa é persistida. Observe que não há, da perspectiva deste código, nenhuma dependência de um _persistence provider_ específico. Por exemplo, não há nenhuma dependência para o Hibernate (ferramenta empregada). A configuração de qual ferramenta será empregada é fornecida no arquivo *orm.xml*, contido no diretório *META-INF*.
+No exemplo acima é fornecido o mínimo para requisitar o acesso a um gerenciador de entidades (_persistence provider_) e a criação de uma transação no interior da qual uma instância da classe Pessoa é persistida. Observe que não há, da perspectiva deste código, nenhuma dependência de um _persistence provider_ específico. Por exemplo, não há nenhuma dependência para o Hibernate (ferramenta empregada). A configuração de qual ferramenta será empregada é fornecida no arquivo *persistence.xml*, contido no diretório *META-INF*.
 
-Após executar o programa acima, verifique no SGBD (por meio de um cliente), a existência de um registro correspondente à instância persistida. 
+=== Configurar o persistence provider ===
+Se o programa acima for simplesmente executado, nenhum resultado satisfatório poderá ser observado. Conforme comentado acima, é preciso configurar o _persistence provider_ a ser empregado, pois o programa acima é independente de quem de fato executará os serviços requisitados. 
 
-Caso execute o programa acima de um ambiente como o Eclipse, certifique-se de acrescentar ao classpath do comando de execução o diretório *etc*. É neste diretório que a unidade de persistência *jpaUm* está definida. Lembre-se que esta configuração é fornecida pelo arquivo *persistence.xml*, fornecido no diretório *META-INF*. É o diretório *META-INF* que deve estar no classpath para a execução satisfatória. Neste caso, o classpath deverá conter o diretório *etc*. 
+A configuração é fornecida na forma de um documento XML, *persistence.xml*, necessariamente com este nome e localizado no diretório *META-INF*. 
 
 ===Compilar e executar o programa criado no passo anterior===
 A compilação foi indicada acima e o comando é repetido abaixo.
@@ -153,6 +155,8 @@ ant run -Dclasse=um.PessoaAplicacaoJpa
 }}}
 
 Após a execução deste comando, uma instância adicional deve estar disponível no SGBD. A execução da consulta _select * from pessoa_ por meio de um cliente do SGBD poderá indicar que, de fato, uma instância adicional foi inserida no SGBD.
+
+*Execução a partir do ambiente Eclipse*. Caso execute o programa acima de um ambiente como o Eclipse, certifique-se de acrescentar ao classpath do comando de execução o diretório *etc*. É neste diretório que a unidade de persistência *jpaUm* está definida. Lembre-se que esta configuração é fornecida pelo arquivo *persistence.xml*, fornecido no diretório *META-INF*. É o diretório *META-INF* que deve estar no classpath para a execução satisfatória. Neste caso, o classpath deverá conter o diretório *etc*. 
 
 = Considerações finais = 
 O exemplo acima é simples. Os objetivos incluem: (a) fornecer uma visão geral do processo envolvido no emprego de JPA; (b) verificar a instalação/configuração de ferramentas necessárias para o emprego da JPA usando o Hibernate e (c) ambientação inicial com tais ferramentas. 

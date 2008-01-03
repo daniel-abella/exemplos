@@ -1,2 +1,2 @@
 jpaUm
-Passos necess√°rios para persistir inst√¢ncias de uma classe simples.
+Passos necess·rios para persistir inst‚ncias de uma classe simples.

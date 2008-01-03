@@ -1,4 +1,4 @@
-#summary Persistência (EJB)
+#summary Persistência (EJB) (Fábio Nogueira de Lucena)
 
 = Introdução =
 

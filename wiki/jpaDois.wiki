@@ -191,7 +191,7 @@ Após a execução deste comando, uma instância adicional deve estar disponíve
 *Execução a partir do ambiente Eclipse*. Não se esqueça de incluir no _classpath_ o diretório *etc*, pois é no _classpath_ que será procurado o diretório *META-INF*, empregado para a configuração do _persistence provider_. 
 
 = Visão geral de todos os artefatos empregados =
-Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDois/]. Os artefatos são rigorosamente os mesmos.
+Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDois/]. O conteúdo dos artefatos também é o mesmo, exceto para as mudanças identificadas acima.
 
 = Considerações finais = 
 O exemplo acima também é simples. O objetivo foi reforçar um processo comum para a persistência empregando JPA, aumentar a familiaridade com as ferramentas empregadas e, especialmente, ressaltar que o emprego de JPA tenta ser tão menos intrusivo quanto possível. Este último item é claro ao observar que o acréscimo de duas novas propriedades não exigiram que o mapeamento fosse alterado. Naturalmente, isto só foi possível porque o padrão oferecido pelo JPA é suficiente, para este caso.  

@@ -203,3 +203,5 @@ Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.go
 
 = Considerações finais = 
 O exemplo acima é simples. Os objetivos incluem: (a) fornecer uma visão geral do processo envolvido no emprego de JPA; (b) verificar a instalação/configuração de ferramentas necessárias para o emprego da JPA usando o Hibernate e (c) ambientação inicial com tais ferramentas. 
+
+Não deixe de consultar outros exemplos da [http://code.google.com/p/exemplos/wiki/ejbPersistence série].

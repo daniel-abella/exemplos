@@ -79,14 +79,14 @@ Observe que este mapeamento é exatamente o mesmo mapeamento para o cenário ant
 
 As únicas anotações empregadas foram as mesmas do exemplo anterior, ou seja, *@Entity*, *@Id* e *@!GeneratedValue*. Por conseguinte, não são comentadas novamente.
 
-=== Compilar a classe mapeada ===
+= Compilar a classe mapeada =
 A compilação também não sofre alterações. 
 
 {{{
 ant compile
 }}}
 
-=== Iniciar o SGBD ===
+= Iniciar o SGBD =
 Para iniciar o SGBD precisamos do comando abaixo. 
 
 {{{

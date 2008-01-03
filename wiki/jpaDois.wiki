@@ -28,8 +28,8 @@ public class Pessoa {
 }
 }}}
 
+Já sabemos que os seguintes passos são necessários.
 
-= Resumo de atividades para persistir instâncias de uma classe =
  * _Mapear a classe em questão_. Isto significa informar ao _persistence provider_ como cada classe deve ser persistida em uma tabela. 
  * _Compilar a classe mapeada_.
  * _Iniciar o SGBD_. Um SGBD deve estar disponível para uso. 
@@ -40,7 +40,7 @@ public class Pessoa {
 
 Cada um destes passos é comentado em seção própria abaixo.
 
-=== Mapear a classe em questão ===
+= Mapear a classe em questão =
 A classe anterior, após modificada para conter o mapeamento necessário, é exibida abaixo.
 
 {{{

@@ -28,7 +28,9 @@ public class Pessoa {
 }
 }}}
 
-Já sabemos que os seguintes passos são necessários.
+Observe que, em relação ao exemplo anterior, foram acrescentadas as propriedades *rua* e *numero*, respectivamente dos tipos _String_ e _int_. 
+
+Já sabemos que para persistir objetos de uma determinada classe os seguintes passos são necessários:
 
  * _Mapear a classe em questão_. Isto significa informar ao _persistence provider_ como cada classe deve ser persistida em uma tabela. 
  * _Compilar a classe mapeada_.

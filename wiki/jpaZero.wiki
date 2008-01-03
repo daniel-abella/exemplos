@@ -4,7 +4,7 @@
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaZero/]
 
 
-Exemplo: [http://code.google.com/p/exemplos/wiki/jpaDois próximo].
+Exemplo: [http://code.google.com/p/exemplos/wiki/jpaUm próximo].
 
 = Introdução =
 

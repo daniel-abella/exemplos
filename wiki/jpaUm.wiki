@@ -59,7 +59,7 @@ public class Pessoa {
 }
 }}}
 
-Várias são as diferenças. *@Entity* é empregada para indicar que a classe em questão é uma entidade (_EJB entity_). *@Id* e *@!GeneratedValue* indicam que a propriedade em questão, *id*, será empregada como chave na tabela onde instâncias da classe Pessoa forem persistidas. Em particular, o valor desta chave será automaticamente gerado. A outra diferença é a existência do construtor padrão (sem argumentos). Este construtor é obrigatório. Tal construtor será empregado pelo _persistence provider_ para a criação de instâncias que forem recuperadas do SGBD. 
+Várias são as diferenças entre a classe modificada acima (empregando JPA) e a anterior. *@Entity* é empregada para indicar que a classe em questão é uma entidade (_EJB entity_). *@Id* e *@!GeneratedValue* indicam que a propriedade em questão, *id*, será empregada como chave na tabela onde instâncias da classe Pessoa forem persistidas. Em particular, o valor desta chave será automaticamente gerado. A outra diferença é a existência do construtor padrão (sem argumentos). Este construtor é obrigatório. Tal construtor será empregado pelo _persistence provider_ para a criação de instâncias que forem recuperadas do SGBD. 
 
 Para este simples exemplo, as poucas modificações comentadas acima são suficientes. 
 

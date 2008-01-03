@@ -3,6 +3,9 @@
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaUm/]
 
+
+Exemplos: [http://code.google.com/p/exemplos/wiki/jpaUm anterior] e [http://code.google.com/p/exemplos/wiki/jpaTres próximo].
+
 = Introdução =
 
 O que é preciso para persistir instâncias de uma classe (como aquela abaixo) usando a JPA?

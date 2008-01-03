@@ -43,7 +43,7 @@ Já sabemos que para persistir objetos de uma determinada classe os seguintes pa
 Cada um destes passos é comentado em seção própria abaixo.
 
 = Mapear a classe em questão =
-A classe anterior, após modificada para conter o mapeamento necessário, é exibida abaixo.
+A classe acima, após modificada para conter o mapeamento necessário, é exibida abaixo.
 
 {{{
 package um;
@@ -58,6 +58,8 @@ public class Pessoa {
     private Long id;
 	
     private String nome;
+    private String rua;
+    private int numero;
 	
     public Pessoa() {}
 	
@@ -68,55 +70,46 @@ public class Pessoa {
     public String toString() {
 	return nome;
     }
+
+    // Métodos get/set omitidos para rua e numero (por simplicidade)
 }
 }}}
 
-Várias são as diferenças entre a classe modificada acima (empregando JPA) e a anterior. Tais diferenças estão no emprego de anotações. 
+Observe que este mapeamento é exatamente o mesmo mapeamento para o cenário anterior, onde tínhamos apenas as propriedades *id* e *nome*. Este fato revela uma característica adotada pelo emprego de JPA: _configuração mínima_. Naturalmente, nem sempre isso será suficiente e, nestes casos, o desenvolvedor deverá intervir. Não é o caso, contudo, para o exemplo.
 
-A anotação *@Entity* é empregada para indicar que a classe em questão é uma entidade (_EJB entity_). *@Id* e *@!GeneratedValue* indicam que a propriedade em questão, *id*, será empregada como chave na tabela onde instâncias da classe Pessoa forem persistidas. Em particular, o valor desta chave será automaticamente gerado. A outra diferença é a existência do construtor padrão (sem argumentos). Este construtor é obrigatório. Tal construtor será empregado pelo _persistence provider_ para a criação de instâncias que forem recuperadas do SGBD. 
-
-Para este simples exemplo, as poucas modificações comentadas acima são suficientes. 
+As únicas anotações empregadas foram as mesmas do exemplo anterior, ou seja, *@Entity*, *@Id* e *@!GeneratedValue*. Por conseguinte, não são comentadas novamente.
 
 === Compilar a classe mapeada ===
-Convém ressaltar que várias bibliotecas são necessárias para a compilação do código acima. Por exemplo, a anotação _javax.persistence.Entity_ é fornecida no arquivo *ejb3-persistence.jar*. Este arquivo jar é fornecido pelo Hibernate (_persistence provider_ empregado nestes exemplos). Em particular, o que é conhecido por Hibernate Annotations inclui este arquivo jar. Execute o alvo abaixo
+A compilação também não sofre alterações. 
 
 {{{
 ant compile
 }}}
 
-na linha de comandos. Se o arquivo *build.xml* estiver devidamente configurado para as bibliotecas necessárias, a compilação será executada sem problemas.
-
 === Iniciar o SGBD ===
-É preciso ter um SGBD disponível para persistir objetos. Neste caso é empregado o HSQLDB. Para iniciá-lo, na linha de comandos, execute 
+Para iniciar o SGBD precisamos do comando abaixo. 
 
 {{{
 ant db-start
 }}}
 
-Este comando deve ser executado do diretório onde se encontra o arquivo *build.xml*. Este arquivo é fornecido juntamente com todos os demais necessários para a execução deste exemplo no link fornecido no início desta página.
+Convém ressaltar que cada SGBD possui modo próprio para iniciá-lo. O comando acima executa todas as operações necessários para o HSQLDB. Consulte o arquivo *build.xml* para detalhes.
 
-Não há nenhum passo de mágica. Embora o HSQLDB seja simples, várias operações estão encapsuladas no comando acima. Caso empregue outro SGBD, lembre-se de que, além de simplesmente iniciar o SGBD, uma base de dados terá que ser criada, um usuário com a devida permissão e eventualmente outras operações. Administração de um SGBD, contudo, está bem além do escopo deste exemplo. 
-
-=== Criar o esquema no SGBD ===
-Novamente será empregada a ferramenta Ant e a configuração fornecida no arquivo *build.xml*. O comando a ser executado é
+= Criar o esquema no SGBD =
 
 {{{
 ant schema
 }}}
 
-Isto criará o esquema obtido do mapeamento anteriormente realizado. Após esta operação, o esquema encontra-se disponível no SGBD (na base também criada no passo anterior). O comando acima, portanto, encapsula duas operações principais: a definição do esquema a partir do mapeamento realizado e, posteriormente, a criação deste esquema na base de dados criada no SGBD. Novamente, há muitos detalhes omitidos, mas que não comprometem o entendimento do processo. 
-
-Você poderá verificar se esta operação foi realizada satisfatoriamente por meio de um cliente do SGBD. Para tal, neste exemplo, basta executar o comando abaixo
+Para verificar a criação do esquema, comando acima, pode ser executado um cliente com acesso à base de dados em questão, conforme abaixo.
 
 {{{
 ant db-client
 }}}
 
-Este comando iniciará o cliente padrão do HSQLDB já para a base também criada. Em um outro SGBD, após iniciar o cliente, será necessário localizar a base de interesse e efetuar a conexão correspondente, onde provavelmente será requisitado um usuário devidamente autorizado. Novamente, todas estas ações foram realizadas pelo comando acima, embora afastadas da visão do usuário. 
 
-=== Criar um programa que requisita serviços oferecidos pela JPA API ===
-
-O programa abaixo faz uso da JPA API. É por meio desta API que aplicações em Java se comunicam com o _persistence provider_ para requisitar, explicitamente, a criação, recuperação, remoção e outros serviços de persistência. 
+= Criar um programa que requisita serviços oferecidos pela JPA API =
+O programa abaixo mantém a mesma simplicidade do exemplo anterior. Contudo, duas linhas foram acrescentadas para fornecer detalhes pertinentes às propriedades *rua* e *numero*.
 
 {{{
 package um;
@@ -133,7 +126,9 @@ public class PessoaAplicacaoJpa {
 	EntityTransaction tx = em.getTransaction();
 	tx.begin();
 		
-	Pessoa p = new Pessoa("Pedro Silva Souza da Silva");
+	Pessoa p = new Pessoa("Outro nome próprio");
+        p.setRua("Rua das Camélias");
+        p.setNumero(321);
 		
 	em.persist(p);
 	tx.commit();
@@ -143,12 +138,9 @@ public class PessoaAplicacaoJpa {
 
 }}}
 
-No exemplo acima é fornecido o mínimo para requisitar o acesso a um gerenciador de entidades (_persistence provider_) e a criação de uma transação no interior da qual uma instância da classe Pessoa é persistida. Observe que não há, da perspectiva deste código, nenhuma dependência de um _persistence provider_ específico. Por exemplo, não há nenhuma dependência para o Hibernate (ferramenta empregada). A configuração de qual ferramenta será empregada é fornecida no arquivo *persistence.xml*, contido no diretório *META-INF*.
 
-=== Configurar o persistence provider ===
-Se o programa acima for simplesmente executado, nenhum resultado satisfatório poderá ser observado. Conforme comentado acima, é preciso configurar o _persistence provider_ a ser empregado, pois o programa acima é independente de quem de fato executará os serviços requisitados. 
-
-A configuração é fornecida na forma de um documento XML, *persistence.xml*, necessariamente com este nome e localizado no diretório *META-INF*. Por meio deste arquivo várias informações são fornecidas, inclusive o nome da unidade de persistência, neste caso, *jpaUm*. Observe que este identificador é exatamente aquele fornecido ao método _Persistence.createEntityManagerFactory()_. Abaixo segue o arquivo *persistence.xml* para este exemplo, contendo várias outras informações além do nome da unidade de persistência "irrelevantes" para os propósitos deste exemplo.
+= Configurar o persistence provider =
+A configuração do _persistence provider_ é modificado em apenas uma informação: o identificador da unidade de persistência. Neste caso, foi substituído o valor anterior "jpaUm" por "jpaDois". Nenhuma outra alteração foi realizada. Observe que exemplos posteriores irão explorar esta configuração em detalhes. 
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
@@ -182,14 +174,13 @@ A configuração é fornecida na forma de um documento XML, *persistence.xml*, n
 </persistence>
 }}}
 
-===Compilar e executar o programa criado no passo anterior===
-A compilação foi indicada acima e o comando é repetido abaixo.
+=Compilar e executar o programa criado no passo anterior=
 
 {{{
 ant compile
 }}}
 
-Tanto a compilação (acima) quanto a execução (abaixo) exigem a correta configuração de propriedades fornecidas no arquivo *build.xml*. Para execução encontra-se disponível o alvo *run*. A classe a ser executada é fornecida pelo argumento *classe*. A execução da classe fornecida acima exige o seguinte comando:
+O comando para a execução da classe que usufrui da API também é a mesma:
 
 {{{
 ant run -Dclasse=um.PessoaAplicacaoJpa
@@ -197,20 +188,12 @@ ant run -Dclasse=um.PessoaAplicacaoJpa
 
 Após a execução deste comando, uma instância adicional deve estar disponível no SGBD. A execução da consulta _select * from pessoa_ por meio de um cliente do SGBD poderá indicar que, de fato, uma instância adicional foi inserida no SGBD.
 
-*Execução a partir do ambiente Eclipse*. Caso execute o programa acima de um ambiente como o Eclipse, certifique-se de acrescentar ao classpath do comando de execução o diretório *etc*. É neste diretório que a unidade de persistência *jpaUm* está definida. Lembre-se que esta configuração é fornecida pelo arquivo *persistence.xml*, fornecido no diretório *META-INF*. É o diretório *META-INF* que deve estar no classpath para a execução satisfatória. Neste caso, o classpath deverá conter o diretório *etc*. 
+*Execução a partir do ambiente Eclipse*. Não se esqueça de incluir no _classpath_ o diretório *etc*, pois é no _classpath_ que será procurado o diretório *META-INF*, empregado para a configuração do _persistence provider_. 
 
 = Visão geral de todos os artefatos empregados =
-Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaUm/]. Incluem:
-
- * _persistence.xml_. Arquivo de configuração do fornecedor de persistência. Neste exemplo foi empregado o Hibernate.
- * _build.xml_. Arquivo empregado pela ferramenta Ant para a execução de várias atividades repetitivas, por exemplo, iniciar SGBD, iniciar cliente do SGBD, compilar e outras.
- * _leiame.txt_. Breve descrição do exemplo.
- * _etc_. Diretório contendo o diretório _META-INF_ e configuração de log para uso do Log4j. O diretório _META-INF_ é empregado para conter arquivos próprios para a configuração de soluções que fazem uso de JPA. O arquivo _persistence.xml_ é fornecido no diretório _META-INF_.
- * _sr_. Diretório contendo fontes do exemplo.
- * _test_. Diretório contendo fontes de testes para o exemplo. Neste caso, não há testes e, portanto, este diretório encontra-se vazio.
- * _Configuração de projeto Eclipse_ (.project e .classpath). Projeto Eclipse correspondente ao exemplo.
+Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDois/]. Os artefatos são rigorosamente os mesmos.
 
 = Considerações finais = 
-O exemplo acima é simples. Os objetivos incluem: (a) fornecer uma visão geral do processo envolvido no emprego de JPA; (b) verificar a instalação/configuração de ferramentas necessárias para o emprego da JPA usando o Hibernate e (c) ambientação inicial com tais ferramentas. 
+O exemplo acima também é simples. O objetivo foi reforçar um processo comum para a persistência empregando JPA, aumentar a familiaridade com as ferramentas empregadas e, especialmente, ressaltar que o emprego de JPA tenta ser tão menos intrusivo quanto possível. Este último item é claro ao observar que o acréscimo de duas novas propriedades não exigiram que o mapeamento fosse alterado. Naturalmente, isto só foi possível porque o padrão oferecido pelo JPA é suficiente, para este caso.  
 
 Não deixe de consultar outros exemplos da [http://code.google.com/p/exemplos/wiki/ejbPersistence série] sobre persistência empregando JPA.

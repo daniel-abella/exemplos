@@ -1,4 +1,4 @@
-#summary Aplicação sem persistência (Fábio Nogueira de Lucena)
+#summary Aplicação sem persistência. Uma instância é criada e simplesmente "abandonada" ao final da execução da aplicação. (Fábio Nogueira de Lucena)
 
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaZero/]

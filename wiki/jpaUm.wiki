@@ -105,7 +105,7 @@ Este comando iniciará o cliente padrão do HSQLDB já para a base também criad
 
 === Criar e executar um programa que requisita a persistência de instância da classe mapeada ===
 
-O programa abaixo faz uso da JPA API. É por meio desta API que aplicações em Java se comunicam com o _persistence provider_ para requisitar, explicitamente, a criação, recuperação, remoção e outros serviços. 
+O programa abaixo faz uso da JPA API. É por meio desta API que aplicações em Java se comunicam com o _persistence provider_ para requisitar, explicitamente, a criação, recuperação, remoção e outros serviços de persistência. 
 
 {{{
 package um;
@@ -132,7 +132,7 @@ public class PessoaAplicacaoJpa {
 
 }}}
 
-No exemplo acima é fornecido o mínimo para requisitar o acesso a um gerenciador de entidades e a criação de uma transação no interior da qual uma instância de Pessoa é persistida. 
+No exemplo acima é fornecido o mínimo para requisitar o acesso a um gerenciador de entidades (_persistence provider_) e a criação de uma transação no interior da qual uma instância da classe Pessoa é persistida. Observe que não há, da perspectiva deste código, nenhuma dependência de um _persistence provider_ específico. Por exemplo, não há nenhuma dependência para o Hibernate (ferramenta empregada). A configuração de qual ferramenta será empregada é fornecida no arquivo *orm.xml*, contido no diretório *META-INF*.
 
 Após executar o programa acima, verifique no SGBD (por meio de um cliente), a existência de um registro correspondente à instância persistida. 
 

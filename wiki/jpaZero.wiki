@@ -44,3 +44,7 @@ public class PessoaApplicacao {
 Observe que após exibido o nome da pessoa cuja instância é criada na primeira linha, segue a atribuição de *null* para a única referência do objeto criado. Em conseqüência, a partir desta atribuição, não mais é possível recuperar a instância que acabou de ser criada. É possível, em conseqüência, que o _garbage collector_ simplesmente remova o objeto correspondente da memória. Mesmo que isto não ocorra é certa a impossibilidade de recuperar este objeto, pois a aplicação é terminada logo em seguida e, desta forma, estará perdido para sempre o objeto recém-criado. 
 
 Em Java, se um objeto deve persistir entre execuções de uma aplicação, então este deve ser explicitamente armazenado em meio estável como disco, possivelmente por meio de um arquivo ou registro em banco de dados, entre outras opções. 
+
+= Considerações finais = 
+
+Não deixe de consultar outros exemplos da [http://code.google.com/p/exemplos/wiki/ejbPersistence série] sobre persistência empregando JPA.

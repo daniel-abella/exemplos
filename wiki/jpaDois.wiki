@@ -121,7 +121,7 @@ import javax.persistence.Persistence;
 
 public class PessoaAplicacaoJpa {
     public static void main(String[] args) {
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaUm");
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaDois");
 	EntityManager em = emf.createEntityManager();
 	EntityTransaction tx = em.getTransaction();
 	tx.begin();

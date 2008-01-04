@@ -1,0 +1,5 @@
+jpaDois
+Passos necessários para persistir instâncias de uma classe simples. Estende classe de exemplo anterior com outros atributos.
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDois/

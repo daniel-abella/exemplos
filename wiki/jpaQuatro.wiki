@@ -84,7 +84,7 @@ public class Pessoa {
     // Métodos get/set omitidos para endereco (por simplicidade)
 }
 }}}
-A anotação *@OneToOne* indica que se tratamente de uma mapeamento 1:1. Existem várias outras formas de mapeamento. A classe Endereco também deverá ser mapeada. Na opção empregada neste exemplo, ambas as classes serão mapeadas em tabelas próprias. A versão atualizada de Endereco com o mapeamento correspondente é fornecida abaixo.
+A anotação *@!OneToOne* indica que se tratamente de uma mapeamento 1:1. Existem várias outras formas de mapeamento. A classe Endereco também deverá ser mapeada. Na opção empregada neste exemplo, ambas as classes serão mapeadas em tabelas próprias. A versão atualizada de Endereco com o mapeamento correspondente é fornecida abaixo.
 
 {{{
 package quatro;

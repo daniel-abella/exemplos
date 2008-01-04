@@ -77,8 +77,9 @@ public class Pessoa {
 	
     public Pessoa() {}
 	
-    public Pessoa(String nome) {
+    public Pessoa(String nome, Endereco endereco) {
 	this.nome = nome;
+        this.endereco = endereco;
     }
 	
     public String toString() {
@@ -89,30 +90,29 @@ public class Pessoa {
 }
 }}}
 
-Observe que este mapeamento é exatamente o mesmo mapeamento do exemplo [http://code.google.com/p/exemplos/wiki/jpaUm anterior], onde tínhamos apenas as propriedades *id* e *nome*. Este fato revela uma característica adotada pelo emprego de JPA: _configuração mínima_. Naturalmente, nem sempre isso será suficiente e, nestes casos, o desenvolvedor deverá intervir. Não é o caso, contudo, para o exemplo.
+As anotações *@Entity*, *@Id* e *@!GeneratedValue* já são conhecidas. Respectivamente, estabelece que se trata de uma entidade (exige a criação de uma tabela correspondente), indica qual a propriedade a ser empregada como chave e, por último, o mecanismo empregado para a geração das chaves (neste caso, a geração das chaves será realizada pelo _persistence provider_). O que tem de novo? A anotação *@Embedded*.
 
-As únicas anotações empregadas foram as mesmas do exemplo anterior, ou seja, *@Entity*, *@Id* e *@!GeneratedValue*. Por conseguinte, não são comentadas novamente.
+A anotação *@Embedded* indica que os atributos da propriedade indicada deverão ser registrados na mesma tabela da entidade em questão. Ou seja, neste caso, os atributos da classe Endereco deverão ser registrados na mesma tabela que irá persistir instâncias de Pessoa. Não haverá, portanto, uma tabela para armazenar instâncias de Endereco, que nem mesmo possui um identificador único, conforme pode ser observado. 
 
 = Compilar a classe mapeada =
-A compilação também não sofre alterações. 
-
 {{{
 ant compile
 }}}
 
 = Iniciar o SGBD =
-Para iniciar o SGBD precisamos do comando abaixo. 
-
 {{{
 ant db-start
 }}}
 
-Convém ressaltar que cada SGBD possui modo próprio para iniciá-lo. O comando acima executa todas as operações necessários para o HSQLDB. Consulte o arquivo *build.xml* para detalhes.
-
 = Criar o esquema no SGBD =
-
 {{{
 ant schema
+}}}
+
+Também é possível observar, na saída padrão, o esquema correspondente ao mapeamento realizado por meio do alvo *show*, conforme indicado abaixo. Neste caso, nenhuma alteração é efetuada no SGBD, ao contrário do comando anterior.
+
+{{{
+ant show
 }}}
 
 Para verificar a criação do esquema, comando acima, pode ser executado um cliente com acesso à base de dados em questão, conforme abaixo.
@@ -123,7 +123,7 @@ ant db-client
 
 
 = Criar um programa que requisita serviços oferecidos pela JPA API =
-O programa abaixo mantém a mesma simplicidade do exemplo anterior. Contudo, duas linhas foram acrescentadas para fornecer detalhes pertinentes às propriedades *rua* e *numero*.
+O código abaixo cria uma transação no interior da qual uma instância de Endereco é associada à instância de Pessoa. Logo em seguida é requisitada a persistência da instância de Pessoa. Se executado de forma satisfatória, o programa abaixo insere um registro na tabela Pessoa no SGBD empregado. 
 
 {{{
 package dois;
@@ -135,14 +135,13 @@ import javax.persistence.Persistence;
 
 public class PessoaAplicacaoJpa {
     public static void main(String[] args) {
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaDois");
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaTres");
 	EntityManager em = emf.createEntityManager();
 	EntityTransaction tx = em.getTransaction();
 	tx.begin();
 		
-	Pessoa p = new Pessoa("Outro nome próprio");
-        p.setRua("Rua das Camélias");
-        p.setNumero(321);
+        Endereco endereco = new Endereco("Rua das Camélias", 321);
+	Pessoa p = new Pessoa("Outro nome próprio", endereco);
 		
 	em.persist(p);
 	tx.commit();
@@ -154,7 +153,7 @@ public class PessoaAplicacaoJpa {
 
 
 = Configurar o persistence provider =
-A configuração do _persistence provider_ é modificado em apenas uma informação: o identificador da unidade de persistência. Neste caso, foi substituído o valor anterior "jpaUm" por "jpaDois". Nenhuma outra alteração foi realizada. Observe que exemplos posteriores irão explorar esta configuração em detalhes. 
+À semelhança dos exemplos anteriores, a única alteração é o nome da unidade de persistência. Para este exemplo é empregado "jpaTres". 
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
@@ -163,7 +162,7 @@ A configuração do _persistence provider_ é modificado em apenas uma informaç
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
 		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 
-	<persistence-unit name="jpaDois">
+	<persistence-unit name="jpaTres">
 		<description>
 			Exemplo simples de persistência usando JPA. 
 		</description>
@@ -200,14 +199,12 @@ O comando para a execução da classe que usufrui da API também é a mesma:
 ant run -Dclasse=dois.PessoaAplicacaoJpa
 }}}
 
-Após a execução deste comando, uma instância adicional deve estar disponível no SGBD. A execução da consulta _select * from pessoa_ por meio de um cliente do SGBD poderá indicar que, de fato, uma instância adicional foi inserida no SGBD.
-
-*Execução a partir do ambiente Eclipse*. Não se esqueça de incluir no _classpath_ o diretório *etc*, pois é no _classpath_ que será procurado o diretório *META-INF*, empregado para a configuração do _persistence provider_. 
-
 = Visão geral de todos os artefatos empregados =
-Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDois/]. O conteúdo dos artefatos também é o mesmo, exceto para as mudanças identificadas acima.
+Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaTres/].
 
 = Considerações finais = 
-O exemplo acima também é simples. O objetivo foi reforçar um processo comum para a persistência empregando JPA, aumentar a familiaridade com as ferramentas empregadas e, especialmente, ressaltar que o emprego de JPA tenta ser tão menos intrusivo quanto possível. Este último item é claro ao observar que o acréscimo de duas novas propriedades não exigiram que o mapeamento fosse alterado. Naturalmente, isto só foi possível porque o padrão oferecido pelo JPA é suficiente, para este caso.  
+A persistência empregando JPA é facilitada de várias formas. Até agora, por exemplo, não foi exigido do programador o conhecimento de SQL, por exemplo. Também deve ser acrescentado que o programador também não teve o laborioso esforço de mapear propriedades de um objeto em colunas de uma tabela. Tudo isto foi realizado pelo _persistence provider_. Neste exemplo, novamente, foi empregado o Hibernate, embora existam vários outros. 
+
+A diferença deste exemplo para os anteriores está na forma de mapear a referência *endereco* na classe Pessoa. Neste caso, as propriedades de um objeto de Endereco foram embutidos na mesma tabela empregada para registrar demais propriedades de uma Pessoa. Isto é mapeado pelo emprego da anotação *@Embedded*, conforme ilustrado. 
 
 Não deixe de consultar outros exemplos da [http://code.google.com/p/exemplos/wiki/ejbPersistence série] sobre persistência empregando JPA.

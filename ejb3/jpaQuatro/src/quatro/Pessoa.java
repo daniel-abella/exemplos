@@ -1,6 +1,5 @@
 package quatro;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,11 +13,10 @@ public class Pessoa {
 
 	private String nome;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	private Endereco endereco;
 
-	public Pessoa() {
-	}
+	public Pessoa() {}
 
 	public Pessoa(String nome, Endereco endereco) {
 		this.nome = nome;

@@ -12,9 +12,11 @@ public class PessoaAplicacaoJpa {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		
-		Endereco endereco = new Endereco("Rua das Camélias", 321);		
-		Pessoa p = new Pessoa("Outro nome próprio", endereco);		
-		em.persist(p);
+		Endereco endereco = new Endereco("Rua das Camélias", 321);
+		em.persist(endereco);
+		
+		Pessoa pessoa = new Pessoa("Outro nome próprio", endereco);		
+		em.persist(pessoa);
 			
 		tx.commit();
 		em.close();

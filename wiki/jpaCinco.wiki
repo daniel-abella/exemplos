@@ -1,4 +1,4 @@
-#summary Duas classes. Para cada instância de Pessoa há uma referência para uma instância de Endereco que será persistida em sua própria tabela. (Fábio Nogueira de Lucena)
+#summary Uma pessoa pode possuir vários endereços de referência. (Fábio Nogueira de Lucena)
 
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaCinco/]
@@ -7,32 +7,18 @@
 Exemplos: [http://code.google.com/p/exemplos/wiki/jpaQuatro anterior] e [http://code.google.com/p/exemplos/wiki/jpaSeis próximo].
 
 = Introdução =
+Neste cenário uma instância de Pessoa poderá estar relacionada com zero ou mais instâncias de Endereco. É deixado para o leitor a identificação de contexto onde isto se aplica. Caso não o encontre, não se preocupe, o objetivo aqui é ilustrar recursos básicos de JPA e estar preparado para utilizado quando for chegado o momento.
 
-No corrente cenário, a classe Endereco é fornecida abaixo.
-
-{{{
-package quatro;
-
-public class Endereco {
-    private String rua;
-    private int numero;
-	
-    public Endereco(String rua, int numero) {
-	super();
-	this.rua = rua;
-	this.numero = numero;
-    }
-}
-}}}
-
-Conforme se observa, dada uma instância de Endereco não é possível recuperar qual a instância de Pessoa que referencia a data instância de Endereco. A classe Pessoa, por outro lado, está diretamente associada a uma instância de Endereco, conforme abaixo.
+A classe Pessoa é ilustrada abaixo.
 
 {{{
-package quatro;
+package cinco;
+
+import java.util.List;
 
 public class Pessoa {
     private String nome;
-    private Endereco endereco;
+    private List<Endereco> enderecos;
 
     // Métodos set/get para endereco omitidos (por simplicidade)
 

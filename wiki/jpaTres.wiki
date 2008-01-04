@@ -38,18 +38,13 @@ public class Pessoa {
     private String nome;
     private Endereco endereco;
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
+    // Métodos set/get para endereco omitidos (por simplicidade)
 
     public Pessoa() {}
 
-    public Pessoa(String nome) {
+    public Pessoa(String nome, Endereco endereco) {
 	this.nome = nome;
+        this.endereco = endereco;
     }
 	
     public String toString() {

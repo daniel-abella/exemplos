@@ -1,0 +1,5 @@
+jpaTres
+Persiste instância de uma classe que referência uma outra instância (de outra classe). A persistência é efetuada em uma única tabela.
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaTres/

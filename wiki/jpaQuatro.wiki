@@ -8,10 +8,10 @@ Exemplos: [http://code.google.com/p/exemplos/wiki/jpaTres anterior] e [http://co
 
 = Introdução =
 
-Em exemplo anterior, as informações pertinentes ao endereço de uma pessoa eram fornecidos na própria classe Pessoa. Para um cenário simples aquele modelo pode ser suficiente. Atualmente, contudo, endereço por si só já representa complexidade e questões que merecem uma classe específica, conforme aquela abaixo. Observe que foram fornecidos apenas duas únicas propriedades, contudo, agora, um modelo bem mais complexo de endereço contendo estado, cep e outras informações pode ser desenvolvido sem comprometer a coesão da classe Pessoa.
+No corrente cenário, a classe Endereco é fornecida abaixo.
 
 {{{
-package tres;
+package quatro;
 
 public class Endereco {
     private String rua;
@@ -28,19 +28,16 @@ public class Endereco {
 }
 }}}
 
-O acréscimo da classe Endereco permite definir a classe Pessoa conforme abaixo. Note que endereço agora é obtido por meio de uma referência para a classe acima.
+Conforme se observa, dada uma instância de Endereco não é possível recuperar qual a instância de Pessoa que referencia a data instância de Endereco. A classe Pessoa, por outro lado, está diretamente associada a uma instância de Endereco, conforme abaixo.
 
 {{{
-package tres;
+package quatro;
 
 public class Pessoa {
-    private Long id;
     private String nome;
     private Endereco endereco;
 
     // Métodos set/get para endereco omitidos (por simplicidade)
-
-    public Pessoa() {}
 
     public Pessoa(String nome, Endereco endereco) {
 	this.nome = nome;
@@ -53,13 +50,12 @@ public class Pessoa {
 }
 }}}
 
-Conforme as classes acima, uma instância de Pessoa faz uso de um referência para uma instância de Endereco. Neste caso, como será realizado o mapeamento que dirá, ao _persistence provider_, como persistir instâncias de Pessoa?
 
-= Mapear a classe em questão =
-A classe acima, após modificada para conter o mapeamento necessário, é exibida abaixo.
+= Mapeamento =
+O mapeamento 1:1 será empregado de forma unidirecional, ou seja, de Pessoa para Endereco. Uma possibilidade é ilustrada abaixo.
 
 {{{
-package tres;
+package quatro;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -67,14 +63,16 @@ import javax.persistence.Id;
 
 @Entity
 public class Pessoa {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 	
     private String nome;
 
-    @Embedded
+    @OneToOne
     private Endereco endereco;
 	
+    // Exigido pela JPA
     public Pessoa() {}
 	
     public Pessoa(String nome, Endereco endereco) {
@@ -89,10 +87,36 @@ public class Pessoa {
     // Métodos get/set omitidos para endereco (por simplicidade)
 }
 }}}
+A anotação *@OneToOne* indica que se tratamente de uma mapeamento 1:1. Existem várias outras formas de mapeamento. A classe Endereco também deverá ser mapeada. Na opção empregada neste exemplo, ambas as classes serão mapeadas em tabelas próprias. A versão atualizada de Endereco com o mapeamento correspondente é fornecida abaixo.
 
-As anotações *@Entity*, *@Id* e *@!GeneratedValue* já são conhecidas. Respectivamente, estabelece que se trata de uma entidade (exige a criação de uma tabela correspondente), indica qual a propriedade a ser empregada como chave e, por último, o mecanismo empregado para a geração das chaves (neste caso, a geração das chaves será realizada pelo _persistence provider_). O que tem de novo? A anotação *@Embedded*.
+{{{
+package quatro;
 
-A anotação *@Embedded* indica que os atributos da propriedade indicada deverão ser registrados na mesma tabela da entidade em questão. Ou seja, neste caso, os atributos da classe Endereco deverão ser registrados na mesma tabela que irá persistir instâncias de Pessoa. Não haverá, portanto, uma tabela para armazenar instâncias de Endereco, que nem mesmo possui um identificador único, conforme pode ser observado. 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Endereco {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    private String rua;
+    private int numero;
+
+    // Construtor default é obrigatório
+    public Endereco() {}
+
+    public Endereco(String rua, int numero) {
+	super();
+	this.rua = rua;
+	this.numero = numero;
+    }
+}
+}}}
+
+Não há nenhuma "surpresa" neste mapeamento. Uma instância de Endereco será persistida em sua própria tabela. Observe, novamente, a obrigatoriedade do construtor default, explicitamente fornecido.
 
 = Compilar a classe mapeada =
 {{{

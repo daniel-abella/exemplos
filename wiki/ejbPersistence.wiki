@@ -40,6 +40,6 @@ A sugestão é que siga a lista abaixo na ordem em que aparece.
  * Instância de Pessoa é persistida ([jpaUm sem endereço])
  * Instância de Pessoa é persistida com endereço ([jpaDois por atributos])
  * Pessoa e Endereco ([jpaTres por classe embutida])
- * Pessoa  e Endereco ([jpaQuatro associação simples])
+ * Pessoa  e Endereco ([jpaQuatro associação simples (_!OneToOne_)])
  * Pessoa e várias instâncias de Endereco ([jpaCinco associação para lista])
  * PessoaFisica e PessoaJuridica estendem Pessoa ([jpaSeis herança])

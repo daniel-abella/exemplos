@@ -1,2 +1,5 @@
-jpaUm
-Passos necess√°rios para persistir inst√¢ncias de uma classe simples.
+jpaDois
+Passos necess·rios para persistir inst‚ncias de uma classe simples. Estende classe de exemplo anterior com outros atributos.
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDois/

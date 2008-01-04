@@ -36,10 +36,10 @@ Abaixo segue uma seqüência de pequenos exemplos, comentados, que permitem, pau
 
 A sugestão é que siga a lista abaixo na ordem em que aparece. 
 
- 1 Exemplo da classe Pessoa ([jpaZero sem persistência])
- 1 Instância de Pessoa é persistida ([jpaUm sem endereço])
- 1 Instância de Pessoa é persistida com endereço ([jpaDois por atributos])
- 1 Pessoa e Endereco ([jpaTres por classe embutida])
- 1 Pessoa  e Endereco ([jpaQuatro associação simples])
- 1 Pessoa e várias instâncias de Endereco ([jpaCinco associação para lista])
- 1 PessoaFisica e PessoaJuridica estendem Pessoa ([jpaSeis herança])
+ * Exemplo da classe Pessoa ([jpaZero sem persistência])
+ * Instância de Pessoa é persistida ([jpaUm sem endereço])
+ * Instância de Pessoa é persistida com endereço ([jpaDois por atributos])
+ * Pessoa e Endereco ([jpaTres por classe embutida])
+ * Pessoa  e Endereco ([jpaQuatro associação simples])
+ * Pessoa e várias instâncias de Endereco ([jpaCinco associação para lista])
+ * PessoaFisica e PessoaJuridica estendem Pessoa ([jpaSeis herança])

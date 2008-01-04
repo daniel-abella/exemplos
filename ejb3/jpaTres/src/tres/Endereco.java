@@ -12,5 +12,4 @@ public class Endereco {
 		this.rua = rua;
 		this.numero = numero;
 	}
-
 }

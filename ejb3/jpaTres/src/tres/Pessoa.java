@@ -14,19 +14,12 @@ public class Pessoa {
 	
 	@Embedded
 	private Endereco endereco;	
-	
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
 
 	public Pessoa() {}
 	
-	public Pessoa(String nome) {
+	public Pessoa(String nome, Endereco endereco) {
 		this.nome = nome;
+		this.endereco = endereco;
 	}
 	
 	public String toString() {

@@ -13,9 +13,8 @@ public class PessoaAplicacaoJpa {
 		tx.begin();
 		
 		
-		Pessoa p = new Pessoa("Outro nome próprio");
 		Endereco endereco = new Endereco("Rua das Camélias", 321);
-		p.setEndereco(endereco);
+		Pessoa p = new Pessoa("Outro nome próprio", endereco);
 		
 		em.persist(p);
 		tx.commit();

@@ -102,7 +102,7 @@ public class Endereco {
     private String rua;
     private int numero;
 
-    // Construtor default é obrigatório
+    // Construtor default é obrigatório (exigência da JPA)
     public Endereco() {}
 
     public Endereco(String rua, int numero) {

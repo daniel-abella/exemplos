@@ -144,6 +144,8 @@ ant db-client
 = Criar um programa que requisita serviços oferecidos pela JPA API =
 Enquanto o conteúdo precedente destaca-se pelo emprego da anotação *@!OneToOne*, a aplicação que persiste uma instância de Pessoa e sua respectiva instância de Endereco apresenta diferença digna de nota. 
 
+Observe que agora é necessário requisitar a persistência de duas instâncias. Uma de Endereco e outra de Pessoa. Observe ainda que a ordem empregada é obrigatória. Primeiro é persistida a instância Endereco e, em seguida, a instância de Pessoa. Esta ordem rígida decorre do fato do mapeamento ser unidirecional. Uma instância de Pessoa irá referenciar a instância de Endereco correspondente e não o inverso. Se a instância de Endereco não for persistida, então não há como persistir a instância de Pessoa, pois existe uma relação 1:1 rígida de Pessoa para Endereco.
+
 {{{
 package quatro;
 
@@ -174,7 +176,7 @@ public class PessoaAplicacaoJpa {
 
 
 = Configurar o persistence provider =
-À semelhança dos exemplos anteriores, a única alteração é o nome da unidade de persistência. Para este exemplo é empregado "jpaTres". 
+A unidade de persistência é "jpaQuatro" e as classes _quatro.Pessoa_ e _quatro.Endereco_ foram explicitamente indicadas.
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
@@ -189,7 +191,8 @@ public class PessoaAplicacaoJpa {
 		</description>
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>um.Pessoa</class>
+		<class>quatro.Pessoa</class>
+		<class>quatro.Endereco</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>
@@ -208,24 +211,20 @@ public class PessoaAplicacaoJpa {
 </persistence>
 }}}
 
-=Compilar e executar o programa criado no passo anterior=
-
+= Compilar o código =
 {{{
 ant compile
 }}}
 
-O comando para a execução da classe que usufrui da API também é a mesma:
-
+= Executar a aplicação = 
 {{{
-ant run -Dclasse=tres.PessoaAplicacaoJpa
+ant run -Dclasse=quatro.PessoaAplicacaoJpa
 }}}
 
 = Visão geral de todos os artefatos empregados =
-Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaTres/].
+Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaQuatro/].
 
 = Considerações finais = 
-A persistência empregando JPA é facilitada de várias formas. Até agora, por exemplo, não foi exigido do programador o conhecimento de SQL, por exemplo. Também deve ser acrescentado que o programador também não teve o laborioso esforço de mapear propriedades de um objeto em colunas de uma tabela. Tudo isto foi realizado pelo _persistence provider_. Neste exemplo, novamente, foi empregado o Hibernate, embora existam vários outros. 
-
-A diferença deste exemplo para os anteriores está na forma de mapear a referência *endereco* na classe Pessoa. Neste caso, as propriedades de um objeto de Endereco foram embutidos na mesma tabela empregada para registrar demais propriedades de uma Pessoa. Isto é mapeado pelo emprego da anotação *@Embedded*, conforme ilustrado. 
+A anotação *@!OneToOne* foi introduzida em cenário onde duas classes são mapeadas para tabelas distintas. Naturalmente, o exemplo poderia ser mapeado de outras formas. O objetivo foi ilustrar este recurso. 
 
 Não deixe de consultar outros exemplos da [http://code.google.com/p/exemplos/wiki/ejbPersistence série] sobre persistência empregando JPA.

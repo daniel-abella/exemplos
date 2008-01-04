@@ -196,7 +196,7 @@ ant compile
 O comando para a execução da classe que usufrui da API também é a mesma:
 
 {{{
-ant run -Dclasse=dois.PessoaAplicacaoJpa
+ant run -Dclasse=tres.PessoaAplicacaoJpa
 }}}
 
 = Visão geral de todos os artefatos empregados =

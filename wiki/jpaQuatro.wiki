@@ -1,4 +1,4 @@
-#summary Duas classes. Instância de Pessoa referencia instância de Endereco. Pessoas e seus endereços são mantidos em tabelas próprias. Uma instância de Pessoa possui uma referência para uma instância de Endereco que será persistida em sua própria tabela. (Fábio Nogueira de Lucena)
+#summary Pessoas e seus endereços são mantidos em tabelas próprias. Uma instância de Pessoa possui uma referência para uma instância de Endereco que será persistida em sua própria tabela. (Fábio Nogueira de Lucena)
 
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaQuatro/]

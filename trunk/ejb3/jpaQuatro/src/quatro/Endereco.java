@@ -14,8 +14,7 @@ public class Endereco {
 	private int numero;
 
 	// Construtor default é obrigatório
-	public Endereco() {
-	}
+	public Endereco() {}
 
 	public Endereco(String rua, int numero) {
 		super();

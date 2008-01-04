@@ -1,4 +1,4 @@
-package quatro;
+package cinco;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

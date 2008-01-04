@@ -1,6 +1,5 @@
-jpaQuatro
-Instâncias de Pessoa são mantidas em tabela distinta daquelas em que instâncias de Endereco são mantidas.
-Toda instância de Pessoa referencia uma instância de Endereco. Mapeamento 1:1.
+jpaCinco
+Uma instância de Pessoa está associada a zero ou mais instâncias de Endereco. Mapeamento 1:N.
 
 Onde obter
-http://exemplos.googlecode.com/svn/trunk/ejb3/jpaQuatro/
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaCinco/

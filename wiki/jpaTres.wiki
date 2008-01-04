@@ -1,4 +1,4 @@
-#summary Duas classes. Instância de Pessoa referencia instância de Endereco. (Fábio Nogueira de Lucena)
+#summary Duas classes. Instância de Pessoa referencia instância de Endereco. Propriedades de Endereco são "embutidas" (embedded) na entidade que faz referência para tal objeto. (Fábio Nogueira de Lucena)
 
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaTres/]

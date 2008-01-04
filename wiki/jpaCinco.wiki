@@ -23,6 +23,10 @@ public class Pessoa {
 
     // Métodos set/get para endereco omitidos (por simplicidade)
 
+    public adicionaEndereco(Endereco endereco) {
+        enderecos.add(endereco);
+    }
+
     public Pessoa(String nome, Endereco endereco) {
 	this.nome = nome;
         this.enderecos = new ArrayList<Endereco>();
@@ -37,10 +41,8 @@ public class Pessoa {
 
 
 = Mapeamento =
-O mapeamento 1:1 será empregado de forma unidirecional, ou seja, de Pessoa para Endereco. Uma possibilidade é ilustrada abaixo.
-
 {{{
-package quatro;
+package cinco;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -54,8 +56,8 @@ public class Pessoa {
 	
     private String nome;
 
-    @OneToOne
-    private Endereco endereco;
+    @OneToMany
+    private List<Endereco> enderecos;
 	
     // Exigido pela JPA
     public Pessoa() {}
@@ -70,38 +72,14 @@ public class Pessoa {
     }
 
     // Métodos get/set omitidos para endereco (por simplicidade)
-}
-}}}
-A anotação *@!OneToOne* indica que se tratamente de uma mapeamento 1:1. Existem várias outras formas de mapeamento. A classe Endereco também deverá ser mapeada. Na opção empregada neste exemplo, ambas as classes serão mapeadas em tabelas próprias. A versão atualizada de Endereco com o mapeamento correspondente é fornecida abaixo.
 
-{{{
-package quatro;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@Entity
-public class Endereco {
-    @Id
-    @GeneratedValue
-    private Long id;
-
-    private String rua;
-    private int numero;
-
-    // Construtor default é obrigatório (exigência da JPA)
-    public Endereco() {}
-
-    public Endereco(String rua, int numero) {
-	super();
-	this.rua = rua;
-	this.numero = numero;
+    public adicionaEndereco(Endereco endereco) {
+        enderecos.add(endereco);
     }
 }
 }}}
 
-Não há nenhuma "surpresa" neste mapeamento. Uma instância de Endereco será persistida em sua própria tabela. Observe, novamente, a obrigatoriedade do construtor default, explicitamente fornecido.
+A anotação *@!OneToMany* indica que *enderecos* é uma coleção. Dada um objeto Pessoa, várias instâncias de Endereco poderão estar associadas por meio desta coleção. Nada mais é necessário. O mapeamento de Endereco é o mesmo do exemplo anterior e não será aqui repetido.
 
 = Compilar o código =
 {{{
@@ -130,12 +108,10 @@ ant db-client
 }}}
 
 = Criar um programa que requisita serviços oferecidos pela JPA API =
-Enquanto o conteúdo precedente destaca-se pelo emprego da anotação *@!OneToOne*, a aplicação que persiste uma instância de Pessoa e sua respectiva instância de Endereco apresenta diferença digna de nota. 
-
-Observe que agora é necessário requisitar a persistência de duas instâncias. Uma de Endereco e outra de Pessoa. Observe ainda que a ordem empregada é obrigatória. Primeiro é persistida a instância Endereco e, em seguida, a instância de Pessoa. Esta ordem rígida decorre do fato do mapeamento ser unidirecional. Uma instância de Pessoa irá referenciar a instância de Endereco correspondente e não o inverso. Se a instância de Endereco não for persistida, então não há como persistir a instância de Pessoa, pois existe uma relação 1:1 rígida de Pessoa para Endereco.
+O programa abaixo cria duas instâncias de Endereco e associa ambas a uma única instância de Pessoa. Após requisitar a persistência explícita de ambas as instâncias de Endereco, a instância de Pessoa é persistida. 
 
 {{{
-package quatro;
+package cinco;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -149,10 +125,14 @@ public class PessoaAplicacaoJpa {
 	EntityTransaction tx = em.getTransaction();
 	tx.begin();
 		
-        Endereco endereco = new Endereco("Rua das Camélias", 321);
-        em.persist(endereco);
+        Endereco end1 = new Endereco("Rua 1", 1);
+        em.persist(end1);
 
-	Pessoa pessoa = new Pessoa("Outro nome próprio", endereco);		
+        Endereco end2 = new Endereco("Rua 2", 2);
+        em.persist(end2);
+
+	Pessoa pessoa = new Pessoa("Outro nome próprio", end1);
+        pessoa.adicionaEndereco(end2);		
 	em.persist(pessoa);
 
 	tx.commit();
@@ -164,7 +144,7 @@ public class PessoaAplicacaoJpa {
 
 
 = Configurar o persistence provider =
-A unidade de persistência é "jpaQuatro" e as classes _quatro.Pessoa_ e _quatro.Endereco_ foram explicitamente indicadas.
+A unidade de persistência é "jpaCinco" e as classes _cinco.Pessoa_ e _cinco.Endereco_ foram explicitamente indicadas.
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
@@ -173,14 +153,14 @@ A unidade de persistência é "jpaQuatro" e as classes _quatro.Pessoa_ e _quatro
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
 		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 
-	<persistence-unit name="jpaQuatro">
+	<persistence-unit name="jpaCinco">
 		<description>
 			Exemplo simples de persistência usando JPA. 
 		</description>
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>quatro.Pessoa</class>
-		<class>quatro.Endereco</class>
+		<class>cinco.Pessoa</class>
+		<class>cinco.Endereco</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>
@@ -206,13 +186,13 @@ ant compile
 
 = Executar a aplicação = 
 {{{
-ant run -Dclasse=quatro.PessoaAplicacaoJpa
+ant run -Dclasse=cinco.PessoaAplicacaoJpa
 }}}
 
 = Visão geral de todos os artefatos empregados =
-Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaQuatro/].
+Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaCinco/].
 
 = Considerações finais = 
-A anotação *@!OneToOne* foi introduzida em cenário onde duas classes são mapeadas para tabelas distintas. Naturalmente, o exemplo poderia ser mapeado de outras formas. O objetivo foi ilustrar este recurso. 
+A anotação *@!OneToMany* foi introduzida em cenário onde duas classes são mapeadas para tabelas distintas. 
 
 Não deixe de consultar outros exemplos da [http://code.google.com/p/exemplos/wiki/ejbPersistence série] sobre persistência empregando JPA.

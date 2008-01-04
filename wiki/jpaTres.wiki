@@ -31,6 +31,8 @@ public class Endereco {
 O acréscimo da classe Endereco permite definir a classe Pessoa conforme abaixo. Note que endereço agora é obtido por meio de uma referência para a classe acima.
 
 {{{
+package tres;
+
 public class Pessoa {
     private Long id;
     private String nome;
@@ -56,25 +58,13 @@ public class Pessoa {
 }
 }}}
 
-Observe que, em relação ao exemplo anterior, foram acrescentadas as propriedades *rua* e *numero*, respectivamente dos tipos _String_ e _int_. 
-
-Já sabemos que para persistir objetos de uma determinada classe os seguintes passos são necessários:
-
- * _Mapear a classe em questão_. Isto significa informar ao _persistence provider_ como cada classe deve ser persistida em uma tabela. 
- * _Compilar a classe mapeada_.
- * _Iniciar o SGBD_. Um SGBD deve estar disponível para uso. 
- * _Criar o esquema no SGBD_. O mapeamento anteriormente realizado define o esquema a ser empregado pelo _persistence provider_ para persistir um objeto da classe mapeada no SGBD empregado. 
- * _Criar um programa que requisita serviços oferecidos pela JPA API_.
- * _Configurar o persistence provider_.
- * _Compilar e executar o programa criado no passo anterior_.
-
-Cada um destes passos é comentado em seção própria abaixo.
+Conforme as classes acima, uma instância de Pessoa faz uso de um referência para uma instância de Endereco. Neste caso, como será realizado o mapeamento que dirá, ao _persistence provider_, como persistir instâncias de Pessoa?
 
 = Mapear a classe em questão =
 A classe acima, após modificada para conter o mapeamento necessário, é exibida abaixo.
 
 {{{
-package dois;
+package tres;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -86,8 +76,9 @@ public class Pessoa {
     private Long id;
 	
     private String nome;
-    private String rua;
-    private int numero;
+
+    @Embedded
+    private Endereco endereco;
 	
     public Pessoa() {}
 	
@@ -99,7 +90,7 @@ public class Pessoa {
 	return nome;
     }
 
-    // Métodos get/set omitidos para rua e numero (por simplicidade)
+    // Métodos get/set omitidos para endereco (por simplicidade)
 }
 }}}
 

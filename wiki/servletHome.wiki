@@ -6,4 +6,4 @@
 
 = Exemplos =
 
- * Ambientação (primeiro [http://exemplos.googlecode.com/svn/trunk/scwcd/exemplo/ exemplo])
+ * Primeiro exemplo ([http://exemplos.googlecode.com/svn/trunk/scwcd/exemplo/])

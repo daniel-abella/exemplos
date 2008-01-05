@@ -2,7 +2,9 @@
 
 = Introdução =
 
+Esta série é comentada por várias seqüências de slides. Uma sugestão é acompanhar os slides e, sempre que necessário, recorrer aos exemplos aqui disponibilizados.
 
+ * Introdução a Servlets ([http://www.slideshare.net/kyrios/servletintroducao])
 
 = Exemplos =
 

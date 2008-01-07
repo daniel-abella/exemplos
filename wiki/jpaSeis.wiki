@@ -19,8 +19,6 @@ public class Pessoa {
 
     public Pessoa(String nome) {
 	this.nome = nome;
-        this.enderecos = new ArrayList<Endereco>();
-        enderecos.add(endereco);
     }
 	
     public String toString() {
@@ -38,14 +36,13 @@ public class PessoaFisica extends Pessoa {
     private String nome;
     private String cpf;
 
-    public Pessoa(String nome) {
-	this.nome = nome;
-        this.enderecos = new ArrayList<Endereco>();
-        enderecos.add(endereco);
+    public Pessoa(String nome, String cpf) {
+        super(nome);
+        this.cpf = cpf;
     }
 	
     public String toString() {
-	return nome + " " + cpf;
+	return super.toString() + " " + cpf;
     }
 
     // Métodos get/set para cpf foram omitidos (por simplicidade)
@@ -56,18 +53,17 @@ A classe !PessoaJuridica acrescenta atributo CNPJ correspondente à empresa em q
 {{{
 package seis;
 
-public class PessoaJuridica {
+public class PessoaJuridica extends Pessoa {
     private String nome;
-    private String cnpj
+    private String cnpj;
 
-    public Pessoa(String nome) {
-	this.nome = nome;
-        this.enderecos = new ArrayList<Endereco>();
-        enderecos.add(endereco);
+    public Pessoa(String nome, String cnpj) {
+        super(nome);
+        this.cnpj = cnpj;
     }
 	
     public String toString() {
-	return nome + " " + cnpj;
+	return super.toString() + " " + cnpj;
     }
     
     // Métodos get/set para cnpj foram omitidos (por simplicidade)
@@ -75,14 +71,21 @@ public class PessoaJuridica {
 }}}
 
 = Mapeamento =
+O mapeamento acrescenta novas anotações para lidar com as possibilidades geradas pelo emprego de herança. Abaixo segue uma delas. 
+
 {{{
 package seis;
 
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="TIPO")
 public class Pessoa {
     @Id
     @GeneratedValue

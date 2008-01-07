@@ -29,6 +29,50 @@ public class Pessoa {
 }
 }}}
 
+Por simplicidade, as classes que herdam de Pessoa, acrescentam um único atributo cada. A classe PessoaFisica, fornecida abaixo, acrescenta atributo correspondente ao CPF da pessoa em questão.
+
+{{{
+package seis;
+
+public class PessoaFisica extends Pessoa {
+    private String nome;
+    private String cpf;
+
+    public Pessoa(String nome) {
+	this.nome = nome;
+        this.enderecos = new ArrayList<Endereco>();
+        enderecos.add(endereco);
+    }
+	
+    public String toString() {
+	return nome + " " + cpf;
+    }
+
+    // Métodos get/set para cpf foram omitidos (por simplicidade)
+}
+}}}
+
+A classe PessoaJuridica acrescenta atributo CNPJ correspondente à empresa em questão.
+{{{
+package seis;
+
+public class PessoaJuridica {
+    private String nome;
+    private String cnpj
+
+    public Pessoa(String nome) {
+	this.nome = nome;
+        this.enderecos = new ArrayList<Endereco>();
+        enderecos.add(endereco);
+    }
+	
+    public String toString() {
+	return nome + " " + cnpj;
+    }
+    
+    // Métodos get/set para cnpj foram omitidos (por simplicidade)
+}
+}}}
 
 = Mapeamento =
 {{{

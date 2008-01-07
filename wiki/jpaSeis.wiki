@@ -1,4 +1,4 @@
-#summary As classes !PessoaFisica e !PessoaJuridica herdam de Pessoa. (Fábio Nogueira de Lucena)
+#summary As classes PessoaFisica e PessoaJuridica herdam de Pessoa. (Fábio Nogueira de Lucena)
 
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaSeis/]

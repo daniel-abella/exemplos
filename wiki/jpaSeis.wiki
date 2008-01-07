@@ -106,7 +106,56 @@ public class Pessoa {
 }
 }}}
 
-A anotação *@!OneToMany* indica que *enderecos* é uma coleção. Dada um objeto Pessoa, várias instâncias de Endereco poderão estar associadas por meio desta coleção. Nada mais é necessário. O mapeamento de Endereco é o mesmo do exemplo anterior e não será aqui repetido.
+A anotação *@Inheritance* estabelece a estratégia a ser empregada. Neste caso, uma única tabela será empregada para registrar toda e qualquer instância derivada de Pessoa. A anotação *@Discrimnator* estabelece como será feita a distinção entre registros armazenados nesta única tabela de tal forma que seja possível estabelecer quais campos foram empregados (um subconjunto dos campos para cada subclasse). 
+
+A classe !PessoaFisica é fornecida abaixo. 
+{{{
+package seis;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("FISICA")
+public class PessoaFisica extends Pessoa {
+    private String cpf;
+	
+    public PessoaFisica(String nome, String cpf) {
+	super(nome);
+	this.cpf = cpf;
+    }
+
+    public String toString() {
+	return super.toString() + " " + cpf;
+    }
+}
+}}}
+
+Observe que também é empregada a anotação *@Entity*. Adicionalmente, a anotação *@DiscriminatorValue* fornece o valor correspondente à entidades desta classe. Dado que todos os objetos derivados de Pessoa serão armazenados em uma única tabela, aquelas instâncias da classe !PessoaFisica terão como valor *FISICA* para o campo *TIPO*.
+
+A classe !PessoaJuridica é similar, conforme abaixo. Neste caso, contudo, observe que o valor *JURIDICA* é empregado, em vez de *FISICA*, para o campo *TIPO*. 
+
+{{{
+package seis;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("JURIDICA")
+public class PessoaJuridica extends Pessoa {
+    private String cnpj;
+	
+    public PessoaJuridica(String nome, String cnpj) {
+	super(nome);
+	this.cnpj = cnpj;
+    }
+	
+    public String toString() {
+	return super.toString() + " " + cnpj;
+    }
+}
+}}}
 
 = Compilar o código =
 {{{

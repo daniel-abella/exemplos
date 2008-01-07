@@ -29,7 +29,7 @@ public class Pessoa {
 }
 }}}
 
-Por simplicidade, as classes que herdam de Pessoa, acrescentam um único atributo cada. A classe PessoaFisica, fornecida abaixo, acrescenta atributo correspondente ao CPF da pessoa em questão.
+Por simplicidade, as classes que herdam de Pessoa, acrescentam um único atributo cada. A classe !PessoaFisica, fornecida abaixo, acrescenta atributo correspondente ao CPF da pessoa em questão.
 
 {{{
 package seis;
@@ -52,7 +52,7 @@ public class PessoaFisica extends Pessoa {
 }
 }}}
 
-A classe PessoaJuridica acrescenta atributo CNPJ correspondente à empresa em questão.
+A classe !PessoaJuridica acrescenta atributo CNPJ correspondente à empresa em questão.
 {{{
 package seis;
 

@@ -1,5 +1,5 @@
-jpaCinco
-Uma instância de Pessoa está associada a zero ou mais instâncias de Endereco. Mapeamento 1:N.
+jpaSeis
+Herança usando JPA
 
 Onde obter
-http://exemplos.googlecode.com/svn/trunk/ejb3/jpaCinco/
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaSeis/

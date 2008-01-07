@@ -1,0 +1,5 @@
+jpaSete
+Definição de campos/atributos a serem persistidos.
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaSete/

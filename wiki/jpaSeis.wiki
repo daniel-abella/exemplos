@@ -131,7 +131,7 @@ public class PessoaFisica extends Pessoa {
 }
 }}}
 
-Observe que também é empregada a anotação *@Entity*. Adicionalmente, a anotação *@DiscriminatorValue* fornece o valor correspondente à entidades desta classe. Dado que todos os objetos derivados de Pessoa serão armazenados em uma única tabela, aquelas instâncias da classe !PessoaFisica terão como valor *FISICA* para o campo *TIPO*.
+Observe que também é empregada a anotação *@Entity*. Adicionalmente, a anotação *@!DiscriminatorValue* fornece o valor correspondente à entidades desta classe. Dado que todos os objetos derivados de Pessoa serão armazenados em uma única tabela, aquelas instâncias da classe !PessoaFisica terão como valor *FISICA* para o campo *TIPO*.
 
 A classe !PessoaJuridica é similar, conforme abaixo. Neste caso, contudo, observe que o valor *JURIDICA* é empregado, em vez de *FISICA*, para o campo *TIPO*. 
 
@@ -265,7 +265,7 @@ ant run -Dclasse=seis.PessoaAplicacaoJpa
 Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaCinco/].
 
 = Considerações finais = 
-Várias anotações foram exercitadas. Em particular, *@Entity*, *@Inheritance*, *@DiscriminatorColumn*, *@DiscriminatorValue*. Em particular, as duas últimas trabalham em sintonia. Enquanto uma estabelece qual coluna irá discernir o tipo de um objeto armazenado, a outra estabelece o valor correspondente. Esta não é, contudo, a única forma de usufruir de persistência de classe derivada.
+Várias anotações foram exercitadas. Em particular, *@Entity*, *@Inheritance*, *@!DiscriminatorColumn*, *@!DiscriminatorValue*. Em particular, as duas últimas trabalham em sintonia. Enquanto uma estabelece qual coluna irá discernir o tipo de um objeto armazenado, a outra estabelece o valor correspondente. Esta não é, contudo, a única forma de usufruir de persistência de classe derivada.
 
 O objetivo desta série de exercícios foi fornecer a ambientação suficiente para que outros tópicos de JPA possam ser observados em profundidade sem ter que fornecer uma extensa documentação pertinente. Caso não se sinta confortável, sugere-se uma revisão dos exercícios oferecidos.
 

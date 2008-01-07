@@ -43,3 +43,7 @@ A sugestão é que siga a lista abaixo na ordem em que aparece.
  * Pessoa  e Endereco ([jpaQuatro associação simples 1:1])
  * Pessoa e várias instâncias de Endereco ([jpaCinco associação para lista 1:N])
  * Classes !PessoaFisica e !PessoaJuridica estendem Pessoa ([jpaSeis herança])
+
+= Seqüência base de exemplos =
+
+ * Evitando persistir uma propriedade ([jpaSete transient])

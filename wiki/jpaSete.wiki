@@ -72,42 +72,13 @@ public class Pessoa {
 
 A anotação *@Entity* indica que objetos desta classe podem ser unicamente identificados. Esta identificação é estabelecida pelo campo marcado com a anotação *@Id*. Também foi estabelecido que o valor para este campo será fornecido pelo _persistence provider_, conforme a anotação *@!GeneratedValue*. 
 
-As propriedades *rua* e *numero* seguem sem anotações. Por padrão, serão persistidas. O mesmo ocorreria com a propriedade *nome* se esta não tivesse sido anotada com *@Transient*.
+As propriedades *rua* e *numero* seguem sem anotações. Por padrão, serão persistidas. O mesmo ocorreria com a propriedade *nome* se esta não tivesse sido anotada com *@Transient*. Em conseqüência, quando uma instância de Pessoa for persistida, a propriedade *nome* correspondente não será persistida. Provavelmente este não é o desejado em cenário real, mas fará com que nunca esqueça de que a anotação *@Transient* inibe a persistência de uma propriedade. O programa abaixo atesta este comportamento.
 
-= Compilar a classe mapeada =
-A compilação também não sofre alterações. 
-
-{{{
-ant compile
-}}}
-
-= Iniciar o SGBD =
-Para iniciar o SGBD precisamos do comando abaixo. 
+= Programa exemplo =
+Uma instância de Pessoa é criada e persistida e, posteriormente, recuperada. Verifique que a instância recuperada não possui um nome, pois este não foi persistido, conforme o valor *null* exibido.
 
 {{{
-ant db-start
-}}}
-
-Convém ressaltar que cada SGBD possui modo próprio para iniciá-lo. O comando acima executa todas as operações necessários para o HSQLDB. Consulte o arquivo *build.xml* para detalhes.
-
-= Criar o esquema no SGBD =
-
-{{{
-ant schema
-}}}
-
-Para verificar a criação do esquema, comando acima, pode ser executado um cliente com acesso à base de dados em questão, conforme abaixo.
-
-{{{
-ant db-client
-}}}
-
-
-= Criar um programa que requisita serviços oferecidos pela JPA API =
-O programa abaixo mantém a mesma simplicidade do exemplo anterior. Contudo, duas linhas foram acrescentadas para fornecer detalhes pertinentes às propriedades *rua* e *numero*.
-
-{{{
-package dois;
+package sete;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -116,26 +87,39 @@ import javax.persistence.Persistence;
 
 public class PessoaAplicacaoJpa {
     public static void main(String[] args) {
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaDois");
-	EntityManager em = emf.createEntityManager();
+	EntityManager em = getEntityManager();
+		
+	// Inicia transação
 	EntityTransaction tx = em.getTransaction();
 	tx.begin();
 		
-	Pessoa p = new Pessoa("Outro nome próprio");
-        p.setRua("Rua das Camélias");
-        p.setNumero(321);
-		
-	em.persist(p);
+	Pessoa pessoa = new Pessoa("João", "Rua X", 15);
+	em.persist(pessoa);
+	
 	tx.commit();
+	em.close();		
+		
+	Long id = pessoa.getId();
+	System.out.println("ID gerado: " + id);
+		
+	// Recupera instância persistida
+	em = getEntityManager();		
+	Pessoa outraPessoa = (Pessoa) em.find(Pessoa.class, id);
 	em.close();
+		
+	System.out.println(outraPessoa);		
+    }
+
+    private static EntityManager getEntityManager() {
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaSete");
+	return emf.createEntityManager();    
     }
 }
-
 }}}
 
 
 = Configurar o persistence provider =
-A configuração do _persistence provider_ é modificado em apenas uma informação: o identificador da unidade de persistência. Neste caso, foi substituído o valor anterior "jpaUm" por "jpaDois". Nenhuma outra alteração foi realizada. Observe que exemplos posteriores irão explorar esta configuração em detalhes. 
+A unidade de persistência é identificada por "jpaSete', composta por uma única classe: *sete.Pessoa*.
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
@@ -144,13 +128,13 @@ A configuração do _persistence provider_ é modificado em apenas uma informaç
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
 		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 
-	<persistence-unit name="jpaDois">
+	<persistence-unit name="jpaSete">
 		<description>
 			Exemplo simples de persistência usando JPA. 
 		</description>
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>um.Pessoa</class>
+		<class>sete.Pessoa</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>
@@ -175,18 +159,11 @@ A configuração do _persistence provider_ é modificado em apenas uma informaç
 ant compile
 }}}
 
-O comando para a execução da classe que usufrui da API também é a mesma:
+seguido de 
 
 {{{
-ant run -Dclasse=dois.PessoaAplicacaoJpa
+ant run -Dclasse=sete.PessoaAplicacaoJpa
 }}}
 
-Após a execução deste comando, uma instância adicional deve estar disponível no SGBD. A execução da consulta _select * from pessoa_ por meio de um cliente do SGBD poderá indicar que, de fato, uma instância adicional foi inserida no SGBD.
-
-*Execução a partir do ambiente Eclipse*. Não se esqueça de incluir no _classpath_ o diretório *etc*, pois é no _classpath_ que será procurado o diretório *META-INF*, empregado para a configuração do _persistence provider_. 
-
-= Visão geral de todos os artefatos empregados =
-Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDois/]. O conteúdo dos artefatos também é o mesmo, exceto para as mudanças identificadas acima.
-
 = Considerações finais = 
-O exemplo acima também é simples. O objetivo foi reforçar um processo comum para a persistência empregando JPA, aumentar a familiaridade com as ferramentas empregadas e, especialmente, ressaltar que o emprego de JPA tenta ser tão menos intrusivo quanto possível. Este último item é claro ao observar que o acréscimo de duas novas propriedades não exigiram que o mapeamento fosse alterado. Naturalmente, isto só foi possível porque o padrão oferecido pelo JPA é suficiente, para este caso.  
+O padrão é persistir todos os campos/propriedades. Caso alguma propriedade só faça sentido em tempo de execução, então esta pode ser anotada por *@Transient*, indicando que não deverá ser considerada quando instâncias da classe em questão forem persistidas. 

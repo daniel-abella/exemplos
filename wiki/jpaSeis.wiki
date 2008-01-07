@@ -12,12 +12,12 @@ Em projetos orientados a objetos é usual o emprego de herança. Neste exemplo, 
 A classe Pessoa é fornecida abaixo. 
 
 {{{
-package cinco;
+package seis;
 
 public class Pessoa {
     private String nome;
 
-    public Pessoa(String nome, Endereco endereco) {
+    public Pessoa(String nome) {
 	this.nome = nome;
         this.enderecos = new ArrayList<Endereco>();
         enderecos.add(endereco);
@@ -32,7 +32,7 @@ public class Pessoa {
 
 = Mapeamento =
 {{{
-package cinco;
+package seis;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -46,25 +46,15 @@ public class Pessoa {
 	
     private String nome;
 
-    @OneToMany
-    private List<Endereco> enderecos;
-	
     // Exigido pela JPA
     public Pessoa() {}
 	
-    public Pessoa(String nome, Endereco endereco) {
+    public Pessoa(String nome) {
 	this.nome = nome;
-        this.endereco = endereco;
     }
 	
     public String toString() {
 	return nome;
-    }
-
-    // Métodos get/set omitidos para endereco (por simplicidade)
-
-    public adicionaEndereco(Endereco endereco) {
-        enderecos.add(endereco);
     }
 }
 }}}

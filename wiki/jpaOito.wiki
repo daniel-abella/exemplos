@@ -1,4 +1,4 @@
-#summary Definição de campos/atributos a serem persistidos. (Fábio Nogueira de Lucena)
+#summary Persistência de campo ou propriedade. (Fábio Nogueira de Lucena)
 
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaOito/]
@@ -6,24 +6,42 @@
 Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaSete ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaNove PRÓXIMO].
 
 = Introdução =
+Há duas formas de se persistir estado de um objeto: campo ou propriedade. Estas formas não podem ser combinadas em uma mesma classe, ou seja, ou uma classe emprega campos ou propriedades, exclusivamente. Por campo significa que o _persistence provider_ irá ter acesso direto ao atributo do objeto, sem emprego dos métodos get/set. Por outro lado, a forma propriedade significa que o _persistence provider_ irá fazer uso, necessariamente, dos métodos get/set sempre que for preciso obter o valor ou definir o valor para um dado atributo de um objeto. Esta última forma, ao contrário da anterior, permite contemplar cenários onde os métodos get/set realizam operações além de simplesmente recuperar/definir o valor de um atributo.
 
-Como evitar que um campo seja persistido pelo _persistence provider_? Observe a classe Pessoa abaixo e o cenário onde *rua* e *numero* deve ser persistido, enquanto *nome* não deve ser persistido. Provavelmente este não é um cenário real, mas há muitos casos onde não se tem a intenção de persistir determinado campo. 
+Para ilustrar como fazer uso destas duas opções, observe as classes Campo e Propriedade, fornecidas abaixo.
 
 {{{
-public class Pessoa {
-    private String nome;
-    private String rua;
-    private int numero;
-	
-    public Pessoa(String nome) {
-	this.nome = nome;
-    }
-	
-    public String toString() {
-	return nome;
+package oito;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Campo {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    private int x;
+
+    public Long getId() {
+	return id;
     }
 
-    // Métodos get/set para rua e numero omitidos (por simplicidade)
+    public void setId(Long id) {
+	this.id = id;
+    }
+
+    public int getX() {
+	return x;
+    }
+
+    public void setX(int x) {
+	String quem = new Throwable().getStackTrace()[1].toString();
+	System.out.println("setX " + quem);
+	this.x = x;
+    }
 }
 }}}
 

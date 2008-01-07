@@ -59,6 +59,10 @@
 		<pathelement location="${hibernate.dir}/lib/asm.jar" />
 		<pathelement location="${hibernate.dir}/lib/antlr-2.7.6.jar" />
 		<pathelement location="${hibernate.dir}/lib/xerces-2.6.2.jar" />
+		
+		<!-- Elimine o item abaixo se logging empregado for Java Logging    -->
+		<!-- Se mantido, configure o arquivo log4j.properties em ${etc.dir} -->
+		<pathelement location="${hibernate.dir}/lib/log4j-1.2.11.jar" />
 	</path>
 
 	<!-- ================================================================= -->

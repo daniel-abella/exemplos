@@ -75,7 +75,7 @@ public class Pessoa {
 }
 }}}
 
-Observe que este mapeamento é exatamente o mesmo mapeamento do exemplo [http://code.google.com/p/exemplos/wiki/jpaUm anterior], onde tínhamos apenas as propriedades *id* e *nome*. Este fato revela uma característica adotada pelo emprego de JPA: _configuração mínima_. Naturalmente, nem sempre isso será suficiente e, nestes casos, o desenvolvedor deverá intervir. Não é o caso, contudo, para o exemplo.
+Observe que este mapeamento é exatamente o mesmo mapeamento do exemplo [http://code.google.com/p/exemplos/wiki/jpaUm anterior], onde tínhamos apenas as propriedades *id* e *nome*. Isto ocorre porque, por default, o _persistence provider_ persiste todas as propriedades ou campos para as quais há os métodos get/set correspondentes declarados como *public* ou *protected*. Este fato revela uma característica adotada pelo emprego de JPA: _configuração mínima_. Naturalmente, nem sempre isso será suficiente e, nestes casos, o desenvolvedor deverá intervir. Não é o caso, contudo, para o exemplo.
 
 As únicas anotações empregadas foram as mesmas do exemplo anterior, ou seja, *@Entity*, *@Id* e *@!GeneratedValue*. Por conseguinte, não são comentadas novamente.
 

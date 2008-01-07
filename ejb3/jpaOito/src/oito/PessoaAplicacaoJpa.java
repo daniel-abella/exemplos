@@ -1,4 +1,4 @@
-package sete;
+package oito;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,7 +13,7 @@ public class PessoaAplicacaoJpa {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		
-		Pessoa pessoa = new Pessoa("João", "Rua X", 15);
+		Campo pessoa = new Campo("João", "Rua X", 15);
 		em.persist(pessoa);
 		
 		tx.commit();
@@ -24,7 +24,7 @@ public class PessoaAplicacaoJpa {
 		
 		// Recupera instância persistida
 		em = getEntityManager();		
-		Pessoa outraPessoa = (Pessoa) em.find(Pessoa.class, id);
+		Campo outraPessoa = (Campo) em.find(Campo.class, id);
 		em.close();
 		
 		System.out.println(outraPessoa);		

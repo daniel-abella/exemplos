@@ -1,5 +1,5 @@
-jpaSete
-Definição de campos/atributos a serem persistidos.
+jpaOito
+Persistência de campo ou propriedade
 
 Onde obter
-http://exemplos.googlecode.com/svn/trunk/ejb3/jpaSete/
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaOito/

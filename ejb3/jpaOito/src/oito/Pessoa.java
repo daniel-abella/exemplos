@@ -1,4 +1,4 @@
-package sete;
+package oito;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

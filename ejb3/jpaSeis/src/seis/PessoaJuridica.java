@@ -16,5 +16,4 @@ public class PessoaJuridica extends Pessoa {
 	public String toString() {
 		return super.toString() + " " + cnpj;
 	}
-
 }

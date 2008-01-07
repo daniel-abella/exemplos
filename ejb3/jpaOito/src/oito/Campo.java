@@ -22,6 +22,8 @@ public class Campo {
 		return x;
 	}
 	public void setX(int x) {
+		String quem = new Throwable().getStackTrace()[1].toString();
+		System.out.println("setX " + quem);
 		this.x = x;
 	}
 }

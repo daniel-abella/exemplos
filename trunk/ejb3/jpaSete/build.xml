@@ -97,6 +97,9 @@
 	<!-- CLASSPATH (projeto)                                               -->
 	<!-- ================================================================= -->
 	<path id="projeto.classpath">
+		<!-- Arquivos de dados e outros -->
+		<path location="${etc.dir}" />
+		
 		<!-- Testes -->
 		<path refid="junit.classpath"/>
 
@@ -117,10 +120,6 @@
 
 		<!-- Hibernate Tools for Ant -->
 		<path location="${kad.libs}" />
-
-		<!-- Arquivos de dados e outros -->
-		<path location="${etc.dir}" />
-
 	</path>
 
 	<!-- ALVOS DE PROPÓSITO GERAL                                          -->
@@ -150,6 +149,7 @@
 
 	<target name="run" depends="compile" description="executa classe (-Dclasse=nomeClasse)">
 		<java classname="${classe}">
+			<arg value="-Djava.util.logging.config.fig=logging.properties"/>
 			<classpath refid="projeto.classpath" />
 		</java>
 	</target>

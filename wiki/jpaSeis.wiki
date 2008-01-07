@@ -201,14 +201,10 @@ public class PessoaAplicacaoJpa {
 	EntityTransaction tx = em.getTransaction();
 	tx.begin();
 		
-        Endereco end1 = new Endereco("Rua 1", 1);
-        em.persist(end1);
-
-        Endereco end2 = new Endereco("Rua 2", 2);
-        em.persist(end2);
-
-	Pessoa pessoa = new Pessoa("Outro nome próprio", end1);
-        pessoa.adicionaEndereco(end2);		
+	Pessoa pessoa = new PessoaFisica("João da Silva", "0123");
+	em.persist(pessoa);
+		
+	pessoa = new PessoaJuridica("Empresa X", "3210");
 	em.persist(pessoa);
 
 	tx.commit();
@@ -229,14 +225,14 @@ A unidade de persistência é "jpaCinco" e as classes _cinco.Pessoa_ e _cinco.En
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
 		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 
-	<persistence-unit name="jpaCinco">
+	<persistence-unit name="jpaSeis">
 		<description>
 			Exemplo simples de persistência usando JPA. 
 		</description>
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>cinco.Pessoa</class>
-		<class>cinco.Endereco</class>
+		<class>seis.PessoaFisica</class>
+		<class>seis.PessoaJuridica</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>
@@ -262,13 +258,15 @@ ant compile
 
 = Executar a aplicação = 
 {{{
-ant run -Dclasse=cinco.PessoaAplicacaoJpa
+ant run -Dclasse=seis.PessoaAplicacaoJpa
 }}}
 
 = Visão geral de todos os artefatos empregados =
 Em tempo, todos os artefatos do exemplo podem ser obtidos em [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaCinco/].
 
 = Considerações finais = 
-A anotação *@!OneToMany* foi introduzida em cenário onde duas classes são mapeadas para tabelas distintas. 
+Várias anotações foram exercitadas. Em particular, *@Entity*, *@Inheritance*, *@DiscriminatorColumn*, *@DiscriminatorValue*. Em particular, as duas últimas trabalham em sintonia. Enquanto uma estabelece qual coluna irá discernir o tipo de um objeto armazenado, a outra estabelece o valor correspondente. Esta não é, contudo, a única forma de usufruir de persistência de classe derivada.
+
+O objetivo desta série de exercícios foi fornecer a ambientação suficiente para que outros tópicos de JPA possam ser observados em profundidade sem ter que fornecer uma extensa documentação pertinente. Caso não se sinta confortável, sugere-se uma revisão dos exercícios oferecidos.
 
 Não deixe de consultar outros exemplos da [http://code.google.com/p/exemplos/wiki/ejbPersistence série] sobre persistência empregando JPA.

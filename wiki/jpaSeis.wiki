@@ -86,7 +86,7 @@ import javax.persistence.InheritanceType;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="TIPO")
-public class Pessoa {
+public abstract class Pessoa {
     @Id
     @GeneratedValue
     private Long id;
@@ -107,6 +107,9 @@ public class Pessoa {
 }}}
 
 A anotação *@Inheritance* estabelece a estratégia a ser empregada. Neste caso, uma única tabela será empregada para registrar toda e qualquer instância derivada de Pessoa. A anotação *@Discrimnator* estabelece como será feita a distinção entre registros armazenados nesta única tabela de tal forma que seja possível estabelecer quais campos foram empregados (um subconjunto dos campos para cada subclasse). 
+
+Por último, observe que a classe Pessoa foi definida como *abstract*, ou seja, não será permitido criar instâncias de Pessoa, senão pela criação de instância de alguma subclasse.
+Isto evita, por exemplo, que uma instância de Pessoa, que não é instância de !PessoaFisica ou !PessoaJuridica seja persistida.
 
 A classe !PessoaFisica é fornecida abaixo. 
 {{{

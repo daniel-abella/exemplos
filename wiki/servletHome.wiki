@@ -14,3 +14,4 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
 = Práticas Acompanhadas (PAs) =
 
  * Simples GET ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa01/])
+ * Simples POST ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa02/])

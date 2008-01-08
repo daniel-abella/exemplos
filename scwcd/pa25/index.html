@@ -1,0 +1,22 @@
+<html>
+<body>
+<h2>Ciclo de vida de um Servlet</h2>
+
+Quando uma requisição do tipo http://localhost:8080/pa25/ciclo é atendida, uma
+entrada correspondente é registrada no arquivo <b>log.txt</b>. De fato, quando
+o servlet é iniciado, um registro correspondente é feito neste arquivo; quando
+o servlet é terminado, um registro correspondente também é realizado e assim
+por diante. Por meio deste arquivo, portanto, é possível "acompanhar" o ciclo
+de vida (eventos relevantes) e as requisições correspondentes a um servlet.
+
+<h3>Sugestão para experimentar este servlet</h3> Inicie o tomcat, faça algumas
+requisições a URL fornecida acima, ou simplesmente clique <a
+href="/pa25/ciclo">aqui</a> (esta mesma página será reapresentada). Em
+seguida, interrompa a execução do Tomcat. Posteriormente, consulte o conteúdo
+do arquivo <b>log.txt</b> gerado no diretório de contexto da aplicação. Ou
+seja, o caminho completo para o arquivo deve ser
+$CATALINA_HOME/webapps/pa25/log.txt.
+
+<br>Alternativamente, clique <a href="/pa25/log.txt">aqui</a> para obter o conteúdo
+do arquivo <b>log.txt</b>.
+</body> </html>

@@ -21,3 +21,4 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
  * Redireciona coforme seleção do usuário ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa06/])
  * Retornando arquivo binário ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa07/])
  * Ciclo de vida de um Servlet ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa25/])
+ * Codificação (utf-8, iso-8859-1) ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa26/])

@@ -19,3 +19,4 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
  * Requisição cidade/estado via POST ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa04/])
  * Exibe elementos de _header_ ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa05/])
  * Redireciona coforme seleção do usuário ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa06/])
+ * Retornando arquivo binário ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa07/])

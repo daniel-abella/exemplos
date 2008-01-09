@@ -18,6 +18,7 @@ public class ProdutoAplicacaoJpa {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
+		em.persist(pi);
 		em.persist(produto);
 		tx.commit();
 		em.close();

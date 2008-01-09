@@ -1,4 +1,4 @@
-#summary Definição de campos/atributos a serem persistidos. (Fábio Nogueira de Lucena)
+#summary Impedir que atributo seja persistido. (Fábio Nogueira de Lucena)
 
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaSete/]

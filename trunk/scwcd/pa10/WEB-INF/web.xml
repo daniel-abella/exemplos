@@ -6,13 +6,23 @@
          version="2.4">
 
     <servlet>
-        <servlet-name>contador</servlet-name>
-        <servlet-class>ContaRequisicoes</servlet-class>
+        <servlet-name>a</servlet-name>
+        <servlet-class>A</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>b</servlet-name>
+        <servlet-class>B</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>contador</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <servlet-name>a</servlet-name>
+        <url-pattern>/a</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>b</servlet-name>
+        <url-pattern>/b</url-pattern>
     </servlet-mapping>
 
 </web-app>

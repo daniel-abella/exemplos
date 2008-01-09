@@ -46,4 +46,5 @@ A sugestão é que siga a lista abaixo na ordem em que aparece.
 
 = Seqüência base de exemplos =
 
- * Evitando persistir uma propriedade ([jpaSete transient])
+ * Evitando persistir um atributo ([jpaSete transient])
+ * Forma de persistência baseada em campo ou propriedade ([jpaOito forma])

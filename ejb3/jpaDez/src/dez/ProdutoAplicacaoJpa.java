@@ -1,4 +1,6 @@
-package nove;
+package dez;
+
+import java.util.Calendar;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -7,10 +9,12 @@ import javax.persistence.Persistence;
 
 public class ProdutoAplicacaoJpa {
 	public static void main(String[] args) {
-		Produto produto = new Produto("Sabão", 123);
+		ProdutoInfo pi = new ProdutoInfo("sem tiras", Calendar.getInstance());
+		Produto produto = new Produto("Chinelo", 123);
+		produto.setProdutoInfo(pi);
 
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("jpaNove");
+				.createEntityManagerFactory("jpaDez");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();

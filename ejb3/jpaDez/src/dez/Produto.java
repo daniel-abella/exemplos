@@ -1,4 +1,4 @@
-package nove;
+package dez;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +14,7 @@ public class Produto {
 	private String nome;
 	private int codigo;
 
-	@OneToOne(optional=true)
+	@OneToOne(optional=false)
 	private ProdutoInfo produtoInfo;
 
 	public Produto() {}

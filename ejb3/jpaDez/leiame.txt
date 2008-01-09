@@ -1,0 +1,7 @@
+jpaNove
+Produto com possível referência para ProdutoInfo. Ou seja, 
+uma instância de Produto pode ou não ser detalhada por uma 
+instância de ProdutoInfo. Mapeamento 1:1.
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaNove/

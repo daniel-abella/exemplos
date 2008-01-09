@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jpaNove" basedir="." default="clean">
+
+	<!-- ================================================================= -->
+	<!-- Projeto Dados                                                     -->
+	<!-- Copyright (c) 2007 Kyriosdata (r)                                 -->
+	<!-- Fábio Nogueira de Lucena (fabio@kyriosdata.com.br)                -->
+	<!--                                                                   -->
+	<!-- PRÉ-REQUISITOS:                                                   -->
+	<!-- 1. Ambiente kad-libs-0.9 instalado (veja kyrios.sourceforge.net)  -->
+	<!-- 2. Definição da variável ECLIPSE 'KAD_LIBS'                       -->
+	<!-- 3. Projeto kad-libs-0.9 (acompanha kad-libs)                      -->
+	<!-- 4. Definição do domínio (bytecodes) em 'dominio.classpath'        -->
+	<!-- ================================================================= -->
+
+	<property environment="env" />
+	<property name="kad.libs" value="${env.KAD_LIBS}" />
+	<property file="${kad.libs}/kad-libs.properties" />
+
+	<!-- ================================================================= -->
+	<!-- PROPRIEDADES                                                      -->
+	<!-- ================================================================= -->
+
+	<!-- Organização do código -->
+	<property name="src.dir" location="src:test" />
+	<property name="build.dir" location="target" />
+	<property name="etc.dir" location="etc" />
+	<property name="test.dir" location="test" />
+	<property name="test.out.dir" location="${build.dir}/tout" />
+
+	<!-- Unidade de persistência (persistence unit) -->
+	<property name="persistence.unit.name" value="${ant.project.name}" />
+	<property name="persistence.unit.root" value="etc" />
+
+	<!-- ================================================================= -->
+	<!-- DOMÍNIO (entidades e interfaces dos repositórios)                 -->
+	<!-- ================================================================= -->
+	<path id="dominio.classpath">
+		<pathelement location="../jpa/target/dist/jpa-0.1.jar" />
+	</path>
+
+	<!-- ================================================================= -->
+	<!-- Hibernate (classpath)                                             -->
+	<!-- ================================================================= -->
+	<path id="hibernate.classpath">
+		<pathelement location="${hibernate.jar}" />
+		<pathelement location="${h.annotations.jar}" />
+		<pathelement location="${ejb3.persistence.jar}" />
+		<pathelement location="${h.tools1.jar}" />
+		<pathelement location="${h.tools2.jar}" />
+		<pathelement location="${h.entity1.jar}" />
+		<pathelement location="${h.entity2.jar}" />
+		<pathelement location="${h.entity.dir}/lib/hibernate-commons-annotations.jar" />
+		<pathelement location="${hibernate.dir}/lib/dom4j-1.6.1.jar" />
+		<pathelement location="${hibernate.dir}/lib/cglib-2.1.3.jar" />
+		<pathelement location="${hibernate.dir}/lib/jta.jar" />
+		<pathelement location="${hibernate.dir}/lib/c3p0-0.9.1.jar" />
+		<pathelement location="${hibernate.dir}/lib/javassist.jar" />
+		<pathelement location="${hibernate.dir}/lib/asm.jar" />
+		<pathelement location="${hibernate.dir}/lib/antlr-2.7.6.jar" />
+		<pathelement location="${hibernate.dir}/lib/xerces-2.6.2.jar" />
+	</path>
+
+	<!-- ================================================================= -->
+	<!-- Spring (classpath)                                             -->
+	<!-- ================================================================= -->
+	<path id="spring.classpath">
+		<path location="${spring.jar}" />
+		<path location="${spring.dir}/dist/spring-mock.jar" />
+		<fileset dir="${spring.dir}/lib/jakarta-commons" includes="*.jar" />
+	</path>
+	
+	<!-- ================================================================= -->
+	<!-- JUnit (classpath)                                             -->
+	<!-- ================================================================= -->
+	<path id="junit.classpath">
+		<path location="${kad.libs}/junit3.8.1/junit.jar" />
+	</path>
+
+
+	<!-- ================================================================= -->
+	<!-- PERSISTENCIA (classpath)                                          -->
+	<!-- ================================================================= -->
+	<path id="persistencia.classpath">
+		<!-- Hibernate -->
+		<path refid="hibernate.classpath" />
+		
+		<!-- Driver JDBC -->
+		<pathelement location="${hsqldb.jar}" />
+
+		<!-- DbUnit -->
+		<pathelement location="${dbunit.jar}" />
+	</path>
+
+
+	<!-- ================================================================= -->
+	<!-- CLASSPATH (projeto)                                               -->
+	<!-- ================================================================= -->
+	<path id="projeto.classpath">
+		<!-- Testes -->
+		<path refid="junit.classpath"/>
+
+		<!-- persistencia -->
+		<path refid="persistencia.classpath" />
+
+		<!-- Spring -->
+		<path refid="spring.classpath" />
+
+		<!-- Inclui arquivos de configuração -->
+		<path location="${persistence.unit.root}" />
+
+		<!-- Classes de persistência -->
+		<path location="${build.dir}" />
+
+		<!-- Classes de negócio (definição das entidades e repositórios -->
+		<path refid="dominio.classpath" />
+
+		<!-- Hibernate Tools for Ant -->
+		<path location="${kad.libs}" />
+
+		<!-- Arquivos de dados e outros -->
+		<path location="${etc.dir}" />
+
+	</path>
+
+	<!-- ALVOS DE PROPÓSITO GERAL                                          -->
+	<!-- ================================================================= -->
+	<!-- clean   : apaga arquivos gerados                                  -->
+	<!-- compile : compila fontes                                          -->
+	<!-- execute : executa classe (argumento -Dclasse=<nomeClasse>)        -->
+	<!-- ================================================================= -->
+
+	<target name="clean" description="Apaga arquivos gerados">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="compile" description="compila arquivos .java">
+		<mkdir dir="${build.dir}" />
+		<javac srcdir="${src.dir}" destdir="${build.dir}" encoding="iso-8859-1">
+			<classpath refid="projeto.classpath" />
+		</javac>
+	</target>
+
+	<target name="compile-tests" depends="compile" description="compila testes">
+		<mkdir dir="${build.dir}/tests" />
+		<javac encoding="ISO-8859-1" srcdir="${test.dir}" destdir="${build.dir}/tests">
+			<classpath refid="projeto.classpath" />
+		</javac>
+	</target>
+
+	<target name="run" depends="compile" description="executa classe (-Dclasse=nomeClasse)">
+		<java classname="${classe}">
+			<classpath refid="projeto.classpath" />
+		</java>
+	</target>
+
+	<!-- SGBD                                                              -->
+	<!-- Assume que 'kyrios-teste' é o nome da base de dados               -->
+	<!-- ================================================================= -->
+	<!-- db-clean  : Limpa HSQLDB (kyrios-teste)                           -->
+	<!-- db-client : inicia cliente para interação com SGBD                -->
+	<!-- db-start  : inicia SGBD de desenvolvimento                        -->
+	<!-- db-stop   : interrompe SGBD                                       -->
+	<!-- ================================================================= -->
+
+	<target name="db-clean" description="Limpa HSQLDB (kyrios-teste)" depends="db-stop">
+		<delete>
+			<fileset dir="/tmp" includes="kyrios-teste.*" />
+		</delete>
+		<echo message="Base de dados do HSQLDB removida" />
+	</target>
+
+	<target name="db-client" description="Cliente HSQLDB">
+		<java classname="org.hsqldb.util.DatabaseManagerSwing" spawn="yes" fork="yes">
+			<arg line="-url ${database.url}" />
+			<classpath>
+				<pathelement path="${hsqldb.jar}" />
+			</classpath>
+		</java>
+	</target>
+
+	<target name="db-start" description="inicia HSQLDB (kyrios-teste)">
+		<java classname="org.hsqldb.Server" spawn="yes" fork="yes">
+			<jvmarg value="-Duser.dir=${kad.libs}" />
+			<classpath>
+				<pathelement path="${hsqldb.jar}" />
+			</classpath>
+		</java>
+	</target>
+
+	<target name="db-stop" description="finaliza HSQLDB (kyrios-teste)">
+		<java classname="br.com.kyriosdata.kyshell.kystophsqldb">
+			<classpath>
+				<pathelement path="${kad.libs}/bin/kyTools.jar" />
+				<path refid="projeto.classpath" />
+			</classpath>
+		</java>
+	</target>
+
+
+	<!-- HIBERNATE                                                         -->
+	<!-- ================================================================= -->
+	<!-- Usa    : persistence.unit.name                                    -->
+	<!--                                                                   -->
+	<!-- show   : exibe esquema da unidade de persistência                 -->
+	<!-- schema : exporta esquema da unidade de persistência para o SGBD   -->
+	<!-- drop   : remove do SGBD esquema da unidade de persistência        -->
+	<!-- ================================================================= -->
+	<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="projeto.classpath" />
+
+	<target name="show" depends="compile" description="show schema">
+		<hibernatetool destdir="${build.dir}">
+			<classpath refid="projeto.classpath" />
+
+			<jpaconfiguration persistenceunit="${persistence.unit.name}" />
+
+			<hbm2ddl drop="false" create="false" export="false" format="true" />
+		</hibernatetool>
+	</target>
+
+	<target name="schema" depends="compile" description="export schema">
+		<hibernatetool destdir="${build.dir}">
+			<classpath refid="projeto.classpath" />
+
+			<jpaconfiguration persistenceunit="${persistence.unit.name}" />
+
+			<hbm2ddl drop="true" create="true" export="true" format="true" />
+		</hibernatetool>
+	</target>
+
+	<target name="drop" depends="compile" description="drop schema">
+		<hibernatetool destdir="${build.dir}">
+			<classpath refid="projeto.classpath" />
+
+			<jpaconfiguration persistenceunit="${persistence.unit.name}" />
+
+			<hbm2ddl drop="true" create="false" export="true" format="true" />
+		</hibernatetool>
+	</target>
+
+	<!-- ================================================================= -->
+	<!-- Alvos para o DBUnit                                               -->
+	<!-- db-compare : compara conteúdo da base com aquele de arquivo XML   -->
+	<!-- db-delete  : remove da base dados em arquivo XML                  -->
+	<!-- db-export  : exporta conteúdo da base para arquivo XML            -->
+	<!-- db-insert  : insere na base de dados conteúdo de arquivo XML      -->
+	<!-- db-update  : atualiza a base conforme dados em arquivo XML        -->
+	<!-- ================================================================= -->
+	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="persistencia.classpath" />
+
+	<target name="db-compare" description="Compara base com dados em XML">
+		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
+			<compare src="${etc.dir}/data-teste.xml" />
+		</dbunit>
+	</target>
+
+	<target name="db-delete" description="Remove da base dados em XML">
+		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
+			<operation type="DELETE" src="${etc.dir}/data-teste.xml" />
+		</dbunit>
+	</target>
+
+	<target name="db-export" description="Exporta base para dados em XML">
+		<dbunit driver="${database.driver_class}" url="${database.url}" userid="${database.username}" password="${database.password}">
+			<export dest="${build.dir}/dbunit-export.xml" />
+		</dbunit>
+	</target>
+
+	<target name="db-insert" description="Insere na base dados em XML">
+		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
+			<operation type="INSERT" src="${etc.dir}/data-teste.xml" />
+		</dbunit>
+	</target>
+
+	<target name="db-update" description="Atualiza base conforme dados em XML">
+		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
+			<operation type="UPDATE" src="${etc.dir}/data-teste.xml" />
+		</dbunit>
+	</target>
+
+	<!-- TESTES DE UNIDADE (JUnit)                                         -->
+	<!-- ================================================================= -->
+	<!-- test        : executa testes de unidade                           -->
+	<!-- test-report : gera relatórios (interrompe Ant em caso de falha    -->
+	<!-- ================================================================= -->
+
+	<target name="test" depends="compile-tests" description="Executa testes (*Test.class) ou classe (-Dclasse=X)">
+		<mkdir dir="${test.out.dir}" />
+		<property name="classe" value="*Test" />
+		<junit printsummary="false" fork="yes" errorproperty="test.failed" failureproperty="test.failed">
+			<sysproperty key="net.sourceforge.cobertura.datafile" file="${build.dir}/cobertura.ser" />
+			<assertions>
+				<enable />
+			</assertions>
+			<formatter type="plain" usefile="false" />
+			<formatter type="xml" />
+			<batchtest todir="${test.out.dir}">
+				<fileset dir="${build.dir}/tests">
+					<include name="**/${classe}.class" />
+					<exclude name="**/Test**All.java" />
+				</fileset>
+			</batchtest>
+			<classpath>
+				<path refid="junit.classpath" />
+				<path refid="projeto.classpath" />
+			</classpath>
+		</junit>
+	</target>
+
+	<target name="test-report" depends="test" description="Gera relatórios de teste (para Ant em caso de erro)">
+		<mkdir dir="${test.out.dir}/html" />
+		<junitreport todir="${test.out.dir}">
+			<fileset dir="${test.out.dir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report todir="${test.out.dir}/html" />
+		</junitreport>
+
+		<!-- Após gerar relatório, interrompe Ant se houve falha -->
+		<fail if="test.failed">
+			Pelo menos um teste falhou. Veja resultado em ${test.out.dir}/html.
+		</fail>
+	</target>
+
+</project>

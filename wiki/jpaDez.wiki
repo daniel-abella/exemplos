@@ -1,9 +1,9 @@
 #summary Relacionamento 1->1 (Fábio Nogueira de Lucena)
 
 === Onde obter ===
-[http://exemplos.googlecode.com/svn/trunk/ejb3/jpaNove/]
+[http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDez/]
 
-Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaOito ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaDez PRÓXIMO].
+Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaNove ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaOnze PRÓXIMO].
 
 = Introdução =
 Neste cenário, dada uma instância de Produto, necessariamente deve estar associada uma instância de !ProdutoInfo. Ainda convém ressaltar que duas instâncias de Produto não poderão referenciar uma mesma instância de !ProdutoInfo. Uma instância de Produto pode ou não ser detalhada em uma instância de !ProdutoInfo. Para isto, a anotação *@!OneToOne* é empregada onde o argumento *optional* com o valor *false*. Isto indica que !ProdutoInfo não é opcional. 

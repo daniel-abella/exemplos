@@ -24,3 +24,4 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
  * Ciclo de vida de um Servlet ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa25/])
  * Quem implementa !HttpServlet{Request,Response}? ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa27/])
  * Parâmetros de configuração de um Servlet ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa08/])
+ * Contando requisições ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa10/])

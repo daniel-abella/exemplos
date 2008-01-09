@@ -6,7 +6,7 @@
 Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaOito ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaDez PRÓXIMO].
 
 = Introdução =
-Uma instância de Produto pode ou não ser detalhada em uma instância de ProdutoInfo. Neste caso, a anotação *@!OneToOne* é empregada onde o argumento *optional* é definido como *true*. Ou seja, uma instância de ProdutoInfo não é obrigatória. Este mapeamento é ilustrado abaixo.
+Uma instância de Produto pode ou não ser detalhada em uma instância de ProdutoInfo. Neste caso, a anotação *@!OneToOne* é empregada onde o argumento *optional* é definido como *true*. Ou seja, uma instância de !ProdutoInfo não é obrigatória. Este mapeamento é ilustrado abaixo.
 
 {{{
 package nove;

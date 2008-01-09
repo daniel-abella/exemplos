@@ -1,5 +1,8 @@
 package tres;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Endereco {
 	private String rua;
 	private int numero;

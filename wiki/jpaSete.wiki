@@ -153,17 +153,5 @@ A unidade de persistência é identificada por "jpaSete', composta por uma únic
 </persistence>
 }}}
 
-=Compilar e executar o programa criado no passo anterior=
-
-{{{
-ant compile
-}}}
-
-seguido de 
-
-{{{
-ant run -Dclasse=sete.PessoaAplicacaoJpa
-}}}
-
 = Considerações finais = 
 O padrão é persistir todos os campos/propriedades. Caso alguma propriedade só faça sentido em tempo de execução, então esta pode ser anotada por *@Transient*, indicando que não deverá ser considerada quando instâncias da classe em questão forem persistidas. 

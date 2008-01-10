@@ -1,4 +1,4 @@
-package dez;
+package onze;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

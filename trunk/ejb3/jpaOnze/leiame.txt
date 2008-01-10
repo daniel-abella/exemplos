@@ -1,7 +1,5 @@
 jpaNove
-Produto com referência obrigatória para ProdutoInfo. Ou seja, 
-uma instância de Produto é detalhada por uma 
-instância de ProdutoInfo. Mapeamento 1->1.
+Relacionamento 1<->1 entre Produto e ProdutoInfo.
 
 Onde obter
-http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDez/
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaOnze/

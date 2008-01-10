@@ -48,7 +48,7 @@ public class Produto {
 A classe !ProdutoInfo não apresenta nenhuma especificidade em relação a este mapeamento, conforme ilustrado abaixo.
 
 {{{
-package dez;
+package onze;
 
 import java.util.Calendar;
 
@@ -64,6 +64,17 @@ public class ProdutoInfo {
 
     private String fornecedor;
     private Calendar dataValidade;
+
+    @OneToOne(mappedBy="produtoInfo", optional=false)
+    private Produto produto;
+
+    public Produto getProduto() { 
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
 
     // Construtor default é obrigatório
     public ProdutoInfo() {}

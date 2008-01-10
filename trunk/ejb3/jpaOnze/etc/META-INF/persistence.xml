@@ -10,8 +10,8 @@
 		</description>
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>dez.Produto</class>
-		<class>dez.ProdutoInfo</class>
+		<class>onze.Produto</class>
+		<class>onze.ProdutoInfo</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>

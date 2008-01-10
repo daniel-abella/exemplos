@@ -92,10 +92,10 @@ public class ProdutoInfo {
 }}}
 
 = Programa exemplo =
-A aplicação é trivial. Uma instância de Produto é criada e é requisitada a sua persistência. Antes, contudo, observe que foi estabelecida uma relação com a instância criada de !ProdutoInfo. Por fim, antes de persistir a instância de Produto, deve ser assegurada que a instância de ProdutoInfo foi persistida. 
+Observe que a instância de Produto está associada à instância de !ProdutoInfo e vice-versa. Esta relação deve ser estabelecida explicitamente, conforme realizado pelos métodos *setProdutoInfo* e *setProduto*. Esta relação é de responsabilidade do autor do programa e, naturalmente, não poderia ser "automaticamente" fornecida pelo _persistence provider_. Também não é o _persistence provider_, mas o autor do código o responsável por persistir a instância de !ProdutoInfo seguida da requisição para persistir Produto, conforme ilustrado abaixo.
 
 {{{
-package dez;
+package onze;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -107,13 +107,14 @@ public class ProdutoAplicacaoJpa {
 	ProdutoInfo pi = new ProdutoInfo("sem tiras", Calendar.getInstance());
 	Produto produto = new Produto("Chinelo", 123);
 	produto.setProdutoInfo(pi);
+	pi.setProduto(produto);
 
 	EntityManagerFactory emf = Persistence
-			.createEntityManagerFactory("jpaNove");
+			.createEntityManagerFactory("jpaOnze");
 	EntityManager em = emf.createEntityManager();
 	EntityTransaction tx = em.getTransaction();
 	tx.begin();
-        em.persist(pi);
+	em.persist(pi);
 	em.persist(produto);
 	tx.commit();
 	em.close();

@@ -12,6 +12,7 @@ public class ProdutosInfoAplicacao {
 		ProdutoInfo pi = new ProdutoInfo("sem tiras", Calendar.getInstance());
 		Produto p1 = new Produto("Chinelo", 123);
 		p1.setProdutoInfo(pi);
+		pi.setProduto(p1);
 		
 		Produto p2 = new Produto("Leite", 100);
 		p2.setProdutoInfo(pi);

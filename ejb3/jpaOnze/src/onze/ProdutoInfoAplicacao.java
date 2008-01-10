@@ -10,7 +10,10 @@ import javax.persistence.Persistence;
 public class ProdutoInfoAplicacao {
 	public static void main(String[] args) {
 		ProdutoInfo pi = new ProdutoInfo("Tiras duplas", Calendar.getInstance());
-
+		Produto produto = new Produto("Chinelo", 123);
+		produto.setProdutoInfo(pi);
+		pi.setProduto(produto);
+		
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("jpaOnze");
 		EntityManager em = emf.createEntityManager();

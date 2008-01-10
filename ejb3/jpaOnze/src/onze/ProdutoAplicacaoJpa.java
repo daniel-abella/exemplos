@@ -12,6 +12,7 @@ public class ProdutoAplicacaoJpa {
 		ProdutoInfo pi = new ProdutoInfo("sem tiras", Calendar.getInstance());
 		Produto produto = new Produto("Chinelo", 123);
 		produto.setProdutoInfo(pi);
+		pi.setProduto(produto);
 
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("jpaOnze");

@@ -5,6 +5,7 @@ import java.util.Calendar;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class ProdutoInfo {
@@ -14,6 +15,17 @@ public class ProdutoInfo {
 
 	private String fornecedor;
 	private Calendar dataValidade;
+	
+	@OneToOne(mappedBy="produtoInfo", optional=false)
+	private Produto produto;
+	
+	public Produto getProduto() {
+		return produto;
+	}
+	
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
 
 	// Construtor default é obrigatório
 	public ProdutoInfo() {}

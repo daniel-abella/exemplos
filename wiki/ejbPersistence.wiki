@@ -48,3 +48,5 @@ A sugestão é que siga a lista abaixo na ordem em que aparece.
 
  * Evitando persistir um atributo ([jpaSete transient])
  * Forma de persistência baseada em campo ou propriedade ([jpaOito forma])
+ * Produto possui, possivelmente, uma referência para !ProdutoInfo ([jpaNove 1->0..1])
+ * Produto necessariamente possui referência para !ProdutoInfo ([jpaDez 1->1])

@@ -1,3 +1,4 @@
+
 #summary Dominando as tecnologias Servlets e JSP (Fábio Nogueira de Lucena)
 
 = Introdução =
@@ -28,3 +29,4 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
  * Redirecionando requisições entre servlets ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa09/])
  * !HttpServletResponse.sendRedirect() ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa11/])
  * !RequestDispatcher.include() ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa12/])
+* Mapeamento de URLs para Servlets ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa13/])

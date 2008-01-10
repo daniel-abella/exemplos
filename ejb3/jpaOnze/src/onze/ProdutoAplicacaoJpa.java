@@ -1,4 +1,4 @@
-package dez;
+package onze;
 
 import java.util.Calendar;
 
@@ -14,7 +14,7 @@ public class ProdutoAplicacaoJpa {
 		produto.setProdutoInfo(pi);
 
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("jpaDez");
+				.createEntityManagerFactory("jpaOnze");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();

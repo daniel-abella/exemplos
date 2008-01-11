@@ -8,7 +8,17 @@ import javax.persistence.Id;
 public class Aluno {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private long id;
 
 	private String nome;
+	
+	public Aluno() {}
+	
+	public Aluno(String nome) {
+		this.nome = nome;
+	}
+	
+	public String toString() {
+		return nome;
+	}
 }

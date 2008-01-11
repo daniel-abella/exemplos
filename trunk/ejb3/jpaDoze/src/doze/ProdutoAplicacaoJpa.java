@@ -1,4 +1,4 @@
-package onze;
+package doze;
 
 import java.util.Calendar;
 
@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 public class ProdutoAplicacaoJpa {
 	public static void main(String[] args) {
 		ProdutoInfo pi = new ProdutoInfo("sem tiras", Calendar.getInstance());
-		Produto produto = new Produto("Chinelo", 123);
+		Turma produto = new Turma("Chinelo", 123);
 		produto.setProdutoInfo(pi);
 		pi.setProduto(produto);
 

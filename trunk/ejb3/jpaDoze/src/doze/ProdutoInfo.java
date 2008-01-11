@@ -1,4 +1,4 @@
-package onze;
+package doze;
 
 import java.util.Calendar;
 
@@ -17,13 +17,13 @@ public class ProdutoInfo {
 	private Calendar dataValidade;
 	
 	@OneToOne(mappedBy="produtoInfo", optional=false)
-	private Produto produto;
+	private Turma produto;
 	
-	public Produto getProduto() {
+	public Turma getProduto() {
 		return produto;
 	}
 	
-	public void setProduto(Produto produto) {
+	public void setProduto(Turma produto) {
 		this.produto = produto;
 	}
 

@@ -6,7 +6,13 @@
 Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaSete ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaNove PRÓXIMO].
 
 = Introdução =
-Há duas formas de se persistir estado de um objeto: campo ou propriedade. Estas formas não podem ser combinadas em uma mesma classe, ou seja, ou uma classe emprega campos ou propriedades, exclusivamente. Por campo significa que o _persistence provider_ irá ter acesso direto ao atributo do objeto, sem emprego dos métodos get/set. Por outro lado, a forma propriedade significa que o _persistence provider_ irá fazer uso, necessariamente, dos métodos get/set sempre que for preciso obter o valor ou definir o valor para um dado atributo de um objeto. Esta última forma, ao contrário da anterior, permite contemplar cenários onde os métodos get/set realizam operações além de simplesmente recuperar/definir o valor de um atributo.
+Há duas formas de se persistir estado de um objeto: campo ou propriedade. Estas formas não podem ser combinadas em uma mesma hierarquia, ou seja, ou uma classe emprega campos ou propriedades, exclusivamente. Adicionalmente, em uma data hierarquia, ou todas as classes usam o acesso por campo ou por propriedade. 
+
+Acesso por campo. Significa que o _persistence provider_ irá ter acesso direto ao atributo do objeto, sem emprego dos métodos get/set. 
+
+Acesso por propriedade. Significa que o _persistence provider_ irá fazer uso, necessariamente, dos métodos get/set sempre que for preciso obter o valor ou definir o valor para um dado atributo de um objeto. Tais métodos devem ser declarados como *public* ou *protected*. 
+
+O acesso por propriedade, ao contrário do acesso por campo, permite contemplar cenários onde os métodos get/set realizam operações além de simplesmente recuperar/definir o valor de um atributo.
 
 Para ilustrar como fazer uso destas duas opções, observe as classes Campo e Propriedade, fornecidas abaixo. Observe que a classe Campo foi anotada sobre um campo (atributo id). Isto significa que, todas as demais anotações também devem ser realizadas sobre atributos. O que não for anotada também é implicitamente definido como acesso a campo. Convém ressaltar do parágrafo anterior que para uma dada classe ou se emprega campo ou propriedade.
 

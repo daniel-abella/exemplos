@@ -4,14 +4,14 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
 		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 
-	<persistence-unit name="jpaQuatorze">
+	<persistence-unit name="jpaQuinze">
 		<description>
 			Exemplo simples de persistência usando JPA. 
 		</description>
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>quatorze.Curso</class>
-		<class>quatorze.Aluno</class>
+		<class>quinze.Curso</class>
+		<class>quinze.Aluno</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>

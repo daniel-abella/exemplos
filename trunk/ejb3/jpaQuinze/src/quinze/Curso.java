@@ -1,4 +1,4 @@
-package quatorze;
+package quinze;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,13 +17,13 @@ public class Curso {
 	private int codigo;
 
 	@ManyToMany(mappedBy="cursos")
-	private List<Aluno> alunos = new ArrayList<Aluno>();
+	private List<A> alunos = new ArrayList<A>();
 	
-	public void adicionaAluno(Aluno novoAluno) {
+	public void adicionaAluno(A novoAluno) {
 		alunos.add(novoAluno);
 	}
 	
-	public List<Aluno> getAlunos() {
+	public List<A> getAlunos() {
 		return alunos;
 	}
 	

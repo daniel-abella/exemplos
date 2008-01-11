@@ -1,5 +1,5 @@
-jpaQuatorze
-Relacionamento N<->N entre Curso e Aluno.
+jpaQuinze
+Tabelas em detalhes
 
 Onde obter
-http://exemplos.googlecode.com/svn/trunk/ejb3/jpaQuatorze/
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaQuinze/

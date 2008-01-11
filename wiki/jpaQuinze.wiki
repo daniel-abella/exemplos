@@ -1,0 +1,9 @@
+#summary Anotação @Table em detalhes (Fábio Nogueira de Lucena)
+
+=== Onde obter ===
+[http://exemplos.googlecode.com/svn/trunk/ejb3/jpaTreze/]
+
+Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaDoze ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaQuatorze PRÓXIMO].
+
+= Introdução =
+Uma instância de Turma está associada a zero ou mais instâncias de Aluno. Neste exemplo é empregada uma lista para reter as referências para as instâncias de Aluno. A anotação *@!OneToMany* estabelece este lado do mapeamento. Observe que a opção *mappedBy* estabelece que é o outro lado da associação o "dono" do relacionamento. Isto decorre porque se trata de um relacionamento bidirecional. Convém ressaltar, não são dois relacionamentos, um de Turma para Aluno e outro de Aluno para Turma, mas um único relacionamento bidirecional entre Turma e Aluno. 

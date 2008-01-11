@@ -35,7 +35,8 @@ public class Turma {
 	public List<Aluno> getAlunos() {
 		return alunos;
 	}
-}}}}
+}
+}}}
 
 A classe Aluno é uma entidade. É esperado que tal entidade participe de várias outras associações.
 

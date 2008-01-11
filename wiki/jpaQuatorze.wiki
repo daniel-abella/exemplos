@@ -6,46 +6,18 @@
 Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaTreze ANTERIOR].
 
 = Introdução =
-Uma instância de Turma está associada a zero ou mais instâncias de Aluno. Neste exemplo é empregada uma lista para reter as referências para as instâncias de Aluno. A anotação *@!OneToMany* estabelece este lado do mapeamento. Observe que a opção *mappedBy* estabelece que é o outro lado da associação o "dono" do relacionamento. Isto decorre porque se trata de um relacionamento bidirecional. Convém ressaltar, não são dois relacionamentos, um de Turma para Aluno e outro de Aluno para Turma, mas um único relacionamento bidirecional entre Turma e Aluno. 
+Neste exemplo, uma instância de Curso pode estar associada a várias instâncias de Aluno (ou seja, alunos matriculados no curso em questão). Em outro sentido, cada instância de Aluno pode estar matriculada em vários cursos (várias instâncias de Curso). Este relacionamento é bidirecional. O mapeamento destas duas classes segue abaixo. 
 
 {{{
-package treze;
+package quatorze;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-@Entity
-public class Turma {
-	@Id
-	@GeneratedValue
-	private long id;
-
-	@OneToMany(mappedBy="turma")
-	private List<Aluno> alunos = new ArrayList<Aluno>();
-	
-	public void adicionaAluno(Aluno novoAluno) {
-		alunos.add(novoAluno);
-	}
-	
-	public List<Aluno> getAlunos() {
-		return alunos;
-	}
-}}}}
-
-A classe Aluno é uma entidade, conforme exibido abaixo e, adicionalmente, possui referência para a turma correspondente. Em particular, dado que não pode existir Aluno sem turma, então a opção *optional* recebeu o valor *false*, conforme pode ser observado abaixo. Por último, deste lado do relacionamento, trata-se de uma relação *@!ManyToOne*. 
-
-{{{
-package treze;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Aluno {
@@ -53,8 +25,8 @@ public class Aluno {
 	@GeneratedValue
 	private long id;
 
-	@ManyToOne(optional=false)
-	private Turma turma;
+	@ManyToMany
+	private Set<Curso> cursos = new HashSet<Curso>();
 	
 	private String nome;
 	
@@ -67,53 +39,99 @@ public class Aluno {
 	public String toString() {
 		return nome;
 	}
-
-	public Turma getTurma() {
-		return turma;
+	
+	public void adicionaCurso(Curso curso) {
+		cursos.add(curso);
 	}
+}
+}}}
 
-	public void setTurma(Turma turma) {
-		this.turma = turma;
+A classe Curso é mapeada de forma similar, empregando a anotação *@ManyToMany*.  
+Observe, contudo, que dado o fato do relacionamento ser bidirecional, ou Aluno ou Curso, neste caso Curso, deve indicar quem é o "dono" do relacionamento. Isto é feito pelo valor *cursos* ao atributo *mappedBy* da anotação *@ManyToMany*, conforme pode ser observado abaixo.
+
+{{{
+package quatorze;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class Curso {
+	@Id
+	@GeneratedValue
+	private long id;
+	
+	private int codigo;
+
+	@ManyToMany(mappedBy="cursos")
+	private List<Aluno> alunos = new ArrayList<Aluno>();
+	
+	public void adicionaAluno(Aluno novoAluno) {
+		alunos.add(novoAluno);
+	}
+	
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
+	
+	public Curso() {}
+	
+	public Curso(int codigo) {
+		this.codigo = codigo;
 	}
 }
 }}}
 
 = Programa exemplo =
-A aplicação abaixo cria uma nova turma, contendo 10 alunos. Observe que a ordem em que foram persistidos, primeiro a turma e posteriormente os alunos não é arbitrária. Dado que não pode existir uma instância de Aluno sem a correspondente instância de Turma, conforme mapeamento realizado acima, é necessário que exista o registro correspondente de Turma para, em seguida, se criar o registro de um Aluno. 
+A aplicação cria dez instâncias de Curso e dez instâncias de Aluno. Posteriormente, "matricula" cada um dos alunos em cada um dos dez cursos. Isto resulta em cem (100) relacionamentos, pois cada curso possui 10 alunos e tem-se 10 cursos. 
 
 {{{
-package treze;
+package quatorze;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-public class CriaTurmaAplicacao {
-
-	public static Turma geradorDeTurma() {
-		Turma nova = new Turma();
+public class CriaMatriculasAplicacao {
+	private static Set<Aluno> alunos = new HashSet<Aluno>();;
+	private static Set<Curso> cursos = new HashSet<Curso>();
+	
+	public static void matricula10x10() {
 		for (int i = 0; i < 10; i++) {
-			Aluno aluno = new Aluno(Integer.toString(i));
-			aluno.setTurma(nova);
-			nova.adicionaAluno(aluno);
+			alunos.add(new Aluno("Aluno " + i));
+			cursos.add(new Curso(i));
 		}
-		return nova;
+		
+		for (Aluno aluno : alunos)
+			for (Curso curso : cursos) {
+				aluno.adicionaCurso(curso);
+				curso.adicionaAluno(aluno);
+			}
 	}
 
 	public static void main(String[] args) {
-		Turma turma = geradorDeTurma();
+		matricula10x10();
 
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("jpaTreze");
+				.createEntityManagerFactory("jpaQuatorze");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-
-		em.persist(turma);
 		
-		for (Aluno aluno : turma.getAlunos())
+		for (Aluno aluno : alunos)
 			em.persist(aluno);
+		
+		for (Curso curso : cursos)
+			em.persist(curso);
 
 		tx.commit();
 		em.close();
@@ -122,4 +140,4 @@ public class CriaTurmaAplicacao {
 }}}
 
 = Considerações finais = 
-Uma relação bidirecional 1<->N foi ilustrada. Duas anotações foram empregadas: *@!OneToMany* e *@ManyToOne*. Na primeira anotação foi identificada que esta relação foi mapeada pelo campo "turma" (conforme pode ser observado do mapeamento fornecido acima). No segundo caso, para evitar que uma instância de Aluno pudesse ser persistida sem a turma correspondente, foi empregado o argumento *optional* com o valor *false*, indicando que, necessariamente, deve haver uma instância de Turma persistida para que se possa persistir uma instância de Aluno da qual a instância de Turma pode ser obtida. 
+A anotação *@ManyToMany* foi empregada para o mapeamento de Curso para Aluno e desta última classe para a primeira. Observe que este relacionamento é bidirecional. 

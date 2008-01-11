@@ -10,8 +10,9 @@
 		</description>
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>quinze.Curso</class>
-		<class>quinze.Aluno</class>
+		<class>quinze.A</class>
+		<class>quinze.B</class>
+		<class>quinze.C</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>

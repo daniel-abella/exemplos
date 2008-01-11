@@ -53,3 +53,4 @@ A sugestão é que siga a lista abaixo na ordem em que aparece.
  * Produto necessariamente possui referência para !ProdutoInfo ([jpaDez 1->1])
  * Relacionamento 1<->1 (bidirecional) ([jpaOnze 1<->1])
  * Relacionamento 1->N (1 turma vários alunos) ([jpaDoze 1->N])
+ * Relacionamento 1<->N (1 turma vários alunos, cada aluno "sabe" sua turma) ([jpaTreze 1<->N])

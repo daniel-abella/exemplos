@@ -6,7 +6,7 @@
 Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaOnze ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaTreze PRÓXIMO].
 
 = Introdução =
-Uma instância de Turma está associada a zero ou mais instâncias de Aluno. Neste exemplo é empregada uma lista para reter as referências para as instâncias de Aluno. Observe, adicionalmente, a anotação *@OneToMany*, que estabelece o mapeamento desejado. 
+Uma instância de Turma está associada a zero ou mais instâncias de Aluno. Neste exemplo é empregada uma lista para reter as referências para as instâncias de Aluno. Observe, adicionalmente, a anotação *@!OneToMany*, que estabelece o mapeamento desejado. 
 
 {{{
 package doze;
@@ -98,4 +98,4 @@ public class ProdutoAplicacaoJpa {
 }}}
 
 = Considerações finais = 
-O mapeamento *@OneToMany* é um dos mapeamentos mais empregados, principalmente em conjunto com o mapeamento *@ManyToOne*. Convém ressaltar que de um relacionamento bidirecional de 1<->N tem-se dois mapeamentos: *@OneToMany* e *@ManyToOne*.
+O mapeamento *@!OneToMany* é um dos mapeamentos mais empregados, principalmente em conjunto com o mapeamento *@!ManyToOne*. Convém ressaltar que de um relacionamento bidirecional de 1<->N tem-se dois mapeamentos: *@!OneToMany* e *@!ManyToOne*.

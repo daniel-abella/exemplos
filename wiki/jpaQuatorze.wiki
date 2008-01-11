@@ -140,4 +140,4 @@ public class CriaMatriculasAplicacao {
 }}}
 
 = Considerações finais = 
-A anotação *@ManyToMany* foi empregada para o mapeamento de Curso para Aluno e desta última classe para a primeira. Observe que este relacionamento é bidirecional. 
+A anotação *@!ManyToMany* foi empregada para o mapeamento de Curso para Aluno e desta última classe para a primeira. Observe que este relacionamento é bidirecional. 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+                             http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <servlet>
+        <servlet-name>Servlet padrão</servlet-name>
+        <servlet-class>Default</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Servlet padrão</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>outro</servlet-name>
+        <servlet-class>Outro</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>outro</servlet-name>
+        <url-pattern>/outro</url-pattern>
+    </servlet-mapping>
+   
+</web-app>

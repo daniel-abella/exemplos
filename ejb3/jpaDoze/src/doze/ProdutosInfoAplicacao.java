@@ -1,4 +1,4 @@
-package onze;
+package doze;
 
 import java.util.Calendar;
 
@@ -10,11 +10,11 @@ import javax.persistence.Persistence;
 public class ProdutosInfoAplicacao {
 	public static void main(String[] args) {
 		ProdutoInfo pi = new ProdutoInfo("sem tiras", Calendar.getInstance());
-		Produto p1 = new Produto("Chinelo", 123);
+		Turma p1 = new Turma("Chinelo", 123);
 		p1.setProdutoInfo(pi);
 		pi.setProduto(p1);
 		
-		Produto p2 = new Produto("Leite", 100);
+		Turma p2 = new Turma("Leite", 100);
 		p2.setProdutoInfo(pi);
 
 		EntityManagerFactory emf = Persistence

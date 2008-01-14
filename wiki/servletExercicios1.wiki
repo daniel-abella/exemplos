@@ -10,7 +10,7 @@
    #. Servidor
    #. Firefox
  # O que é um servlet? (marque todas as opções apropriadas)
-   #. Componente web que faz uso da Servlet API para estender seridor
+   #. Componente web que faz uso da Servlet API para estender servidor
    #. página HTML
    #. documentação de como gerar uma página HTML
    #. extensão de servidor web
@@ -25,7 +25,7 @@
    #. Depurador Java
    #. Máquina virtual Java
    #. Contêiner web
- # Marque as variáveis de ambiente que devem estar disponíveis em um ambiente de desenvolvimento de aplicações web usando Servlets.
+ # Marque as variáveis de ambiente que devem estar disponíveis em um ambiente de desenvolvimento de aplicações web usando Servlets e o contêiner Tomcat.
    #. KAD_LIBS
    #. CATALINA_HOME
    #. JAVA_HOME
@@ -52,7 +52,7 @@
  #. Todo servlet, direta ou indiretamente, implementa a interface javax.servlet.http.Servlet?
    #. Sim
    #. Não
- #. A interface javax.servlet.Servlet é implementada pela classe javax.servlet.htpp.!HttpServlet?
+ #. A interface javax.servlet.Servlet é implementada pela classe javax.servlet.http.!HttpServlet?
    #. Sim
    #. Não 
  #. A classe javax.servlet.!GenericServlet implementa a interface javax.servlet.Servlet?
@@ -69,7 +69,6 @@
    #. Não 
  #. Um servlet permite (marque todas as verdadeiras):
    #. Que resposta para uma requisição seja produzida dinamicamente, em tempo de execução e conforme argumentos recebidos da requisição.
-   #. Que uma conexão com um SGBD seja aberta com o propósito de verificar qual servlet deve tratar uma determinada requisição enviada pelo browser.
    #. Retornar uma página estática ou conteúdo estático como um arquivo.
    #. Que a resposta seja formada por texto (html) e conteúdo binário.
  #. Quando um browser envia uma requisição http? (marque todas as verdadeiras)
@@ -94,3 +93,26 @@
    #. Todo servlet deve necessariamente sobrescrever o método service() caso este seja herdado de !HttpServlet.
    #. Pelo menos o método doGet(<argumentos omitidos>) deve ser sobrescrito quando o servlet herda de !HttpServlet.
    #. O método doGet(<argumentos omitidos>) é chamado para uma requisição HTTP que faz uso do método GET, mesmo que o servlet sobrescreva um dos métodos service(<argumentos omitidos>) quando o servlet estende !HttpServlet.
+
+= Respostas = 
+
+ #. 2, 4 e 5
+ #. 1, 3 e 6
+ #. 1 e 3
+ #. 1. 3 e 4
+ #. 2 e 3
+ #. 1
+ #. 4
+ #. 3
+ #. 2
+ #. 2
+ #. 1
+ #. 1
+ #. 1
+ #. 2
+ #. 1
+ #. 1 e 3
+ #. 1, 3 e 4
+ #. 1, 2, 4, 5 e 6 (outros OPTIONS e HEAD)
+ #. 1
+ #. Nenhuma resposta é verdadeira

@@ -6,4 +6,63 @@
 Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaDoze ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaQuatorze PRÓXIMO].
 
 = Introdução =
-Uma instância de Turma está associada a zero ou mais instâncias de Aluno. Neste exemplo é empregada uma lista para reter as referências para as instâncias de Aluno. A anotação *@!OneToMany* estabelece este lado do mapeamento. Observe que a opção *mappedBy* estabelece que é o outro lado da associação o "dono" do relacionamento. Isto decorre porque se trata de um relacionamento bidirecional. Convém ressaltar, não são dois relacionamentos, um de Turma para Aluno e outro de Aluno para Turma, mas um único relacionamento bidirecional entre Turma e Aluno. 
+O mapeamento de uma entidade possui algumas flexibilidades quanto aos recursos disponibilizados para caracterizar questões pertinentes à tabela a ser empregada. Observe o mapeamento abaixo. 
+
+{{{
+package quinze;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+class A {
+	@Id
+	private byte chave;
+}
+
+@Entity
+@Table(name="NOME_DA_TABELA_PARA_OBJETOS_B")
+class B {
+	@Id
+	private short chave;
+}
+
+@Entity
+@Table(catalog="TESTE")
+class C {
+	@Id
+	private int chave;
+}
+
+@Entity
+@Table(schema="TESTE")
+class D {
+	@Id
+	private int chave;
+}
+
+@Entity
+@Table(uniqueConstraints={@UniqueConstraint(columnNames={"nome", "cpf"})})
+class E {
+	@Id
+	private long chave;
+	
+	private String nome;
+	private String cpf;
+}
+}}}
+
+A classe A é mapeada sem o emprego da anotação *@Table*. Em boa parte dos casos, todo o comportamento resultante é suficiente. 
+
+A classe B já emprega a anotação *@Table* para identificar a tabela em que instâncias de B serão registradas. 
+
+As classes C, D e E apresentam uma forma pouco usual de "classificar" tabelas, que podem estar divididas em esquemas e estas, por sua vez, agrupadas em catálogos. 
+
+Por fim, a classe F exibe como restrições de unicidade podem ser estabelecidas para uma tabela envolvendo um subconjundo dos atributos do objeto a ser persistido. 
+
+Embora todas estas opções sejam válidas, as classes C, D, E e F apresentam mapeamentos pouco usuais. Em particular, convém ressaltar que não é mandatório que implementações de EJB3 ofereçam suporte à geração de tabelas. Neste caso, tais anotações poderiam ter pouco efeito. 
+
+= persistence.xml = 
+Observe neste exemplo que todas as classes fazem parte de um único arquivo, *Tabelas.java*, o que não é nenhum erro, embora não usual nem mesmo recomendado. Também observe que nenhuma das classes é *public*. Na descrição da unidade de persistência, *persistence.xml*, as classes *quinze.A*, *quinze.B* e assim por diante foram explicitamente fornecidas.

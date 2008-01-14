@@ -12,45 +12,55 @@ O mapeamento de uma entidade possui algumas flexibilidades quanto aos recursos d
 package quinze;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 @Entity
 class A {
 	@Id
-	private byte chave;
+	@GeneratedValue
+	private int chave;
 }
 
 @Entity
 @Table(name="NOME_DA_TABELA_PARA_OBJETOS_B")
 class B {
 	@Id
-	private short chave;
-}
-
-@Entity
-@Table(catalog="TESTE")
-class C {
-	@Id
+	@GeneratedValue
 	private int chave;
 }
 
 @Entity
-@Table(schema="TESTE")
+@Table(catalog="CATALOGO")
+class C {
+	@Id
+	@GeneratedValue
+	private int chave;
+}
+
+@Entity
+@Table(schema="ESQUEMA")
 class D {
 	@Id
+	@GeneratedValue
+	private int chave;
+}
+
+@Entity
+@Table(schema="ESQUEMA", catalog="CATALOGO")
+class E {
+	@Id
+	@GeneratedValue
 	private int chave;
 }
 
 @Entity
 @Table(uniqueConstraints={@UniqueConstraint(columnNames={"nome", "cpf"})})
-class E {
+class F {
 	@Id
+	@GeneratedValue
 	private long chave;
 	
-	private String nome;
-	private String cpf;
+	public String nome;
+	public String cpf;
 }
 }}}
 
@@ -66,3 +76,41 @@ Embora todas estas opções sejam válidas, as classes C, D, E e F apresentam ma
 
 = persistence.xml = 
 Observe neste exemplo que todas as classes fazem parte de um único arquivo, *Tabelas.java*, o que não é nenhum erro, embora não usual nem mesmo recomendado. Também observe que nenhuma das classes é *public*. Na descrição da unidade de persistência, *persistence.xml*, as classes *quinze.A*, *quinze.B* e assim por diante foram explicitamente fornecidas.
+
+= Aplicação = 
+A aplicação abaixo funciona apenas em uma primeira execução. A partir da segunda execução, exceção é gerada pelo fato da restrição de unicidade, fornecida na classe F, não ser respeitada.
+
+{{{
+package quinze;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+public class ExercitaTabelas {
+	public static void main(String[] args) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpaQuinze");
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		
+		em.persist(new A());
+		em.persist(new B());
+		em.persist(new C());
+		em.persist(new D());
+
+		F f = new F();
+		f.nome = "A";
+		f.cpf = "123";
+		
+		// A chamada abaixo só funciona em sua primeira execução.
+		// Posteriores geram exceção, pois não satisfaz restrição
+		// de unicidade envolvendo "nome" e "cpf" (veja mapeamento)
+		em.persist(f);
+			
+		tx.commit();
+		em.close();
+	}
+}
+}}}

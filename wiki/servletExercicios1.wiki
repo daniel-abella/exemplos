@@ -20,6 +20,11 @@
    #. Sim
    #. Não
    #. Sim, o Tomcat, por exemplo, geralmente é executado como processo distinto do servidor web Apache.
+ # O desenvolvimento e a experimentação de um servlet exige (marque todas que se aplicam):
+   #. Compilador Java
+   #. Depurador Java
+   #. Máquina virtual Java
+   #. Contêiner web
  # Marque as variáveis de ambiente que devem estar disponíveis em um ambiente de desenvolvimento de aplicações web usando Servlets.
    #. KAD_LIBS
    #. CATALINA_HOME

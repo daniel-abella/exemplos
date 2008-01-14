@@ -78,3 +78,19 @@
    #. Quando o usuário preenche um formulário e clica em botão que o remete ao servidor.
    #. Quando o usuário fornece um URL no campo endereço e pressiona enter. 
    #. Quando o usuário fecha o browser.
+ #. Quais dos itens abaixo são métodos HTTP?
+   #. GET
+   #. TRACE
+   #. OPTION
+   #. POST
+   #. DELETE
+   #. PUT
+   #. HEADER
+ #. Para cada método HTTP há um método correspondente na classe javax.servlet.http.!HttpServlet no formato do<Método>.
+   #. Sim
+   #. Não 
+ #. Selecione as verdadeiras.
+   #. Todo servlet que estende !HttpServlet deve sobrescrever cada um dos métodos no formato do<Método HTTP> herdados de !HttpServlet.
+   #. Todo servlet deve necessariamente sobrescrever o método service() caso este seja herdado de !HttpServlet.
+   #. Pelo menos o método doGet(<argumentos omitidos>) deve ser sobrescrito quando o servlet herda de !HttpServlet.
+   #. O método doGet(<argumentos omitidos>) é chamado para uma requisição HTTP que faz uso do método GET, mesmo que o servlet sobrescreva um dos métodos service(<argumentos omitidos>) quando o servlet estende !HttpServlet.

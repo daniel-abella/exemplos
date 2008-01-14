@@ -4,11 +4,72 @@
 
  # Marque todas as opções onde um servlet é executado.
    #. Browser
+   #. Servlet contêiner
    #. Cliente
+   #. Servlet engine
    #. Servidor
    #. Firefox
  # O que é um servlet? (marque todas as opções apropriadas)
+   #. Componente web que faz uso da Servlet API para estender seridor
    #. página HTML
    #. documentação de como gerar uma página HTML
+   #. extensão de servidor web
    #. usa o protocolo FTP para se comunicar com um browser, em geral.
    #. classe Java que implementa a interface Servlet. 
+ # Um servlet contêiner pode ser executado em processo distinto do servidor web?
+   #. Sim
+   #. Não
+   #. Sim, o Tomcat, por exemplo, geralmente é executado como processo distinto do servidor web Apache.
+ # Marque as variáveis de ambiente que devem estar disponíveis em um ambiente de desenvolvimento de aplicações web usando Servlets.
+   #. KAD_LIBS
+   #. CATALINA_HOME
+   #. JAVA_HOME
+   #. CLASSPATH
+   #. TOMCAT_HOME
+   #. TOMCAT_LIBS
+ #. O comando "javac MeuServlet.java", assumindo que a variável CLASSPATH não está definida, é suficiente para compilar o servlet fornecido no arquivo MeuServlet.java?
+   #. Não
+   #. Sim
+ #. Pelo menos quantos diretórios devem ser criados para uma aplicação web usando servlets?
+   #. 0
+   #. 1
+   #. 2
+   #. 3
+   #. 4
+ #. A Servlet API está dividida em quantos pacotes java?
+   #. 0
+   #. 1
+   #. 2
+   #. 3
+ #. O pacote javax.servlet.http é independente de qualquer protocolo.
+   #. Sim
+   #. Não
+ #. Todo servlet, direta ou indiretamente, implementa a interface javax.servlet.http.Servlet?
+   #. Sim
+   #. Não
+ #. A interface javax.servlet.Servlet é implementada pela classe javax.servlet.htpp.HttpServlet?
+   #. Sim
+   #. Não 
+ #. A classe javax.servlet.GenericServlet implementa a interface javax.servlet.Servlet?
+   #. Sim
+   #. Não 
+ #. Os pacotes javax.servlet e javax.servlet.http compreendem toda a Servlet API?
+   #. Sim
+   #. Não 
+ #. A interface Servlet faz parte do pacote javax.servlet.http?
+   #. Sim
+   #. Não 
+ #. O método service() é necessariamente chamado pelo contêiner para toda e qualquer requisição para um dado servlet?
+   #. Sim
+   #. Não 
+ #. Um servlet permite (marque todas as verdadeiras):
+   #. Que resposta para uma requisição seja produzida dinamicamente, em tempo de execução e conforme argumentos recebidos da requisição.
+   #. Que uma conexão com um SGBD seja aberta com o propósito de verificar qual servlet deve tratar uma determinada requisição enviada pelo browser.
+   #. Retornar uma página estática ou conteúdo estático como um arquivo.
+   #. Que a resposta seja formada por texto (html) e conteúdo binário.
+ #. Quando um browser envia uma requisição http? (marque todas as verdadeiras)
+   #. Quando o usuário clica em um link em página HTML
+   #. Quando o usuário modifica a fonte da letra empregada pelo browser como padrão
+   #. Quando o usuário preenche um formulário e clica em botão que o remete ao servidor.
+   #. Quando o usuário fornece um URL no campo endereço e pressiona enter. 
+   #. Quando o usuário fecha o browser.

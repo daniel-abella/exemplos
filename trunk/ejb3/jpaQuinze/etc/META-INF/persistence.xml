@@ -14,7 +14,7 @@
 		<class>quinze.B</class>
 		<class>quinze.C</class>
 		<class>quinze.D</class>
-		<class>quinze.E</class>
+		<class>quinze.F</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>

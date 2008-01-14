@@ -27,7 +27,7 @@
    #. CLASSPATH
    #. TOMCAT_HOME
    #. TOMCAT_LIBS
- #. O comando "javac MeuServlet.java", assumindo que a variável CLASSPATH não está definida, é suficiente para compilar o servlet fornecido no arquivo MeuServlet.java?
+ #. O comando "javac !MeuServlet.java", assumindo que a variável CLASSPATH não está definida, é suficiente para compilar o servlet fornecido no arquivo !MeuServlet.java?
    #. Não
    #. Sim
  #. Pelo menos quantos diretórios devem ser criados para uma aplicação web usando servlets?
@@ -47,10 +47,10 @@
  #. Todo servlet, direta ou indiretamente, implementa a interface javax.servlet.http.Servlet?
    #. Sim
    #. Não
- #. A interface javax.servlet.Servlet é implementada pela classe javax.servlet.htpp.HttpServlet?
+ #. A interface javax.servlet.Servlet é implementada pela classe javax.servlet.htpp.!HttpServlet?
    #. Sim
    #. Não 
- #. A classe javax.servlet.GenericServlet implementa a interface javax.servlet.Servlet?
+ #. A classe javax.servlet.!GenericServlet implementa a interface javax.servlet.Servlet?
    #. Sim
    #. Não 
  #. Os pacotes javax.servlet e javax.servlet.http compreendem toda a Servlet API?

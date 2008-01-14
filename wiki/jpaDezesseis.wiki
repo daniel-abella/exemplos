@@ -128,8 +128,8 @@ public class ExercitaColunas {
 		em.persist(d1);
 		
 		E e1 = new E();
-		e1.setChave((int)(Math.random() * 1000 * 1000));		
-		// em.persist(e1); // Sem problema (insertable=false, updatable=false)
+		e1.setX((int)(Math.random() * 1000 * 1000));		
+		em.persist(e1); // 0 é persistido (insertable=false, updatable=false)
 		
 		F f1 = new F();
 		f1.setNome("não pode ser null");

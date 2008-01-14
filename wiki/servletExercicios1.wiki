@@ -1,0 +1,9 @@
+#summary Primeira lista de exercícios objetivos
+
+= Questões =
+
+ 1 Marque todas as opções onde um servlet é executado.
+   a. Browser
+   a. Cliente
+   a. Servidor
+   a. Firefox

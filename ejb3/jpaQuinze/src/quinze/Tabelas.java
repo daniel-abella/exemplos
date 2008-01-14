@@ -1,6 +1,7 @@
 package quinze;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -8,20 +9,23 @@ import javax.persistence.UniqueConstraint;
 @Entity
 class A {
 	@Id
-	private byte chave;
+	@GeneratedValue
+	private int chave;
 }
 
 @Entity
 @Table(name="NOME_DA_TABELA_PARA_OBJETOS_B")
 class B {
 	@Id
-	private short chave;
+	@GeneratedValue
+	private int chave;
 }
 
 @Entity
 @Table(catalog="CATALOGO")
 class C {
 	@Id
+	@GeneratedValue
 	private int chave;
 }
 
@@ -29,6 +33,7 @@ class C {
 @Table(schema="ESQUEMA")
 class D {
 	@Id
+	@GeneratedValue
 	private int chave;
 }
 
@@ -36,6 +41,7 @@ class D {
 @Table(schema="ESQUEMA", catalog="CATALOGO")
 class E {
 	@Id
+	@GeneratedValue
 	private int chave;
 }
 
@@ -43,6 +49,7 @@ class E {
 @Table(uniqueConstraints={@UniqueConstraint(columnNames={"nome", "cpf"})})
 class F {
 	@Id
+	@GeneratedValue
 	private long chave;
 	
 	public String nome;

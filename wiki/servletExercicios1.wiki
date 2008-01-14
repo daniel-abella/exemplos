@@ -2,8 +2,13 @@
 
 = Questões =
 
- 1 Marque todas as opções onde um servlet é executado.
-   a. Browser
-   a. Cliente
-   a. Servidor
-   a. Firefox
+ # Marque todas as opções onde um servlet é executado.
+   #. Browser
+   #. Cliente
+   #. Servidor
+   #. Firefox
+ # O que é um servlet? (marque todas as opções apropriadas)
+   #. página HTML
+   #. documentação de como gerar uma página HTML
+   #. usa o protocolo FTP para se comunicar com um browser, em geral.
+   #. classe Java que implementa a interface Servlet. 

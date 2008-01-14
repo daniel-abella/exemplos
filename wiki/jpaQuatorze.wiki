@@ -3,7 +3,8 @@
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaQuatorze/]
 
-Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaTreze ANTERIOR].
+Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaTreze ANTERIOR] e
+[http://code.google.com/p/exemplos/wiki/jpaQuinze PRóXIMO].
 
 = Introdução =
 Neste exemplo, uma instância de Curso pode estar associada a várias instâncias de Aluno (ou seja, alunos matriculados no curso em questão). Em outro sentido, cada instância de Aluno pode estar matriculada em vários cursos (várias instâncias de Curso). Este relacionamento é bidirecional. O mapeamento destas duas classes segue abaixo. 

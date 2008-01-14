@@ -6,10 +6,11 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
 
  * Introdução a Servlets ([http://www.slideshare.net/kyrios/servletintroducao])
 
-= Exemplos =
+= Exemplos e exercícios =
 
  * Primeiro servlet ([http://exemplos.googlecode.com/svn/trunk/scwcd/exemplo/])
  * Primeiro página JSP ([http://exemplos.googlecode.com/svn/trunk/scwcd/jaca/])
+ * Lista de exercícios 1 ([servletExercicios1 1])
 
 = Práticas Acompanhadas (PAs) =
 

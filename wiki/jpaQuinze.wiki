@@ -1,9 +1,9 @@
 #summary Anotação @Table em detalhes (Fábio Nogueira de Lucena)
 
 === Onde obter ===
-[http://exemplos.googlecode.com/svn/trunk/ejb3/jpaTreze/]
+[http://exemplos.googlecode.com/svn/trunk/ejb3/jpaQuinze/]
 
-Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaDoze ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaQuatorze PRÓXIMO].
+Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaQuatorze ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaDezesseis PRÓXIMO].
 
 = Introdução =
 O mapeamento de uma entidade possui algumas flexibilidades quanto aos recursos disponibilizados para caracterizar questões pertinentes à tabela a ser empregada. Observe o mapeamento abaixo. 

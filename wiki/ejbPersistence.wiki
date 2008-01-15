@@ -59,3 +59,4 @@ A sugestão é que siga a lista abaixo na ordem em que aparece.
 = Alguns detalhes =
  * Tabela ([jpaQuinze tabela])
  * Coluna ([jpaDezesseis coluna])
+ * Tipos enumerados ([jpaDezessete enum])

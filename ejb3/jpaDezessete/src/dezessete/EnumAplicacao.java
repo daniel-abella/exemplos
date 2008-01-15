@@ -12,6 +12,7 @@ public class EnumAplicacao {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		
+		em.persist(new Pedido(EstadoPedido.ABERTO, EstadoPedido.APROVADO));
 
 		tx.commit();
 		em.close();

@@ -10,7 +10,7 @@
 		</description>
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>dezessete.Estado</class>
+		<class>dezessete.Pedido</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>

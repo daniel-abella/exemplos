@@ -50,7 +50,7 @@ public class Pedido {
 
 A classe acima emprega dois atributos do tipo EstadoPedido. O primeiro deles será persistido por meio do valor ordinal correspondente, ou seja, um valor de 0 a 3, para o tipo EstadoPedido. O segundo será persistido por meio da representação textual do valor, ou seja, ou a seqüência de caracteres "ABERTO", "FECHADO", "APROVADO" ou "PENDENTE" será persistida. 
 
-A aplicação persiste uma instância de Pedido e permite verificar estas opções. Observe que o mapeamento *EnumType.ORDINAL* é o padrão, ou seja, *@Enumerated(EnumType.ORDINAL)* é equivalente à *@Enumerated*.
+A aplicação persiste uma instância de Pedido e permite verificar estas opções. Observe que o mapeamento *!EnumType.ORDINAL* é o padrão, ou seja, *@Enumerated(!EnumType.ORDINAL)* é equivalente à *@Enumerated*.
 
 {{{
 package dezessete;

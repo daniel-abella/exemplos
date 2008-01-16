@@ -16,4 +16,19 @@ public class Curriculo {
 	
 	@Lob
 	private char[] declaracao;
+	
+	public Curriculo() {}
+	
+	public Curriculo(byte[] foto, String declaracao) {
+		this.foto = foto;
+		this.declaracao = declaracao.toCharArray();
+	}
+	
+	public String getDeclaracao() {
+		return declaracao.toString();
+	}
+	
+	public byte[] getFoto() {
+		return foto;
+	}
 }

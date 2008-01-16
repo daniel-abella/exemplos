@@ -1,0 +1,5 @@
+jpaDezoito
+BLOB e CLOB (Lob)
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDezoito/

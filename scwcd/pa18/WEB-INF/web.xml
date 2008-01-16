@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+                             http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <servlet>
+        <servlet-name>RecebeRequisicoes</servlet-name>
+        <servlet-class>RecebeRequisicoes</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RecebeRequisicoes</servlet-name>
+        <url-pattern>/requisicao</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ExibeTotal</servlet-name>
+        <servlet-class>ExibeTotal</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ExibeTotal</servlet-name>
+        <url-pattern>/total</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+      <listener-class>ContaRequisicoesOuvinte</listener-class>
+    </listener>
+
+</web-app>

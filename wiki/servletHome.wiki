@@ -32,3 +32,4 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
  * Mapeamento de URLs para Servlets 1 ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa13/])
  * Mapeamento de URLs para Servlets 2 ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa14/])
  * Mapeamento de URLs para Servlets 3 ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa15/])
+ * ServletContext (obtendo versão de Servlets ) ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa16/])

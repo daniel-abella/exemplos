@@ -25,7 +25,7 @@ public class Curriculo {
 	}
 	
 	public String getDeclaracao() {
-		return declaracao.toString();
+		return new String(declaracao);
 	}
 	
 	public byte[] getFoto() {

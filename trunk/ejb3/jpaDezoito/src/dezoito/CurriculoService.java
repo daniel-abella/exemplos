@@ -6,7 +6,14 @@ import java.io.FileOutputStream;
 
 public class CurriculoService {
 	public static Curriculo newCurriculo(String fotoFile, String textoFile) {
-		File arquivo = new File(fotoFile);
+		byte[] foto = carregaArquivo(fotoFile);
+		byte[] texto = carregaArquivo(textoFile);
+		String str = new String(texto);
+		return new Curriculo(foto,str);
+	}
+
+	private static byte[] carregaArquivo(String nomeArquivo) {
+		File arquivo = new File(nomeArquivo);
 		byte[] ramFoto = new byte[(int) arquivo.length()];
 		try {	
 			FileInputStream fis = new FileInputStream(arquivo);
@@ -22,14 +29,18 @@ public class CurriculoService {
 			e.printStackTrace();
 			return null;
 		}
-		
-		return new Curriculo(ramFoto,"");
+		return ramFoto;
 	}
 	
-	public static void criaCopiaCurriculo(Curriculo curriculo, String fotoFile, String textoFile) {
+	public static void salvarCurriculoEm(Curriculo curriculo, String fotoFile, String textoFile) {
+		criarArquivo(fotoFile, curriculo.getFoto());
+		criarArquivo(textoFile, curriculo.getDeclaracao().getBytes());
+	}
+
+	private static void criarArquivo(String arquivoNome, byte[] bytes) {
 		try {			
-			FileOutputStream fos = new FileOutputStream(fotoFile);
-			fos.write(curriculo.getFoto());
+			FileOutputStream fos = new FileOutputStream(arquivoNome);
+			fos.write(bytes);
 			fos.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -38,7 +49,7 @@ public class CurriculoService {
 	
 	// Pequen experimentação
 	public static void main(String[] args) {
-		Curriculo curriculo = CurriculoService.newCurriculo("wp1.jpg", "texto.txt");
-		CurriculoService.criaCopiaCurriculo(curriculo, "wp2.jpg", "");
+		Curriculo curriculo = CurriculoService.newCurriculo("kyrios-wallpaper.jpg", "robinson-crusoe.txt");
+		CurriculoService.salvarCurriculoEm(curriculo, "foto.jpg", "texto.txt");
 	}
 }

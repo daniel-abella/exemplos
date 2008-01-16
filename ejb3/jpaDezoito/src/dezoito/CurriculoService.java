@@ -8,14 +8,13 @@ public class CurriculoService {
 	public static Curriculo newCurriculo(String fotoFile, String textoFile) {
 		byte[] foto = carregaArquivo(fotoFile);
 		byte[] texto = carregaArquivo(textoFile);
-		String str = new String(texto);
-		return new Curriculo(foto,str);
+		return new Curriculo(foto, new String(texto));
 	}
 
-	private static byte[] carregaArquivo(String nomeArquivo) {
+	public static byte[] carregaArquivo(String nomeArquivo) {
 		File arquivo = new File(nomeArquivo);
 		byte[] ramFoto = new byte[(int) arquivo.length()];
-		try {	
+		try {
 			FileInputStream fis = new FileInputStream(arquivo);
 			byte[] buffer = new byte[1024 * 4];
 			int bytesLidos = -1;
@@ -31,14 +30,15 @@ public class CurriculoService {
 		}
 		return ramFoto;
 	}
-	
-	public static void salvarCurriculoEm(Curriculo curriculo, String fotoFile, String textoFile) {
+
+	public static void salvarCurriculoEm(Curriculo curriculo, String fotoFile,
+			String textoFile) {
 		criarArquivo(fotoFile, curriculo.getFoto());
 		criarArquivo(textoFile, curriculo.getDeclaracao().getBytes());
 	}
 
-	private static void criarArquivo(String arquivoNome, byte[] bytes) {
-		try {			
+	public static void criarArquivo(String arquivoNome, byte[] bytes) {
+		try {
 			FileOutputStream fos = new FileOutputStream(arquivoNome);
 			fos.write(bytes);
 			fos.close();
@@ -46,10 +46,11 @@ public class CurriculoService {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// Pequen experimentação
 	public static void main(String[] args) {
-		Curriculo curriculo = CurriculoService.newCurriculo("kyrios-wallpaper.jpg", "robinson-crusoe.txt");
+		Curriculo curriculo = CurriculoService.newCurriculo(
+				"kyrios-wallpaper.jpg", "robinson-crusoe.txt");
 		CurriculoService.salvarCurriculoEm(curriculo, "foto.jpg", "texto.txt");
 	}
 }

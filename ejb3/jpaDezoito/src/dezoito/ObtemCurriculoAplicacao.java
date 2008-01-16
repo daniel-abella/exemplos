@@ -1,7 +1,5 @@
 package dezoito;
 
-import java.io.FileOutputStream;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -15,21 +13,11 @@ public class ObtemCurriculoAplicacao {
 		tx.begin();
 		
 		// Supõe a existência de instância com id de valor 1
-		Curriculo curriculo = (Curriculo) em.find(Curriculo.class, 1);
+		Curriculo curriculo = (Curriculo) em.find(Curriculo.class, 1L);
 
 		tx.commit();
 		em.close();
 		
-		criaCopiaCurriculo(curriculo,"outro.jpg", "");
-	}
-	
-	public static void criaCopiaCurriculo(Curriculo curriculo, String fotoFile, String textoFile) {
-		try {			
-			FileOutputStream fos = new FileOutputStream(fotoFile);
-			fos.write(curriculo.getFoto());
-			fos.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		CurriculoService.salvarCurriculoEm(curriculo, "outro.jpg", "outro.txt");
 	}
 }

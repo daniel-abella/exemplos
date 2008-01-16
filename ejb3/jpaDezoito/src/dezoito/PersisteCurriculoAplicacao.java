@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 
 public class PersisteCurriculoAplicacao {
 	public static void main(String[] args) {
-		persisteCurriculo("wp1.jpg", "");
+		persisteCurriculo("kyrios-wallpaper.jpg", "robinson-crusoe.txt");
 	}
 
 	public static void persisteCurriculo(String foto, String texto) {

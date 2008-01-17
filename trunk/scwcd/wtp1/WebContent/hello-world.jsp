@@ -8,5 +8,11 @@
 </head>
 <body>
 <h1>Hello, world.</h1>
+<%
+	String user = request.getParameter("user");
+	user = user == null ? "?" : user;
+%>
+
+Welcome to WTP, <%= user %>!
 </body>
 </html>

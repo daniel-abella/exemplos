@@ -1,0 +1,19 @@
+create table login
+
+	(USERID char(8) not null, fullname char(20), primary key(USERID));
+
+
+
+insert into login (USERID, fullname) values ('dai', 'Naci Dai');
+
+insert into login (USERID, fullname) values ('ryman', 'Arthur Ryman');
+
+insert into login (USERID, fullname) values ('mandel', 'Lawrence Mandel');
+
+
+
+select * from login order by fullname;
+
+
+
+select fullname from login where USERID = 'ryman';

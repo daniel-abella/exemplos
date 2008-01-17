@@ -31,6 +31,15 @@ import javax.servlet.http.HttpServletResponse;
 		if (user == null || user.trim().length() == 0) {
 			url = "/login-user.jsp";
 			request.setAttribute("error", "User name must not be empty");
+		} else {
+			try {
+				String fullname = new Database().lookupFullname(user);
+				if (fullname.length() == 0)
+					fullname = user + " (fullname not found)";
+				request.setAttribute("fullname", fullname);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		ServletContext sc = getServletContext();

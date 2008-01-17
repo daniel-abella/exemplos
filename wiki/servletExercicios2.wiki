@@ -1,0 +1,14 @@
+#summary Primeira lista de exercícios objetivos
+
+= Questões =
+
+ # Quais os parâmetros fornecidos ao método Servlet.service()?
+   #. HttpServletRequest
+   #. HttpServletConfig
+   #. HttpServletResponse
+   #. HttpServletContext
+
+
+= Respostas = 
+
+ #. 1 e 3

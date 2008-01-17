@@ -61,3 +61,4 @@ A sugestão é que siga a lista abaixo na ordem em que aparece.
  * Coluna ([jpaDezesseis coluna])
  * Tipos enumerados ([jpaDezessete enum])
  * BLOB e CLOB ([jpaDezoito Lob])
+ * Informações temporais ([jpaDezenove @Temporal])

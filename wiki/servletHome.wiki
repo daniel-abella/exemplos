@@ -11,6 +11,7 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
  * Primeiro servlet ([http://exemplos.googlecode.com/svn/trunk/scwcd/exemplo/])
  * Primeiro página JSP ([http://exemplos.googlecode.com/svn/trunk/scwcd/jaca/])
  * Lista de exercícios ([servletExercicios1 1])
+ * Lista de exercícios ([servletExercicios2 2])
 
 = Práticas Acompanhadas (PAs) =
 

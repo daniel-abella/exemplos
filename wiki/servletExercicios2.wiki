@@ -7,7 +7,7 @@
    #. !HttpServletConfig
    #. !HttpServletResponse
    #. !HttpServletContext
- # Marque métodos da classe HttpServletResponse
+ # Marque métodos da classe !HttpServletResponse
    #. getWriter()
    #. getContentType()
    #. setContentType()
@@ -15,9 +15,22 @@
  # O método getWriter() retorna um objeto do tipo !PrinterWriter?
    #. sim
    #. não
+ #. "text/plain" e "image/jpeg" são MIME types que podem ser empregados pelo método setContentType()?
+   #. sim
+   #. não
+ #. Pode-se fazer uma requisição HTTP empregando o método GET por meio de uma aplicação em Java?
+   #. sim
+   #. não
+ #. Pode-se fazer uma requisição HTTP empregando o método POST por meio de uma aplicação em Java?
+   #. sim
+   #. não
+
 
 = Respostas = 
 
  #. 1 e 3
  #. 1, 2, 3 e 4
  #. 2 (o correto é java.io.!PrintWriter)
+ #. 1
+ #. 1
+ #. 1

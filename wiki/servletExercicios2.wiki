@@ -24,8 +24,14 @@
  #. Pode-se fazer uma requisição HTTP empregando o método POST por meio de uma aplicação em Java?
    #. sim
    #. não
-
-
+ #. O contêiner web é responsável pela criação de instâncias de servlets?
+   #. sim
+   #. não
+ #. O que se pode dizer do método Service.init(!ServletConfig)?
+   #. Não existe
+   #. É chamado quando se inicia o contêiner web
+   #. Todos os servlets que já trataram requisições necessariamente receberam esta mensagem
+   #. Todo servlet necessariamente implementa tal método
 = Respostas = 
 
  #. 1 e 3
@@ -34,3 +40,5 @@
  #. 1
  #. 1
  #. 1
+ #. 1
+ #. 3 e 4

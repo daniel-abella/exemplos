@@ -59,6 +59,7 @@
 		<pathelement location="${hibernate.dir}/lib/asm.jar" />
 		<pathelement location="${hibernate.dir}/lib/antlr-2.7.6.jar" />
 		<pathelement location="${hibernate.dir}/lib/xerces-2.6.2.jar" />
+		<pathelement location="${log4j.jar}" />
 	</path>
 
 	<!-- ================================================================= -->

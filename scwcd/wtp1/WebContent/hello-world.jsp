@@ -10,7 +10,11 @@
 <h1>Hello, world.</h1>
 <%
 	String user = request.getParameter("user");
-	user = user == null ? "?" : user;
+	user = (user == null) ? "?" : user;
+	
+	Object fullname = request.getAttribute("fullname");
+	if (fullname != null) 
+		user = fullname.toString();
 %>
 
 Welcome to WTP, <%= user %>!

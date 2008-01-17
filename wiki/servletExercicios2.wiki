@@ -3,12 +3,21 @@
 = Questões =
 
  # Quais os parâmetros fornecidos ao método Servlet.service()?
-   #. HttpServletRequest
-   #. HttpServletConfig
-   #. HttpServletResponse
-   #. HttpServletContext
-
+   #. !HttpServletRequest
+   #. !HttpServletConfig
+   #. !HttpServletResponse
+   #. !HttpServletContext
+ # Marque métodos da classe HttpServletResponse
+   #. getWriter()
+   #. getContentType()
+   #. setContentType()
+   #. setCharacterEncoding()
+ # O método getWriter() retorna um objeto do tipo !PrinterWriter?
+   #. sim
+   #. não
 
 = Respostas = 
 
  #. 1 e 3
+ #. 1, 2, 3 e 4
+ #. 2 (o correto é java.io.!PrintWriter)

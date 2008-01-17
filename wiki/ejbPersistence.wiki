@@ -60,3 +60,4 @@ A sugestão é que siga a lista abaixo na ordem em que aparece.
  * Tabela ([jpaQuinze tabela])
  * Coluna ([jpaDezesseis coluna])
  * Tipos enumerados ([jpaDezessete enum])
+ * BLOB e CLOB ([jpaDezoito Lob])

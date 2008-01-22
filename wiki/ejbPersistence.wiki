@@ -65,4 +65,6 @@ A sugestão é que siga a lista abaixo na ordem em que aparece.
  * Chaves ([jpaVinte @Id])
 
 = Relacionamentos entre entidades =
- * [http://exemplos.googlecode.com/svn/trunk/ejb3/jpa21/ 1->1]
+ * [http://exemplos.googlecode.com/svn/trunk/ejb3/jpa21/ 1->1] (Pessoa->Endereco) (chave em Pessoa)
+ * [http://exemplos.googlecode.com/svn/trunk/ejb3/jpa22/ 1->1] (Pessoa->Endereco) (chave específica em Pessoa)
+ * [http://exemplos.googlecode.com/svn/trunk/ejb3/jpa23/ 1->1] (Pessoa->Endereco) (chave em Endereco)

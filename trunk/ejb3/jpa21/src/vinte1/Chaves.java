@@ -1,4 +1,4 @@
-package vinte;
+package vinte1;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

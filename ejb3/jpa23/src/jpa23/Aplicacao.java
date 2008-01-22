@@ -13,23 +13,28 @@ public class Aplicacao {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 
-		Pessoa pessoa = new Pessoa();
 		Endereco endereco = new Endereco();
-		pessoa.setEndereco(endereco);
-		
 		em.persist(endereco);
+		
+		Pessoa pessoa = new Pessoa();
+		pessoa.setEndereco(endereco);
+		System.out.println("Antes de salvar: " + pessoa);
+		
+		// Assegura que chaves são idênticas (antes de persistir)
+		pessoa.setId(endereco.getId());
 		em.persist(pessoa);
-		em.persist(new Pessoa());
 		long id = pessoa.getId();
+		
+		em.persist(new Endereco()); // Endereco (sem Pessoa correspondente)
 		
 		tx.commit();
 		em.close();
 		
 		em = emf.createEntityManager();
-		Pessoa p = em.find(Pessoa.class, Long.valueOf(id));
+		Pessoa instPessoa = em.find(Pessoa.class, Long.valueOf(id));
+		Endereco instEndereco = em.find(Endereco.class, Long.valueOf(id));
+		instPessoa.setEndereco(instEndereco);
+		System.out.println("Pessoa recuperada: " + instPessoa);
 		em.close();
-		
-		System.out.println(p);
-
 	}
 }

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Endereco {
 	@Id
 	@GeneratedValue
-	@Column(name="endereco_id")
+	@Column(name="pessoa_id")
 	private long id;
 	
 	private String rua;
@@ -20,5 +20,9 @@ public class Endereco {
 	
 	public Endereco() {
 		rua = Double.toString(Math.random() * 1000);
+	}
+	
+	public long getId() {
+		return id;
 	}
 }

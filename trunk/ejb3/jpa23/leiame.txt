@@ -1,5 +1,5 @@
-jpa22
-Relacionamento 1->1 (chave estrangeira em Pessoa)
+jpa23
+Relacionamento 1->1 (chave estrangeira em Endereco)
 
 Onde obter
 http://exemplos.googlecode.com/svn/trunk/ejb3/jpa21/

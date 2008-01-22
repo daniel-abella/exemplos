@@ -1,4 +1,4 @@
-package jpa22;
+package jpa23;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

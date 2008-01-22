@@ -3,7 +3,6 @@ package jpa23;
 import java.io.File;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -11,13 +10,12 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @Entity
 public class Pessoa {
 	@Id
-	@GeneratedValue
 	private long id;
 	
 	private String nome;
 	
 	@OneToOne
-	@PrimaryKeyJoinColumn(name="pessoa_id", referencedColumnName="id")
+	@PrimaryKeyJoinColumn(name="id", referencedColumnName="pessoa_id")
 	private Endereco endereco;
 	
 	public Pessoa() throws Exception {
@@ -34,5 +32,9 @@ public class Pessoa {
 	
 	public long getId() {
 		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
 	}
 }

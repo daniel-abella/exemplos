@@ -63,3 +63,6 @@ A sugestão é que siga a lista abaixo na ordem em que aparece.
  * BLOB e CLOB ([jpaDezoito Lob])
  * Informações temporais ([jpaDezenove @Temporal])
  * Chaves ([jpaVinte @Id])
+
+= Relacionamentos entre entidades =
+ * [http://exemplos.googlecode.com/svn/trunk/ejb3/jpa21/ 1->1]

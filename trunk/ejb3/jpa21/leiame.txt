@@ -1,0 +1,5 @@
+jpaVinte
+Chaves (naturais e surrogate)
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaVinte/

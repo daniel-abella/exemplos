@@ -11,4 +11,12 @@ public class Endereco {
 	private long id;
 	
 	private String rua;
+	
+	public String toString() {
+		return rua;
+	}
+	
+	public Endereco() {
+		rua = Double.toString(Math.random() * 1000);
+	}
 }

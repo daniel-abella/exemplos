@@ -14,8 +14,10 @@ public class Aplicacao {
 		tx.begin();
 
 		Pessoa pessoa = new Pessoa();
-		pessoa.setEndereco(new Endereco());
+		Endereco endereco = new Endereco();
+		pessoa.setEndereco(endereco);
 		
+		em.persist(endereco);
 		em.persist(pessoa);
 		long id = pessoa.getId();
 		

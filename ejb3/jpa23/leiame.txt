@@ -1,0 +1,14 @@
+jpa22
+Relacionamento 1->1 (chave estrangeira em Pessoa)
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpa21/
+
+Explanação:
+
+- @OneToOne seguido ou não de @JoinColumn tem o mesmo efeito
+- @JoinColumn pode ser acompanhado de vários parâmetros
+- @JoinColum(referencedColumnName="endereco_id", name="END_ID") significa que:
+  (a) a chave estrangeira para Endereco será guardade na coluna END_ID.
+  (b) esta chave refere-se à chave primária de nome "endereco_id"
+  

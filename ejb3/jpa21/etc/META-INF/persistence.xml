@@ -4,20 +4,14 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
 		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 
-	<persistence-unit name="jpaVinte">
+	<persistence-unit name="jpa21">
 		<description>
 			Exemplo simples de persistência usando JPA. 
 		</description>
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>vinte.Surrogate1</class>
-		<class>vinte.Surrogate2</class>
-		<class>vinte.Surrogate3</class>
-		<class>vinte.Surrogate4</class>
-		<class>vinte.Surrogate5</class>
-		<class>vinte.Surrogate6</class>
-		<class>vinte.Surrogate7</class>
-		<class>vinte.Surrogate8</class>
+		<class>jpa21.Pessoa</class>
+		<class>jpa21.Endereco</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>

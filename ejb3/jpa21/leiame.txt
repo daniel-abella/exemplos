@@ -1,5 +1,5 @@
-jpaVinte
-Chaves (naturais e surrogate)
+jpa21
+Relacionamento 1->1
 
 Onde obter
-http://exemplos.googlecode.com/svn/trunk/ejb3/jpaVinte/
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpa21/

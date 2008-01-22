@@ -1,4 +1,4 @@
-package jpa22;
+package jpa23;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -8,7 +8,7 @@ import javax.persistence.Persistence;
 public class Aplicacao {
 	public static void main(String[] args) throws Exception {
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("jpa22");
+				.createEntityManagerFactory("jpa23");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
@@ -19,6 +19,7 @@ public class Aplicacao {
 		
 		em.persist(endereco);
 		em.persist(pessoa);
+		em.persist(new Pessoa());
 		long id = pessoa.getId();
 		
 		tx.commit();

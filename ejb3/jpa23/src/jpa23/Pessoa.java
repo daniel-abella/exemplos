@@ -1,12 +1,12 @@
-package jpa22;
+package jpa23;
 
 import java.io.File;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 public class Pessoa {
@@ -17,7 +17,7 @@ public class Pessoa {
 	private String nome;
 	
 	@OneToOne
-	@JoinColumn(referencedColumnName="endereco_id", name="END_ID")
+	@PrimaryKeyJoinColumn(name="pessoa_id", referencedColumnName="id")
 	private Endereco endereco;
 	
 	public Pessoa() throws Exception {

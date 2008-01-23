@@ -43,3 +43,4 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
  * Ilustra diretiva, declaração, scriptlet e expressão ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp03/])
  * Variação do exemplo anterior ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp04/])
  * Diretiva para indicar página de tratamento de exceção ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp05/])
+ * Diretiva info ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp06/])

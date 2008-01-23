@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import org.jaxen.function.FalseFunction;
-
 @Entity
 public class Produto {
 	@Id

@@ -40,3 +40,4 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
 = Práticas Acompanhadas de JSP (PAs) =
  * Contador de visitas em uma página ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp01/])
  * Contador persistido entre várias execuções do Tomcat ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp02/])
+ * Ilustra diretiva, declaração, scriptlet e expressão ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp03/])

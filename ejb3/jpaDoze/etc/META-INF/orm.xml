@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+	version="1.0">
+
+	<entity class="doze.Turma" access="FIELD">
+		<table name="TURMAS" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO" />
+			</id>
+			<one-to-many name="alunos" target-entity="doze.Aluno" />
+		</attributes>
+	</entity>
+
+	<entity class="doze.Aluno" access="FIELD">
+		<table name="ALUNOS" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO" />
+			</id>
+		</attributes>
+	</entity>
+
+
+</entity-mappings>

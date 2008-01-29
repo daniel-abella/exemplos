@@ -7,7 +7,7 @@ Nesta página você encontrará uma seqüência de exemplos que empregam a JPA (
 Na ordem, primeiro segue onde informações adicionais podem ser obtidas. Isto permitirá que inúmeros detalhes, aqui não fornecidos, possam ser localizados em outras fontes. Ferramentas necessárias para a execução satisfatória dos exemplos comentados são fornecidos em seguida. 
 
 
-= Informações adicionais =
+= Referências sobre JPA =
 
  * Java Persistence API ([http://java.sun.com/javaee/technologies/persistence.jsp home])
  * Panda et al., _[http://www.amazon.com/EJB-3-Action-Debu-Panda/dp/1933988347/ref=pd_bbs_sr_1?ie=UTF8&s=books&qid=1197657357&sr=8-1 EJB 3 In Action]_, Manning, 2007. 
@@ -29,6 +29,9 @@ Não interprete as ferramentas sugeridas abaixo para emprego em produção, tamp
    * [http://www.hibernate.org/255.html Hibernate Tools].
 
 *Instalação e uso*: reserve tempo para a instalação e ambientação com estas ferramentas. Doravante é suposto que estejam devidamente instaladas e disponíveis para uso. Os exemplos fazem uso do arquivo Ant (*build.xml*) que deverá ser devidamente modificado para refletir os diretórios de instalação destas ferramentas.
+
+= OBSERVAÇÃO IMPORTANTE =
+Para todos os exemplos seguem a versão anotada (emprega anotações) juntamente com o documento XML que também pode ser empregado para representar o mapeamento correspondente. Para fazer com que o documento XML seja considerado, em detrimento das anotações, basta substituir o nome do arquivo empregado *mapeamento.xml* para *orm.xml*. Este último é consultado por padrão. Naturalmente, há como fornecer o nome de um documento XML que não seja *orm.xml*. Isto é feito no arquivo *persistence.xml*. Por simplicidade, a mera alteração do nome do arquivo é suficiente, sem que nenhuma outra mudança tenha que ser realizada.
 
 = Seqüência inicial de exemplos (primeiros contatos) = 
 Abaixo segue uma seqüência de pequenos exemplos, comentados, que permitem, paulatinamente, agregar informações relevantes sobre a persistência de objetos em Java usando entidades EJB. Esta primeira lista visa 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+	version="1.0">
+
+	<sequence-generator name="GERADOR_SEQUENCIA" sequence-name="CHAVE"
+		initial-value="1" allocation-size="7" />
+
+	<sequence-generator name="GERADOR_SEQUENCIA2" sequence-name="CHAVE"
+		initial-value="1" allocation-size="9" />
+
+	<entity class="vinte.Surrogate1" access="FIELD">
+		<table name="SURROGATES1" />
+		<attributes>
+			<id name="id"></id>
+		</attributes>
+	</entity>
+
+	<entity class="vinte.Surrogate2" access="FIELD">
+		<table name="SURROGATES2" />
+		<attributes>
+			<id name="id">
+				<generated-value />
+			</id>
+		</attributes>
+	</entity>
+
+
+	<entity class="vinte.Surrogate3" access="FIELD">
+		<table name="SURROGATES3" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="IDENTITY" />
+			</id>
+		</attributes>
+	</entity>
+
+
+	<entity class="vinte.Surrogate4" access="FIELD">
+		<table name="SURROGATES4" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO" />
+			</id>
+		</attributes>
+	</entity>
+
+
+	<entity class="vinte.Surrogate5" access="FIELD">
+		<table name="SURROGATES5" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="SEQUENCE" />
+			</id>
+		</attributes>
+	</entity>
+
+
+	<entity class="vinte.Surrogate6" access="FIELD">
+		<table name="SURROGATES6" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="SEQUENCE" />
+			</id>
+		</attributes>
+	</entity>
+
+
+	<entity class="vinte.Surrogate7" access="FIELD">
+		<table name="SURROGATES7" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="SEQUENCE"
+					generator="GERADOR_SEQUENCIA" />
+			</id>
+		</attributes>
+	</entity>
+
+
+
+	<entity class="vinte.Surrogate8" access="FIELD">
+		<attributes>
+			<id name="id">
+				<generated-value strategy="SEQUENCE"
+					generator="GERADOR_SEQUENCIA2" />
+			</id>
+		</attributes>
+	</entity>
+
+</entity-mappings>

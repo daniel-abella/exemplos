@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+	version="1.0">
+
+	<entity class="quinze.A" access="FIELD">
+		<table name="AS" />
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+		</attributes>
+	</entity>
+
+	<entity class="quinze.B" access="FIELD">
+		<table name="NOME_DA_TABELA_PARA_OBJETOS_B" />
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+		</attributes>
+	</entity>
+
+
+	<entity class="quinze.C" access="FIELD">
+		<table catalog="CATALOGO" />
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+		</attributes>
+	</entity>
+
+	<entity class="quinze.D" access="FIELD">
+		<table schema="ESQUEMA" />
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+		</attributes>
+	</entity>
+
+	<entity class="quinze.E" access="FIELD">
+		<table schema="ESQUEMA" catalog="CATALOGO" />
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+		</attributes>
+	</entity>
+
+	<entity class="quinze.F" access="FIELD">
+		<table>
+			<unique-constraint>
+				<column-name>nome</column-name>
+				<column-name>cpf</column-name>
+			</unique-constraint>
+		</table>
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+		</attributes>
+	</entity>
+
+</entity-mappings>

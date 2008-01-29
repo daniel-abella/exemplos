@@ -15,6 +15,14 @@ class Surrogate1 {
 	public Surrogate1() {
 		id = (long) (Math.random() * 1000 * 1000 * 1000);
 	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}	
 }
 
 @Entity
@@ -23,6 +31,14 @@ class Surrogate2 {
 	@Id
 	@GeneratedValue
 	private long id;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}		
 }
 
 @Entity
@@ -32,6 +48,14 @@ class Surrogate3 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}	
 }
 
 @Entity
@@ -41,6 +65,14 @@ class Surrogate4 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}	
 }
 
 @Entity
@@ -52,6 +84,14 @@ class Surrogate5 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}	
 }
 
 @Entity
@@ -61,6 +101,14 @@ class Surrogate6 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}	
 }
 
 // Usa gerador de seqüência "próprio", salta de 7 em 7
@@ -70,6 +118,14 @@ class Surrogate7 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "GERADOR_SEQUENCIA")
 	private long id;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}	
 }
 
 // Usa o mesmo gerador da entidade acima, mas salta de 9 em 9
@@ -79,4 +135,12 @@ class Surrogate8 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "GERADOR_SEQUENCIA")
 	private long id;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}	
 }

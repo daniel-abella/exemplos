@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+	version="1.0">
+
+	<entity class="dezesseis.A" access="FIELD">
+		<table name="AS" />
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+		</attributes>
+	</entity>
+
+	<entity class="dezesseis.B" access="FIELD">
+		<table name="BS" />
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+			<basic name="pequenoInt">
+				<column />
+			</basic>
+		</attributes>
+	</entity>
+
+
+	<entity class="dezesseis.C" access="FIELD">
+		<table name="CS" />
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+			<basic name="cadastroPessoaFisica">
+				<column name="NUMERO_CADASTRO_PF" />
+			</basic>
+		</attributes>
+	</entity>
+
+	<entity class="dezesseis.D" access="FIELD">
+		<table name="DS" />
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+			<basic name="cpf">
+				<column unique="true" />
+			</basic>
+		</attributes>
+	</entity>
+
+	<entity class="dezesseis.E" access="FIELD">
+		<table name="ES" />
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+			<basic name="chave">
+				<column insertable="false" updatable="false" />
+			</basic>
+		</attributes>
+	</entity>
+
+	<entity class="dezesseis.F" access="FIELD">
+		<table name="FS" />
+		<attributes>
+			<id name="chave">
+				<generated-value strategy="AUTO" />
+			</id>
+			<basic name="nome">
+				<column length="37" nullable="false" />
+			</basic>
+		</attributes>
+	</entity>
+
+</entity-mappings>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+	version="1.0">
+
+	<entity class="dez.Produto" access="FIELD">
+		<table name="PRODUTOS" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO" />
+			</id>
+			<one-to-one name="produtoInfo"
+				target-entity="dez.ProdutoInfo" optional="false" />
+		</attributes>
+	</entity>
+
+	<entity class="dez.ProdutoInfo" access="FIELD">
+		<table name="PRODUTOSINFO" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO" />
+			</id>
+		</attributes>
+	</entity>
+
+
+</entity-mappings>

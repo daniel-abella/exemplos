@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+	version="1.0">
+
+	<entity class="quatorze.Aluno" access="FIELD">
+		<table name="ALUNOS" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO" />
+			</id>
+			<many-to-many name="cursos" target-entity="quatorze.Curso" />
+		</attributes>
+	</entity>
+
+	<entity class="quatorze.Curso" access="FIELD">
+		<table name="CURSOS" />
+		<attributes>
+			<id name="id">
+				<generated-value strategy="AUTO" />
+			</id>
+			<many-to-many name="alunos" target-entity="quatorze.Aluno"
+				mapped-by="cursos" />
+		</attributes>
+	</entity>
+
+
+</entity-mappings>

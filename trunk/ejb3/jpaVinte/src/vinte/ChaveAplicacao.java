@@ -24,6 +24,7 @@ public class ChaveAplicacao {
 
 		tx.commit();
 		em.close();
+		emf.close();
 
 	}
 }

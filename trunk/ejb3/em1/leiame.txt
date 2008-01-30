@@ -1,5 +1,33 @@
-jpaNove
-Relacionamento 1->N entre Turma e Aluno.
+em1
+Ilustra alguns recursos do EntityManagerFactory e relacionamento 1->N
 
 Onde obter
-http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDoze/
+http://exemplos.googlecode.com/svn/trunk/ejb3/em1/
+
+Explanações:
+
+1. A classe CriaAlgunsEntityManagerFactories itera indefinidamente até que 
+   a memória seja exaurida (java.lang.OutOfMemoryError). Isto ocorre porque
+   não é fechada (close) a fábrica de EntityManagers criada.
+   
+2. Cria InterminaveisEntityManagerFactories, por outro lado, deve operar
+   indefinidamente, pois para toda fábrica criada há a operação close() 
+   executada logo em seguida. Ou seja, os recursos anteriormente alocados
+   são liberados com o close. 
+   
+3. CriaTurma cria uma instância de Turma. Nenhum aluno é associado à turma criada.
+
+4. ExibeTurma permite exibir a Turma criada anteriormente. 
+
+5. InsereAlgunsAlunos cria três instâncias de Aluno e as persiste.
+
+6. MatriculaAlunosNaTurma realiza a "matrícula" dos alunos anteriormente criados
+   na turma também criada anteriormente.
+   
+7. Ao executar ExibeTurma novamente, você perceberá que agora há vários alunos 
+   associados à turma. 
+   
+8. Embora não usual, PrecisoDeTransacao requisita a persistência de um objeto
+   e só posteriormente inicia a transação correspondente ào EntityManager em
+   questão e realiza o correspondente commit(). 
+   

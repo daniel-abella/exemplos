@@ -24,7 +24,6 @@
 			<property name="hibernate.connection.password" value="" />
 			<property name="hibernate.connection.url"
 				value="jdbc:hsqldb:hsql://localhost/kyrios-teste" />
-			<property name="" value="" />
 		</properties>
 	</persistence-unit>
 

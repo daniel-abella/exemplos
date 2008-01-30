@@ -224,7 +224,7 @@
 
 			<jpaconfiguration persistenceunit="${persistence.unit.name}" />
 
-			<hbm2ddl drop="true" create="true" export="true" format="true" />
+			<hbm2ddl drop="false" create="true" export="true" format="true" />
 		</hibernatetool>
 	</target>
 

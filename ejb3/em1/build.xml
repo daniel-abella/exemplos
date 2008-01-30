@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="jpaDoze" basedir="." default="clean">
+<project name="em1" basedir="." default="clean">
 
 	<!-- ================================================================= -->
 	<!-- Projeto Dados                                                     -->

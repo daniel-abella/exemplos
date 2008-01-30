@@ -1,0 +1,5 @@
+jpaNove
+Relacionamento 1->N entre Turma e Aluno.
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDoze/

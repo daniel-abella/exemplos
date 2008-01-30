@@ -1,4 +1,4 @@
-package doze;
+package em1;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

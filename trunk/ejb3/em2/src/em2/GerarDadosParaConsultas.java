@@ -9,7 +9,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 
-public class PreencheAplicacao {
+public class GerarDadosParaConsultas {
 	private static Set<Aluno> alunos = new HashSet<Aluno>();;
 	private static Set<Curso> cursos = new HashSet<Curso>();
 

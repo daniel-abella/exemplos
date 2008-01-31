@@ -1,5 +1,8 @@
-Trabalho JPQL
+em2
+Ilustra várias consultas (leitura apenas)
 
-em src/trabalho/Aluno.java - consultas estaticas
-em src/trabalho/QueryAplicacao.java - chamadas as consultas
-em src/trabalho/PreencheAplicacao.java - preenche o banco de dados
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/em2/
+
+1. Executar 'GerarDadosParaConsultas' antes da execução das 
+   várias pequenas aplicações. 

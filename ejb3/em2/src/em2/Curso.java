@@ -37,4 +37,8 @@ public class Curso {
 	public int getCodigo(){
 		return codigo;
 	}
+	
+	public String toString() {
+		return "(" + id + "," + codigo + ")";
+	}
 }

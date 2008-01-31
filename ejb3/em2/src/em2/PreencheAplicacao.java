@@ -30,7 +30,7 @@ public class PreencheAplicacao {
 		matricula10x10();
 
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("trabalho");
+				.createEntityManagerFactory("em2");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();

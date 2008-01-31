@@ -13,14 +13,15 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @NamedQueries( {
-		@NamedQuery(name = "obterColunaNumero", query = "SELECT nome FROM Aluno"),
-		@NamedQuery(name = "obtemTudo", query = "SELECT t FROM Aluno t"),
-		@NamedQuery(name = "obterNome", query = "select nome FROM Aluno p WHERE p.nome = :nomep"),
-		@NamedQuery(name = "obtemAlunosCurso", query = "SELECT a FROM Aluno AS a JOIN a.cursos AS c WHERE c.codigo= :codigocurso"),
-		@NamedQuery(name = "obtemCursosAluno", query = "SELECT c FROM Curso AS c JOIN c.alunos AS a WHERE a.matricula= :matriculaaluno"),
-		@NamedQuery(name = "obtemAlunosMatriculasEspecificas", query = "SELECT x FROM Aluno AS x WHERE (x.matricula > 3 AND x.matricula <= 5) OR x.matricula = 7"),
-		@NamedQuery(name = "obtemAlunosMatriculasBetween", query = "SELECT x FROM Aluno x WHERE x.matricula BETWEEN 3.00 AND 5.00"),
-		@NamedQuery(name = "obtemAlunosTermina5", query = "   SELECT a FROM Aluno a WHERE a.nome LIKE '%_5'"),
+		@NamedQuery(name = "nomes", query = "SELECT nome FROM Aluno"),
+		@NamedQuery(name = "todos", query = "SELECT t FROM Aluno t"),
+		@NamedQuery(name = "porNome", query = "select a FROM Aluno a WHERE a.nome = :nome"),
+		@NamedQuery(name = "porCurso", query = "SELECT a FROM Aluno a JOIN a.cursos AS c WHERE c.codigo= :curso"),
+		@NamedQuery(name = "porAluno", query = "SELECT c FROM Curso c JOIN c.alunos AS a WHERE a.matricula= :matricula"),		
+		@NamedQuery(name = "porMatriculas", query = "SELECT x FROM Aluno AS x WHERE x.matricula > 8 OR x.matricula = 2"),
+		
+		@NamedQuery(name = "porParteNome", query = "   SELECT a FROM Aluno a WHERE a.nome LIKE :parte"),
+
 		@NamedQuery(name = "obtemAlunosDeConjunto", query = "   SELECT a FROM Aluno a WHERE a.nome IN ('Aluno 5', 'Aluno 4', 'Aluno 1')"),
 		@NamedQuery(name = "obtemAlunosNomesVaziosOuNulos", query = "   SELECT a FROM Aluno a WHERE a.nome is empty OR a.nome is null"),
 		@NamedQuery(name = "obtemMatriculaMenos5", query = "SELECT a FROM Aluno a WHERE NOT(a.matricula = 5)"),
@@ -42,9 +43,7 @@ import javax.persistence.Table;
 		@NamedQuery(name = "obtemMin", query = "SELECT MIN(a.nome) FROM Aluno a"),
 		@NamedQuery(name = "obtemMax", query = "SELECT MAX(a.matricula) FROM Aluno a WHERE a.nome = 'Aluno 5'"),
 		@NamedQuery(name = "obtemAlunosMatricula", query = "SELECT nome FROM Aluno nome WHERE nome.matricula = :matriculaaluno"),
-		@NamedQuery(name = "obtemMatriculaAluno", query = "SELECT matricula FROM Aluno matricula WHERE matricula.nome = :alunomatricula")
-})
-
+		@NamedQuery(name = "obtemMatriculaAluno", query = "SELECT matricula FROM Aluno matricula WHERE matricula.nome = :alunomatricula") })
 @Entity
 @Table(name = "ALUNOS")
 public class Aluno {
@@ -70,7 +69,7 @@ public class Aluno {
 	}
 
 	public String toString() {
-		return nome;
+		return "(" + matricula + "," + nome + ")";
 	}
 
 	public Set<Curso> getCursos() {

@@ -15,7 +15,7 @@ public class SelecionaPorParteNome {
 		EntityManager em = emf.createEntityManager();
 
 		Query jpql = em.createNamedQuery("porParteNome");
-		// O que termina por espaço seguido de 2.
+		// O que termina por qualquer caractere seguido de 2.
 		jpql.setParameter("parte", "%_2"); 
 
 		List<Aluno> alunos = (List<Aluno>) jpql.getResultList();

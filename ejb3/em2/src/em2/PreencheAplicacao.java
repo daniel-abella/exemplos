@@ -37,6 +37,9 @@ public class PreencheAplicacao {
 
 		for (Aluno aluno : alunos)
 			em.persist(aluno);
+		
+		em.persist(new Aluno(""));
+		em.persist(new Aluno());
 
 		for (Curso curso : cursos)
 			em.persist(curso);

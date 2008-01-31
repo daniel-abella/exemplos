@@ -1,0 +1,5 @@
+Trabalho JPQL
+
+em src/trabalho/Aluno.java - consultas estaticas
+em src/trabalho/QueryAplicacao.java - chamadas as consultas
+em src/trabalho/PreencheAplicacao.java - preenche o banco de dados

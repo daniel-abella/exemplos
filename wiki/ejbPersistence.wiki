@@ -72,7 +72,7 @@ A sugestão é que siga a lista abaixo na ordem em que aparece.
  * [http://exemplos.googlecode.com/svn/trunk/ejb3/jpa22/ 1->1] (Pessoa->Endereco) (chave específica em Pessoa)
  * [http://exemplos.googlecode.com/svn/trunk/ejb3/jpa23/ 1->1] (Pessoa->Endereco) (Pessoa e Endereco com mesma chave)
 
-= EntityManager e consultas =
+= !EntityManager e consultas =
 Cada um dos projetos abaixo contém exemplos do emprego da interface *EntityManager* e de consultas usando a _Java Persistence Query Language_. Experimente alternativas e variações para as aplicações e exemplos fornecidos.
 
  * [http://exemplos.googlecode.com/svn/trunk/ejb3/em1/ em1]

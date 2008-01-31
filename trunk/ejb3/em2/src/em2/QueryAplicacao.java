@@ -14,18 +14,6 @@ public class QueryAplicacao {
 				.createEntityManagerFactory("trabalho");
 		EntityManager em = emf.createEntityManager();
 
-		List todaColuna = em.createNamedQuery("obterColunaNumero").getResultList();                                                   
-		System.out.println("tudo de uma coluna: \n"+ todaColuna.toString());
-
-		
-		//imprime tudo
-		List obtemall = em.createNamedQuery("obtemTudo").getResultList();   
-		System.out.println("tudo: \n"+ obtemall.toString());
-
-		//imprime o registro de determinado nome
-		List obtemNomeAluno = em.createNamedQuery("obterNome").setParameter("nomep", "Aluno 2").getResultList(); 
-		
-		
 		List cursoPorAluno = em.createNamedQuery("obtemCursosAluno").setParameter("matriculaaluno", (long)5).getResultList();
 		System.out.println("o aluno de matricula 5 esta matriculado nos cursos: ");
 		Iterator i2 = cursoPorAluno.iterator();   

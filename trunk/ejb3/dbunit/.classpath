@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.jboss.ide.eclipse.as.classpath.core.javaee-5.0"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/kad-libs-0.9"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

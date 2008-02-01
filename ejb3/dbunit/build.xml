@@ -272,7 +272,7 @@
 
 	<target name="db-insert" description="Insere na base dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<operation type="INSERT" src="${etc.dir}/dbunit-insert.xml" />
+			<operation type="INSERT" src="${etc.dir}/data-insert.xml" />
 		</dbunit>
 	</target>
 

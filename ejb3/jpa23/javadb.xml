@@ -20,16 +20,16 @@
 	<!-- ===================================================================-->
 	<!-- PROPRIEDADES JavaDB - Derby                                        -->
 	<!-- ===================================================================-->
-	
-	<property name="derby.libs" value="${env.DERBY_HOME}"/>
-	<property name="derbyclient.jar" value="${derby.libs}/lib/derbyclient.jar"/>
-	<property name="derby.run" value="${derby.libs}/lib/derbyrun.jar"/>
-	<property name="derby.tools" value="${derby.libs}/lib/derbytools.jar"/>
-	<property name="derby.dbname" value="kyrios-teste"/>
-	<property name="derby.url" value="jdbc:derby://localhost:1527/${derby.dbname};create=true"/>
-	<property name="dblook.option" value=""/>
-		
-	
+
+	<property name="derby.libs" value="${env.DERBY_HOME}" />
+	<property name="derbyclient.jar" value="${derby.libs}/lib/derbyclient.jar" />
+	<property name="derby.run" value="${derby.libs}/lib/derbyrun.jar" />
+	<property name="derby.tools" value="${derby.libs}/lib/derbytools.jar" />
+	<property name="derby.dbname" value="kyrios-teste" />
+	<property name="derby.url" value="jdbc:derby://localhost:1527/${derby.dbname};create=true" />
+	<property name="dblook.option" value="" />
+
+
 	<!-- ================================================================= -->
 	<!-- PROPRIEDADES                                                      -->
 	<!-- ================================================================= -->
@@ -225,65 +225,58 @@
 		<echo message="Base de dados ${derby.dbname} removida!!!!" />
 	</target>
 
-	<target name="derby-ij" description="Cliente JavaDB" >
-		
+	<target name="derby-ij" description="Cliente JavaDB">
+
 		<java classname="org.apache.derby.tools.ij">
 			<classpath>
 				<pathelement path="${derby.tools}" />
-				<path refid="projeto.classpath" />								
+				<path refid="projeto.classpath" />
 			</classpath>
 		</java>
 	</target>
-	
-	
-	<target name="derby-info" description="Informações do sistema, Java e do Derby" >
-		
+
+	<target name="derby-info" description="Informações do sistema, Java e do Derby">
 		<java classname="org.apache.derby.tools.sysinfo">
 			<classpath>
 				<pathelement path="${derby.tools}" />
 				<path refid="projeto.classpath" />
-				
+
 			</classpath>
 		</java>
 	</target>
-	
-	<target name="derby-look" description="Informações sobre a Linguagem de Definição de Dados - DDL" >
+
+	<target name="derby-look" description="Informações sobre a Linguagem de Definição de Dados - DDL">
 		<java classname="org.apache.derby.tools.dblook">
-			<arg line="-d ${derby.url} ${dblook.option}"/>
+			<arg line="-d ${derby.url} ${dblook.option}" />
 			<classpath>
 				<pathelement path="${derby.tools}" />
 				<path refid="projeto.classpath" />
-				
+
 			</classpath>
 		</java>
-		
-	</target>
 
-	
+	</target>
 
 	<target name="derby-start" description="inicia JavaDB (kyrios-teste)">
 		<java classname="org.apache.derby.iapi.tools.run" dir="/tmp" spawn="true" fork="true">
-			<arg line="server start"/>
+			<arg line="server start" />
 			<classpath>
 				<pathelement path="${derby.run}" />
 				<path refid="projeto.classpath" />
-				
+
 			</classpath>
-		</java>	
+		</java>
 	</target>
 
 	<target name="derby-stop" description="finaliza JavaDB (kyrios-teste)">
 		<java classname="org.apache.derby.iapi.tools.run">
-			<arg line="server shutdown"/>
+			<arg line="server shutdown" />
 			<classpath>
 				<pathelement path="${derby.run}" />
 				<path refid="projeto.classpath" />
-				
 			</classpath>
-		</java>		
+		</java>
 	</target>
-
-
 
 	<!-- HIBERNATE                                                         -->
 	<!-- ================================================================= -->

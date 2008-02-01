@@ -1,4 +1,4 @@
-package jpa23;
+package jpa24;
 
 import java.io.File;
 

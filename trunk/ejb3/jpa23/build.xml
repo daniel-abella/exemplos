@@ -98,7 +98,7 @@
 		<pathelement location="${env.JAVA_HOME}/db/lib/derbyclient.jar" />
 		<pathelement location="${env.JAVA_HOME}/db/lib/derbyrun.jar" />
 	</path>
-	
+
 	<!-- ================================================================= -->
 	<!-- PERSISTENCIA (classpath)                                          -->
 	<!-- ================================================================= -->
@@ -106,8 +106,11 @@
 		<!-- Hibernate -->
 		<path refid="hibernate.classpath" />
 
-		<!-- Driver JDBC -->
+		<!-- Driver JDBC (HSQLDB) -->
 		<pathelement location="${hsqldb.jar}" />
+
+		<!-- Driver JDBC (JavaDB) -->
+		<path refid="javadb.classpath" />
 
 		<!-- DbUnit -->
 		<pathelement location="${dbunit.jar}" />
@@ -232,12 +235,10 @@
 		<echo message="Base de dados ${derby.dbname} removida!!!!" />
 	</target>
 
-	<target name="jdb-ij" description="Cliente JavaDB">
-
+	<target name="jdb-client" description="Cliente JavaDB">
 		<java classname="org.apache.derby.tools.ij">
 			<classpath>
-				<pathelement path="${derby.tools}" />
-				<path refid="projeto.classpath" />
+				<path refid="javadb.classpath" />
 			</classpath>
 		</java>
 	</target>
@@ -245,16 +246,14 @@
 	<target name="jdb-info" description="Informações do sistema, Java e do Derby">
 		<java classname="org.apache.derby.tools.sysinfo">
 			<classpath>
-				<pathelement path="${derby.tools}" />
-				<path refid="projeto.classpath" />
-
+				<path refid="javadb.classpath" />
 			</classpath>
 		</java>
 	</target>
 
 	<target name="jdb-look" description="Informações sobre a Linguagem de Definição de Dados - DDL">
 		<java classname="org.apache.derby.tools.dblook">
-			<arg line="-d ${derby.url} ${dblook.option}" />
+			<arg line="-d ${derby.url};username=sa ${dblook.option}" />
 			<classpath>
 				<path refid="javadb.classpath" />
 			</classpath>
@@ -306,7 +305,7 @@
 
 			<jpaconfiguration persistenceunit="${persistence.unit.name}" />
 
-			<hbm2ddl drop="true" create="true" export="true" format="true" />
+			<hbm2ddl drop="false" create="true" export="true" format="true" />
 		</hibernatetool>
 	</target>
 

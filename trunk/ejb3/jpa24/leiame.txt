@@ -1,0 +1,11 @@
+jpa23
+Relacionamento 1->1 (Pessoa e Endereco compartilham chave)
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/jpa23/
+
+Explanação:
+
+- @PrimaryKeyJoinColumn(name="id", referencedColumnName="pessoa_id") significa:
+  (a) id local e pessoa_id na tabela que guarda endereços possuem os mesmos valores
+  

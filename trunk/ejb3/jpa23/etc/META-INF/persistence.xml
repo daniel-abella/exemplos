@@ -20,7 +20,7 @@
 			<property name="hibernate.connection.username" value="kyrios" />
 			<property name="hibernate.connection.password" value="kyrios" />
 			<property name="hibernate.connection.url"
-				value="jdbc:derby://localhost:1527/kyrios-teste" />
+				value="jdbc:derby://localhost:1527/kyrios-teste;create=true" />
 		</properties>
 	</persistence-unit>
 

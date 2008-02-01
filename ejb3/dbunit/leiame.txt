@@ -3,3 +3,13 @@ Ilustra funcionamento da ferramenta DBUnit
 
 Onde obter
 http://exemplos.googlecode.com/svn/trunk/ejb3/dbunit/
+
+Observações:
+
+1. Explore os alvos db-insert, db-delete, db-update e db-compare. 
+   Todos eles trabalham com arquivos data-insert.xml, data-delete.xml e 
+   assim sucessivamente. 
+   
+2. Enquanto vários arquivos, por exemplo, data-update.xml devem estar
+   contidos no diretório etc (pois são mais comuns como entrada), o 
+   arquivo data-export.xml é gerado no diretório target (saída). 

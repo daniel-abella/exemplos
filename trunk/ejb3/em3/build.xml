@@ -72,7 +72,7 @@
 		<pathelement location="${hibernate.dir}/lib/asm.jar" />
 		<pathelement location="${hibernate.dir}/lib/antlr-2.7.6.jar" />
 		<pathelement location="${hibernate.dir}/lib/xerces-2.6.2.jar" />
-		<pathelement location="${log4j.jar}" />
+		<pathelement location="${hibernate.dir}/lib/log4j-1.2.11.jar" />
 	</path>
 
 	<!-- ================================================================= -->
@@ -232,6 +232,7 @@
 	<!-- ================================================================= -->
 
 	<target name="jdb-clean" description="Limpa JavaDB (kyrios-teste)" depends="jdb-stop">
+		<echo message="Limpando JavaDB base 'kyrios-teste'" />
 		<delete dir="/tmp/${derby.dbname}" />
 	</target>
 

@@ -237,6 +237,7 @@
 
 	<target name="jdb-client" description="Cliente JavaDB">
 		<java classname="org.apache.derby.tools.ij">
+			<arg line="-p ${kad.libs}/derby.properties" />
 			<classpath>
 				<path refid="javadb.classpath" />
 			</classpath>

@@ -28,7 +28,7 @@ import javax.persistence.Table;
 		@NamedQuery(name = "ordenados", query = "SELECT a FROM Aluno a order by a.matricula asc"),		
 		@NamedQuery(name = "min", query = "SELECT MIN(a.matricula) FROM Aluno a"),
 		@NamedQuery(name = "count", query = "SELECT COUNT(a.matricula) FROM Aluno a"),
-		@NamedQuery(name = "max", query = "SELECT MAX(a.matricula) FROM Aluno a"),
+		@NamedQuery(name = "max", query = "SELECT MAX(a.matricula) FROM Aluno a")
 })
 
 @Entity

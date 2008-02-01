@@ -1,6 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <ALUNO ID="1" APELIDOS="rO0ABXVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAAJ0AAJPa3QABUNoaWNv
+  <ENDERECO ID="1" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
+  <ENDERECO ID="2" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
+  <ENDERECO ID="3" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
+  <ENDERECO ID="4" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
+  <ENDERECO ID="5" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
+  <ENDERECO ID="6" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
+  <ENDERECO ID="7" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
+  <ENDERECO ID="8" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
+  <ENDERECO ID="9" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
+  <ENDERECO ID="10" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
+    <ALUNO ID="1" APELIDOS="rO0ABXVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAAJ0AAJPa3QABUNoaWNv
 " NOME="aluno 0" RG="0" END_ID="1"/>
   <ALUNO ID="2" APELIDOS="rO0ABXVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAAJ0AAJPa3QABUNoaWNv
 " NOME="aluno 1" RG="1" END_ID="2"/>
@@ -20,16 +30,7 @@
 " NOME="aluno 8" RG="8" END_ID="9"/>
   <ALUNO ID="10" APELIDOS="rO0ABXVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAAJ0AAJPa3QABUNoaWNv
 " NOME="aluno 9" RG="9" END_ID="10"/>
-  <ENDERECO ID="1" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
-  <ENDERECO ID="2" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
-  <ENDERECO ID="3" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
-  <ENDERECO ID="4" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
-  <ENDERECO ID="5" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
-  <ENDERECO ID="6" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
-  <ENDERECO ID="7" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
-  <ENDERECO ID="8" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
-  <ENDERECO ID="9" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
-  <ENDERECO ID="10" CEP="74118-090" NUMERO="34" RUA="Rua dos Uvas"/>
+
   <PREMIO ID="1" DESCRICAO="Ótimo trabalho sobre DbUnit" ALUNO_ID="1"/>
   <PREMIO ID="2" DESCRICAO="Ótimo trabalho sobre DbUnit" ALUNO_ID="2"/>
   <PREMIO ID="3" DESCRICAO="Ótimo trabalho sobre DbUnit" ALUNO_ID="3"/>

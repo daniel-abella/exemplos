@@ -1,5 +1,5 @@
-jpaNove
-Relacionamento 1->N entre Turma e Aluno.
+dbunit
+Ilustra funcionamento da ferramenta DBUnit
 
 Onde obter
-http://exemplos.googlecode.com/svn/trunk/ejb3/jpaDoze/
+http://exemplos.googlecode.com/svn/trunk/ejb3/dbunit/

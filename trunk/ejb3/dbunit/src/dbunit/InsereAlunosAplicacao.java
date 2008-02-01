@@ -1,4 +1,4 @@
-package doze;
+package dbunit;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,7 +20,7 @@ public class InsereAlunosAplicacao {
 		Turma turma = geradorDeTurma();
 
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("jpaDoze");
+				.createEntityManagerFactory("dbunit");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();

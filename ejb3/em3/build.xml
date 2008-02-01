@@ -156,6 +156,7 @@
 
 	<target name="clean" description="Apaga arquivos gerados">
 		<delete dir="${build.dir}" />
+		<delete file="derby.log" />
 	</target>
 
 	<target name="compile" description="compila arquivos .java">

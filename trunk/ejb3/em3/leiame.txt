@@ -1,0 +1,8 @@
+em2
+Ilustra várias consultas (leitura apenas)
+
+Onde obter
+http://exemplos.googlecode.com/svn/trunk/ejb3/em2/
+
+1. Executar 'GerarDadosParaConsultas' antes da execução das 
+   várias pequenas aplicações. 

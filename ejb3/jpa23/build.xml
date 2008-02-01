@@ -26,7 +26,7 @@
 	<property name="derby.run" value="${derby.libs}/lib/derbyrun.jar" />
 	<property name="derby.tools" value="${derby.libs}/lib/derbytools.jar" />
 	<property name="derby.dbname" value="kyrios-teste" />
-	<property name="derby.url" value="jdbc:derby://localhost:1527/${derby.dbname};create=true" />
+	<property name="derby.url" value="jdbc:derby://localhost:1527/kyrios-teste;create=true;user=kyrios;password=kyrios" />
 	<property name="dblook.option" value="" />
 
 
@@ -231,7 +231,7 @@
 	<!-- ================================================================= -->
 
 	<target name="jdb-clean" description="Limpa JavaDB (kyrios-teste)" depends="jdb-stop">
-		<delete dir="${derby.dbname}" />
+		<delete dir="/tmp/${derby.dbname}" />
 		<echo message="Base de dados ${derby.dbname} removida!!!!" />
 	</target>
 
@@ -252,8 +252,8 @@
 	</target>
 
 	<target name="jdb-look" description="Informações sobre a Linguagem de Definição de Dados - DDL">
-		<java classname="org.apache.derby.tools.dblook">
-			<arg line="-d ${derby.url};username=sa ${dblook.option}" />
+		<java classname="org.apache.derby.tools.dblook" dir="/tmp">
+			<arg line="-d ${derby.url} ${dblook.option}" />
 			<classpath>
 				<path refid="javadb.classpath" />
 			</classpath>

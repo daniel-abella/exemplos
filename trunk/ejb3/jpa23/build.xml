@@ -17,6 +17,19 @@
 	<property name="kad.libs" value="${env.KAD_LIBS}" />
 	<property file="${kad.libs}/kad-libs.properties" />
 
+	<!-- ===================================================================-->
+	<!-- PROPRIEDADES JavaDB - Derby                                        -->
+	<!-- ===================================================================-->
+
+	<property name="derby.libs" value="${env.DERBY_HOME}" />
+	<property name="derbyclient.jar" value="${derby.libs}/lib/derbyclient.jar" />
+	<property name="derby.run" value="${derby.libs}/lib/derbyrun.jar" />
+	<property name="derby.tools" value="${derby.libs}/lib/derbytools.jar" />
+	<property name="derby.dbname" value="kyrios-teste" />
+	<property name="derby.url" value="jdbc:derby://localhost:1527/${derby.dbname};create=true" />
+	<property name="dblook.option" value="" />
+
+
 	<!-- ================================================================= -->
 	<!-- PROPRIEDADES                                                      -->
 	<!-- ================================================================= -->
@@ -70,7 +83,7 @@
 		<path location="${spring.dir}/dist/spring-mock.jar" />
 		<fileset dir="${spring.dir}/lib/jakarta-commons" includes="*.jar" />
 	</path>
-	
+
 	<!-- ================================================================= -->
 	<!-- JUnit (classpath)                                             -->
 	<!-- ================================================================= -->
@@ -78,14 +91,21 @@
 		<path location="${kad.libs}/junit3.8.1/junit.jar" />
 	</path>
 
-
+	<!-- ================================================================= -->
+	<!-- JavaDB (Derby) (classpath)                                        -->
+	<!-- ================================================================= -->
+	<path id="javadb.classpath">
+		<pathelement location="${env.JAVA_HOME}/db/lib/derbyclient.jar" />
+		<pathelement location="${env.JAVA_HOME}/db/lib/derbyrun.jar" />
+	</path>
+	
 	<!-- ================================================================= -->
 	<!-- PERSISTENCIA (classpath)                                          -->
 	<!-- ================================================================= -->
 	<path id="persistencia.classpath">
 		<!-- Hibernate -->
 		<path refid="hibernate.classpath" />
-		
+
 		<!-- Driver JDBC -->
 		<pathelement location="${hsqldb.jar}" />
 
@@ -99,7 +119,7 @@
 	<!-- ================================================================= -->
 	<path id="projeto.classpath">
 		<!-- Testes -->
-		<path refid="junit.classpath"/>
+		<path refid="junit.classpath" />
 
 		<!-- persistencia -->
 		<path refid="persistencia.classpath" />
@@ -155,7 +175,7 @@
 		</java>
 	</target>
 
-	<!-- SGBD                                                              -->
+	<!-- SGBD (HSQLDB)                                                     -->
 	<!-- Assume que 'kyrios-teste' é o nome da base de dados               -->
 	<!-- ================================================================= -->
 	<!-- db-clean  : Limpa HSQLDB (kyrios-teste)                           -->
@@ -198,6 +218,67 @@
 		</java>
 	</target>
 
+	<!-- SGBD JavaDB                                                       -->
+	<!-- Assume que 'kyrios-teste' é o nome da base de dados               -->
+	<!-- ================================================================= -->
+	<!-- jdb-clean  : Limpa JavaDB (kyrios-teste)                          -->
+	<!-- jdb-client : inicia cliente para interação com SGBD               -->
+	<!-- jdb-start  : inicia SGBD de desenvolvimento                       -->
+	<!-- jdb-stop   : interrompe SGBD                                      -->
+	<!-- ================================================================= -->
+
+	<target name="jdb-clean" description="Limpa JavaDB (kyrios-teste)" depends="jdb-stop">
+		<delete dir="${derby.dbname}" />
+		<echo message="Base de dados ${derby.dbname} removida!!!!" />
+	</target>
+
+	<target name="jdb-ij" description="Cliente JavaDB">
+
+		<java classname="org.apache.derby.tools.ij">
+			<classpath>
+				<pathelement path="${derby.tools}" />
+				<path refid="projeto.classpath" />
+			</classpath>
+		</java>
+	</target>
+
+	<target name="jdb-info" description="Informações do sistema, Java e do Derby">
+		<java classname="org.apache.derby.tools.sysinfo">
+			<classpath>
+				<pathelement path="${derby.tools}" />
+				<path refid="projeto.classpath" />
+
+			</classpath>
+		</java>
+	</target>
+
+	<target name="jdb-look" description="Informações sobre a Linguagem de Definição de Dados - DDL">
+		<java classname="org.apache.derby.tools.dblook">
+			<arg line="-d ${derby.url} ${dblook.option}" />
+			<classpath>
+				<path refid="javadb.classpath" />
+			</classpath>
+		</java>
+
+	</target>
+
+	<target name="jdb-start" description="inicia JavaDB (kyrios-teste)">
+		<java classname="org.apache.derby.iapi.tools.run" dir="/tmp" spawn="true" fork="true">
+			<arg line="server start" />
+			<classpath>
+				<path refid="javadb.classpath" />
+			</classpath>
+		</java>
+	</target>
+
+	<target name="jdb-stop" description="finaliza JavaDB (kyrios-teste)">
+		<java classname="org.apache.derby.iapi.tools.run">
+			<arg line="server shutdown" />
+			<classpath>
+				<path refid="javadb.classpath" />
+			</classpath>
+		</java>
+	</target>
 
 	<!-- HIBERNATE                                                         -->
 	<!-- ================================================================= -->

@@ -4,16 +4,13 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
 		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 
-	<persistence-unit name="jpaDoze">
-		<description>
-			Exemplo simples de persistência usando JPA. 
-		</description>
+	<persistence-unit name="dbunit">
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>doze.Turma</class>
-		<class>doze.Endereco</class>
-		<class>doze.Aluno</class>
-		<class>doze.Premio</class>
+		<class>dbunit.Turma</class>
+		<class>dbunit.Endereco</class>
+		<class>dbunit.Aluno</class>
+		<class>dbunit.Premio</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>

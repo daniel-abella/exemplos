@@ -1,4 +1,4 @@
-package doze;
+package dbunit;
 
 import java.util.Calendar;
 

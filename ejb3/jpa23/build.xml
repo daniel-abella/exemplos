@@ -252,7 +252,7 @@
 	</target>
 
 	<target name="jdb-look" description="Informações sobre a Linguagem de Definição de Dados - DDL">
-		<java classname="org.apache.derby.tools.dblook" dir="/tmp">
+		<java classname="org.apache.derby.tools.dblook" dir="/tmp" fork="true">
 			<arg line="-d ${derby.url} ${dblook.option}" />
 			<classpath>
 				<path refid="javadb.classpath" />

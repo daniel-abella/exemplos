@@ -262,7 +262,7 @@
 	
 
 	<target name="derby-start" description="inicia JavaDB (kyrios-teste)">
-		<java classname="org.apache.derby.iapi.tools.run">
+		<java classname="org.apache.derby.iapi.tools.run" dir="/tmp" spawn="true" fork="true">
 			<arg line="server start"/>
 			<classpath>
 				<pathelement path="${derby.run}" />

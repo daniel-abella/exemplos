@@ -1,4 +1,4 @@
-package em2;
+package em3;
 
 import java.util.List;
 
@@ -7,16 +7,19 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class SelecionaPorMatriculas {
+public class SelecionaPorParteNome {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("em2");
 		EntityManager em = emf.createEntityManager();
 
-		Query jpql = em.createNamedQuery("porMatriculas");
-		List<Curso> cursos = (List<Curso>) jpql.getResultList();
-		System.out.println(cursos);
+		Query jpql = em.createNamedQuery("porParteNome");
+		// O que termina por qualquer caractere seguido de 2.
+		jpql.setParameter("parte", "%_2"); 
+
+		List<Aluno> alunos = (List<Aluno>) jpql.getResultList();
+		System.out.println(alunos);
 
 		em.close();
 		emf.close();

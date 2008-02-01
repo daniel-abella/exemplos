@@ -1,22 +1,22 @@
-package em2;
-
-import java.util.List;
+package em3;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class SelecionaPorConcat {
+public class SelecionaPorNome {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("em2");
 		EntityManager em = emf.createEntityManager();
 
-		Query jpql = em.createNamedQuery("concat");	
-		List<Aluno> alunos = (List<Aluno>) jpql.getResultList();
-		System.out.println(alunos);
+		Query jpql = em.createNamedQuery("porNome");
+		jpql.setParameter("nome", "Aluno 1");
+
+		Aluno aluno = (Aluno) jpql.getSingleResult();
+		System.out.println(aluno);
 
 		em.close();
 		emf.close();

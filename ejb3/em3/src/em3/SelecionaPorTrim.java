@@ -1,22 +1,22 @@
-package em2;
+package em3;
+
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class SelecionaPorNome {
+public class SelecionaPorTrim {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("em2");
 		EntityManager em = emf.createEntityManager();
 
-		Query jpql = em.createNamedQuery("porNome");
-		jpql.setParameter("nome", "Aluno 1");
-
-		Aluno aluno = (Aluno) jpql.getSingleResult();
-		System.out.println(aluno);
+		Query jpql = em.createNamedQuery("trim");
+		List<Aluno> alunos = (List<Aluno>) jpql.getResultList();
+		System.out.println(alunos);
 
 		em.close();
 		emf.close();

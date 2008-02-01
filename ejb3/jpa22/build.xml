@@ -192,7 +192,7 @@
 	<target name="db-stop" description="finaliza HSQLDB (kyrios-teste)">
 		<java classname="br.com.kyriosdata.kyshell.kystophsqldb">
 			<classpath>
-				<pathelement path="${kad.libs}/bin/kyTools.jar" />
+				<pathelement path="${kad.libs}/bin/kyshell.jar" />
 				<path refid="projeto.classpath" />
 			</classpath>
 		</java>

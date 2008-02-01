@@ -17,8 +17,8 @@
 				value="org.hibernate.dialect.DerbyDialect" />
 			<property name="hibernate.connection.driver_class"
 				value="org.apache.derby.jdbc.ClientDriver" />
-			<property name="hibernate.connection.username" value="" />
-			<property name="hibernate.connection.password" value="" />
+			<property name="hibernate.connection.username" value="kyrios" />
+			<property name="hibernate.connection.password" value="kyrios" />
 			<property name="hibernate.connection.url"
 				value="jdbc:derby://localhost:1527/kyrios-teste" />
 		</properties>

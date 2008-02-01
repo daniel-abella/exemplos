@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/kad-libs-0.9"/>
+	<classpathentry kind="lib" path="etc"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

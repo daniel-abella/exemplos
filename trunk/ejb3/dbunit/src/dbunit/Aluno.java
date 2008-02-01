@@ -1,7 +1,5 @@
 package dbunit;
 
-import java.util.Calendar;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,30 +15,11 @@ public class Aluno {
 	private int rg;
 	private String nome;
 	private String[] apelidos;
-	private double[] turmasCursadas;
-	private Calendar nascimento;
-	
-	public double[] getTurmasCursadas() {
-		return turmasCursadas;
-	}
-
-	public void setTurmasCursadas(double[] turmasCursadas) {
-		this.turmasCursadas = turmasCursadas;
-	}
-
-	public Calendar getNascimento() {
-		return nascimento;
-	}
-
-	public void setNascimento(Calendar nascimento) {
-		this.nascimento = nascimento;
-	}
 
 	public Aluno(int rg, String nome) {
 		super();
 		this.rg = rg;
-		this.nome = nome;
-		this.nascimento = Calendar.getInstance(); 
+		this.nome = nome; 
 	}
 
 	public Long getId() {
@@ -74,7 +53,10 @@ public class Aluno {
 	}
 	
 	public String toString() {
-		return nome;
+		String retorno = nome + " (";
+		for (String apelido : apelidos)
+			retorno += apelido + ",";
+		return retorno + ")";
 	}
 
 	public Endereco getEndereco() {

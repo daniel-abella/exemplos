@@ -232,13 +232,22 @@
 
 	<target name="jdb-clean" description="Limpa JavaDB (kyrios-teste)" depends="jdb-stop">
 		<delete dir="/tmp/${derby.dbname}" />
-		<echo message="Base de dados ${derby.dbname} removida!!!!" />
 	</target>
 
-	<target name="jdb-client" description="Cliente JavaDB">
+	<target name="jdb-ij" description="Cliente JavaDB">
 		<java classname="org.apache.derby.tools.ij">
 			<arg line="-p ${kad.libs}/derby.properties" />
 			<classpath>
+				<path refid="javadb.classpath" />
+			</classpath>
+		</java>
+	</target>
+	
+	<target name="jdb-client" description="Cliente HSQLDB">
+		<java classname="org.hsqldb.util.DatabaseManagerSwing" spawn="yes" fork="yes">
+			<arg line="-url ${derby.url}" />
+			<classpath>
+				<pathelement path="${hsqldb.jar}" />
 				<path refid="javadb.classpath" />
 			</classpath>
 		</java>

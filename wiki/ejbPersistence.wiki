@@ -78,3 +78,12 @@ Cada um dos projetos abaixo contém exemplos do emprego da interface *!EntityMan
  * [http://exemplos.googlecode.com/svn/trunk/ejb3/dbunit/ dbunit]
  * [http://exemplos.googlecode.com/svn/trunk/ejb3/em1/ em1]
  * [http://exemplos.googlecode.com/svn/trunk/ejb3/em2/ em2]
+
+= Tarefas =
+Elabore, para cada um dos itens abaixo, pelo menos dois exemplos onde: (a) um deles ilustra uma aplicação que não faz uso do recurso CASCADE; (b) o outro emprega este recurso e (c) tais exemplos sejam elucidativos quanto ao funcionamento deste recurso. Ou seja, deve ser claro, para o leitor das duas aplicações, as diferenças de funcionamento derivadas do emprego ou não de tal recurso. A tabela abaixo pode ser útil.
+
+ * *!CascadeType.MERGE*. Operações de merge são propagadas para as entidades relacionadas ao objeto em questão.
+ * *!CascadeType.PERSIST*. Operações persist são propagadas para as entidades relacionadas.
+ * *!CascadeType.REFRESH*. Operações refresh são propagadas para as entidades relacionadas.
+ * *!CascadeType.REMOVE*. Operações remove são propagadas para as entidades relacionadas.
+ * *!CascadeType.ALL*. Todas as operações são propagadas para as entidades relacionadas.

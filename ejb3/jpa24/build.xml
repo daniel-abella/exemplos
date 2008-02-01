@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="jpaVinte" basedir="." default="clean">
+<project name="jpa23" basedir="." default="clean">
 
 	<!-- ================================================================= -->
 	<!-- Projeto Dados                                                     -->
@@ -192,7 +192,7 @@
 	<target name="db-stop" description="finaliza HSQLDB (kyrios-teste)">
 		<java classname="br.com.kyriosdata.kyshell.kystophsqldb">
 			<classpath>
-				<pathelement path="${kad.libs}/bin/kyshell.jar" />
+				<pathelement path="${kad.libs}/bin/kyTools.jar" />
 				<path refid="projeto.classpath" />
 			</classpath>
 		</java>
@@ -251,31 +251,31 @@
 
 	<target name="db-compare" description="Compara base com dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<compare src="${etc.dir}/data-compare.xml" />
+			<compare src="${etc.dir}/data-teste.xml" />
 		</dbunit>
 	</target>
 
 	<target name="db-delete" description="Remove da base dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<operation type="DELETE" src="${etc.dir}/data-delete.xml" />
+			<operation type="DELETE" src="${etc.dir}/data-teste.xml" />
 		</dbunit>
 	</target>
 
 	<target name="db-export" description="Exporta base para dados em XML">
 		<dbunit driver="${database.driver_class}" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<export dest="${build.dir}/data-export.xml" format="flat" />
+			<export dest="${build.dir}/dbunit-export.xml" />
 		</dbunit>
 	</target>
 
 	<target name="db-insert" description="Insere na base dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<operation type="INSERT" src="${etc.dir}/data-insert.xml" />
+			<operation type="INSERT" src="${etc.dir}/data-teste.xml" />
 		</dbunit>
 	</target>
 
 	<target name="db-update" description="Atualiza base conforme dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<operation type="UPDATE" src="${etc.dir}/data-update.xml" />
+			<operation type="UPDATE" src="${etc.dir}/data-teste.xml" />
 		</dbunit>
 	</target>
 

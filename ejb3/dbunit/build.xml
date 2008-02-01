@@ -266,7 +266,7 @@
 
 	<target name="db-export" description="Exporta base para dados em XML">
 		<dbunit driver="${database.driver_class}" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<export dest="${build.dir}/dbunit-export.xml" format="flat" />
+			<export dest="${build.dir}/data-export.xml" format="flat" />
 		</dbunit>
 	</target>
 

@@ -1,4 +1,4 @@
-package em2;
+package em3;
 
 import java.util.List;
 
@@ -7,14 +7,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class SelecionaPorSubstring {
+public class TodosOrdenados {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("em2");
 		EntityManager em = emf.createEntityManager();
 
-		Query jpql = em.createNamedQuery("substring");	
+		Query jpql = em.createNamedQuery("ordenados");
 		List<Aluno> alunos = (List<Aluno>) jpql.getResultList();
 		System.out.println(alunos);
 

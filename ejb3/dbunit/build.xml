@@ -278,7 +278,7 @@
 
 	<target name="db-update" description="Atualiza base conforme dados em XML">
 		<dbunit driver="${database.driver_class}" supportBatchStatement="false" url="${database.url}" userid="${database.username}" password="${database.password}">
-			<operation type="UPDATE" src="${etc.dir}/data-teste.xml" />
+			<operation type="UPDATE" src="${etc.dir}/data-update.xml" />
 		</dbunit>
 	</target>
 

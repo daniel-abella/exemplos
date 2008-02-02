@@ -1,8 +1,8 @@
-em2
-Ilustra várias consultas (leitura apenas)
+em3
+Motiva o emprego de CASCADE
 
 Onde obter
-http://exemplos.googlecode.com/svn/trunk/ejb3/em2/
+http://exemplos.googlecode.com/svn/trunk/ejb3/em3/
 
-1. Executar 'GerarDadosParaConsultas' antes da execução das 
-   várias pequenas aplicações. 
+1. Experimente ordens diferentes para persistir os objetos ou mesmo
+   não persisti-lo um subconjunto deles e observe os resultados.

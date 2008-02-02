@@ -8,13 +8,26 @@ import javax.persistence.Persistence;
 public class GerarDadosParaConsultas {
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("em2");
+				.createEntityManagerFactory("em3");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		
-		em.persist(new Aluno(""));
-		em.persist(new Aluno());
+		Pessoa pessoa = new Pessoa("José de Alencar");		
+		Aluno aluno = new Aluno("INF0821", pessoa);		
+		Curso curso = new Curso("Especialização");
+		curso.adicionaAluno(aluno);
+
+		// Todos os objetos precisam ser persistidos
+		// Quase sempre a ordem também é relevante
+		// CASCADE é uma forma de transferir a 
+		// responsabilidade de persistir relacionamentos
+		// para o persistence provider
+		
+		em.persist(pessoa);
+		em.persist(aluno);
+		em.persist(curso);		
+		
 		tx.commit();
 		em.close();
 	}

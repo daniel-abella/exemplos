@@ -6,13 +6,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="PESSOAS")
+@Table(name = "PESSOAS")
 public class Pessoa {
 	@Id
 	@GeneratedValue
 	private long id;
-	
+
 	private String nome;
+
+	public Pessoa() {
+	}
+
+	public Pessoa(String nome) {
+		this.nome = nome;
+	}
 
 	public long getId() {
 		return id;
@@ -22,11 +29,7 @@ public class Pessoa {
 		this.id = id;
 	}
 
-	public String getNome() {
+	public String toString() {
 		return nome;
 	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}		
 }

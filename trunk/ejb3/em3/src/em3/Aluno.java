@@ -7,7 +7,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@NamedQuery(name = "nomes", query = "SELECT nome FROM Aluno")
+@NamedQuery(name = "todos", query = "SELECT a FROM Aluno a")
 
 @Entity
 @Table(name = "ALUNOS")
@@ -15,8 +15,8 @@ public class Aluno {
 	@Id
 	@GeneratedValue
 	private long id;
-
-	private String nome;
+	
+	private String codigo;
 	
 	@OneToOne
 	private Pessoa pessoa;
@@ -24,12 +24,13 @@ public class Aluno {
 	public Aluno() {
 	}
 
-	public Aluno(String nome) {
-		this.nome = nome;
+	public Aluno(String codigo, Pessoa pessoa) {
+		this.codigo = codigo;
+		this.pessoa = pessoa;
 	}
 
 	public String toString() {
-		return "(" + id + "," + nome + ")";
+		return "(" + id + "," + pessoa + ")";
 	}
 
 	public long getId() {
@@ -39,20 +40,20 @@ public class Aluno {
 	public void setId(long id) {
 		this.id = id;
 	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
+	
 	public Pessoa getPessoa() {
 		return pessoa;
 	}
 
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}			
 }

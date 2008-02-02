@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,9 +16,9 @@ public class Curso {
 	@GeneratedValue
 	private long id;
 	
-	private int codigo;
+	private String codigo;
 
-	@ManyToMany(mappedBy="cursos")
+	@OneToMany
 	private List<Aluno> alunos = new ArrayList<Aluno>();
 	
 	public void adicionaAluno(Aluno novoAluno) {
@@ -30,15 +30,11 @@ public class Curso {
 	}
 	
 	public Curso() {}
-	
-	public Curso(int codigo) {
+	public Curso(String codigo) {
 		this.codigo = codigo;
-	}
-	public int getCodigo(){
-		return codigo;
 	}
 	
 	public String toString() {
-		return "(" + id + "," + codigo + ")";
+		return "(" + id + "," + codigo + alunos + ")";
 	}
 }

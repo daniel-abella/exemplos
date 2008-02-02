@@ -30,5 +30,6 @@ public class InsereCursoAlunoPessoa {
 		
 		tx.commit();
 		em.close();
+		emf.close();
 	}
 }

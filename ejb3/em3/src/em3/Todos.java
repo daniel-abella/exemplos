@@ -10,7 +10,7 @@ public class Todos {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("em2");
+				.createEntityManagerFactory("em3");
 		EntityManager em = emf.createEntityManager();
 
 		List<Aluno> alunos = null;

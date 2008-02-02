@@ -30,6 +30,7 @@ public class Curso {
 	}
 	
 	public Curso() {}
+	
 	public Curso(String codigo) {
 		this.codigo = codigo;
 	}

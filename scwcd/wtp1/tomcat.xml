@@ -18,7 +18,7 @@
 	<property name="url" value="http://localhost:8080/manager" />
 	<property name="username" value="admin" />
 	<property name="password" value="admin" />
-	
+
 	<!-- Acrescentar arquivos do classpath em WEB-INF/lib -->
 
 	<property name="webapp.path" value="${build}/webapp${path}" />
@@ -27,6 +27,11 @@
 		<fileset dir="${tomcat.deployer.home}/lib">
 			<include name="*.jar" />
 		</fileset>
+	</path>
+	
+	<!-- Bibliotecas a serem compiadas para WEB-INF/lib -->
+	<path id="libs.classpath">
+		<pathelement location="${hsqldb.jar}" />
 	</path>
 
 	<!-- Configure the custom Ant tasks for the Manager application -->
@@ -50,6 +55,10 @@
 		<mkdir dir="${webapp.path}/WEB-INF/classes" />
 		<mkdir dir="${webapp.path}/WEB-INF/lib" />
 
+		<copy todir="${webapp.path}/WEB-INF/lib" flatten="true">
+			<path refid="libs.classpath"/>
+		</copy>
+		
 		<javac destdir="${webapp.path}/WEB-INF/classes" optimize="off" debug="${compile.debug}" deprecation="${compile.deprecation}" failonerror="false" srcdir="${webapp.path}/WEB-INF/classes:${src.dir}" encoding="UTF-8" excludes="**/*.smap">
 			<classpath>
 				<fileset dir="${webapp.path}/WEB-INF/lib">
@@ -60,7 +69,7 @@
 			<include name="**" />
 			<exclude name="tags/**" />
 		</javac>
-
+		
 		<jar destfile="${webapp.path}.war" basedir="${webapp.path}" />
 
 	</target>

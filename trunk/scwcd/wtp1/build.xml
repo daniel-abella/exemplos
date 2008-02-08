@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="jpa23" basedir="." default="clean">
+<project name="wtp1" basedir="." default="clean">
 
 	<!-- ================================================================= -->
 	<!-- Projeto Dados                                                     -->
@@ -411,6 +411,50 @@
 		<fail if="test.failed">
 			Pelo menos um teste falhou. Veja resultado em ${test.out.dir}/html.
 		</fail>
+	</target>
+	
+	<!-- TOMCAT (alvos)                                                    -->
+	<!-- ================================================================= -->
+	<!-- deploy   : instala a aplicação no Tomcat                          -->
+	<!-- undeploy : desinstala a aplicação                                 -->
+	<!-- start    : inicia a aplicação                                     -->
+	<!-- stop     : para a aplicação                                       -->
+	<!-- reload   : recarrega a aplicação no Tomcat                        -->
+	<!-- ================================================================= -->
+	
+	<!-- Configurações -->
+	<property name="url" value="http://localhost:8080/manager" />
+	<property name="username" value="admin" />
+	<property name="password" value="admin" />
+	<property name="cpath" value="/${ant.project.name}" />
+		
+	<path id="tomcat.deployer.classpath">
+		<fileset dir="${env.CATALINA_HOME}-deployer/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+				
+	<taskdef resource="org/apache/catalina/ant/catalina.tasks" classpathref="tomcat.deployer.classpath" />
+
+	<target name="deploy" description="Deploy web application">
+		<deploy url="${url}" username="${username}" password="${password}" path="${cpath}" war="${webapp.path}.war" update="true" />
+	</target>
+
+	<target name="undeploy" description="Undeploy web application">
+		<undeploy url="${url}" username="${username}" password="${password}" path="${cpath}" />
+	</target>
+
+	<!-- Webapp lifecycle control -->
+	<target name="start" description="Start web application">
+		<start url="${url}" username="${username}" password="${password}" path="${cpath}" />
+	</target>
+
+	<target name="reload" description="Reload web application">
+		<reload url="${url}" username="${username}" password="${password}" path="${cpath}" />
+	</target>
+
+	<target name="stop" description="Stop web application">
+		<stop url="${url}" username="${username}" password="${password}" path="${cpath}" />
 	</target>
 
 </project>

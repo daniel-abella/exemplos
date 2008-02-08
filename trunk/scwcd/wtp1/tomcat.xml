@@ -28,7 +28,7 @@
 			<include name="*.jar" />
 		</fileset>
 	</path>
-	
+
 	<!-- Bibliotecas a serem compiadas para WEB-INF/lib -->
 	<path id="libs.classpath">
 		<pathelement location="${hsqldb.jar}" />
@@ -56,9 +56,9 @@
 		<mkdir dir="${webapp.path}/WEB-INF/lib" />
 
 		<copy todir="${webapp.path}/WEB-INF/lib" flatten="true">
-			<path refid="libs.classpath"/>
+			<path refid="libs.classpath" />
 		</copy>
-		
+
 		<javac destdir="${webapp.path}/WEB-INF/classes" optimize="off" debug="${compile.debug}" deprecation="${compile.deprecation}" failonerror="false" srcdir="${webapp.path}/WEB-INF/classes:${src.dir}" encoding="UTF-8" excludes="**/*.smap">
 			<classpath>
 				<fileset dir="${webapp.path}/WEB-INF/lib">
@@ -69,10 +69,19 @@
 			<include name="**" />
 			<exclude name="tags/**" />
 		</javac>
-		
+
 		<jar destfile="${webapp.path}.war" basedir="${webapp.path}" />
 
 	</target>
+
+	<!-- TOMCAT (alvos)                                                    -->
+	<!-- ================================================================= -->
+	<!-- deploy   : instala a aplicação no Tomcat                          -->
+	<!-- undeploy : desinstala a aplicação                                 -->
+	<!-- start    : inicia a aplicação                                     -->
+	<!-- stop     : para a aplicação                                       -->
+	<!-- reload   : executa classe (argumento -Dclasse=<nomeClasse>)       -->
+	<!-- ================================================================= -->
 
 	<target name="deploy" description="Deploy web application">
 		<deploy url="${url}" username="${username}" password="${password}" path="${path}" war="${webapp.path}.war" update="true" />
@@ -86,9 +95,11 @@
 	<target name="start" description="Start web application">
 		<start url="${url}" username="${username}" password="${password}" path="${path}" />
 	</target>
+
 	<target name="reload" description="Reload web application">
 		<reload url="${url}" username="${username}" password="${password}" path="${path}" />
 	</target>
+
 	<target name="stop" description="Stop web application">
 		<stop url="${url}" username="${username}" password="${password}" path="${path}" />
 	</target>

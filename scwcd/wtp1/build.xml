@@ -242,7 +242,7 @@
 			</classpath>
 		</java>
 	</target>
-	
+
 	<target name="jdb-client" description="Cliente HSQLDB">
 		<java classname="org.hsqldb.util.DatabaseManagerSwing" spawn="yes" fork="yes">
 			<arg line="-url ${derby.url}" />
@@ -412,7 +412,7 @@
 			Pelo menos um teste falhou. Veja resultado em ${test.out.dir}/html.
 		</fail>
 	</target>
-	
+
 	<!-- TOMCAT (alvos)                                                    -->
 	<!-- ================================================================= -->
 	<!-- deploy   : instala a aplicação no Tomcat                          -->
@@ -420,20 +420,28 @@
 	<!-- start    : inicia a aplicação                                     -->
 	<!-- stop     : para a aplicação                                       -->
 	<!-- reload   : recarrega a aplicação no Tomcat                        -->
+	<!-- war      : gera arquivo .war                                      -->
 	<!-- ================================================================= -->
 	
+	<!-- Bibliotecas a serem compiadas para WEB-INF/lib -->
+	<path id="libs.classpath">
+		<pathelement location="${hsqldb.jar}" />
+	</path>
+
 	<!-- Configurações -->
 	<property name="url" value="http://localhost:8080/manager" />
 	<property name="username" value="admin" />
 	<property name="password" value="admin" />
 	<property name="cpath" value="/${ant.project.name}" />
-		
+	<property name="webapp" value="WebContent" />
+	<property name="webapp.path" value="${build.dir}/webapp${cpath}" />
+
 	<path id="tomcat.deployer.classpath">
 		<fileset dir="${env.CATALINA_HOME}-deployer/lib">
 			<include name="*.jar" />
 		</fileset>
 	</path>
-				
+
 	<taskdef resource="org/apache/catalina/ant/catalina.tasks" classpathref="tomcat.deployer.classpath" />
 
 	<target name="deploy" description="Deploy web application">
@@ -455,6 +463,31 @@
 
 	<target name="stop" description="Stop web application">
 		<stop url="${url}" username="${username}" password="${password}" path="${cpath}" />
+	</target>
+
+	<target name="war" description="Cria arquivo .war">
+
+		<copy todir="${webapp.path}">
+			<fileset dir="${webapp}" />
+		</copy>
+
+		<jasper validateXml="false" uriroot="${webapp.path}" webXmlFragment="${webapp.path}/WEB-INF/generated_web.xml" addWebXmlMappings="true" outputDir="${webapp.path}/WEB-INF/classes" />
+
+		<!-- GERANDO ERRO, por isso comentado!!!?? -->
+		<!-- <validator path="${webapp.path}" /> -->
+
+		<mkdir dir="${webapp.path}/WEB-INF/classes" />
+		<mkdir dir="${webapp.path}/WEB-INF/lib" />
+
+		<!-- Copia bibliotecas para WEB-INF/lib -->
+		<copy todir="${webapp.path}/WEB-INF/lib" flatten="true">
+			<path refid="libs.classpath" />
+		</copy>
+
+		<!-- Assume: compilação em ${webapp.path}/WEB-INF/classes -->
+
+		<jar destfile="${webapp.path}.war" basedir="${webapp.path}" />
+
 	</target>
 
 </project>

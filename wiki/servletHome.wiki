@@ -46,3 +46,4 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
  * Diretiva info ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp06/])
  * Ação <jsp:include> ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp07/])
  * Variáveis implícitas ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp08/])
+ * Variável implícita request ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp09/])

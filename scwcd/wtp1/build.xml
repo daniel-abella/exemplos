@@ -159,8 +159,8 @@
 	</target>
 
 	<target name="compile" description="compila arquivos .java">
-		<mkdir dir="${build.dir}" />
-		<javac srcdir="${src.dir}" destdir="${build.dir}" encoding="iso-8859-1">
+		<mkdir dir="${build.dir}/classes" />
+		<javac srcdir="${src.dir}" destdir="${build.dir}/classes" encoding="iso-8859-1">
 			<classpath refid="projeto.classpath" />
 		</javac>
 	</target>

@@ -204,6 +204,7 @@
 	</target>
 
 	<target name="db-start" description="inicia HSQLDB (kyrios-teste)">
+		<mkdir dir="target/hsqldb"/>
 		<java classname="org.hsqldb.Server" spawn="yes" fork="yes">
 			<jvmarg value="-Duser.dir=${kad.libs}" />
 			<classpath>
@@ -444,24 +445,24 @@
 
 	<taskdef resource="org/apache/catalina/ant/catalina.tasks" classpathref="tomcat.deployer.classpath" />
 
-	<target name="deploy" description="Deploy web application">
+	<target name="wdeploy" description="Deploy web application">
 		<deploy url="${url}" username="${username}" password="${password}" path="${cpath}" war="${webapp.path}.war" update="true" />
 	</target>
 
-	<target name="undeploy" description="Undeploy web application">
+	<target name="wundeploy" description="Undeploy web application">
 		<undeploy url="${url}" username="${username}" password="${password}" path="${cpath}" />
 	</target>
 
 	<!-- Webapp lifecycle control -->
-	<target name="start" description="Start web application">
+	<target name="wstart" description="Start web application">
 		<start url="${url}" username="${username}" password="${password}" path="${cpath}" />
 	</target>
 
-	<target name="reload" description="Reload web application">
+	<target name="wreload" description="Reload web application">
 		<reload url="${url}" username="${username}" password="${password}" path="${cpath}" />
 	</target>
 
-	<target name="stop" description="Stop web application">
+	<target name="wstop" description="Stop web application">
 		<stop url="${url}" username="${username}" password="${password}" path="${cpath}" />
 	</target>
 

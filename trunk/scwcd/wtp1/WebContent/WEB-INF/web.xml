@@ -10,15 +10,17 @@
   <welcome-file-list>
   	<welcome-file>login-user.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
     <description></description>
     <display-name>HelloServlet</display-name>
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>org.example.ch03.HelloServlet</servlet-class>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
-    <url-pattern>/HelloServlet</url-pattern>
+    <url-pattern>/validaUsuario</url-pattern>
   </servlet-mapping>
   
 </web-app>

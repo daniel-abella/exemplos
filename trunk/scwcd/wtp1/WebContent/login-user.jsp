@@ -14,7 +14,7 @@
 		error_message = "";
 %>
 
-<form action="HelloServlet">
+<form action="validaUsuario">
 <table cellspacing="4">
 	<tr>
 		<td>Enter your user name:</td>

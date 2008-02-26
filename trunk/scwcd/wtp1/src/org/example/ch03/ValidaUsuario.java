@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class for Servlet: HelloServlet
  *
  */
- public class HelloServlet extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {
+ public class ValidaUsuario extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {
    static final long serialVersionUID = 1L;
    
     /* (non-Java-doc)
 	 * @see javax.servlet.http.HttpServlet#HttpServlet()
 	 */
-	public HelloServlet() {
+	public ValidaUsuario() {
 		super();
 	}   	
 	

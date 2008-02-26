@@ -92,6 +92,13 @@
 	</path>
 
 	<!-- ================================================================= -->
+	<!-- Web Development (classpath)                                       -->
+	<!-- ================================================================= -->
+	<path id="web.classpath">
+		<path location="${servletapi.dir}/servlet-api.jar" />
+	</path>
+
+	<!-- ================================================================= -->
 	<!-- JavaDB (Derby) (classpath)                                        -->
 	<!-- ================================================================= -->
 	<path id="javadb.classpath">
@@ -144,6 +151,9 @@
 
 		<!-- Arquivos de dados e outros -->
 		<path location="${etc.dir}" />
+
+		<!-- Web Development -->
+		<path refid="web.classpath" />
 
 	</path>
 
@@ -204,7 +214,7 @@
 	</target>
 
 	<target name="db-start" description="inicia HSQLDB (kyrios-teste)">
-		<mkdir dir="target/hsqldb"/>
+		<mkdir dir="target/hsqldb" />
 		<java classname="org.hsqldb.Server" spawn="yes" fork="yes">
 			<jvmarg value="-Duser.dir=${kad.libs}" />
 			<classpath>
@@ -423,7 +433,7 @@
 	<!-- reload   : recarrega a aplicação no Tomcat                        -->
 	<!-- war      : gera arquivo .war                                      -->
 	<!-- ================================================================= -->
-	
+
 	<!-- Bibliotecas a serem compiadas para WEB-INF/lib -->
 	<path id="libs.classpath">
 		<pathelement location="${hsqldb.jar}" />
@@ -467,22 +477,27 @@
 	</target>
 
 	<target name="war" description="Cria arquivo .war">
-
+		
 		<copy todir="${webapp.path}">
 			<fileset dir="${webapp}" />
 		</copy>
-
-		<jasper validateXml="false" uriroot="${webapp.path}" webXmlFragment="${webapp.path}/WEB-INF/generated_web.xml" addWebXmlMappings="true" outputDir="${webapp.path}/WEB-INF/classes" />
-
-		<!-- GERANDO ERRO, por isso comentado!!!?? -->
-		<!-- <validator path="${webapp.path}" /> -->
-
+		
 		<mkdir dir="${webapp.path}/WEB-INF/classes" />
 		<mkdir dir="${webapp.path}/WEB-INF/lib" />
+
+		<jasper validateXml="false" uriroot="${webapp.path}" webXmlFragment="${webapp.path}/WEB-INF/generated_web.xml" addWebXmlMappings="false" outputDir="${webapp.path}/WEB-INF/classes" />
+		
+		<!-- GERANDO ERRO, por isso comentado!!!?? -->
+		<!-- <validator path="${webapp.path}" /> -->
 
 		<!-- Copia bibliotecas para WEB-INF/lib -->
 		<copy todir="${webapp.path}/WEB-INF/lib" flatten="true">
 			<path refid="libs.classpath" />
+		</copy>
+
+		<!-- Copia código compilado para WEB-INF/classes -->
+		<copy todir="${webapp.path}/WEB-INF/classes">
+			<fileset dir="${build.dir}/classes"/>
 		</copy>
 
 		<!-- Assume: compilação em ${webapp.path}/WEB-INF/classes -->

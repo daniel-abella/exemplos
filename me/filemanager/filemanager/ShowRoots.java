@@ -13,7 +13,7 @@ import javax.microedition.midlet.MIDletStateChangeException;
 
 public class ShowRoots extends MIDlet implements CommandListener {
 	private Command mExitCommand = new Command("Sair", Command.EXIT, 0);
-	private List mMainBox = new List("Kyriosdata (raízes)", List.IMPLICIT);;
+	private List mMainBox = new List("Kyriosdata (diretÃ³rios)", List.IMPLICIT);;
 
 	public void commandAction(Command c, Displayable s) {
 		if (c == mExitCommand) {

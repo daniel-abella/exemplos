@@ -1,7 +1,5 @@
 package filemanager;
 
-import java.io.IOException;
-
 import javax.microedition.io.Connector;
 import javax.microedition.io.file.FileConnection;
 import javax.microedition.lcdui.Command;
@@ -16,7 +14,7 @@ import javax.microedition.midlet.MIDletStateChangeException;
 
 public class AnalisaFile extends MIDlet implements CommandListener, Runnable {
 
-	private static String urlArquivo = "file:////My Documents/produtos.txt";
+	private static String urlArquivo = "file:///c:/Data";
 
 	private Form tela;
 	private Command mExitCommand = null;
@@ -44,13 +42,13 @@ public class AnalisaFile extends MIDlet implements CommandListener, Runnable {
 	public void run() {
 		try {
 			FileConnection fc = (FileConnection) Connector.open(file
-					.getString());
+					.getString(), Connector.READ);
 			canRead.setText(fc.canRead() ? "TRUE" : "FALSE");
-		} catch (IOException e) {
-			status.setText("Exceção gerada!");
+		} catch (Exception e) {
+			status.setText(e.getMessage());
 			return;
 		}
-		status.setText("Operação executada satisfatoriamente!");
+		status.setText("OperaÃ§Ã£o executada satisfatoriamente!");
 
 	}
 
@@ -59,7 +57,7 @@ public class AnalisaFile extends MIDlet implements CommandListener, Runnable {
 
 		mInterromperCommand = new Command("Interromper", Command.EXIT, 0);
 
-		file = new TextField("Nome de arquivo ou diretório", urlArquivo, 70,
+		file = new TextField("Nome de arquivo ou diretÃ³rio", urlArquivo, 70,
 				TextField.ANY);
 		tela.append(file);
 
@@ -69,7 +67,7 @@ public class AnalisaFile extends MIDlet implements CommandListener, Runnable {
 		mExecutaCommand = new Command("Execute", Command.SCREEN, 0);
 		tela.addCommand(mExecutaCommand);
 
-		canRead = new StringItem("Acessível para leitura?: ", "");
+		canRead = new StringItem("AcessÃ­vel para leitura?: ", "");
 		tela.append(canRead);
 
 		status = new StringItem("Status: ", "");

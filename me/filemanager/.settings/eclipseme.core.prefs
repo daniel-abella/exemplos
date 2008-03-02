@@ -1,4 +1,7 @@
-#Mon Feb 04 20:57:53 BRST 2008
+#Sun Mar 02 17:45:56 BRT 2008
 eclipse.preferences.version=1
 obfuscate_use_project=true
+pkg_autoversion=true
+pkg_excluded_props=
 preverify_config_value=CLDC-1.0
+proguard_use_specified=true

@@ -14,4 +14,4 @@ Para que você possa iniciar, parar e implantar uma aplicação a partir do Ecli
 Para instalar o adaptador do Glassfish para o Eclipse vá em Window->Preferences->Server->Installed Runtimes->Add. Verifique se na caixa de diálogo que se abre há o Glassfish como opção. Caso exista, não há o que fazer neste passo, pois a instalação empregada do Eclipse já possui o adaptador. Caso não exista a pasta (opção) Glassfish, clique em _Download additional server adapters_, no canto superior direito. Este processo pode ser relativamente longo, aguarde até que a opção Glassfish apareça. Selecione-a e requisite a instalação. Ao final, será requisitado que o Eclipse seja reiniciado.
 
 == 4. Adicionando o servidor Glassfish ==
-Vá até Window->Preferences->Server->Installed Runtimes->Add. Selecione Glassfish e, em particular, *!GlassFish V2 Java EE 5*.
+Vá até Window->Preferences->Server->Installed Runtimes->Add. Selecione Glassfish e, em particular, *!GlassFish V2 Java EE 5*. Na janela que se abre, forneça o JRE a ser empregado e, em seguida, informe o diretório onde está instalado o Glassfish.

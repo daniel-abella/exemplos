@@ -1,6 +1,9 @@
 #summary Primeiros contatos com JEE. Copyright (c) 2008 Fábio Nogueira de Lucena
 
-= Primeiros contatos com JEE =
+= Roteiro =
+
+== 1. Instale o contêiner JEE ==
+Há várias opções, sugiro que faça uso do [http://glassfish.dev.java.net Glassfish]. 
 
 Add your content here.
 

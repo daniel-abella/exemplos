@@ -5,7 +5,8 @@
 == 1. Instale o contêiner JEE ==
 Há várias opções, sugiro que faça uso do [http://glassfish.dev.java.net Glassfish]. 
 
-Add your content here.
+== 2. Verifique a instalação do contêiner ==
+Após iniciá-lo (use o comando *asadmin start-domain domain1* para o Glassfish), visite a página http://localhost:8080. Alternativamente, a página de administração do contêiner http://localhost:4848 também pode ser consultada.
 
 
 = Details =

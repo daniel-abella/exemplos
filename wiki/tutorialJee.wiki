@@ -15,3 +15,12 @@ Para instalar o adaptador do Glassfish para o Eclipse vá em Window->Preferences
 
 == 4. Adicionando o servidor Glassfish ==
 Vá até Window->Preferences->Server->Installed Runtimes->Add. Selecione Glassfish e, em particular, *!GlassFish V2 Java EE 5*. Na janela que se abre, forneça o JRE a ser empregado e, em seguida, informe o diretório onde está instalado o Glassfish.
+
+== 5. Compreenda a organização da "aplicação" (estudo de caso) ==
+Estes passos fazem uso de uma "aplicação" trivial com o propósito de introduzir elementos fundamentais e permitir que outras questões possam, posteriormente, serem contempladas sem a reapresentação dos passos aqui executados. 
+
+A "aplicação" web oferece ao usuário uma caixa de texto para que uma seqüência de caracteres possa ser fornecida e um botão que, quando acionado, fará com que a seqüência fornecida seja convertida para letras maiúsculas. Esta seqüência resultante é exibida em página própria que destaca a entrada fornecida e o resultado da conversão para maiúsculas. 
+
+Do parágrafo anterior passaremos diretamente, no parágrafo seguinte, para a discussão de uma possível implementação, neste caso, usando EJB. 
+
+A interação com o usuário ocorrerá exclusivamente por meio de duas páginas. A página principal, index.jsp, responsável por capturar a seqüência de entrada e a página responsável por exibir o resultado da requisição disparada por meio da página anterior. A página que exibe os resultados é saida.jsp. 

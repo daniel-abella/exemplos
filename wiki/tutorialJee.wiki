@@ -23,4 +23,4 @@ A "aplicação" web oferece ao usuário uma caixa de texto para que uma seqüên
 
 Do parágrafo anterior passaremos diretamente, no parágrafo seguinte, para a discussão de uma possível implementação, neste caso, usando EJB. 
 
-A interação com o usuário ocorrerá exclusivamente por meio de duas páginas. A página principal, index.jsp, responsável por capturar a seqüência de entrada e a página responsável por exibir o resultado da requisição disparada por meio da página anterior. A página que exibe os resultados é saida.jsp. 
+A interação com o usuário ocorrerá exclusivamente por meio de duas páginas. A página principal, [http://exemplos.googlecode.com/svn/trunk/scbcd/first/web/WebContent/index.jsp index.jsp], responsável por capturar a seqüência de entrada e a página responsável por exibir o resultado da requisição disparada por meio da página anterior. A página que exibe os resultados é saida.jsp. 

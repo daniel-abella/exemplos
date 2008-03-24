@@ -19,9 +19,14 @@ Vá até Window->Preferences->Server->Installed Runtimes->Add. Selecione Glassfi
 == 5. Compreenda a organização da "aplicação" (estudo de caso) ==
 Estes passos fazem uso de uma "aplicação" trivial com o propósito de introduzir elementos fundamentais e permitir que outras questões possam, posteriormente, serem contempladas sem a reapresentação dos passos aqui executados. 
 
-A "aplicação" web oferece ao usuário uma caixa de texto para que uma seqüência de caracteres possa ser fornecida e um botão que, quando acionado, fará com que a seqüência fornecida seja convertida para letras maiúsculas. Esta seqüência resultante é exibida em página própria que destaca a entrada fornecida e o resultado da conversão para maiúsculas. 
+=== Objetivo da aplicação ===
+A "aplicação" web oferece ao usuário uma caixa de texto para que uma seqüência de caracteres possa ser fornecida e um botão que, quando acionado, fará com que a seqüência fornecida seja convertida em outra, contendo apenas letras maiúsculas. Esta seqüência resultante é exibida em página própria que destaca a entrada fornecida e o resultado da conversão para maiúsculas. 
 
-Do parágrafo anterior passaremos diretamente, nos parágrafos seguintes, para a discussão de uma possível implementação, neste caso, usando EJB. 
+=== Arquitetura ===
+Faremos uso de EJB, não porque o problema exige (lembre-se que isto é um tutorial). Neste caso, teremos uma camada (_tier_) cliente, na qual estará em execução o browser do usuário.  Ao interagir com o browser, o usuário irá disparar a execução de serviço que, será recebida pela camada (_tier_) web, por meio de um Servlet. Este Servlet desempenhará o papel de um controlador e, portanto, não executa a funcionalidade requisitada, mas a transfere para quem tem a devida competência, neste caso um _session bean_, em execução na camada (_tier_) EJB. Neste caso, tanto a camada web quanto a EJB estarão em execução em uma mesma máquina, no mesmo contêiner (Glassfish). O problema não demanda acesso a dados persistentes nem conexão com outros sistemas de informação e, portanto, não há necessidade de outra camada. 
+
+=== Projeto detalhado ===
+Do objetivo fornecido anteriormente e da arquitetura acima, passaremos diretamente, nos parágrafos seguintes, para os detalhes de implementação.
 
 A interação com o usuário ocorrerá exclusivamente por meio de duas páginas. A página principal, [http://exemplos.googlecode.com/svn/trunk/scbcd/first/web/WebContent/index.jsp index.jsp], responsável por capturar a seqüência de entrada e a página responsável por exibir o resultado da requisição disparada por meio da página anterior. A página que exibe os resultados é [http://exemplos.googlecode.com/svn/trunk/scbcd/first/web/WebContent/WEB-INF/jsp/saida.jsp saida.jsp]. Ambas são páginas simples. A primeira usa a ação *maiuscula* para tratar a requisição resultante. A segunda simplesmente recupera o valor do parâmetro *entrada* assim como o valor do atributo *resultado* e os exibe. Observe que, até o momento, tudo é exatamente como uma aplicação web convencional, ou seja, que não faz uso de um contêiner JEE para execução. 
 

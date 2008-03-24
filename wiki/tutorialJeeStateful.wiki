@@ -1,0 +1,8 @@
+#summary Primeiros contatos com JEE. Copyright (c) 2008 Fábio Nogueira de Lucena
+
+= Roteiro =
+
+== 1. Orientação ==
+Em [tutorialJee página] anterior foram fornecidos passos básicos para o desenvolvimento empregando JEE. O que segué são novos passos e um objetivo estendido que dependem do que foi realizado anteriormente. Em conseqüência, é sugirido fortemente ambientação com o anterior antes de prosseguir com os passos deste tutorial.
+
+== 2. Verifique a instalação do contêiner ==

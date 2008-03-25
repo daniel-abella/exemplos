@@ -12,3 +12,7 @@ Enquanto o exemplo [tutorialJee anterior] limitava-se a converter os caracteres 
 Teremos uma _client tier_ onde estará em execução o browser do usuário. Teremos a _web tier_ onde páginas JSP e Servlets serão responsáveis por capturar as intenções dos usuários, disparar a execução de serviço correspondente e, no sentido inverso, capturar os resultados produzidos e formatá-los para a satisfação do usuário. Ainda teremos a _EJB tier_, responsável pelo processamento propriamente dito, neste caso, trivial.
 
 == 4. Projeto detalhado ==
+A implementação faz uso de três projetos Eclipse (ear2, ejb2 e web2). Respectivamente representam: a aplicação (formada por um EJB Project e um aplicação web), o _stateful bean_ e a aplicação web (interação com o usuário). Observe que ear2 "apenas" reúne os componentes da aplicação em um todo, o que facilita, por exemplo, a implantação correspondente. 
+
+=== Aplicação web ===
+A página inicial é [http://exemplos.googlecode.com/svn/trunk/scbcd/second/web2/WebContent/index.jsp index.jsp]. 

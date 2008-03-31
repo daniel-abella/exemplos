@@ -13,7 +13,7 @@ public class StringBean implements StringBeanLocal {
 	
 	public String maiuscula(String entrada) {
 		if (entrada == null || entrada.length() == 0)
-			return anterior.toUpperCase();
+			return anterior.toUpperCase() + " (usando valor anterior)";
 		anterior = entrada;
 		return anterior.toUpperCase();
 	}

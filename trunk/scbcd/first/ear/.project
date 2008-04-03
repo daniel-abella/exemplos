@@ -3,9 +3,9 @@
 	<name>ear</name>
 	<comment></comment>
 	<projects>
-		<project>web</project>
 		<project>ejb</project>
 		<project>ejbClient</project>
+		<project>web</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

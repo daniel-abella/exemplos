@@ -6,7 +6,7 @@
 
 	<persistence-unit name="jpa23">
 		
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<provider>org.hibernate.ejb.HibernatePersistenceA</provider>
 		<class>jpa23.Pessoa</class>
 		<class>jpa23.Endereco</class>
 		

@@ -5,5 +5,9 @@
         <dependent-module archiveName="ea1.jar" deploy-path="/" handle="module:/resource/ea1/ea1">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/ui/ui">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>

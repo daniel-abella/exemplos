@@ -6,9 +6,9 @@
 
 	<persistence-unit name="jpa23">
 		
-		<provider>org.hibernate.ejb.HibernatePersistenceA</provider>
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>jpa23.Pessoa</class>
-		<class>jpa23.Endereco</class>
+		<class>jpa23.Endereco</class>  
 		
 		<properties>
 			<property name="hibernate.archive.autodetetion"	value="class"/>

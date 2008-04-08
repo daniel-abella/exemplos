@@ -4,7 +4,6 @@
 	<comment></comment>
 	<projects>
 		<project>ea1</project>
-		<project>ui</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

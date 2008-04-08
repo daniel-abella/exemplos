@@ -198,9 +198,7 @@
 	<!-- ================================================================= -->
 
 	<target name="db-clean" description="Limpa HSQLDB (kyrios-teste)" depends="db-stop">
-		<delete>
-			<fileset dir="/tmp" includes="kyrios-teste.*" />
-		</delete>
+		<delete dir="${build.dir}/hsqldb" />
 		<echo message="Base de dados do HSQLDB removida" />
 	</target>
 
@@ -214,6 +212,7 @@
 	</target>
 
 	<target name="db-start" description="inicia HSQLDB (kyrios-teste)">
+		<mkdir dir="${build.dir}/hsqldb"/>
 		<java classname="org.hsqldb.Server" spawn="yes" fork="yes">
 			<jvmarg value="-Duser.dir=${kad.libs}" />
 			<classpath>
@@ -241,7 +240,7 @@
 	<!-- ================================================================= -->
 
 	<target name="jdb-clean" description="Limpa JavaDB (kyrios-teste)" depends="jdb-stop">
-		<delete dir="/tmp/${derby.dbname}" />
+		<delete dir="${build.dir}/javadb" />
 	</target>
 
 	<target name="jdb-ij" description="Cliente JavaDB">
@@ -282,7 +281,8 @@
 	</target>
 
 	<target name="jdb-start" description="inicia JavaDB (kyrios-teste)">
-		<java classname="org.apache.derby.iapi.tools.run" dir="/tmp" spawn="true" fork="true">
+		<mkdir dir="${build.dir}/javadb" />
+		<java classname="org.apache.derby.iapi.tools.run" dir="${build.dir}/javadb" spawn="true" fork="true">
 			<arg line="server start" />
 			<classpath>
 				<path refid="javadb.classpath" />

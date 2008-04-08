@@ -1,4 +1,4 @@
-package jpa23;
+package model;
 
 import java.io.File;
 

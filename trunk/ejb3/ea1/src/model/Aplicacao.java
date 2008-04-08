@@ -1,4 +1,4 @@
-package jpa23;
+package model;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

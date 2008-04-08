@@ -78,7 +78,15 @@
 		<path location="${kad.libs}/junit3.8.1/junit.jar" />
 	</path>
 
-
+	<!-- ================================================================= -->
+	<!-- DBUnit                                                            -->
+	<!-- ================================================================= -->
+	<path id="dbunit.classpath">
+		<pathelement location="${dbunit.jar}" />
+		<pathelement location="${kad.libs}/slf4j-1.5.0/slf4j-api-1.5.0.jar" />
+		<pathelement location="${kad.libs}/slf4j-1.5.0/slf4j-simple-1.5.0.jar" />
+	</path>
+	
 	<!-- ================================================================= -->
 	<!-- PERSISTENCIA (classpath)                                          -->
 	<!-- ================================================================= -->
@@ -90,7 +98,7 @@
 		<pathelement location="${hsqldb.jar}" />
 
 		<!-- DbUnit -->
-		<pathelement location="${dbunit.jar}" />
+		<path refid="dbunit.classpath" />
 	</path>
 
 

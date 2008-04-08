@@ -55,14 +55,6 @@
 	<!-- ================================================================= -->
 	<!-- Hibernate (classpath)                                             -->
 	<!-- ================================================================= -->
-	<path id="hibernate2.classpath">
-		<pathelement location="${hibernate.jar}" />
-		<fileset dir="${hibernate.dir}/lib" includes="*.jar" />
-		<fileset dir="${h.annotations.dir}/lib" includes="*.jar" />
-		<fileset dir="${h.entity.dir}/lib" includes="*.jar" />
-		<fileset dir="${h.tools.dir}" includes="*.jar" />
-		<pathelement location="${log4j.jar}" />
-	</path>
 	
 	<path id="hibernate.classpath">
 		<pathelement location="${hibernate.jar}" />

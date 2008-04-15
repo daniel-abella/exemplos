@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h2>Resultado</h2>
 <f:view>
 
 	<h:outputLabel value="Seja bem-vindo, #{login.nome}"></h:outputLabel>

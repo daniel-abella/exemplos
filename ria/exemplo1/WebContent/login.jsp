@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h2>Forneça dados da sua conta</h2>
 <f:view>
 	
 	<h:form><h:panelGrid border="1" columns="2">

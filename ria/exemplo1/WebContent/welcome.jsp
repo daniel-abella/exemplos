@@ -11,6 +11,8 @@
 <h2>Resultado</h2>
 <f:view>
 
-	<h:outputLabel value="Seja bem-vindo, #{login.nome}"></h:outputLabel>
+	<h:outputLabel value="Seja bem-vindo, #{login.nome}"></h:outputLabel><h:form>
+		<h:commandButton value="Tente novamente" action="inicio"></h:commandButton>
+	</h:form>
 </f:view></body>
 </html>

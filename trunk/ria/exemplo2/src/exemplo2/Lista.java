@@ -18,7 +18,6 @@ public class Lista {
 	}
 	
 	public void atualize(ValueChangeEvent evento) {
-		System.out.println("Fui chamado!!!!!==========");
 		selecionados.clear();
 		String texto = (String) evento.getNewValue();
 		int maxElementos = ((SelectInputText) evento.getComponent()).getRows();

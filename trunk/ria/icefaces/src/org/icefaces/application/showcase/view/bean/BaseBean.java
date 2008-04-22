@@ -32,15 +32,15 @@
  */
 package org.icefaces.application.showcase.view.bean;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.io.Serializable;
 
 import javax.faces.event.ValueChangeEvent;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.icesoft.faces.context.effects.Effect;
 import com.icesoft.faces.context.effects.Highlight;
-
-import java.io.Serializable;
 
 /**
  * <p>The BaseBean is a nice little helper class for common functionality

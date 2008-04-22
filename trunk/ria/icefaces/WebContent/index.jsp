@@ -30,14 +30,21 @@
   ~ this file under either the MPL or the LGPL License."
   ~
   -->
+
+<!-- Observe que abaixo é feita um redirecionamento para showcase.iface.
+  O ICEfaces faz uso do Servlet (Persistent Faces Servlet) para tratar requisições com
+  esta extensão (.iface). Posteriormente a requisição é passada para o FacesServlet (padrão JSF),
+  por meio da extensão .faces. Só então a página .jsp correspondente é chamada, neste caso,
+  showcase.jspx. 
+   -->
 <html>
-    <head>
-        <title>ICEsoft Component Showcase</title>
-    </head>
-    <body>
-    <%
-        String redirectURL = "./showcase.iface";
-        response.sendRedirect(redirectURL);
-    %>
-    </body>
+<head>
+<title>ICEsoft Component Showcase</title>
+</head>
+<body>
+<%
+	String redirectURL = "./showcase.iface";
+	response.sendRedirect(redirectURL);
+%>
+</body>
 </html>

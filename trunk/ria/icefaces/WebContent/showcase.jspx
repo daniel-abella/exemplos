@@ -34,7 +34,7 @@
         xmlns:f="http://java.sun.com/jsf/core"
         xmlns:jsp="http://java.sun.com/JSP/Page"
         xmlns:ice="http://www.icesoft.com/icefaces/component"
-        locale="en_US">
+        >
 
     <f:loadBundle
           basename="org.icefaces.application.showcase.view.resources.messages"

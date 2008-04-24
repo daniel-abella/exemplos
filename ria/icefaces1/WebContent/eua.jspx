@@ -17,12 +17,15 @@
 		<body>
 
 		<ice:outputText value="Inglês" />
+		<a href="brasil.jspx">Português</a>
+
 		<ice:form partialSubmit="true">
 
 			<ice:selectInputDate
-				style="font-size: 9;width: 88px; height: 68px;display: block;"></ice:selectInputDate>Selecione o <a
-				href="brasil.jspx">Outro...</a>.
-		
+				style="font-size: 9;width: 88px; height: 68px;display: block;"></ice:selectInputDate>
+
+
+
 
 		</ice:form>
 

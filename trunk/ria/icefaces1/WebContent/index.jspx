@@ -10,7 +10,6 @@
   <html>
     <head>
      <title><ice:outputText value="Português/Inglês" /></title>
-     <ice:outputStyle href="./xmlhttp/css/xp/xp.css" />
     </head>
     <body>
 

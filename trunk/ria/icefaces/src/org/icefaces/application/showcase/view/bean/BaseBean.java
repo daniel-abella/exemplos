@@ -40,7 +40,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.icesoft.faces.context.effects.Effect;
-import com.icesoft.faces.context.effects.Highlight;
+import com.icesoft.faces.context.effects.Shake;
 
 /**
  * <p>The BaseBean is a nice little helper class for common functionality
@@ -62,7 +62,7 @@ public class BaseBean implements Serializable {
     protected Effect valueChangeEffect;
 
     public BaseBean() {
-        valueChangeEffect = new Highlight("#fda505");
+        valueChangeEffect = new Shake();
         valueChangeEffect.setFired(true);
     }
 

@@ -16,8 +16,7 @@
      <ice:outputText value="Selecione uma das opções para obter um calendário na língua correspondente:" />
 		<ice:form partialSubmit="true">
 		
-		<a href="brasil.jspx">Brasil</a> ou <a href="eua.jspx">EUA</a>.
-		
+		<a href="pt_BR.jspx">Português do Brasil</a> ou <a href="en_US.jspx">Inglês dos EUA</a>.		
 
 		</ice:form>
 

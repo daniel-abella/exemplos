@@ -33,8 +33,7 @@
 <f:view xmlns:h="http://java.sun.com/jsf/html"
         xmlns:f="http://java.sun.com/jsf/core"
         xmlns:jsp="http://java.sun.com/JSP/Page"
-        xmlns:ice="http://www.icesoft.com/icefaces/component"
-        >
+        xmlns:ice="http://www.icesoft.com/icefaces/component">
 
     <f:loadBundle
           basename="org.icefaces.application.showcase.view.resources.messages"
@@ -96,7 +95,7 @@
                          </ice:panelGroup>
 
                          <ice:panelGroup id="themesPanel" >
-                             <f:subview id="stSub">
+                             <f:subview id="stSub" >
                                  <!-- Themes Splash include -->
                                  <jsp:directive.include file="/WEB-INF/includes/content/themes.jspx" />
                              </f:subview>

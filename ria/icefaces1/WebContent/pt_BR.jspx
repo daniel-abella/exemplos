@@ -4,29 +4,24 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ice="http://www.icesoft.com/icefaces/component">
 	<jsp:directive.page contentType="text/html;charset=ISO-8859-1"
-		pageEncoding="UTF-8" />
-	<f:view locale="en_US">
+		pageEncoding="ISO-8859-1" />
+	<f:view locale="pt_BR">
 		<ice:outputDeclaration doctypeRoot="HTML"
 			doctypePublic="-//W3C//DTD HTML 4.01 Transitional//EN"
 			doctypeSystem="http://www.w3.org/TR/html4/loose.dtd" />
 		<html>
 		<head>
-		<title><ice:outputText value="Inglês" /></title>
-		<ice:outputStyle href="./xmlhttp/css/xp/xp.css" />
+		<title>Português do Brasil</title>
 		</head>
 		<body>
 
-		<ice:outputText value="Inglês" />
-		<a href="brasil.jspx">Português</a>
+		<b>Português</b>
+		<a href="eua.jspx">Inglês</a>
 
 		<ice:form partialSubmit="true">
-
 			<ice:selectInputDate
-				style="font-size: 9;width: 88px; height: 68px;display: block;"></ice:selectInputDate>
-
-
-
-
+				style="font-size: 9;width: 88px; height: 68px;display: block;">
+			</ice:selectInputDate>
 		</ice:form>
 
 		</body>

@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<jsp:root version="1.2" 
-  xmlns:jsp="http://java.sun.com/JSP/Page"
-   xmlns:f="http://java.sun.com/jsf/core"
-  xmlns:h="http://java.sun.com/jsf/html"
-  xmlns:ice="http://www.icesoft.com/icefaces/component">
-<jsp:directive.page contentType="text/html;charset=ISO-8859-1" pageEncoding="ISO-8859-1"/>
-<f:view>
-  <ice:outputDeclaration doctypeRoot="HTML" doctypePublic="-//W3C//DTD HTML 4.01 Transitional//EN" doctypeSystem="http://www.w3.org/TR/html4/loose.dtd"/>
-  <html>
-    <head>
-     <title><ice:outputText value="Português/Inglês" /></title>
-    </head>
-    <body>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+	<jsp:directive.page contentType="text/html;charset=ISO-8859-1"
+		pageEncoding="ISO-8859-1" />
+	<f:view locale="#{currentLocaleBean.locale}">
+		<ice:outputDeclaration doctypeRoot="HTML"
+			doctypePublic="-//W3C//DTD HTML 4.01 Transitional//EN"
+			doctypeSystem="http://www.w3.org/TR/html4/loose.dtd" />
+		<html>
+		<head>
+		<title><ice:outputText value="Português/Inglês" /></title>
+		</head>
+		<body>
 
-     <ice:outputText value="Selecione uma das opções para obter um calendário na língua correspondente:" />
+		<ice:outputText value="Valores corrente para a aplicação" />
+		<ice:outputText value="País corrente (aplicação): #{currentLocaleBean.pais}"></ice:outputText>
+		<br />
+		<ice:outputText value="Língua corrente (aplicação): #{currentLocaleBean.lingua}"></ice:outputText>
+		<br /><br />
+
+		<ice:outputText
+			value="Selecione uma das opções para obter um calendário na língua correspondente:" />
 		<ice:form partialSubmit="true">
-		
-		<a href="pt_BR.jspx">Português do Brasil</a> ou <a href="en_US.jspx">Inglês dos EUA</a>.		
+
+			<a href="pt_BR.jspx">Português do Brasil</a> ou <a href="en_US.jspx">Inglês
+			dos EUA</a>.		
 
 		</ice:form>
 
-    </body>
-  </html>
-</f:view>
+		</body>
+		</html>
+	</f:view>
 </jsp:root>

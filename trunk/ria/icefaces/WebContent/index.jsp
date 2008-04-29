@@ -1,3 +1,5 @@
+<%@taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
+
 <!--
   ~ Version: MPL 1.1/GPL 2.0/LGPL 2.1
   ~
@@ -37,14 +39,21 @@
   por meio da extensão .faces. Só então a página .jsp correspondente é chamada, neste caso,
   showcase.jspx. 
    -->
+  
 <html>
 <head>
 <title>ICEsoft Component Showcase</title>
 </head>
 <body>
+
+<%-- Scriptlet abaixo pode ser substituído, conforme abaixo. 
 <%
 	String redirectURL = "./showcase.iface";
 	response.sendRedirect(redirectURL);
 %>
+--%>
+
+<c:redirect url="./showcase.iface"/>
+
 </body>
 </html>

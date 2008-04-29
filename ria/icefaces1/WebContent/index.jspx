@@ -11,23 +11,36 @@
 			doctypeSystem="http://www.w3.org/TR/html4/loose.dtd" />
 		<html>
 		<head>
-		<title><ice:outputText value="Português/Inglês" /></title>
+		<title><ice:outputText value="#{currentLocaleBean.lingua}" escape="false" /></title>
 		</head>
 		<body>
 
-		<ice:outputText value="Valores corrente para a aplicação" />
-		<ice:outputText value="País corrente (aplicação): #{currentLocaleBean.pais}"></ice:outputText>
-		<br />
-		<ice:outputText value="Língua corrente (aplicação): #{currentLocaleBean.lingua}"></ice:outputText>
-		<br /><br />
+		<h2>Valores correntes para a aplicação (<ice:outputText value="#{currentLocaleBean.data}" />)</h2>
 
 		<ice:outputText
-			value="Selecione uma das opções para obter um calendário na língua correspondente:" />
-		<ice:form partialSubmit="true">
+			value="País corrente (aplicação): #{currentLocaleBean.pais}"></ice:outputText>
+		<br />
+		<ice:outputText
+			value="Língua corrente (aplicação): #{currentLocaleBean.lingua}"></ice:outputText>
+		<br />
+		<ice:outputText value="Locale (string): #{currentLocaleBean.string}" /><br />
+		<ice:outputText value="Locale (string): #{currentLocaleBean.locale}" />
+		<br />
 
-			<a href="pt_BR.jspx">Português do Brasil</a> ou <a href="en_US.jspx">Inglês
-			dos EUA</a>.		
+		<h2>Mude o valor corrente para...</h2>
 
+		<ice:outputText value="Selecione uma das opções:" />
+
+
+		<ice:form partialSubmit="false">
+			<ice:commandButton value="Português do Brasil"
+				actionListener="#{currentLocaleBean.portuguesBrasil}"></ice:commandButton>
+			<ice:commandButton value="Inglês dos EUA"
+				actionListener="#{currentLocaleBean.inglesAmericano}"></ice:commandButton>
+			<br />
+			<br />
+			<ice:selectInputDate
+				style="font-size: 9;width: 88px; height: 68px;display: block;"></ice:selectInputDate>
 		</ice:form>
 
 		</body>

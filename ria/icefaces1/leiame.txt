@@ -1,0 +1,10 @@
+Projeto que ilustra combinação de alguns recursos do ICEFaces. 
+
+Há uma única página, index.jspx que, quando requisitada, exibe alguns
+valores correntes para a aplicação (Locale) e um calendário. 
+
+Desafio: o calendário não é modificado conforme o Locale. Se o locale for 
+definido "manualmente", ou seja, por meio da seqüência de caracteres, 
+"pt_BR" ou "en_US", em f:view, então o calendário é apresentado conforme 
+o locale. Contudo, conforme está, embora o valor fornecido seja um destes,
+não há a exibição conforme esperado.

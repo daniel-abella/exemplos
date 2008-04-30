@@ -37,8 +37,6 @@ import java.util.List;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.icefaces.application.showcase.view.bean.BaseBean;
 
 import com.icesoft.faces.component.selectinputtext.SelectInputText;
@@ -50,8 +48,6 @@ import com.icesoft.faces.component.selectinputtext.SelectInputText;
  * @since 1.7
  */
 public class SelectInputTextController extends BaseBean {
-
-    private final Log log = LogFactory.getLog(this.getClass());
 
     // city dictionary
     private CityDictionary cityDictionary;

@@ -49,7 +49,7 @@ public class ButtonsAndLinksBean extends BaseBean {
      * Variables to store the button clicked and the input submitted.
      */
     private String clicked;
-    private String inputText = "Mensagem padr„o";
+    private String inputText = "Mensagem padr√£o";
 
     /**
      * Gets the name of the button clicked.

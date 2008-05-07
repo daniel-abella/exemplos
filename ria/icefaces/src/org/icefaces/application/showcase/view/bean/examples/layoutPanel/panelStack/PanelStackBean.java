@@ -33,10 +33,9 @@
 
 package org.icefaces.application.showcase.view.bean.examples.layoutPanel.panelStack;
 
-import org.icefaces.application.showcase.util.MessageBundleLoader;
-
-import javax.faces.event.ValueChangeEvent;
 import java.io.Serializable;
+
+import org.icefaces.application.showcase.util.MessageBundleLoader;
 
 /**
  * <p>The PanelStackBean class is a backing bean for the PanelStack showcase

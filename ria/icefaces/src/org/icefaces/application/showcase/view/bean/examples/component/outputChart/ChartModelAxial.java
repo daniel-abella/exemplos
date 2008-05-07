@@ -32,12 +32,11 @@
  */
 package org.icefaces.application.showcase.view.bean.examples.component.outputChart;
 
-import com.icesoft.faces.component.outputchart.OutputChart;
-import org.icefaces.application.showcase.util.RandomNumberGenerator;
-
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import org.icefaces.application.showcase.util.RandomNumberGenerator;
 
 /**
  * <p>The ChartModelAxial class purpose is to show how the outputChart component

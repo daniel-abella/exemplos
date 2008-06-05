@@ -9,7 +9,7 @@
   <property file="deployer.properties"/>
 
   <!-- Configure the directory into which the web application is built -->
-  <property name="build"    value="${basedir}/build"/>
+  <property name="build"    value="${basedir}/target"/>
 
   <!-- Configure the folder and context path for this application -->
   <property name="webapp"   value="webapp"/>

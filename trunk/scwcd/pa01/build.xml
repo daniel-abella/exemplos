@@ -27,6 +27,12 @@
     <fileset dir="${tomcat.deployer.home}/lib">
       <include name="*.jar"/>
     </fileset>
+  </path>
+
+  <path id="project.classpath">
+    <fileset dir="${tomcat.deployer.home}/lib">
+      <include name="*.jar"/>
+    </fileset>
     <fileset dir="${webapp.path}/WEB-INF/lib">
       <include name="*.jar"/>
     </fileset>
@@ -67,7 +73,7 @@
            srcdir="${src}"
            encoding="UTF-8"
 	   excludes="**/*.smap">
-      <classpath refid="deployer.classpath" />
+      <classpath refid="project.classpath" />
       <include name="**" />
       <exclude name="tags/**" />
     </javac>

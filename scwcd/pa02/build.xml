@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<project name="Deployer" default="compile" basedir=".">
+<project name="pa02" default="compile" basedir=".">
   <property environment="env" />
   <property name="kad.libs" value="${env.KAD_LIBS}" />
   <property name="tomcat.deployer.home" value="${env.CATALINA_HOME}-deployer" />
@@ -14,7 +14,7 @@
 
   <!-- Configure the folder and context path for this application -->
   <property name="webapp"   value="webapp"/>
-  <property name="path"     value="/pa01"/>
+  <property name="path"     value="/${ant.project.name}"/>
 
   <!-- Configure properties to access the Manager application -->
   <property name="url"      value="http://localhost:8080/manager"/>

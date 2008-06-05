@@ -5,12 +5,12 @@
          http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
 
     <servlet>
-        <servlet-name>Pilha</servlet-name>
-        <servlet-class>ExibePilhaDeRequisicao</servlet-class>
+        <servlet-name>ShowsRequest</servlet-name>
+        <servlet-class>ShowsRequest</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>Pilha</servlet-name>
+        <servlet-name>ShowsRequest</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 

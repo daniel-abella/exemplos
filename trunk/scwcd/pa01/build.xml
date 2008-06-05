@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 
 <project name="Deployer" default="compile" basedir=".">
+  <property environment="env" />
+  <property name="kad.libs" value="${env.KAD_LIBS}" />
+  <property name="tomcat.deployer.home" value="${env.CATALINA_HOME}-deployer" />
+  <property file="${kad.libs}/kad-libs.properties" />
 
   <property file="deployer.properties"/>
 
@@ -8,8 +12,8 @@
   <property name="build"    value="${basedir}/build"/>
 
   <!-- Configure the folder and context path for this application -->
-  <property name="webapp"   value="myapp"/>
-  <property name="path"     value="/myapp"/>
+  <property name="webapp"   value="webapp"/>
+  <property name="path"     value="/pa01"/>
 
   <!-- Configure properties to access the Manager application -->
   <property name="url"      value="http://localhost:8080/manager"/>
@@ -20,6 +24,9 @@
 
   <path id="deployer.classpath">
     <fileset dir="${basedir}/lib">
+      <include name="*.jar"/>
+    </fileset>
+    <fileset dir="${tomcat.deployer.home}/lib">
       <include name="*.jar"/>
     </fileset>
   </path>

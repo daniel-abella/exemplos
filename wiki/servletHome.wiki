@@ -36,6 +36,8 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
  * !ServletContext (obtendo versão de Servlets ) ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa16/])
  * !ServletContext (obtendo parêmetros e mime types) ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa17/])
  * Conta requisições usando listener ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa18/])
+ * Exibe pilha de uma requisição ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa28/])
+
 
 = Práticas Acompanhadas de JSP (PAs) =
  * Contador de visitas em uma página ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp01/])

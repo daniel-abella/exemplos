@@ -1,33 +1,32 @@
-<project name="app" default="compile">
+<?xml version='1.0' encoding='utf-8'?>
 
-  <property environment="env" />
-  <property name="kad.libs" value="${env.KAD_LIBS}" />
-  <property name="tomcat.deployer.home" value="${env.CATALINA_HOME}-deployer" />
-  <property file="${kad.libs}/kad-libs.properties" />
+<project name="Deployer" default="compile" basedir=".">
+
+  <property file="deployer.properties"/>
 
   <!-- Configure the directory into which the web application is built -->
-  <property name="build"    value="target"/>
+  <property name="build"    value="${basedir}/build"/>
 
   <!-- Configure the folder and context path for this application -->
-  <property name="webapp"   value="webapp"/>
-  <property name="contextPath"     value="pa01"/>
+  <property name="webapp"   value="myapp"/>
+  <property name="path"     value="/myapp"/>
 
   <!-- Configure properties to access the Manager application -->
   <property name="url"      value="http://localhost:8080/manager"/>
-  <property name="username" value="admin"/>
-  <property name="password" value="admin"/>
+  <property name="username" value="tomcat"/>
+  <property name="password" value="tomcat"/>
 
-  <property name="webapp.path"     value="${build}/${contextPath}"/>
+  <property name="webapp.path"     value="${build}/webapp${path}"/>
 
-  <path id="tomcat.deployer.classpath">
-    <fileset dir="${tomcat.deployer.home}/lib">
+  <path id="deployer.classpath">
+    <fileset dir="${basedir}/lib">
       <include name="*.jar"/>
     </fileset>
   </path>
 
   <!-- Configure the custom Ant tasks for the Manager application -->
   <taskdef resource="org/apache/catalina/ant/catalina.tasks"
-           classpathref="tomcat.deployer.classpath"/>
+           classpathref="deployer.classpath"/>
 
   <!-- Executable Targets -->
   <target name="clean" description="Removes build directory">
@@ -79,7 +78,7 @@
 
   <target name="deploy" description="Deploy web application">
     <deploy url="${url}" username="${username}" password="${password}"
-            path="${contextPath}" war="${webapp.path}.war" update="true" />
+            path="${path}" war="${webapp.path}.war" update="true" />
   </target>
 
   <target name="undeploy" description="Undeploy web application">

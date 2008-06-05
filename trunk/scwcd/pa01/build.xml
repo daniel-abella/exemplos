@@ -10,7 +10,7 @@
 
   <!-- Configure the folder and context path for this application -->
   <property name="webapp"   value="webapp"/>
-  <property name="contextPath"     value="${pa01}"/>
+  <property name="contextPath"     value="pa01"/>
 
   <!-- Configure properties to access the Manager application -->
   <property name="url"      value="http://localhost:8080/manager"/>
@@ -79,7 +79,7 @@
 
   <target name="deploy" description="Deploy web application">
     <deploy url="${url}" username="${username}" password="${password}"
-            path="${path}" war="${webapp.path}.war" update="true" />
+            path="${contextPath}" war="${webapp.path}.war" update="true" />
   </target>
 
   <target name="undeploy" description="Undeploy web application">

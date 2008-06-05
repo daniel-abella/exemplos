@@ -83,7 +83,7 @@
 
   </target>
 
-  <target name="deploy" description="Deploy web application">
+  <target name="deploy" description="Deploy web application" depends="compile">
     <deploy url="${url}" username="${username}" password="${password}"
             path="${path}" war="${webapp.path}.war" update="true" />
   </target>

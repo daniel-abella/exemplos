@@ -17,7 +17,7 @@
   <property name="username" value="admin"/>
   <property name="password" value="admin"/>
 
-  <property name="webapp.path"     value="${build}/{contextPath}"/>
+  <property name="webapp.path"     value="${build}/${contextPath}"/>
 
   <path id="tomcat.deployer.classpath">
     <fileset dir="${tomcat.deployer.home}/lib">

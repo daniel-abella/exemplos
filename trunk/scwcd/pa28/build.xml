@@ -111,5 +111,18 @@
     <list url="${url}" username="${username}" password="${password}" />
   </target>
 
+  <target name="tomcat-start" description="Inicia Tomcat">
+    <java jar="${env.CATALINA_HOME}/bin/bootstrap.jar" fork="true" spawn="true">
+      <jvmarg value="-Dcatalina.home=${env.CATALINA_HOME}"/>
+    </java>
+  </target>
+
+  <target name="tomcat-stop" description="Interrompe Tomcat">
+    <java jar="${env.CATALINA_HOME}/bin/bootstrap.jar" fork="true">
+      <jvmarg value="-Dcatalina.home=${env.CATALINA_HOME}"/>
+      <arg line="stop"/>
+    </java>
+  </target>
+
 
 </project>

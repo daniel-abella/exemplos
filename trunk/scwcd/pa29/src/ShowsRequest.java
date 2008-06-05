@@ -10,6 +10,11 @@ public class ShowsRequest extends HttpServlet {
 
     private PrintWriter pw = null;
 
+    public void doPost(HttpServletRequest req, HttpServletResponse res)
+	throws ServletException, IOException {
+	doGet(req,res);
+    }
+
     public void doGet(HttpServletRequest req, HttpServletResponse res)
 	throws ServletException, IOException {
 

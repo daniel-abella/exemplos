@@ -15,11 +15,15 @@ public class ExibeParametros extends HttpServlet {
 	pw.println("<html><body>");
 	pw.println("<h1>ExibeParametros</h1>");
 	Enumeration pars = req.getParameterNames();
-	String parametro;
-	while (pars.hasMoreElements()) {
-	    parametro = (String) pars.nextElement();
-	    pw.println("<br>" + parametro + ": ");
-	    pw.println(req.getParameter(parametro));
+	if (pars.hasMoreElements()) {
+	    String parametro;
+	    while (pars.hasMoreElements()) {
+		parametro = (String) pars.nextElement();
+		pw.println("<br>" + parametro + ": ");
+		pw.println(req.getParameter(parametro));
+	    }
+	} else {
+	    pw.println("Nenhum parâmetro fornecido.");
 	}
     }
 

@@ -5,6 +5,7 @@
   <property name="kad.libs" value="${env.KAD_LIBS}" />
   <property name="tomcat.deployer.home" value="${env.CATALINA_HOME}-deployer" />
   <property file="${kad.libs}/kad-libs.properties" />
+  <property name="src" value="src" />
 
   <property file="deployer.properties"/>
 
@@ -17,16 +18,16 @@
 
   <!-- Configure properties to access the Manager application -->
   <property name="url"      value="http://localhost:8080/manager"/>
-  <property name="username" value="tomcat"/>
-  <property name="password" value="tomcat"/>
+  <property name="username" value="admin"/>
+  <property name="password" value="admin"/>
 
   <property name="webapp.path"     value="${build}/webapp${path}"/>
 
   <path id="deployer.classpath">
-    <fileset dir="${basedir}/lib">
+    <fileset dir="${tomcat.deployer.home}/lib">
       <include name="*.jar"/>
     </fileset>
-    <fileset dir="${tomcat.deployer.home}/lib">
+    <fileset dir="${webapp.path}/WEB-INF/lib">
       <include name="*.jar"/>
     </fileset>
   </path>
@@ -63,17 +64,10 @@
            debug="${compile.debug}"
            deprecation="${compile.deprecation}"
            failonerror="false"
-           srcdir="${webapp.path}/WEB-INF/classes"
+           srcdir="${src}"
            encoding="UTF-8"
 	   excludes="**/*.smap">
-      <classpath>
-        <fileset dir="${webapp.path}/WEB-INF/lib">
-          <include name="*.jar"/>
-        </fileset>
-        <fileset dir="${basedir}/lib">
-          <include name="*.jar"/>
-        </fileset>
-      </classpath>
+      <classpath refid="deployer.classpath" />
       <include name="**" />
       <exclude name="tags/**" />
     </javac>

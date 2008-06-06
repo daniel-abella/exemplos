@@ -20,11 +20,38 @@ public class ShowsRequest extends HttpServlet {
 
 	pw = res.getWriter();
 	linha("<html><body>");
-	linha("<h1>Request</h1>");
+	linha("<h1>Requisição</h1>");
 	linha("getAttribute(\"fabio\"): " + req.getAttribute("fabio"));
 	nomesAtributos(req);
 	linha("getCharacterEncoding: " + req.getCharacterEncoding());
 	linha("getContentLength(): " + req.getContentLength());
+	linha("getContentType(): " + req.getContentType());
+
+	linha("Mostra getInputStream() ou getReader() por sorteio");
+	linha("(não podem ser chamados para uma mesma requisição)");
+	if (new Date().getTime() % 2 == 0)
+	    linha("getInputStream(): " + req.getInputStream());
+	else {
+	    linha("getReader(): " + req.getReader().readLine());
+	}
+
+	linha("getLocalAddr(): " + req.getLocalAddr());
+	linha("getLocale(): " + req.getLocale());
+	linha("getLocales():");
+	Enumeration locales = req.getLocales();
+	while (locales.hasMoreElements())
+	    linha(locales.nextElement().toString());
+
+	linha("getLocalName(): " + req.getLocalName());
+	linha("getLocalPort(): " + req.getLocalPort());
+	linha("getParameter(\"fabio\"): " + req.getParameter("fabio"));
+
+	linha("getParameterMap():");
+	Map<String,String> mapa = req.getParameterMap();
+	
+
+	linha("");
+	linha("Nova consulta? Clique <a href=\"consulta.html\">aqui</a>");
     }
 
     public void linha(String linha) {

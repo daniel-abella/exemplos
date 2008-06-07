@@ -51,8 +51,9 @@ public class ShowsRequest extends HttpServlet {
 	Iterator<String> iterator = keys.iterator();
 	while (iterator.hasNext()) {
 	    String key = (String) iterator.next();
-	    //String valor = mapa.get(key);
-	    linha("getParameterMap(): key: " + key + " valor: ");
+	    String[] valores = mapa.get(key);
+	    for (String valor : valores)
+		linha("getParameterMap(): key: " + key + " valor: " + valor);
 	}
 
 	Enumeration pnames = req.getParameterNames();

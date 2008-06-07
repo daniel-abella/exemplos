@@ -1,4 +1,4 @@
-<project name="Deployer" default="compile">
+<project name="app" default="compile">
 
   <property environment="env" />
   <property name="kad.libs" value="${env.KAD_LIBS}" />

@@ -46,9 +46,19 @@ public class ShowsRequest extends HttpServlet {
 	linha("getLocalPort(): " + req.getLocalPort());
 	linha("getParameter(\"fabio\"): " + req.getParameter("fabio"));
 
-	linha("getParameterMap():");
 	Map<String,String> mapa = req.getParameterMap();
-	
+	Set<String> keys = mapa.keySet();
+	Iterator<String> iterator = keys.iterator();
+	while (iterator.hasNext()) {
+	    String key = (String) iterator.next();
+	    //String valor = mapa.get(key);
+	    linha("getParameterMap(): key: " + key + " valor: ");
+	}
+
+	Enumeration pnames = req.getParameterNames();
+	while (pnames.hasMoreElements()) {
+	    linha("getParameterNames(): " + pnames.nextElement());
+	}
 
 	linha("");
 	linha("Nova consulta? Clique <a href=\"consulta.html\">aqui</a>");

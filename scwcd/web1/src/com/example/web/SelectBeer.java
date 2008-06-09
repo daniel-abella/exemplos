@@ -12,10 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.example.model.BeerExpert;
 
-/**
- * Servlet implementation class for Servlet: BeerSelect
- * 
- */
 public class SelectBeer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

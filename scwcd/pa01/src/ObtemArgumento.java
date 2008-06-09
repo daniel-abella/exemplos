@@ -3,7 +3,9 @@ import java.io.*;
 import javax.servlet.ServletException;
 
 public class ObtemArgumento extends HttpServlet {
-    public void service(HttpServletRequest r, HttpServletResponse s)
+	private static final long serialVersionUID = 1L;
+
+	public void service(HttpServletRequest r, HttpServletResponse s)
 	throws ServletException, IOException {
 
 	PrintWriter pw = s.getWriter();

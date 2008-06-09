@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<project name="Deployer" default="compile" basedir=".">
+<!-- Altere o nome do projeto -->
+<project name="pa10" default="compile" basedir=".">
   <property environment="env" />
   <property name="kad.libs" value="${env.KAD_LIBS}" />
   <property name="tomcat.deployer.home" value="${env.CATALINA_HOME}-deployer" />
@@ -14,7 +15,7 @@
 
   <!-- Configure the folder and context path for this application -->
   <property name="webapp"   value="webapp"/>
-  <property name="path"     value="/pa01"/>
+  <property name="path"     value="/${ant.project.name}"/>
 
   <!-- Configure properties to access the Manager application -->
   <property name="url"      value="http://localhost:8080/manager"/>
@@ -69,7 +70,7 @@
            optimize="off"
            debug="${compile.debug}"
            deprecation="${compile.deprecation}"
-           failonerror="false"
+           failonerror="true"
            srcdir="${src}"
            encoding="UTF-8"
 	   excludes="**/*.smap">
@@ -106,5 +107,23 @@
     <stop url="${url}" username="${username}" password="${password}"
           path="${path}"/>
   </target>
+
+  <target name="list" description="Lista aplicacoes instaladas">
+    <list url="${url}" username="${username}" password="${password}" />
+  </target>
+
+  <target name="tomcat-start" description="Inicia Tomcat">
+    <java jar="${env.CATALINA_HOME}/bin/bootstrap.jar" fork="true" spawn="true">
+      <jvmarg value="-Dcatalina.home=${env.CATALINA_HOME}"/>
+    </java>
+  </target>
+
+  <target name="tomcat-stop" description="Interrompe Tomcat">
+    <java jar="${env.CATALINA_HOME}/bin/bootstrap.jar" fork="true">
+      <jvmarg value="-Dcatalina.home=${env.CATALINA_HOME}"/>
+      <arg line="stop"/>
+    </java>
+  </target>
+
 
 </project>

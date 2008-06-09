@@ -1,11 +1,16 @@
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class SaldoServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
-    protected void doGet(HttpServletRequest req,
+	protected void doGet(HttpServletRequest req,
 			 HttpServletResponse res)
 	throws ServletException, IOException {
 	doPost(req,res);
@@ -25,8 +30,8 @@ public class SaldoServlet extends HttpServlet {
 	// 'usuario' foi autenticado
 	PrintWriter pw = res.getWriter();
 	pw.println("<html>");
-	pw.println("O saldo do usuário " + usuario);
-	pw.println("é " + (int) (Math.random() * 1000));
+	pw.println("O saldo do usuï¿½rio " + usuario);
+	pw.println("ï¿½ " + (int) (Math.random() * 1000));
 	pw.println("</html>");
     }
 }

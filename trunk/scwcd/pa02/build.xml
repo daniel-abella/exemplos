@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 
 <!-- Altere o nome do projeto -->
-<project name="pa30" default="compile" basedir=".">
+<project name="pa02" default="compile" basedir=".">
   <property environment="env" />
   <property name="kad.libs" value="${env.KAD_LIBS}" />
   <property name="tomcat.deployer.home" value="${env.CATALINA_HOME}-deployer" />

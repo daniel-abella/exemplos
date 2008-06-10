@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<project name="pa03" default="compile" basedir=".">
+<!-- Altere o nome do projeto -->
+<project name="pa30" default="compile" basedir=".">
   <property environment="env" />
   <property name="kad.libs" value="${env.KAD_LIBS}" />
   <property name="tomcat.deployer.home" value="${env.CATALINA_HOME}-deployer" />
@@ -109,6 +110,19 @@
 
   <target name="list" description="Lista aplicacoes instaladas">
     <list url="${url}" username="${username}" password="${password}" />
+  </target>
+
+  <target name="tomcat-start" description="Inicia Tomcat">
+    <java jar="${env.CATALINA_HOME}/bin/bootstrap.jar" fork="true" spawn="true">
+      <jvmarg value="-Dcatalina.home=${env.CATALINA_HOME}"/>
+    </java>
+  </target>
+
+  <target name="tomcat-stop" description="Interrompe Tomcat">
+    <java jar="${env.CATALINA_HOME}/bin/bootstrap.jar" fork="true">
+      <jvmarg value="-Dcatalina.home=${env.CATALINA_HOME}"/>
+      <arg line="stop"/>
+    </java>
   </target>
 
 

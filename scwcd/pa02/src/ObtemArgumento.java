@@ -3,16 +3,18 @@ import java.io.*;
 import javax.servlet.ServletException;
 
 public class ObtemArgumento extends HttpServlet {
-    // O mÈtodo service È sobrescrito abaixo. Isto significa que
-    // tal servlet ir· tratar todo e qualquer mÈtodo (POST, GET, ...)
-    public void service(HttpServletRequest r, HttpServletResponse s)
-	throws ServletException, IOException {
+	private static final long serialVersionUID = 1L;
 
-	PrintWriter pw = s.getWriter();
-	String parametro = r.getParameter("a");
-	pw.println("<html><body>");
-	pw.println("<h1>Par√¢metro</h1>");
-	pw.println("Argumento: a<br>Valor:  " + parametro);
-	pw.println("</body></html>");
-    }
+	// O m√©todo service √© sobrescrito abaixo. Isto significa que
+	// tal servlet ir√° tratar todo e qualquer m√©todo (POST, GET, ...)
+	public void service(HttpServletRequest r, HttpServletResponse s)
+			throws ServletException, IOException {
+
+		PrintWriter pw = s.getWriter();
+		String parametro = r.getParameter("a");
+		pw.println("<html><body>");
+		pw.println("<h1>Par√¢metro</h1>");
+		pw.println("Argumento: a<br>Valor:  " + parametro);
+		pw.println("</body></html>");
+	}
 }

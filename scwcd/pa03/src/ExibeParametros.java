@@ -25,7 +25,7 @@ public class ExibeParametros extends HttpServlet {
 				pw.println(req.getParameter(parametro));
 			}
 		} else {
-			pw.println("Nenhum par�metro fornecido.");
+			pw.println("Nenhum parâmetro fornecido.");
 		}
 	}
 

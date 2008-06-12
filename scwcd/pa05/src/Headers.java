@@ -13,7 +13,7 @@ public class Headers extends HttpServlet {
 	PrintWriter pw = res.getWriter();
 	pw.println("<html>");
 	pw.println("<body>");
-	pw.println("<h2>Elementos de header de requisição http</h2>");
+	pw.println("<h2>Elementos de header</h2>");
 
 	Enumeration<String> headers = req.getHeaderNames();
 	String header;

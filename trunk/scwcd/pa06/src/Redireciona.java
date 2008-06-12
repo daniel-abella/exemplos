@@ -3,7 +3,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 public class Redireciona extends HttpServlet {
-    protected void doGet(HttpServletRequest req,
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest req,
 			 HttpServletResponse res)
 	throws ServletException, IOException {
 

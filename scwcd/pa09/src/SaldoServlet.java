@@ -30,8 +30,8 @@ public class SaldoServlet extends HttpServlet {
 	// 'usuario' foi autenticado
 	PrintWriter pw = res.getWriter();
 	pw.println("<html>");
-	pw.println("O saldo do usu�rio " + usuario);
-	pw.println("� " + (int) (Math.random() * 1000));
+	pw.println("O saldo do usuário " + usuario);
+	pw.println(" é " + (int) (Math.random() * 1000));
 	pw.println("</html>");
     }
 }

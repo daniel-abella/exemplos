@@ -90,6 +90,15 @@
 	<path id="junit.classpath">
 		<path location="${kad.libs}/junit3.8.1/junit.jar" />
 	</path>
+	
+	<!-- ================================================================= -->
+	<!-- DBUnit (classpath)                                             -->
+	<!-- ================================================================= -->
+	<path id="dbunit.classpath">
+		<path location="${dbunit.jar}" />
+		<path location="${slf4j.api.jar}" />
+		<path location="${slf4j.simple.jar}" />
+	</path>
 
 	<!-- ================================================================= -->
 	<!-- Web Development (classpath)                                       -->
@@ -120,7 +129,7 @@
 		<path refid="javadb.classpath" />
 
 		<!-- DbUnit -->
-		<pathelement location="${dbunit.jar}" />
+		<path refid="dbunit.classpath" />
 	</path>
 
 

@@ -4,7 +4,10 @@ import javax.servlet.http.*;
 import java.util.*;
 
 public class Headers extends HttpServlet {
-    public void doGet(HttpServletRequest req, HttpServletResponse res)
+	private static final long serialVersionUID = 1L;
+
+	@SuppressWarnings("unchecked")
+	public void doGet(HttpServletRequest req, HttpServletResponse res)
 	throws ServletException, IOException {
 
 	PrintWriter pw = res.getWriter();
@@ -12,7 +15,7 @@ public class Headers extends HttpServlet {
 	pw.println("<body>");
 	pw.println("<h2>Elementos de header de requisição http</h2>");
 
-	Enumeration headers = req.getHeaderNames();
+	Enumeration<String> headers = req.getHeaderNames();
 	String header;
 	int elementos = 0;
 	while (headers.hasMoreElements()) {

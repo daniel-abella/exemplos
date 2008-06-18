@@ -7,9 +7,9 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
  * Introdução a Servlets ([http://www.slideshare.net/kyrios/servletintroducao])
 
 = Exemplos e exercícios =
-
+ * Se você não gosta de cães nem de jaca, atente-se apenas para as questões técnicas.
  * Primeiro servlet ([http://exemplos.googlecode.com/svn/trunk/scwcd/exemplo/])
- * Primeiro página JSP ([http://exemplos.googlecode.com/svn/trunk/scwcd/jaca/])
+ * Primeira página JSP ([http://exemplos.googlecode.com/svn/trunk/scwcd/jaca/])
  * Lista de exercícios ([servletExercicios1 1])
  * Lista de exercícios ([servletExercicios2 2])
 

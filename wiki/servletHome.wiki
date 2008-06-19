@@ -39,7 +39,7 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
  * Exibe pilha de uma requisição ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa28/])
  * Consulta usando POST ou GET ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa29/])
  * Upload servlet ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa30/])
- * ServletContextListener ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa31/])
+ * !ServletContextListener ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa31/])
 
 = Práticas Acompanhadas de JSP (PAs) =
  * Contador de visitas em uma página ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp01/])

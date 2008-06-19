@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!-- Altere o nome do projeto -->
+<project name="pa31" default="compile" basedir=".">
+  <property environment="env" />
+  <property name="kad.libs" value="${env.KAD_LIBS}" />
+  <property name="tomcat.deployer.home" value="${env.CATALINA_HOME}-deployer" />
+  <property file="${kad.libs}/kad-libs.properties" />
+  <property name="src" value="src" />
+
+  <property file="deployer.properties"/>
+
+  <!-- Configure the directory into which the web application is built -->
+  <property name="build"    value="${basedir}/target"/>
+
+  <!-- Configure the folder and context path for this application -->
+  <property name="webapp"   value="webapp"/>
+  <property name="path"     value="/${ant.project.name}"/>
+
+  <!-- Configure properties to access the Manager application -->
+  <property name="url"      value="http://localhost:8080/manager"/>
+  <property name="username" value="admin"/>
+  <property name="password" value="admin"/>
+
+  <property name="webapp.path"     value="${build}/webapp${path}"/>
+
+  <path id="deployer.classpath">
+    <fileset dir="${tomcat.deployer.home}/lib">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+
+  <path id="project.classpath">
+    <fileset dir="${tomcat.deployer.home}/lib">
+      <include name="*.jar"/>
+    </fileset>
+    <fileset dir="${webapp.path}/WEB-INF/lib">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+
+  <!-- Configure the custom Ant tasks for the Manager application -->
+  <taskdef resource="org/apache/catalina/ant/catalina.tasks"
+           classpathref="deployer.classpath"/>
+
+  <!-- Executable Targets -->
+  <target name="clean" description="Removes build directory">
+    <delete dir="${build}" />
+  </target>
+
+  <target name="compile" description="Compile web application"
+          depends="clean">
+
+    <copy todir="${webapp.path}">
+      <fileset dir="${webapp}" />
+    </copy>
+
+    <jasper validateXml="false" 
+             uriroot="${webapp.path}" 
+             webXmlFragment="${webapp.path}/WEB-INF/generated_web.xml"
+             addWebXmlMappings="true"
+             outputDir="${webapp.path}/WEB-INF/classes" /> 
+
+    <validator path="${webapp.path}" />
+
+    <mkdir dir="${webapp.path}/WEB-INF/classes"/>
+    <mkdir dir="${webapp.path}/WEB-INF/lib"/>
+
+    <javac destdir="${webapp.path}/WEB-INF/classes"
+           optimize="off"
+           debug="${compile.debug}"
+           deprecation="${compile.deprecation}"
+           failonerror="true"
+           srcdir="${src}:${webapp.path}/WEB-INF/classes"
+           encoding="UTF-8"
+	   excludes="**/*.smap">
+      <classpath refid="project.classpath" />
+      <include name="**" />
+      <exclude name="tags/**" />
+    </javac>
+
+    <jar destfile="${webapp.path}.war"
+         basedir="${webapp.path}" />
+
+  </target>
+
+  <target name="deploy" description="Deploy web application" depends="compile">
+    <deploy url="${url}" username="${username}" password="${password}"
+            path="${path}" war="${webapp.path}.war" update="true" />
+  </target>
+
+  <target name="undeploy" description="Undeploy web application">
+    <undeploy url="${url}" username="${username}" password="${password}"
+              path="${path}"/>
+  </target>
+
+  <!-- Webapp lifecycle control -->
+  <target name="start" description="Start web application">
+    <start url="${url}" username="${username}" password="${password}"
+           path="${path}"/>
+  </target>
+  <target name="reload" description="Reload web application">
+    <reload url="${url}" username="${username}" password="${password}"
+            path="${path}"/>
+  </target>
+  <target name="stop" description="Stop web application">
+    <stop url="${url}" username="${username}" password="${password}"
+          path="${path}"/>
+  </target>
+
+  <target name="list" description="Lista aplicacoes instaladas">
+    <list url="${url}" username="${username}" password="${password}" />
+  </target>
+
+  <target name="tomcat-start" description="Inicia Tomcat">
+    <java jar="${env.CATALINA_HOME}/bin/bootstrap.jar" fork="true" spawn="true">
+      <jvmarg value="-Dcatalina.home=${env.CATALINA_HOME}"/>
+    </java>
+  </target>
+
+  <target name="tomcat-stop" description="Interrompe Tomcat">
+    <java jar="${env.CATALINA_HOME}/bin/bootstrap.jar" fork="true">
+      <jvmarg value="-Dcatalina.home=${env.CATALINA_HOME}"/>
+      <arg line="stop"/>
+    </java>
+  </target>
+
+
+</project>

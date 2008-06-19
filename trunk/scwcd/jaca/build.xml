@@ -59,7 +59,7 @@
              uriroot="${webapp.path}" 
              webXmlFragment="${webapp.path}/WEB-INF/generated_web.xml"
              addWebXmlMappings="true"
-             outputDir="${src}" /> 
+             outputDir="${webapp.path}/WEB-INF/classes" /> 
 
     <validator path="${webapp.path}" />
 
@@ -71,7 +71,7 @@
            debug="${compile.debug}"
            deprecation="${compile.deprecation}"
            failonerror="true"
-           srcdir="${src}"
+           srcdir="${src}:${webapp.path}/WEB-INF/classes"
            encoding="UTF-8"
 	   excludes="**/*.smap">
       <classpath refid="project.classpath" />

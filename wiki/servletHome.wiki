@@ -44,6 +44,13 @@ Esta série é comentada por várias seqüências de slides. Uma sugestão é ac
 Estão disponíveis oito (8) _listeners_: !ServletContextListener, !ServletContextAttributeListener, !ServletRequestListener, !ServletRequestAttributeListener, !HttpSessionListener, !HttpSettionAttributeListener, !HttpSessionBindingListener e !HttpSessionActivationListener. Os exemplos abaixo permitem ilustrar o emprego de cada um deles.
 
  * !ServletContextListener ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa31/])
+ * !ServletContextAttributeListener ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa32/])
+ * !ServletRequestListener ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa33/])
+ * !ServletRequestAttributeListener ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa34/])
+ * !HttpSessionListener ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa35/])
+ * !HttpSessionAttributeListener ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa36/])
+ * !HttpSessionBindingListener ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa37/])
+ * !HttpSessionActivationListener ([http://exemplos.googlecode.com/svn/trunk/scwcd/pa38/])
 
 = Práticas Acompanhadas de JSP (PAs) =
  * Contador de visitas em uma página ([http://exemplos.googlecode.com/svn/trunk/scwcd/jsp01/])

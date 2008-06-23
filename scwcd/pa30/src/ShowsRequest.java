@@ -7,15 +7,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
 public class ShowsRequest extends HttpServlet {
-
-    private PrintWriter pw = null;
+	private static final long serialVersionUID = 1L;
+	private PrintWriter pw = null;
 
     public void doPost(HttpServletRequest req, HttpServletResponse res)
 	throws ServletException, IOException {
 	doGet(req,res);
     }
 
-    public void doGet(HttpServletRequest req, HttpServletResponse res)
+    @SuppressWarnings("unchecked")
+	public void doGet(HttpServletRequest req, HttpServletResponse res)
 	throws ServletException, IOException {
 
 	pw = res.getWriter();
@@ -70,7 +71,8 @@ public class ShowsRequest extends HttpServlet {
 	pw.println("<br/>");
     }
 
-    public void nomesAtributos(javax.servlet.ServletRequest req) {
+    @SuppressWarnings("unchecked")
+	public void nomesAtributos(javax.servlet.ServletRequest req) {
 	Enumeration e = req.getAttributeNames();
 	if (e.hasMoreElements()) {
 	    while (e.hasMoreElements()) {

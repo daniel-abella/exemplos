@@ -23,5 +23,9 @@
 		<servlet-name>s2</servlet-name>
 		<url-pattern>/s2</url-pattern>
 	</servlet-mapping>
+	
+	<listener>
+		<listener-class>MyServletRequestAttributeListener</listener-class>
+	</listener>
 
 </web-app>

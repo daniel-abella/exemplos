@@ -19,11 +19,7 @@ public class ForwardToServlet extends HttpServlet {
 	
 	@SuppressWarnings("unchecked")
 	public String saida() {
-		String retorno = "";
 		ServletContext sc = getServletContext();
-		retorno += (String) sc.getAttribute("attributeAdded");
-		retorno += (String) sc.getAttribute("attributeRemoved");
-		retorno += (String) sc.getAttribute("attributeReplaced");
-		return retorno;
+		return (String) sc.getAttribute("atributo");
 	}
 }

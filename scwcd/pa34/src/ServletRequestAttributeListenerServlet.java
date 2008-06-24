@@ -12,9 +12,9 @@ public class ServletRequestAttributeListenerServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws IOException, ServletException {
 
-		req.setAttribute("atributo", "valor do atributo");
-		req.setAttribute("atributo", "substituído");
-		req.removeAttribute("atributo");
+		req.setAttribute("x", "valor do atributo");
+		req.setAttribute("x", "substituído");
+		req.removeAttribute("x");
 		
 		RequestDispatcher view = req.getRequestDispatcher("s2");
 		view.forward(req, res);

@@ -6,17 +6,23 @@ public class MyServletRequestAttributeListener implements
 		ServletRequestAttributeListener {
 
 	public void attributeAdded(ServletRequestAttributeEvent event) {
-		ServletContext sc = event.getServletContext();
-		sc.setAttribute("attributeAdded", "attributeAdded");
+		montaAtributo(event, "attributeAdded");
 	}
 
 	public void attributeRemoved(ServletRequestAttributeEvent event) {
-		ServletContext sc = event.getServletContext();
-		sc.setAttribute("attributeRemoved", "attributeRemoved");
+		montaAtributo(event, "attributeRemoved");
 	}
 
 	public void attributeReplaced(ServletRequestAttributeEvent event) {
+		montaAtributo(event, "attributeReplaced");
+	}
+
+	private void montaAtributo(ServletRequestAttributeEvent event, String msg) {
 		ServletContext sc = event.getServletContext();
-		sc.setAttribute("attributeReplaced", "attributeReplaced");
+		String atributo = (String) sc.getAttribute("atributo");
+		if (atributo == null)
+			atributo = "";
+		atributo += "<br>" + msg;
+		sc.setAttribute("atributo", atributo);
 	}
 }

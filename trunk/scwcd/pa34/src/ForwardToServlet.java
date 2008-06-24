@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -22,10 +21,9 @@ public class ForwardToServlet extends HttpServlet {
 	public String saida() {
 		String retorno = "";
 		ServletContext sc = getServletContext();
-		Enumeration nomes = sc.getAttributeNames();
-		while (nomes.hasMoreElements()) {
-			System.out.println(nomes.nextElement()); 
-		}
+		retorno += (String) sc.getAttribute("attributeAdded");
+		retorno += (String) sc.getAttribute("attributeRemoved");
+		retorno += (String) sc.getAttribute("attributeReplaced");
 		return retorno;
 	}
 }

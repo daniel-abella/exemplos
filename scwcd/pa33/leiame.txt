@@ -1,0 +1,6 @@
+O servlet ServletRequestListenerServlet receberá todas as requisições
+/slr. A única resposta é obter o atributo "contador" (do contexto da
+aplicação) e retorná-lo. 
+
+Para cada requisição, o MyServletRequestListener simplesmente recupera
+o atributo mencionado acima e acrescenta uma únidade. 

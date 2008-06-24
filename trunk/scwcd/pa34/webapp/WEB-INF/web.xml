@@ -5,21 +5,23 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
 	<servlet>
-		<servlet-name>scle</servlet-name>
-		<servlet-class>ServletContextListenerExample</servlet-class>
+		<servlet-name>s1</servlet-name>
+		<servlet-class>ServletRequestAttributeListenerServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>scle</servlet-name>
-		<url-pattern>/scle</url-pattern>
+		<servlet-name>s1</servlet-name>
+		<url-pattern>/s1</url-pattern>
 	</servlet-mapping>
 	
-	<listener>
-		<listener-class>MyServletContextListener</listener-class>
-	</listener>
+	<servlet>
+		<servlet-name>s2</servlet-name>
+		<servlet-class>ForwardToServlet</servlet-class>
+	</servlet>
 	
-	<context-param>
-		<param-name>autonomia</param-name>
-		<param-value>544</param-value>
-	</context-param>
+	<servlet-mapping>
+		<servlet-name>s2</servlet-name>
+		<url-pattern>/s2</url-pattern>
+	</servlet-mapping>
+
 </web-app>

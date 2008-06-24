@@ -1,0 +1,11 @@
+A aplicação possui dois servlets, s1 (/s1) e s2 (/s2).
+Ao requisitar s1, este acrescenta o atributo "x" à requisição.
+Posteriormente substitui o valor deste atributo por outro e,
+finalmente, remove tal atributo da requisição. Todos estes 
+passos são acompanhados pelo MyServletRequestAttributeListener
+que, neste caso, simplesmente registra cada evento por meio
+de um atributo do contexto de nome "atributo".
+
+Em seguida o servlet s1 redireciona para o servlet s2 que se
+encarrega de obter o valor do atributo "atributo" de
+ServletContext e exibi-lo.

@@ -3,14 +3,17 @@ import javax.servlet.ServletContextAttributeListener;
 
 public class MyServletContextAttributeListener implements ServletContextAttributeListener {
 	public void attributeAdded(ServletContextAttributeEvent event) {
-		System.out.println("attributeAdded " + event.getName());
+		StringBuilder msg = (StringBuilder) event.getServletContext().getAttribute("msg");
+		msg.append("<br>attributeAdded: " + event.getName());
 	}
 	
 	public void attributeRemoved(ServletContextAttributeEvent event) {
-		System.out.println("attributeRemoved " + event.getName());
+		StringBuilder msg = (StringBuilder) event.getServletContext().getAttribute("msg");
+		msg.append("<br>attributeRemoved: " + event.getName());
 	}
 	
 	public void attributeReplaced(ServletContextAttributeEvent event) {
-		System.out.println("attributeReplaced " + event.getName());
+		StringBuilder msg = (StringBuilder) event.getServletContext().getAttribute("msg");
+		msg.append("<br>attributeReplaced: " + event.getName());
 	}
 }

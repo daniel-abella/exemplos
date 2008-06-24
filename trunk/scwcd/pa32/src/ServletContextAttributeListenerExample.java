@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,17 +11,23 @@ public class ServletContextAttributeListenerExample extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws IOException, ServletException {
+		
+		// Apenas para guardar as mensagens do listener
+		// ServletContextAttributeListener (via attributeAdded)
+		getServletContext().setAttribute("msg", new StringBuilder());
 
-		Carro carro = new Carro(1);
-		// Isto fará com que o ServletContextAttributeListener
-		// seja avisado (attributeAdded)
-		getServletContext().setAttribute("carro", carro);
+		// ServletContextAttributeListener (via attributeAdded)
+		getServletContext().setAttribute("x", "");
 		
 		// ServletContextAttributeListener avisado via attributeReplaced
-		getServletContext().setAttribute("carro", "Uma simples string");
+		getServletContext().setAttribute("x", "Uma simples string");
 
 		// ServletContextAttributeListener avisado via attributeRemoved
-		getServletContext().removeAttribute("carro");
+		getServletContext().removeAttribute("x");
+		
+		StringBuilder msg = (StringBuilder) getServletContext().getAttribute("msg");
+		PrintWriter pw = res.getWriter();
+		pw.println("<html><body>" + msg + "</body></html>");
 	}
 
 }

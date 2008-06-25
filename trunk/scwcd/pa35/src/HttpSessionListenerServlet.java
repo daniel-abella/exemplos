@@ -1,24 +1,28 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletContextListenerExample extends HttpServlet {
+public class HttpSessionListenerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws IOException, ServletException {
 
-		Carro carro = (Carro) getServletContext().getAttribute("carro");
-		String autonomia = carro != null ? Integer.toString(carro
-				.getAutonomia()) : "erro";
+		req.getSession();
 		
 		res.setContentType("text/html");
 		PrintWriter pw = res.getWriter();
-		pw.println("<html><body>" + autonomia + "</body></html>");
+		ServletContext sc = getServletContext();
+		List lista = (List) sc.getAttribute("sessoes");
+		int valor = lista == null ? 0 : lista.size();
+		pw.println("<html><body>Total de sessões: " + valor + "</body></html>");
 	}
 
 }

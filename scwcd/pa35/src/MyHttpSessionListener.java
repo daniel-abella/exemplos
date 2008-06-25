@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSessionListener;
 
 public class MyHttpSessionListener implements HttpSessionListener {
 	public void sessionCreated(HttpSessionEvent event) {
-		System.out.println("sessionCreated");
 		addicionaUm(event.getSession());
 	}
 
@@ -27,7 +26,6 @@ public class MyHttpSessionListener implements HttpSessionListener {
 	}
 
 	public void sessionDestroyed(HttpSessionEvent event) {
-		System.out.println("sessionDestroyed");
 		subtraiUm(event.getSession());
 	}
 

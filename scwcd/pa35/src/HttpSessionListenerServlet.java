@@ -25,9 +25,9 @@ public class HttpSessionListenerServlet extends HttpServlet {
 		int valor = lista == null ? 0 : lista.size();
 		pw.println("<html><body>Total de sessões: " + valor);
 		if (session.isNew()) {
-			pw.println("<br>Nova sessão foi criada...");
+			pw.println("<br>Nova sessão foi criada...: " + session.getId());
 		} else {
-			pw.println("<br>Sessao reutilizada.");
+			pw.println("<br>Sessao reutilizada: " + session.getId());
 		}
 		
 		pw.println("<br>Requisicoes: " + sc.getAttribute("contador"));

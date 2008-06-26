@@ -2,6 +2,11 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletRequestEvent;
 import javax.servlet.ServletRequestListener;
 
+/**
+ * Conta requisições para a aplicação e atualiza valor corrente em
+ * propriedade "contador" de ServletContext.
+ *
+ */
 public class MyServletRequestListener implements
 		ServletRequestListener {
 

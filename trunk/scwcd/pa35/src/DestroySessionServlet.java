@@ -15,13 +15,18 @@ public class DestroySessionServlet extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws IOException, ServletException {
+		
 		ServletContext sc = getServletContext();
-		List<HttpSession> sessions = (List) sc.getAttribute("sessions");
-		if (sessions.size() > 0) {
+		List<HttpSession> sessions = (List) sc.getAttribute("sessoes");
+
+		int tamanho = 0;
+		if (sessions != null && sessions.size() > 0) {
 			sessions.remove(0);
+			tamanho = sessions.size();
 		}
 		res.setContentType("text/html");
 		PrintWriter pw = res.getWriter();
-		pw.println("<html><body>" + sessions.size() + "</body></html>");
+		pw.println("<html><body>Total de sessoes: " + tamanho);
+		pw.println("<br>Requisicoes: " + sc.getAttribute("contador") + "</body></html>");
 	}
 }

@@ -7,10 +7,15 @@ import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
 public class MyHttpSessionListener implements HttpSessionListener {
+	
 	public void sessionCreated(HttpSessionEvent event) {
 		addicionaUm(event.getSession());
 	}
 
+	public void sessionDestroyed(HttpSessionEvent event) {
+		subtraiUm(event.getSession());
+	}
+	
 	@SuppressWarnings("unchecked")
 	private void addicionaUm(HttpSession session) {
 		ServletContext sc = session.getServletContext();
@@ -23,10 +28,6 @@ public class MyHttpSessionListener implements HttpSessionListener {
 			l.add(session);
 			sc.setAttribute("sessoes", l);
 		}
-	}
-
-	public void sessionDestroyed(HttpSessionEvent event) {
-		subtraiUm(event.getSession());
 	}
 
 	@SuppressWarnings("unchecked")

@@ -27,4 +27,8 @@
 	<listener>
 		<listener-class>MyHttpSessionListener</listener-class>
 	</listener>
+	
+	<listener>
+		<listener-class>MyServletRequestListener</listener-class>
+	</listener>
 </web-app>

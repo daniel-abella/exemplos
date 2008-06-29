@@ -1,0 +1,3 @@
+Neste exemplo não fica evidente benefícios de EL sobre scripting expression ou java expression.
+Afinal, <%= request.getAttribute("nome") %> foi substituído por ${requestScope.nome}. 
+O próximo exemplo, contudo, traz um claro benefício para quem não programa em Java.

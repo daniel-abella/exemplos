@@ -1,0 +1,5 @@
+Neste exemplo, <%= ((dominio.Pessoa)request.getAttribute("pessoa").getNome() %> 
+tem o mesmo efeito da expressão em EL "${requestScope.pessoa.nome}". Há uma clara
+diferencição entre estas expressões. Em particular, a expressão em EL é mais
+"amigável" a um web designer do que a primeira (que definitivamente exige o domínio
+da linguagem Java).

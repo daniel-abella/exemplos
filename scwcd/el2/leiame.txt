@@ -1,0 +1,5 @@
+Ações padrão ilustradas:
+
+<jsp:useBean id="nomeDoAtributo" class="completo.nome.DaClasse" scope="request" />
+<jsp:setProperty name="nomeDoAtributo" property="nomeDaPropriedade" value="valorASerAtribuido" />
+<jsp:getProperty name="nomeDoAtributo" property="nomeDaPropriedade" />

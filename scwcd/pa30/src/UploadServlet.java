@@ -11,6 +11,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Para remover arquivos em diretório TMP<br>
+ * curl localhost:8080/pa30/upload -X DELETE
+ * 
+ * Localização real do diretório TMP
+ * curl localhost:8080/pa30/upload
+ * 
+ * @author kyrios
+ *
+ */
 public class UploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String diretorio = null;

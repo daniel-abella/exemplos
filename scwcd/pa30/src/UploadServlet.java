@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,27 +13,36 @@ import javax.servlet.http.HttpServletResponse;
 
 public class UploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private String diretorio = null;
+
+	public void init() {
+		ServletContext sc = getServletContext();
+		diretorio = sc.getRealPath("/WEB-INF/tmp");
+		File criaDirTmp = new File(diretorio);
+		if (!criaDirTmp.exists()) {
+			criaDirTmp.mkdir();
+		}
+	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		String retorno = "ok"; // Convencao em caso de sucesso
 
 		try {
-			ServletContext sc = getServletContext();
-			String fileName = sc.getRealPath("/WEB-INF/saida.txt");
-			FileOutputStream fos = new FileOutputStream(fileName);
-
+			File fDir = new File(diretorio);
+			File file = File.createTempFile("upload", null, fDir);
+			FileOutputStream fos = new FileOutputStream(file);
 			InputStream is = req.getInputStream();
 			if (!copy(is, fos)) {
 				res.sendError(500);
-				retorno = "xx";
+				return;
 			} else {
 				res.setStatus(HttpServletResponse.SC_OK);
 			}
 			is.close();
 		} catch (Exception e) {
 			res.sendError(500);
-			retorno = "xx";
+			return;
 		}
 
 		PrintWriter pw = res.getWriter();
@@ -55,5 +65,24 @@ public class UploadServlet extends HttpServlet {
 			return false;
 		}
 		return true;
+	}
+
+	public void doGet(HttpServletRequest req, HttpServletResponse res)
+			throws IOException {
+		ServletContext sc = getServletContext();
+		String path = sc.getRealPath("/WEB-INF");
+		PrintWriter pw = res.getWriter();
+		pw.println(path);
+	}
+	
+	public void doDelete(HttpServletRequest req, HttpServletResponse res) {
+		emptyDir();
+	}
+	
+	private void emptyDir() {
+		File dir = new File(diretorio);
+		for (File file : dir.listFiles()) {
+			file.delete();
+		}
 	}
 }

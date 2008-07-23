@@ -18,6 +18,7 @@
     <body>
         <my:Titulo texto="Meu título"/>
         <i>Um simples texto</i>
-        <my:Destaque texto="Texto a ser destacado"/>
+        <my:Destaque texto="Texto a ser destacado"/>        
+        <my:mensagem texto="Uma mensagem"/>
     </body>
 </html>

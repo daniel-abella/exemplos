@@ -3,7 +3,6 @@
     Created on : Jul 23, 2008, 6:04:29 PM
     Author     : fabio
 --%>
-
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,6 +18,8 @@
         <my:Titulo texto="Meu título"/>
         <i>Um simples texto</i>
         <my:Destaque texto="Texto a ser destacado"/>        
-        <my:mensagem texto="Uma mensagem"/>
+        <my:mensagem>
+            Mensagem no corpo da tag.
+        </my:mensagem>
     </body>
 </html>

@@ -7,7 +7,7 @@ Para ter acesso aos arquivos de uma base de dados pelo subversion, é necessári
 == Linux ==
 Em sistemas Linux, geralmente um cliente subversion já vem instalado.
 
-Para saber se o svn está instalado, digite `svn --help` (mostra as opções disponíveis do SVN) na linha de comandos. 
+Para saber se o svn está instalado, digite `svn help` (mostra as opções disponíveis do SVN) na linha de comandos. 
 
 Caso ocorra erro na operação, você precisará instalar uma aplicação que faça tal atividade. Abaixo estão algumas sugestões:
 

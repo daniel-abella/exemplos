@@ -1,15 +1,60 @@
-#summary One-sentence summary of this page.
+#Introdução ao Subversion com Assembla.
 
 = Introdução =
 
-Add your content here.
+Subversion é um sistema robusto de controle de versões open source conhecido como o sucessor do famoso CVS.
+
+Podendo ser trabalhado em diferentes cenários, o SVN (Subversion) tem dentre suas funções básicas:
+  * Gerenciamento de arquivos e diretórios ao longo do tempo, por um grupo de usuários definido;
+  * Acompanhamento de alterações (número da alteração, quem a fez, quando a fez) ;
+  * Gerenciamento de conflitos de versões, com uso da ferramenta DIff.
+ 
+= Instalação do cliente = 
+Para ter acesso aos arquivos de uma base de dados pelo subversion, é necessário um cliente SVN e conexão com a Internet.
+
+== Linux ==
+Em sistemas Linux, geralmente um cliente subversion já vem instalado.
+
+Para saber se o svn está instalado, digite `svn --help` (mostra as opções disponíveis do SVN) na linha de comandos. 
+
+Caso ocorra erro na operação, você precisará instalar uma aplicação que faça tal atividade. Abaixo estão algumas sugestões:
+
+|| *Aplicação* || *Site* ||
+||KDESVN||http://kdesvn.alwins-world.de/||
+||NautilusSVN||http://jasonfield.com/freebies/||
+||SmartSVN||http://www.syntevo.com/smartsvn/||
+
+== Windows ==
+Em sistemas Windows, o cliente SVN não vem instalado.Portando, é necessária a instalação de uma aplicação que faça tal atividade. 
+
+Geralmente, os clientes SVN do Windows tem interface gráfica e são bastante simples de usar, sem necessidade do uso de comandos via "shell".
+Abaixo estão algumas sugestões:
+
+|| *Aplicação* || *Site* ||
+||TortoiseSVN (Português)||http://tortoisesvn.tigris.org/||
+||VisualSVN||http://www.visualsvn.com/||
+||RapidSVN||http://rapidsvn.tigris.org/||
+
+= Passos iniciais (Checkout de Projeto do assembla)=
+
+Para manipular os arquivos de um repositório, é necessária a url do servidor, nome de usuário (login) e senha. 
+
+Com nome de usuário e senha já cadastrados no site (ex: Assembla), siga os passos abaixo: 
+
+ # Entre no portal [http://code.google.com/ Assembla];
+ # Selecione a opção "Login" e entre com seu usuário e senha;
+ # Ao fazer login com sucesso, será aberta sua página inicial;
+ # Na região "My Spaces", clique no projeto a ser baixado (ex: Kraho);
+ # Com a página do projeto aberta, selecione a tab (aba) "Trac/SVN";
+ # Copie o endereço indicado como "SVN Url";
+
+Guarde tal endereço, pois será através dele que seu cliente SVN encontrará o servidor.
+
+== Checkout ==
+Com o endereço do servidor SVN em mãos, use o comando abaixo para fazer download dos arquivos de repositório. Em inglês, o termo é _checkout_.
 
 
-= Passos iniciais =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Commit == 
 
 = Resolução de Problemas =

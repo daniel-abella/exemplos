@@ -1,4 +1,4 @@
-#Introdução ao Subversion com Assembla.
+#summary Primeiros contatos com o subversion.
 
 = Introdução =
 
@@ -9,34 +9,6 @@ Podendo ser trabalhado em diferentes cenários, o SVN (Subversion) tem dentre su
   * Acompanhamento de alterações (número da alteração, quem a fez, quando a fez) ;
   * Gerenciamento de conflitos de versões, com uso da ferramenta DIff.
  
-= Instalação do cliente = 
-Para ter acesso aos arquivos de uma base de dados pelo subversion, é necessário um cliente SVN e conexão com a Internet.
-
-== Linux ==
-Em sistemas Linux, geralmente um cliente subversion já vem instalado.
-
-Para saber se o svn está instalado, digite `svn --help` (mostra as opções disponíveis do SVN) na linha de comandos. 
-
-Caso ocorra erro na operação, você precisará instalar uma aplicação que faça tal atividade. Abaixo estão algumas sugestões:
-
-|| *Aplicação* || *Site* ||
-||KDESVN||http://kdesvn.alwins-world.de/||
-||NautilusSVN||http://jasonfield.com/freebies/||
-||SmartSVN||http://www.syntevo.com/smartsvn/||
-
-== Windows ==
-Em sistemas Windows, o cliente SVN não vem instalado.Portando, é necessária a instalação de uma aplicação que faça tal atividade. 
-
-Geralmente, os clientes SVN do Windows tem interface gráfica e são bastante simples de usar, sem necessidade do uso de comandos via "shell".
-Abaixo estão algumas sugestões:
-
-|| *Aplicação* || *Site* ||
-||TortoiseSVN (Português)||http://tortoisesvn.tigris.org/||
-||VisualSVN||http://www.visualsvn.com/||
-||RapidSVN||http://rapidsvn.tigris.org/||
-
-
-
 = Passos iniciais (Checkout de Projeto do assembla)=
 
 Para manipular os arquivos de um repositório, é necessária a url do servidor, nome de usuário (login) e senha. 
@@ -52,13 +24,13 @@ Com nome de usuário e senha já cadastrados no site (ex: Assembla), siga os pas
 
 Guarde tal endereço, pois será através dele que seu cliente SVN encontrará o servidor.
 
-== Criação de cópia de trabalho ==
+= Criação de cópia de trabalho =
 Com o endereço do servidor SVN em mãos, use o comando abaixo para fazer download dos arquivos do repositório. Em inglês, o termo é _checkout_.
 
 `svn co <url> <pastaAlvo>`
 
- <url> = endereço do servidor SVN; 
- <pastaAlvo> = nome da pasta onde a versão será descarregada.
+ * <url> = endereço do servidor SVN;
+ * <pastaAlvo> = nome da pasta onde a versão será descarregada.
 
 Ex: svn co http://svn.assembla.com/svn/abc copia
 
@@ -77,6 +49,15 @@ Ex: svn co -r 34 http://svn.assembla.com/svn/abc copia
 Em programas que usam interface gráfica, coloque a url do servidor, escolha o local de gravação dos arquivos localmente, marque a revisão que necessita ("_head revision_" para a última) e confirme.
 
 
-== Commit == 
+= Alterando o repositório = 
+Com sua cópia local dos arquivos modificada, o usuário pode efetuar tais mudanças pelo comando abaixo. O termo em inglês é _commit_.
+
+`svn ci -m "<mensagem>"
+
+ * <mensagem> = Campo opcional para descrição das mudanças ocorridas.
+
+Ex: svn ci -m "Correção do erro na tela de login"
+
+Antes de cada _commit_, é recomendado fazer uma atualização da revisão atual, pois a mesma pode não estar sincronizada com o número de revisão do repositório. Ex: Enquanto você mudava sua cópia local, outras pessoas atualizaram o repositório.
 
 = Resolução de Problemas =

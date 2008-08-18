@@ -1,5 +1,5 @@
+#summary Instalação do Subversion.
 #labels svn,subversion
-#instalação subversion svn.
 
 = Instalação do cliente = 
 Para ter acesso aos arquivos de uma base de dados pelo subversion, é necessário um cliente SVN e conexão com a Internet.

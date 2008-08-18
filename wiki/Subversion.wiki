@@ -11,6 +11,8 @@ Podendo ser trabalhado em diferentes cenários, o SVN (Subversion) tem dentre su
  
 = Passos iniciais (Checkout de Projeto do assembla)=
 
+Antes de fazer checkout, tenha certeza que sua máquina tem o [SubversionInstall subversion instalado].
+
 Para manipular os arquivos de um repositório, é necessária a url do servidor, nome de usuário (login) e senha. 
 
 Com nome de usuário e senha já cadastrados no site (ex: Assembla), siga os passos abaixo: 
@@ -50,14 +52,30 @@ Em programas que usam interface gráfica, coloque a url do servidor, escolha o l
 
 
 = Alterando o repositório = 
-Com sua cópia local dos arquivos modificada, o usuário pode efetuar tais mudanças pelo comando abaixo. O termo em inglês é _commit_.
+Com sua cópia local dos arquivos modificada, o usuário pode abrir uma shell na pasta da cópia local e efetuar tais mudanças pelo comando abaixo. O termo em inglês é _commit_.
 
-`svn ci -m "<mensagem>"
+`svn ci -m "<mensagem>"`
 
  * <mensagem> = Campo opcional para descrição das mudanças ocorridas.
 
 Ex: svn ci -m "Correção do erro na tela de login"
 
+As mudanças ocorridas nos arquivos existentes serão enviadas para o repositório de dados, que será atualizado.
+
+Em ferramentas gráficas, basta escolher a pasta e selecionar a opção _commit_.
+
 Antes de cada _commit_, é recomendado fazer uma atualização da revisão atual, pois a mesma pode não estar sincronizada com o número de revisão do repositório. Ex: Enquanto você mudava sua cópia local, outras pessoas atualizaram o repositório.
 
-= Resolução de Problemas =
+= Atualizando a cópia de trabalho =
+Caso o usuário pense que há novas mudanças no repositório e queira atualizar sua cópia de trabalho, o mesmo deve efetuar na shell, dentro da pasta do projeto, o comando abaixo. O termo em inglês é _commit_.
+
+`svn up`
+
+A ação irá atualizar o número da revisão e todos os arquivos modificados em relação ao repositório.
+
+Em ferramentas gráficas, basta escolher a opção _update_.
+
+= Mais opções = 
+
+Caso queira aprofundar mais ou resolver algum problema relativo ao subversion, pesquise no 
+[http://svnbook.red-bean.com/en/1.4/svn-book.html Manual do Subversion].

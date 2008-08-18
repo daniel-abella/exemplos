@@ -35,6 +35,8 @@ Abaixo estão algumas sugestões:
 ||VisualSVN||http://www.visualsvn.com/||
 ||RapidSVN||http://rapidsvn.tigris.org/||
 
+
+
 = Passos iniciais (Checkout de Projeto do assembla)=
 
 Para manipular os arquivos de um repositório, é necessária a url do servidor, nome de usuário (login) e senha. 
@@ -50,9 +52,29 @@ Com nome de usuário e senha já cadastrados no site (ex: Assembla), siga os pas
 
 Guarde tal endereço, pois será através dele que seu cliente SVN encontrará o servidor.
 
-== Checkout ==
-Com o endereço do servidor SVN em mãos, use o comando abaixo para fazer download dos arquivos de repositório. Em inglês, o termo é _checkout_.
+== Criação de cópia de trabalho ==
+Com o endereço do servidor SVN em mãos, use o comando abaixo para fazer download dos arquivos do repositório. Em inglês, o termo é _checkout_.
 
+`svn co <url> <pastaAlvo>`
+
+ <url> = endereço do servidor SVN; 
+ <pastaAlvo> = nome da pasta onde a versão será descarregada.
+
+Ex: svn co http://svn.assembla.com/svn/abc copia
+
+Obs: Caso seja necessário, entre com nome de usuário e senha.
+
+A versão descarregada será a última ("_head revision_"). Caso queira descarregar uma revisão específica, use o parâmetro `-r`, seguido do número da versão requerida.
+
+`svn co -r <numRevisao> <url> <pastaAlvo>`
+
+ * <url> = endereço do servidor SVN;
+ * <pastaAlvo> = nome da pasta onde a versão será descarregada;
+ * <numRevisao> = número da revisão.
+
+Ex: svn co -r 34 http://svn.assembla.com/svn/abc copia
+
+Em programas que usam interface gráfica, coloque a url do servidor, escolha o local de gravação dos arquivos localmente, marque a revisão que necessita ("_head revision_" para a última) e confirme.
 
 
 == Commit == 

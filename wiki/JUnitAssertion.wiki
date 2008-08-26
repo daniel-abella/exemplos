@@ -24,5 +24,22 @@ try {
 
 O código acima verifica que o método {{{java.lang.String.charAt()}}} se comporta como especificado. A primeira sentença do bloco {{{try}}} deve gerar uma exceção. Caso não seja gerada, a sentença seguinte é executada, o que resulta em uma falha (_erro_). Observe que a exceção gerada {{{java.lang.AssertionError}}} não é tratada por este código, como é de se esperar por qualquer código em Java, ou seja, não tratar exceções do tipo {{{java.lang.Error}}}, conforme comentado acima. Se a exceção for gerada, conforme a especificação, então o {{{assertTrue(true)}}} apenas marca que a execução se deu normalmente. Por outro lado, se for gerada alguma outra exceção, {{{java.lang.Exception}}}, então temos uma não conformidade em relação à especificação e, portanto, uma falha deve ocorrer, conforme o trecho de código acima. 
 
+= Testando geração de exceções com JUnit 4.* = 
+
+Nas versões do JUnit posteriores à 4.0 (incluindo a mesma), pode-se verificar o lançamento de exceções de forma mais enxuta usando o argumento *expected*. Veja o código abaixo:
+
+{{{
+@Test (expected=IndexOutOfBoundsException.class)
+public void elementAt() {
+  int[] intArray = new int[10];
+  
+  int i = intArray[11]; // Should throw IndexOutOfBoundsException
+}
+}}}
+
+Como se pode ver acima, o argumento _expected_, da anotação @Test, indica qual é exatamente a classe de exceção esperada.Se a exceção for gerada, conforme a especificação, não será reportada nenhuma falha e o teste "passará". Se for gerada alguma outra exceção, então temos uma não conformidade em relação à especificação e, portanto, uma falha deve ocorrer.
+
+É importante destacar que o valor para esse argumento deve ser uma classe que estenda [Throwable http://java.sun.com/javase/6/docs/api/java/lang/Throwable.html].
+
 = Conclusão =
 Exceções podem ser "normais", ou seja, aquelas do tipo {{{java.lang.Exception}}} ou _erros_, aquelas do tipo {{{java.lang.Error}}}. Estas últimas não são tratadas. Não se escreve código, em geral, que as captura (embora ninguém irá impedi-lo). Esta convenção é empregada pelo JUnit, que gera exceções do tipo {{{java.lang.Error}}}, especificamente, {{{java.lang.AssertionError}}}. Em conseqüência, dado que código testado não deveria estar capturando tais exceções, nem mesmo o próprio código do teste de unidade, elas não irão se misturar com as demais exceções, aquelas que devem ser tratadas e são do tipo {{{java.lang.Exception}}}.

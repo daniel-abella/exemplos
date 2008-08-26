@@ -37,7 +37,7 @@ public void elementAt() {
 }
 }}}
 
-Como se pode ver acima, o argumento _expected_, da anotação @Test, indica qual é exatamente a classe de exceção esperada.Se a exceção for gerada, conforme a especificação, não será reportada nenhuma falha e o teste "passará". Se for gerada alguma outra exceção, então temos uma não conformidade em relação à especificação e, portanto, uma falha deve ocorrer.
+Como se pode ver acima, o argumento _expected_, da anotação @Test, indica qual é exatamente a classe de exceção esperada.Se a exceção for gerada, conforme a especificação, não será reportada nenhuma falha e o teste "passará". Se não for gerada nenhuma exceção ou  alguma outra não especificada, então temos uma não conformidade em relação ao esperado e, portanto, uma falha deve ocorrer.
 
 É importante destacar que o valor para esse argumento deve ser uma classe que estenda [http://java.sun.com/javase/6/docs/api/java/lang/Throwable.html Throwable].
 

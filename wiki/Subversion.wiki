@@ -66,6 +66,15 @@ Em ferramentas gráficas, basta escolher a pasta e selecionar a opção _commit_
 
 Antes de cada _commit_, é recomendado fazer uma atualização da revisão atual, pois a mesma pode não estar sincronizada com o número de revisão do repositório. Ex: Enquanto você mudava sua cópia local, outras pessoas atualizaram o repositório.
 
+= Adicionando um arquivo ou pasta ao repositório subversion = 
+Caso queira inserir uma pasta ou arquivo,colocado na cópia de trabalho, ao repositório subversion, use o comando abaixo. O termo em inglês é _add_.
+
+`svn add <nome>`
+
+ * <nome> = Nome do arquivo ou pasta a ser inserido.
+
+Ex: svn add Teste.java
+
 = Atualizando a cópia de trabalho =
 Caso o usuário pense que há novas mudanças no repositório e queira atualizar sua cópia de trabalho, o mesmo deve efetuar na shell, dentro da pasta do projeto, o comando abaixo. O termo em inglês é _commit_.
 

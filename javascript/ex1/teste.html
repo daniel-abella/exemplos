@@ -2,7 +2,8 @@
 <body>
 <form onSubmit="this.primeiro.opcional = true;
 		this.fone.opcional = true;
-		this.cep.numerico = true; this.cep.min = 0;
+		this.cep.numerico = true; 
+		this.cep.min = 0;
 		this.cep.max = 99999;
 		this.idade.numerico = true;
 		this.idade.min = 0;
@@ -10,9 +11,11 @@
 		return verifica(this);" method="POST">
   Primeiro nome: <input type=text name="primeiro">
   Último nome: <input type=text name="ultimo"><br>
-  Endereço:<br><textarea name="endereco" rows=4 cols=40>
-    </textarea><br>
-  CEP: <input type=text name="cep" onkeypress="window.status=ehBranco(cep.value);"><br>
+  Endereço:<br>
+  <textarea name="endereco" rows=4 cols=40>
+  </textarea><br>
+  CEP: <input type=text name="cep" 
+	      onkeypress="window.status=ehBranco(cep.value);"><br>
   Fone: <input type=text name="fone" onblur="alert('esqueceu o ddd?')"><br>
   Idade: <input type=text name="idade"><br>
   <input type=submit name="Submeter">

@@ -15,7 +15,8 @@ function verifica(f)
     for (var i = 0; i < f.length; i++) {
 	var e = f.elements[i];
 	if ((e.type == "text") || (e.type == "textarea")) {
-	    if (!e.opcional && ((e.value == null) || (e.value == "") || ehBranco(e.value))) {
+	    if (!e.opcional && 
+		((e.value == null) || (e.value == "") || ehBranco(e.value))) {
 		empty_fields += "\n        " + e.name;
 		continue;
 	    }
@@ -29,7 +30,8 @@ function verifica(f)
 		    if (e.max != null && e.min != null)
 			erros += " e menor que " + e.max;
 		    else 
-			if (e.max != null) erros += " que é menor que " + e.max;
+			if (e.max != null) 
+			    erros += " que é menor que " + e.max;
 		    erros += ".\n";
 		}
 	    }

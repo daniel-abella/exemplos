@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+	  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><title>Teste</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+<body>
+<script type="text/javascript" src="valida.js">
+</script>
+<form onSubmit="this.primeiro.opcional = true;
+		this.fone.opcional = true;
+		this.cep.numerico = true; 
+		this.cep.min = 0;
+		this.cep.max = 99999;
+		this.idade.numerico = true;
+		this.idade.min = 0;
+		this.idade.max = 120;
+		return verifica(this);" method="POST" action="cnn.com">
+
+  <table>
+    <tr>
+      <td>Primeiro nome:</td>
+      <td><input type=text name="primeiro"></td>
+    </tr>
+    <tr>
+      <td>Último nome:</td>
+      <td><input type=text name="ultimo"></td>
+    </tr>
+    <tr>
+      <td>Endereço:</td>
+      <td><textarea name="endereco" rows=4 cols=40></textarea></td>
+    </tr>
+    <tr>
+      <td>CEP:</td>
+      <td><input type=text name="cep" 
+	      onkeypress="window.status=ehBranco(cep.value);"></td>
+    </tr>
+    <tr>
+      <td>Fone:</td>
+      <td><input type=text name="fone" onblur="alert('esqueceu o ddd?')"></td>
+    </tr>
+    <tr>
+      <td>Idade:</td>
+      <td><input type=text name="idade"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type=submit name="Submeter"></td>
+    </tr>
+  </table>
+  </form>
+</body>
+</html>

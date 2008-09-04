@@ -20,7 +20,6 @@ public class Switch1 {
                 break;
             case 127:
                 System.out.println("128");
-                break;
             default:
                 System.out.println("valor não detectado");
         }

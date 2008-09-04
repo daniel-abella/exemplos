@@ -1,5 +1,6 @@
 package progjava.generics;
 
+
 public class ConfusaoComum {
 	public static void main(String[] args) {
 		// Um array de Integer é moldado em uma referência para array de object
@@ -8,7 +9,8 @@ public class ConfusaoComum {
 		// A atribuição é possível, exceto quando a referência é para um
 		// array de Integer, onde não há espaço para Strings.
 		// Resultado: ArrayStoreException
-		((Object[]) (new Long[] { Long.valueOf(1) }))[0] = "ok";		
+		((Object[]) (new Long[] { Long.valueOf(1) }))[0] = "ok";
+		
 	}
 
 }

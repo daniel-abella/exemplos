@@ -1,12 +1,11 @@
 package br.ufg.inf.seguranca;
 
-import java.io.FileInputStream;
-import java.security.MessageDigest;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -35,6 +34,8 @@ public class HashingTest {
 
     @Test
     public void testMd5() throws Exception {
-
+        Hashing hash = new HashingImpl();
+        byte[] hashValue = hash.md5("res/teste.txt");
+        assertEquals("1ca308df6cdb0a8bf40d59be2a17eac1", hash.toHex(hashValue));
     }
 }

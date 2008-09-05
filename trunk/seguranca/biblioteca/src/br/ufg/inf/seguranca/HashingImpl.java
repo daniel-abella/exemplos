@@ -59,7 +59,6 @@ public class HashingImpl implements Hashing {
     }
 
     public byte[] sha1(byte[] entrada) {
-                MessageDigest md = null;
         return getHash(entrada, "SHA-1");
     }
 

@@ -12,57 +12,14 @@ import java.security.NoSuchAlgorithmException;
 public class HashingImpl implements Hashing {
 
     public byte[] md5(byte[] entrada) {
-        MessageDigest md = null;
-        try {
-            md = MessageDigest.getInstance("MD5");
-        } catch (NoSuchAlgorithmException nsae) {
-            nsae.printStackTrace();
-            return null;
-        }
-        return md.digest(entrada);
-    }
-    
-    /**
-     * Obtém o valor de hash para a entrada fornecida. A função empregada
-     * também é fornecida como argumento.
-     * @param entrada Array de bytes cujo valor de hash é desejado.
-     * @param hashFunction Método de hash a ser empregado.
-     * @return Valor de hash.
-     */
-    public byte[] getHash(byte[] entrada, String hashFunction) {
-        MessageDigest md = null;
-        try {
-            md = MessageDigest.getInstance(hashFunction);
-        } catch (NoSuchAlgorithmException nsae) {
-            nsae.printStackTrace();
-            return null;
-        }
-        return md.digest(entrada);
+        return getHash(entrada, "MD5");
     }
 
-    public byte[] sha1(byte[] entrada) {
-                MessageDigest md = null;
-        try {
-            md = MessageDigest.getInstance("SHA");
-        } catch (NoSuchAlgorithmException nsae) {
-            nsae.printStackTrace();
-            return null;
-        }
-        return md.digest(entrada);
-    }
-
-    /**
-     * Obtém os 16 bytes (128 bits) do valor de hash empregando o 
-     * algoritmo MD5 para o arquivo cujo nome é fornecido.
-     * @param nomeArquivo Nome do arquivo cujo valor de hash é desejado.
-     * @return Valor de hash MD5 do arquivo fornecido ou null, caso a operação
-     * tenha sido realizada insatisfatoriamente.
-     */
-    public byte[] md5(String nomeArquivo) {
+    private byte[] getHash(String nomeArquivo, String metodo) {
         MessageDigest md = null;
         FileInputStream fis = null;
         try {
-            md = MessageDigest.getInstance("MD5");
+            md = MessageDigest.getInstance(metodo);
             byte[] buffer = new byte[4096];
             fis = new FileInputStream(nomeArquivo);
             int bytesLidos = -1;
@@ -82,9 +39,43 @@ public class HashingImpl implements Hashing {
         }
         return md.digest();
     }
+    
+    /**
+     * Obtém o valor de hash para a entrada fornecida. A função empregada
+     * também é fornecida como argumento.
+     * @param entrada Array de bytes cujo valor de hash é desejado.
+     * @param hashFunction Método de hash a ser empregado.
+     * @return Valor de hash.
+     */
+    private byte[] getHash(byte[] entrada, String hashFunction) {
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance(hashFunction);
+        } catch (NoSuchAlgorithmException nsae) {
+            nsae.printStackTrace();
+            return null;
+        }
+        return md.digest(entrada);
+    }
+
+    public byte[] sha1(byte[] entrada) {
+                MessageDigest md = null;
+        return getHash(entrada, "SHA-1");
+    }
+
+    /**
+     * Obtém os 16 bytes (128 bits) do valor de hash empregando o 
+     * algoritmo MD5 para o arquivo cujo nome é fornecido.
+     * @param nomeArquivo Nome do arquivo cujo valor de hash é desejado.
+     * @return Valor de hash MD5 do arquivo fornecido ou null, caso a operação
+     * tenha sido realizada insatisfatoriamente.
+     */
+    public byte[] md5(String nomeArquivo) {
+        return getHash(nomeArquivo, "MD5");
+    }
 
     public byte[] sha1(String nomeArquivo) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return getHash(nomeArquivo, "SHA");
     }
 
     public String toHex(byte[] hash) {

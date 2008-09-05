@@ -21,9 +21,34 @@ public class HashingImpl implements Hashing {
         }
         return md.digest(entrada);
     }
+    
+    /**
+     * Obtém o valor de hash para a entrada fornecida. A função empregada
+     * também é fornecida como argumento.
+     * @param entrada Array de bytes cujo valor de hash é desejado.
+     * @param hashFunction Método de hash a ser empregado.
+     * @return Valor de hash.
+     */
+    public byte[] getHash(byte[] entrada, String hashFunction) {
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance(hashFunction);
+        } catch (NoSuchAlgorithmException nsae) {
+            nsae.printStackTrace();
+            return null;
+        }
+        return md.digest(entrada);
+    }
 
     public byte[] sha1(byte[] entrada) {
-        throw new UnsupportedOperationException("Not supported yet.");
+                MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("SHA");
+        } catch (NoSuchAlgorithmException nsae) {
+            nsae.printStackTrace();
+            return null;
+        }
+        return md.digest(entrada);
     }
 
     /**

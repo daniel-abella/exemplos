@@ -16,6 +16,8 @@ class Concrete extends Abstract {
 public class ConstructorForAbstract {
 	public static void main(String[] args) {
 		new Concrete();
+		String s = null;
+		System.out.println(s);
 	}
 
 }

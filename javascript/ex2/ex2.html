@@ -1,10 +1,17 @@
 <html>
-<body>
-  <script type="text/javascript">
-    document.write('Olá mundo!');
-  </script>
-  <noscript>
-    Não oferece suporte ou JavaScript não está habilitada!
-  </noscript>
+<head>
+<script type="text/javascript">
+function quadrado(event) {
+  if (!(event.button==2))  {
+    valor = document.getElementById('valor').value; 
+    document.write(valor * valor);
+  }
+}
+</script>
+</head>
+
+<body onmousedown="quadrado(event)">
+Forneça um valor: <input type='text' id='valor'><br>
+<p>Clique botão esquerdo para exibir o quadrado do valor fornecido.</p>
 </body>
 </html>

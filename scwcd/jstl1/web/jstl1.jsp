@@ -10,7 +10,7 @@
         <title>Meu primeiro exemplo JSTL!</title>
     </head>
     <body>
-        <h2>Apenas exibe parâmetro de nome "valor"</h2>
+        <h2>Apenas exibe parâmetro de nome "valor" (/servico?valor=teste)</h2>
         valor (escapeXml="false"): <c:out value="${valor}" escapeXml="false"/>
         <br/>
         valor (escapeXml="true"): <c:out value="${valor}" escapeXml="true"/>

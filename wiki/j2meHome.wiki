@@ -6,3 +6,16 @@ A plataforma Java 2 Micro Edition (J2ME) implementa a linguagem Java para atende
 Por ser composta de uma coleção de tecnologias e especificações que podem ser combinadas entre si, pode ser montado um ambiente (ou dispositivo) totalmente customizado, o que lhe dá bastante flexibilidade.
 
 Esta página visa o aprendizado sobre a plataforma J2ME, à partir de abordagem teórica seguida de vários exemplos aqui disponibilizados.
+
+= Limitações freqüentes em dispositivos móveis = 
+Apesar da plataforma prover bastante flexibilidade e principalmente portabilidade, há desafios a serem batidos pelos desenvolvedores:
+  * Memória (máximo chega a 128 Kb);
+  * Tamanho do Display (Chegam até a menos de 150 pixels);
+  * Capacidade de processamento (em geral, processadores de 16-32 bits);
+  * Consumo de energia (maximizar uso da bateria);
+
+= Arquitetura da Plataforma J2ME =
+A tecnologia J2ME é baseada em três elementos: configurações, perfis e pacotes opcionais, apoiados sobre a máquina virtual Java do dispositivo (veja figura abaixo).
+
+http://img219.imageshack.us/my.php?image=archsm0.jpg
+

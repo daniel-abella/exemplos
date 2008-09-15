@@ -1,0 +1,8 @@
+#Introdução e exemplos de programação em J2ME
+
+= Introdução =
+A plataforma Java 2 Micro Edition (J2ME) implementa a linguagem Java para atender as necessidades e limitações de vários dispositivos móveis, tais como telefones celulares, PDAs, settop boxes digitais para TV, sistemas de navegação automotiva, comutadores e roteadores de rede, componentes para automação residencial, etc.
+
+Por ser composta de uma coleção de tecnologias e especificações que podem ser combinadas entre si, pode ser montado um ambiente (ou dispositivo) totalmente customizado, o que lhe dá bastante flexibilidade.
+
+Esta página visa o aprendizado sobre a plataforma J2ME, à partir de abordagem teórica seguida de vários exemplos aqui disponibilizados.

@@ -13,3 +13,7 @@ Apesar da plataforma prover bastante flexibilidade e principalmente portabilidad
   * Tamanho do Display (Chegam até a menos de 150 pixels);
   * Capacidade de processamento (em geral, processadores de 16-32 bits);
   * Consumo de energia (maximizar uso da bateria);
+
+= Arquitetura da Plataforma = 
+
+Para programar em J2ME, é imprescindível o domínio de como a plataforma. Para isso, visite a página desse conteúdo [AQUI]

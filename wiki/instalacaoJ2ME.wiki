@@ -4,7 +4,7 @@
 
 Para a disciplina, será abordada a configuração CLDC. Portanto, só precisamos nos preocupar com MIDP.
 
-No site do J2ME na Sun  (http://java.sun.com/javame/index.jsp) podem ser encontradas ferramentas que permitem gerar os arquivos necessários para rodar aplicações em aparelhos compatíveis com o J2ME.  A maioria já está integrada ao Wireless Tool Kit (WTK), que pode ser baixado em http://java.sun.com/products/sjwtoolkit/download.html.
+No [http://java.sun.com/javame/index.jsp site do J2ME na Sun] podem ser encontradas ferramentas que permitem gerar os arquivos necessários para rodar aplicações em aparelhos compatíveis com o J2ME.  A maioria já está integrada ao Wireless Tool Kit (WTK), que pode ser [baixado para seu computador http://java.sun.com/products/sjwtoolkit/download.html].
 
 Na data em que esse material foi feito(Setembro/08), a atual versão é a 2.5.2.
 Baixado, o WTK, basta rodar o arquivo de instalação:

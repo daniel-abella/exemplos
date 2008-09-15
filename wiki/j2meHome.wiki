@@ -16,4 +16,4 @@ Apesar da plataforma prover bastante flexibilidade e principalmente portabilidad
 
 = Arquitetura da Plataforma = 
 
-Para programar em J2ME, é imprescindível o domínio de como a plataforma. Para isso, visite a página desse conteúdo [arquiteturaJ2ME AQUI]
+Para programar em J2ME, é imprescindível o domínio de como a plataforma. Para isso, visite a página desse conteúdo [arquiteturaJ2ME AQUI].

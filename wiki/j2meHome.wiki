@@ -17,3 +17,15 @@ Apesar da plataforma prover bastante flexibilidade e principalmente portabilidad
 = Arquitetura da Plataforma = 
 
 Para programar em J2ME, é imprescindível o domínio de como a plataforma. Para isso, visite a página desse conteúdo [arquiteturaJ2ME AQUI].
+
+= Instalação do Kit de Desenvolvimento = 
+
+Instalação o Kit de Desenvolvimento WTK (Wireless Toolkit) e J2ME no NetBeans [instalacaoJ2ME AQUI] .
+
+= Sintaxe = 
+A sintaxe J2ME é similar a EE/SE, com algumas modificações. Diferentemente das outras versões da Java, ela não é naturalmente “standalone” e não é executada através de um método main, mas sim através de um conjunto de métodos de um midlet, o que será visto posteriormente.
+
+O programador J2ME tem acesso somente a uma reduzida parte das classes da API “clássica”. Não há API embutida para sistema de arquivos, interfaces AWT/Swing, JDBC, JNDI ou RMI. 
+Porém, há APIs específicas que substituem algumas, como o pacote javax.microedition.io.lcdui, que provê interface gráfica com componentes simplificados e javax.microedition.io, que provê implementação do protocolo HTTP.
+
+Além disso, o garbage collector é simplificado, não havendo, por exemplo, chamadas ao método finalize().

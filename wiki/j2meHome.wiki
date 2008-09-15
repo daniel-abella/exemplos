@@ -16,6 +16,4 @@ Apesar da plataforma prover bastante flexibilidade e principalmente portabilidad
 
 = Arquitetura da Plataforma J2ME =
 A tecnologia J2ME é baseada em três elementos: configurações, perfis e pacotes opcionais, apoiados sobre a máquina virtual Java do dispositivo (veja figura abaixo).
-
-http://img219.imageshack.us/my.php?image=archsm0.jpg
-
+[http://www.javaworld.com/javaworld/jw-11-2003/jw-1107-wireless.html http://img219.imageshack.us/my.php?image=archsm0.jpg]

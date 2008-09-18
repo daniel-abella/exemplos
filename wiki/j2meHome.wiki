@@ -30,3 +30,19 @@ Apesar da plataforma prover bastante flexibilidade e principalmente portabilidad
   * Tamanho do Display (Chegam até a menos de 150 pixels);
   * Capacidade de processamento (em geral, processadores de 16-32 bits);
   * Consumo de energia (maximizar uso da bateria);
+
+= Sequência de Atividades Práticas = 
+
+Para usuários iniciantes, é recomendável executar um "HelloWorld", até para se ambientar com o Mobility do NetBeans e com a plataforma de programação. (CLIQUE AQUI PARA BAIXAR).
+
+== Introdução a MIDlets ==
+  * Texto explanatório sobre MIDlets (AQUI);
+  * ATIVIDADE 1 - Recuperando propriedades do sistema (AQUI);
+
+== Estrutura da API MIDP ==
+
+== Interface Screen ==
+
+== Persistência de dados ==
+
+== Comunicação WEB==

@@ -7,13 +7,6 @@ Por ser composta de uma coleção de tecnologias e especificações que podem se
 
 Esta página visa o aprendizado sobre a plataforma J2ME, à partir de abordagem teórica seguida de vários exemplos aqui disponibilizados.
 
-= Limitações freqüentes em dispositivos móveis = 
-Apesar da plataforma prover bastante flexibilidade e principalmente portabilidade, há desafios a serem batidos pelos desenvolvedores:
-  * Memória (máximo chega a 128 Kb);
-  * Tamanho do Display (Chegam até a menos de 150 pixels);
-  * Capacidade de processamento (em geral, processadores de 16-32 bits);
-  * Consumo de energia (maximizar uso da bateria);
-
 = Arquitetura da Plataforma = 
 
 Para programar em J2ME, é imprescindível o domínio de como a plataforma. Para isso, visite a página desse conteúdo [arquiteturaJ2ME AQUI].
@@ -29,3 +22,11 @@ O programador J2ME tem acesso somente a uma reduzida parte das classes da API �
 Porém, há APIs específicas que substituem algumas, como o pacote javax.microedition.io.lcdui, que provê interface gráfica com componentes simplificados e javax.microedition.io, que provê implementação do protocolo HTTP.
 
 Além disso, o garbage collector é simplificado, não havendo, por exemplo, chamadas ao método finalize().
+
+
+= Limitações freqüentes em dispositivos móveis = 
+Apesar da plataforma prover bastante flexibilidade e principalmente portabilidade, há desafios a serem batidos pelos desenvolvedores:
+  * Memória (máximo chega a 128 Kb);
+  * Tamanho do Display (Chegam até a menos de 150 pixels);
+  * Capacidade de processamento (em geral, processadores de 16-32 bits);
+  * Consumo de energia (maximizar uso da bateria);

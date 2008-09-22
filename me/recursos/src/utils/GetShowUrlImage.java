@@ -251,8 +251,9 @@ public void method () {//GEN-END:|42-entry|0|43-preAction
             int size = sizeArquivoURL(url);
             getGetURL().setString("Tamanho " + size);
             byte[] buffer = new byte[size];
-            int byteslidos = getViaHttpConnection(url, buffer);
-            getGetURL().setString("Bytes lidos " + byteslidos);            
+            InputStream is = getInputStream(url);            
+            boolean resultado = carregaBytes(is, buffer, 4096, null);
+            getGetURL().setString("Carregada? " + resultado);
             //Image image = Image.createImage(buffer, 0, buffer.length);
             //getExibeImagem().append(image);
             } catch (Exception e) {
@@ -304,22 +305,44 @@ return okExibeImagem;
         return tamanho;
     }
     
-public int getViaHttpConnection(String url, byte[] buffer) {
-    HttpConnection c = null;
+public InputStream getInputStream(String url) {
     InputStream is = null;
-    int lidos = -100;
     try {
         is = Connector.openInputStream(url);
-        lidos = is.read(buffer);
     } catch (IOException e) {
-   } finally {
-       try {
-          if (is != null)
-              is.close();
-       } catch (IOException e) {}
+        is = null;
    }
-   return lidos;
+   return is;
 }
+
+    public static boolean carregaBytes(InputStream is, byte[] buffer,
+            int bloco, Runnable runnable) {
+        if (buffer == null) {
+            return false;
+        }
+        int bytes = -1;
+        int contador = 0;
+        boolean copia = true;
+        while (copia) {
+            try {
+                if (buffer.length - contador > bloco) {
+                    bytes = is.read(buffer, contador, bloco);
+                } else {
+                    bytes = is.read(buffer, contador, buffer.length - contador);
+                }
+            } catch (Exception e) {
+                return false;
+            }
+            if (bytes == -1 || bytes == 0) {
+                break;
+            }
+            contador += bytes;
+            if (runnable != null) {
+                runnable.run();
+            }
+        }
+        return true;
+    }
 
 
     /**

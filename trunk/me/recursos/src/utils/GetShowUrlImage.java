@@ -248,11 +248,13 @@ public void method () {//GEN-END:|42-entry|0|43-preAction
         public void run() {
             try {
             String url = getGetURL().getString();
-            byte[] imagem = getViaHttpConnection(url);
-            if (imagem == null) {
-                getGetURL().setString("Nao foi possivel carregar imagem");
+            int size = sizeArquivoURL(url);
+            if (size < 10) {
+                getGetURL().setString("Tamanho incorreto");
                 return;
             }
+            byte[] imagem = getViaHttpConnection(url);
+            
             Image image = Image.createImage(imagem, 0, imagem.length);
             getExibeImagem().append(image);
             getGetURL().setTitle("Imagem: " + imagem.length);
@@ -284,7 +286,27 @@ return okExibeImagem;
 }
 //</editor-fold>//GEN-END:|49-getter|2|
 
-
+    public static int sizeArquivoURL(String arquivo) {
+        int tamanho = -1;
+        HttpConnection httpc = null;
+        try {
+            httpc = (HttpConnection) Connector.open(arquivo);
+            if (httpc != null) {
+                tamanho = (int) httpc.getLength();
+                httpc.close();
+            }
+        } catch (Exception e) {
+        } finally {
+            if (httpc != null) {
+                try {
+                    httpc.close();
+                } catch (IOException e) {
+                }
+            }
+        }
+        return tamanho;
+    }
+    
 public byte[] getViaHttpConnection(String url) {
     HttpConnection c = null;
     InputStream is = null;

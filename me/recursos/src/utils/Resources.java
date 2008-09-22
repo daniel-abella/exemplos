@@ -10,38 +10,23 @@ import javax.microedition.lcdui.Graphics;
 import javax.microedition.media.Manager;
 import javax.microedition.midlet.MIDlet;
 
-/**
- * This Midlet populates a Form filled with Midlet Specifications information.
- * 
- * @author Andrew E Scott
- */
 public class Resources extends MIDlet implements CommandListener {
 
-    /** The Midlet's Display instance. */
     Display disThis;
-    /** The "exit" Command. */
     Command comExit;
-    /** The form that the specs information is written to. */
     Form frmDetails;
-    /** Will hold the timer resolution, when calculated. */
     private long iResolution = 0;
 
-    /**
-     * Constructs an instance of the SpecsMidlet class. Creates a Form that will
-     * contain the specifications of this MIDP device and its JVM.
-     */
     public Resources() {
         Canvas canTmp;
         Thread tSleeper;
 
-        // Initialise the class variables
         disThis = Display.getDisplay(this);
-        comExit = new Command("Exit", Command.EXIT, -1);
-        frmDetails = new Form("Midlet Specs");
+        comExit = new Command("Sair", Command.EXIT, -1);
+        frmDetails = new Form("APIS oferecidas");
         frmDetails.addCommand(comExit);
         frmDetails.setCommandListener(this);
 
-        // Create classes for later tests
         canTmp = new Canvas() {
 
             protected void paint(Graphics g) {
@@ -81,13 +66,9 @@ public class Resources extends MIDlet implements CommandListener {
         addLine(frmDetails, "Has motion events: " + (canTmp.hasPointerMotionEvents() ? "yes" : "no"));
         addLine(frmDetails, "Has key-held events: " + (canTmp.hasRepeatEvents() ? "yes" : "no"));
 
-        // Before we print info about timer resolution, ensure Thread is
-        // finished
         try {
             tSleeper.join(); // Retrieve the minimum resolution timers can
-        // measure
         } catch (InterruptedException ie) {
-            // ignore
         }
         addLine(frmDetails, "Timer res.: est. " + iResolution + "ms");
         addLine(frmDetails, "Nokia UI: " + (isClass("com.nokia.mid.ui.DeviceControl") ? "yes" : "no"));

@@ -4,10 +4,10 @@ MIDlet-3: Recursos,,utils.Resources
 MIDlet-4: Memoria,,utils.Memory
 MIDlet-5: Deteccao,,utils.RuntimeDetection
 MIDlet-6: IMEI, ,utils.IMEI
-MIDlet-Jar-Size: 16219
+MIDlet-Jar-Size: 16208
 MIDlet-Jar-URL: recursos.jar
 MIDlet-Name: recursos
 MIDlet-Vendor: Vendor
-MIDlet-Version: 0.0.8
+MIDlet-Version: 0.0.9
 MicroEdition-Configuration: CLDC-1.1
 MicroEdition-Profile: MIDP-2.0

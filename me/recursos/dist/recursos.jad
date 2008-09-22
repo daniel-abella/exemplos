@@ -2,10 +2,10 @@ MIDlet-1: Portas,,utils.Portas
 MIDlet-2: Recursos,,utils.Resources
 MIDlet-3: Memoria,,utils.Memory
 MIDlet-4: Deteccao,,utils.RuntimeDetection
-MIDlet-Jar-Size: 10820
+MIDlet-Jar-Size: 10824
 MIDlet-Jar-URL: recursos.jar
 MIDlet-Name: recursos
 MIDlet-Vendor: Vendor
-MIDlet-Version: 1.0
+MIDlet-Version: 0.0.1
 MicroEdition-Configuration: CLDC-1.1
 MicroEdition-Profile: MIDP-2.0

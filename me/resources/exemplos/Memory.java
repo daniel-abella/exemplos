@@ -30,22 +30,22 @@ public class Memory extends MIDlet implements CommandListener, Runnable {
 		
 		formulario.append("Memória livre: " + getFreeMemory());
 		System.gc();
-		formulario.append("Memória após GC: " + getFreeMemory());
+		formulario.append("\nMemória após GC: " + getFreeMemory());
 		int nbytes = Integer.parseInt(quantidade.getString());
 		
 		byte[] buffer = ocupaBytes(nbytes * 1024);
 		if (buffer != null)
-			formulario.append("Ocupados " + nbytes + " Kbytes");
+			formulario.append("\nOcupados " + nbytes + " Kbytes");
 		else
-			formulario.append("Não foi possível ocupar " + nbytes + " Kbytes");
+			formulario.append("\nNão foi possível ocupar " + nbytes + " Kbytes");
 		
-		formulario.append("Memória livre: "+ getFreeMemory());
+		formulario.append("\nMemória livre: "+ getFreeMemory());
 		System.gc();
-		formulario.append("Memória após GC: " + getFreeMemory());	
+		formulario.append("\nMemória após GC: " + getFreeMemory());	
 		
 		buffer = null;
 		System.gc();
-		formulario.append("Após liberar memória e GC: " + getFreeMemory());
+		formulario.append("\nApós liberar memória e GC: " + getFreeMemory());
 	}
 	
 	private byte[] ocupaBytes(int nbytes) {

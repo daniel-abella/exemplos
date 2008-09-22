@@ -253,7 +253,7 @@ public void method () {//GEN-END:|42-entry|0|43-preAction
             getExibeImagem().append(image);
             getGetURL().setTitle("Imagem: " + imagem.length);
             } catch (Exception e) {
-                getGetURL().setTitle("Excecao");
+                getGetURL().setString("Excecao " + e.getMessage());
             }            
         }
     };

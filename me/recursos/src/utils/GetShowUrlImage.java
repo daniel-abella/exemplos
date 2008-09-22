@@ -250,11 +250,12 @@ public void method () {//GEN-END:|42-entry|0|43-preAction
             String url = getGetURL().getString();
             int size = sizeArquivoURL(url);
             getGetURL().setString("Tamanho " + size);
-            byte[] imagem = getViaHttpConnection(url);
+            byte[] buffer = new byte[size];
+            int byteslidos = getViaHttpConnection(url, buffer);
+            getGetURL().setString("Bytes lidos " + byteslidos);
             
-            Image image = Image.createImage(imagem, 0, imagem.length);
+            Image image = Image.createImage(buffer, 0, buffer.length);
             getExibeImagem().append(image);
-            getGetURL().setTitle("Imagem: " + imagem.length);
             } catch (Exception e) {
                 getGetURL().setString("Excecao " + e.getMessage());
             }            
@@ -304,21 +305,14 @@ return okExibeImagem;
         return tamanho;
     }
     
-public byte[] getViaHttpConnection(String url) {
+public int getViaHttpConnection(String url, byte[] buffer) {
     HttpConnection c = null;
     InputStream is = null;
-    byte[] buffer = null;
+    int lidos = -100;
     try {
         c = (HttpConnection)Connector.open(url);
-        // Getting the InputStream will open the connection
-        // and read the HTTP headers. They are stored until
-        // requested.
         is = c.openInputStream();
- 
-        // Get the length and process the data
-        int len = (int)c.getLength();
-        buffer = new byte[len];
-        is.read(buffer);
+        lidos = is.read(buffer);
     } catch (IOException e) {
    } finally {
        try {
@@ -328,7 +322,7 @@ public byte[] getViaHttpConnection(String url) {
               c.close();
        } catch (IOException e) {}
    }
-   return buffer;
+   return lidos;
 }
 
 

@@ -11,7 +11,7 @@ import javax.microedition.midlet.MIDletStateChangeException;
 
 public class Memory extends MIDlet implements CommandListener, Runnable {
 	
-	private Form formulario = new Form("Kyriosdata Memória (JME)");
+	private Form formulario = new Form("Kyriosdata Memï¿½ria (JME)");
 	private Command comExit = new Command("Sair", Command.EXIT, -1);
 	private Command comExecute = new Command("Execute", Command.SCREEN, -1);
 	private TextField quantidade = new TextField("Quantos KBytes?","1536",10, TextField.NUMERIC);
@@ -28,24 +28,24 @@ public class Memory extends MIDlet implements CommandListener, Runnable {
 		formulario.deleteAll();
 		formulario.append(quantidade);
 		
-		formulario.append("Memória livre: " + getFreeMemory());
+		formulario.append("Memoria livre: " + getFreeMemory());
 		System.gc();
-		formulario.append("\nMemória após GC: " + getFreeMemory());
+		formulario.append("\nMemoria apos GC: " + getFreeMemory());
 		int nbytes = Integer.parseInt(quantidade.getString());
 		
 		byte[] buffer = ocupaBytes(nbytes * 1024);
 		if (buffer != null)
 			formulario.append("\nOcupados " + nbytes + " Kbytes");
 		else
-			formulario.append("\nNão foi possível ocupar " + nbytes + " Kbytes");
+			formulario.append("\nNao foi possivel ocupar " + nbytes + " Kbytes");
 		
-		formulario.append("\nMemória livre: "+ getFreeMemory());
+		formulario.append("\nMemoria livre: "+ getFreeMemory());
 		System.gc();
-		formulario.append("\nMemória após GC: " + getFreeMemory());	
+		formulario.append("\nMemoria apï¿½s GC: " + getFreeMemory());	
 		
 		buffer = null;
 		System.gc();
-		formulario.append("\nApós liberar memória e GC: " + getFreeMemory());
+		formulario.append("\nApos liberar memoria e GC: " + getFreeMemory());
 	}
 	
 	private byte[] ocupaBytes(int nbytes) {

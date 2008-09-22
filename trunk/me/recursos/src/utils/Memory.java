@@ -64,6 +64,7 @@ public class Memory extends MIDlet implements CommandListener, Runnable {
     }
 
     public Memory() {
+        formulario.setTitle("Teste");
         formulario.addCommand(comExit);
         formulario.addCommand(comExecute);
         formulario.append(quantidade);

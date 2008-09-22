@@ -250,8 +250,9 @@ public void method () {//GEN-END:|42-entry|0|43-preAction
             String url = getGetURL().getString();
             int size = sizeArquivoURL(url);
             getGetURL().setString("Tamanho " + size);
-            byte[] buffer = new byte[size];
+            byte[] buffer = new byte[size];            
             InputStream is = getInputStream(url);            
+            getGetURL().setString("InputStream " + is.toString());
             boolean resultado = carregaBytes(is, buffer, 4096, null);
             getGetURL().setString("Carregada? " + resultado);
             Image image = Image.createImage(buffer, 0, buffer.length);
@@ -309,7 +310,7 @@ public InputStream getInputStream(String url) {
     InputStream is = null;
     try {
         is = Connector.openInputStream(url);
-    } catch (IOException e) {
+    } catch (Exception e) {
         is = null;
    }
    return is;

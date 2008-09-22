@@ -310,16 +310,13 @@ public int getViaHttpConnection(String url, byte[] buffer) {
     InputStream is = null;
     int lidos = -100;
     try {
-        c = (HttpConnection)Connector.open(url);
-        is = c.openInputStream();
+        is = Connector.openInputStream(url);
         lidos = is.read(buffer);
     } catch (IOException e) {
    } finally {
        try {
           if (is != null)
               is.close();
-          if (c != null)
-              c.close();
        } catch (IOException e) {}
    }
    return lidos;

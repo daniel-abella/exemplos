@@ -249,10 +249,7 @@ public void method () {//GEN-END:|42-entry|0|43-preAction
             try {
             String url = getGetURL().getString();
             int size = sizeArquivoURL(url);
-            if (size < 10) {
-                getGetURL().setString("Tamanho incorreto");
-                return;
-            }
+            getGetURL().setString("Tamanho " + size);
             byte[] imagem = getViaHttpConnection(url);
             
             Image image = Image.createImage(imagem, 0, imagem.length);

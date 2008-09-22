@@ -168,7 +168,7 @@ return exibeImagem;
 public TextBox getGetURL () {
 if (getURL == null) {//GEN-END:|14-getter|0|14-preInit
  // write pre-init user code here
-getURL = new TextBox ("Forne\u00E7a URL de imagem", "http://kyriosdata.com.br/images/kyrios.jpg", 100, TextField.ANY);//GEN-BEGIN:|14-getter|1|14-postInit
+getURL = new TextBox ("Forne\u00E7a URL de imagem", "http://www.mywebsite.force9.co.uk/png/pngimages/png_indexed_transparency.png", 100, TextField.ANY);//GEN-BEGIN:|14-getter|1|14-postInit
 getURL.addCommand (getOkImagem ());
 getURL.addCommand (getOkExibeImagem ());
 getURL.setCommandListener (this);//GEN-END:|14-getter|1|14-postInit
@@ -246,10 +246,14 @@ public void method () {//GEN-END:|42-entry|0|43-preAction
  
     Runnable runnable = new Runnable() {
         public void run() {
+            getGetURL().removeCommand(getOkImagem());
+            getGetURL().removeCommand(getOkExibeImagem());
             String url = getGetURL().getString();
             byte[] imagem = getViaHttpConnection(url);   
             Image image = Image.createImage(imagem, 0, imagem.length);
             getExibeImagem().append(image);
+            getGetURL().addCommand(getOkImagem());
+            getGetURL().addCommand(getOkExibeImagem());
         }
     };
     

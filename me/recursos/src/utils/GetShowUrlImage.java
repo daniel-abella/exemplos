@@ -168,7 +168,7 @@ return exibeImagem;
 public TextBox getGetURL () {
 if (getURL == null) {//GEN-END:|14-getter|0|14-preInit
  // write pre-init user code here
-getURL = new TextBox ("Forne\u00E7a URL de imagem", "http://exemplos.googlecode.com/svn/trunk/me/recursos/alert.png", 100, TextField.ANY);//GEN-BEGIN:|14-getter|1|14-postInit
+getURL = new TextBox ("Forne\u00E7a URL de imagem", "http://www.mywebsite.force9.co.uk/png/pngimages/png_indexed_transparency.png", 100, TextField.ANY);//GEN-BEGIN:|14-getter|1|14-postInit
 getURL.addCommand (getOkImagem ());
 getURL.addCommand (getOkExibeImagem ());
 getURL.setCommandListener (this);//GEN-END:|14-getter|1|14-postInit

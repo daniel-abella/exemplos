@@ -17,7 +17,6 @@ public class RuntimeDetection extends MIDlet implements CommandListener {
         form.addCommand(comExit);
         form.setCommandListener(this);
 
-        // MIDP 2.1: yes/no
         verifique("MIDP 2.0", "javax.microedition.media.Manager");
         verifique("CLDC 1.1", "java.lang.ref.WeakReference");
         verifique("CDC 1.1.2", "java.lang.reflect.Method");

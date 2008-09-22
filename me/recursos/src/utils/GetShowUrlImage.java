@@ -252,10 +252,9 @@ public void method () {//GEN-END:|42-entry|0|43-preAction
             getGetURL().setString("Tamanho " + size);
             byte[] buffer = new byte[size];
             int byteslidos = getViaHttpConnection(url, buffer);
-            getGetURL().setString("Bytes lidos " + byteslidos);
-            
-            Image image = Image.createImage(buffer, 0, buffer.length);
-            getExibeImagem().append(image);
+            getGetURL().setString("Bytes lidos " + byteslidos);            
+            //Image image = Image.createImage(buffer, 0, buffer.length);
+            //getExibeImagem().append(image);
             } catch (Exception e) {
                 getGetURL().setString("Excecao " + e.getMessage());
             }            

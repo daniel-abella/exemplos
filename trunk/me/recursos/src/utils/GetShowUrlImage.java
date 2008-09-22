@@ -254,8 +254,8 @@ public void method () {//GEN-END:|42-entry|0|43-preAction
             InputStream is = getInputStream(url);            
             boolean resultado = carregaBytes(is, buffer, 4096, null);
             getGetURL().setString("Carregada? " + resultado);
-            //Image image = Image.createImage(buffer, 0, buffer.length);
-            //getExibeImagem().append(image);
+            Image image = Image.createImage(buffer, 0, buffer.length);
+            getExibeImagem().append(image);
             } catch (Exception e) {
                 getGetURL().setString("Excecao " + e.getMessage());
             }            

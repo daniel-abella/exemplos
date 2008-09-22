@@ -57,7 +57,7 @@
                     <Property name="commands" typeID="1C#CommandEventSource" value="A2:3_R293_R50"/>
                     <Property name="title" typeID="Pjava.lang.String" value="VForneça URL de imagem"/>
                     <Property name="commandListener" typeID="C#CommandListener" value="R7"/>
-                    <Property name="string" typeID="Pjava.lang.String" value="Vhttp://kyriosdata.com.br/images/kyrios.jpg"/>
+                    <Property name="string" typeID="Pjava.lang.String" value="Vhttp://www.mywebsite.force9.co.uk/png/pngimages/png_indexed_transparency.png"/>
                     <Property name="maxSize" typeID="Pint" value="V100"/>
                     <Component componentID="29" typeID="C#CommandEventSource">
                         <Property name="eventHandler" typeID="C#EventHandler" value="R47"/>

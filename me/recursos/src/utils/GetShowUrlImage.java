@@ -246,14 +246,11 @@ public void method () {//GEN-END:|42-entry|0|43-preAction
  
     Runnable runnable = new Runnable() {
         public void run() {
-            getGetURL().removeCommand(getOkImagem());
-            getGetURL().removeCommand(getOkExibeImagem());
             String url = getGetURL().getString();
             byte[] imagem = getViaHttpConnection(url);   
             Image image = Image.createImage(imagem, 0, imagem.length);
             getExibeImagem().append(image);
-            getGetURL().addCommand(getOkImagem());
-            getGetURL().addCommand(getOkExibeImagem());
+            getGetURL().setTitle("Imagem: " + imagem.length);
         }
     };
     

@@ -248,7 +248,11 @@ public void method () {//GEN-END:|42-entry|0|43-preAction
         public void run() {
             try {
             String url = getGetURL().getString();
-            byte[] imagem = getViaHttpConnection(url);   
+            byte[] imagem = getViaHttpConnection(url);
+            if (imagem == null) {
+                getGetURL().setString("Nao foi possivel carregar imagem");
+                return;
+            }
             Image image = Image.createImage(imagem, 0, imagem.length);
             getExibeImagem().append(image);
             getGetURL().setTitle("Imagem: " + imagem.length);
@@ -294,7 +298,6 @@ public byte[] getViaHttpConnection(String url) {
  
         // Get the length and process the data
         int len = (int)c.getLength();
-        System.out.println(url + " " + len);
         buffer = new byte[len];
         is.read(buffer);
     } catch (IOException e) {

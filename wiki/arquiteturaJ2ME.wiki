@@ -21,14 +21,16 @@ Suas principais características são:
 
 É um conjunto de funcionalidades para que as aplicações J2ME possam “se comunicar com a JVM”, dada certa gama de aparelhos. Essa camada é menos visível aos usuários, mas é muito importante para implementadores de profiles. Existem configurações básicas: CDC e CLDC.
 
-=== CDC (Connected Device Configuration) ===
+=== CDC (Connected Device Configuration)=== 
 Supõe dispositivos com mais capacidade, tais como settop boxes digitais, screen-phones, Nokia Communicator e alguns PDAs mais poderosos. 
 
 Mais informações em http://java.sun.com/javame/technology/cdc/.
-=== CLDC (Connected Limited Device Configuration) ===
+
+=== CLDC (Connected Limited Device Configuration)=== 
 Supõe dispositivos mais simples, com mais limitações, como telefones celulares e pagers. Hoje, é a mais usada para programação J2ME.
 O hardware requerido para seu processamento tem mínimo de 160KB de memória para Java, um processador de no mínimo 16 bits com baixo consumo (adequado a baterias típicas de um celular) e conexão de rede (neste caso wireless – 9.6Kbps, 144Kbps ou 2Mbps).
 A sua segurança está baseada no chamado “Sandbox Security Model”, isto é, a máquina virtual terá um espaço de memória independente do restante das outras aplicações (tais como agenda, tons, imagens, etc.). 
+
 Mais informações em http://java.sun.com/products/cldc/.
 
 == Perfil == 

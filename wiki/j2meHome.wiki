@@ -10,9 +10,7 @@ Esta página visa o aprendizado sobre a plataforma J2ME, à partir de abordagem 
 = Sequência para estudo = 
 
   * Arquitetura da Plataforma ([arquiteturaJ2ME AQUI]);
-  * Instalação do Kit de Desenvolvimento =
-
-Instalação do Kit de Desenvolvimento WTK (Wireless Toolkit) e Desenvolvimento J2ME no NetBeans ([instalacaoJ2ME AQUI]);
+  * Instalação do Kit de Desenvolvimento WTK e pacotes para NetBeans([instalacaoJ2ME AQUI]);
 
 = Limitações freqüentes em dispositivos móveis = 
 Apesar da plataforma prover bastante flexibilidade e principalmente portabilidade, há desafios a serem batidos pelos desenvolvedores:
@@ -20,26 +18,3 @@ Apesar da plataforma prover bastante flexibilidade e principalmente portabilidad
   * Tamanho do Display (Chegam até a menos de 150 pixels);
   * Capacidade de processamento (em geral, processadores de 16-32 bits);
   * Consumo de energia (maximizar uso da bateria);
-
-= Sequência de Atividades Práticas = 
-
-Para usuários iniciantes, é recomendável executar um "HelloWorld", até para se ambientar com o Mobility do NetBeans e com a plataforma de programação. (CLIQUE AQUI PARA BAIXAR).
-
-== Estrutura da API MIDP ==
-  * Texto explanatório sobre a API MIDP ([apiMIDP AQUI]);
-
-== Introdução a MIDlets ==
-  * Texto explanatório sobre MIDlets ([j2meMIDlet AQUI]);
-  * ATIVIDADE 1 - Recuperando propriedades do sistema (AQUI);
-
-== Interface Gráfica  ==
-  * Texto explanatório sobre interface Gráfica para dispositivos móveis 
- ([j2meIntroUi AQUI]);
-  * ATIVIDADE 2 - Ticker (AQUI);
-
-
-== Persistência de dados ==
-  * Texto explanatório sobre RecordStore ([j2meRMS AQUI]);
-
-== Comunicação WEB==
-  * Texto explanatório sobre a interface Connection([j2meConnection AQUI]);

@@ -9,7 +9,7 @@ Esta página visa o aprendizado sobre a plataforma J2ME, à partir de abordagem 
 
 = Arquitetura da Plataforma = 
 
-Para programar em J2ME, é imprescindível o domínio de como a plataforma. Para isso, visite a página desse conteúdo [arquiteturaJ2ME AQUI].
+Para programar em J2ME, é imprescindível o domínio de como a plataforma. Para isso, visite a página desse conteúdo ([arquiteturaJ2ME AQUI]).
 
 = Instalação do Kit de Desenvolvimento = 
 

@@ -30,3 +30,15 @@ Supõe dispositivos mais simples, com mais limitações, como telefones celulare
 O hardware requerido para seu processamento tem mínimo de 160KB de memória para Java, um processador de no mínimo 16 bits com baixo consumo (adequado a baterias típicas de um celular) e conexão de rede (neste caso wireless – 9.6Kbps, 144Kbps ou 2Mbps).
 A sua segurança está baseada no chamado “Sandbox Security Model”, isto é, a máquina virtual terá um espaço de memória independente do restante das outras aplicações (tais como agenda, tons, imagens, etc.). 
 Mais informações em http://java.sun.com/products/cldc/.
+
+== Perfil == 
+
+Profile, ou perfil, define uma API disponível para uma família específica de aparelhos. É implementado sobre uma configuração particular e as aplicações escritas no mesmo são portáveis para qualquer outro aparelho que o dê suporte. Existem quatro tipos de perfis mais famosos: MIDP, personal, basis e foundation.
+
+===Personal, basis e foundation ===
+APIs baseadas na CDC. A Foundation provê biblioteca de classes básica, sem interface gráfica. A Basis provê interface gráfica simples, baseada no modelto ‘xlet’. Já a pessoal provê API mais complexa, inclusive com componentes do modelo AWT e suporte a applets. Os três perfis têm suporte a JDBC e RMI.
+
+===MIDP (Mobile Information Device Profile)===
+Conjunto de APIs baseadas na CLDC, com suporte a interface gráfica, persistência e acesso a web. É o perfil mais popular. A versão atual é a 2.0, onde tem seus detalhes especificados em http://java.sun.com/products/midp/overview.html.
+
+A diferença entre Configuração e Perfil é que a Configuração descreve de forma geral uma família de dispositivos, enquanto o Perfil fica mais específico para um tipo particular de aparelho em uma dada família.

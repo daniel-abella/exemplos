@@ -36,7 +36,7 @@ Apesar da plataforma prover bastante flexibilidade e principalmente portabilidad
 Para usuários iniciantes, é recomendável executar um "HelloWorld", até para se ambientar com o Mobility do NetBeans e com a plataforma de programação. (CLIQUE AQUI PARA BAIXAR).
 
 == Estrutura da API MIDP ==
-  * Texto explanatório sobre a API MIDP (AQUI);
+  * Texto explanatório sobre a API MIDP ([apiMIDP AQUI]);
 
 == Introdução a MIDlets ==
   * Texto explanatório sobre MIDlets (AQUI);

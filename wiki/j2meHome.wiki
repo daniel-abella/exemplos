@@ -13,7 +13,7 @@ Para programar em J2ME, é imprescindível o domínio de como a plataforma. Para
 
 = Instalação do Kit de Desenvolvimento = 
 
-Instalação do Kit de Desenvolvimento WTK (Wireless Toolkit) e Desenvolvimento J2ME no NetBeans [instalacaoJ2ME AQUI] .
+Instalação do Kit de Desenvolvimento WTK (Wireless Toolkit) e Desenvolvimento J2ME no NetBeans ([instalacaoJ2ME AQUI]) .
 
 = Sintaxe = 
 A sintaxe J2ME é similar a EE/SE, com algumas modificações. Diferentemente das outras versões da Java, ela não é naturalmente “standalone” e não é executada através de um método main, mas sim através de um conjunto de métodos de um midlet, o que será visto posteriormente.

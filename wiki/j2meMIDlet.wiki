@@ -4,8 +4,10 @@
 
 A CLDC (_Connected Limited Device Configuration_) e o MIDP(
 _Mobile Information Device Profile_)  combinados estão presentes na maioria de dispositivos móveis de baixo custo, como telefones celulares, PDAs e pagers. 
-	Já o processo de gerenciamento/desenvolvimento da aplicação é bastante diferente, sendo esse feito por uma classe principal do projeto, que extende a classe MIDlet.
-	O MIDlet tem semelhanças com um applet, não sendo controlado por uma função main, mas sim de outra forma (browser para applets, dispositivo para os MIDLets). Assim, o controlador de aplicações J2ME faz a gerência do que fazer e de qual tela mostrar, seguindo 3 estados possíveis: pausado, ativo ou destruído.
+
+Já o processo de gerenciamento/desenvolvimento da aplicação é bastante diferente, sendo esse feito por uma classe principal do projeto, que extende a classe MIDlet.
+
+O MIDlet tem semelhanças com um applet, não sendo controlado por uma função main, mas sim de outra forma (browser para applets, dispositivo para os MIDLets). Assim, o controlador de aplicações J2ME faz a gerência do que fazer e de qual tela mostrar, seguindo 3 estados possíveis: pausado, ativo ou destruído.
 
 [http://img139.imageshack.us/img139/1859/dfamidletia9.jpg]
 

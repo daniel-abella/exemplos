@@ -44,3 +44,11 @@ APIs baseadas na CDC. A Foundation provê biblioteca de classes básica, sem int
 
 ===MIDP (Mobile Information Device Profile)===
 Conjunto de APIs baseadas na CLDC, com suporte a interface gráfica, persistência e acesso a web. É o perfil mais popular. A versão atual é a 2.0, onde tem seus detalhes especificados em http://java.sun.com/products/midp/overview.html.
+
+= Sintaxe = 
+A sintaxe J2ME é similar a EE/SE, com algumas modificações. Diferentemente das outras versões da Java, ela não é naturalmente “standalone” e não é executada através de um método main, mas sim através de um conjunto de métodos de um midlet, o que será visto posteriormente.
+
+O programador J2ME tem acesso somente a uma reduzida parte das classes da API “clássica”. Não há API embutida para sistema de arquivos, interfaces AWT/Swing, JDBC, JNDI ou RMI. 
+Porém, há APIs específicas que substituem algumas, como o pacote javax.microedition.io.lcdui, que provê interface gráfica com componentes simplificados e javax.microedition.io, que provê implementação do protocolo HTTP.
+
+Além disso, o garbage collector é simplificado, não havendo, por exemplo, chamadas ao método finalize().

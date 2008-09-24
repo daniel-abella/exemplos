@@ -1,0 +1,24 @@
+#Prática de Programação J2ME.
+
+= Sequência de Atividades Práticas = 
+
+Para usuários iniciantes, é recomendável executar um "HelloWorld", até para se ambientar com o Mobility do NetBeans e com a plataforma de programação. ([AQUI]).
+
+== Estrutura da API MIDP ==
+  * Texto explanatório sobre a API MIDP ([apiMIDP AQUI]);
+
+== Introdução a MIDlets ==
+  * Texto explanatório sobre MIDlets ([j2meMIDlet AQUI]);
+  * ATIVIDADE 1 - Recuperando propriedades do sistema (AQUI);
+
+== Interface Gráfica  ==
+  * Texto explanatório sobre interface Gráfica para dispositivos móveis 
+ ([j2meIntroUi AQUI]);
+  * ATIVIDADE 2 - Ticker (AQUI);
+
+
+== Persistência de dados ==
+  * Texto explanatório sobre RecordStore ([j2meRMS AQUI]);
+
+== Comunicação WEB==
+  * Texto explanatório sobre a interface Connection([j2meConnection AQUI]);

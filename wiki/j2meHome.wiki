@@ -7,13 +7,12 @@ Por ser composta de uma coleção de tecnologias e especificações que podem se
 
 Esta página visa o aprendizado sobre a plataforma J2ME, à partir de abordagem teórica seguida de vários exemplos aqui disponibilizados.
 
-= Arquitetura da Plataforma = 
+= Sequência para estudo = 
 
-Para programar em J2ME, é imprescindível o domínio de como a plataforma. Para isso, visite a página desse conteúdo ([arquiteturaJ2ME AQUI]).
+  * Arquitetura da Plataforma ([arquiteturaJ2ME AQUI]);
+  * Instalação do Kit de Desenvolvimento =
 
-= Instalação do Kit de Desenvolvimento = 
-
-Instalação do Kit de Desenvolvimento WTK (Wireless Toolkit) e Desenvolvimento J2ME no NetBeans ([instalacaoJ2ME AQUI]) .
+Instalação do Kit de Desenvolvimento WTK (Wireless Toolkit) e Desenvolvimento J2ME no NetBeans ([instalacaoJ2ME AQUI]);
 
 = Limitações freqüentes em dispositivos móveis = 
 Apesar da plataforma prover bastante flexibilidade e principalmente portabilidade, há desafios a serem batidos pelos desenvolvedores:

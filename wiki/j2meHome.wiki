@@ -7,14 +7,16 @@ Por ser composta de uma coleção de tecnologias e especificações que podem se
 
 Esta página visa o aprendizado sobre a plataforma J2ME, à partir de abordagem teórica seguida de vários exemplos aqui disponibilizados.
 
-= Sequência para estudo = 
 
-  * Arquitetura da Plataforma ([arquiteturaJ2ME AQUI]);
-  * Instalação do Kit de Desenvolvimento WTK e pacotes para NetBeans([instalacaoJ2ME AQUI]);
-
-= Limitações freqüentes em dispositivos móveis = 
+== Limitações freqüentes em dispositivos móveis == 
 Apesar da plataforma prover bastante flexibilidade e principalmente portabilidade, há desafios a serem batidos pelos desenvolvedores:
   * Memória (máximo chega a 128 Kb);
   * Tamanho do Display (Chegam até a menos de 150 pixels);
   * Capacidade de processamento (em geral, processadores de 16-32 bits);
   * Consumo de energia (maximizar uso da bateria);
+
+= Sequência para estudo = 
+
+  * Arquitetura da Plataforma ([arquiteturaJ2ME AQUI]);
+  * Instalação do Kit de Desenvolvimento WTK e pacotes para NetBeans([instalacaoJ2ME AQUI]);
+  * Prática em desenvolvimento J2ME([praticaJ2ME])

@@ -101,4 +101,4 @@ A remoção de RecordStores e registros é simples e direta.
 
 Para remover um simples registro de um RecordStore, basta chamar o método _deleteRecord(int recordId)_, que remove os dados da posição recordId, que não será mais usada.
 
-	Para remover todo um RecordStore, chama-se o método _RecordStore.deleteRecordStore(String recordStoreName)_, que recebe o nome do RecordStore e o exclui.
+Para remover todo um RecordStore, chama-se o método _RecordStore.deleteRecordStore(String recordStoreName)_, que recebe o nome do RecordStore e o exclui.

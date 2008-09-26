@@ -7,13 +7,13 @@ A classe TextBox nos gera uma caixa de texto muito parecida com a oferecida em H
   * Tamanho máximo de entrada, em número de caracteres, que pode ser mudado pelo método _setMaxSize(int maximo)_ ou passado pelo construtor;
   * Possibilidade de existência de valor default.
   * Personalização do tipo de entrada será usado:
-  # ANY: entrada de dados de qualquer tipo. Nesse caso, pode haver quebra de linha e customização da codificação da entrada;
-  # DECIMAL: valores decimais, inclusivr frações de inteiros;
-  # EMAILADDR: somente email;
-  # NUMERIC: Somente inteiros, tanto positivos quanto negativos;
-  # URL: Somente entradas de urls;
-  # PHONENUMBER: entrada de telefone;
-  # PASSWORD: para entrada de senhas, com caracteres escritos trocados por asterisos na tela;
+      # ANY: entrada de dados de qualquer tipo. Nesse caso, pode haver quebra de linha e customização da codificação da entrada;
+      # DECIMAL: valores decimais, inclusivr frações de inteiros;
+      # EMAILADDR: somente email;
+      # NUMERIC: Somente inteiros, tanto positivos quanto negativos;
+      # URL: Somente entradas de urls;
+      # PHONENUMBER: entrada de telefone;
+      # PASSWORD: para entrada de senhas, com caracteres escritos trocados por asterisos na tela;
 
 
 [http://img409.imageshack.us/img409/6412/textboxxu3.jpg]

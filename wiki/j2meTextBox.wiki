@@ -16,7 +16,7 @@ A classe TextBox é um componente de interface gráfica que nos gera uma caixa d
       # PASSWORD: para entrada de senhas, com caracteres escritos trocados por asterisos na tela;
 
 
-[http://img409.imageshack.us/img409/6412/textboxxu3.jpg]
+                                  [http://img409.imageshack.us/img409/6412/textboxxu3.jpg]
 
 
 Criando um TextBox de texto qualquer, de 40 caracteres:

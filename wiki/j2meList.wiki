@@ -23,6 +23,7 @@ A List é um tipo de interface gráfica muito usado, pois oferece uma forma simp
        # MULTIPLE = Podem ser escolhidos vários elementos da lista, como um “Select Box”;
        # IMPLICIT = Só é escolhido um elemento da lista, que fica sombreado;
        # EXCLUSIVE = Podem ser escolhidos vários elementos da lista, como “RadioButtons”.
+  * Pode-se associar imagens (_Image_) aos itens.
 
 
 [http://img295.imageshack.us/img295/9117/listyd9.jpg]

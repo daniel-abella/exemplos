@@ -30,7 +30,7 @@ Para que uma tela Displayable seja observada por um “CommandListener”, a mes
 Exemplo de formulario que tem em si mesmo um CommandListener:
 {{{
 
-	public class Formulario extends Form implements 							CommandListener{
+	public class Formulario extends Form implements CommandListener{
 		
 		Command c;
 
@@ -38,11 +38,12 @@ Exemplo de formulario que tem em si mesmo um CommandListener:
 			super(“Tela”);
 			setCommandListener(this);
 			c = new Command("Nome", Command.OK, 0);
+                        addCommand(c);
 		}
 
 		public void CommandAction(Command arg, Displayable t){
 			if( arg == c)
-				(realiza ação);
+				>>>realiza ação<<<
 		}
 		
 	}

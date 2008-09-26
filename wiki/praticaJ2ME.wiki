@@ -9,20 +9,28 @@ Para usuários iniciantes, é recomendável executar um "Hello World", até para
 
 == MIDlets ==
   * Introdução à MIDlets ([j2meMIDlet AQUI]);
-  * ATIVIDADE 1 - Recuperando propriedades do sistema (AQUI);
+  * ATIVIDADE 1 - Analisando as propriedades do sistema (AQUI);
 
 == Interface Gráfica  ==
   * Introdução à interface Gráfica para dispositivos móveis ([j2meIntroUi AQUI]);
-  * ATIVIDADE 2 - Ticker (AQUI);
+  * ATIVIDADE 2 - Letreiro da Especialização (AQUI);
   
-      === Comandos e eventos ===
+     === Comandos e eventos ===
         * Introdução à classe Command e interface CommandListener ([j2meCommand AQUI]);
+        * ATIVIDADE 3 - Comandos do Ano Novo (AQUI);
+
+     === TextBox ===
+        * Introdução à classe TextBox ([j2meTextBox AQUI]);
+        * ATIVIDADE 4 - Cálculo de Empréstimo;
+
 
 == Persistência de dados ==
   * Material sobre RMS ([j2meRMS AQUI]);
-  * ATIVIDADE - Criando e Recuperando Registros (AQUI);
-  * ATIVIDADE - Removendo dados e Registros (AQUI);
-  * ATIVIDADE - Agenda Eletrônica Completa (AQUI);
+  * ATIVIDADE - Registrando e recuperando dados da agenda pessoal (AQUI);
+  * ATIVIDADE - Removendo e editando dados dos amigos(AQUI);
+  * ATIVIDADE - Agenda Pessoal Completa (AQUI);
 
 == Comunicação WEB==
   * Material sobre o pacote microedition.io([j2meConnection AQUI]);
+  * ATIVIDADE - Requisitando dados do servidor;
+  * ATIVIDADE - Enviando dados ao servidor;

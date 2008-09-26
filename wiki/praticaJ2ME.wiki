@@ -29,16 +29,35 @@ Para usuários iniciantes, é recomendável executar um "Hello World", até para
 
      === Alerta ===
         * Introdução à classe Alert ([j2meAlert AQUI]);
-        * ATIVIDADE 5 - Verificando apelido-Skype da Agenda de contatos (AQUI);
+        * ATIVIDADE 6 - Verificando apelido-Skype da Agenda de contatos (AQUI);
+
+     === Formulário ===
+        * Introdução à classe Form e StringItem ([j2meForm AQUI]);
+        * ATIVIDADE 7 - Deixando a Agenda de Contatos mais bonita (AQUI);
+        * Introdução à classe TextField ([j2meTextField AQUI]);
+        * ATIVIDADE 8 - Criando uma Agenda de Contatos Interativa (AQUI);
+        * Introdução à classe ChoiceGroup ([j2meChoiceGroup AQUI]);
+        * ATIVIDADE 9 - Escolhendo o tipo de telefone do amigo(AQUI);
+        * Introdução à classe DateField ([j2meDateField AQUI]);
+        * ATIVIDADE 10 - Registrando o aniversário do amigo (AQUI);
+        * Introdução à classe Gauge ([j2meGauge AQUI]);
+        * ATIVIDADE 11 - Registrando o nível de amizade do amigo (AQUI);
+        * ATIVIDADE 12 - Criando uma SplashScreen (AQUI);
+        * Introdução à classe ImageItem ([j2meImageItem AQUI]);
+        * ATIVIDADE 13 - Mostrando a foto do amigo (AQUI);
+        * Introdução a comandos especiais de Itens ([j2meCommandItem AQUI]);
+        * ATIVIDADE 14 - Resolvendo dados incompletos (AQUI);
+        * Introdução a eventos em Itens ([j2meEventItem AQUI]);
+        * ATIVIDADE 15 - Filtrando a Agenda de Contatos(AQUI);
 
 
 == Persistência de dados ==
   * Material sobre RMS ([j2meRMS AQUI]);
-  * ATIVIDADE - Registrando e recuperando dados da Agenda de Contatos (AQUI);
-  * ATIVIDADE - Removendo e editando dados dos amigos(AQUI);
-  * ATIVIDADE - Agenda de Contatos Completa (AQUI);
+  * ATIVIDADE 16 - Registrando e recuperando dados da Agenda de Contatos (AQUI);
+  * ATIVIDADE 17 - Removendo e editando dados dos amigos(AQUI);
+  * ATIVIDADE 18 - Agenda de Contatos Completa (AQUI);
 
 == Comunicação WEB==
   * Material sobre o pacote microedition.io([j2meConnection AQUI]);
-  * ATIVIDADE - Requisitando dados do servidor;
-  * ATIVIDADE - Enviando dados ao servidor;
+  * ATIVIDADE 19 - Requisitando dados do servidor;
+  * ATIVIDADE 20 - Enviando dados ao servidor;

@@ -5,15 +5,18 @@
 Para usuários iniciantes, é recomendável executar um "Hello World", até para se ambientar com o Mobility do NetBeans e com a plataforma de programação. (AQUI).
 
 == Estrutura da API MIDP ==
-  * Material sobre a API MIDP ([apiMIDP AQUI]);
+  * Introdução à API MIDP ([apiMIDP AQUI]);
 
-== Introdução a MIDlets ==
-  * Material sobre MIDlets ([j2meMIDlet AQUI]);
+== MIDlets ==
+  * Introdução à MIDlets ([j2meMIDlet AQUI]);
   * ATIVIDADE 1 - Recuperando propriedades do sistema (AQUI);
 
 == Interface Gráfica  ==
   * Introdução à interface Gráfica para dispositivos móveis ([j2meIntroUi AQUI]);
   * ATIVIDADE 2 - Ticker (AQUI);
+  
+=== Comandos e eventos ===
+  * Introdução à classe Command e interface CommandListener ([j2meCommand AQUI]);
 
 == Persistência de dados ==
   * Material sobre RMS ([j2meRMS AQUI]);

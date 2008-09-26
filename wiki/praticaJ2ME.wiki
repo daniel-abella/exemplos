@@ -15,13 +15,13 @@ Para usuários iniciantes, é recomendável executar um "Hello World", até para
   * Introdução à interface Gráfica para dispositivos móveis ([j2meIntroUi AQUI]);
   * ATIVIDADE 2 - Letreiro da Especialização (AQUI);
   
-     === Comandos e eventos ===
+     === Comandos e tratamento de eventos ===
         * Introdução à classe Command e interface CommandListener ([j2meCommand AQUI]);
         * ATIVIDADE 3 - Comandos do Ano Novo (AQUI);
 
      === Caixa de Texto ===
         * Introdução à classe TextBox ([j2meTextBox AQUI]);
-        * ATIVIDADE 4 - Cálculo de Empréstimo;
+        * ATIVIDADE 4 - Cálculo de Empréstimo (AQUI);
 
 
 == Persistência de dados ==

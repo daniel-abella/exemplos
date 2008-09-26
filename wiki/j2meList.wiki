@@ -18,7 +18,7 @@ A List é um tipo de interface gráfica muito usado, pois oferece uma forma simp
   * Podem ser inseridos elementos em qualquer posição.
 {{{
 	insert(i, String s, Image);
-}}
+}}}
   * Diferentes tipos:
        # MULTIPLE = Podem ser escolhidos vários elementos da lista, como um “Select Box”;
        # IMPLICIT = Só é escolhido um elemento da lista, que fica sombreado;

@@ -1,0 +1,11 @@
+#Introdução à persistência de dados em Java.
+
+= Record Management System =
+
+Persistência de dados em dispositivos móveis é um assunto muito delicado, visto as permissões que devem ser levadas em consideração e o pequeno tamanho de gravação existente.
+
+Pensando nisso, o RMS (Record Management System) serve foi criado para gravação de dados e posterior recuperação, modelando tudo a um banco de dados simples, orientado à gravações. Tal simplicidade pode ser vista na quantidade de classes no pacote [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/rms/package-summary.html javax.microedition.rms]: somente 1 classe, chamada RecordStore.
+
+	Um RecordStore é uma coleção de registros que têm sua integridade garantida pela plataforma (pode-se reiniciar ou retirar a bateria, por exemplo, que os dados não serão perdidos) e que é criado em um local independente do dispositivo, onde não há acesso a livre leitura de qualquer aplicação. Tal local é controlado pelo MIDlet Suite da aplicação que o criou. Assim, quando um MIDlet é desinstalado, todos os registros ligados a ele também são, mesmo os que foram marcados com possibilidade de compartilhamento.
+
+	O diferencial do uso de RecordStore está no fato de poder haver filtros de registros para busca/limitação de dados. Para mais informacões, visite a API do [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/rms/package-summary.html javax.microedition.rms].

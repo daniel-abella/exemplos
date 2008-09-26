@@ -13,11 +13,11 @@ Ele tem as seguintes características:
 	setTimeout(3000);
 }}}
   * No MIDP 2.0, existem 5 tipos de alertas, definidos na classe [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/AlertType.html AlertType]:
-  # ALARM = Usado para lembrar de um evento previamente esperado;
-  # CONFIRMATION = Usado para confirmar operações;
-  # ERROR = Usado para mostrar erros;
-  # INFO = Usado para mostrar alguma informação genérica;
-  # WARNING = Usado para alertar o usuário de operação perigosa.
+      # ALARM = Usado para lembrar de um evento previamente esperado;
+      # CONFIRMATION = Usado para confirmar operações;
+      # ERROR = Usado para mostrar erros;
+      # INFO = Usado para mostrar alguma informação genérica;
+      # WARNING = Usado para alertar o usuário de operação perigosa.
 
 
 

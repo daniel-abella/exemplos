@@ -17,7 +17,7 @@ Como pôde ser visto na [j2meIntoUi Introdução à Interface gráfica], o Form 
 	m.append(f);
 }}}
 
-	Além disso, os formulários também podem ser compostos por itens, que tem características especiais, como:
+Além disso, os formulários também podem ser compostos por itens, que tem características especiais, como:
 
   * Nome (título ou label), que pode ser mudado;
 {{{

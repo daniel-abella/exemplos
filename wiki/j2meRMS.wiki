@@ -21,3 +21,5 @@ Para criar um RecordStore, basta chamar algum dos métodos estáticos da classe 
 
 ||Método||Descrição||
 ||openRecordStore(String nome, boolean criarSeNecessario)||Abre um RecordStore ou cria um novo, caso seja pedido.||
+||openRecordStore(String nome, boolean criarSeNecessario, int autoriz, boolean modific) 
+||Abre um RecordStore ou cria um novo, caso seja pedido. O mesmo poderá (ou não) ser alterado por outros MIDlet Suites.||

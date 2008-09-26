@@ -61,3 +61,33 @@ public static int add(String texto, RecordStore rs) throws Exception {
 }
 
 }}}
+
+== Recuperando registros de um RecordStore ==
+Da mesma forma que se adiciona um registro, deve-se primeiramente ter em mãos o RecordStore para poder recuperar dados.
+
+Podem ser usados dois métodos: 
+
+||Método||Descrição||
+||getRecord(int recordId)||Retorna uma cópia do array de bytes do registro de número recordId.||
+||getRecord(int recordId, byte[] buffer, int inicio)||Retorna uma cópia do array de bytes do registro de número recordId, a ser gravado no buffer, à partir da posição “início” do registro.||
+
+No exemplo abaixo, o método recupera todo o conteúdo de um texto em um RecordStore específico.
+
+{{{
+
+public static String getRecord(int id, RecordStore rs) throws Exception {
+		String toReturn = "";
+		int recordSize = rs.getRecordSize(id);
+		byte[] data = new byte[recordSize];
+		ByteArrayInputStream bais = new ByteArrayInputStream(data);
+		DataInputStream dis = new DataInputStream(bais);
+		rs.getRecord(id, data, 0);
+		toReturn = dis.readUTF();
+		bais.reset();
+		bais.close();
+		dis.close();
+                rs.closeRecordStore();
+		return toReturn;
+	}
+
+}}}

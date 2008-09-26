@@ -9,7 +9,7 @@ Existem duas formas de se apresentar informações na tela do dispositivo para q
 A primeira e mais antiga é através da classe 
 [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Canvas.html Canvas], que é muito usada no desenvolvimento de jogos, pertencente ao pacote [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/game/package-summary.html javax.microedition.lcdui.game]. Veja um exemplo de tela abaixo:
 
-[http://img139.imageshack.us/img139/1484/imagemns5.jpg http://clau.sparetimegroup.net/index.php/category/programming/java/j2me/]
+[http://clau.sparetimegroup.net/index.php/category/programming/java/j2me/ http://img139.imageshack.us/img139/1484/imagemns5.jpg ]
 
 A segunda forma de se desenvolver uma tela de interface gráfica é através da classe 
 [java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Screen.html Screen], utilizada no desenvolvimento de aplicações comerciais, por exemplo, onde se precisa de formulários e caixas de texto, alertas, etc.

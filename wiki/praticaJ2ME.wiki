@@ -27,6 +27,10 @@ Para usuários iniciantes, é recomendável executar um "Hello World", até para
         * Introdução à classe List ([j2meList AQUI]);
         * ATIVIDADE 5 - Iniciando a agenda de contatos (AQUI);
 
+     === Alerta ===
+        * Introdução à classe Alert ([j2meAlert AQUI]);
+        * ATIVIDADE 5 - Verificando apelido-Skype da Agenda de contatos (AQUI);
+
 
 == Persistência de dados ==
   * Material sobre RMS ([j2meRMS AQUI]);

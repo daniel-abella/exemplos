@@ -16,7 +16,7 @@ Para usuários iniciantes, é recomendável executar um "Hello World", até para
   * ATIVIDADE 2 - Ticker (AQUI);
 
 == Persistência de dados ==
-  * Material sobre RecordStore ([j2meRMS AQUI]);
+  * Material sobre RMS ([j2meRMS AQUI]);
 
 == Comunicação WEB==
-  * Material sobre a interface Connection([j2meConnection AQUI]);
+  * Material sobre o pacote microedition.io([j2meConnection AQUI]);

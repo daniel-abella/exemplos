@@ -12,9 +12,9 @@ O diferencial do uso de RecordStore está no fato de poder haver filtros de regi
 
 == Os registros RMS ==
 
-Os registros RMS nada mais são do que arrays de bytes, que possuem nomes únicos, recordId, como chave. O primeiro registro armazenado em um RecordStore tem recordStoreId igual a 1. À partir daí, o identificador de cada céula é produzido pelo acréscimo em uma unidade.
+Os registros RMS nada mais são do que arrays de bytes, que possuem nomes únicos, recordId, como chave. O primeiro registro armazenado em um _RecordStore_ tem recordStoreId igual a 1. À partir daí, o identificador de cada céula é produzido pelo acréscimo em uma unidade.
 
-Os programadores podem usar DataInputStream, ByteArrayInputStream, DataOutputStream e ByteArrayDataOutputStream para acessar esses dados, desde que tenham permissão para acessá-los. Nenhuma operação de locking é permitida.
+Os programadores podem usar _DataInputStream_, _ByteArrayInputStream_, _DataOutputStream_ e _ByteArrayDataOutputStream_ para acessar esses dados, desde que tenham permissão para acessá-los. Nenhuma operação de locking é permitida.
 
 == Gravando RecordStores ==
 Para criar um RecordStore, basta chamar algum dos métodos estáticos da classe RecordStore:
@@ -23,7 +23,7 @@ Para criar um RecordStore, basta chamar algum dos métodos estáticos da classe 
 ||openRecordStore(String nome, boolean criarSeNecessario)||Abre um RecordStore ou cria um novo, caso seja pedido.||
 ||openRecordStore(String nome, boolean criarSeNecessario, int autoriz, boolean modific)|| Abre um RecordStore ou cria um novo, caso seja pedido. O mesmo poderá (ou não) ser alterado por outros MIDlet Suites.||
 
-Abaixo, um exemplo de método que cria um novo RecordStore. Para isso, exclui-se um RecordStore anterior, caso exista.
+Abaixo, um exemplo de método que cria um novo RecordStore. Ness caso, exclui-se um RecordStore anterior, caso exista.
 
 {{{
 
@@ -35,5 +35,28 @@ public static RecordStore criaRecordStore(String nomeRS) throws Exception {
 		rs = RecordStore.openRecordStore(nomeRS, true);
 		return rs;
 	}
+
+}}}
+
+== Adicionando registros ao RecordStore ==
+Para adicionar um registro, deve-se primeiramente ter em mãos o RecordStore.
+
+Usa-se o método _addRecord(byte[] data, int offset, int numBytes)_, que recebe os dados (data), o índice dos dados de onde começar-se-á a gravar (offset) e o número de bytes que serão armazenados (numBytes).
+
+No exemplo abaixo, o método adiciona todo o conteúdo de um texto em um RecordStore específico.
+
+{{{
+
+public static int add(String texto, RecordStore rs) throws Exception {
+	ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	DataOutputStream dos = new DataOutputStream(baos);
+	dos.writeUTF(texto);
+	dos.flush();
+	byte[] data = baos.toByteArray();
+	int id = rs.addRecord(data, 0, data.length);
+	baos.close();// É importante sempre fechar todos os Streams.
+	dos.close();
+	return id;
+}
 
 }}}

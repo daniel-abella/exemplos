@@ -3,7 +3,7 @@
 = List =
 A List é um tipo de interface gráfica muito usado, pois oferece uma forma simples de mostrar dados padronizados na tela. Ela tem as seguintes características:
   
-* Podem ser adicionados comandos para captura de eventos do usuário;
+  * Podem ser adicionados comandos para captura de eventos do usuário;
 {{{
 	addCommand(c);
 }}}

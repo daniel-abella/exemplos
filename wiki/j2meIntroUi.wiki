@@ -22,5 +22,16 @@ Nas atividades práticas será introduzido o conceito das interfaces gráficas �
   * Alerta (Alert);
   * Lista (List);
   * Caixa de Texto (TextBox);
-  * Formulário (Form);:
- 
+  * Formulário (Form);
+
+Um formulário pode ser composto por imagens, um textos (String, como no “HelloWorld”) ou vários itens, sendo eles:
+  * Grupo de escolha (ChoiceGroup);
+  * Campo de data (DateField);
+  * Barra de Intensidade (Gauge);
+  * Imagem (ImageItem);
+  * Campo de Texto (TextField);
+  * Campo String com título (StringItem).
+
+Outra classe que pode ser de grande valia é a Ticker, que implementa uma “fita-letreiro” acima de sua aplicação, com velocidade e tamanho controlado pelo dispositivo, fazendo um texto (String) rolar sobre a tela.
+
+Para mais informações sobre interface gráfica do MIDP 2.0, visite http://developers.sun.com/mobility/midp/articles/ui/

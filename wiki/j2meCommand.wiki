@@ -49,3 +49,5 @@ Exemplo de formulario que tem em si mesmo um CommandListener:
 	}
 	
 }}}
+
+Além de tais comandos simples, existem outras formas de receber eventos do usuário, os quais serão abordados posteriormente.

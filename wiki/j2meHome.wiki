@@ -10,7 +10,7 @@ Esta página visa o aprendizado sobre a plataforma J2ME, à partir de abordagem 
 == Limitações freqüentes em dispositivos móveis == 
 Apesar da plataforma prover bastante flexibilidade e principalmente portabilidade, há desafios a serem batidos pelos desenvolvedores:
   * Memória (dificilmente maior do que 64Mb);
-  * Tamanho do Display (Chegam até a menos de 150 pixels);
+  * Tamanho do Display (alguns tem menos de 150 pixels);
   * Capacidade de processamento (em geral, processadores de 16-32 bits);
   * Consumo de energia (maximizar uso da bateria);
 

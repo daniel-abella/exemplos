@@ -4,7 +4,9 @@
 
 Existem duas formas de se apresentar informações na tela do dispositivo para qual pode-se desenvolver interfaces de usuário. Ambas usam o pacote 
 [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/package-summary.html  javax.microedition.lcdui] e herdam de 
-[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Displayable.html Displayable]. 
+[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Displayable.html Displayable]. Veja como pode ser montada uma interface gráfica:
+
+[http://img402.imageshack.us/img402/6913/uies0.png]
 
 A primeira e mais antiga é através da classe 
 [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Canvas.html Canvas], que é muito usada no desenvolvimento de jogos, pertencente ao pacote [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/game/package-summary.html javax.microedition.lcdui.game]. Veja um exemplo de tela abaixo:
@@ -12,7 +14,13 @@ A primeira e mais antiga é através da classe
 [http://clau.sparetimegroup.net/index.php/category/programming/java/j2me/ http://img139.imageshack.us/img139/1484/imagemns5.jpg ]
 
 A segunda forma de se desenvolver uma tela de interface gráfica é através da classe 
-[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Screen.html Screen],
- utilizada no desenvolvimento de aplicações comerciais, por exemplo, onde se precisa de formulários e caixas de texto, alertas, etc. Veja um exemplo de tela abaixo:
+[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Screen.html Screen], utilizada no desenvolvimento de aplicações comerciais, por exemplo, onde se precisa de formulários e caixas de texto, alertas, etc. Veja um exemplo de tela abaixo:
 
 [http://www.plusgsm.com.br/forums/showthread.php?t=47325 http://www.jlearnit.com/jlearnitme/screen0.png]
+
+Nas atividades práticas será introduzido o conceito das interfaces gráficas “Screen”, que podem ser:
+  * Alerta (Alert);
+  * Lista (List);
+  * Caixa de Texto (TextBox);
+  * Formulário (Form);:
+ 

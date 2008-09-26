@@ -5,7 +5,6 @@
 A classe TextBox nos gera uma caixa de texto muito parecida com a oferecida em HTML, que permite entrada e edição de palavras(String). Além disso, tem-se as seguintes características:
 
   * Personalização do tipo de entrada será usado:
-  
   # ANY: entrada de dados de qualquer tipo. Nesse caso, pode haver quebra de linha e customização da codificação da entrada;
   # DECIMAL: valores decimais, inclusivr frações de inteiros;
   # EMAILADDR: somente email;
@@ -16,7 +15,7 @@ A classe TextBox nos gera uma caixa de texto muito parecida com a oferecida em H
   * Tamanho máximo de entrada, em número de caracteres, que pode ser mudado pelo método _setMaxSize(int maximo)_ ou passado pelo construtor;
   * Possibilidade de existência de valor default.
 
-[]
+[http://img409.imageshack.us/img409/6412/textboxxu3.jpg]
 
 
 Criando um TextBox de texto qualquer, de 40 caracteres:

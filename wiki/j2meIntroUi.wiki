@@ -5,5 +5,5 @@
 Existem duas formas de se apresentar informações na tela do dispositivo para qual pode-se desenvolver interfaces de usuário. Ambas usam o pacote _javax.microedition.lcdui_ e herdam de Displayable. 
 
 A primeira e mais antiga é através da classe 
-[java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Canvas.html Canvas], que é muito usada no desenvolvimento de jogos, pertencente ao pacote _javax.microedition.lcdui.game_. A segunda é através da classe 
+[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Canvas.html Canvas], que é muito usada no desenvolvimento de jogos, pertencente ao pacote _javax.microedition.lcdui.game_. A segunda é através da classe 
 [java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Screen.html Screen], utilizada no desenvolvimento de aplicações comerciais, por exemplo, onde se precisa de formulários e caixas de texto, alertas, etc.

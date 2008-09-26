@@ -3,7 +3,8 @@
 = Interface Gráfica J2ME =
 
 Existem duas formas de se apresentar informações na tela do dispositivo para qual pode-se desenvolver interfaces de usuário. Ambas usam o pacote 
-[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/package-summary.html  javax.microedition.lcdui] e herdam de Displayable. 
+[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/package-summary.html  javax.microedition.lcdui] e herdam de 
+[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Displayable.html Displayable]. 
 
 A primeira e mais antiga é através da classe 
 [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Canvas.html Canvas], que é muito usada no desenvolvimento de jogos, pertencente ao pacote _javax.microedition.lcdui.game_. A segunda é através da classe 

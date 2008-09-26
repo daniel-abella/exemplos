@@ -5,7 +5,7 @@ A tecnologia J2ME é baseada em três elementos: configurações, perfis e pacot
 
 [http://www.javaworld.com/ http://img219.imageshack.us/img219/9504/archsm0.jpg]
 
-== KVM, a máquina virtual J2ME == 
+= KVM, a máquina virtual J2ME =
 
 KVM (K Virtual Machine) é uma máquina virtual Java “desnudada”, projetada para memória pequena, recursos limitados e conecção de dispositivos móveis à web. 
 Suas principais características são:
@@ -17,7 +17,7 @@ Suas principais características são:
   * Multithreading e coleta de lixo independentes do sistema;
   * Configurabilidade de componentes através de suítes.
 
-== Configuração ==
+= Configuração =
 
 É um conjunto de funcionalidades para que as aplicações J2ME possam “se comunicar com a JVM”, dada certa gama de aparelhos. Essa camada é menos visível aos usuários, mas é muito importante para implementadores de profiles. Existem configurações básicas: CDC e CLDC.
 
@@ -33,7 +33,7 @@ A sua segurança está baseada no chamado “Sandbox Security Model”, isto é,
 
 Mais informações em http://java.sun.com/products/cldc/.
 
-== Perfil == 
+= Perfil =
 
 Profile, ou perfil, define uma API disponível para uma família específica de aparelhos. É implementado sobre uma configuração particular e as aplicações escritas no mesmo são portáveis para qualquer outro aparelho que o dê suporte. Existem quatro tipos de perfis mais famosos: MIDP, personal, basis e foundation.
 

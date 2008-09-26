@@ -15,7 +15,7 @@ Para usuários iniciantes, é recomendável executar um "Hello World", até para
   * Introdução à interface Gráfica para dispositivos móveis ([j2meIntroUi AQUI]);
   * ATIVIDADE 2 - Ticker (AQUI);
   
-        === Comandos e eventos ===
+      === Comandos e eventos ===
         * Introdução à classe Command e interface CommandListener ([j2meCommand AQUI]);
 
 == Persistência de dados ==

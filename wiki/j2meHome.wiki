@@ -7,7 +7,6 @@ Por ser composta de uma coleção de tecnologias e especificações que podem se
 
 Esta página visa o aprendizado sobre a plataforma J2ME, à partir de abordagem teórica seguida de vários exemplos aqui disponibilizados.
 
-
 == Limitações freqüentes em dispositivos móveis == 
 Apesar da plataforma prover bastante flexibilidade e principalmente portabilidade, há desafios a serem batidos pelos desenvolvedores:
   * Memória (máximo chega a 128 Kb);

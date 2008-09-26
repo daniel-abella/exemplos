@@ -12,14 +12,8 @@ Para usuários iniciantes, é recomendável executar um "Hello World", até para
   * ATIVIDADE 1 - Recuperando propriedades do sistema (AQUI);
 
 == Interface Gráfica  ==
-  * Material de interface Gráfica para dispositivos móveis ([j2meIntroUi AQUI]);
+  * Introdução à interface Gráfica para dispositivos móveis ([j2meIntroUi AQUI]);
   * ATIVIDADE 2 - Ticker (AQUI);
-
-.
-
-.
-
-.
 
 == Persistência de dados ==
   * Material sobre RecordStore ([j2meRMS AQUI]);

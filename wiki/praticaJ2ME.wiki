@@ -19,7 +19,7 @@ Para usuários iniciantes, é recomendável executar um "Hello World", até para
         * Introdução à classe Command e interface CommandListener ([j2meCommand AQUI]);
         * ATIVIDADE 3 - Comandos do Ano Novo (AQUI);
 
-     === TextBox ===
+     === Caixa de Texto ===
         * Introdução à classe TextBox ([j2meTextBox AQUI]);
         * ATIVIDADE 4 - Cálculo de Empréstimo;
 

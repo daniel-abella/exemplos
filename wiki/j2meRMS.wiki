@@ -9,3 +9,15 @@ Pensando nisso, o RMS (Record Management System) serve foi criado para gravaçã
 Um RecordStore é uma coleção de registros que têm sua integridade garantida pela plataforma (pode-se reiniciar ou retirar a bateria, por exemplo, que os dados não serão perdidos) e que é criado em um local independente do dispositivo, onde não há acesso a livre leitura de qualquer aplicação. Tal local é controlado pelo MIDlet Suite da aplicação que o criou. Assim, quando um MIDlet é desinstalado, todos os registros ligados a ele também são, mesmo os que foram marcados com possibilidade de compartilhamento.
 
 O diferencial do uso de RecordStore está no fato de poder haver filtros de registros para busca/limitação de dados. Para mais informacões, visite a API do [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/rms/package-summary.html javax.microedition.rms].
+
+== Os registros RMS ==
+
+Os registros RMS nada mais são do que arrays de bytes, que possuem nomes únicos, recordId, como chave. O primeiro registro armazenado em um RecordStore tem recordStoreId igual a 1. À partir daí, o identificador de cada céula é produzido pelo acréscimo em uma unidade.
+
+Os programadores podem usar DataInputStream, ByteArrayInputStream, DataOutputStream e ByteArrayDataOutputStream para acessar esses dados, desde que tenham permissão para acessá-los. Nenhuma operação de locking é permitida.
+
+== Gravando RecordStores ==
+Para criar um RecordStore, basta chamar algum dos métodos estáticos da classe RecordStore:
+
+||Método||Descrição||
+||openRecordStore(String nome, boolean criarSeNecessario)||Abre um RecordStore ou cria um novo, caso seja pedido.||

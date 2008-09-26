@@ -17,6 +17,9 @@ Para usuários iniciantes, é recomendável executar um "Hello World", até para
 
 == Persistência de dados ==
   * Material sobre RMS ([j2meRMS AQUI]);
+  * ATIVIDADE - Criando e Recuperando Registros (AQUI);
+  * ATIVIDADE - Removendo dados e Registros (AQUI);
+  * ATIVIDADE - Agenda Eletrônica Completa (AQUI);
 
 == Comunicação WEB==
   * Material sobre o pacote microedition.io([j2meConnection AQUI]);

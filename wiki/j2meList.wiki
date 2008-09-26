@@ -23,3 +23,13 @@ A List é um tipo de interface gráfica muito usado, pois oferece uma forma simp
        # MULTIPLE = Podem ser escolhidos vários elementos da lista, como um “Select Box”;
        # IMPLICIT = Só é escolhido um elemento da lista, que fica sombreado;
        # EXCLUSIVE = Podem ser escolhidos vários elementos da lista, como “RadioButtons”.
+
+
+[http://img295.imageshack.us/img295/9117/listyd9.jpg]
+
+
+Criando uma lista múltipla com 3 itens:
+{{{
+String[] opcoes = {"Item 1", "Item 2","Item 3"};
+List lista = new List("Título", List.MULTIPLE, opcoes, null);
+}}}

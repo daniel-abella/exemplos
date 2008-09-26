@@ -91,3 +91,14 @@ public static String getRecord(int id, RecordStore rs) throws Exception {
 	}
 
 }}}
+
+== Recuperando a lista de RecordStores ==
+Pode ser interessante a busca do nome de todos os recordStores existentes. Para isso, usa-se o método _RecordStore.listRecordStores()_, que retorna um array de String, que mostra os nomes dos RecordStores acessíveis à aplicação.
+
+
+== Removendo dados ==
+A remoção de RecordStores e registros é simples e direta.
+
+Para remover um simples registro de um RecordStore, basta chamar o método _deleteRecord(int recordId)_, que remove os dados da posição recordId, que não será mais usada.
+
+	Para remover todo um RecordStore, chama-se o método _RecordStore.deleteRecordStore(String recordStoreName)_, que recebe o nome do RecordStore e o exclui.

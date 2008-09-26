@@ -12,4 +12,7 @@ A primeira e mais antiga é através da classe
 [http://clau.sparetimegroup.net/index.php/category/programming/java/j2me/ http://img139.imageshack.us/img139/1484/imagemns5.jpg ]
 
 A segunda forma de se desenvolver uma tela de interface gráfica é através da classe 
-[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Screen.html Screen], utilizada no desenvolvimento de aplicações comerciais, por exemplo, onde se precisa de formulários e caixas de texto, alertas, etc. Veja um exemplo de tela abaixo:
+[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Screen.html Screen],
+ utilizada no desenvolvimento de aplicações comerciais, por exemplo, onde se precisa de formulários e caixas de texto, alertas, etc. Veja um exemplo de tela abaixo:
+
+[http://www.plusgsm.com.br/forums/showthread.php?t=47325 http://www.jlearnit.com/jlearnitme/screen0.png]

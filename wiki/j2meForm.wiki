@@ -33,3 +33,20 @@ Além disso, os formulários também podem ser compostos por itens, que tem cara
 }}}
 
   * Indicação de mudança de estado (Quando um texto é inserido em TextField, por exemplo) automaticamente.
+
+São exemplos de itens:
+  * Grupo de escolha (ChoiceGroup);
+  * Campo de data (DateField);
+  * Barra de Intensidade (Gauge);
+  * Imagem (ImageItem);
+  * Campo de Texto (TextField);
+  * Campo String com título (StringItem).
+
+== StringItem ==
+
+É o item de formuláro mais simples, que contém uma String a ser visualizada e um “rótulo” como título para a mesma. Pode ter sua fonte e layout customizados.
+{{{
+	Form m = new Form(“Título do Formulário”);
+	StringItem s = new StringItem(“Título”, “Texto Inicial”);
+	m.append(s);
+}}}

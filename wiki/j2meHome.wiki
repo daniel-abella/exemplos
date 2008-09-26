@@ -14,7 +14,7 @@ Apesar da plataforma prover bastante flexibilidade e principalmente portabilidad
   * Capacidade de processamento (em geral, processadores de 16-32 bits);
   * Consumo de energia (maximizar uso da bateria);
 
-= Sequência para estudo = 
+= *Sequência para estudo* = 
 
   * Arquitetura da Plataforma ([arquiteturaJ2ME AQUI]);
   * Instalação do Kit de Desenvolvimento WTK e pacotes para NetBeans([instalacaoJ2ME AQUI]);

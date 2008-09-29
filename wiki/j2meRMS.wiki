@@ -93,8 +93,12 @@ public static String getRecord(int id, RecordStore rs) throws Exception {
 }}}
 
 == Recuperando a lista de RecordStores ==
-Pode ser interessante a busca do nome de todos os recordStores existentes. Para isso, usa-se o método _RecordStore.listRecordStores()_, que retorna um array de String, que mostra os nomes dos RecordStores acessíveis à aplicação.
-
+Pode ser interessante a busca do nome de todos os recordStores existentes. Para isso, usa-se o método _RecordStore.listRecordStores()_, que retorna um array de String, que mostra os nomes dos RecordStores acessíveis à aplicação. Veja o exemplo abaixo:
+{{{
+public String[] getRecordStoresNames(){
+    return RecordStore.listRecordStores();
+}
+}}}
 
 == Removendo dados ==
 A remoção de RecordStores e registros é simples e direta.

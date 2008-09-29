@@ -27,6 +27,7 @@ A principal classe do pacote, Connector, será o objetivo do nosso estudo e cont
 
 	Exemplo de extração de dados do servidor http://kraho.servehttp.com:8080/dados.txt
 {{{
+
 	public static String getDados() throws Exception {
 
 		String url = “http://kraho.servehttp.com:8080/dados.txt”;
@@ -47,6 +48,7 @@ A principal classe do pacote, Connector, será o objetivo do nosso estudo e cont
 		}
 		return retorno;
 	}
+
 	public static byte[] getConteudo(InputStream is) {
 		byte[] buffer = null;
 		int size = 50000;
@@ -64,4 +66,5 @@ A principal classe do pacote, Connector, será o objetivo do nosso estudo e cont
 		}
 		return buffer;
 	}
+
 }}}

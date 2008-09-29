@@ -18,4 +18,4 @@ Apesar da plataforma prover bastante flexibilidade e principalmente portabilidad
 
   * Arquitetura da Plataforma ([arquiteturaJ2ME AQUI]);
   * Instalação do Kit de Desenvolvimento WTK e pacotes para NetBeans([instalacaoJ2ME AQUI]);
-  * Prática em desenvolvimento J2ME([praticaJ2ME])
+  * Prática em desenvolvimento J2ME([praticaJ2ME AQUI])

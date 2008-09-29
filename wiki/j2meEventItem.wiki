@@ -9,7 +9,7 @@ Os itens de um formulário tem a característica de ter “estados”, que mudam
   * Entrada de nova data/hora em um DateField;
   * Chamada do método .
 
-É interessante lembrar que podem ocorrer mudanças, de aparelho para aparelho, na mudança automática de estado, dado certo item.
+É interessante lembrar que podem ocorrer mudanças, de aparelho para aparelho, na mudança automática de estado, dado certo item. Para isso, basta implementar o método _itemStateChanged(Item i)_ da classe [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/ItemStateListener.html ItemStateListener].
 Exemplo de TextField que chama sua mudança de estado:
 
 {{{

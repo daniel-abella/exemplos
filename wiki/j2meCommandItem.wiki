@@ -1,7 +1,7 @@
 #Introdução à interface gráfica J2ME.
 
 = Comandos de Itens =
-Receber comandos relacionados a um item de um formulário pode ser bastante interesssante. Para isso, existe a interface ItemCommandListener, a qual contém o método commandAction(Command c, Item i).
+Receber comandos relacionados a um item de um formulário pode ser bastante interesssante. Para isso, existe a interface [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/ItemCommandListener.html ItemCommandListener], a qual contém o método commandAction(Command c, Item i).
 
 Como se pode ver na assinatura do método está relacionado a um comando e a um item.
 

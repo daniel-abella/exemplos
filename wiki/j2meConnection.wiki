@@ -22,7 +22,7 @@ A principal classe do pacote, Connector, será o objetivo do nosso estudo e cont
 ||openOutputStream(String name)||  retorna OutputStream||
 ||Abre um fluxo de saída de dados à partir do caminho passado pelo parâmetro.||
 
-	Extrair dados do servidor
+== Extrair dados do servidor ==
 	Após a conexão e os fluxos de dados serem abertos, basta usar os métodos das classes do pacote java.io para extrair os dados.
 
 	Exemplo de extração de dados do servidor http://kraho.servehttp.com:8080/dados.txt
@@ -67,4 +67,41 @@ A principal classe do pacote, Connector, será o objetivo do nosso estudo e cont
 		return buffer;
 	}
 
+}}}
+
+== Enviando dados ao servidor via método POST ==
+{{{
+public static boolean submeteDados(String dados) {
+
+		String url = "http://kraho.servehttp.com:8080/j2me";
+		byte[] aEnviar = dados.getBytes();
+		HttpConnection conexao;
+		
+		try {
+			
+			conexao = (HttpConnection) Connector.open(url);
+			conexao.setRequestMethod(HttpConnection.POST);
+			conexao.setRequestProperty("User-Agent",
+					"Profile/MIDP-2.0 Configuration/CLDC-1.1");
+			conexao.setRequestProperty("Content-Language", "pt-BR");
+			conexao.setRequestProperty("Content-Type",
+					"text/html");
+			
+			OutputStream saida = conexao.openOutputStream();
+			
+			saida.write(aEnviar);
+			saida.flush();
+
+			int response = conexao.getResponseCode();
+			if (response != HttpConnection.HTTP_OK) {
+				return false;
+			}
+			saida.close();
+			conexao.close();
+			
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 }}}

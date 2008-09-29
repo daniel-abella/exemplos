@@ -2,7 +2,7 @@
 
 = TextField = 
 
-É um item de formulário que funciona como um TextBox (inclusive com alguns métodos de mesma assinatura),. Tem o diferencial de ter as funcionalidades de um Item, incluindo possibilidade de poder ser arranjado com outros itens.
+É um item de formulário que funciona como um TextBox (inclusive com alguns métodos de mesma assinatura). Tem o diferencial de ter as funcionalidades de um Item, incluindo possibilidade de poder ser arranjado com outros itens.
 
 
 [http://img264.imageshack.us/img264/5760/textfieldmf4.jpg]

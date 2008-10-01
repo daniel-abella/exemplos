@@ -23,8 +23,9 @@
             <c:forEach var="array" items="${listaDeArrays}" varStatus="v1">
                 <c:forEach var="item" items="${array}" varStatus="v2">
                     <tr><td>${v1.count}</td><td>${v2.count}</td><td>${item}</td>
-                </c:forEach>
+                </c:forEach>               
             </c:forEach>
         </table>
+        <c:out value="<b>/index.jsp</b>" />
     </body>
 </html>

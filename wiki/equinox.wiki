@@ -27,7 +27,7 @@ lado, é uma implementação desta especificação.
 Existem várias outras implementações de OSGi além de Equinox.
 Algumas delas incluem Apache Felix
 (http://cwiki.apache.org/FELIX/index.html) e Knoplerfish
-(http://www.knopflerfish.org/).
+(http://www.knopflerfish.org/) e Modulefusion (um exemplo de como fazer uso) (http://code.google.com/p/modulefusion/).
 
 Um aspecto relevante é que _qualquer bundle pode ser executado em qualquer implementação de OSGi_. Ou seja, um bundle desenvolvido e testado na implementação Felix pode ser executado na implementação Equinox e vice-versa.
 

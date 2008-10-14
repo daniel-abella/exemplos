@@ -9,55 +9,55 @@ Para usuários iniciantes, é recomendável executar um "Hello World", até para
 
 == MIDlets ==
   * Introdução à MIDlets ([j2meMIDlet AQUI]);
-  * ATIVIDADE 1 - Analisando as propriedades do sistema (AQUI);
+  * ATIVIDADE 1 - Analisando as propriedades do sistema ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP1.pdf AQUI]);
 
 == Interface Gráfica  ==
   * Introdução à interface Gráfica para dispositivos móveis ([j2meIntroUi AQUI]);
-  * ATIVIDADE 2 - Letreiro da Especialização (AQUI);
+  * ATIVIDADE 2 - Letreiro da Especialização ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP2.pdf AQUI]);
   
      === Comandos e tratamento de eventos ===
         * Introdução à classe Command e interface CommandListener ([j2meCommand AQUI]);
-        * ATIVIDADE 3 - Comandos do Ano Novo (AQUI);
+        * ATIVIDADE 3 - Comandos do Ano Novo ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP3.pdf AQUI]);
 
      === Caixa de Texto ===
         * Introdução à classe TextBox ([j2meTextBox AQUI]);
-        * ATIVIDADE 4 - Cálculo de Empréstimo (AQUI);
+        * ATIVIDADE 4 - Cálculo de Empréstimo ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP4.pdf AQUI]);
 
      === Lista ===
         * Introdução à classe List ([j2meList AQUI]);
-        * ATIVIDADE 5 - Iniciando a agenda de contatos (AQUI);
+        * ATIVIDADE 5 - Iniciando a agenda de contatos ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP5.pdf AQUI]);
 
      === Alerta ===
         * Introdução à classe Alert ([j2meAlert AQUI]);
-        * ATIVIDADE 6 - Verificando apelido-Skype da Agenda de contatos (AQUI);
+        * ATIVIDADE 6 - Verificando apelido-Skype da Agenda de contatos ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP6.pdf AQUI]);
 
      === Formulário ===
         * Introdução à classe Form e StringItem ([j2meForm AQUI]);
-        * ATIVIDADE 7 - Deixando a Agenda de Contatos mais bonita (AQUI);
+        * ATIVIDADE 7 - Deixando a Agenda de Contatos mais bonita ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP7.pdf AQUI]);
         * Introdução à classe TextField ([j2meTextField AQUI]);
-        * ATIVIDADE 8 - Criando uma Agenda de Contatos Interativa (AQUI);
+        * ATIVIDADE 8 - Criando uma Agenda de Contatos Interativa ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP8.pdf AQUI]);
         * Introdução à classe ChoiceGroup ([j2meChoiceGroup AQUI]);
-        * ATIVIDADE 9 - Escolhendo o tipo de telefone do amigo(AQUI);
+        * ATIVIDADE 9 - Escolhendo o tipo de telefone do amigo([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP9.pdf AQUI]);
         * Introdução à classe DateField ([j2meDateField AQUI]);
-        * ATIVIDADE 10 - Registrando o aniversário do amigo (AQUI);
+        * ATIVIDADE 10 - Registrando o aniversário do amigo ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP10.pdf AQUI]);
         * Introdução à classe Gauge ([j2meGauge AQUI]);
-        * ATIVIDADE 11 - Registrando o nível de amizade do amigo (AQUI);
-        * ATIVIDADE 12 - Criando uma SplashScreen (AQUI);
+        * ATIVIDADE 11 - Registrando o nível de amizade do amigo ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP11.pdf AQUI]);
+        * ATIVIDADE 12 - Criando uma SplashScreen ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP12.pdf AQUI]);
         * Introdução à classe ImageItem ([j2meImageItem AQUI]);
-        * ATIVIDADE 13 - Mostrando a foto do amigo (AQUI);
+        * ATIVIDADE 13 - Mostrando a foto do amigo ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP13.pdf AQUI]);
         * Introdução a comandos especiais de Itens ([j2meCommandItem AQUI]);
-        * ATIVIDADE 14 - Resolvendo dados incompletos (AQUI);
+        * ATIVIDADE 14 - Resolvendo dados incompletos ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP14.pdf AQUI]);
         * Introdução a eventos em Itens ([j2meEventItem AQUI]);
-        * ATIVIDADE 15 - Filtrando a Agenda de Contatos(AQUI);
+        * ATIVIDADE 15 - Filtrando a Agenda de Contatos([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP15.pdf AQUI]);
 
 
 == Persistência de dados ==
   * Introdução ao RMS ([j2meRMS AQUI]);
-  * ATIVIDADE 16 - Registrando e recuperando dados da Agenda de Contatos (AQUI);
-  * ATIVIDADE 17 - Removendo e editando dados dos amigos(AQUI);
-  * ATIVIDADE 18 - Agenda de Contatos Completa (AQUI);
+  * ATIVIDADE 16 - Registrando atividades([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP16.pdf AQUI]);
+  * ATIVIDADE 17 - Removendo e editando atividades ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP17.pdf AQUI]);
 
 == Comunicação WEB==
   * Introdução ao pacote microedition.io([j2meConnection AQUI]);
-  * ATIVIDADE 19 - Requisitando dados do servidor;
-  * ATIVIDADE 20 - Enviando dados ao servidor;
+  * ATIVIDADE 18 - Requisitando dados do servidor([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP18.pdf AQUI]);
+  * ATIVIDADE 19 - Requisitando dados do servidor via GET([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP19.pdf AQUI]);
+  * ATIVIDADE 20 - Enviando dados ao servidor ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP20.pdf AQUI]);

@@ -77,7 +77,7 @@
                         <Property name="label" typeID="Pjava.lang.String" value="VNumero do telefone"/>
                         <Property name="itemCommandListener" typeID="C#ItemCommandListener" value="R17"/>
                         <Property name="maxSize" typeID="Pint" value="V32"/>
-                        <Property name="constraints" typeID="Pint" value="V0"/>
+                        <Property name="constraints" typeID="Pint" value="V2"/>
                     </Component>
                     <Component componentID="22" typeID="C#CommandEventSource">
                         <Property name="eventHandler" typeID="C#EventHandler" value="R45"/>
@@ -108,8 +108,8 @@
         </Component>
     </Document>
     <FlowScene version="1">
+        <Node componentID="2" descriptorID="componentNode2" x="24" y="26"/>
         <Node componentID="14" descriptorID="componentNode14" x="278" y="162"/>
         <Node componentID="44" descriptorID="componentNode44" x="264" y="332"/>
-        <Node componentID="2" descriptorID="componentNode2" x="24" y="26"/>
     </FlowScene>
 </VisualDesign>

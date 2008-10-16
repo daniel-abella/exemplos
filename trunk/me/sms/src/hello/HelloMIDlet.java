@@ -118,7 +118,7 @@ public void sendMsg() {
         public void run() {
     try {
         getForm().append("Enviando...");
-        String addr = "sms://" + getTelefone().getString();
+        String addr = "sms://" + getTelefone().getString() + ":5000";
         MessageConnection conn = (MessageConnection) Connector.open(addr);
         TextMessage txtm = (TextMessage) conn.newMessage(MessageConnection.TEXT_MESSAGE);
         txtm.setPayloadText(getMensagem().getString());
@@ -190,7 +190,7 @@ return okCommand;
 public TextField getTelefone () {
 if (telefone == null) {//GEN-END:|23-getter|0|23-preInit
  // write pre-init user code here
-telefone = new TextField ("Numero do telefone", null, 32, TextField.ANY);//GEN-LINE:|23-getter|1|23-postInit
+telefone = new TextField ("Numero do telefone", null, 32, TextField.NUMERIC);//GEN-LINE:|23-getter|1|23-postInit
  // write post-init user code here
 }//GEN-BEGIN:|23-getter|2|
 return telefone;

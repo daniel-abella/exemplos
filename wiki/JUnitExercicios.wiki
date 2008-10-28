@@ -1,7 +1,12 @@
 #summary Exercitando o emprego do JUnit.
 
-= Resolva cada um dos exercícios abaixo =
+= Crie testes de unidade para os cenários abaixo =
 
-  1. 
-  1. Headings, paragraphs, and lists
-  1. Automatic links to other wiki pages
+== Concatenação de Strings==
+  1. A classe Formato possui o método {{{toString(List<Integer>)}}} e retorna uma String que é a concatenação dos inteiros fornecidos na lista, mas em ordem decrescente. Ou seja, para os inteiros 1, 2 e -5, a saída produzida deve ser 2, 1, -5. 
+  2. Adicionalmente, os valores devem ser separados por ';'. Ou seja, a real saída desejada é 2;1;-5.
+
+== Operação de "ordenação" de elementos de um array==
+  1. A classe Calculo possui o método {{{paresPrimeiros}}} que recebe como argumento um array de bytes e reordena os valores contidos neste array de tal forma que todos os valores pares ocupam as primeiras posições, ou seja, se existe um valor ímpar, então este necessariamente aparece após todo e qualquer valor par fornecido no array. Nenhuma outra restrição é conhecida. 
+  1. O método acima, quando chamado com um valor null deve gerar a exceção {{{IllegalArgumentException}}}.
+  1. O método {{{paresPrimeiros}}} é considerado "errado" (ou com implementação a ser melhorada, caso o tempo de retorno para um array de até 1000 entradas seja superior ou igual a 1 segundo.

@@ -10,10 +10,10 @@ Nesta breve introdução são fornecidos os passos básicos para uso do JUnit pa
 Em http://www.junit.org você poderá obter a versão mais recente, assim como tutoriais acerca do emprego do JUnit. No momento em que este texto é escrito, a versão mais recente é a versão 4.4, fornecido pelo arquivo *junit4.4.zip*.
 
 = Instalação =
-Obtenha o arquivo *junit4.4.zip* ou versão mais recente no endereço fornecido acima. Descomprima este arquivo. Será criado o diretório *junit4.4*. Neste diretório criado encontra-se o arquivo *junit-4.4.jar*. Este arquivo *.jar* é empregado tanto para compilar quanto para executar testes de unidade usando o JUnit.  
+Obtenha o arquivo *junit4.4.zip* ou versão mais recente no endereço fornecido acima. Descomprima este arquivo. Será criado o diretório *junit4.4*. Neste diretório criado encontra-se o arquivo *junit-4.4.jar*. Este arquivo *.jar* é empregado tanto para compilar quanto para executar testes de unidade usando o JUnit. Em tempo, os passos que seguem não fazem uso de um ambiente integrado de desenvolvimento como o Eclipse e o NetBeans (tais ferramentas já oferecem suporte ao JUnit sem a necessidade destes passos). 
 
-= Primeiro exemplo =
-Abaixo segue uma classe trivial contendo uma única propriedade e três (3) métodos públicos. O método {{{adiciona(int valor)}}} deve acrescentar ao valor da instância aquele fornecido como argumento.
+= Primeiro exemplo (cenário trivial) =
+Abaixo segue uma classe contendo uma única propriedade e três (3) métodos públicos. O método {{{adiciona(int valor)}}} deve acrescentar ao valor da instância aquele fornecido como argumento.
 
 {{{
 public class Valor {

@@ -5,7 +5,7 @@ A experiência em programação facilitará, com o tempo, a identificação do q
 O que segue nesta página é o que este livro sugere, onde detalhes podem ser obtidos.
 
 = O que deve ser testado? =
-O livro _Pragmatic Unit Testing: In Java with JUnit_, Andrew Hunt e David Thomas, da editora The Pragmatic Programmers, 2003 estabelece a seguinte estratégia para facilitar a identificação do que deverá ser testado. Conforme apresentado abaixo, isto é fornecido por meio de perguntas:
+O livro _Pragmatic Unit Testing: In Java with JUnit_, Andrew Hunt e David Thomas, da editora The Pragmatic Programmers, 2003, estabelece a seguinte estratégia para facilitar a identificação do que deverá ser testado. Conforme apresentado abaixo, isto é fornecido por meio de perguntas:
 
   * Os resultados estão corretos?
   * As condições de fronteira estão corretas?

@@ -21,7 +21,7 @@ public class CaracteresManipulacaoTest {
     private StringBuffer sequencia; // Modificada a cada teste
 
     @BeforeClass
-    public void leSequenciaExtensaDeArquivo() {
+    public static void leSequenciaExtensaDeArquivo() {
         // Lê seqüência e deposita em 'sequenciaOriginal'
     }
 

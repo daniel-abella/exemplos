@@ -1,0 +1,7 @@
+#summary Exercitando o emprego do JUnit.
+
+= Resolva cada um dos exercícios abaixo =
+
+  1. 
+  1. Headings, paragraphs, and lists
+  1. Automatic links to other wiki pages

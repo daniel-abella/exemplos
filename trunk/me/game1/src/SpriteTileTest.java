@@ -49,8 +49,8 @@ public class SpriteTileTest extends MIDlet implements CommandListener,
             //add tile map
             tiledLayer = new TiledLayer(16, 16, canvas_.imageArray[IMG_TILE], 16, 16);
 
-            for (int i = 0; i < 16; i++) {
-                for (int j = 0; j < 16; j++) {
+            for (int i = 0; i < 10; i++) {
+                for (int j = 0; j < 10; j++) {
                     //create an animated tile
                     tiledLayer.setCell(i, j, 1);
                 }
@@ -58,7 +58,7 @@ public class SpriteTileTest extends MIDlet implements CommandListener,
             animIndex = tiledLayer.createAnimatedTile(0);
 
             //make a line down the middle that's animated
-            for (int y = 0; y < 16; y++) {
+            for (int y = 0; y < 10; y++) {
                 tiledLayer.setCell(5, y, animIndex);
             }
 

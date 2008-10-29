@@ -29,7 +29,7 @@ class SpriteTileTestCanvas extends GameCanvas implements ImageNumbers, Constants
         try {
             //create and fill our image array
             imageArray = new Image[MAX_IMAGES];
-           imageArray[IMG_TILE] = Image.createImage("/tilegfx.png");
+           imageArray[IMG_TILE] = Image.createImage("/fundo.png");
             imageArray[IMG_SPRITE] = Image.createImage("/face.png");
         } catch (IOException e) {
             System.err.println("Failed loading images!!!" + e);

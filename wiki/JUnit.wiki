@@ -4,7 +4,7 @@
 
 Em _Pragmatica Unit Testing: In Java with JUnit_, Andrew Hunt e David Thomas definem teste de unidade como "código escrito por um desenvolvedor que exercita um trecho de código pequeno e de uma área específica da funcionalidade do código que está sendo testado". Eles ainda acrescentam que testes de unidade são desenvolvidos para provar que um trecho de código faz o que o desenvolvedor imagina que deveria fazer. Confuso? À medida que realizar exercícios isto se tornará mais claro. Ou seja, mantenha a calma.
 
-Nesta breve introdução são fornecidos os passos básicos para uso do JUnit para a confecção de testes de unidade em Java. O foco, portanto, está na ferramenta (não seguem dicas de quais métodos testar, por exemplo).
+Nesta breve introdução são fornecidos os passos básicos para uso do JUnit para a confecção de testes de unidade em Java. O foco, portanto, está na ferramenta (métodos, técnicas e outros elementos são apresentados em outras páginas).
 
 = Onde obter? =
 Em http://www.junit.org você poderá obter a versão mais recente, assim como tutoriais acerca do emprego do JUnit. No momento em que este texto é escrito, a versão mais recente é a versão 4.4, fornecido pelo arquivo *junit4.4.zip*.

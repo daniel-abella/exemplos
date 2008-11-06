@@ -3,7 +3,7 @@
 = Crie testes de unidade para os cenários abaixo =
 
 == Concatenação de Strings==
-  1. A classe Formato possui o método {{{toString(List<Integer>)}}} e retorna uma String que é a concatenação dos inteiros fornecidos na lista, mas em ordem decrescente. Ou seja, para os inteiros 1, 2 e -5, a saída produzida deve ser 2, 1, -5. 
+  1. A classe Formato possui o método {{{toString(List<Integer>)}}} e retorna uma String que é a concatenação dos inteiros fornecidos na lista, mas em ordem decrescente. Ou seja, para os inteiros 1, 2 e -5, a saída produzida deve ser "2;1;-5". 
   1. Adicionalmente, os valores devem ser separados por ';'. Ou seja, a real saída desejada é 2;1;-5.
   1. Formato ainda possui o método {{{contaCaracteres(char, String)}}} que retorna a quantidade de caracteres iguais ao primeiro argumento presentes no segundo argumento.
 

@@ -13,4 +13,10 @@
   1. O método {{{paresPrimeiros}}} é considerado "errado" (ou com implementação a ser melhorada, caso o tempo de retorno para um array de até 1000 entradas seja superior ou igual a 1 segundo.
 
 == Propriedade 30+25 ==
-O número 3025 possui uma propriedade curiosa, 3025 é a composição de 30 e 25 (3025). Adicionalmente, 30+25 = 55 e o quadrado de 55 é exatamente o valor 3025. Implemente o método _boolean propriedade3025(int)_ que recebe um inteiro como entrada e retorna o valor verdadeiro se e somente se o inteiro fornecido satisfaz tal propriedade. Observe que se um valor negativo for fornecido, então o método deve retornar falso. Se o valor for menor que 1000 ou maior que 9999, o método também deve retornar falso. Adicionalmente, crie testes de unidade para validar a implementação realizada. 
+O número 3025 possui uma propriedade curiosa, 3025 é a composição de 30 e 25 (3025). Adicionalmente, 30+25 = 55 e o quadrado de 55 é exatamente o valor 3025. Implemente o método _boolean propriedade3025(int)_ que recebe um inteiro como entrada e retorna o valor verdadeiro se e somente se o inteiro fornecido satisfaz tal propriedade. Observe que se um valor negativo for fornecido, então o método deve retornar falso. Se o valor for menor que 1000 ou maior que 9999, o método também deve retornar falso. Adicionalmente, crie testes de unidade para verificar a implementação.
+
+== Propriedade dos cubos ==
+O número 153 pode ser obtido como a soma dos cubos dos seus dígitos. Crie o método _cubos(String)_ que retorna verdadeiro se e somente se o número fornecido (por meio de uma String) satisfaz esta propriedade. O método não deve gerar exceção. Crie testes de unidade para verificar a implementação.
+
+== Notas ==
+Em um sistema acadêmico cada estudante recebe uma nota por disciplina. O nome de cada estudante é único, assim como o código de cada disciplina. Implemente funcionalidade que permita obter a média das notas de todas as disciplinas cursadas por um estudante, ou seja, implemente o método _media(String estudante)_ onde o argumento é o nome de um estudante. Adicionalmente, implemente a média por disciplina, ou seja, o método _media(int disciplina)_ retorna a média das notas de todos os estudantes que cursaram a disciplina cujo código é fornecido como argumento. Crie testes de unidade para verificar a implementação.

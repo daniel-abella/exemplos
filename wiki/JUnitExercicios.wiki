@@ -6,6 +6,7 @@
   1. Crie a classe _Formato_. Esta classe deve possuir o método {{{toString(List<Integer>)}}}, que retorna uma String obtida da concatenação dos inteiros fornecidos na lista (em ordem decrescente). Ou seja, para os inteiros 1, 2 e -5, a ordem correta deve ser 2, 1 e -5. 
   1. Adicionalmente, os valores devem ser separados por ';' e sem espaços entre eles. Ou seja, a real saída desejada é "2;1;-5".
   1. A classe _Formato_ ainda possui o método {{{contaCaracteres(char c, String str)}}} que retorna a quantidade de caracteres _c_ na seqüência _str_.
+  1. Implemente código correspondente aos itens anteriores e testes de unidade que verificam a implementação realizada. Observação: situações excepcionais não foram definidas, por exemplo, o comportamento dos métodos quando o argumento for null. Nestes e outros cenários semelhantes, defina os casos excepcionais, implemente-os e também forneça código que os testa.
 
 == Operação de "ordenação" de elementos de um array==
   1. A classe Calculo possui o método {{{paresPrimeiros}}} que recebe como argumento um array de bytes e reordena os valores contidos neste array de tal forma que todos os valores pares ocupam as primeiras posições, ou seja, se existe um valor ímpar, então este necessariamente aparece após todo e qualquer valor par fornecido no array. Nenhuma outra restrição é conhecida. 

@@ -11,3 +11,6 @@
   1. A classe Calculo possui o método {{{paresPrimeiros}}} que recebe como argumento um array de bytes e reordena os valores contidos neste array de tal forma que todos os valores pares ocupam as primeiras posições, ou seja, se existe um valor ímpar, então este necessariamente aparece após todo e qualquer valor par fornecido no array. Nenhuma outra restrição é conhecida. 
   1. O método acima, quando chamado com um valor null deve gerar a exceção {{{IllegalArgumentException}}}.
   1. O método {{{paresPrimeiros}}} é considerado "errado" (ou com implementação a ser melhorada, caso o tempo de retorno para um array de até 1000 entradas seja superior ou igual a 1 segundo.
+
+== Propriedade 30+25 ==
+O número 3025 possui uma propriedade curiosa, 3025 é a composição de 30 e 25 (3025). Adicionalmente, 30+25 = 55 e o quadrado de 55 é exatamente o valor 3025. Implemente o método _boolean propriedade3025(int)_ que recebe um inteiro como entrada e retorna o valor verdadeiro se e somente se o inteiro fornecido satisfaz tal propriedade. Observe que se um valor negativo for fornecido, então o método deve retornar falso. Se o valor for menor que 1000 ou maior que 9999, o método também deve retornar falso. Adicionalmente, crie testes de unidade para validar a implementação realizada. 

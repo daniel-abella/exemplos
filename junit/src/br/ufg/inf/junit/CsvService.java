@@ -16,7 +16,8 @@ import java.util.List;
  * <p>
  * No exemplo acima são fornecidos quatro (4) campos, todos separados por
  * vírgula. Observe que o segundo campo está entre aspas duplas, o que permite
- * empregar o separador (,) sem que esta demarque um campo (conforme ilustrado).
+ * empregar o separador (,) como parte do campo sem que este demarque a
+ * separação entre campos.
  * 
  * @author Fábio Nogueira de Lucena
  * @version 0.1
@@ -32,8 +33,9 @@ public interface CsvService {
 	 * 
 	 * @param separador
 	 *            Demarca a separação entre campos de uma String no formato CSV.
-	 *            <b>Importante:</b> quando um campo é fornecido entre aspas duplas, a ocorrência do
-	 *            separador no campo não irá demarcar separação de campos.
+	 *            <b>Importante:</b> quando um campo é fornecido entre aspas
+	 *            duplas, a ocorrência do separador no campo não irá demarcar
+	 *            separação de campos.
 	 */
 	public void defineSeparador(char separador);
 
@@ -42,11 +44,17 @@ public interface CsvService {
 	 * definido pelo metodo {@link #defineSeparador(char)}.
 	 * 
 	 * @param lista
-	 *            Lista de objetos que deverão dar origem à linha no formato CSV. Os
-	 *            valores dos campos seguirão na mesma ordem em que estão presentes na
-	 *            lista.
+	 *            Lista de objetos que deverão dar origem à linha no formato
+	 *            CSV. Os valores dos campos seguirão na mesma ordem em que
+	 *            estão presentes na lista.
 	 * @return Linha CSV contendo os objetos fornecidos na lista separados pelo
-	 *         separador definido.
+	 *         separador definido. Se a linha não possui nenhum objeto, então o
+	 *         retorno deve ser "".
+	 * @throws IllegalArgumentException
+	 *             Se o argumento fornecido for <code>null</code> ou se o
+	 *             método {@link Object#toString()} gerar uma exceção ou
+	 *             retornar <code>null</code> para qualquer que seja o
+	 *             elemento da lista.
 	 */
 	public String toCsv(List<Object> lista);
 
@@ -57,9 +65,13 @@ public interface CsvService {
 	 * {@link #defineSeparador(char)}.
 	 * 
 	 * @param csv
-	 *            Linha contendo campos separados por ';' (padrão).
+	 *            Linha contendo campos demarcados pelo separador definido.
 	 * @return Lista de Strings correspondentes aos campos, na ordem em que
-	 *         aparecem na String fornecida.
+	 *         aparecem na String fornecida. Se o argumento for "", então o
+	 *         retorno também será uma única lista contendo um única String
+	 *         ("").
+	 * @throws IllegalArgumentException
+	 *             Se o argumento for <code>null</code>.
 	 * @see #obtemArrayCampos(String)
 	 */
 	public List<String> obtemListaCampos(String csv);
@@ -72,7 +84,10 @@ public interface CsvService {
 	 * 
 	 * @param csv
 	 *            Linha no formato CSV cujos campos devem ser retornados.
-	 * @return Array de Strings contendo campos da linha fornecida.
+	 * @return Veja {@link #obtemListaCampos(String)} para detalhes. O retorno
+	 *         neste caso, contudo, será em um array de Strings.
+	 * @throws IllegalArgumentException
+	 *             Se o argumento for <code>null</code>.
 	 * @see #obtemListaCampos(String)
 	 */
 	public String[] obtemArrayCampos(String csv);

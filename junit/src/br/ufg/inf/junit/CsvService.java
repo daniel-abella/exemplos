@@ -3,15 +3,16 @@ package br.ufg.inf.junit;
 import java.util.List;
 
 /**
- * Oferece v·rios serviÁos para manipulaÁ„o do formato CSV. Por padr„o, uma
- * linha neste formato È formado por v·rios campos separados por ';'. Outro
+ * Oferece v√°rios servi√ßos para manipula√ß√£o do formato CSV. Informa√ß√µes
+ * sobre este formato podem ser obtidas em http://pt.wikipedia.org/wiki/Comma-separated_values. Por padr√£o, uma
+ * linha neste formato √© formado por v√°rios campos separados por ';'. Outro
  * separador, diferente de ';' pode ser definido.
  * 
- * @author F·bio Nogueira de Lucena
+ * @author F√°bio Nogueira de Lucena
  * @version 0.1
  * 
  */
-public interface Formato {
+public interface CsvService {
 	/**
 	 * Define separador empregado na montagem de Strings (linhas de um arquivo
 	 * no formato CSV.
@@ -27,21 +28,21 @@ public interface Formato {
 	 * definido pelo metodo {@link #defineSeparador(char)}.
 	 * 
 	 * @param lista
-	 *            Objetos que dever„o dar origem a linha no formato CSV na ordem
-	 *            em que s„o fornecidos na lista.
+	 *            Objetos que dever√£o dar origem a linha no formato CSV na ordem
+	 *            em que s√£o fornecidos na lista.
 	 * @return Linha CSV contendo os objetos fornecidos na lista separados pelo
 	 *         separador definido.
 	 */
 	public String toString(List<Object> lista);
 
 	/**
-	 * ObtÈm campos de linha no formato CSV. Monta lista de Strings
+	 * Obt√©m campos de linha no formato CSV. Monta lista de Strings
 	 * correspondentes a cada um dos campos fornecidos pela entrada. Os campos
-	 * s„o separados por ';' (situaÁ„o padr„o) ou outro separador definido por
+	 * s√£o separados por ';' (situa√ß√£o padr√£o) ou outro separador definido por
 	 * {@link #defineSeparador(char)}.
 	 * 
 	 * @param linha
-	 *            Linha contendo campos separados por ';' (padr„o).
+	 *            Linha contendo campos separados por ';' (padr√£o).
 	 * @return Lista de Strings correspondentes aos campos, na ordem em que
 	 *         aparecem na String fornecida.
 	 * @see #obtemArrayCampos(String)
@@ -49,13 +50,13 @@ public interface Formato {
 	public List<String> obtemListaCampos(String linha);
 
 	/**
-	 * ObtÈm campos de linha no formato CSV. Campos s„o fornecidos
-	 * na mesma ordem em que aparecem na String fornecida. Por padr„o
-	 * o separador adotado È ';', embora outro separador possa ser
-	 * definido por meio de {@link Formato#defineSeparador(char)}.
+	 * Obt√©m campos de linha no formato CSV. Campos s√£o fornecidos
+	 * na mesma ordem em que aparecem na String fornecida. Por padr√£o
+	 * o separador adotado √© ';', embora outro separador possa ser
+	 * definido por meio de {@link CsvService#defineSeparador(char)}.
 	 * 
 	 * @param linha Linha no formato CSV cujos campos devem ser retornados.
-	 * @return
+	 * @return Array de Strings contendo campos da linha fornecida.
 	 * @see #obtemListaCampos(String)
 	 */
 	public String[] obtemArrayCampos(String linha);

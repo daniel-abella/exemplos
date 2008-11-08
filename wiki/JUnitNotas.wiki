@@ -1,5 +1,12 @@
 #summary One-sentence summary of this page.
 
 = Exercício Notas =
-== Notas ==
-Em um sistema acadêmico cada estudante recebe uma nota por disciplina. O nome de cada estudante é único, assim como o código de cada disciplina. Implemente funcionalidade que permita obter a média das notas de todas as disciplinas cursadas por um estudante, ou seja, implemente o método _media(String estudante)_ onde o argumento é o nome de um estudante. Adicionalmente, implemente a média por disciplina, ou seja, o método _media(int disciplina)_ retorna a média das notas de todos os estudantes que cursaram a disciplina cujo código é fornecido como argumento. Crie testes de unidade para verificar a implementação.
+Em um dado sistema acadêmico cada estudante recebe uma nota por disciplina. Um estudante pode estar matriculado em zero ou mais disciplinas. Naturalmente, uma disciplina pode ser cursada por zero ou mais estudantes. 
+
+O nome de cada estudante é único (seqüência de caracteres), assim como o código de cada disciplina (valor inteiro). 
+
+O modelo de domínio correspondente é apresentado abaixo. 
+
+
+
+Implemente funcionalidade que permita obter a média das notas de todas as disciplinas cursadas por um estudante, ou seja, implemente o método _media(String estudante)_ onde o argumento é o nome de um estudante. Adicionalmente, implemente a média por disciplina, ou seja, o método _media(int disciplina)_ retorna a média das notas de todos os estudantes que cursaram a disciplina cujo código é fornecido como argumento. Crie testes de unidade para verificar a implementação.

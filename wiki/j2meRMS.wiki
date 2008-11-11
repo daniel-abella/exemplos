@@ -20,8 +20,8 @@ Os programadores podem usar _!DataInputStream_, _!ByteArrayInputStream_, _!DataO
 Para criar um !RecordStore, basta chamar algum dos métodos estáticos da classe !RecordStore:
 
 ||Método||Descrição||
-||!openRecordStore(String nome, boolean !criarSeNecessario)||Abre um RecordStore ou cria um novo, caso seja pedido.||
-||!openRecordStore(String nome, boolean !criarSeNecessario, int autoriz, boolean modific)|| Abre um !RecordStore ou cria um novo, caso seja pedido. O mesmo poderá (ou não) ser alterado por outros MIDlet Suites.||
+||openRecordStore(String nome, boolean criarSeNecessario)||Abre um !RecordStore ou cria um novo, caso seja pedido.||
+||openRecordStore(String nome, boolean criarSeNecessario, int autoriz, boolean modific)|| Abre um !RecordStore ou cria um novo, caso seja pedido. O mesmo poderá (ou não) ser alterado por outros MIDlet Suites.||
 
 Abaixo, um exemplo de método que cria um novo RecordStore. Ness caso, exclui-se um !RecordStore anterior, caso exista.
 
@@ -41,7 +41,7 @@ public static RecordStore criaRecordStore(String nomeRS) throws Exception {
 == Adicionando registros ao !RecordStore ==
 Para adicionar um registro, deve-se primeiramente ter em mãos o !RecordStore.
 
-Usa-se o método _!addRecord(byte[] data, int offset, int numBytes)_, que recebe os dados (data), o índice dos dados de onde começar-se-á a gravar (offset) e o número de bytes que serão armazenados (numBytes).
+Usa-se o método _addRecord(byte[] data, int offset, int numBytes)_, que recebe os dados (data), o índice dos dados de onde começar-se-á a gravar (offset) e o número de bytes que serão armazenados (numBytes).
 
 No exemplo abaixo, o método adiciona todo o conteúdo de um texto em um !RecordStore específico.
 
@@ -62,7 +62,7 @@ public static int add(String texto, RecordStore rs) throws Exception {
 
 }}}
 
-== Recuperando registros de um RecordStore ==
+== Recuperando registros de um !RecordStore ==
 Da mesma forma que se adiciona um registro, deve-se primeiramente ter em mãos o !RecordStore para poder recuperar dados.
 
 Podem ser usados dois métodos: 
@@ -105,7 +105,7 @@ A remoção de !RecordStores e registros é simples e direta.
 
 Para remover um simples registro de um !RecordStore, basta chamar o método _deleteRecord(int recordId)_, que remove os dados da posição recordId, que não será mais usada.
 
-Para remover todo um !RecordStore, chama-se o método !_RecordStore.deleteRecordStore(String recordStoreName)_, que recebe o nome do !RecordStore e o exclui. Veja o exemplo abaixo:
+Para remover todo um !RecordStore, chama-se o método _!RecordStore.deleteRecordStore(String recordStoreName)_, que recebe o nome do !RecordStore e o exclui. Veja o exemplo abaixo:
 
 {{{
 public static boolean removePedido(String nomePedido) {

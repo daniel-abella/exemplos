@@ -14,7 +14,7 @@ O diferencial do uso de !RecordStore está no fato de poder haver filtros de reg
 
 Os registros RMS nada mais são do que arrays de bytes, que possuem nomes únicos, recordId, como chave. O primeiro registro armazenado em um _!RecordStore_ tem !recordStoreId igual a 1. À partir daí, o identificador de cada céula é produzido pelo acréscimo em uma unidade.
 
-Os programadores podem usar !_DataInputStream_, _!ByteArrayInputStream_, _!DataOutputStream_ e _!ByteArrayDataOutputStream_ para acessar esses dados, desde que tenham permissão para acessá-los. Nenhuma operação de locking é permitida.
+Os programadores podem usar _!DataInputStream_, _!ByteArrayInputStream_, _!DataOutputStream_ e _!ByteArrayDataOutputStream_ para acessar esses dados, desde que tenham permissão para acessá-los. Nenhuma operação de locking é permitida.
 
 == Gravando !RecordStores ==
 Para criar um !RecordStore, basta chamar algum dos métodos estáticos da classe !RecordStore:

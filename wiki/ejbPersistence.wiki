@@ -38,7 +38,7 @@ Abaixo segue uma seqüência de pequenos exemplos, comentados, que permitem, pau
  * ambientação com o processo necessário para persistir objetos Java usando entidades EJB (Java Persistence API)
  * ambientação com estrutura do código (arquivos a serem gerados) e ferramentas.
 
-A sugestão é que siga a lista abaixo na ordem em que aparece. 
+A sugestão é que siga cada um dos exercícios abaixo na ordem em que aparece. 
 
  * Exemplo da classe Pessoa ([jpaZero sem persistência])
  * Instância de Pessoa é persistida ([jpaUm sem endereço])

@@ -1,5 +1,9 @@
 #summary Persistência (EJB) (Fábio Nogueira de Lucena)
 
+= Conteúdo =
+
+<wiki:toc max_depth="3" />
+
 = Introdução =
 
 Nesta página você encontrará uma seqüência de exemplos que empregam a JPA (Java Persistence API) voltados para o aprendizado desta significativa parte de EJB3. 

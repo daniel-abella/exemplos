@@ -11,13 +11,13 @@ Nesta página você encontrará uma seqüência de exemplos que empregam a JPA (
 Na ordem, primeiro segue onde informações adicionais podem ser obtidas. Isto permitirá que inúmeros detalhes, aqui não fornecidos, possam ser localizados em outras fontes. Ferramentas necessárias para a execução satisfatória dos exemplos comentados são fornecidos em seguida. 
 
 
-= Referências sobre JPA =
+== Referências sobre JPA ==
 
  * Java Persistence API ([http://java.sun.com/javaee/technologies/persistence.jsp home])
  * Panda et al., _[http://www.amazon.com/EJB-3-Action-Debu-Panda/dp/1933988347/ref=pd_bbs_sr_1?ie=UTF8&s=books&qid=1197657357&sr=8-1 EJB 3 In Action]_, Manning, 2007. 
  * Conjunto de portais pertinentes ([http://del.icio.us/kyriosdata/jpa kyriosdata/jpa])
 
-= Ferramentas necessárias =
+== Ferramentas necessárias ==
 Não interprete as ferramentas sugeridas abaixo para emprego em produção, tampouco as desconsidere por causa desta observação. Para o autor, fornecem um conjunto útil para emprego didático.
 
  * SGBD ([http://hsqldb.sf.net HSQLDB])
@@ -34,10 +34,10 @@ Não interprete as ferramentas sugeridas abaixo para emprego em produção, tamp
 
 *Instalação e uso*: reserve tempo para a instalação e ambientação com estas ferramentas. Doravante é suposto que estejam devidamente instaladas e disponíveis para uso. Os exemplos fazem uso do arquivo Ant (*build.xml*) que deverá ser devidamente modificado para refletir os diretórios de instalação destas ferramentas.
 
-= OBSERVAÇÃO IMPORTANTE =
+== OBSERVAÇÃO IMPORTANTE ==
 Para todos os exemplos seguem a versão anotada (emprega anotações) juntamente com o documento XML que também pode ser empregado para representar o mapeamento correspondente. Para fazer com que o documento XML seja considerado, em detrimento das anotações, basta substituir o nome do arquivo empregado *mapeamento.xml* para *orm.xml*. Este último é consultado por padrão. Naturalmente, há como fornecer o nome de um documento XML que não seja *orm.xml*. Isto é feito no arquivo *persistence.xml*. Por simplicidade, a mera alteração do nome do arquivo é suficiente, sem que nenhuma outra mudança tenha que ser realizada.
 
-= Seqüência inicial de exemplos (primeiros contatos) = 
+= Exemplos iniciais(primeiros contatos) = 
 Abaixo segue uma seqüência de pequenos exemplos, comentados, que permitem, paulatinamente, agregar informações relevantes sobre a persistência de objetos em Java usando entidades EJB. A primeira seqüência de exercícios tem como propósitos: 
  * ambientação com o processo necessário para persistir objetos Java usando entidades EJB (Java Persistence API)
  * ambientação com estrutura do código (arquivos a serem gerados) e ferramentas.
@@ -52,7 +52,7 @@ A sugestão é que siga cada um dos exercícios abaixo na ordem em que aparece.
  * Pessoa e várias instâncias de Endereco ([jpaCinco associação para lista 1:N])
  * Classes !PessoaFisica e !PessoaJuridica estendem Pessoa ([jpaSeis herança])
 
-= Seqüência base de exemplos =
+= Casos típicos =
 
  * Evitando persistir um atributo ([jpaSete transient])
  * Forma de persistência baseada em campo ou propriedade ([jpaOito forma])
@@ -63,7 +63,7 @@ A sugestão é que siga cada um dos exercícios abaixo na ordem em que aparece.
  * Relacionamento 1<->N (1 turma vários alunos, cada aluno "sabe" sua turma) ([jpaTreze 1<->N])
  * Relacionamento N<->N ([jpaQuatorze N<->N])
 
-= Alguns detalhes =
+= Detalhes =
  * Tabela ([jpaQuinze tabela])
  * Coluna ([jpaDezesseis coluna])
  * Tipos enumerados ([jpaDezessete enum])

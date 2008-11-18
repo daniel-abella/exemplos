@@ -22,11 +22,12 @@ import java.util.List;
  * aspas duplas, o que permite empregar o separador (,) como parte do
  * conteúdo do campo.
  *
- * Uma dificuldade adicional surge se o campo fizer uso
+ * <p>Uma dificuldade adicional surge se o campo fizer uso
  * de aspas duplas e do separador. Neste caso,
- * antes de delimitar o campo com as aspas <i>externas</i>,
- * cada aspas duplas contida no conteúdo do campo será precedida do caractere
- * '\'. Por exemplo, se um campo tem como valor <b>caractere: " (aspas)</b> e
+ * além de delimitar o campo com as aspas <i>externas</i>,
+ * para cada aspas duplas contida no conteúdo do campo será acrescentado 
+ * o caractere
+ * '\' imediatamente antes da ocorrência da aspas dupla. Por exemplo, se um campo tem como valor <b>caractere: " (aspas)</b> e
  * o separador é definido como <b>:</b>, então terá que ser reescrito como
  * <b>"caractere: \" (aspas)"</b>. Observe que, desta forma, ao executar o
  * processo inverso, ou seja, retirar as aspas <i>externas</i> e retirar o
@@ -34,7 +35,7 @@ import java.util.List;
  * teremos como resultado o conteúdo original.
  * 
  * @author Fábio Nogueira de Lucena
- * @version 0.2
+ * @version 0.3
  * 
  */
 public interface CsvService {
@@ -103,7 +104,8 @@ public interface CsvService {
      * que não contém nenhum caractere), então o
      *         retorno será uma lista contendo uma única String ("").
      * @throws IllegalArgumentException
-     *             Se o argumento (referência) fornecido for <code>null</code>.
+     *             Se o argumento (referência) fornecido for <code>null</code> ou
+     * se a String fornecida não estiver no formato CSV.
      * @see #obtemArrayCampos(String)
      */
     public List<String> obtemListaCampos(String csv);
@@ -121,7 +123,8 @@ public interface CsvService {
      * CSV. Se o argumento for "" (String que não contém nenhum caractere),
      * então o retorno será um <i>array</i> contendo uma única String ("").
      * @throws IllegalArgumentException
-     *             Se o argumento (referência) fornecida for <code>null</code>.
+     *             Se o argumento (referência) fornecida for <code>null</code>  ou
+     * se a String fornecida não estiver no formato CSV.
      * @see #obtemListaCampos(String)
      */
     public String[] obtemArrayCampos(String csv);

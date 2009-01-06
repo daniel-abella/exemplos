@@ -41,5 +41,5 @@ A utilidade de cada pacote é a seguinte:
 ||java.lang||Provê classes base para programação.||
 ||java.util||Provê classes de utilidade na programação.||
 
-Mais informações podem ser vistas na API do MIDP 2.0 
-([http://java.sun.com/javame/reference/apis/jsr118/ JSR-118]) .
+Mais informações podem ser vistas na API do MIDP 2.0 + JSR-118 
+([http://java.sun.com/javame/reference/apis/jsr118/ AQUI]) .

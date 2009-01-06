@@ -24,16 +24,16 @@ A segunda forma de se desenvolver uma tela de interface gráfica é através da 
 Nas atividades práticas será introduzido o conceito das interfaces gráficas “Screen”, que podem ser:
   * Alerta (Alert);
   * Lista (List);
-  * Caixa de Texto (TextBox);
+  * Caixa de Texto (!TextBox);
   * Formulário (Form).
 
-Um formulário pode ser composto por imagens, um textos (String, como no “HelloWorld”) ou vários itens, sendo eles:
-  * Grupo de escolha (ChoiceGroup);
-  * Campo de data (DateField);
+Um formulário pode ser composto por imagens, um textos (String, como no “!HelloWorld”) ou vários itens, sendo eles:
+  * Grupo de escolha (!ChoiceGroup);
+  * Campo de data (!DateField);
   * Barra de Intensidade (Gauge);
-  * Imagem (ImageItem);
-  * Campo de Texto (TextField);
-  * Campo String com título (StringItem).
+  * Imagem (!ImageItem);
+  * Campo de Texto (!TextField);
+  * Campo String com título (!StringItem).
 
 Outra classe que pode ser de grande valia é a Ticker, que implementa uma “fita-letreiro” acima de sua aplicação, com velocidade e tamanho controlado pelo dispositivo, fazendo um texto (String) rolar sobre a tela.
 

@@ -16,7 +16,7 @@ Ele tem as seguintes características:
       # INFO = Usado para mostrar alguma informação genérica;
       # WARNING = Usado para alertar o usuário de operação perigosa.
 
-Exemplo de criação de um alerta do tipo AlertType.ERROR, sem imagens relacionadas, que durará 3 segundos:
+Exemplo de criação de um alerta do tipo !AlertType.ERROR, sem imagens relacionadas, que durará 3 segundos:
 {{{
 Alert alert = new Alert("Título", "Mensagem do alerta", null, AlertType.ERROR);
 alert.setTimeout(3000);

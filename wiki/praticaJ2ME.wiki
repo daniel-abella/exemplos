@@ -42,8 +42,8 @@ Para usuários iniciantes, é recomendável executar um "Hello World" para se am
         * ATIVIDADE 10 - Registrando o aniversário do amigo ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP10.pdf AQUI]);
         * Introdução à classe Gauge ([j2meGauge AQUI]);
         * ATIVIDADE 11 - Registrando o nível de amizade do amigo ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP11.pdf AQUI]);
-        * ATIVIDADE 12 - Criando uma SplashScreen ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP12.pdf AQUI]);
-        * Introdução à classe ImageItem ([j2meImageItem AQUI]);
+        * ATIVIDADE 12 - Criando uma !SplashScreen ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP12.pdf AQUI]);
+        * Introdução à classe !ImageItem ([j2meImageItem AQUI]);
         * ATIVIDADE 13 - Mostrando a foto do amigo ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP13.pdf AQUI]);
         * Introdução a comandos especiais de Itens ([j2meCommandItem AQUI]);
         * ATIVIDADE 14 - Resolvendo dados incompletos ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP14.pdf AQUI]);

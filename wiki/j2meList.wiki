@@ -9,11 +9,11 @@ A List é um tipo de interface gráfica muito usado, pois oferece uma forma simp
     # Choice.TEXT_WRAP_DEFAULT - Segue o padrão default do dispositivo;
     # Choice.TEXT_WRAP_ON - O conteúdo pode ser escrito em mais de uma linha. Cada dispositivo tem seu máximo. Geralmente são duas linhas; 
     # Choice.TEXT_WRAP_OFF - O conteúdo só poder ser escrito em uma linha;
-  * Inserção de elementos textuais em qualquer posição.
+  * Inserção, recuperação e remoção de elementos textuais em qualquer posição.
   * Diferentes tipos:
-       # MULTIPLE = Podem ser escolhidos vários elementos da lista, como um “Select Box” do HTML;
-       # IMPLICIT = Só é escolhido um elemento da lista, que fica sombreado;
-       # EXCLUSIVE = Podem ser escolhidos vários elementos da lista, como “RadioButtons” do HTML;
+       # MULTIPLE = Podem ser escolhidos vários elementos da lista, como um “Select Box” do HTML. Para recuperar os índices escolhidos, usa-se o método _getSelectedFlags_;
+       # IMPLICIT = Só é escolhido um elemento da lista, que fica sombreado. Para recuperar os índices escolhidos, usa-se o método _getSelectedIndex_;
+       # EXCLUSIVE = Podem ser escolhidos vários elementos da lista, como “RadioButtons” do HTML. Para recuperar os índices escolhidos, usa-se o método _getSelectedIndex_;
   * Associação de imagens (_Image_) aos itens da lista.
 
 

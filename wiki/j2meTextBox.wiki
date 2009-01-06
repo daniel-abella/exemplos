@@ -18,14 +18,14 @@ A classe !TextBox é um componente de interface gráfica que nos gera uma caixa 
       # PHONENUMBER: entrada de telefone;
       # PASSWORD: entrada de senhas, com caracteres escritos trocados por asterisos na tela;
 
-
-[http://img409.imageshack.us/img409/6412/textboxxu3.jpg]
-
-
 Criando um !TextBox de conteúdo qualquer, de 40 caracteres:
 
 {{{
 TextBox box = new TextBox("Título", "Texto", 40, TextField.ANY);
 }}}
+
+
+[http://img409.imageshack.us/img409/6412/textboxxu3.jpg]
+
 
 Para mais informações da classe !TextBox, entre [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/TextBox.html AQUI]

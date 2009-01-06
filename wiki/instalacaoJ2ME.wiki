@@ -4,18 +4,17 @@
 
 Para a disciplina, será abordada a configuração CLDC. Portanto, só precisamos nos preocupar com MIDP.
 
-No [http://java.sun.com/javame/index.jsp site do J2ME] podem ser encontradas ferramentas que permitem gerar os arquivos necessários para rodar aplicações em aparelhos compatíveis com o J2ME.  A maioria já está integrada ao Wireless Tool Kit (WTK), que pode ser [baixado para seu computador http://java.sun.com/products/sjwtoolkit/download.html].
+No [http://java.sun.com/javame/index.jsp site do J2ME] podem ser encontradas ferramentas que permitem gerar os arquivos necessários para rodar aplicações em aparelhos compatíveis com a plataforma. A maioria já está integrada ao Wireless Tool Kit (WTK), da Sun, que pode ser [http://java.sun.com/products/sjwtoolkit/download.html instalado] em seu computador. A atual versão e a 2.5.2_01.
 
-Na data em que esse material foi feito(Setembro/08), a atual versão é a 2.5.2.
-Baixado, o WTK, basta rodar o arquivo de instalação:
+Após o download, o WTK, basta rodar o arquivo de instalação:
   * No Windows, execute o “.exe”;
   * No Linux, execute o “.bin”.
 
 Após a execução do arquivo de instalação, já está a sua disposição toda a plataforma, no que se diz respeito à ferramentas de desenvolvimento e debug, a última versão da especificação ME, à partir do CLDC 1.0 e MIDP 1.0 e diferentes emuladores para testar seu código.
 
-= Pacote Mobility do Netbeans =
+= Pacote Mobility do !NetBeans =
 
-Para desenvolver em J2ME pelo Netbeans, basta baixar e instalar o pacote [http://www.netbeans.org/features/javame/index.html Mobility] , que já vem instalado no NetBeans 6.1+ (Completo). Para a versão 5.5.1 da plataforma, siga os passos de instalação [http://www.netbeans.org/community/releases/55/1/mobilitycdc-install_pt_BR.html#prerequisites AQUI]
+Para desenvolver em J2ME pelo !NetBeans, basta instalar o pacote [http://www.netbeans.org/features/javame/index.html Mobility] , que já vem instalado no NetBeans 6.1+ (Completo). Para a versão 5.5.1 da plataforma, siga os passos de instalação [http://www.netbeans.org/community/releases/55/1/mobilitycdc-install_pt_BR.html#prerequisites AQUI]
 .
 
 Para criar um projeto para dispositivos móveis no NetBeans, siga o tutorial ([http://exemplos.googlecode.com/svn/trunk/me/tutoriais/project_mobility_netBeans.pdf AQUI]);

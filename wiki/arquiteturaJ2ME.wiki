@@ -1,7 +1,12 @@
 #Descrição da arquitetura da Plataforma J2ME.
 
 = Arquitetura da Plataforma J2ME =
-A tecnologia J2ME é baseada em três elementos: configurações, perfis e pacotes opcionais, apoiados sobre a máquina virtual Java do dispositivo (veja figura abaixo).
+A tecnologia J2ME é baseada em três elementos apoiados sobre a máquina virtual Java do dispositivo:
+  * Configurações;
+  * Perfis;
+  * Pacotes opcionais.
+
+Veja figura abaixo:
 
 [http://www.javaworld.com/ http://img219.imageshack.us/img219/9504/archsm0.jpg]
 
@@ -10,9 +15,9 @@ A tecnologia J2ME é baseada em três elementos: configurações, perfis e pacot
 
 = KVM, a máquina virtual J2ME =
 
-KVM (K Virtual Machine) é uma máquina virtual Java “desnudada”, projetada para memória pequena, recursos limitados e conecção de dispositivos móveis à web. 
+KVM (K Virtual Machine) é uma máquina virtual Java “desnudada”, projetada para memória pequena, recursos limitados e conexão de dispositivos móveis à web. 
 Suas principais características são:
-  * Tamanho pequeno;
+
   * Bibliotecas de classe com código objeto de tamanho reduzido em 50-80 Kb;
   * Pequena utilização de memória;
   * Performance efetiva em processadores de 16-32 bits;

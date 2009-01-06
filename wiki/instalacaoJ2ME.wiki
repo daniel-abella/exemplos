@@ -14,7 +14,6 @@ Após a execução do arquivo de instalação, já está a sua disposição toda
 
 = Pacote Mobility do !NetBeans =
 
-Para desenvolver em J2ME pelo !NetBeans, basta instalar o pacote [http://www.netbeans.org/features/javame/index.html Mobility] , que já vem instalado no NetBeans 6.1+ (Completo). Para a versão 5.5.1 da plataforma, siga os passos de instalação [http://www.netbeans.org/community/releases/55/1/mobilitycdc-install_pt_BR.html#prerequisites AQUI]
-.
+Para desenvolver em J2ME pelo !NetBeans, basta instalar o pacote [http://www.netbeans.org/features/javame/index.html Mobility] , que já vem instalado no !NetBeans 6.1+ (Completo). Para a versão 5.5.1 da plataforma, siga os passos de instalação [http://www.netbeans.org/community/releases/55/1/mobilitycdc-install_pt_BR.html#prerequisites AQUI].
 
-Para criar um projeto para dispositivos móveis no NetBeans, siga o tutorial ([http://exemplos.googlecode.com/svn/trunk/me/tutoriais/project_mobility_netBeans.pdf AQUI]);
+Para criar um projeto para dispositivos móveis no !NetBeans, siga o tutorial ([http://exemplos.googlecode.com/svn/trunk/me/tutoriais/project_mobility_netBeans.pdf AQUI]);

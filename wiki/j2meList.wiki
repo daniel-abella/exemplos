@@ -3,30 +3,18 @@
 = List =
 A List é um tipo de interface gráfica muito usado, pois oferece uma forma simples de mostrar dados padronizados na tela. Ela tem as seguintes características:
   
-  * Podem ser adicionados comandos para captura de eventos do usuário;
-{{{
-	addCommand(c);
-}}}
-  * Pode ter fonte do texto customizada;
-{{{
-	setFont(Font e);
-}}}
-  * Cada elemento pode ser escritoem, no máximo, duas linhas;
-{{{
-	setFitPolicy();
-}}}
-  * Podem ser inseridos elementos em qualquer posição.
-{{{
-	insert(i, String s, Image);
-}}}
+  * Adição de comandos para captura de eventos do usuário, como em formulários comuns;
+  * Customização da fonte do texto a ser mostrado;
+  * Customização da política de ajuste de texto. São 3 as opções:
+    # Choice.TEXT_WRAP_DEFAULT - Segue o padrão default do dispositivo;
+    # Choice.TEXT_WRAP_ON - O conteúdo pode ser escrito em mais de uma linha. Cada dispositivo tem seu máximo. Geralmente são duas linhas; 
+    # Choice.TEXT_WRAP_OFF - O conteúdo só poder ser escrito em uma linha;
+  * Inserção de elementos textuais em qualquer posição.
   * Diferentes tipos:
-       # MULTIPLE = Podem ser escolhidos vários elementos da lista, como um “Select Box”;
+       # MULTIPLE = Podem ser escolhidos vários elementos da lista, como um “Select Box” do HTML;
        # IMPLICIT = Só é escolhido um elemento da lista, que fica sombreado;
-       # EXCLUSIVE = Podem ser escolhidos vários elementos da lista, como “RadioButtons”.
-  * Pode-se associar imagens (_Image_) aos itens.
-
-
-[http://img295.imageshack.us/img295/9117/listyd9.jpg]
+       # EXCLUSIVE = Podem ser escolhidos vários elementos da lista, como “RadioButtons” do HTML;
+  * Associação de imagens (_Image_) aos itens da lista.
 
 
 Criando uma lista múltipla com 3 itens:
@@ -34,3 +22,4 @@ Criando uma lista múltipla com 3 itens:
 String[] opcoes = {"Item 1", "Item 2","Item 3"};
 List lista = new List("Título", List.MULTIPLE, opcoes, null);
 }}}
+[http://img295.imageshack.us/img295/9117/listyd9.jpg]

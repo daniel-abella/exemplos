@@ -4,7 +4,7 @@
 
 Persistência de dados em dispositivos móveis é um assunto muito delicado, visto as permissões que devem ser levadas em consideração e o pequeno tamanho de gravação existente.
 
-Pensando nisso, o RMS (Record Management System) serve foi criado para gravação de dados e posterior recuperação, modelando tudo a um banco de dados simples, orientado à gravações. Tal simplicidade pode ser vista na quantidade de classes no pacote [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/rms/package-summary.html javax.microedition.rms]: somente 1 classe, chamada !RecordStore.
+Pensando nisso, o RMS (Record Management System) foi criado para gravação de dados e posterior recuperação, modelando tudo a um banco de dados simples, orientado à gravações. Tal simplicidade pode ser vista na quantidade de classes no pacote [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/rms/package-summary.html javax.microedition.rms]: somente uma, chamada !RecordStore.
 
 Um !RecordStore é uma coleção de registros que têm sua integridade garantida pela plataforma (pode-se reiniciar ou retirar a bateria, por exemplo, que os dados não serão perdidos) e que é criado em um local independente do dispositivo, onde não há acesso a livre leitura de qualquer aplicação. Tal local é controlado pelo MIDlet Suite da aplicação que o criou. Assim, quando um MIDlet é desinstalado, todos os registros ligados a ele também são, mesmo os que foram marcados com possibilidade de compartilhamento.
 
@@ -12,9 +12,9 @@ O diferencial do uso de !RecordStore está no fato de poder haver filtros de reg
 
 == Os registros RMS ==
 
-Os registros RMS nada mais são do que arrays de bytes, que possuem nomes únicos, recordId, como chave. O primeiro registro armazenado em um _!RecordStore_ tem !recordStoreId igual a 1. À partir daí, o identificador de cada céula é produzido pelo acréscimo em uma unidade.
+Os registros RMS nada mais são do que arrays de bytes, que possuem nomes únicos, os recordId, como chave. O primeiro registro armazenado em um _!RecordStore_ tem !recordStoreId igual a 1. À partir daí, o identificador de cada céula é produzido pelo acréscimo em uma unidade.
 
-Os programadores podem usar _!DataInputStream_, _!ByteArrayInputStream_, _!DataOutputStream_ e _!ByteArrayDataOutputStream_ para acessar esses dados, desde que tenham permissão para acessá-los. Nenhuma operação de locking é permitida.
+Os programadores podem usar as famosas classes _!DataInputStream_, _!ByteArrayInputStream_, _!DataOutputStream_ e _!ByteArrayDataOutputStream_, também presentes no MIDP 2.0, para acessar esses dados, desde que tenham permissão para acessá-los. Nenhuma operação de locking é permitida.
 
 == Gravando !RecordStores ==
 Para criar um !RecordStore, basta chamar algum dos métodos estáticos da classe !RecordStore:
@@ -23,7 +23,7 @@ Para criar um !RecordStore, basta chamar algum dos métodos estáticos da classe
 ||openRecordStore(String nome, boolean criarSeNecessario)||Abre um !RecordStore ou cria um novo, caso seja pedido.||
 ||openRecordStore(String nome, boolean criarSeNecessario, int autoriz, boolean modific)|| Abre um !RecordStore ou cria um novo, caso seja pedido. O mesmo poderá (ou não) ser alterado por outros MIDlet Suites.||
 
-Abaixo, um exemplo de método que cria um novo !RecordStore. Ness caso, exclui-se um !RecordStore anterior, caso exista.
+Abaixo, um exemplo de método que cria um novo !RecordStore. Nesse caso, exclui-se um !RecordStore anterior de mesmo nome, caso exista.
 
 {{{
 
@@ -39,7 +39,7 @@ public static RecordStore criaRecordStore(String nomeRS) throws Exception {
 }}}
 
 == Adicionando registros ao !RecordStore ==
-Para adicionar um registro, deve-se primeiramente ter em mãos o !RecordStore.
+Para adicionar um registro, deve-se primeiramente abrir o !RecordStore que o contém.
 
 Usa-se o método _addRecord(byte[] data, int offset, int numBytes)_, que recebe os dados (data), o índice dos dados de onde começar-se-á a gravar (offset) e o número de bytes que serão armazenados (numBytes).
 
@@ -118,3 +118,5 @@ public static boolean removePedido(String nomePedido) {
 	    return true;
 	}
 }}}
+
+Mais informações sobre a classe _!RecordStore_ podem ser vistas [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/rms/RecordStore.html AQUI]

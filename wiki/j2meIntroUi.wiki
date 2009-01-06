@@ -9,12 +9,15 @@ Existem duas formas de se apresentar informações na tela do dispositivo para q
 [http://img402.imageshack.us/img402/6913/uies0.png]
 
 A primeira e mais antiga é através da classe 
-[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Canvas.html Canvas], que é muito usada no desenvolvimento de jogos, pertencente ao pacote [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/game/package-summary.html javax.microedition.lcdui.game]. Veja um exemplo de tela abaixo:
+[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Canvas.html Canvas], muito usada no desenvolvimento de jogos, pertencente ao pacote [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/game/package-summary.html javax.microedition.lcdui.game]. Veja um exemplo de tela abaixo:
 
 [http://clau.sparetimegroup.net/index.php/category/programming/java/j2me/ http://img139.imageshack.us/img139/1484/imagemns5.jpg ]
 
+Tal tipo de tela é bastante complexa e é programada usando o paradigma da coloração dos pixels existentes no Display.
+
+
 A segunda forma de se desenvolver uma tela de interface gráfica é através da classe 
-[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Screen.html Screen], utilizada no desenvolvimento de aplicações comerciais, por exemplo, onde se precisa de formulários e caixas de texto, alertas, etc. Veja um exemplo de tela abaixo:
+[http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Screen.html Screen], utilizada no desenvolvimento de aplicações comerciais, por exemplo, onde precisa-se de formulários e caixas de texto, alertas, etc. Veja um exemplo de tela abaixo:
 
 [http://www.plusgsm.com.br/forums/showthread.php?t=47325 http://www.jlearnit.com/jlearnitme/screen0.png]
 
@@ -22,7 +25,7 @@ Nas atividades práticas será introduzido o conceito das interfaces gráficas �
   * Alerta (Alert);
   * Lista (List);
   * Caixa de Texto (TextBox);
-  * Formulário (Form);
+  * Formulário (Form).
 
 Um formulário pode ser composto por imagens, um textos (String, como no “HelloWorld”) ou vários itens, sendo eles:
   * Grupo de escolha (ChoiceGroup);

@@ -8,7 +8,8 @@ A classe !TextBox é um componente de interface gráfica que nos gera uma caixa 
 {{{
    setMaxSite(40);
 }}}
-  * Possibilidade de de valor default de conteúdo.
+  * Possibilidade de de valor default de conteúdo;
+  * Inserção de novo conteúdo ou edição de texto antigo em qualquer posição;
   * Personalização do tipo de entrada a ser usado:
       # ANY: entrada de dados de qualquer tipo. Nesse caso, pode haver [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Form.html#linebreak quebra de linha] e customização da [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/TextField.html#modes codificação da entrada];
       # DECIMAL: valores decimais, inclusive frações de inteiros;

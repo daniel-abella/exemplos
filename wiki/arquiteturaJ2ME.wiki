@@ -5,6 +5,9 @@ A tecnologia J2ME é baseada em três elementos: configurações, perfis e pacot
 
 [http://www.javaworld.com/ http://img219.imageshack.us/img219/9504/archsm0.jpg]
 
+,,Imagem retirada do site www.javaworld.com.,,
+
+
 = KVM, a máquina virtual J2ME =
 
 KVM (K Virtual Machine) é uma máquina virtual Java “desnudada”, projetada para memória pequena, recursos limitados e conecção de dispositivos móveis à web. 

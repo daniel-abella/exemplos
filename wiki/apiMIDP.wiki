@@ -2,7 +2,7 @@
 
 = MIDP 2.0 =
 
-A API MIDP 2.0 oferece uma gama de classes e interfaces para criação de programas J2ME. Na figura abaixo, tem-se sua estrutura em alto nível, de acordo com a JSR 118:
+A API MIDP 2.0 oferece um conjunto de classes e interfaces para criação de programas J2ME. Na figura abaixo, tem-se sua estrutura em alto nível, de acordo com a JSR 118:
 
 [http://img515.imageshack.us/img515/9108/pacoteskl1.png]
 

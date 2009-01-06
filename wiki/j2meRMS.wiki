@@ -119,4 +119,4 @@ public static boolean removePedido(String nomePedido) {
 	}
 }}}
 
-Mais informações sobre a classe _!RecordStore_ podem ser vistas [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/rms/RecordStore.html AQUI].
+Mais informações sobre a classe _!RecordStore _ podem ser vistas [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/rms/RecordStore.html AQUI].

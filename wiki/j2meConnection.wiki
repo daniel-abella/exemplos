@@ -8,18 +8,18 @@ A principal classe do pacote, Connector, será o objetivo do nosso estudo e cont
 
 ||open(String path)||retorna Connection||
 ||Cria e abre uma conexão com o caminho passado pelo parâmetro.||
-||open(String oath, int modo)||retorna Connection ||
+||open(String path, int modo)||retorna Connection ||
 ||Cria e abre uma conexão com o caminho e permissões passados por parâmetro.||
 ||As permissões podem ser Connector.READ, Connector.WRITE ou Connector.READ_WRITE;||
 ||open(String path, int modo, boolean timeout)|| retorna Connection||
 ||Cria e abre uma conexão com o caminho, permissões e tempo máximo de resposta, passados por parâmetro.||
-||openDataInputStream(String path)||retorna DataInputStream||
+||!openDataInputStream(String path)||retorna !DataInputStream||
 ||Abre um fluxo de entrada de dados à partir do caminho passado pelo parâmetro.||
-||openDataOutputStream(String name)|| retorna DataOutputStream||
+||!openDataOutputStream(String name)|| retorna !DataOutputStream||
 ||Abre um fluxo de saída de dados à partir do caminho passado pelo parâmetro.||
-||openInputStream(String name)||retorna InputStream|| 
+||!openInputStream(String name)||retorna !InputStream|| 
 ||Abre um fluxo de entrada de dados à partir do caminho passado pelo parâmetro.||
-||openOutputStream(String name)||  retorna OutputStream||
+||!openOutputStream(String name)||  retorna !OutputStream||
 ||Abre um fluxo de saída de dados à partir do caminho passado pelo parâmetro.||
 
 == Extrair dados do servidor ==

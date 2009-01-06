@@ -2,7 +2,7 @@
 
 = Sequência de Atividades Práticas = 
 
-Para usuários iniciantes, é recomendável executar um "Hello World", até para se ambientar com o Mobility do !NetBeans e com a plataforma de programação. (AQUI).
+Para usuários iniciantes, é recomendável executar um "Hello World" para se ambientar com o pacote Mobility do !NetBeans e com a plataforma de programação. (AQUI).
 
 == Estrutura da API MIDP ==
   * Introdução à API MIDP ([apiMIDP AQUI]);

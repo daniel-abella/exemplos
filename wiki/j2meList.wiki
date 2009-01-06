@@ -11,9 +11,9 @@ A List é um tipo de interface gráfica muito usado, pois oferece uma forma simp
     # Choice.TEXT_WRAP_OFF - O conteúdo só poder ser escrito em uma linha;
   * Inserção, recuperação e remoção de elementos textuais em qualquer posição.
   * Diferentes tipos:
-       # MULTIPLE = Podem ser escolhidos vários elementos da lista, como um “Select Box” do HTML. Para recuperar os índices escolhidos, usa-se o método _getSelectedFlags_;
+       # MULTIPLE = Podem ser escolhidos vários elementos da lista, como um “!SelectBox” do HTML. Para recuperar os índices escolhidos, usa-se o método _getSelectedFlags(boolean[] array_retorno)_;
        # IMPLICIT = Só é escolhido um elemento da lista, que fica sombreado. Para recuperar os índices escolhidos, usa-se o método _getSelectedIndex_;
-       # EXCLUSIVE = Podem ser escolhidos vários elementos da lista, como “RadioButtons” do HTML. Para recuperar os índices escolhidos, usa-se o método _getSelectedIndex_;
+       # EXCLUSIVE = Podem ser escolhidos vários elementos da lista, como “!RadioButtons” do HTML. Para recuperar os índices escolhidos, usa-se o método _getSelectedIndex()_;
   * Associação de imagens (_Image_) aos itens da lista.
 
 

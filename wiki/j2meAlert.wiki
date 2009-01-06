@@ -6,10 +6,11 @@ O Alert é uma tela usada para informar ao usuário a ocorrência de algum event
 Ele tem as seguintes características:
 
   * Pode conter imagem em seu corpo (caso não haja, imagem deve ser null);
-  * Emissão de som relacionado ao seu tipo;
+  * Pode conter comandos;
+  * Emite som relacionado ao seu tipo;
   * Pode conter uma barra de intensidade (Gauge), porém seguindo algumas restrições. Dessa forma, age como uma _SplashScreen_.Tal item será visto posteriormente;
   * Pode ser customizado de forma que ela tenha um tempo, em milisegundos, para desaparecer;
-  * No MIDP 2.0, existem 5 tipos de alertas, definidos na classe [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/AlertType.html AlertType]:
+  * No MIDP 2.0, possui 5 tipos, definidos na classe [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/AlertType.html AlertType]:
       # ALARM = Usado para lembrar de um evento previamente esperado;
       # CONFIRMATION = Usado para confirmar operações;
       # ERROR = Usado para mostrar erros;

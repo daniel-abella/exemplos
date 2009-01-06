@@ -23,3 +23,5 @@ String[] opcoes = {"Item 1", "Item 2","Item 3"};
 List lista = new List("Título", List.MULTIPLE, opcoes, null);
 }}}
 [http://img295.imageshack.us/img295/9117/listyd9.jpg]
+
+Mais informações sobre a classe _List_ podem ser vistas [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/List.html AQUI]

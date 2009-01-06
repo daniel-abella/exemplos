@@ -22,11 +22,11 @@ São tipos de comandos:
   * SCREEN = Usado para fazer ações em que a tela não mudará;
   * STOP = Usado para interromper ações.	
 
-Todo comando é capturado pela interface CommandListener.
+Todo comando é capturado pela interface !CommandListener.
 
 Para informações da API da classe, entre [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/lcdui/Command.html AQUI].
 
-== Interface CommandListener == 
+== Interface !CommandListener == 
 	
 A interface CommandListener, do pacote javax.microedition.lcdui, deve ser implementada pela(s) classe(s) que “ouvirá(ão)” os comandos da aplicação. Então, supondo que uma classe MIDletQualquer seja a “Listener” de sua aplicação, a mesma deverá implementar o único método de CommandListener, chamado commandAction (Command comando, Displayable tela). Tal assinatura do método possui um comando (comando que foi capturado pelo Listener) e a tela que contém o comando que foi pego.
 

@@ -14,7 +14,8 @@ A classe !TextBox é um componente de interface gráfica que nos gera uma caixa 
       # URL: Somente entradas de urls;
       # PHONENUMBER: entrada de telefone;
       # PASSWORD: entrada de senhas, com caracteres escritos trocados por asterisos na tela;
-  * Inserção de novo conteúdo ou edição de texto antigo em qualquer posição.
+  * Inserção de novo conteúdo ou edição de texto antigo em qualquer posição;
+  * Customização da codificação do tipo de entrada.
 
 Criando um !TextBox de conteúdo qualquer, de 40 caracteres:
 

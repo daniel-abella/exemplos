@@ -2,7 +2,7 @@
 
 = Roteiro =
 
-== 1. Instale o contêiner JEE ==
+== 1. Instale o servidor de aplicações JEE ==
 Há várias opções, sugiro que faça uso do [http://glassfish.dev.java.net Glassfish]. 
 
 == 2. Verifique a instalação do contêiner ==

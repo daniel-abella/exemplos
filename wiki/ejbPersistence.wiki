@@ -6,7 +6,7 @@
 
 = Introdução =
 
-Nesta página você encontrará uma seqüência de exemplos que empregam a JPA (Java Persistence API) voltados para o aprendizado desta significativa parte de EJB3. 
+Nesta página você encontrará uma seqüência de exemplos que empregam a JPA (Java Persistence API) voltados para o aprendizado desta significativa parte de EJB 3. 
 
 Na ordem, primeiro segue onde informações adicionais podem ser obtidas. Isto permitirá que inúmeros detalhes, aqui não fornecidos, possam ser localizados em outras fontes. Ferramentas necessárias para a execução satisfatória dos exemplos comentados são fornecidos em seguida. 
 
@@ -26,11 +26,10 @@ Não interprete as ferramentas sugeridas abaixo para emprego em produção, tamp
  * Testes de unidade ([http://junit.org JUnit])
  * Carga de dados em SGBD e outras operações de teste ([http://dbunit.sourceforge.net DBUnit])
  * Injeção de dependência e testes ([http://springframework.org Spring])
- * Persistence Provider ([http://hibernate.org Hibernate]). Serão necessários os componentes conhecidos por:
-   * [http://www.hibernate.org/344.html Hibernate Core]
-   * [http://www.hibernate.org/397.html Hibernate Annotations]
-   * [http://www.hibernate.org/397.html Hibernate EntityManager] e
-   * [http://www.hibernate.org/255.html Hibernate Tools].
+ * Persistence Provider. 
+   * Hibernate ([http://hibernate.org Hibernate]). Serão necessários os componentes conhecidos por: Hibernate Core, Hibernate Annotations, Hibernate EntityManager e Hibernate Tools.
+   * [http://www.eclipse.org/eclipselink/ EclipseLink]
+   * [http://www.oracle.com/technology/products/ias/toplink/jpa/index.html Oracle TopLink].
 
 *Instalação e uso*: reserve tempo para a instalação e ambientação com estas ferramentas. Doravante é suposto que estejam devidamente instaladas e disponíveis para uso. Os exemplos fazem uso do arquivo Ant (*build.xml*) que deverá ser devidamente modificado para refletir os diretórios de instalação destas ferramentas.
 

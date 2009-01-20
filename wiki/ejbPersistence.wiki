@@ -22,16 +22,19 @@ Não interprete as ferramentas sugeridas abaixo para emprego em produção, tamp
 
  * SGBD ([http://hsqldb.sf.net HSQLDB])
  * Criação de executáveis, execução de testes, ... ([http://ant.apache.org Ant])
- * Compilador e máquina virtual Java ([http://java.sun.com/products/jdk JDK 6 update 3])
+ * Compilador e máquina virtual Java ([http://java.sun.com/products/jdk JDK])
  * Testes de unidade ([http://junit.org JUnit])
  * Carga de dados em SGBD e outras operações de teste ([http://dbunit.sourceforge.net DBUnit])
  * Injeção de dependência e testes ([http://springframework.org Spring])
- * É necessária uma implementação de JPA, conhecida por _persistence Provider_. Os exemplos empregam o Hibernate. Abaixo, contudo, seguem duas outras opções além do Hibernate: 
+ * É necessário um _persistence provider_. Os exemplos fornecidos neste "tutorial" empregam o Hibernate:
    * Hibernate ([http://hibernate.org Hibernate]). Serão necessários os componentes conhecidos por: Hibernate Core, Hibernate Annotations, Hibernate EntityManager e Hibernate Tools.
-   * [http://www.eclipse.org/eclipselink/ EclipseLink]
-   * [http://www.oracle.com/technology/products/ias/toplink/jpa/index.html Oracle TopLink].
 
 *Instalação e uso*: reserve tempo para a instalação e ambientação com estas ferramentas. Doravante é suposto que estejam devidamente instaladas e disponíveis para uso. Os exemplos fazem uso do arquivo Ant (*build.xml*) que deverá ser devidamente modificado para refletir os diretórios de instalação destas ferramentas.
+
+=== Outros _persistence providers_ ===
+Além do Hibernate, citado acima, existem vários outros _persistence providers_ que podem ser empregados. Convém observar que, embora ambos implementem JPA, cada um deles possui um conjunto de ferramentas próprio. Tais ferramentas são úteis a desenvolvedores e podem decidir pela escolha de qual implementação empregar.
+ * [http://www.eclipse.org/eclipselink/ EclipseLink]
+ * [http://www.oracle.com/technology/products/ias/toplink/jpa/index.html Oracle TopLink].
 
 == OBSERVAÇÃO IMPORTANTE ==
 Para todos os exemplos seguem a versão anotada (emprega anotações) juntamente com o documento XML que também pode ser empregado para representar o mapeamento correspondente. Para fazer com que o documento XML seja considerado, em detrimento das anotações, basta substituir o nome do arquivo empregado *mapeamento.xml* para *orm.xml*. Este último é consultado por padrão. Naturalmente, há como fornecer o nome de um documento XML que não seja *orm.xml*. Isto é feito no arquivo *persistence.xml*. Por simplicidade, a mera alteração do nome do arquivo é suficiente, sem que nenhuma outra mudança tenha que ser realizada.

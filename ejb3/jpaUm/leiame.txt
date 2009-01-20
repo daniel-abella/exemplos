@@ -1,5 +1,6 @@
 jpaUm
-Passos necessários para persistir instâncias de uma classe sem referências para outros objetos.
+Passos necessários para persistir instâncias de uma classe sem 
+referências para outros objetos.
 
 Onde obter
 http://exemplos.googlecode.com/svn/trunk/ejb3/jpaUm/

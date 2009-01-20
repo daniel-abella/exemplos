@@ -6,7 +6,7 @@
 
 	<persistence-unit name="jpaUm">
 		<description>
-			Exemplo simples de persistência usando JPA. 
+			jpaUm (primeiro exemplo)
 		</description>
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>

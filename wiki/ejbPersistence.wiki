@@ -26,7 +26,7 @@ Não interprete as ferramentas sugeridas abaixo para emprego em produção, tamp
  * Testes de unidade ([http://junit.org JUnit])
  * Carga de dados em SGBD e outras operações de teste ([http://dbunit.sourceforge.net DBUnit])
  * Injeção de dependência e testes ([http://springframework.org Spring])
- * Persistence Provider. 
+ * É necessária uma implementação de JPA, conhecida por _persistence Provider_. Os exemplos empregam o Hibernate. Abaixo, contudo, seguem duas outras opções além do Hibernate: 
    * Hibernate ([http://hibernate.org Hibernate]). Serão necessários os componentes conhecidos por: Hibernate Core, Hibernate Annotations, Hibernate EntityManager e Hibernate Tools.
    * [http://www.eclipse.org/eclipselink/ EclipseLink]
    * [http://www.oracle.com/technology/products/ias/toplink/jpa/index.html Oracle TopLink].

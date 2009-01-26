@@ -1,0 +1,33 @@
+#summary Orientações para o desenvolvedor JEE.
+
+= Introdução =
+
+
+  * Links ([http://del.icio.us/kyriosdata/jee aqui])
+  * Sun Java System Application Server
+    * [http://docs.sun.com/app/docs/doc/819-3657 Installation Guide]
+    * [http://docs.sun.com/app/docs/doc/819-3656/6n5s3qjg2?a=view Starter Guide]
+    * [http://docs.sun.com/app/docs/doc/819-3658 Administration Guide]
+    * [http://docs.sun.com/app/docs/doc/819-3675 Reference Manual]
+
+Aprendendo por fases...
+  * Introdução a JEE ([tutorialJeeIntroducao introdução])
+  * Primeiro contato com JEE ([tutorialJee stateless])
+  * Segundo contato com JEE ([tutorialJeeStateful stateful])
+  * Outro exemplo ([http://exemplos.googlecode.com/svn/trunk/scbcd/third/ terceiro])
+
+Dicas
+  * Ao executar o *appclient*, além da opção *-client*, a opção *-xml* permite especificar um arquivo de configuração. Dentre outras possibilidades, este arquivo permite indicar o servidor (host) onde se encontra  em execução o servidor de aplicações que contém os EJBs requisitados pelo cliente. O elemento correspondente é *target-server* e a propriedade é *address*. 
+  * Ao execultar _standalone java client_ sem o uso de *appclient*, ou seja, em vez de usar injeção de dependência será empregado JNDI, então convém observar o seguinte. 
+    * Explicitamente forneça o nome do bean, algo como: *@Stateless(mappedBy="MeuEJB")*
+    * O código cliente deve ser parecido com o seguinte 
+{{{
+InitialContext ctx = new InitialContext();
+SessionRemote sr = (SessionRemote) ctx.lookup("MeuEJB");
+System.out.println(sr.toUpper("teste"));
+}}}
+    * Para executar código que contém o trecho acima, será necessário acrescentar ao classpath do aplicativo três jars (*appserv-rt.jar*, *javaee.jar* e *seuEjb.jar*) e o diretório onde se encontra as classes da aplicação. Os dois primeiros jars podem ser encontrados no diretório *lib*, que se encontra no diretório de instalação do Glassfish. O terceiro contém a interface empregada, neste caso, *!SessionRemote*.
+    * Se a aplicação for executada de máquina diferente daquela onde o Glassfish está em execução, então será necessário acrescentar *-Dorg.omg.CORBA.ORBInitialHost=host-glassfish*.
+  * Para executar MDBs é necessário a criação da fábrica de conexões e destino correspondentes. Isto pode ser feito pelo administrador. Vá em Resources->JMS Resources. Observe que há duas entradas: uma para "Connection Factories" e outra para "Destination Resources". Ao clicar em cada uma destas será possível adicionar tanto uma fábrica de conexões quanto um destino, respectivamente. Em tempo, lembre-se de que a entrada *JNDI Name*, fornecido em ambas as entradas é referenciada em código, por meio da anotação *@Resource* e atributo *mappedName*. Ou seja, o mesmo nome empregado para identificar *JNDI Name* deve ser aquele do atributo *mappedName* em código. 
+ * Se o bean é definido simplesmente como *@Stateless* ou *@Stateful*, então o nome JNDI empregado é o nome completo da interface correspondente.
+

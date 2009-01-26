@@ -1,20 +1,14 @@
 #summary Orientações para o desenvolvedor JEE.
 
 = Introdução =
-Exemplos e exercícios apresentados abaixo fazem uso do [http://glassfish.dev.java.net Glassfish] (_application server_ que implementa a especificação Java EE 5). Siga o link para detalhes, documentos, tudoriais e outros.
-
-  * Links ([http://del.icio.us/kyriosdata/jee aqui])
-  * Sun Java System Application Server
-    * [http://docs.sun.com/app/docs/doc/819-3657 Installation Guide]
-    * [http://docs.sun.com/app/docs/doc/819-3656/6n5s3qjg2?a=view Starter Guide]
-    * [http://docs.sun.com/app/docs/doc/819-3658 Administration Guide]
-    * [http://docs.sun.com/app/docs/doc/819-3675 Reference Manual]
+Exemplos e exercícios apresentados abaixo fazem uso do [http://glassfish.dev.java.net Glassfish] (_application server_ que implementa a especificação Java EE 5). Siga o link para detalhes, documentos, tudoriais e outros. Uma coleção de links pertinentes pode ser encontrada [http://del.icio.us/kyriosdata/jee aqui].
 
 Aprendendo por fases...
   * Introdução a JEE ([tutorialJeeIntroducao introdução])
   * Primeiro contato com JEE ([tutorialJee stateless])
   * Segundo contato com JEE ([tutorialJeeStateful stateful])
   * Outro exemplo ([http://exemplos.googlecode.com/svn/trunk/scbcd/third/ terceiro])
+  * Enviando e recebendo mensagem via JMS ([http://exemplos.googlecode.com/svn/trunk/ejb3/jms1 projeto que inclui ambas as aplicações]). Para executar estas aplicações é necessário acrescentar ao classpath: javaee.jar, appserv-rt.jar, appserv-admin.jar e imqjmsra.jar (todos disponíveis na distribuição do Glassfish).
 
 Dicas
   * Ao executar o *appclient*, além da opção *-client*, a opção *-xml* permite especificar um arquivo de configuração. Dentre outras possibilidades, este arquivo permite indicar o servidor (host) onde se encontra  em execução o servidor de aplicações que contém os EJBs requisitados pelo cliente. O elemento correspondente é *target-server* e a propriedade é *address*. 

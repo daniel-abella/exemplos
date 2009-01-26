@@ -1,7 +1,7 @@
 #summary Orientações para o desenvolvedor JEE.
 
 = Introdução =
-
+Exemplos e exercícios apresentados abaixo fazem uso do [http://glassfish.dev.java.net Glassfish] (_application server_ que implementa a especificação Java EE 5). Siga o link para detalhes, documentos, tudoriais e outros.
 
   * Links ([http://del.icio.us/kyriosdata/jee aqui])
   * Sun Java System Application Server
@@ -30,4 +30,3 @@ System.out.println(sr.toUpper("teste"));
     * Se a aplicação for executada de máquina diferente daquela onde o Glassfish está em execução, então será necessário acrescentar *-Dorg.omg.CORBA.ORBInitialHost=host-glassfish*.
   * Para executar MDBs é necessário a criação da fábrica de conexões e destino correspondentes. Isto pode ser feito pelo administrador. Vá em Resources->JMS Resources. Observe que há duas entradas: uma para "Connection Factories" e outra para "Destination Resources". Ao clicar em cada uma destas será possível adicionar tanto uma fábrica de conexões quanto um destino, respectivamente. Em tempo, lembre-se de que a entrada *JNDI Name*, fornecido em ambas as entradas é referenciada em código, por meio da anotação *@Resource* e atributo *mappedName*. Ou seja, o mesmo nome empregado para identificar *JNDI Name* deve ser aquele do atributo *mappedName* em código. 
  * Se o bean é definido simplesmente como *@Stateless* ou *@Stateful*, então o nome JNDI empregado é o nome completo da interface correspondente.
-

@@ -48,7 +48,8 @@ public class SendMsg {
             connection.close();
         } catch (Exception e) {
             System.out.println("Houve uma excecao!!!!!");
-            return;
+            System.out.println(e);
+            System.exit(0);
         }
         System.out.println("Enviado: " + args[2]);
         System.exit(0);

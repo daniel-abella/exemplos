@@ -27,6 +27,10 @@ public class SendMsg {
     private static Queue queue;
 
     public static void main(String[] args) throws Exception {
+        if (args.length == 0) {
+            args = new String[] { "MinhaFabrica", "MinhaFila", "Minha Mensagem"};
+        }
+        
         InitialContext ctx = new InitialContext();
         connectionFactory = (ConnectionFactory) ctx.lookup(args[0]);
         queue = (Queue) ctx.lookup(args[1]);

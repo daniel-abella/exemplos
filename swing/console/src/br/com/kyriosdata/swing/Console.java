@@ -1,4 +1,4 @@
-package progressmonitorexample;
+package br.com.kyriosdata.swing;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -27,7 +27,7 @@ public class Console extends JPanel implements Runnable, ActionListener {
         new Thread(new Console()).start();
 
         try {
-            Thread.sleep(100);
+            Thread.sleep(200);
         } catch (Exception e) {}        
     }
 

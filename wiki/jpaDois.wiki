@@ -186,7 +186,7 @@ O comando para a execução da classe que usufrui da API também é a mesma:
 ant run -Dclasse=dois.PessoaAplicacaoJpa
 }}}
 
-Após a execução deste comando, uma instância adicional deve estar disponível no SGBD. A execução da consulta _select * from pessoa_ por meio de um cliente do SGBD poderá indicar que, de fato, uma instância adicional foi inserida no SGBD.
+Após a execução deste comando, uma instância adicional deve estar disponível no SGBD. A execução da consulta _select \* from pessoa_ por meio de um cliente do SGBD poderá indicar que, de fato, uma instância adicional foi inserida no SGBD.
 
 *Execução a partir do ambiente Eclipse*. Não se esqueça de incluir no _classpath_ o diretório *etc*, pois é no _classpath_ que será procurado o diretório *META-INF*, empregado para a configuração do _persistence provider_. 
 

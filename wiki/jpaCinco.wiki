@@ -7,7 +7,7 @@
 Exemplos: [http://code.google.com/p/exemplos/wiki/jpaQuatro anterior] e [http://code.google.com/p/exemplos/wiki/jpaSeis próximo].
 
 = Introdução =
-Neste cenário uma instância de Pessoa poderá estar relacionada com zero ou mais instâncias de Endereco. É deixado para o leitor a identificação de contexto onde isto se aplica. Caso não o encontre, não se preocupe, o objetivo aqui é ilustrar recursos básicos de JPA e estar preparado para utilizado quando for chegado o momento.
+Neste cenário uma instância de Pessoa poderá estar relacionada com zero ou mais instâncias de Endereco. O objetivo é ilustrar o relacionamento, por mais estranho que possa parecer uma pessoa estar associada a zero ou mais endereços.
 
 A classe Pessoa é ilustrada abaixo.
 

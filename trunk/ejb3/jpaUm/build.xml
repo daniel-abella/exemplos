@@ -182,6 +182,7 @@
 	</target>
 
 	<target name="db-start" description="inicia HSQLDB (kyrios-teste)">
+        <mkdir dir="${build.dir}"/>
 		<java classname="org.hsqldb.Server" spawn="yes" fork="yes">
 			<jvmarg value="-Duser.dir=${kad.libs}" />
 			<classpath>

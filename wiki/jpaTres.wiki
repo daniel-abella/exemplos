@@ -56,7 +56,7 @@ public class Pessoa {
 Conforme as classes acima, uma instância de Pessoa faz uso de um referência para uma instância de Endereco. Neste caso, como será realizado o mapeamento que dirá, ao _persistence provider_, como persistir instâncias de Pessoa?
 
 = Mapear a classe em questão =
-A única mudança na classe Endereco é a anotação *@Embeddable*. Isto indica que instâncias de Endereco não precisam ser identificadas unicamente. A classe segue abaixo.
+A única mudança na classe Endereco é a anotação *@Embeddable*. Isto indica que instâncias de Endereco não precisam ser identificadas unicamente. Ou seja, Endereco não é tratada como uma entidade (existe apenas como objeto embutido em outros). A classe segue abaixo.
 
 {{{
 package tres;

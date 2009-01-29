@@ -37,7 +37,10 @@ public class PessoaFisica extends Pessoa {
     private String nome;
     private String cpf;
 
-    public Pessoa(String nome, String cpf) {
+    public PessoaFisica() {
+    }
+
+    public PessoaFisica(String nome, String cpf) {
         super(nome);
         this.cpf = cpf;
     }
@@ -58,7 +61,10 @@ public class PessoaJuridica extends Pessoa {
     private String nome;
     private String cnpj;
 
-    public Pessoa(String nome, String cnpj) {
+    public PessoaJuridica() {
+    }
+
+    public PessoaJuridica(String nome, String cnpj) {
         super(nome);
         this.cnpj = cnpj;
     }

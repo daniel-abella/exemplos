@@ -1,12 +1,13 @@
 package quatro;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Pessoa {
+public class Pessoa implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;

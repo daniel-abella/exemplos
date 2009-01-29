@@ -3,8 +3,7 @@
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaCinco/]
 
-
-Exemplos: [http://code.google.com/p/exemplos/wiki/jpaQuatro anterior] e [http://code.google.com/p/exemplos/wiki/jpaSeis próximo].
+Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaQuatro ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaSeis PRÓXIMO].
 
 = Introdução =
 Neste cenário uma instância de Pessoa poderá estar relacionada com zero ou mais instâncias de Endereco. O objetivo é ilustrar o relacionamento, por mais estranho que possa parecer uma pessoa estar associada a zero ou mais endereços.

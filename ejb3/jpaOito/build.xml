@@ -94,6 +94,8 @@
 
 		<!-- DbUnit -->
 		<pathelement location="${dbunit.jar}" />
+        <pathelement location="${slf4j.api.jar}" />
+		<pathelement location="${slf4j.simple.jar}" />
 	</path>
 
 
@@ -184,6 +186,7 @@
 	</target>
 
 	<target name="db-start" description="inicia HSQLDB (kyrios-teste)">
+        <mkdir dir="${build.dir}"/>
 		<java classname="org.hsqldb.Server" spawn="yes" fork="yes">
 			<jvmarg value="-Duser.dir=${kad.libs}" />
 			<classpath>

@@ -3,7 +3,7 @@
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaUm/]
 
-Exemplos: [http://code.google.com/p/exemplos/wiki/jpaZero anterior] e [http://code.google.com/p/exemplos/wiki/jpaDois próximo].
+Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpa\ero ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaDois PRÓXIMO].
 
 = Introdução =
 

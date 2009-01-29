@@ -1,4 +1,4 @@
-#summary Persistência de campo ou propriedade. (Fábio Nogueira de Lucena)
+#summary Persistência baseada em campo ou propriedade. (Fábio Nogueira de Lucena)
 
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaOito/]

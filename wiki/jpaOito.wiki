@@ -6,7 +6,7 @@
 Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaSete ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaNove PRÓXIMO].
 
 = Introdução =
-Há duas formas de se persistir estado de um objeto: campo ou propriedade. Estas formas não podem ser combinadas em uma mesma hierarquia, ou seja, ou uma classe emprega campos ou propriedades, exclusivamente. Adicionalmente, em uma data hierarquia, ou todas as classes usam o acesso por campo ou por propriedade. 
+Há duas formas de se ter acesso ao estado de um objeto: campo (acesso baseado em campo) ou propriedade (acesso baseado em propriedade). O acesso baseado em propriedades faz uso dos métodos get/set. Estas formas não podem ser combinadas em uma mesma hierarquia, ou seja, ou uma classe emprega campos ou propriedades, exclusivamente. Adicionalmente, em uma dada hierarquia, ou todas as classes usam o acesso por campo ou por propriedade. 
 
 Acesso por campo. Significa que o _persistence provider_ irá ter acesso direto ao atributo do objeto, sem emprego dos métodos get/set. 
 

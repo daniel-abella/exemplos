@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 @DiscriminatorValue("JURIDICA")
 public class PessoaJuridica extends Pessoa {
 	private String cnpj;
+
+    public PessoaJuridica() {
+    }
 	
 	public PessoaJuridica(String nome, String cnpj) {
 		super(nome);

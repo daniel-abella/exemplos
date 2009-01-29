@@ -3,9 +3,7 @@
 === Onde obter ===
 [http://exemplos.googlecode.com/svn/trunk/ejb3/jpaSeis/]
 
-
-Exemplos: [http://code.google.com/p/exemplos/wiki/jpaCinco anterior] e
-[http://code.google.com/p/exemplos/wiki/jpaSete próximo] 
+Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaCinco ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaSete PRÓXIMO].
 
 = Introdução =
 Em projetos orientados a objetos é usual o emprego de herança. Neste exemplo, veremos uma das possibilidades de se persistir objetos que fazem uso de herança.

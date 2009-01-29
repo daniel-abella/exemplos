@@ -10,7 +10,6 @@
       <property name="eclipselink.jdbc.user" value="sa"/>
       <property name="eclipselink.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
       <property name="eclipselink.jdbc.url" value="jdbc:hsqldb:hsql://localhost/kyrios-teste"/>
-      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
       <property name="eclipselink.target-database" value="HSQL"/>
     </properties>
   </persistence-unit>

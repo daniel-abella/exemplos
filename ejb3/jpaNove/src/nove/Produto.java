@@ -1,12 +1,14 @@
 package nove;
 
+import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Produto {
+public class Produto implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -14,7 +16,7 @@ public class Produto {
 	private String nome;
 	private int codigo;
 
-	@OneToOne(optional=true)
+	@OneToOne(optional=true,cascade=CascadeType.PERSIST)
 	private ProdutoInfo produtoInfo;
 
 	public Produto() {}
@@ -28,6 +30,11 @@ public class Produto {
 		this.produtoInfo = produtoInfo;
 	}
 
+    public Long getId() {
+        return id;
+    }
+
+    @Override
 	public String toString() {
 		return nome + " " + codigo + " (" + produtoInfo + ")";
 	}

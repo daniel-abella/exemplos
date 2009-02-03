@@ -6,7 +6,7 @@
 Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaOito ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaDez PRÓXIMO].
 
 = Introdução =
-Uma instância de Produto pode ou não ser detalhada em uma instância de !ProdutoInfo. Neste caso, a anotação *@!OneToOne* é empregada onde o argumento *optional* é definido como *true*. Ou seja, uma instância de !ProdutoInfo não é obrigatória. Este mapeamento é ilustrado abaixo.
+Uma instância de Produto pode ou não ser detalhada em uma instância de !ProdutoInfo. Neste caso, a anotação *@!OneToOne* é empregada onde o argumento *optional* é definido como *true*. Ou seja, uma instância de !ProdutoInfo não é obrigatória. Este mapeamento é ilustrado abaixo. Adicionalmente observe que foi empregado outro atributo da anotação: *cascade*. O valor indica que, quando uma instância de Produto for persistida, objetos que podem ser atingidos por referências que são variáveis de instância de Produto também devem ser persistidos. Noutras palavras, neste caso, se houver uma instância de !ProdutoInfo associada à instância de Produto a ser persistida, então também persista este objeto de !ProdutoInfo.
 
 {{{
 package nove;

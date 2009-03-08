@@ -67,7 +67,7 @@
 	<path id="spring.classpath">
 		<path location="${spring.jar}" />
 		<path location="${spring.dir}/dist/spring-mock.jar" />
-		<fileset dir="${spring.dir}/lib/jakarta-commons" includes="*.jar" />
+        <fileset dir="${spring.dir}/lib/jakarta-commons" includes="*.jar" />
 	</path>
 	
 	<!-- ================================================================= -->
@@ -324,5 +324,9 @@
 			Pelo menos um teste falhou. Veja resultado em ${test.out.dir}/html.
 		</fail>
 	</target>
+
+    <target name="info">
+        <echo message="${spring.dir}"/>
+    </target>
 
 </project>

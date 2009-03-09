@@ -15,6 +15,7 @@ def constDouble: Double = 3.4;
 println("constBoolean: {constBoolean}");
 println("constByte: {constByte}");
 
+// TAREFA
 // Acrescente sentenças para as demais constantes definidas acima.
 // ACRESCENTE AQUI!!!!
 
@@ -24,3 +25,7 @@ def constString = "Um teste";
 
 println("constInt2: {constInt2}");
 println("constString: {constString}");
+
+// Há ainda o tipo Number (real)
+def constNumber: Number = 3.14;
+println("constNumber: {constNumber}");

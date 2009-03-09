@@ -21,10 +21,12 @@ println("constByte: {constByte}");
 
 // Observe que o tipo pode ser inferido, conforme ilustrado abaixo.
 def constInt2 = 2;
-def constString = "Um teste";
+def constString = "Um teste"; 
+def constString2: String = 'Uma forma alternativa';
 
 println("constInt2: {constInt2}");
 println("constString: {constString}");
+println("constString2: {constString2}");
 
 // Há ainda o tipo Number (real)
 def constNumber: Number = 3.14;

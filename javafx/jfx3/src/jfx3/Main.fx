@@ -16,3 +16,11 @@ println("constBoolean: {constBoolean}");
 println("constByte: {constByte}");
 
 // Acrescente sentenças para as demais constantes definidas acima.
+// ACRESCENTE AQUI!!!!
+
+// Observe que o tipo pode ser inferido, conforme ilustrado abaixo.
+def constInt2 = 2;
+def constString = "Um teste";
+
+println("constInt2: {constInt2}");
+println("constString: {constString}");

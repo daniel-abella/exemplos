@@ -17,7 +17,7 @@ public class Pessoa implements Serializable {
 
 	private String nome;
 
-	@OneToMany
+	@OneToMany(targetEntity=Endereco.class)
 	private List<Endereco> enderecos;
 
 	public Pessoa() {}

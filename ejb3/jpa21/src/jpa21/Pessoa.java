@@ -2,13 +2,14 @@ package jpa21;
 
 import java.io.File;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Pessoa {
+public class Pessoa implements Serializable {
 	@Id
 	@GeneratedValue
 	private long id;
@@ -26,6 +27,7 @@ public class Pessoa {
 		this.endereco = endereco;
 	}
 	
+    @Override
 	public String toString() {
 		return nome + " " + endereco;
 	}

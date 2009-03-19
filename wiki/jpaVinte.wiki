@@ -6,7 +6,7 @@
 Exemplos ([http://code.google.com/p/exemplos/wiki/ejbPersistence série]): [http://code.google.com/p/exemplos/wiki/jpaDezenove ANTERIOR] e [http://code.google.com/p/exemplos/wiki/jpaVinteUm PRÓXIMO].
 
 = Introdução =
-Há várias variações quanto à geração de chaves (_surrogate keys_). O código abaixo, dado que se encontra documento, elucida boa parte das opções disponíveis. 
+Há várias variações quanto à geração de chaves (_surrogate keys_). O código abaixo ilustra boa parte das opções disponíveis. 
 
 {{{
 package vinte;

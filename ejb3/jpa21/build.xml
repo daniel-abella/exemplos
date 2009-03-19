@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="jpa21" basedir="." default="clean">
+<project name="jpaSeis" basedir="." default="clean">
 
 	<!-- ================================================================= -->
 	<!-- Projeto Dados                                                     -->
@@ -59,7 +59,6 @@
 		<pathelement location="${hibernate.dir}/lib/asm.jar" />
 		<pathelement location="${hibernate.dir}/lib/antlr-2.7.6.jar" />
 		<pathelement location="${hibernate.dir}/lib/xerces-2.6.2.jar" />
-		<pathelement location="${log4j.jar}" />
 	</path>
 
 	<!-- ================================================================= -->
@@ -91,6 +90,8 @@
 
 		<!-- DbUnit -->
 		<pathelement location="${dbunit.jar}" />
+		<pathelement location="${slf4j.api.jar}" />
+		<pathelement location="${slf4j.simple.jar}" />
 	</path>
 
 
@@ -181,6 +182,7 @@
 	</target>
 
 	<target name="db-start" description="inicia HSQLDB (kyrios-teste)">
+		<mkdir dir="${build.dir}" />
 		<java classname="org.hsqldb.Server" spawn="yes" fork="yes">
 			<jvmarg value="-Duser.dir=${kad.libs}" />
 			<classpath>

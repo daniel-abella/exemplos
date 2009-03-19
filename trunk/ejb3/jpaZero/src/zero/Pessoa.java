@@ -7,6 +7,7 @@ public class Pessoa {
 		this.nome = nome;
 	}
 	
+    @Override
 	public String toString() {
 		return nome;
 	}

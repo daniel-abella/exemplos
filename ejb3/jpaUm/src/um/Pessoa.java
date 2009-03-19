@@ -1,11 +1,12 @@
 package um;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Pessoa {
+public class Pessoa implements Serializable {
 	@Id @GeneratedValue
 	private Long id;
 	
@@ -17,6 +18,7 @@ public class Pessoa {
 		this.nome = nome;
 	}
 	
+    @Override
 	public String toString() {
 		return nome;
 	}

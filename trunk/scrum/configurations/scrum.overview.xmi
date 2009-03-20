@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:org.eclipse.epf.uma="http://www.eclipse.org/epf/uma/1.0.5/uma.ecore" xmlns:epf="http://www.eclipse.org/epf"
     epf:version="1.5.0" xmi:id="_ZVQ80OGNEdyp34pwdTOSVQ"
-    name="Visão Geral do Scrum" guid="_ZVQ80OGNEdyp34pwdTOSVQ">
+    name="scrum.overview" guid="_ZVQ80OGNEdyp34pwdTOSVQ" presentationName="Visão Geral do Scrum">
   <methodPluginSelection href="uma://_6Ab_EOF4Edyp34pwdTOSVQ#_6Ab_EOF4Edyp34pwdTOSVQ"/>
   <methodPackageSelection xsi:type="org.eclipse.epf.uma:ContentPackage" href="uma://_6Ab_EOF4Edyp34pwdTOSVQ#_Arzq4OF5Edyp34pwdTOSVQ"/>
   <methodPackageSelection xsi:type="org.eclipse.epf.uma:ProcessPackage" href="uma://_6Ab_EOF4Edyp34pwdTOSVQ#_6Ab_HeF4Edyp34pwdTOSVQ"/>

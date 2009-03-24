@@ -6,6 +6,7 @@ Há dois pontos de partida, na seguinte ordem:
   * [http://javafx.com]
   * [http://java.sun.com/javafx]
 
+Naturalmente, como tudo hoje em dia espalha-se facilmente pela Internet, há todo um conjunto de portais adicionais, onde outras informações e tutoriais podem ser obtidos. Destacaria um outro e, provavelmente, você já terá acesso a muita informação sobre o assunto: [http://www.javapassion.com/javafx/].
 
 
 = Details =

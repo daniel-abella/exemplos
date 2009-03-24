@@ -2,7 +2,10 @@
 
 = JavaFX =
 
-Add your content here.
+Há dois pontos de partida, na seguinte ordem:
+  * [http://javafx.com]
+  * [http://java.sun.com/javafx]
+
 
 
 = Details =

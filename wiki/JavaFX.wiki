@@ -8,6 +8,11 @@ Há dois pontos de partida, na seguinte ordem:
 
 Naturalmente, como tudo hoje em dia espalha-se facilmente pela Internet, há todo um conjunto de portais adicionais, onde outras informações e tutoriais podem ser obtidos. Destacaria um outro e, provavelmente, você já terá acesso a muita informação sobre o assunto: [http://www.javapassion.com/javafx/].
 
+Por comodidade, dois links obtidos a partir das páginas acima são particularmente relevantes:
+
+  * [https://openjfx.dev.java.net/langref/ JavaFX Scripting Language]
+  * [http://java.sun.com/javafx/1.1/docs/api/ JavaFX API]
+
 
 = Details =
 

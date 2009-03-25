@@ -1,7 +1,9 @@
-import javafx.sate.Stage;
+import javafx.stage.Stage;
+import javafx.scene.image.*;
+import javafx.scene.*;
 
 Stage {
-  title: "Exibe ícone Kyrios..."
+  title: "Exibe logo Kyrios..."
   scene: Scene {
     content: ImageView {
       image: Image {
@@ -9,3 +11,4 @@ Stage {
       }
     }
   }
+}

@@ -1,5 +1,7 @@
 package jfx3;
 
+import java.util.*;
+
 // Não há 'public static void main...'
 // JavaFX é declarativa. Todo o arquivo é lido.
 
@@ -31,3 +33,12 @@ println("constString2: {constString2}");
 // Há ainda o tipo Number (real)
 def constNumber: Number = 3.14;
 println("constNumber: {constNumber}");
+
+def manha = "Bom dia";
+def tarde = "Boa tarde";
+def noite = "Boa noite";
+
+var hora = Calendar.getInstance().get(Calendar.HOUR);
+
+def saudacao = "{if (hora < 12) manha else if (hora < 18) tarde else noite}";
+println("{saudacao}");

@@ -13,3 +13,4 @@ print("Só ímpares: ");
 println(numeros);
 
 println(numeros == [1..<6 step 2]);
+println(for (n in numeros) {n + 1});

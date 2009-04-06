@@ -7,4 +7,5 @@ Stage {
     width: 350
     height: 80
     opacity: .6
+    resizable: false
 }

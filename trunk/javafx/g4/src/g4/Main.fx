@@ -25,7 +25,6 @@ var borda = Rectangle {
       corCorrente = Color.BLACK;
     }
     onMouseExited: function(e: MouseEvent): Void {
-      if (not e.node.hover)
         corCorrente = Color.WHITE;
     }
 };
@@ -40,7 +39,6 @@ var texto = Text {
   content: "Meu primeiro menu"
   font: Font.font("SansSerif", FontWeight.BOLD, 20)
 };
-
 
 Stage {
     title: "Apenas barra de menus"

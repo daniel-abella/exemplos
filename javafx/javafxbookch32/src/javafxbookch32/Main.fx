@@ -1,16 +1,15 @@
 package javafxbookch32;
 
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.Cursor;
-import javafx.scene.layout.VBox;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.*;
 import javafx.ext.swing.SwingButton;
 import javafx.ext.swing.SwingComboBox;
 import javafx.ext.swing.SwingComboBoxItem;
 import javafx.ext.swing.SwingSlider;
+import javafx.scene.Cursor;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.Scene;
+import javafx.scene.text.*;
+import javafx.stage.Stage;
 
 var sceneRef : Scene;
 

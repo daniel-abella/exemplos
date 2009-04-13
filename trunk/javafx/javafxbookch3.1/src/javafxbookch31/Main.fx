@@ -1,16 +1,17 @@
 package javafxbookch31;
 
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.scene.Scene;
-import javafx.scene.text.*;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.paint.Color;
 import javafx.ext.swing.SwingButton;
 import javafx.ext.swing.SwingCheckBox;
 import javafx.ext.swing.SwingTextField;
+import javafx.lang.FX;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.Scene;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.*;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 var args = FX.getArguments();
 var stageStyle = StageStyle.DECORATED;
@@ -98,15 +99,15 @@ stageRef = Stage {
                 height: 500
                 arcWidth: 50
                 arcHeight: 50
-                fill: Color.SKYBLUE
+                fill: Color.GREEN
                 onMouseDragged: function(me:MouseEvent):Void {
                     stageRef.x += me.dragX;
                     stageRef.y += me.dragY;
                 }
             },
             VBox {
-                translateX: 20
-                translateY: 20
+                translateX: 10
+                translateY: 10
                 spacing: 10
                 content: [
                     xText,

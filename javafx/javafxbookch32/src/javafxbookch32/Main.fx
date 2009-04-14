@@ -72,6 +72,7 @@ var vbox1 = VBox {
                    content: bind "Scene width: {sceneRef.width}"
                },
                Text {
+                   id:"sceneHeight"
                    textOrigin: TextOrigin.TOP
                    font: Font.font("Sans Serif", 14)
                    content: bind "Scene height: {sceneRef.height}"
@@ -147,7 +148,7 @@ Stage {
         width: 600
         height: 350
         cursor: bind cursors[selectedCursorIndex]
-        fill: bind Color.rgb(fillVals, fillVals, fillVals)        
+        fill: bind Color.rgb(fillVals, fillVals, fillVals)
         content:
             HBox {
                 translateX: 20

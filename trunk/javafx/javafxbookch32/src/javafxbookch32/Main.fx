@@ -156,7 +156,7 @@ Stage {
                 spacing: 30
                 content: [ slider, vbox1, vbox2 ]
             }
-        stylesheets: "{__DIR__}onTheScene.css"
+        //stylesheets: "{__DIR__}onTheScene.css"
     }  
 }
 

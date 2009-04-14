@@ -6,6 +6,7 @@ import javafx.ext.swing.SwingComboBoxItem;
 import javafx.ext.swing.SwingSlider;
 import javafx.scene.Cursor;
 import javafx.scene.layout.VBox;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.Scene;
 import javafx.scene.text.*;
@@ -50,23 +51,9 @@ var cursors = [
 ];
 
 var selectedCursorIndex : Integer;
-var fillVals = 255;
+var fillVals = 0;
 
-Stage {
-    title : "On the Scene"
-    scene: sceneRef = Scene {
-        width: 600
-        height: 350
-        cursor: bind cursors[selectedCursorIndex]
-        fill: bind Color.rgb(fillVals, fillVals, fillVals)
-        content: [
-          SwingSlider {
-            minimum: 0
-            maximum: 255
-            value: bind fillVals with inverse
-            vertical: true
-        },
-        VBox {
+var vbox1 = VBox {
             spacing: 10
             content: [
                Text {
@@ -109,8 +96,9 @@ Stage {
                    }
                }
             ]
-        },
-        VBox {
+        };
+
+var vbox2 = VBox {
             spacing: 10
             content: [
                 Text {
@@ -144,10 +132,31 @@ Stage {
                     selectedIndex: bind selectedCursorIndex with inverse
                 }
             ]
-        }
-      ]
-      stylesheets: "{__DIR__}onTheScene.css"
-    }
+        };
+
+var slider = SwingSlider {
+            minimum: 0
+            maximum: 255
+            value: bind fillVals with inverse
+            vertical: true
+        };
+
+Stage {
+    title : "On the Scene"
+    scene: sceneRef = Scene {
+        width: 600
+        height: 350
+        cursor: bind cursors[selectedCursorIndex]
+        fill: bind Color.rgb(fillVals, fillVals, fillVals)        
+        content:
+            HBox {
+                translateX: 20
+                translateY: 40
+                spacing: 30
+                content: [ slider, vbox1, vbox2 ]
+            }
+        stylesheets: "{__DIR__}onTheScene.css"
+    }  
 }
 
 insert Text {

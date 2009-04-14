@@ -1,0 +1,19 @@
+SwingButton {
+    foreground: blue;
+}
+
+Text {
+    fill: green;
+}
+
+#stageX, #stageY {
+    font-style: normal;
+    font-weight: bold;
+    fill: red;
+}
+
+#sceneHeight {
+    font-size: 30px;
+}
+
+

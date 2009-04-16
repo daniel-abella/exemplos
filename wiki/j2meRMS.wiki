@@ -35,6 +35,7 @@ public static RecordStore criaRecordStore(String nomeRS) throws Exception {
 		rs = RecordStore.openRecordStore(nomeRS, true);
 		return rs;
 	}
+}
 
 }}}
 
@@ -88,7 +89,7 @@ public static String getRecord(int id, RecordStore rs) throws Exception {
 		dis.close();
                 rs.closeRecordStore();
 		return toReturn;
-	}
+}
 
 }}}
 
@@ -109,14 +110,14 @@ Para remover todo um !RecordStore, chama-se o método _!RecordStore.deleteRecord
 
 {{{
 public static boolean removePedido(String nomePedido) {
-		try {
-		    RecordStore.deleteRecordStore(nomePedido);
-		} catch (Exception e) {
-		    System.out.println("Erro na remoção do pedido");
-    	        return false;
-	    }
-	    return true;
+	try {
+	    RecordStore.deleteRecordStore(nomePedido);
+	} catch (Exception e) {
+	    System.out.println("Erro na remoção do pedido");
+            return false;
 	}
+	return true;
+}
 }}}
 
 Mais informações sobre a classe _!RecordStore _ podem ser vistas [http://java.sun.com/javame/reference/apis/jsr118/javax/microedition/rms/RecordStore.html AQUI].

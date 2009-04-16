@@ -1,7 +1,5 @@
 package javafxbookch35;
 
-import javafx.stage.Stage;
-import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -9,8 +7,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
+import javafx.scene.Scene;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.*;
+import javafx.stage.Stage;
 
 var levels:Number[] = [30, 40, 50, 45, 35];
 var selectedBarIndex = 0;
@@ -18,11 +18,9 @@ def MAX_LEVEL = 230;
 def MIN_LEVEL= 10;
 
 var linearGradient = LinearGradient {
-    startX: 0.0
-    startY: 0.0
-    endX: 0.0
-    endY: 1.0
-    stops: [ Stop { offset: 0.0 color: Color.LIGHTBLUE },
+    startX: 0.0 startY: 0.0 endX: 0.0 endY: 1.0
+    stops: [ 
+        Stop { offset: 0.0 color: Color.LIGHTGREEN },
         Stop { offset: 1.0 color: Color.DARKBLUE } ]
 };
 
@@ -47,10 +45,7 @@ var groupRef = Group {
     onKeyPressed: function(ke:KeyEvent):Void { onKeyPressed(ke); }
     content: bind for (level in levels)
         Rectangle {
-            x: 0
-            y: 60 + (indexof level * 30)
-            width: level
-            height: 20
+            x: 0 y: 60 + (indexof level * 30) width: level height: 20
             fill: linearGradient
             opacity: if (indexof level == selectedBarIndex) 1 else 0.7;
             onMousePressed: function(me:MouseEvent):Void {
@@ -64,40 +59,24 @@ var groupRef = Group {
         }
 };
 
+var textos: Text[] = for (linha in [0..1]) {
+    Text {
+        translateX: 25 translateY: 20 + (200 * indexof linha)
+        textOrigin: TextOrigin.TOP
+        font: Font { name: "Sans Serif" size: 18 }
+        content: bind if (indexof linha == 0) "Binding" else "Bar:{selectedBarIndex + 1}, Level: {levels[selectedBarIndex]}"
+        fill: Color.WHITE
+    }
+};
+
 Stage {
     title: "Binding Example"
     scene: Scene {
-        fill: Color.BLACK
+        fill: Color.BLUE
         width: 240
         height: 320
-        content: [
-            Text {
-                translateX: 25
-                translateY: 20
-                textOrigin: TextOrigin.TOP
-                font: Font {
-                    name: "Sans Serif"
-                    size: 18
-                }
-                content: "Binding / KeyEvent 2"
-                fill: Color.WHITE
-            },
-            groupRef,
-            Text {
-                translateX: 25
-                translateY: 220
-                textOrigin: TextOrigin.TOP
-                font: Font {
-                    name: "Sans serif"
-                    size: 18
-                }
-                content: bind "Bar:{selectedBarIndex + 1}, Level: {levels[selectedBarIndex]}"
-                fill: Color.WHITE
-            }          
-        ]
+        content: [ textos[0], groupRef, textos[1] ]
     }
 }
 
 groupRef.requestFocus();
-
-

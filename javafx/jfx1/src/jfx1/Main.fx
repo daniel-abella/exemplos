@@ -5,7 +5,8 @@ import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
 
-/*  Toda interface possui um Stage.
+/*  Main.fx
+    Toda interface possui um Stage.
     Elemento mais externo.
 */
 Stage {

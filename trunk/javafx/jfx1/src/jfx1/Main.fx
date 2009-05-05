@@ -5,9 +5,12 @@ import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
 
+/*  Toda interface possui um Stage.
+    Elemento mais externo.
+*/
 Stage {
     title: "Título da Aplicação (janela)"
-    width: 250
+    width: 250 
     height: 80
     scene: Scene {
         content: Text {

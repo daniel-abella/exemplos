@@ -17,7 +17,6 @@ Por comodidade, dois links obtidos a partir das páginas acima são particularme
 
 = Exemplos =
 
-'''URL:''' http://exemplos.googlecode.com/svn/trunk/javafx
+*URL:* http://exemplos.googlecode.com/svn/trunk/javafx
 
-Exemplos:
-  * 
+Exemplos iniciais: jfx1, jfx2, ... até jfx15.

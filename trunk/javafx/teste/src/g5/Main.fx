@@ -1,4 +1,4 @@
-package teste;
+package g5;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

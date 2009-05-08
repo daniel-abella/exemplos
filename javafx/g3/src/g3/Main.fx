@@ -4,6 +4,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
 import javafx.scene.Scene;
+import javafx.scene.image.*;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -18,7 +19,12 @@ var borda = Rectangle {
     }
 };
 
+var icone = ImageView {
+    image: Image { url: "{__DIR__}Internet.png" }
+};
+
+
 Stage {
     title: "Apenas barra de menus"
-    scene: Scene { content: [ borda ] }
+    scene: Scene { content: [ icone ] }
 }

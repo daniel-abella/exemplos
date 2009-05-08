@@ -26,5 +26,5 @@ var icone = ImageView {
 
 Stage {
     title: "Apenas barra de menus"
-    scene: Scene { content: [ icone ] }
+    scene: Scene { content: [ borda icone ] }
 }

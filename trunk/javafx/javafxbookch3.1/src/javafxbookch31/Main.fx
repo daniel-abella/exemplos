@@ -57,6 +57,7 @@ var widthText = Text {
     content: bind "width: {stageRef.width}"
 }
 
+
 var focusedText = Text {
     textOrigin: TextOrigin.TOP
     font: fonte

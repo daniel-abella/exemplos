@@ -13,7 +13,7 @@ Para usuários iniciantes, é recomendável executar um "Hello World" para se am
 
 == Interface Gráfica  ==
   * Introdução à interface Gráfica para dispositivos móveis ([j2meIntroUi AQUI]);
-  * ATIVIDADE 2 - Letreiro da Especialização ([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP2.pdf AQUI]);
+  * ATIVIDADE 2 - Letreiro Ticker([http://exemplos.googlecode.com/svn/trunk/me/PPs/PP2.pdf AQUI]);
   
      === Comandos e tratamento de eventos ===
         * Introdução à classe Command e interface !CommandListener ([j2meCommand AQUI]);

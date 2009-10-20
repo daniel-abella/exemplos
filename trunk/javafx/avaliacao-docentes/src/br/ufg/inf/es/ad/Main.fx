@@ -35,6 +35,7 @@ def usuario: Text = Text {
 
 def usuarioLinha: HBox = HBox {
     spacing: 10
+    nodeVPos: VPos.CENTER
     content: [ usuario,
             TextBox {
             text: "SampleText"
@@ -52,7 +53,7 @@ def senha: Text = Text {
 
 def senhaLinha: HBox = HBox {
     spacing: 10
-    vpos: VPos.BASELINE
+    nodeVPos: VPos.CENTER
     content: [
         senha,
         TextBox {
@@ -70,6 +71,8 @@ Stage {
     scene: Scene {
         content: [
                 VBox {
+                    layoutX: 20
+                    layoutY: 20
                     spacing: 15
                     nodeHPos : HPos.RIGHT
                     content: [usuarioLinha, senhaLinha ]

@@ -7,23 +7,14 @@ import javafx.scene.paint.Stop;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
-
 import javafx.scene.text.FontWeight;
-
-
 import javafx.geometry.HPos;
-
-
 import javafx.scene.layout.VBox;
-
 import javafx.scene.layout.HBox;
 import javafx.scene.control.TextBox;
-
 import javafx.geometry.VPos;
 import javafx.scene.control.Button;
-
 import javafx.stage.Alert;
-
 import javafx.scene.control.Label;
 
 /**

@@ -16,6 +16,7 @@ import javafx.geometry.VPos;
 import javafx.scene.control.Button;
 import javafx.stage.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 
 /**
  * Tela principal da aplicação.
@@ -70,6 +71,14 @@ def loginButton: Button = Button {
     }
 }
 
+def perfil:ListView = ListView {
+	items: ['Estudante', 'Professor', 'Administrador' ]
+        height: 60
+        layoutX: 220
+        layoutY: 20
+};
+
+
 var login:Scene = Scene {
     content: [
         VBox {
@@ -77,8 +86,8 @@ var login:Scene = Scene {
             layoutY: 20
             spacing: 15
             nodeHPos : HPos.RIGHT
-            content: [usuarioLinha, senhaLinha, loginButton ]
-        }
+            content: [ usuarioLinha, senhaLinha, loginButton ]
+        }, perfil
     ]
     fill: RadialGradient {
         centerX: 5
@@ -99,8 +108,6 @@ var login:Scene = Scene {
     }
 };
 
-var cena:Scene = login;
-
 var btVoltar:Button = Button {
     text: "Voltar"
     action: function() {
@@ -115,6 +122,7 @@ var leitura:Scene = Scene {
   ]
 };
 
+var cena:Scene = login;
 Stage {
     title: "Avaliação Docente"
     width: 550

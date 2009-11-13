@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 var logo = "http://kyriosdata.com.br/images/kyrios.jpg";
 
 var imagem = ImageView {
-    image: Image { url: logo width: 200 preserveRatio: true }
+    image: Image { url: logo }
 };
 
 Stage {

@@ -61,7 +61,7 @@ var widthText = Text {
 var focusedText = Text {
     textOrigin: TextOrigin.TOP
     font: fonte
-    content: bind "focused: {stageRef.focused}"
+    content: bind "containsFocus: {stageRef.containsFocus}"
 }
 
 var resizableText = Text {

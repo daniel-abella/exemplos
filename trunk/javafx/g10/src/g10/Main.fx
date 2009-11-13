@@ -15,7 +15,7 @@ Scene {
         var meuId : Integer = x;
         fill : Color.rgb(80, 200, 20 * x)
         width: 250
-        height: 80
+        height: 60
         content: [
             Text {
                 x: 10
@@ -52,4 +52,5 @@ var telaCorrenteId : Integer = 0;
 Stage {
     title: "Várias cenas (telas)"
     scene: bind telas[telaCorrenteId];
+    x : bind telaCorrenteId * 30;
 }

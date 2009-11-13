@@ -22,7 +22,7 @@ var borda = Rectangle {
             Stop { color: Color.web("0x6D84A3") offset: 1.0 } ]
     }
     onMouseMoved: function(e: MouseEvent): Void {
-      corCorrente = Color.BLACK;
+        corCorrente = Color.BLACK;
     }
     onMouseExited: function(e: MouseEvent): Void {
         corCorrente = Color.WHITE;

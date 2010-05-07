@@ -3,11 +3,11 @@
 = JavaFX =
 
 Fontes de informação:
-  * [http://javafx.com] Por meio deste link você tem acesso à Java Scrpting Language e JavaFX API.
+  * [http://javafx.com] Por meio deste link você tem acesso à JavaFX Scrpting Language e JavaFX API.
   * [http://java.sun.com/javafx]
   * [http://www.javapassion.com/javafx/]
 
-Por fim, temos algumas apresentações:
+Apresentações:
   * [http://www.slideshare.net/kyrios/javafx-introduo-1395889 JavaFX: Introdução]
 
 = Exemplos =

@@ -13,5 +13,3 @@ Apresentações:
 = Exemplos =
 
 *URL:* http://exemplos.googlecode.com/svn/trunk/javafx
-
-Exemplos iniciais: jfx1, jfx2, ... até jfx15.

@@ -16,4 +16,4 @@ Apresentações:
 
 = Tarefas básicas =
 
-  # Ambiente-se com o portal [http://javafx.com JavaFX]
+  # Ambiente-se com o portal [http://javafx.com JavaFX]. Veja vários exemplos em See. O aprendizado é coberto em Learn. Se você quer obter o JavaFX SDK, dentre outras opções, então siga o link Get. Em See um dos itens relevantes é a API (biblioteca de serviços).

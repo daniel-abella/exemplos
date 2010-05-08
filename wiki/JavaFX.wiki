@@ -82,4 +82,10 @@ var velocidade = 100 / 9.58s.toMillis();
 print("Equivale a {%.4f velocidade}m/ms");
 println(" ou {%.2f velocidade * 1h.toSeconds()}Km/h");
 }}}
+  # Edite, compile, execute e explique o funcionamento do código abaixo:
+{{{
+var nome = [ "Fulano", "Silva" ];
+println("Primeiro nome: {nome[0]}");
+println("Sobrenome: {nome[1]}");
+}}}
   

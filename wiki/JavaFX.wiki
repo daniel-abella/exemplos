@@ -74,4 +74,21 @@ Locale.setDefault(new Locale("pt","BR"));
 def hoje = new java.util.Date();
 println("Hoje é {%tA hoje}");
 }}}
+  # Edite, compile, execute e explique o funcionamento do código abaixo:
+{{{
+def distanciaM : Double = 100;
+def tempoS = 9.58s;
+println("Atual recorde dos 100m sem barreiras:");
+println("Usain Bolt com o tempo de 9.58s");
+def tempoMS = tempoS.toMillis();
+def umaHora = 1h.toSeconds();
+var velocidade = distanciaM / tempoMS;
+print("Equivale a {%.4f velocidade}m/ms");
+velocidade = velocidade * 1000;
+print(" ou {%.4f velocidade}m/s");
+velocidade = velocidade * umaHora;
+print(" ou {%.2f velocidade}m/h");
+velocidade = velocidade / 1000;
+println(" ou {%.2f velocidade}Km/h");
+}}}
   

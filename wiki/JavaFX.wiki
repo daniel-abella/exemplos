@@ -57,6 +57,11 @@ println(int instanceof Long);
 }}}
   # Edite, compile, execute e explique o funcionamento do código abaixo:
 {{{
+println("Hoje é {%h 16}");
+}}}
+  # Qual a classe em Java que fornece detalhes para tais conversões, como aquela ilustrada acima?
+  # Edite, compile, execute e explique o funcionamento do código abaixo:
+{{{
 def hoje = new java.util.Date();
 println("Hoje é {%tA hoje}");
 }}}

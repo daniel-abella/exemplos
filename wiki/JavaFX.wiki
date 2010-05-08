@@ -38,6 +38,11 @@ println(str as Object);
 }}}
   # Edite, compile, execute e explique o funcionamento do código abaixo:
 {{{
+def str:Object = "teste";
+println("{(str as String).toUpperCase()}");
+}}}
+  # Edite, compile, execute e explique o funcionamento do código abaixo:
+{{{
 def long:Long = 0xFFFF;
 def int:Object = long as Integer;
 println(int);

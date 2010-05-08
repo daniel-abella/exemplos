@@ -94,9 +94,10 @@ println(nome[67]);
 }}}
   # Edite, compile, execute e explique o funcionamento do código abaixo:
 {{{
-var n = [1..1000000000];
+def grande = 1000 * 1000 * 1000;
+var n = [1..grande];
 println(sizeof n);
-var z = for (x in [1..1000000000]) {
+var z = for (x in [1..grande]) {
     x
 }
 }}}

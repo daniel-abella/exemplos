@@ -89,5 +89,7 @@ println("Primeiro nome: {nome[0]}");
 println("Sobrenome: {nome[1]}");
 nome[1] = "da Silva";
 println("Sobrenome: {nome[1]}");
+println(nome[-1]);
+println(nome[67]);
 }}}
   

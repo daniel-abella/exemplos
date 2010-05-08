@@ -18,7 +18,6 @@ Apresentações:
 
   # Ambiente-se com o portal [http://javafx.com JavaFX]. Veja vários exemplos em See. O aprendizado é coberto em Learn. Se você quer obter o JavaFX SDK, dentre outras opções, então siga o link Get. Em See um dos itens relevantes é a API (biblioteca de serviços).
   # Obtenha o exemplo de JavaFX pelo comento {{{svn export http://exemplos.googlecode.com/svn/trunk/javafx/jfx1 jfx1}}} Isto criará o diretório *jfx1* no diretório onde este comando for executado. No diretório criado execute {{{javafxc -d ~/tmp src/jfx1/Main.fx}}} para compilar o exemplo e, para executá-lo {{{javafx -cp ~/tmp jfx1.Main}}}. O resultado pode incluir caracteres não devidamente acentuados. Neste caso, em vez de usar o comando de compilação acima, empregue {{{javafxc -d ~/tmp -encoding ISO-8859-1 src/jfx1/Main.fx}}}. Ao executar o código gerado por esta nova compilação, os acentos serão grafados corretamente.
-
   # Explique o funcionamento do código abaixo:
 {{{
 class X { var x: Integer; }

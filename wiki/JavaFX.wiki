@@ -57,6 +57,11 @@ println(int instanceof Long);
 }}}
   # Edite, compile, execute e explique o funcionamento do código abaixo:
 {{{
+def hoje = new java.util.Date();
+println("Hoje é {%tA hoje}");
+}}}
+  # Edite, compile, execute e explique o funcionamento do código abaixo:
+{{{
 import java.util.Locale;
 
 Locale.setDefault(new Locale("pt","BR"));

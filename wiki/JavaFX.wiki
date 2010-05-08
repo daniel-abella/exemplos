@@ -101,4 +101,11 @@ var z = for (x in [1..grande]) {
     x
 }
 }}}
-  
+  # Edite, compile, execute e explique o funcionamento do código abaixo:
+{{{
+var seq = [444 .. 555];
+println(sizeof seq);
+var seq2 = seq[0..10];
+println(sizeof seq2);
+println(seq2);
+}}}

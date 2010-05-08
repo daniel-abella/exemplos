@@ -20,6 +20,12 @@ Apresentações:
   # Obtenha o exemplo de JavaFX pelo comento {{{svn export http://exemplos.googlecode.com/svn/trunk/javafx/jfx1 jfx1}}} Isto criará o diretório *jfx1* no diretório onde este comando for executado. No diretório criado execute {{{javafxc -d ~/tmp src/jfx1/Main.fx}}} para compilar o exemplo e, para executá-lo {{{javafx -cp ~/tmp jfx1.Main}}}. O resultado pode incluir caracteres não devidamente acentuados. Neste caso, em vez de usar o comando de compilação acima, empregue {{{javafxc -d ~/tmp -encoding ISO-8859-1 src/jfx1/Main.fx}}}. Ao executar o código gerado por esta nova compilação, os acentos serão grafados corretamente.
   # Edite, compile, execute e explique o funcionamento do código abaixo:
 {{{
+def nome = "Fulano da Silva";
+def saidaFormatada = "Meu nome é {nome}";
+println(saidaFormatada);
+}}}
+  # Edite, compile, execute e explique o funcionamento do código abaixo:
+{{{
 class X { var x: Integer; }
 def varX: X = X {
     x: 10;

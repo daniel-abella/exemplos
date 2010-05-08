@@ -36,4 +36,13 @@ def obj : Object = str;
 println(obj as String);
 println(str as Object);
 }}}
+  # Explique o funcionamento do código abaixo:
+{{{
+def long:Long = 0xFFFF;
+def int:Object = long as Integer;
+println(int);
+println(int instanceof Integer);
+println(int instanceof Long);
+}}}
+
   

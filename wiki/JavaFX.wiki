@@ -109,3 +109,8 @@ var seq2 = seq[0..10];
 println(sizeof seq2);
 println(seq2);
 }}}
+  # Edite, compile, execute e explique o funcionamento do código abaixo:
+{{{
+var x : java.util.Date = null;
+var y : Integer = null;
+}}}

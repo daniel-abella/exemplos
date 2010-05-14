@@ -32,3 +32,66 @@ println(dobro);
 x = 2;
 println(dobro);
 }}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+}}}

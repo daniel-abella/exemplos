@@ -214,6 +214,13 @@ println(p2);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+var x = 10;
+var y = bind x with inverse;
+
+println(x);
+println(y);
+y = 3;
+println(x);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

@@ -16,7 +16,7 @@ class Ponto {
 println(new Ponto());
 println(Ponto { x : 10 y : 20 });
 }}}
-  # 
+# Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
 var x = 1;
 def fx = bind x + 10;
@@ -24,3 +24,4 @@ println(fx);
 x = 2;
 println(fx);
 }}}
+# Edite, compile, execute e compreenda o trecho de código abaixo: 

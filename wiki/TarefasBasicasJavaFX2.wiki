@@ -265,6 +265,28 @@ Derivada {}
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+class Exemplo {
+    var x : Integer;
+    var str : String = "casa";
+    var status : Boolean;
+
+    public function analise() : Void {
+        if (not isInitialized(x)) {
+            println("x não inicializada");
+        }
+
+        if (not isInitialized(str)) {
+            println("str não inicializada");
+        }
+
+        if (not isInitialized(status)) {
+            println("status não inicializada");
+        }       
+    }
+}
+
+Exemplo{}.analise();
+Exemplo { x : 2 status : true }.analise();
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

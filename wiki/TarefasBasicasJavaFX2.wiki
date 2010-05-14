@@ -172,6 +172,12 @@ println(aprovados);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+var fahrenheit : Float = 78;
+var celcius : Float = bind (fahrenheit - 32) * 5 / 9;
+
+println(celcius);
+fahrenheit = 100;
+println(celcius);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

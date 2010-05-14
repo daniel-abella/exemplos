@@ -18,6 +18,28 @@ println(Ponto { x : 10 y : 20 });
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+class Aluno {
+    var nome : String;
+    var nota1 : Float;
+    var nota2 : Float;
+
+    public function media() : Float {
+        (nota1 + nota2) / 2;
+    }
+
+    public override function toString() : String {
+        "{nome} ({media()})"
+    }
+}
+
+def aluno : Aluno = Aluno { nome: "Fulano" nota1: 5 nota2: 10 }
+
+println(aluno);
+aluno.nota1 = 10;
+println(aluno);
+}}}
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
 var x = 1;
 def fx = bind x + 10;
 println(fx);

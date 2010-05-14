@@ -25,3 +25,10 @@ x = 2;
 println(fx);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
+{{{
+var x = 1;
+def dobro = bind "O dobro de {x} é {2*x}";
+println(dobro);
+x = 2;
+println(dobro);
+}}}

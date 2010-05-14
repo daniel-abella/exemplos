@@ -34,6 +34,22 @@ println(dobro);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+var piso = 1;
+var horasExtras = 2;
+var custoPorHoraExtra = 3;
+def salario = bind if (horasExtras < 10) {
+            piso + horasExtras * custoPorHoraExtra;
+        } else {
+            if (horasExtras < 40) {
+                piso * 2;
+            } else {
+                0;
+            }
+        }
+
+println(salario);
+piso = 20;
+println(salario);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

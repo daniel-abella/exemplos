@@ -327,6 +327,41 @@ println(media);       // Média também é alterada
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+// Possível equação para cálculo de média
+var mediaSimples = function(notas : Float[]) : Float {
+    var total = 0.0;
+    for (n in notas) {
+        total += n;
+    }
+    total / sizeof notas;
+}
+
+// Possível equação para cálculo de média
+var professorX = function(notas : Float[]) : Float {
+    notas[0] + 0.3 * notas[1] + 0.8 * notas[2];
+}
+
+function calculaMedia(notas : Float[], 
+    expressao : function(n : Float[]) : Float) : Float {
+    if (sizeof notas == 0)
+        0
+    else
+        expressao(notas);
+}
+
+var equacao : function(:Float[]) : Float = mediaSimples;
+
+// Média para um dado aluno (conforme equação e notas)
+var media : Float = bind calculaMedia(algumasNotas, equacao);
+
+var algumasNotas : Float[] = [ 1, 2, 3 ]; // Notas hipotéticas
+println(media);
+
+algumasNotas[0] = 10; // Altera uma nota
+println(media);       // Média é alterada
+
+equacao = professorX; // Altera forma de cálculo
+println(media);       // Média também é alterada
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

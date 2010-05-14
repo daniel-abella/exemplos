@@ -193,6 +193,24 @@ println(fahrenheit);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+class Ponto {
+    var x : Integer;
+    var y : Integer;
+    public override function toString() : String { "({x},{y})" }
+    init { println("instancia criada..."); }
+}
+
+var vx : Integer = 0;;
+
+var p1 = bind Ponto { x: 0 y: 0 }
+var p2 = bind Ponto { x: bind vx y: 2 }
+
+println(p1);
+println(p2);
+
+vx = 10;
+println(p1);
+println(p2);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

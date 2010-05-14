@@ -224,6 +224,30 @@ println(x);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+class X {
+
+    var x: Integer;
+
+    override function equals(o: Object): Boolean {
+        if (not (o instanceof X)) {
+            return false;
+        }
+        var outroX: X = o as X;
+        if (outroX.x == x) {
+            true;
+        } else {
+            false;
+        }
+    }
+}
+
+var x1 : X = X { x : 1 }
+var x2 : X = X { x : 2 }
+
+println(x1.equals(x2));
+x2.x = 1;
+println(x1.equals(x2));
+println(x1 == x2);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

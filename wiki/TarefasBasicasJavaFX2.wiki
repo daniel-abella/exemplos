@@ -37,7 +37,8 @@ println(dobro);
 var piso = 1;
 var horasExtras = 2;
 var custoPorHoraExtra = 3;
-def salario = bind if (horasExtras < 10) {
+def salario = bind
+        if (horasExtras < 10) {
             piso + horasExtras * custoPorHoraExtra;
         } else {
             if (horasExtras < 40) {
@@ -45,7 +46,7 @@ def salario = bind if (horasExtras < 10) {
             } else {
                 0;
             }
-        }
+        };
 
 println(salario);
 piso = 20;

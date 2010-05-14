@@ -2,23 +2,17 @@
 
 = Exercícios =
 
-  # 
+  # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
-Stage {
-    title: "Application title"
-    scene: Scene {
-        width: 250
-        height: 80
-        content: [
-            Text {
-                font : Font {
-                    size : 16
-                }
-                x: 10
-                y: 30
-                content: "Application content"
-            }
-        ]
+class Ponto {
+    var x : Integer;
+    var y : Integer;
+
+    public override function toString() : String {
+        "({x},{y})"
     }
 }
+
+println(new Ponto());
+println(Ponto { x : 10 y : 20 });
 }}}

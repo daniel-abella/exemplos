@@ -54,6 +54,18 @@ println(salario);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+import java.util.Calendar;
+
+var usr = "Fulano";
+def msg = bind
+        {
+            var c =  Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+            if (c < 12) "Bom dia"
+            else if (c < 18) "Boa tarde"
+            else "Boa noite";
+        }
+
+println("{msg}, {usr}");
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

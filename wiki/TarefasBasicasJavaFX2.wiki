@@ -91,6 +91,41 @@ println("{msg}, {usr}");
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+class Aluno {
+    var nome: String;
+    public override function toString() : String { nome }
+}
+
+class Entrada {
+    var aluno: Aluno;
+    var notas: Float[];
+
+    public function aprovado(): Boolean {
+        var total: Float = 0;
+        for (n in notas) total += n;
+        if (total / sizeof notas > 5.0) true
+        else false;
+    }
+
+}
+
+class Turma {
+    var entradas: Entrada[];
+
+    public function aprovados() : Aluno[] {
+        var felizes = entradas[e | e.aprovado()];
+        for (f in felizes) f.aluno;
+    }
+}
+
+def alunos = [ Aluno { nome: "Fulano" }, Aluno { nome: "Ciclano" }];
+def provas : Float[] = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+def matriculas = [ Entrada { aluno: alunos[0] notas: provas[0..4] },
+                   Entrada { aluno: alunos[1] notas: provas[5..] } ];
+def turma = Turma { entradas: matriculas };
+println(turma.aprovados());
+turma.entradas[0].notas[0] = 100;
+println(turma.aprovados());
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

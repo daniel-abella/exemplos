@@ -129,6 +129,46 @@ println(turma.aprovados());
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+class Aluno {
+    var nome: String;
+    public override function toString(): String { nome }
+}
+
+class Entrada {
+    var aluno: Aluno;
+    var notas: Float[];
+    var aprovado: Boolean = bind { media(notas) >= 5.0 }
+
+    public function media(notas: Float[]): Float {
+        var total: Float = 0;
+        for (n in notas) total += n;
+        total / sizeof notas
+    }
+}
+
+class Turma {
+    var entradas: Entrada[];
+    var aprovados : Aluno[] = bind {
+        var felizes = entradas[e | e.aprovado];
+        for (f in felizes) f.aluno;
+    }
+}
+
+def alunos = [Aluno {nome: "Fulano" }, Aluno {nome: "Ciclano" }];
+def turma = Turma {
+    entradas: [ Entrada {aluno: alunos[0] notas: [4.5, 5] },
+                Entrada {aluno: alunos[1] notas: [5.5, 6] }
+    ];
+}
+def aprovados = bind turma.aprovados;
+
+println(aprovados);
+
+turma.entradas[0].notas[0] = 5;
+println(aprovados);
+
+turma.entradas[1].notas[0] = 0;
+println(aprovados);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

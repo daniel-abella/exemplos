@@ -251,6 +251,17 @@ println(x1 == x2);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+class Ancestral {    
+    init { println("construtor Ancestral"); }
+    postinit { println("postinit Ancestral"); }
+}
+
+class Derivada extends Ancestral {
+    init { println("construtor Derivada"); }
+    postinit { println("postinit Derivada"); }
+}
+
+Derivada {}
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

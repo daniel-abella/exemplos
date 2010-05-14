@@ -181,6 +181,15 @@ println(celcius);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+function toFahrenheit(celcius: Float) : Float {
+    9.0 / 5 * celcius + 32;
+}
+
+var celcius : Float = 100;
+var fahrenheit : Float = bind toFahrenheit(celcius);
+
+
+println(fahrenheit);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

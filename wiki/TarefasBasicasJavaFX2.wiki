@@ -426,6 +426,23 @@ for (p in [1..9], s in [1..9]) {
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+import java.io.File;
+import java.lang.System;
+
+function busca(dir: File, search: String): Void {
+    var files: File[] = dir.listFiles();
+    for (f: File in files where f.isFile() or f.isDirectory()) {
+        if (f.isDirectory())
+            busca(f, search)
+        else if (f.getName().endsWith(search)) {
+            println(f.getAbsoluteFile());
+        }
+    }
+}
+
+var raiz: File = new File(System.getProperty("user.dir"));
+
+busca(raiz, FX.getArguments()[0]);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

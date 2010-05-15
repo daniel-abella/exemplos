@@ -454,4 +454,12 @@ x = 11;
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+var x = 0;
+try {
+    println(50/x);
+} catch (e:java.lang.Exception) {
+    println(e);
+} finally {
+    println("Finalmente...");
+}
 }}}

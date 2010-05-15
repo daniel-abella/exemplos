@@ -405,6 +405,9 @@ busca(raiz, FX.getArguments()[0]);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+var x = 0;
+var y = if (x >= 0) "positivo" else "negativo";
+println(y);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

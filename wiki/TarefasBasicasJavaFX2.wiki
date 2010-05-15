@@ -420,6 +420,9 @@ for (p in [1..9]) {
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+for (p in [1..9], s in [1..9]) {
+    println("{p} x {s} = {p*s}{if (s == 9) '\n' else ' '}");
+}
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

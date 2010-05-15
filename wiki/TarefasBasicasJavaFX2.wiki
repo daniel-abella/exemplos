@@ -411,6 +411,12 @@ println(y);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+for (p in [1..9]) {
+    for (s in [1..9]) {
+        println("{p} x {s} = {p*s}");
+    }
+    println("");
+}
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

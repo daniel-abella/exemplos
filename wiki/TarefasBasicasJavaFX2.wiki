@@ -446,6 +446,11 @@ busca(raiz, FX.getArguments()[0]);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{
+var x = 10 on replace old = novoValor {
+    println("Antigo: {old} Novo: {novoValor}");
+}
+
+x = 11;
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

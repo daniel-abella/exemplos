@@ -383,8 +383,25 @@ var raiz: File = new File(System.getProperty("user.dir"));
 
 busca(raiz, FX.getArguments()[0]);
 }}}
-  # Edite, compile, execute e compreenda o trecho de código abaixo: 
+  # Modifique o código abaixo de tal forma que a função executada sobre *f.getAbsoluteFile()* seja fornecida como argumento para a função *busca*.
 {{{
+import java.io.File;
+import java.lang.System;
+
+function busca(dir: File, search: String): Void {
+    var files: File[] = dir.listFiles();
+    for (f: File in files) {
+        if (f.isFile() and f.getName().endsWith(search)) {
+            println(f.getAbsoluteFile());
+        } else if (f.isDirectory()) {
+            busca(f, search);
+        }
+    }
+}
+
+var raiz: File = new File(System.getProperty("user.dir"));
+
+busca(raiz, FX.getArguments()[0]);
 }}}
   # Edite, compile, execute e compreenda o trecho de código abaixo: 
 {{{

@@ -1,0 +1,7 @@
+#summary Aquecimento para recursos gráficos
+
+= Exercícios =
+
+  # O que o trecho de código abaixo produz?
+{{{
+}}}

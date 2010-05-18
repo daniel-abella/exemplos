@@ -4,6 +4,24 @@
 
   # Edite, compile e comprenda o código abaixo.
 {{{
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.control.Label;
+
+var objs = for (x in [1..10])
+            Label {
+                text: "{x}"
+            };
+
+Stage {
+    title: "O que faz?"
+    scene: Scene {
+        content: VBox {
+            content: [objs]
+        }
+    }
+}
 }}}
   # Edite, compile e comprenda o código abaixo.
 {{{

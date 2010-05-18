@@ -49,6 +49,31 @@ Stage {
 }}}
   # Edite, compile e comprenda o código abaixo.
 {{{
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Tooltip;
+import javafx.scene.layout.Flow;
+
+var controles = for (x in [1..5])
+            Button {
+               text: "{x}"
+               action: function() : Void {
+                   FX.exit();
+               }
+               tooltip: Tooltip {
+                   text : "Dica para o botão {x}"
+               }
+            };
+
+Stage {
+    title: "O que faz?"
+    scene: Scene {
+        content: Flow {
+            content: [controles]
+        }
+    }
+}
 }}}
   # Edite, compile e comprenda o código abaixo.
 {{{

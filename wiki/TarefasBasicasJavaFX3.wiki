@@ -2,6 +2,96 @@
 
 = Exercícios =
 
-  # O que o trecho de código abaixo produz?
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
+{{{
+}}}
+  # Edite, compile e comprenda o código abaixo.
 {{{
 }}}

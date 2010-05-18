@@ -25,6 +25,27 @@ Stage {
 }}}
   # Edite, compile e comprenda o código abaixo.
 {{{
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.control.Button;
+
+var objs = for (x in [1..5])
+            Button {
+               text: "{x}"
+               action: function() : Void {
+                   FX.exit();
+               }
+            };
+
+Stage {
+    title: "O que faz?"
+    scene: Scene {
+        content: VBox {
+            content: [objs]
+        }
+    }
+}
 }}}
   # Edite, compile e comprenda o código abaixo.
 {{{

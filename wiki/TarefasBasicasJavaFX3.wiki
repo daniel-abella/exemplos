@@ -75,9 +75,7 @@ Stage {
     }
 }
 }}}
-  # Edite, compile e comprenda o código abaixo.
-{{{
-}}}
+  # Crie uma aplicação que inicialmente exibe o valor numérico 1 (por exemplo, um Label) e, para todo movimento com o botão de rolagem do mouse, este valor é acrescido de uma unidade. O evento que captura tal movimento do botão de rolagem é *onMouseWheelMoved*. Este evento é tratado por uma função do tipo *function(e: MouseEvent) : Void*.
   # Edite, compile e comprenda o código abaixo.
 {{{
 }}}

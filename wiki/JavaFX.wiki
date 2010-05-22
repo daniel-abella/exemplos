@@ -17,4 +17,4 @@ Apresentações:
 = Tarefas =
   * [TarefasBasicas1 Tarefas Básicas 1]
   * [TarefasBasicasJavaFX2 Tarefas Básicas 2]
-  * {TarefasBasicasJavaFX3 Tarefas Básicas 3]
+  * [TarefasBasicasJavaFX3 Tarefas Básicas 3]

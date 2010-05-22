@@ -80,15 +80,8 @@ Stage {
   # Escreva uma aplicação que exibe a posição do mouse enquanto este é deslocado pela cena.
   # Escreva uma aplicação que exiba um círculo e a posição corrente do mouse (texto). Adicionalmente, quando o círculo é arrastado (*onMouseDragged*), a posição do mesmo é atualizada (texto). Observe que o círculo tem que ser arrastado para onde o mouse se deslocar.
   # Crie uma aplicação que exibe o endereço IP da máquina em que é executada. Observe que o portal http://whatismyip.org fornece a todo visitante o endereço IP desejado.
-  # Edite, compile e comprenda o código abaixo.
-{{{
-}}}
-  # Edite, compile e comprenda o código abaixo.
-{{{
-}}}
-  # Edite, compile e comprenda o código abaixo.
-{{{
-}}}
+  # Crie uma aplicação que requisite, em uma mesma tela o nome de uma cor. Se a cor é encontrada em uma lista de cores predefinidas, então a cor de fundo da cena em questão é preenchida com esta cor.
+  # Crie uma aplicação que exiba todo caractere digitado.
   # Edite, compile e comprenda o código abaixo.
 {{{
 }}}

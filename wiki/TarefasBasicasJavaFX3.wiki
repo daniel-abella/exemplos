@@ -77,12 +77,8 @@ Stage {
 }}}
   # Crie uma aplicação que inicialmente exibe o valor numérico 1 (por exemplo, um Label) e, para todo movimento com o botão de rolagem do mouse, este valor é acrescido de uma unidade. O evento que captura tal movimento do botão de rolagem é *onMouseWheelMoved*.     
   # Crie uma aplicação que exibe um retângulo que, a cada clique, alterna as cores preta, verde e azul, nesta ordem. Quando a cor azul é empregada e ocorre um clique, então a próxima cor empregada é a cor preta.
-  # Edite, compile e comprenda o código abaixo.
-{{{
-}}}
-  # Edite, compile e comprenda o código abaixo.
-{{{
-}}}
+  # Escreva uma aplicação que exibe a posição do mouse enquanto este é deslocado pela cena.
+  # Escreva uma aplicação que exiba um círculo e a posição corrente do mouse (texto). Adicionalmente, quando o círculo é arrastado (*onMouseDragged*), a posição do mesmo é atualizada (texto). Observe que o círculo tem que ser arrastado para onde o mouse se deslocar.
   # Edite, compile e comprenda o código abaixo.
 {{{
 }}}

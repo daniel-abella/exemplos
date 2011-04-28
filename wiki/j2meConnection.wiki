@@ -36,7 +36,7 @@ A principal classe do pacote, Connector, será o objetivo do nosso estudo e cont
 		if(is == null)
 			throw new Exception("Não é possível conectar-se ao servidor");
 		String dados = new String(getConteudo(is)).trim();
-		return (dados.equals("null") | trueOrFalse.equals("")) ? null : dados;
+		return (dados.equals("null") | dados.equals("")) ? null : dados;
 	}
 
 	public static InputStream obtemIsDeUrl(String url) {
